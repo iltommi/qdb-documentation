@@ -1,0 +1,108 @@
+Building wrpme 
+
+1/Requirements 
+--------------
+
+1.1/Tools
+---------
+
+The following tools are needed to successfuly build wrpme: 
+
+ - A C++ compiler  
+ - A C compiler
+ - CMake (http://www.cmake.org/)
+ - Make (on UNIX) 
+
+The following compilers were tested:
+
+ - g++ 4.6
+ - Visual Studio 2010
+ 
+IMPORTANT
+
+Your BSD or Linux distribution may have an unsupported version of gcc.
+Ensure you have *at least* GCC 4.6.0 installed.
+
+1.2/Libraries
+-------------
+ 
+The following libraries are needed: 
+
+ - Intel TBB 3.0 or greater 
+   - http://www.boost.org/
+ - Boost 1.45.0 or greater 
+   - http://www.threadingbuildingblocks.org/
+
+All these libraries are open source and available free of charge. Refer 
+to the documentation of each library for their installation. 
+
+2/Helping wrpme locate the libraries 
+-------------------------------------
+
+For a regulard library installation on UNIX CMake is generally able to 
+locate the library successfully wihtout any action on your side. 
+
+On Windows, however, the following environement variables might need to 
+be set should CMake fail to locate them: 
+
+       - BOOST_ROOT : Must point to the root of the Boost libraries 
+                      headers
+ - Boost_LIBRARYDIR : Must point to the compiled Boost Libraries
+         - TBB_ROOT : Must point to the root of Tbb headers and 
+                      libraries. 
+    - PROTOBUF_ROOT : Must point to the root of ProtoBuf headers and 
+                      libraries. 
+
+64-bit libraries are expected to be located in the bin64 directory below 
+the ROOT library, except for Boost where you specify the library directory
+explicitely.
+
+The libraries need to be compiled with the same toolchain you're going 
+to use to build wrpme Failure to do so might prevent the linking to 
+complete successfully. 
+
+Note : Most of these libraries are available as "ready to use" packages
+       on most BSD and Linux distributions. 
+
+3/Running CMake 
+---------------
+
+On Windows you may run CMakeSetup on the CMakeLists.txt file in your
+wrpme source directory.
+
+Ensure the libraries match your platform, especially the Boost libraries
+(e.g. don't attempt to mix 32-bit and 64-bit libraries) .
+
+On other platforms, you run the following command in the wrpme root 
+source directory:
+
+  cmake .
+ 
+Assuming cmake is in your path.
+ 
+Should you need to specify a specific compiler, do the following:
+
+  cmake . -DCMAKE_CXX_COMPILER=/usr/local/bin/g++46 \
+          -DCMAKE_C_COMPILER=/usr/local/bin/gcc46
+
+If the compiler you wish to use is G++ 4.6 and is located in
+/usr/local/bin.
+
+4/Building
+----------
+
+Once CMake has run successfully, you run "make" in the wrpme root
+directory.
+
+  make
+ 
+5/Running the tests
+-------------------
+ 
+Should you wish to run the tests, type
+ 
+  make test
+  
+Make sure you have the GCC 4.6 libraries made available, for example:
+
+ldconfig /usr/local/lib/gcc46/ /usr/local/lib/

@@ -1,0 +1,4 @@
+Need TBB 
+
+sudo apt-get install libtbb2
+sudo apt-get install boost1.44

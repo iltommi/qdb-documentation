@@ -1,0 +1,231 @@
+﻿wrpme shell
+***************
+
+Introduction
+============
+
+The wrpme shell is a command line tool that enables you to add, update, delete and retrieve entries from a wrpme :term:`server` or :term:`cluster`. 
+
+The shell can be used interactively and non-interactively. 
+
+In interactive mode, the user enters commands to be executed on the server. Feedback is provided to indicate success or failure.
+
+In non-interactive mode, a single command - supplied as a parameter - is executed and the program exits.
+
+Connecting to a server
+======================
+
+By default wrpmesh will attempt to connect to a wrpmed running on the same machine and listening on the port 5909. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run wrpmesh as such: ::
+   
+    wrpmesh --daemon=192.168.1.1:303
+    
+When connecting to a cluster, any server within the cluster is capable of servicing requests. There is no "master" or "preferred" server. There is no performance impact of choosing one server instead of the other, except, perhaps, the physical capabilities of the server.
+    
+.. _wrpmesh-interactive-mode:
+    
+Interactive mode
+================
+
+The interactive mode enables the user to enter as many commands as needed to a wrpme server or cluster. The shell will provide the user with feedback upon success and failure and will display the content of retrieved entries.
+
+Usage
+-----
+
+As soon as wrpmesh is properly initialized, the following prompt will be displayed: ::
+
+    wrpmesh:ok >
+   
+This means the shell is ready to accept commands. Only one command at a time may be specified. It is executed as soon as enter is pressed. It cannot be canceled or roll-backed.
+
+To exit the shell, enter the command ``exit``. To list the available commands, type ``help``. For the list of supported commands, see :ref:`wrpmesh-commands-reference`
+ 
+
+If the command should produce output on success (such as the get command), it will be printed on the standard output stream. Keep in mind though, that binary content may not be correctly printed and may even corrupt your terminal.
+
+When the last command has been successfully executed, the prompt will stay::
+
+    wrpmesh:ok >
+    
+In case of error, the prompt turns into::
+
+    wrpmesh:ko >
+
+Examples
+--------
+
+Add a new :term:`entry` named "alias" whose content is "content"::
+
+    wrpmesh:ok > put alias content
+    wrpmesh:ok > get alias
+    content
+    wrpmesh:ok >
+    
+Remove an entry named "alias"::
+
+    wrpmesh:ok >delete alias
+    wrpmesh:ok >
+
+.. _wrpmesh-noninteractive-mode:
+
+Non-interactive mode
+====================
+
+Non-interactive mode enables the user to run one command without waiting for any input. Non-interactive mode supports standard input and output and can be integrated in a tool chain à la Unix.
+
+Performance-wise non-interactive mode implies establishing and closing a connection to the wrpme server every time the shell is run.
+
+Usage
+-----
+
+The command to be executed is supplied as a parameter to the shell. For the list of supported commands, see :ref:`wrpmesh-commands-reference`
+
+As for interactive, mode, the server and port to which to connect is specified with a parameter, see :ref:`wrpmesh-parameters-reference`
+
+Only one command may be specified per run.
+
+When successful, the result of the command will be outputted on the standard output stream and the shell will exit with the code 0. Most commands produce no output when successful (silent success).
+
+In case of error, the shell will output an error message on the standard error output stream and will exit with the code 1. 
+
+Examples
+--------
+
+Unless otherwise specified, the server is listening on the port 5909 on the localhost.
+
+Save the content of an entry named "biography" in a text file named "biography.txt": ::
+
+    wrpmesh get biography > biography.txt
+    
+
+Compress a file named "myfile" and add its content to an entry named "myfile" to a wrpme server deployed on 192.168.1.1: ::
+
+    bzip2 -c myfile | wrpmesh --server=192.168.1.1 add myfile
+    
+
+.. _wrpmesh-parameters-reference:
+
+Parameters reference
+====================
+
+Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent. Any parameter not in this list will be parsed by wrpmesh as a wrpme command. See :ref:``wrpmesh-interactive-mode`` for more information.
+
+.. program:: wrpmesh
+
+.. option:: -h, --help
+
+    Displays basic usage information.
+
+    Example
+        To display the online help, type: ::
+
+            wrpmesh --help
+
+.. option:: --daemon <address>:<port>
+
+   Specifies the address and port of the daemon daemon on which the shell will connect.
+   
+   Argument
+        The address and port of a machines where a wrpme daemon is running.
+
+   Default value
+        127.0.0.0:5909, the IPv4 localhost address and the port 5909
+        
+   Example
+        If the daemon listen on the localhost and on the port 5009::
+        
+            wrpmesh --daemon-port=localhost:5009
+
+.. _wrpmesh-commands-reference:
+
+Commands reference
+==================
+
+A command generally requires one or several arguments. Each argument is separated by one or several space characters.
+
+.. option:: help
+
+    Displays basic usage information and list all available commands.
+
+.. option:: get <alias>
+
+    Retrieves an existing entry from the server and print it to standard output.
+
+    :param alias: a string representing the :term:`alias` of the entry to be retrieved.
+    :return: The entry's content or an error message
+
+    Example
+        Retrives an entry whose alias is "alias" and whose content is the string "content": ::
+
+            get alias
+            content
+
+    .. note::
+        The entry alias may not contain the space character. 
+
+        The alias may not be longer than 1024 characters.
+
+.. option:: put <alias> <content>
+
+    Purpose
+        Adds a new entry to the server. The entry must not already exist.
+
+    :param alias: a string representing the alias of the entry to create 
+    :param content: a string representing the content of the entry
+    :return: Nothing if successful, an error message otherwise
+
+    Example
+        Adds an entry whose alias is "myentry" and whose content is the string "MagicValue": ::
+
+            put myentry MagicValue
+        
+    .. note::
+        The alias cannot contain the space character and its length must be below 1024.
+        
+        There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters
+        until the end of the input will be added to the content, including space characters.
+
+.. option:: update <alias> <content>
+
+    Adds or updates an entry to the server. If the entry doesn't exist it will be created, otherwise it will be changed to the new specified value.
+
+    :param alias: a string representing the alias of the entry to create or update
+    :param content: a string representing the content of the entry
+    :return: Nothing if successful, an error message otherwise
+
+    Example
+        Adds an entry whose alias is "myentry" and whose content is the string "MagicValue": ::
+
+            update myentry MagicValue
+
+        Change the value of the entry "myentry" to the content "MagicValue2": ::
+
+            update myentry Magicvalue2
+        
+    .. note::
+        The alias cannot contain the space character and its length must be below 1024.
+        
+        There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters
+        until the end of the input will be added to the content, including space characters.
+
+.. option:: del <alias>
+
+    Removes an existing entry on the server. It is an error to delete a non-existing entry.
+
+    :param alias: a string representing the alias of the entry to delete
+    :return: Nothing if successful, an error message otherwise
+
+    Example
+        Removes an entry named "obsolete": ::
+
+            del obsolete
+
+.. option:: exit
+
+    Exits the shell.
+
+.. option:: version
+
+    Displays version information.
+
+
+
