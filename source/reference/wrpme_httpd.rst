@@ -14,15 +14,15 @@ Launching the web server
 ========================
 
 The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. It does not require specific privileges to run (i.e. you don't need to run the server from an administrator account). This can be configured, see :ref:`wrpme_httpd-parameters-reference`
- 
+
 In other words, for most cases, the command line will look as: ::
 
     ./wrpme_httpd &
-    
+
 or on Windows: ::
-    
-    wrpme_httpd 
-    
+
+    wrpme_httpd
+
 Interfacing with the cluster
 ==============================
 
@@ -38,7 +38,7 @@ If these two conditions are met the web server is *hot plug'n'play*. In other wo
  * There is no launch order. The cluster can be started after the web server and vice versa.
  * The web server can be stopped and started at any time without any information loss.
  * The content provided by the web server is *real time*.
-      
+
 Using the server
 ================
 
@@ -51,7 +51,7 @@ If the URL does not exists, the server will return a page not found (404) error.
 Parameters reference
 ====================
 
-Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent. 
+Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
 
 .. program:: wrpme_httpd
 
@@ -70,47 +70,47 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
     Argument
         A string representing one address the server listens on and a port. The string can be a host name or an IP address.
-        
+
     Default value
         127.0.0.1:8080, the IPv4 localhost and the port 8080
 
     Example
         Listen on all addresses and the port 80::
 
-            wrpmed --address=0.0.0.0:80            
-            
+            wrpmed --address=0.0.0.0:80
+
 .. option:: -t <count>, --threads=<count>
 
     Specifies the number of threads to use. May improve performance.
-    
+
     Argument
         An integer greater than 0 representing the number of listening threads.
-        
+
     Default value
         1
-        
+
     Example
         To use two listening threads::
-        
+
             wrpme_httpd --threads=2
 
 .. option:: --daemon <address>:<port>
 
    Specifies the address and port of the daemon daemon on which the server will connect.
-   
+
    Argument
         The address and port of a machines where a wrpme daemon is running.
 
    Default value
         127.0.0.0:5909, the IPv4 localhost address and the port 5909
-        
+
    Example
         If the daemon listen on the localhost and on the port 5009::
-        
+
             wrpme_httpd --daemon-port=localhost:5009
-  
+
 .. option:: -o, --log-console
-    
+
     Activates logging on the console.
 
 .. option:: -l <path>, --log-file=<path>
@@ -124,7 +124,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         Log in /var/log/wrpmed.log: ::
 
             wrpme_httpd --log-file=/var/log/wrpmed.log
-        
+
 .. option:: --log-level=<value>
 
     Specifies the log verbosity.
@@ -146,24 +146,24 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         Request a debug level logging: ::
 
             wrpme_httpd --log-level=debug
-            
+
 .. option:: --log-flush-interval=<delay>
 
     How frequently log messages are flushed to output, in seconds.
-    
+
     Argument
         An integer representing the number of seconds between each flush.
-        
+
     Default value
         3
-        
+
     Example
         Flush the log every minute: ::
-        
+
             wrpme_httpd --log-flush-interval=60
-            
-   
-   
+
+
+
 .. _wrpme_httpd-url-reference:
 
 URL reference
@@ -174,14 +174,14 @@ get
 
 Purpose
     Obtain an :term:`entry` from the cluster.
-    
+
 Parameter
     * alias: specifies the :term:`alias` of the entry to obtain.
     * (optional) callback: specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
-    
+
 Returns
     A JSON or JSONP structure containing the alias and :term:`content` (in Base64) of the entry. If the entry cannot be found, the content string will be empty.
-    
+
     Schema ::
 
         {
@@ -202,24 +202,24 @@ Returns
                 }
             }
         }
-    
-    
+
+
 Example
     Get the entry with the alias "MyData" from the server myserver.org listening on the port 8080: ::
         http://myserver.org:8080/get?alias=MyData
-    
+
 Note
     Requesting large entries (i.e., larger than 10 MiB) through the web bridge is not recommended.
-    
+
 global_status
 -------------
 
 Purpose
     Displays global statistics.
-    
+
 Parameter
     * (optional) callback: specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
-    
+
 Returns
     A JSON or JSONP structure with up-to-date statistics.
 
@@ -242,14 +242,8 @@ Returns
                     {
                         "type":"string"
                     },
-                    "description":"the addresses the daemon listens on",
+                    "description":"the addresses and port the daemon listens on",
                     "required":true
-                },
-                "listening_port":
-                {
-                        "type":"number",
-                        "description":"the port used by the daemon to listen to incoming connections",
-                        "required":true
                 },
                 "timestamp":
                 {
@@ -275,7 +269,7 @@ Returns
                     "description":"the engine build timestamp",
                     "required":true
                 },
-                
+
                 "name":"entries",
                 "properties":
                 {
@@ -283,6 +277,12 @@ Returns
                     {
                         "type":"number",
                         "description":"the current number of entries in the cluster",
+                        "required":true
+                    },
+                    "paged_count":
+                    {
+                        "type":"number",
+                        "description":"the entries on the cluster that are paged to disk",
                         "required":true
                     },
                     "max_count":
@@ -302,24 +302,60 @@ Returns
                         "type":"number",
                         "description":"the maximum allowed amount of data in memory",
                         "required":true
+                    },
+                    "add_count":
+                    {
+                        "type":"number",
+                        "description":"the total number of adds performed on the cluster",
+                        "required":true
+                    },
+                    "update_count":
+                    {
+                        "type":"number",
+                        "description":"the total number of updates performed on the cluster",
+                        "required":true
+                    },
+                    "remove_count":
+                    {
+                        "type":"number",
+                        "description":"the total number of removals performed on the cluster",
+                        "required":true
+                    },
+                    "get_count":
+                    {
+                        "type":"number",
+                        "description":"the total number of gets performed on the cluster",
+                        "required":true
+                    },
+                    "eviction_count":
+                    {
+                        "type":"number",
+                        "description":"the number of entries that have been evicted",
+                        "required":true
+                    },
+                    "pagein_count":
+                    {
+                        "type":"number",
+                        "description":"the number of entries that have been paged in",
+                        "required":true
                     }
                 }
-            }           
+            }
         }
-        
+
 Example
     Regular JSON output from the server myserver.org listening on the port 8080: ::
         http://myserver.org:8080/global_status
-        
+
     JSONP output with a callback named "MyCallback" from the server myserver.org listening on the port 8080: ::
         http://myserver.org:8080/global_status?callback=MyCallback
-        
+
 view
 ----
 
 Purpose
     Interactive node status display.
-    
+
 Parameter
     None.
 
