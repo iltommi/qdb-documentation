@@ -10,6 +10,13 @@ The wrpme daemon is highly scalable and can be distributed on several nodes to f
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
 
+Usage
+=====
+
+The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line.
+
+From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon stopping.
+
 Network configuration
 =====================
 
