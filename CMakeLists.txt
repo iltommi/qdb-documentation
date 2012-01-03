@@ -5,4 +5,3 @@ install(FILES
     readme.txt
     DESTINATION doc)
 
-add_subdirectory(examples)
