@@ -1,5 +1,5 @@
-#include <wrp_me/server/simple_node.hpp>
-#include <wrp_me/log/logger.hpp>
+#include <wrpme/server/simple_node.hpp>
+#include <wrpme/log/logger.hpp>
 
 using namespace wrp_me;
 

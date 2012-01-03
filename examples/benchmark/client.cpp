@@ -1,4 +1,4 @@
-#include <wrp_me/client/wrp_me_api.h>
+#include <wrpme/client/wrp_me_api.h>
 #include <tbb/tick_count.h>
 #include <iostream>
 
