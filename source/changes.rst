@@ -1,6 +1,16 @@
 Change log
 ***************
 
+v0.6.0 - 01/13/2011
+-------------------
+
+    * Python API: Brand new Python API!
+    * Daemon: new "transient" option
+    * Daemon: Improved memory management
+    * Daemon: Improved performance for large entries
+    * Daemon: Reduced latency
+    * Upgraded LevelDB
+
 v0.5.2 - 11/14/2011
 -------------------
 

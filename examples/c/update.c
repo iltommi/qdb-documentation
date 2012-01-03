@@ -29,7 +29,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <wrp_me/client/wrp_me_api.h>
+
+#include <wrpme/client/wrp_me_api.h>
 
 int main(int argc, char* argv[])
 {
