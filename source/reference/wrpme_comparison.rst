@@ -60,7 +60,7 @@ The accepted commands are:
 Parameters reference
 ====================
 
-.. program:: wrp_me_comparison
+.. program:: wrpme_comparison
 
 .. option:: -h, --help
 
@@ -69,7 +69,7 @@ Parameters reference
     Example
         To display the online help, type: ::
 
-            wrp_me_comparison --help
+            wrpme_comparison --help
 
 .. option:: -a <address>, --address=<address>
 
@@ -84,7 +84,7 @@ Parameters reference
     Example
         Run the test on the server listening on 192.168.1.1::
 
-            wrp_me_comparison -a 192.168.1.1
+            wrpme_comparison -a 192.168.1.1
             
 .. option:: -p <port>, --port=<port>
 
@@ -99,7 +99,7 @@ Parameters reference
     Example
         Run the test on the server listening on 31337::
             
-            wrp_me_comparison -p 31337
+            wrpme_comparison -p 31337
 
 .. option:: --protocol=<protocol>
 
@@ -114,7 +114,7 @@ Parameters reference
     Example
         Run the test on  a memcached compatible server::
 
-            wrp_me_comparison --protocol=memcached
+            wrpme_comparison --protocol=memcached
 
 .. option:: -f <path>, --test-file=<path>
 
@@ -129,7 +129,7 @@ Parameters reference
     Example
         Runs the tests written in ``stress.cfg``::
 
-            wrp_me_comparison -f stress.cfg
+            wrpme_comparison -f stress.cfg
 
 .. option:: -o <path>, --output-file=<path>
 
