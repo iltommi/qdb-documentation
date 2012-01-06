@@ -1,7 +1,7 @@
 WRPME
 -----
 
-Thank you for downloading and testing our software !
+Thank you for downloading and testing our software!
 
 wrpme is a high-performance, scalable, persistant and peer-to-peer key/value store.
 
