@@ -77,11 +77,11 @@ The connection is a two steps process.
 
 First you need to *initialize* the wrpme client session: ::
 
-    SWIGTYPE_p_wrp_me_session session = wrpme.open();
+    SWIGTYPE_p_wrpme_session session = wrpme.open();
 
 Then you connect to a :term:`server` within a :term:`cluster`: ::
 
-    wrp_me_error_t r = wrpme.connect(session, "192.168.1.1", 5909);
+    wrpme_error_t r = wrpme.connect(session, "192.168.1.1", 5909);
     
 In this case we're connecting to the server ``192.168.1.1`` but we could have specified a domain name or an IPv6 address.
 
@@ -104,7 +104,7 @@ To add an entry to the cluster you need to specify it's :term:`alias` and wrap t
             bb.flip();
             
             r = wrpme.put(session, alias, bb, bb.limit());
-            if (r != wrp_me_error_t.error_ok)
+            if (r != wrpme_error_t.error_ok)
             {
                 // error
             }
@@ -119,7 +119,7 @@ Retrieving an entry requires knowing the alias and allocating a `ByteBuffer <htt
     int [] contentLength = { 0 };
     
     r = wrpme.get(session, alias, content, contentLength);
-    if (r != wrp_me_error_t.error_ok)
+    if (r != wrpme_error_t.error_ok)
     {
         // error
     }
@@ -152,11 +152,11 @@ When adding entries, this is generally not an issue as the caller knows the size
 Reference
 ^^^^^^^^^^^^^^^^^^
    
-.. js:class:: SWIGTYPE_p_wrp_me_session()
+.. js:class:: SWIGTYPE_p_wrpme_session()
 
     An opaque structure that wraps the session handle.
 
-.. js:class:: wrp_me_error_t()
+.. js:class:: wrpme_error_t()
 
     A wrapper for the error code used by most wrpme methods to indicate success status.
 
@@ -164,21 +164,21 @@ Reference
 
     A fully-featured low level class to add, update, get and delete entries from a wrpme :term:`cluster`
     
-.. js:function:: static SWIGTYPE_p_wrp_me_session wrpme.open()
+.. js:function:: static SWIGTYPE_p_wrpme_session wrpme.open()
 
     Creates a client instance for the TCP network protocol.
     
     :return: A valid handle when successful, 0 in case of failure. The handle must be closed with :js:func:`close`.
     
-.. js:function:: static wrp_me_error_t wrpme.close(SWIGTYPE_p_wrp_me_session handle)
+.. js:function:: static wrpme_error_t wrpme.close(SWIGTYPE_p_wrpme_session handle)
 
     Terminates all connections and releases all client-side allocated resources.
     
     :param handle: An initialized handle (see :js:func:`wrpme.open`)
 
-    :return: An error code of type :cpp:class:`wrp_me_error_t`
+    :return: An error code of type :cpp:class:`wrpme_error_t`
    
-.. js:function:: static wrp_me_error_t wrpme.connect(SWIGTYPE_p_wrp_me_session handle, String host, int port)
+.. js:function:: static wrpme_error_t wrpme.connect(SWIGTYPE_p_wrpme_session handle, String host, int port)
     
     Binds the client instance to a wrpme :term:`server` and connects to it.
 
@@ -186,11 +186,11 @@ Reference
     :param host: A string representing the IP address or the name of the server to which to connect
     :param port: The port number used by the server. The default wrpme port is 5909.
 
-    :return: An error code of type :cpp:class:`wrp_me_error_t`
+    :return: An error code of type :cpp:class:`wrpme_error_t`
   
-.. js:function:: wrp_me_error_t wrpme.put(SWIGTYPE_p_wrp_me_session handle, String alias, java.nio.ByteBuffer content, long content_length)
+.. js:function:: wrpme_error_t wrpme.put(SWIGTYPE_p_wrpme_session handle, String alias, java.nio.ByteBuffer content, long content_length)
   
-    Adds an :term:`entry` to the wrpme server. If the entry already exists the function will fail and will return ``wrp_me_e_alias_already_exists``.
+    Adds an :term:`entry` to the wrpme server. If the entry already exists the function will fail and will return ``wrpme_e_alias_already_exists``.
 
     The handle must be initialized (see :js:func:`wrpme.open`) and the connection established (see :js:func:`wrpme.connect`).
 
@@ -199,9 +199,9 @@ Reference
     :param content: A `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ holding the entry's content to be added to the server.
     :param content_length: The length of the entry's content, in bytes.
     
-    :return: An error code of type :cpp:class:`wrp_me_error_t`
+    :return: An error code of type :cpp:class:`wrpme_error_t`
     
-.. js:function:: static wrp_me_error_t wrpme.update(SWIGTYPE_p_wrp_me_session handle, String alias, java.nio.ByteBuffer content, long content_length) 
+.. js:function:: static wrpme_error_t wrpme.update(SWIGTYPE_p_wrpme_session handle, String alias, java.nio.ByteBuffer content, long content_length) 
 
     Updates an :term:`entry` of the wrpme server. If the entry already exists, the content will be update. If the entry does not exist, it will be created.
 
@@ -212,9 +212,9 @@ Reference
     :param content: A `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ holding the entry's content to be added to the server.
     :param content_length: The length of the entry's content, in bytes.
     
-    :return: An error code of type :cpp:class:`wrp_me_error_t`
+    :return: An error code of type :cpp:class:`wrpme_error_t`
     
-.. js:function:: static long wrpme.get_size(SWIGTYPE_p_wrp_me_session handle, String alias)
+.. js:function:: static long wrpme.get_size(SWIGTYPE_p_wrpme_session handle, String alias)
 
     Obtains the size of an entry's :term:`content`.
     
@@ -222,13 +222,13 @@ Reference
     :param alias: The :term:`alias` for which the size is queried
     :return: The size of the content, in bytes. 0 if the entry does not exist.
     
-.. js:function:: static wrp_me_error_t wrpme.get(SWIGTYPE_p_wrp_me_session handle, String alias, java.nio.ByteBuffer content, int[] actual_length) 
+.. js:function:: static wrpme_error_t wrpme.get(SWIGTYPE_p_wrpme_session handle, String alias, java.nio.ByteBuffer content, int[] actual_length) 
 
     Retrieves an :term:`entry`'s content from the wrpme server. The caller is responsible for allocating provided `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_. The allocation *must* be done with `allocateDirect <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html#allocateDirect%28int%29>`_.
     
-    If the entry does not exist, the function will fail and return ``wrp_me_e_alias_not_found``.
+    If the entry does not exist, the function will fail and return ``wrpme_e_alias_not_found``.
     
-    If the buffer is not large enough to hold the data, the function will fail and return ``wrp_me_e_buffer_too_small``. The actual_length parameter will nevertheless be updated so that the caller may resize its buffer and try again.
+    If the buffer is not large enough to hold the data, the function will fail and return ``wrpme_e_buffer_too_small``. The actual_length parameter will nevertheless be updated so that the caller may resize its buffer and try again.
     
     The handle must be initialized (see :js:func:`wrpme.open`) and the connection established (see :js:func:`wrpme.connect`).
 
@@ -237,18 +237,18 @@ Reference
     :param content: A `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ large enough to receive the content.
     :param actual_length: An array of int of at least size one. The first entry of the array will be updated with the size of the content, if the entry exists.
     
-    :return: An error code of type :cpp:class:`wrp_me_error_t`
+    :return: An error code of type :cpp:class:`wrpme_error_t`
 
-.. js:function:: static wrp_me_error_t wrpme.delete(SWIGTYPE_p_wrp_me_session handle, String alias) 
+.. js:function:: static wrpme_error_t wrpme.delete(SWIGTYPE_p_wrpme_session handle, String alias) 
 
-    Removes an :term:`entry` from the wrpme server. If the entry does not exist, the function will fail and return ``wrp_me_e_alias_not_found``.
+    Removes an :term:`entry` from the wrpme server. If the entry does not exist, the function will fail and return ``wrpme_e_alias_not_found``.
     
     The handle must be initialized (see :js:func:`open`) and the connection established (see :js:func:`wrpme.connect`).
 
     :param handle: An initialized handle (see :js:func:`open`)
     :param alias: A string representing the entry's alias to delete.
     
-    :return: An error code of type :c:type:`wrp_me_error_t`
+    :return: An error code of type :c:type:`wrpme_error_t`
     
   
 

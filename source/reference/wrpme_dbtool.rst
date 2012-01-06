@@ -11,7 +11,7 @@ Parameters reference
 
 Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent. Any parameter not in this list will be parsed by wrpmesh as a wrpme command. See :ref:``wrpmesh-interactive-mode`` for more information.
 
-.. program:: wrp_me_db_tool
+.. program:: wrpme_db_tool
 
 .. option:: -h, --help
 
@@ -20,7 +20,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         To display the online help, type: ::
 
-            wrp_me_db_tool --help
+            wrpme_db_tool --help
 
 .. option:: --database=<path>
     
@@ -35,11 +35,11 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Work on a database in the current directory::
             
-            wrp_me_db_tool --database=.
+            wrpme_db_tool --database=.
             
         Work on a database in the /var/wrpme/db directory::
         
-            wrp_me_db_tool --database=/var/wrpme/db directory
+            wrpme_db_tool --database=/var/wrpme/db directory
 
 .. option:: --analyze, -a
 
@@ -48,7 +48,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Analyze the database in the current directory::
         
-            wrp_me_db_tool --database=. --analyze
+            wrpme_db_tool --database=. --analyze
 
 .. option:: --dump, -d
 
@@ -57,7 +57,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Dump the database in the current directory::
         
-            wrp_me_db_tool --database=. --dump
+            wrpme_db_tool --database=. --dump
             
 .. option:: --backup=<path>, -b <path>
 
@@ -73,7 +73,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Backup the database in /var/wrpme/db to /var/wrpme/db/backup ::
         
-            wrp_me_db_tool --database=/var/wrpme/db --backup=/var/wrpme/db/backup 
+            wrpme_db_tool --database=/var/wrpme/db --backup=/var/wrpme/db/backup 
             
 .. option:: --repair, -r
 
@@ -83,7 +83,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Repairs the database in the current directory::
         
-            wrp_me_db_tool --database=. --repair
+            wrpme_db_tool --database=. --repair
             
             
             
