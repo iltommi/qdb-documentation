@@ -1,11 +1,9 @@
 WRPME
 -----
 
-Thank you for downloading and testing our beta software !
+Thank you for downloading and testing our software !
 
-wrpme is a high-performance, scalable, persistance and peer-to-peer key/value store.
-
-Run the daemon and you're good to go!
+wrpme is a high-performance, scalable, persistant and peer-to-peer key/value store.
 
 Up to date documentation can be found at this address: http://doc.wrpme.com/
 
