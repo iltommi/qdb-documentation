@@ -12,8 +12,15 @@ Usage scenarii
 ===============
 
  * Identifiying hardware limits in a wrpme cluster (network bandwidth, server processing power, etc.)
- * Determining the maximum throughput of your cluster 
+ * Determining the maximum throughput of your cluster
  * Tuning
+
+Supported protocols
+======================
+
+The tool can be used to benchmark a remote memcached server or a remote wrpme server. It can also create a virtual "local" server to test the local machine memory bandwidth.
+
+The local server can help identify memory-related bottlenecks or abnormal allocator behavior.
 
 Benchmark script
 ====================
@@ -77,7 +84,7 @@ Parameters reference
 
     Argument
         A string representing the address the server listens on. The string can be a host name or an IP address.
-        
+
     Default value
         127.0.0.1, the IPv4 localhost
 
@@ -85,20 +92,20 @@ Parameters reference
         Run the test on the server listening on 192.168.1.1::
 
             wrpme_comparison -a 192.168.1.1
-            
+
 .. option:: -p <port>, --port=<port>
 
     Specifies the port to which the benchmarking tool must connect.
-    
+
     Argument
-        An integer representing the address the server listens on.  
+        An integer representing the address the server listens on.
 
     Default value
         5909
 
     Example
         Run the test on the server listening on 31337::
-            
+
             wrpme_comparison -p 31337
 
 .. option:: --protocol=<protocol>
@@ -106,7 +113,7 @@ Parameters reference
     Specifies the protocol to use.
 
     Argument
-        A string representing the name of the protocol to use. Only wrpme and memcached are currently supported.
+        A string representing the name of the protocol to use. Supported values are local, memcached and wrpme.
 
     Default value
         wrpme
@@ -146,4 +153,3 @@ Parameters reference
 
             wrpmed --output-file=results.csv
 
-        
