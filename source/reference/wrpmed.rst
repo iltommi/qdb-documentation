@@ -1,126 +1,102 @@
 wrpme daemon
-****************
+************
 
-Introduction
-============
-
-The wrpme daemon is a data repository that handles local and distant requests from multiple clients. The data is stored in memory and persisted on disk.
-
-The wrpme daemon is highly scalable and can be distributed on several nodes to form a :term:`cluster` .
+The wrpme daemon is a highly scalable data repository that handles requests from multiple clients. 
+The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
-
-Usage
-=====
+The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol. All rights reserved.
 
 The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line.
-
 From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon stopping.
 
-Network configuration
+Configuration
 =====================
 
-Basic configuration
--------------------
+Cheat sheet
+-----------
 
-By default wrpmed listens on all available IPv4 interfaces and on the port 5909. This can be changed at runtime, see :ref:`wrpmed-parameters-reference`
+ ===================================== ============================ ==============
+                Option                               Usage               Default
+ ===================================== ============================ ==============
+ :option:`-h`                          display help
+ :option:`-a`                          address to listen to         127.0.0.1:5909
+ :option:`-s`                          max client sessions          200
+ :option:`-r`                          persistence directory        ./db
+ :option:`--peer`                      one peer to form a hive
+ :option:`--flush-interval`            persistence flush            10
+ :option:`--transient`                 disable persistence
+ :option:`--accept-threads`            thread accepting connections
+ :option:`--io-threads`                thread handling requests
+ :option:`--limiter-max-entries-count` max entries in cache 10000
+ :option:`--limiter-max-bytes`         max bytes in cache           1 GiB
+ :option:`-o`                          log on console
+ :option:`-l`                          log on given file
+ :option:`--log-syslog`                log on syslog
+ :option:`--log-level`                 change log level             info
+ :option:`--log-flush-interval`        change log flush             3
+ ===================================== ============================ ==============
 
-Distribution
-------------
+Network distribution
+--------------------
 
 wrpmed distribution is peer-to-peer. This means:
 
- * Adding a server does not require any modification on the client and can be done without service interruption (hot plug'n'play)
- * The unavailability of one :term:`server` does not compromise the whole :term:`ring`
- * The memory load is distributed amongst all instances within a ring without any user intervention
+    * The unavailability of one :term:`server` does not compromise the whole :term:`hive`
+    * The memory load is distributed amongst all instances within a hive without any user intervention
 
-Each server within one ring needs:
+Each server within one hive needs:
 
- * An unique address on which to listen (you cannot use the *any* address)
- * At least one node within the ring to contact
-
-Assuming you have two machines (192.168.1.1 and 192.168.1.2), to build a ring of two instances, you would do the following:
-
-On the machine 192.168.1.1::
-
-    ./wrpmed -a 192.168.1.1:5909
-
-On a machine 192.168.1.2::
-
-    ./wrpmed -a 192.168.1.2:5909 --peer=192.168.1.2:5909
+    * An unique address on which to listen (you cannot use the *any* address) (:option:`-a`)
+    * At least one node within the hive to contact (:option:`--peer`)
 
 .. note::
 
     It's counter-productive to run several instances on the same :term:`node`.
-    wrpmed is hyper-scalar and will be able to use all the memory and processors of your server.
+    wrpmed is hyper-scalar and will be able to use all the memory and processor cores of your server.
+    The same remark applies for virtual machines: running wrpme multiple times in multiple virtual machines on a single physical server will not increase the performances.
+
+The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests, 
+depending on the actual hardware configuration of your server.
+You can however set these values manually using the :option:`--accept-threads` and :option:`io-threads` options respectively.
 
 Logging
-=======
-
-The daemon can log to the console, to a file or to the syslog (on Unix).
-
-By default, all logging is disabled. To enable logging, see :ref:`wrpmed-parameters-reference`
-
-Eviction
-========
-
-The daemon is able to handle more data than the amount of physical memory available on a single node. To do so, it must evict entries no longer acceded from memory.
-
-Thresholds
-----------
-
-Eviction happens when the entries count or the size of data in memory exceeds a configurable threshold. The eviction algorithm will elect an entry, and this entry will be removed from memory.
-
-If the entry is acceded in a future time, it will be loaded from disk and made available.
-
-Two thresholds currently exist:
-
- #. A maximum entries count
- #. A maximum memory usage. This memory usage includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may exceed the specified maximum memory usage.
-
-Eviction occurs when any of the thresholds is reached. For example if you have a maximum number of entries set to 10 and a maximum size set to 1 MiB, eviction will happen when you add the eleventh entry or if you exceed 1 MiB of memory usage for all the entries.
-
-It can be configured with runtime parameters, see :ref:`wrpmed-parameters-reference`
-
-Algorithm
----------
-
-The wrpme daemon uses a proprietary *fast monte-carlo* eviction heuristic. It is currently not configurable.
-
-An entry is elected for eviction based on an unspecified number of parameters which change over the lifetime of the cluster.
-
-Persistence
-===========
-
-Foreword
---------
-
-As with most mechanisms within the wrpme daemon, persistence is asynchronous. That means that when an user request ends, the data may or may not be persisted on the disk. It will be persisted when it's optimal from a performance point of view no latter than the configurable flush interval.
-
-Data is however guaranteed to be consistent at all time and the persistence layers possesses recovery mechanisms in case of hardware or software fault.
-
-You need to keep in mind that very few engines offer the guarantee that data is physically persisted on disk upon request, and those who do, do it at extremely high performance costs.
-
-Purpose
 -------
 
-What is the purpose of persistence for an in-memory data repository?
+By default, all logging is disabled.
+The daemon can log to the console (:option:`-o`), to a file (:option:`-l <path>`) or to the syslog (:option:`--log-syslog`) on Unix.
+There are six different log levels: `detailed`, `debug`, `info`, `warning`, `error` and `panic`. 
+You can change the log level (:option:`--log-level`), it defaults to `info`.
+You can also change the log flush interval (:option:`--log-flush-interval=<seconds>`), which defaults to three seconds.
 
- #. Recoverability. In case of hardware or software failure, the engine is able to resume its state without any user intervention.
- #. Performance. Less frequently acceded entries are removed from the RAM and left on the disk, reserving RAM usage for the most frequently acceded entries.
- #. Practicably. The server can manage more data than the available physical memory would permit.
+Persistence
+-----------
 
-Location
---------
+Data is persisted on disk, by default in a `db` directory under the current working directory. 
+You can change this to any directory you want using the :option:`-r` option.
+Data persistence on disk is asynchronous. 
+This means that when an user requests ends, the data may or may not be persisted on the disk yet.
+Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
+You can change the flush interval (:option:`--flush-interval`), which defaults to 10 seconds.
+You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure-memory repository.
 
-By default data is persisted in the directory from which the daemon is run. The data location can be changed with the :option:`-r` parameter.
+.. note::
+    
+    If you disable the persistence, any entry evicted is lost for good. 
+    This is the expected behaviour for a pure in-memory cache, but be careful with your eviction thresholds.
 
-Disabling persistence
----------------------
+Cache
+-----
 
-Persistence can be disabled in specifying a zero flush interval as such: :option:`--flush-interval`
+In order to achieve high performances, the daemon keeps most of the data in cache.
+However, the physical memory available for a node may not suffice to maintain all the data in memory.
+Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
+Use :option:`limiter-max-entries-count` (defaults to 10000) and :option:`limiter-max-bytes` (defaults to 1 GiB) options to configure these thresholds.
 
-In this mode the wrpme daemon is said to be :term:`transient`. Evicted entries are not persisted but lost. A transient daemon is potentially faster and may use less memory.
+.. note:: 
+    The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
+
+The wrpme daemon uses a proprietary *fast monte-carlo* eviction heuristic. It is not configurable.
 
 Operating limits
 ================
@@ -128,59 +104,47 @@ Operating limits
 Theoretical limits
 ------------------
 
-Entry size
+**Entry size**
     An entry cannot be larger than the amount of virtual memory available on a single node. This ranges from several megabytes to several gigabytes depending on the amount of physical memory available on the system. It is recommended to keep entries' size well below the amount of available physical memory.
 
-Memory per instance
+**Memory per instance**
     Each instance is limited by the amount of memory the operating system is able to handle
 
-Key size
-    A key cannot be larger than 4 KiB
+**Key size**
+    As it is the case for entries, a key cannot be larger than the amount of virtual memory available on a single node.
 
-Number of nodes in a grid
+**Number of nodes in a grid**
     The maximum number of nodes is 8 EiB
 
-Number of entries on a single grid
+**Number of entries on a single grid**
     The maximum number of entries is 8 EiB
 
-Total amount of data
+**Total amount of data**
     The total amount of data a single grid may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes)
 
 Practical limits
 ----------------
 
-Entry size
-^^^^^^^^^^
+**Entry size**
+    Very small entries (below 512 bytes) do not offer a very good throughput because the network overhead is larger than the payload.
+    Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme cluster "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
+    If you have a lot of RAM (several gigabytes per node) do not be afraid to add large entries to a wrpme cluster.
 
-Very small entries (below 512 bytes) do not offer a very good throughput because the network overhead is larger than the payload.
+**Entry count**
+    There is no practical limits to the number of entries you can add to a wrpme instance. 
+    For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.
 
-Large entries (entries larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme cluster "as is". It is generally recommended to slice large entries in smaller entries and handle reassembly in the client program.
-
-If you have a lot of RAM (several gigabytes per node) do not be afraid to add large entries to a wrpme cluster! Every wrpme build is tested with entries up to 200 MiB.
-
-Entry count
------------
-
-There is no practical limits to the number of entries you can add to a wrpme instance. For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.
-
-Simultaneous clients
---------------------
-
-Our tests routinely demonstrate that a single instance can serve more than a thousands clients simultaneously. The actual limit is the network bandwidth, not the server.
-
-Performances
-============
-
-This part of the documentation is currently being redacted. We apologize for the inconvenience.
+**Simultaneous clients**
+    A single instance can serve more thousands of clients simultaneously. 
+    The actual limit is the network bandwidth, not the server.
 
 .. _wrpmed-parameters-reference:
 
 Parameters reference
 ====================
 
-Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
-
-.. program:: wrpmed
+Parameters can be supplied in any order and are prefixed with ``--``. 
+The arguments format is parameter dependent.
 
 .. option:: -h, --help
 
@@ -196,7 +160,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Specifies the address and port on which the server will listen.
 
     Argument
-        A string representing one address the server listens on and a port. The string can be a host name or an IP address.
+        A string representing one address the server listens on and a port. The address string can be a host name or an IP address.
 
     Default value
         127.0.0.1:5909, the IPv4 localhost and the port 5909
@@ -220,12 +184,13 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         200
 
     Example
-        Allow 2,000 simultaneous session
+        Allow 2,000 simultaneous session::
 
             wrpmed --sessions=2000
 
 .. note::
-    The sessions count determines the number of simultaneous clients the server may handle at any given time. Increasing the value increases the memory load.
+    The sessions count determines the number of simultaneous clients the server may handle at any given time. 
+    Increasing the value increases the memory load.
     Values below 50 are ignored.
 
 .. option:: -r <path>, --root=<path>
@@ -236,7 +201,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         A string representing a full path to the directory where data will be persisted.
 
     Default value
-        The "db" subdirectory relative to the launch path.
+        The "db" subdirectory relative to the current working directory.
 
     Example
         Persist data in /var/wrpme/db ::
@@ -245,16 +210,16 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --peer=<address>:<port>
 
-    The address and port of a peer to which to connect within the ring. It can be any server belonging to the ring.
+    The address and port of a peer to which to connect within the hive. It can be any server belonging to the hive.
 
     Argument
-        The address and port of a machines where a wrpme daemon is running.
+        The address and port of a machines where a wrpme daemon is running. The address string can be a host name or an IP address.
 
     Default value
         None
 
     Example
-        Join a ring where the machine 192.168.1.1 listening on the port 5909 is already connected::
+        Join a hive where the machine 192.168.1.1 listening on the port 5909 is already connected::
 
             wrpmed --peer=192.168.1.1:5909
 
@@ -370,6 +335,10 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             wrpmed --log-file=/var/log/wrpmed.log
 
+.. option:: --log-syslog
+
+    *UNIX only*, activates logging to syslog.
+
 .. option:: --log-level=<value>
 
     Specifies the log verbosity.
@@ -377,18 +346,18 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Argument
         A string representing the amount of logging required. Must be one of:
 
-        * detailed (most output)
-        * debug
-        * info
-        * warning
-        * error
-        * panic (least output)
+        * `detailed` (most output)
+        * `debug`
+        * `info`
+        * `warning`
+        * `error`
+        * `panic` (least output)
 
     Default value
-        info
+        `info`
 
     Example
-        Request a debug level logging: ::
+        Request a `debug` level logging::
 
             wrpmed --log-level=debug
 
@@ -403,7 +372,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         3
 
     Example
-        Flush the log every minute: ::
+        Flush the log every minute::
 
             wrpmed --log-flush-interval=60
 

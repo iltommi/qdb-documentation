@@ -18,7 +18,7 @@ All needed libraries are included in the package.
 Header file
 --------------
 
-All functions, typedefs and enums are made available in the ``include/wrpme/client/wrpme_api.h`` header file.
+All functions, typedefs and enums are made available in the ``include/wrpme/client.h`` header file.
 
 Examples
 --------------
@@ -28,7 +28,9 @@ A couple of examples are available in the ``examples/c`` directory.
 Connecting to a cluster
 --------------------------
 
-The first thing to do is to initialize a handle. A handle is an opaque structure that represents a client side instance. It is initialized by the function :c:func:`wrpme_open`: ::
+The first thing to do is to initialize a handle. 
+A handle is an opaque structure that represents a client side instance. 
+It is initialized by the function :c:func:`wrpme_open`: ::
 
     wrpme_handle_t handle = 0;
     wrpme_error_t r = wrpme_open(&handle, wrpme_proto_tcp);

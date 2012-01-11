@@ -6,12 +6,8 @@
 Turorials
 =================================
 
-Contents:
-
 .. toctree::
    :maxdepth: 2
    
    tut_quick
    one_ring
-
-

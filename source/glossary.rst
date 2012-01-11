@@ -19,6 +19,9 @@ Here is a list of definitions of words in the context of this documentation.
         
     grid
         A set of nodes.
+    
+    hive
+        A set of peer-to-peer wrpme nodes configured to work as a single distributed repository.
         
     node
         An active computer attached to a network.
