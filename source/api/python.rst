@@ -40,7 +40,7 @@ Reference
 
     .. py:method:: put(key, obj)
 
-        Put an object in the wrpme hive.
+        Put an object in the wrpme hive. Raises if the object already exists.
 
         :param key: any unique item used to identify the object
         :type key: any picklable object
@@ -51,13 +51,13 @@ Reference
 
     .. py:method:: update(key, obj)
 
-        Update an object in the wrpme hive.
+        Update an object in the wrpme hive. 
+        Create the record if it does not exist at given key.
 
         :param key: any unique item used to identify the object.
         :type key: any picklable object
         :param obj: the new object to be put in the hive, replacing the old value.
         :type obj: any picklable object
-        :raise: :py:exc:`wrpme.AliasNotFound` if the **key** does not exist in the hive.
         :raise: :py:exc:`pickle.PicklingError` if either the **key** or the **obj** can not be pickled.
 
     .. py:method:: get(key)
@@ -98,6 +98,7 @@ Reference
     .. py:method:: update(key, obj)
 
         Update a string in the wrpme hive.
+        Create the record if it does not already exist at given key.        
 
         :param string key: any unique string used to identify the string.
         :param string obj: the new string to be put in the hive, replacing the old value.

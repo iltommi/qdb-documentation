@@ -7,10 +7,7 @@ cl = wrpme.Client('dataserver.mydomain', 3001)
 # We want to silently create or update the object
 # depending on the existence of the key in the hive.
 def save(key, obj):
-    try:
-        cl.put(key, obj)
-    except wrpme.AliasAlreadyExists:
-        cl.update(key, obj)
+    cl.update(key, obj)
 
 # We want to simply return None if the key is not found in the hive.
 def load(key):

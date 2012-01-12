@@ -17,7 +17,7 @@ def upload(f):
     current_slice = f.read(SIZE_LIMIT)
     count = 0
     while len(current_slice) > 0:
-        cl.put(key.hex + str(count), current_slice)
+        cl.update(key.hex + str(count), current_slice)
         current_slice = f.read(SIZE_LIMIT)
         count += 1
     return key
