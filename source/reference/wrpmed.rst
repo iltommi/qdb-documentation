@@ -1,17 +1,17 @@
 wrpme daemon
 ************
 
-The wrpme daemon is a highly scalable data repository that handles requests from multiple clients. 
+The wrpme daemon is a highly scalable data :term:`repository` that handles requests from multiple clients. 
 The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
-
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
-The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol. All rights reserved.
-
+The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
 The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line.
 From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon stopping.
 
 Configuration
 =====================
+
+.. program:: wrpmed
 
 Cheat sheet
 -----------
@@ -43,12 +43,12 @@ Network distribution
 wrpmed distribution is peer-to-peer. This means:
 
     * The unavailability of one :term:`server` does not compromise the whole :term:`hive`
-    * The memory load is distributed amongst all instances within a hive without any user intervention
+    * The memory load is distributed amongst all instances within a :term:`hive` without any user intervention
 
 Each server within one hive needs:
 
     * An unique address on which to listen (you cannot use the *any* address) (:option:`-a`)
-    * At least one node within the hive to contact (:option:`--peer`)
+    * At least one :term:`node` within the hive to contact (:option:`--peer`)
 
 .. note::
 
@@ -64,21 +64,20 @@ Logging
 -------
 
 By default, all logging is disabled.
-The daemon can log to the console (:option:`-o`), to a file (:option:`-l <path>`) or to the syslog (:option:`--log-syslog`) on Unix.
+The daemon can log to the console (:option:`-o`), to a file (:option:`-l`) or to the syslog (:option:`--log-syslog`) on Unix.
 There are six different log levels: `detailed`, `debug`, `info`, `warning`, `error` and `panic`. 
 You can change the log level (:option:`--log-level`), it defaults to `info`.
-You can also change the log flush interval (:option:`--log-flush-interval=<seconds>`), which defaults to three seconds.
+You can also change the log flush interval (:option:`--log-flush-interval`), which defaults to three seconds.
 
 Persistence
 -----------
 
 Data is persisted on disk, by default in a `db` directory under the current working directory. 
 You can change this to any directory you want using the :option:`-r` option.
-Data persistence on disk is asynchronous. 
-This means that when an user requests ends, the data may or may not be persisted on the disk yet.
+Data persistence on disk is asynchronous: when an user requests ends, the data may or may not be persisted on the disk yet.
 Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
 You can change the flush interval (:option:`--flush-interval`), which defaults to 10 seconds.
-You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure-memory repository.
+You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure in-memory :term:`repository`.
 
 .. note::
     
@@ -91,7 +90,7 @@ Cache
 In order to achieve high performances, the daemon keeps most of the data in cache.
 However, the physical memory available for a node may not suffice to maintain all the data in memory.
 Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
-Use :option:`limiter-max-entries-count` (defaults to 10000) and :option:`limiter-max-bytes` (defaults to 1 GiB) options to configure these thresholds.
+Use :option:`--limiter-max-entries-count` (defaults to 10000) and :option:`--limiter-max-bytes` (defaults to 1 GiB) options to configure these thresholds.
 
 .. note:: 
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
@@ -105,13 +104,13 @@ Theoretical limits
 ------------------
 
 **Entry size**
-    An entry cannot be larger than the amount of virtual memory available on a single node. This ranges from several megabytes to several gigabytes depending on the amount of physical memory available on the system. It is recommended to keep entries' size well below the amount of available physical memory.
+    An :term:`entry` cannot be larger than the amount of virtual memory available on a single :term:`node`. This ranges from several megabytes to several gigabytes depending on the amount of physical memory available on the system. It is recommended to keep entries size well below the amount of available physical memory.
 
 **Memory per instance**
     Each instance is limited by the amount of memory the operating system is able to handle
 
 **Key size**
-    As it is the case for entries, a key cannot be larger than the amount of virtual memory available on a single node.
+    As it is the case for entries, a key cannot be larger than the amount of virtual memory available on a single :term:`node`.
 
 **Number of nodes in a grid**
     The maximum number of nodes is 8 EiB
@@ -120,25 +119,25 @@ Theoretical limits
     The maximum number of entries is 8 EiB
 
 **Number of entries per node**
-    The maximum number of entries per node depends on the :option:`limiter-max-bytes` parameter.
+    The maximum number of entries per node depends on the :option:`--limiter-max-bytes` parameter.
     Each entry uses around 320 bytes of memory
 
 **Total amount of data**
-    The total amount of data a single grid may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes)
+    The total amount of data a single :term:`grid` may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes)
 
 Practical limits
 ----------------
 
 **Entry size**
     Very small entries (below 512 bytes) do not offer a very good throughput because the network overhead is larger than the payload.
-    Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme cluster "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
-    If you have a lot of RAM (several gigabytes per node) do not be afraid to add large entries to a wrpme cluster.
+    Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme :term:`cluster` "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
+    If you have a lot of RAM (several gigabytes per :term:`node`) do not be afraid to add large entries to a wrpme :term:`cluster`.
     For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.
 
 **Simultaneous clients**
     A single instance can serve thousands of clients simultaneously.
     The actual limit is the network bandwidth, not the server.
-    You can set the :option:`-s` to a higher number to handle more simultaneous clients per node.
+    You can set the :option:`-s` to a higher number to handle more simultaneous clients per :term:`node`.
     Also you should make sure the clients connects to the nodes of the hive in a load-balanced fashion.
 
 .. _wrpmed-parameters-reference:
@@ -160,10 +159,10 @@ The arguments format is parameter dependent.
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
-    Specifies the address and port on which the server will listen.
+    Specifies the address and port on which the :term:`server` will listen.
 
     Argument
-        A string representing one address the server listens on and a port. The address string can be a host name or an IP address.
+        A string representing one address the :term:`server` listens on and a port. The address string can be a host name or an IP address.
 
     Default value
         127.0.0.1:5909, the IPv4 localhost and the port 5909
@@ -213,7 +212,7 @@ The arguments format is parameter dependent.
 
 .. option:: --peer=<address>:<port>
 
-    The address and port of a peer to which to connect within the hive. It can be any server belonging to the hive.
+    The address and port of a peer to which to connect within the :term:`hive`. It can be any :term:`server` belonging to the :term:`hive`.
 
     Argument
         The address and port of a machines where a wrpme daemon is running. The address string can be a host name or an IP address.
@@ -222,7 +221,7 @@ The arguments format is parameter dependent.
         None
 
     Example
-        Join a hive where the machine 192.168.1.1 listening on the port 5909 is already connected::
+        Join a :term:`hive` where the machine 192.168.1.1 listening on the port 5909 is already connected::
 
             wrpmed --peer=192.168.1.1:5909
 
@@ -247,7 +246,7 @@ The arguments format is parameter dependent.
 
 .. option:: --transient
 
-    Disable persistence. Equivalent to --flush-interval=0. Evicted data is lost when wrpmed is transient.
+    Disable persistence. Equivalent to --flush-interval=0. Evicted data is lost when wrpmed is :term:`transient`.
 
 .. option:: --accept-threads=<count>
 
@@ -295,14 +294,13 @@ The arguments format is parameter dependent.
             wrpmed --limiter-max-entries=100
 
 .. note::
-    Setting this value too low may cause the daemon to spend more time evicting entries than processing requests.
+    Setting this value too low may cause the :term:`server` to spend more time evicting entries than processing requests.
 
 .. option:: --limiter-max-bytes=<value>
 
    The maximum usable memory by entries, in bytes. Entries will be evicted as needed to enforce this limit. The alias length as well
    as the content size are both accounted to measure the actual size of entries in memory.
-
-   The daemon may use more than the specified amount of memory because of internal data structures and temporary copies.
+   The :term:`server` may use more than the specified amount of memory because of internal data structures and temporary copies.
 
    Argument
         An integer representing the maximum size, in bytes, of the entries in memory.
