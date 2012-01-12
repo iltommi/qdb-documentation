@@ -119,6 +119,10 @@ Theoretical limits
 **Number of entries on a single grid**
     The maximum number of entries is 8 EiB
 
+**Number of entries per node**
+    The maximum number of entries per node depends on the :option:`limiter-max-bytes` parameter.
+    Each entry uses around 320 bytes of memory
+
 **Total amount of data**
     The total amount of data a single grid may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes)
 
@@ -129,14 +133,13 @@ Practical limits
     Very small entries (below 512 bytes) do not offer a very good throughput because the network overhead is larger than the payload.
     Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme cluster "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
     If you have a lot of RAM (several gigabytes per node) do not be afraid to add large entries to a wrpme cluster.
-
-**Entry count**
-    There is no practical limits to the number of entries you can add to a wrpme instance. 
     For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.
 
 **Simultaneous clients**
-    A single instance can serve more thousands of clients simultaneously. 
+    A single instance can serve thousands of clients simultaneously.
     The actual limit is the network bandwidth, not the server.
+    You can set the :option:`-s` to a higher number to handle more simultaneous clients per node.
+    Also you should make sure the clients connects to the nodes of the hive in a load-balanced fashion.
 
 .. _wrpmed-parameters-reference:
 

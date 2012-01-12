@@ -124,7 +124,8 @@ Reference
 
 .. py:exception:: System 
 
-    A system error occured. Can typically be raised if the disks are full.
+    A system error occured. 
+    Can typically be raised if the number of entries on each node is too large.
 
 .. py:exception:: Internal 
 
