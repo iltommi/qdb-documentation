@@ -150,6 +150,10 @@ Reference
 
     The operation timed out. Can be raised in case of network overload or server failure.
 
+.. py:exception:: InvalidInput
+    
+    The key or the obj is invalide. Raised when the key or the obj is empty.
+
 .. py:exception:: ConnectionRefused
 
     The connection has been refused by the remote host.
