@@ -1,16 +1,95 @@
 
 Python
-===============
+======
 
 .. highlight:: python
 
-Requirements
-------------------------
+**Python 2.5 or higher** is required.
+The `wrpme` module includes two client implementation. 
+The :py:class:`wrpme.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `wrpme` hive.
+If you want to directly put your data inside the hive using strings or binary buffers, you can use the :py:class:`wrpme.RawClient` class.
+In this case, no transformation is done between the data you provide and the `wrpme` hive, which can improve performances.
 
-Python 2.4 or higher is required.
+Examples
+--------
+
+There is a simple sample using the :py:class:`wrpme.Client`.
+A simple module providing save() and load() methods::
+    
+    import wrpme
+
+    # Assuming we have a wrpme server running on dataserver.mydomain:3001
+    # Note this will throw an exception at import time if the wrpme hive is not available.
+    cl = wrpme.Client('dataserver.mydomain', 3001)
+
+    # We want to silently create or update the object
+    # depending on the existence of the id in the hive.
+    def save(id, obj):
+        try:
+            cl.put(id, obj)
+        except wrpme.AliasAlreadyExists:
+            cl.update(id, obj)
+    
+    # We want to simply return None if the id is not found in the hive.
+    def load(id):
+        try:
+            return cl.get(id)
+        except wrpme.AliasNotFound:
+            return None
+
+This other example uses the :py:class:`wrpme.RawClient` for direct binary access.
+This module use a wrpme hive as a document store, providing upload() and download() methods, 
+without imposing limits to the file size::
+
+    import uuid
+    import wrpme
+
+    # If the document is bigger than 10 MiB, we slice it
+    SIZE_LIMIT = 10 * 1024 * 1024
+    
+    # Note given what we are doing here, the server should be configure with
+    # a limiter-max-bytes of 1 GiB at least for proper caching
+    cl = wrpme.RawClient('docserver.mydomain', 3002)
+
+    # We expect a readable file-like object with size() and read(size) methods
+    def upload(f):
+        id = uuid.uuid4()
+        
+        # If we need to slice, suffix the entry id and 
+        # push the slices count, then push the slices themselves. 
+        # Note in this case we do not push the actual id we return
+        # so we can distinguish sliced files from the others.
+        if f.size() > SIZE_LIMIT:
+            div = divmod(f.size(), SIZE_LIMIT)
+            slices_count = div[0] + 1 if div[1] else div[0]
+
+            # wrpme will ensure a good distribution
+            # of the slices even if their names are close.
+            cl.put(id.hex + '-slice_count', str(slices_count)
+            for i in range(slices_count):
+                cl.put(id.hex + str(i), f.read(SIZE_LIMIT))
+        
+        # else just put the file directly.
+        else:
+            cl.put(id.hex, f.read(SIZE_LIMIT))
+            
+        return id
+
+    # We expect an UUID and a writable file-like object with write() method
+    def download(id, f):
+        # We optimze for little files, 
+        # try to fetch them directly with no overhead
+        try:
+            f.write(cl.get(id.hex))
+        
+        # If this fails, maybe we have slices
+        except wrpme.AliasNotFound:
+            slices_count = int(cl.get(id.hex + '-slice_count'))
+            for i in range(slices_count):
+                f.write(cl.get(id.hex) + str(i))
 
 Reference
------------------------
+---------
 
 .. py:module:: wrpme
 
