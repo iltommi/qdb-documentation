@@ -1,7 +1,7 @@
 Change log
 ***************
 
-v0.6.0 - 01/13/2011
+v0.6.0 - 01/16/2011
 -------------------
 
     * Python API: Brand new Python API!
@@ -38,13 +38,13 @@ v0.5.0 - 08/01/2011
     * Peer-to-peer network distribution
     * Web bridge with JSON/JSONP interfaces
     * Java API
-    * New persistence layer based on `LevelDB <http://code.google.com/p/leveldb/>`_ 
+    * New persistence layer based on `LevelDB <http://code.google.com/p/leveldb/>`_
     * Lightweight HTML 5 monitoring console
     * Reduced overall memory load
     * Improved performance by 10-20 %
     * Removed legacy code and API
     * `Documentation <http://doc.wrpme.com/>`_!
-    * The wrpme shell now handles binary input and output    
+    * The wrpme shell now handles binary input and output
     * Upgraded Linux and FreeBSD compilers to gcc 4.6.1
     * Upgraded to Boost 1.47.0
 
@@ -97,7 +97,7 @@ v0.3.1 - 02/22/2011
     * Shell client
     * New API
     * May contain up to 1% of awesomeness
-    
+
 v0.2.0 - 11/11/2010
 -------------------
 

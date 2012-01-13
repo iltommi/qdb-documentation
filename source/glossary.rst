@@ -7,22 +7,22 @@ Here is a list of definitions of words in the context of this documentation.
 
     alias
         An unique string of bytes identifying an entry within a given cluster.
-        
+
     cluster
         Another word for :term:`hive`.
-        
+
     content
         Arbitrary data not interpreted by wrpme.
-        
-    entry        
+
+    entry
         An association between a string named :term:`alias` and arbitrary data named :term:`content`. An entry can also be understood as a pair (:term:`alias`, :term:`content`).
-        
+
     grid
         A set of :term:`nodes <node>`.
-    
+
     hive
         A set of peer-to-peer wrpme nodes configured to work as a single distributed :term:`repository`.
-        
+
     node
         An active computer attached to a network.
 
@@ -34,7 +34,7 @@ Here is a list of definitions of words in the context of this documentation.
 
     stable
         A :term:`hive` is stable if all its elements have a valid and appropriate predecessor and successor.
-        
+
     stabilization
         The process that makes a :term:`hive` :term:`stable`.
 

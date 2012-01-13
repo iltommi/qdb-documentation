@@ -10,22 +10,22 @@ Yes.
 Which platform does wrpme support?
 =====================================
 
-FreeBSD, Linux and Windows. 
+FreeBSD, Linux and Windows.
 
 What is the best platform to use wrpme?
 ========================================
 
-All platforms are equally supported. 
+All platforms are equally supported.
 
 Does wrpme support multi-core and/or multi-processor computers?
 =================================================================
 
-Yes, wrpme has been *designed for* such architectures. 
+Yes, wrpme has been *designed for* such architectures.
 
 How is data transmitted on the network?
 =========================================
 
-wrpme uses a proprietary low-overhead binary protocol with variable multi-level compression. 
+wrpme uses a proprietary low-overhead binary protocol with variable multi-level compression.
 
 How fast is wrpme?
 =====================
@@ -37,7 +37,7 @@ In terms of bandwidth, the same computer easily saturates a gigabit network band
 Is wrpme faster than... ?
 ==========================
 
-We are working on fair and reproducible benchmarks. 
+We are working on fair and reproducible benchmarks.
 
 Our preliminarily results show that wrpme can be an order of magnitude faster than other engines (open source or commercial), especially as entries size grow.
 
@@ -75,7 +75,7 @@ Is wrpme free of charge?
 
 wrpme is free of charge for non-commercial purposes.
 
-For example if you run a personal blog and wish to speed it up with wrpme, you do not need to acquire a license. 
+For example if you run a personal blog and wish to speed it up with wrpme, you do not need to acquire a license.
 If your personal blog generates revenues, you will need to acquire a license.
 
 Non-profit organizations are not *required* to acquire a license, but may have to, should they need support.
@@ -141,7 +141,7 @@ Yes it does! Here is the list as of August 2011:
 * `Intel Threading Building Blocks <http://threadingbuildingblocks.org/>`_ (commercial license)
 * `Snappy <http://code.google.com/p/snappy/>`_
 
-If you find the list to be inaccurate or discover a license violation, mail to `bug@wrp.me <bug@wrp.me>`_.  
+If you find the list to be inaccurate or discover a license violation, mail to `bug@wrp.me <bug@wrp.me>`_.
 
 Where are you located?
 =========================
