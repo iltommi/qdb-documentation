@@ -10,16 +10,81 @@ The :py:class:`wrpme.Client` class uses the standard :py:mod:`pickle` module to 
 If you want to directly put your data inside the hive using strings or binary buffers, you can use the :py:class:`wrpme.RawClient` class.
 In this case, no transformation is done between the data you provide and the `wrpme` hive, which can improve performances.
 
+Installation
+------------
+
+As the Python API relies on our wrpme C API to function, you need to download the package that matches your operating system. For example, you cannot
+download the FreeBSD version and compile it on Linux.
+
+All required libraries and extensions are included in the Python package.
+
+Windows
+```````
+
+Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to `download the installer <http://www.wrpme.com/downloads.html>`_ and
+follow the instructions.
+
+Keep in mind that you need to download the version matching your Python architecture, not the OS. 
+For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit wrpme package.
+
+If you have a different Python version or should you wish to recompile the extension, `download the source package <http://www.wrpme.com/downloads.html>`_. 
+
+To compile it, you need the appropriate Visual Studio version (e.g. Visual Studio 2008 for Python 2.7). Unpack the archive and in the directory run::
+
+    python setup.py build
+    python setup.py install
+
+Keep in mind the install phase may require administrative privileges.
+
+Linux and FreeBSD
+`````````````````
+
+`Download the package <http://www.wrpme.com/downloads.html>`_ for your operating system (Linux or FreeBSD) and make sure you have both a C compiler and the Python development headers installed. 
+
+Unpack the archive and in the directory run::
+
+    python setup.py build
+    sudo python setup.py install
+
+or::
+
+    python setup.py build
+    su
+    python setup.py install
+    exit
+
+Testing the installation
+````````````````````````
+
+Once the installation is complete, you must be able to import wrpme without any error message::
+
+    Python 2.6.6 (r266:84292, Apr  1 2011, 09:06:17)
+    [GCC 4.2.1 20070719  [FreeBSD]] on freebsd8
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import wrpme
+    >>>
+
+.. attention::
+    If you built the extension from the sources, do not run the above command from the sources directory as it will attempt to load the local source code instead of the properly configured extension.
+
+If you have a server up and running, you must be able to add and access entries::
+
+    >>> w = wrpme.Client("127.0.0.1")
+    >>> w.put("entry", "content")
+    >>> print w.get("entry")
+    content
+    >>>
+
 Examples
 --------
 
-There is a simple sample using the :py:class:`wrpme.Client`.
+Is here a simple sample using the :py:class:`wrpme.Client`.
 A simple module providing save() and load() methods:
 
 .. literalinclude:: example_client.py
 
 This other example uses the :py:class:`wrpme.RawClient` for direct binary access.
-This module use a wrpme hive as a document store, providing upload() and download() methods, without imposing limits to the file size:
+This module uses a wrpme hive as a document store, providing upload() and download() methods, without imposing limits to the file size:
 
 .. literalinclude:: example_raw_client.py
 
