@@ -1,7 +1,7 @@
 import wrpme
 
 # Assuming we have a wrpme server running on dataserver.mydomain:3001
-# Note this will throw an exception at import time if the wrpme hive is not available.
+# Note this will throw an exception if the wrpme hive is not available.
 cl = wrpme.Client('dataserver.mydomain', 3001)
 
 # We want to silently create or update the object

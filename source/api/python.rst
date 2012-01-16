@@ -4,11 +4,21 @@ Python
 
 .. highlight:: python
 
-**Python 2.5 or higher** is required.
-The `wrpme` module includes two client implementation. 
+Introduction
+--------------
+
+The `wrpme` module includes two client implementation.
+
 The :py:class:`wrpme.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `wrpme` hive.
-If you want to directly put your data inside the hive using strings or binary buffers, you can use the :py:class:`wrpme.RawClient` class.
-In this case, no transformation is done between the data you provide and the `wrpme` hive, which can improve performances.
+
+If you want to manipulate your data directly using strings or binary buffers, you should rather use the :py:class:`wrpme.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `wrpme` hive. This may improve performance but most of all enables you to work with the data with different languages.
+
+The API comes with a BSD license and can be freely used in your clients.
+
+Requirements
+------------------------
+
+Python 2.5 or higher is required.
 
 Installation
 ------------
@@ -22,12 +32,12 @@ Windows
 ```````
 
 Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to `download the installer <http://www.wrpme.com/downloads.html>`_ and
-follow the instructions.
+follow the on-screen instructions.
 
-Keep in mind that you need to download the version matching your Python architecture, not the OS. 
+Keep in mind that you need to download the version matching your Python architecture, not the OS.
 For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit wrpme package.
 
-If you have a different Python version or should you wish to recompile the extension, `download the source package <http://www.wrpme.com/downloads.html>`_. 
+If you have a different Python version or if you want to recompile the extension, `download the source package <http://www.wrpme.com/downloads.html>`_.
 
 To compile it, you need the appropriate Visual Studio version (e.g. Visual Studio 2008 for Python 2.7). Unpack the archive and in the directory run::
 
@@ -39,7 +49,7 @@ Keep in mind the install phase may require administrative privileges.
 Linux and FreeBSD
 `````````````````
 
-`Download the package <http://www.wrpme.com/downloads.html>`_ for your operating system (Linux or FreeBSD) and make sure you have both a C compiler and the Python development headers installed. 
+`Download the package <http://www.wrpme.com/downloads.html>`_ for your operating system (Linux or FreeBSD) and make sure you have both a C compiler and the Python development headers installed.
 
 Unpack the archive and in the directory run::
 
@@ -58,8 +68,8 @@ Testing the installation
 
 Once the installation is complete, you must be able to import wrpme without any error message::
 
-    Python 2.6.6 (r266:84292, Apr  1 2011, 09:06:17)
-    [GCC 4.2.1 20070719  [FreeBSD]] on freebsd8
+    Python 2.7.2 (default, Dec  5 2011, 15:17:56)
+    [GCC 4.2.1 20070831 patched [FreeBSD]] on freebsd9
     Type "help", "copyright", "credits" or "license" for more information.
     >>> import wrpme
     >>>
@@ -78,13 +88,11 @@ If you have a server up and running, you must be able to add and access entries:
 Examples
 --------
 
-Is here a simple sample using the :py:class:`wrpme.Client`.
-A simple module providing save() and load() methods:
+Is here a first sample using the :py:class:`wrpme.Client`. This module provides save() and load() methods:
 
 .. literalinclude:: example_client.py
 
-This other example uses the :py:class:`wrpme.RawClient` for direct binary access.
-This module uses a wrpme hive as a document store, providing upload() and download() methods, without imposing limits to the file size:
+The second example uses the :py:class:`wrpme.RawClient` for direct binary access. This module uses a wrpme hive as a document store, providing upload() and download() methods, with not limit on the file size:
 
 .. literalinclude:: example_raw_client.py
 
@@ -97,7 +105,7 @@ Reference
 
     The classic interface to a wrpme hive.
     It connects to the given hostname at instanciation, disconnects automatically at destruction.
-    The connection is dropped and restarted at need depending of the use frequency.
+    The connection is dropped and restarted as needed depending on usage.
     The client serializes the keys and the data using the standard :py:mod:`pickle` module.
 
     :param string hostname: either the DNS name, the IPv4 address or the IPv6 address.
@@ -116,7 +124,7 @@ Reference
 
     .. py:method:: update(key, obj)
 
-        Update an object in the wrpme hive. 
+        Update an object in the wrpme hive.
         Create the record if it does not exist at given key.
 
         :param key: any unique item used to identify the object.
@@ -145,7 +153,7 @@ Reference
         :raise: :py:exc:`pickle.PicklingError` if either the **key** can not be pickled.
 
 .. py:class:: RawClient(hostname, port)
-        
+
     The raw interface to a wrpme hive.
     It has the same methods as the :py:class:`wrpme.Client`, except all **key** and **obj** parameters must be strings.
 
@@ -163,7 +171,7 @@ Reference
     .. py:method:: update(key, obj)
 
         Update a string in the wrpme hive.
-        Create the record if it does not already exist at given key.        
+        Create the record if it does not already exist at given key.
 
         :param string key: any unique string used to identify the string.
         :param string obj: the new string to be put in the hive, replacing the old value.
@@ -188,37 +196,37 @@ Reference
 
     Base exception for the wrpme module.
 
-.. py:exception:: System 
+.. py:exception:: System
 
-    A system error occured. 
+    A system error occured.
     Can typically be raised if the number of entries on each node is too large.
 
-.. py:exception:: Internal 
+.. py:exception:: Internal
 
     An internal error occured in wrpme. Please report it to the wrpme support teams.
 
-.. py:exception:: NoMemory 
+.. py:exception:: NoMemory
 
     Out of memory condition. You can try to set a lower limiter-max-bytes to avoid this.
 
-.. py:exception:: HostNotFound 
+.. py:exception:: HostNotFound
 
     The host name could not be resolved.
 
-.. py:exception:: AliasNotFound 
+.. py:exception:: AliasNotFound
 
     The entry does not exist. Raised when you try to get() an id and wrpme does not find it.
 
-.. py:exception:: AliasAlreadyExists 
+.. py:exception:: AliasAlreadyExists
 
     The entry already exists. Raised when you try to put() data on an id wrpme already has in its repository.
 
-.. py:exception:: Timeout 
+.. py:exception:: Timeout
 
     The operation timed out. Can be raised in case of network overload or server failure.
 
 .. py:exception:: InvalidInput
-    
+
     The key or the obj is invalide. Raised when the key or the obj is empty.
 
 .. py:exception:: ConnectionRefused

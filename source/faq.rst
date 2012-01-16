@@ -32,7 +32,7 @@ How fast is wrpme?
 
 In terms of requests per second, a Core i7 desktop computer can serve more than 1,000,000 (one million) requests per second.
 
-In terms of bandwidth, the same computer easily saturates a gigabit network bandwidth. Your maximum bandwidth will depend on the size and the type of your data and your network capability.
+In terms of bandwidth, the same computer easily saturates a ten gigabit network. Your maximum bandwidth will depend on the size and the type of your data and your network capability.
 
 Is wrpme faster than... ?
 ==========================

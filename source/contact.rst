@@ -12,6 +12,9 @@ Address
     
 Website
     `http://www.bureau14.fr/ <http://www.bureau14.fr/>`_.
+
+Google+
+	`https://plus.google.com/u/0/b/108272249160387172129/ <https://plus.google.com/u/0/b/108272249160387172129/>`_.
     
 Twitter
     `http://www.twitter.com/bureau14 <http://www.twitter.com/bureau14>`_.
@@ -21,7 +24,7 @@ wrpme on the web
 
 The official wrpme website is `http://www.wrpme.com/ <http://www.wrpme.com/>`_.
 
-You can also follow us on Twitter (`http://www.twitter.com/wrpme <http://www.twitter.com/wrpme>`_) and Facebook (`http://www.facebook.com/wrpme <http://www.facebook.com/wrpme>`_).
+You can also follow us on Facebook (`http://www.facebook.com/wrpme <http://www.facebook.com/wrpme>`_), Google+ (`https://plus.google.com/u/0/b/118097784098045720220/ <https://plus.google.com/u/0/b/118097784098045720220/>`_) and Twitter (`http://www.twitter.com/wrpme <http://www.twitter.com/wrpme>`_).
 
 Contacting a salesperson
 ------------------------

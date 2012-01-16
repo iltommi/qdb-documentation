@@ -13,7 +13,7 @@ def upload(f):
     key = uuid.uuid4()
 
     # If we need to slice, suffix the entry key by the slice number
-    # An empty slice marks the end of the file. 
+    # An empty slice marks the end of the file.
     current_slice = f.read(SIZE_LIMIT)
     count = 0
     while len(current_slice) > 0:
@@ -29,7 +29,7 @@ def download(key, f):
         while True:
             f.write(cl.get(key.hex + str(count)))
             count += 1
-    
+
     # If count is >0, we had at least one slice, so it is ok
     # If not, we have really not found the file.
     except wrpme.AliasNotFound:

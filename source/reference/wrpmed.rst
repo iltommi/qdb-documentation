@@ -1,12 +1,12 @@
 wrpme daemon
 ************
 
-The wrpme daemon is a highly scalable data :term:`repository` that handles requests from multiple clients. 
-The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
+The wrpme daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
+
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
 The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
-The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line.
-From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon stopping.
+
+The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon stopping.
 
 Configuration
 =====================
@@ -16,18 +16,19 @@ Configuration
 Cheat sheet
 -----------
 
- ===================================== ============================ ==============
+ ===================================== ============================ ===================
                 Option                               Usage               Default
- ===================================== ============================ ==============
+ ===================================== ============================ ===================
  :option:`-h`                          display help
- :option:`-a`                          address to listen to         127.0.0.1:5909
+ :option:`-a`                          address to listen on         127.0.0.1:5909
  :option:`-s`                          max client sessions          200
  :option:`-r`                          persistence directory        ./db
  :option:`--peer`                      one peer to form a hive
  :option:`--flush-interval`            persistence flush            10
  :option:`--transient`                 disable persistence
- :option:`--accept-threads`            thread accepting connections
- :option:`--io-threads`                thread handling requests
+ :option:`--accept-threads`            accepter threads count       platform dependent
+ :option:`--server-threads`            server threads count         platform dependent
+ :option:`--client-threads`            client threads count         platform dependent
  :option:`--limiter-max-entries-count` max entries in cache 10000
  :option:`--limiter-max-bytes`         max bytes in cache           1 GiB
  :option:`-o`                          log on console
@@ -35,7 +36,7 @@ Cheat sheet
  :option:`--log-syslog`                log on syslog
  :option:`--log-level`                 change log level             info
  :option:`--log-flush-interval`        change log flush             3
- ===================================== ============================ ==============
+ ===================================== ============================ ===================
 
 Network distribution
 --------------------
@@ -43,7 +44,7 @@ Network distribution
 wrpmed distribution is peer-to-peer. This means:
 
     * The unavailability of one :term:`server` does not compromise the whole :term:`hive`
-    * The memory load is distributed amongst all instances within a :term:`hive` without any user intervention
+    * The memory load is automatically distributed amongst all instances within a :term:`hive` 
 
 Each server within one hive needs:
 
@@ -53,12 +54,12 @@ Each server within one hive needs:
 .. note::
 
     It's counter-productive to run several instances on the same :term:`node`.
-    wrpmed is hyper-scalar and will be able to use all the memory and processor cores of your server.
+    wrpmed is hyper-scalar and will be able to use all the memory and processors of your server.
     The same remark applies for virtual machines: running wrpme multiple times in multiple virtual machines on a single physical server will not increase the performances.
 
 The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests, 
 depending on the actual hardware configuration of your server.
-You can however set these values manually using the :option:`--accept-threads` and :option:`io-threads` options respectively.
+You can however set these values manually using the :option:`--accept-threads`, :option:`--server-threads` and :option:`--client-threads` options respectively.
 
 Logging
 -------
@@ -107,16 +108,16 @@ Theoretical limits
     An :term:`entry` cannot be larger than the amount of virtual memory available on a single :term:`node`. This ranges from several megabytes to several gigabytes depending on the amount of physical memory available on the system. It is recommended to keep entries size well below the amount of available physical memory.
 
 **Memory per instance**
-    Each instance is limited by the amount of memory the operating system is able to handle
+    Each instance is limited by the amount of memory the operating system is able to manage
 
 **Key size**
     As it is the case for entries, a key cannot be larger than the amount of virtual memory available on a single :term:`node`.
 
 **Number of nodes in a grid**
-    The maximum number of nodes is 8 EiB
+    The maximum number of nodes is :math:`2^{63}` (9,223,372,036,854,775,808)
 
 **Number of entries on a single grid**
-    The maximum number of entries is 8 EiB
+    The maximum number of entries is :math:`2^{63}` (9,223,372,036,854,775,808)
 
 **Number of entries per node**
     The maximum number of entries per node depends on the :option:`--limiter-max-bytes` parameter.
@@ -129,7 +130,7 @@ Practical limits
 ----------------
 
 **Entry size**
-    Very small entries (below 512 bytes) do not offer a very good throughput because the network overhead is larger than the payload.
+    Very small entries (below a hundred bytes) do not offer a very good throughput because the network overhead is larger than the payload.
     Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme :term:`cluster` "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
     If you have a lot of RAM (several gigabytes per :term:`node`) do not be afraid to add large entries to a wrpme :term:`cluster`.
     For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.

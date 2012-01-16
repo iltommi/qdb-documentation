@@ -6,7 +6,7 @@ wrpme benchmark tool
 Introduction
 ============
 
-The wrpme benchmark tool enables you to evaluate the performance of your wrpme cluster. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
+The wrpme benchmark tool enables you to evaluate the performance of your wrpme hive. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
 
 Usage scenarii
 ===============
@@ -27,7 +27,7 @@ Benchmark script
 
 Each benchmark is a script that runs operation is the given order.
 
-For example to put a one kilobyte entry once and retrieving it ten (10) times, the script is::
+For example to put a one (1) kilobyte entry once and retrieve it ten (10) times, the script is::
 
     tests
     {
@@ -38,7 +38,7 @@ For example to put a one kilobyte entry once and retrieving it ten (10) times, t
         }
     }
 
-The tests are run in the given order. If you want to add another test, for example, if you want to put a one byte entry and retrieving it one thousand (1,000) times, the script becomes::
+The tests are run in the given order. If you want to add another test, for example, if you want to put a one (1) byte entry and retrieving it one thousand (1,000) times, the script becomes::
 
     tests
     {

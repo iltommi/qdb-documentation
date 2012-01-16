@@ -6,13 +6,12 @@ wrpme web server
 Introduction
 ============
 
-The wrpme web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a wrpme :term:`cluster`.
+The wrpme web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a wrpme :term:`hive`.
 
 Launching the web server
 ========================
 
-The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. It does not require specific privileges to run (i.e. you don't need to run the server from an administrator account). 
-This can be configured, see :ref:`wrpme_httpd-parameters-reference`
+The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`wrpme_httpd-parameters-reference`
 
 In other words, for most cases, the command line will look as: ::
 
@@ -22,12 +21,14 @@ or on Windows: ::
 
     wrpme_httpd
 
+The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account). 
+
 Interfacing with the cluster
 ==============================
 
 To function properly, the web server must:
 
- #. Run on the same :term:`node` than a wrpme :term:`server` from the :term:`cluster` you wish to interface to. It is of course possible to run one web server per node but this is not necessary.
+ #. Run on the same :term:`node` than a wrpme :term:`server` from the :term:`hive` you wish to interface to. It is of course possible to run one web server per node but this is not necessary.
  #. Run with privileges greater or equal than the wrpme server. The most practical solution is to run as the same user.
  #. If the daemon does not listen on the default port, you must specify the daemon's port with the daemon-port option.
 
