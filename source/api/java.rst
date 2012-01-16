@@ -49,8 +49,56 @@ Using the high-level API
 
 The high-level API enables you to add any Java object to a wrpme cluster, it takes care of the serialization of said object for you.
 
+This API take cares of loading ad hoc native librairies, no matter which OS you are running (FreeBSD, Linux, Win32 or Win64).
+
+At last but not least this API is thread-safe unlike the Low-Level API.
+
 The API documentation is available in Javadoc format `here <http://doc.wrpme.com/javaapi>`_. This documentation is also included in the Java API archive. You will find it in ``doc`` directory.
 
+Configuring the Wrpme instance
+^^^^^^^^^^^^^^^^^^
+
+You have to use a Map<String,String> to store the Wrpme instance configuration parameters: ::
+
+    Map<String,String> config = new HashMap<String,String>();
+    config.put("name", "test");
+    config.put("host", "127.0.0.1");
+    config.put("port", "5909");
+
+Once the parameters are valid, you can create the corresponding Wrpme instance using the WrpmeManager singleton: ::
+
+    WrpmeManager.getInstance().createCache(config);
+
+Your Wrpme instance is now ready to use.
+
+Using the Wrpme instance
+^^^^^^^^^^^^^^^^^^
+
+First you have to get your configurated Wrpme instance by using its name: ::
+
+    Wrpme cache = WrpmeManager.getInstance().getCache("test");
+
+Then you can use you instance as you like: ::
+
+    // You can put a simple String Object...
+    cache.put("obj1", "My First value !!!");
+	// ... or any Java Object you want (even a POJO)
+	cache.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
+    
+	// You can get your putted values :
+	String value = cache.get("obj1");
+    System.out.println("Result: " + value);
+	
+	// You can delete values :
+    cache.delete("obj2");
+	
+	// And update stored values :
+	cache.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
+	
+At last you have to close the Wrpme instance once finished: ::
+
+    WrpmeManager.getInstance().getCache("test").close();
+	
 Using the low-level API
 ----------------------------
 
