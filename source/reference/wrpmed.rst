@@ -65,10 +65,12 @@ Logging
 -------
 
 By default, all logging is disabled.
+
 The daemon can log to the console (:option:`-o`), to a file (:option:`-l`) or to the syslog (:option:`--log-syslog`) on Unix.
-There are six different log levels: `detailed`, `debug`, `info`, `warning`, `error` and `panic`. 
-You can change the log level (:option:`--log-level`), it defaults to `info`.
-You can also change the log flush interval (:option:`--log-flush-interval`), which defaults to three seconds.
+
+There are six different log levels: `detailed`, `debug`, `info`, `warning`, `error` and `panic`. You can change the log level (:option:`--log-level`), it defaults to `info`.
+
+You can also change the log flush interval (:option:`--log-flush-interval`), which defaults to three (3) seconds.
 
 Persistence
 -----------
@@ -77,7 +79,7 @@ Data is persisted on disk, by default in a `db` directory under the current work
 You can change this to any directory you want using the :option:`-r` option.
 Data persistence on disk is asynchronous: when an user requests ends, the data may or may not be persisted on the disk yet.
 Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
-You can change the flush interval (:option:`--flush-interval`), which defaults to 10 seconds.
+You can change the flush interval (:option:`--flush-interval`), which defaults to one (1) second.
 You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure in-memory :term:`repository`.
 
 .. note::
@@ -130,7 +132,7 @@ Practical limits
 ----------------
 
 **Entry size**
-    Very small entries (below a hundred bytes) do not offer a very good throughput because the network overhead is larger than the payload.
+    Very small entries (below a hundred bytes) do not offer a very good throughput because the network overhead is larger than the payload. This is a limitation of TCP.
     Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme :term:`cluster` "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
     If you have a lot of RAM (several gigabytes per :term:`node`) do not be afraid to add large entries to a wrpme :term:`cluster`.
     For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.
