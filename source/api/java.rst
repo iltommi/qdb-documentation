@@ -1,24 +1,24 @@
 
 Java
-===================
+====
 
 
 .. highlight:: java
 
 Introduction
---------------
+------------
 
 The wrpme Java API uses JNI to bring the power and speed of wrpme to the Java world without compromising performances.
 
 It fully integrates itself into the Java environment thanks to a wrapper (also called 'high-level API'). The wrapper itself comes with a BSD license and can be freely used in your clients. The wrapper uses a low-level API that is also directly useable although with severe restrictions.
 
 Requirements
-------------------------
+------------
 
 Java 1.6 or later is required.
 
 Installation
----------------
+------------
 
 The Java API package is downloadable from the `wrpme web site <http://www.wrpme.com/downloads.html>`_.
 
@@ -27,7 +27,7 @@ The archive contains a JAR named ``wrpme-java-api-master.jar`` that contains all
 You will also find two examples in the ``examples`` directory, one for the high-level API, one for the low-level API.
 
 Package
--------------------
+-------
 
 The API resides in the ``com.b14.wrpme`` package.
 
@@ -42,23 +42,23 @@ Then you run the example::
 
     java -classpath /tmp/wrpme-java-api-master.jar:. WrpmeExample
 
-The example requires an wrpme server listening on ``127.0.0.1`` (IPV4 localhost) port 5909. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/wrpmed` to configure a wrpme :term:`hive`.
+The example requires a wrpme server listening on ``127.0.0.1`` (IPV4 localhost) port 5909. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/wrpmed` to configure a wrpme :term:`hive`.
 
 Using the high-level API
-------------------------------
+------------------------
 
 The high-level API enables you to add any Java object to a wrpme cluster, it takes care of the serialization of said object for you.
 
 This API take cares of loading ad hoc native librairies, no matter which OS you are running (FreeBSD, Linux, Win32 or Win64).
 
-At last but not least this API is thread-safe unlike the Low-Level API.
+Last but not least this API is thread-safe unlike the low-level API.
 
-The API documentation is available in Javadoc format `here <http://doc.wrpme.com/javaapi>`_. This documentation is also included in the Java API archive. You will find it in ``doc`` directory.
+The API documentation is available in Javadoc format `here <http://doc.wrpme.com/javaapi>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
 
-Configuring the Wrpme instance
-^^^^^^^^^^^^^^^^^^
+Configuring the wrpme instance
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You have to use a Map<String,String> to store the Wrpme instance configuration parameters: ::
+You have to use a Map<String,String> to store the arpme instance configuration parameters::
 
     Map<String,String> config = new HashMap<String,String>();
     config.put("name", "test");
@@ -69,36 +69,36 @@ Once the parameters are valid, you can create the corresponding Wrpme instance u
 
     WrpmeManager.getInstance().createCache(config);
 
-Your Wrpme instance is now ready to use.
+Your wrpme instance is now ready to use.
 
 Using the Wrpme instance
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-First you have to get your configurated Wrpme instance by using its name: ::
+First you have to get your configurated wrpme instance by using its name::
 
     Wrpme cache = WrpmeManager.getInstance().getCache("test");
 
-Then you can use you instance as you like: ::
+Then you can use your instance as you like::
 
     // You can put a simple String Object...
     cache.put("obj1", "My First value !!!");
 	// ... or any Java Object you want (even a POJO)
 	cache.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
-    
-	// You can get your putted values :
+
+	// You can get your values:
 	String value = cache.get("obj1");
     System.out.println("Result: " + value);
-	
-	// You can delete values :
+
+	// You can delete values:
     cache.delete("obj2");
-	
-	// And update stored values :
+
+	// And update stored values:
 	cache.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
-	
-At last you have to close the Wrpme instance once finished: ::
+
+When you're finished with your instance, close it::
 
     WrpmeManager.getInstance().getCache("test").close();
-	
+
 Using the low-level API
 ----------------------------
 
