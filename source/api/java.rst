@@ -58,14 +58,14 @@ The API documentation is available in Javadoc format `here <http://doc.wrpme.com
 Configuring the wrpme instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-You have to use a Map<String,String> to store the arpme instance configuration parameters::
+You have to use a Map<String,String> to store the wrpme instance configuration parameters::
 
     Map<String,String> config = new HashMap<String,String>();
     config.put("name", "test");
     config.put("host", "127.0.0.1");
     config.put("port", "5909");
 
-Once the parameters are valid, you can create the corresponding Wrpme instance using the WrpmeManager singleton: ::
+Once the parameters are valid, you can create the corresponding wrpme instance using the WrpmeManager singleton: ::
 
     WrpmeManager.getInstance().createCache(config);
 
