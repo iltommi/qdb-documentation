@@ -266,20 +266,35 @@ The arguments format is parameter dependent.
 
             wrpmed --accept-threads=2
 
-.. option:: --io-threads=<count>
+.. option:: --server-threads=<count>
 
-    The number of threads allocated to asynchronous I/O.
+    The number of threads allocated to server I/O.
 
     Argument
-        An integer representing the number of threads to use for asynchronous I/O.
+        An integer representing the number of threads to use for server I/O.
 
     Default value
         Platform dependent.
 
     Example
-        Use four threads for asynchronous I/O processing::
+        Use four threads for server I/O processing::
 
-            wrpmed --io-threads=4
+            wrpmed --server-threads=4
+
+.. option:: --client-threads=<count>
+
+    The number of threads allocated to client I/O.
+
+    Argument
+        An integer representing the number of threads to use for client I/O.
+
+    Default value
+        Platform dependent.
+
+    Example
+        Use four threads for client I/O processing::
+
+            wrpmed --client-threads=4
 
 .. option:: --limiter-max-entries-count=<count>
 
