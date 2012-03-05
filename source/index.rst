@@ -6,8 +6,6 @@
 wrpme documentation
 =================================
 
-Contents:
-
 .. toctree::
    :numbered:
    :maxdepth: 2
@@ -21,11 +19,3 @@ Contents:
    license
    contact
    glossary
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-

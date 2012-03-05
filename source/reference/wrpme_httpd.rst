@@ -6,14 +6,12 @@ wrpme web server
 Introduction
 ============
 
-The wrpme web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a wrpme :term:`cluster`.
-
-This feature is under heavy development and should be considered as experimental.
+The wrpme web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a wrpme :term:`hive`.
 
 Launching the web server
 ========================
 
-The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. It does not require specific privileges to run (i.e. you don't need to run the server from an administrator account). This can be configured, see :ref:`wrpme_httpd-parameters-reference`
+The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`wrpme_httpd-parameters-reference`
 
 In other words, for most cases, the command line will look as: ::
 
@@ -23,12 +21,14 @@ or on Windows: ::
 
     wrpme_httpd
 
+The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account). 
+
 Interfacing with the cluster
 ==============================
 
 To function properly, the web server must:
 
- #. Run on the same :term:`node` than a wrpme :term:`server` from the :term:`cluster` you wish to interface to. It is of course possible to run one web server per node but this is not necessary.
+ #. Run on the same :term:`node` than a wrpme :term:`server` from the :term:`hive` you wish to interface to. It is of course possible to run one web server per node but this is not necessary.
  #. Run with privileges greater or equal than the wrpme server. The most practical solution is to run as the same user.
  #. If the daemon does not listen on the default port, you must specify the daemon's port with the daemon-port option.
 
@@ -164,25 +164,22 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 
 
+.. highlight:: html
+
 .. _wrpme_httpd-url-reference:
 
 URL reference
 =============
 
-get
----
+.. describe:: get
 
-Purpose
     Obtain an :term:`entry` from the cluster.
 
-Parameter
-    * alias: specifies the :term:`alias` of the entry to obtain.
-    * (optional) callback: specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
+    :param alias: specifies the :term:`alias` of the entry to obtain.
+    :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
+    :returns: A JSON or JSONP structure containing the alias and :term:`content` (in Base64) of the entry. If the entry cannot be found, the content string will be empty.
 
-Returns
-    A JSON or JSONP structure containing the alias and :term:`content` (in Base64) of the entry. If the entry cannot be found, the content string will be empty.
-
-    Schema ::
+    *Schema*::
 
         {
             "name":"get",
@@ -203,27 +200,22 @@ Returns
             }
         }
 
+    *Example*:
+        Get the entry with the alias ``MyData`` from the server ``myserver.org listening`` on the port 8080::
+            
+            http://myserver.org:8080/get?alias=MyData
 
-Example
-    Get the entry with the alias "MyData" from the server myserver.org listening on the port 8080: ::
-        http://myserver.org:8080/get?alias=MyData
+    .. note::
+        Requesting large entries (i.e., larger than 10 MiB) through the web bridge is not recommended.
 
-Note
-    Requesting large entries (i.e., larger than 10 MiB) through the web bridge is not recommended.
+.. describe:: global_status
 
-global_status
--------------
-
-Purpose
     Displays global statistics.
 
-Parameter
-    * (optional) callback: specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
+    :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
+    :returns: A JSON or JSONP structure with up-to-date statistics.
 
-Returns
-    A JSON or JSONP structure with up-to-date statistics.
-
-    Schema ::
+    *Schema*::
 
         {
             "name":"global_status",
@@ -343,21 +335,17 @@ Returns
             }
         }
 
-Example
-    Regular JSON output from the server myserver.org listening on the port 8080: ::
-        http://myserver.org:8080/global_status
+    *Example*:
+        Regular JSON output from the server myserver.org listening on the port 8080::
+            
+            http://myserver.org:8080/global_status
 
-    JSONP output with a callback named "MyCallback" from the server myserver.org listening on the port 8080: ::
-        http://myserver.org:8080/global_status?callback=MyCallback
+        JSONP output with a callback named "MyCallback" from the server myserver.org listening on the port 8080::
+            
+            http://myserver.org:8080/global_status?callback=MyCallback
 
-view
-----
+.. describe:: view
 
-Purpose
     Interactive node status display.
 
-Parameter
-    None.
-
-Returns
-    HTML 5 and javascript code to be rendered in a capable browser that represent the current node status.
+    :returns: HTML 5 and javascript code to be rendered in a capable browser that represent the current node status.

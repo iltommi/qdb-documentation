@@ -1,154 +1,238 @@
 
 Python
-===============
+======
 
 .. highlight:: python
+
+Introduction
+--------------
+
+The `wrpme` module includes two client implementation.
+
+The :py:class:`wrpme.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `wrpme` hive.
+
+If you want to manipulate your data directly using strings or binary buffers, you should rather use the :py:class:`wrpme.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `wrpme` hive. This may improve performance but most of all enables you to work with the data with different languages.
+
+The API comes with a BSD license and can be freely used in your clients.
 
 Requirements
 ------------------------
 
-Python 2.4 or higher is required.
+Python 2.5 or higher is required.
+
+Installation
+------------
+
+As the Python API relies on our wrpme C API to function, you need to download the package that matches your operating system. For example, you cannot
+download the FreeBSD version and compile it on Linux.
+
+All required libraries and extensions are included in the Python package.
+
+Windows
+```````
+
+Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to `download the installer <http://www.wrpme.com/downloads.html>`_ and
+follow the on-screen instructions.
+
+Keep in mind that you need to download the version matching your Python architecture, not the OS.
+For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit wrpme package.
+
+If you have a different Python version or if you want to recompile the extension, `download the source package <http://www.wrpme.com/downloads.html>`_.
+
+To compile it, you need the appropriate Visual Studio version (e.g. Visual Studio 2008 for Python 2.7). Unpack the archive and in the directory run::
+
+    python setup.py build
+    python setup.py install
+
+Keep in mind the install phase may require administrative privileges.
+
+Linux and FreeBSD
+`````````````````
+
+`Download the package <http://www.wrpme.com/downloads.html>`_ for your operating system (Linux or FreeBSD) and make sure you have both a C compiler and the Python development headers installed.
+
+Unpack the archive and in the directory run::
+
+    python setup.py build
+    sudo python setup.py install
+
+or::
+
+    python setup.py build
+    su
+    python setup.py install
+    exit
+
+Testing the installation
+````````````````````````
+
+Once the installation is complete, you must be able to import wrpme without any error message::
+
+    Python 2.7.2 (default, Dec  5 2011, 15:17:56)
+    [GCC 4.2.1 20070831 patched [FreeBSD]] on freebsd9
+    Type "help", "copyright", "credits" or "license" for more information.
+    >>> import wrpme
+    >>>
+
+.. attention::
+    If you built the extension from the sources, do not run the above command from the sources directory as it will attempt to load the local source code instead of the properly configured extension.
+
+If you have a server up and running, you must be able to add and access entries::
+
+    >>> w = wrpme.Client("127.0.0.1")
+    >>> w.put("entry", "content")
+    >>> print w.get("entry")
+    content
+    >>>
+
+Examples
+--------
+
+Is here a first sample using the :py:class:`wrpme.Client`. This module provides save() and load() methods:
+
+.. literalinclude:: example_client.py
+
+The second example uses the :py:class:`wrpme.RawClient` for direct binary access. This module uses a wrpme hive as a document store, providing upload() and download() methods, with not limit on the file size:
+
+.. literalinclude:: example_raw_client.py
 
 Reference
------------------------
+---------
 
 .. py:module:: wrpme
 
-.. py:data:: error_ok
+.. py:class:: Client(hostname, port)
 
-    Indicates that the function returned successfully.
+    The classic interface to a wrpme hive.
+    It connects to the given hostname at instanciation, disconnects automatically at destruction.
+    The connection is dropped and restarted as needed depending on usage.
+    The client serializes the keys and the data using the standard :py:mod:`pickle` module.
 
-.. py:data:: error_system 
+    :param string hostname: either the DNS name, the IPv4 address or the IPv6 address.
+    :param integer port: the port, defaults to 5909.
+
+    .. py:method:: put(key, obj)
+
+        Put an object in the wrpme hive. Raises if the object already exists.
+
+        :param key: any unique item used to identify the object
+        :type key: any picklable object
+        :param obj: the object to be put in the hive.
+        :type obj: any picklable object
+        :raise: :py:exc:`wrpme.AliasAlreadyExists` if the **key** already exists in the hive.
+        :raise: :py:exc:`pickle.PicklingError` if either the **key** or the **obj** can not be pickled.
+
+    .. py:method:: update(key, obj)
+
+        Update an object in the wrpme hive.
+        Create the record if it does not exist at given key.
+
+        :param key: any unique item used to identify the object.
+        :type key: any picklable object
+        :param obj: the new object to be put in the hive, replacing the old value.
+        :type obj: any picklable object
+        :raise: :py:exc:`pickle.PicklingError` if either the **key** or the **obj** can not be pickled.
+
+    .. py:method:: get(key)
+
+        Retrieve an object from the wrpme hive.
+
+        :param key: the unique item used to identify the object.
+        :type key: any picklable object
+        :return: the unpickled object matching the **key**
+        :raise: :py:exc:`wrpme.AliasNotFound` if the **key** does not exist in the hive.
+        :raise: :py:exc:`pickle.PicklingError` if either the **key** can not be pickled.
+
+    .. py:method:: remove(key)
+
+        Remove an object from the wrpme hive.
+
+        :param key: the unique item used to identify the object.
+        :type key: any picklable object
+        :raise: :py:exc:`wrpme.AliasNotFound` if the **key** does not exist in the hive.
+        :raise: :py:exc:`pickle.PicklingError` if either the **key** can not be pickled.
+
+.. py:class:: RawClient(hostname, port)
+
+    The raw interface to a wrpme hive.
+    It has the same methods as the :py:class:`wrpme.Client`, except all **key** and **obj** parameters must be strings.
+
+    :param string hostname: string giving the hostname. Either the DNS name, the IPv4 address or the IPv6 address.
+    :param integer port: port, defaults to 5909.
+
+    .. py:method:: put(key, obj)
+
+        Put a string in the wrpme hive.
+
+        :param string key: any unique string used to identify the string
+        :param string obj: the string to be put in the hive.
+        :raise: :py:exc:`wrpme.AliasAlreadyExists` if the **key** already exists in the hive.
+
+    .. py:method:: update(key, obj)
+
+        Update a string in the wrpme hive.
+        Create the record if it does not already exist at given key.
+
+        :param string key: any unique string used to identify the string.
+        :param string obj: the new string to be put in the hive, replacing the old value.
+        :raise: :py:exc:`wrpme.AliasNotFound` if the **key** does not exist in the hive.
+
+    .. py:method:: get(key)
+
+        Retrieve a string from the wrpme hive.
+
+        :param string key: the unique string used to identify the string.
+        :return: the string matching the **key**
+        :raise: :py:exc:`wrpme.AliasNotFound` if the **key** does not exist in the hive.
+
+    .. py:method:: remove(key)
+
+        Remove a string from the wrpme hive.
+
+        :param string key: the unique string used to identify the string.
+        :raise: :py:exc:`wrpme.AliasNotFound` if the **key** does not exist in the hive.
+
+.. py:exception:: WrpmeException
+
+    Base exception for the wrpme module.
+
+.. py:exception:: System
 
     A system error occured.
+    Can typically be raised if the number of entries on each node is too large.
 
-.. py:data:: error_internal 
+.. py:exception:: Internal
 
-    An internal error occured.
+    An internal error occured in wrpme. Please report it to the wrpme support teams.
 
-.. py:data:: error_no_memory 
+.. py:exception:: NoMemory
 
-    Out of memory condition.
+    Out of memory condition. You can try to set a lower limiter-max-bytes to avoid this.
 
-.. py:data:: error_invalid_protocol 
-
-    The requested protocol is invalid.
-
-.. py:data:: error_host_not_found 
+.. py:exception:: HostNotFound
 
     The host name could not be resolved.
 
-.. py:data:: error_invalid_option
+.. py:exception:: AliasNotFound
 
-    The supplied option is invalid.
+    The entry does not exist. Raised when you try to get() an id and wrpme does not find it.
 
-.. py:data:: error_alias_too_long
+.. py:exception:: AliasAlreadyExists
 
-    The alias name is too long.
+    The entry already exists. Raised when you try to put() data on an id wrpme already has in its repository.
 
-.. py:data:: error_alias_not_found 
+.. py:exception:: Timeout
 
-    The entry does not exist.
+    The operation timed out. Can be raised in case of network overload or server failure.
 
-.. py:data:: error_alias_already_exists 
+.. py:exception:: InvalidInput
 
-    The entry already exists.
+    The key or the obj is invalide. Raised when the key or the obj is empty.
 
-.. py:data:: error_timeout 
-
-    The operation timed out.
-
-.. py:data:: error_buffer_too_small 
-
-    The provided buffer is too small.
-
-.. py:data:: error_invalid_command 
-
-    The requested command is invalid.
-
-.. py:data:: error_invalid_input
-
-    The input is invalid.
-
-.. py:data:: error_connection_refused
+.. py:exception:: ConnectionRefused
 
     The connection has been refused by the remote host.
 
-.. py:data:: error_connection_reset
+.. py:exception:: ConnectionReset
 
     The connection has been reset.
-
-.. py:data:: error_unexpected_reply
-
-    An unexpected reply has been received.
-
-.. py:function:: open
-
-    Creates a client instance. The :py:func:`close` will be automatically called when the session is no longer used.
-
-    :return: A wrpme session.
-
-.. py:function:: close(handle)
-
-    Terminates all connections and releases all client-side allocated resources.
-    
-    :param handle: An initialized handle (see :py:func:`open`)
-
-.. py:function:: connect(handle, address, port)
-
-    Binds the client instance to a wrpme :term:`server` and connects to it.
-
-    :param handle: An initialized handle (see :py:func:`open`)
-    :param host: A string representing the IP address or the name of the server to which to connect
-    :param port: The port number used by the server. The default wrpme port is 5909.
-
-    :return: An error code 
-
-.. py:function:: get(handle, alias)
-
-    Retrieves an :term:`entry`'s content from the wrpme server. 
-    
-    If the entry does not exist, the function will fail and return :py:data:`error_alias_not_found`.
-
-    The handle must be initialized (see :py:func:`open`) and the connection established (see :py:func:`connect`).
-
-    :param handle: An initialized handle (see :py:func:`open`)
-    :param alias: A string representing the entry's alias whose content is to be retrived
-    
-    :return: A :term:`pair` (error code, string). If the operation is successful, the right element will be the content as a string object.
-
-.. py:function:: put(handle, alias, content)
-
-    Adds an :term:`entry` to the wrpme server. If the entry already exists the function will fail and will return :py:data:`error_alias_already_exists`.
-
-    The handle must be initialized (see :py:func:`open`) and the connection established (see :py:func:`connect`).
-
-    :param handle: An initialized handle (see :py:func:`open`)
-    :param alias: A string representing the entry's alias whose content is to be retrived
-    :param content: A string that represents the entry's content to be added to the server.
-    
-    :return: An error code 
-
-.. py:function:: update(handle, alias, content)
-
-    Updates an :term:`entry` of the wrpme server. If the entry already exists, the content will be update. If the entry does not exist, it will be created.
-
-     The handle must be initialized (see :py:func:`open`) and the connection established (see :py:func:`connect`).
-
-    :param handle: An initialized handle (see :py:func:`open`)
-    :param alias: A string representing the entry's alias whose content is to be retrived
-    :param content: A string that represents the entry's content to be added to the server.
-    
-    :return: An error code 
-
-.. py:function:: delete(handle, alias)
-    
-    Removes an :term:`entry` from the wrpme server. If the entry does not exist, the function will fail and return `:py:data:`error_alias_not_found`.
-    
-    The handle must be initialized (see :py:func:`open`) and the connection established (see :py:func:`connect`).
-
-    :param handle: An initialized handle (see :py:func:`open`)
-    :param alias: A string representing the entry's alias whose content is to be deleted.
-    
-    :return: An error code 
-

@@ -7,42 +7,36 @@ Here is a list of definitions of words in the context of this documentation.
 
     alias
         An unique string of bytes identifying an entry within a given cluster.
-        
+
     cluster
-        Another word for :term:`ring`.
-        
+        Another word for :term:`hive`.
+
     content
-        Arbitrary data not interpreted by the cluster.
-        
-    entry        
+        Arbitrary data not interpreted by wrpme.
+
+    entry
         An association between a string named :term:`alias` and arbitrary data named :term:`content`. An entry can also be understood as a pair (:term:`alias`, :term:`content`).
-        
+
     grid
-        A set of nodes.
-        
+        A set of :term:`nodes <node>`.
+
+    hive
+        A set of peer-to-peer wrpme nodes configured to work as a single distributed :term:`repository`.
+
     node
         An active computer attached to a network.
-       
-    pair
-        A collection of two objects. The first entry may be referred as the left entry, and the second one as the right entry.
-        
-    predecessor
-        The previous node on the ring
-        
-    ring
-        A set of peer-to-peer wrpme servers distributing the load amongst themselves.
-        
+
+    repository
+        A software module enabling data storage and retrieval.
+
     server
         A running instance of a wrpme daemon. On most setups only one server runs on any given :term:`node`.
-        
+
     stable
-        A :term:`ring` is stable if all its elements have a valid and appropriate predecessor and successor.
-        
+        A :term:`hive` is stable if all its elements have a valid and appropriate predecessor and successor.
+
     stabilization
-        The process that makes a :term:`ring` :term:`stable`.
-        
-    successor
-        The next node on the ring
-        
+        The process that makes a :term:`hive` :term:`stable`.
+
     transient
         A :term:`server` whose content is not persisted.

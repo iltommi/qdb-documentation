@@ -1,11 +1,5 @@
-
-
-The wrpme API
+API
 =================================
-
-
-Contents:
-
 
 .. toctree::
    :maxdepth: 2

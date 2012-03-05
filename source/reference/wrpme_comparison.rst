@@ -6,21 +6,28 @@ wrpme benchmark tool
 Introduction
 ============
 
-The wrpme benchmark tool enables you to evaluate the performance of your wrpme cluster. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
+The wrpme benchmark tool enables you to evaluate the performance of your wrpme hive. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
 
 Usage scenarii
 ===============
 
  * Identifiying hardware limits in a wrpme cluster (network bandwidth, server processing power, etc.)
- * Determining the maximum throughput of your cluster 
+ * Determining the maximum throughput of your cluster
  * Tuning
+
+Supported protocols
+======================
+
+The tool can be used to benchmark a remote memcached server or a remote wrpme server. It can also create a virtual "local" server to test the local machine memory bandwidth.
+
+The local server can help identify memory-related bottlenecks or abnormal allocator behavior.
 
 Benchmark script
 ====================
 
 Each benchmark is a script that runs operation is the given order.
 
-For example to put a one kilobyte entry once and retrieving it ten (10) times, the script is::
+For example to put a one (1) kilobyte entry once and retrieve it ten (10) times, the script is::
 
     tests
     {
@@ -31,7 +38,7 @@ For example to put a one kilobyte entry once and retrieving it ten (10) times, t
         }
     }
 
-The tests are run in the given order. If you want to add another test, for example, if you want to put a one byte entry and retrieving it one thousand (1,000) times, the script becomes::
+The tests are run in the given order. If you want to add another test, for example, if you want to put a one (1) byte entry and retrieving it one thousand (1,000) times, the script becomes::
 
     tests
     {
@@ -60,7 +67,7 @@ The accepted commands are:
 Parameters reference
 ====================
 
-.. program:: wrp_me_comparison
+.. program:: wrpme_comparison
 
 .. option:: -h, --help
 
@@ -69,7 +76,7 @@ Parameters reference
     Example
         To display the online help, type: ::
 
-            wrp_me_comparison --help
+            wrpme_comparison --help
 
 .. option:: -a <address>, --address=<address>
 
@@ -77,36 +84,36 @@ Parameters reference
 
     Argument
         A string representing the address the server listens on. The string can be a host name or an IP address.
-        
+
     Default value
         127.0.0.1, the IPv4 localhost
 
     Example
         Run the test on the server listening on 192.168.1.1::
 
-            wrp_me_comparison -a 192.168.1.1
-            
+            wrpme_comparison -a 192.168.1.1
+
 .. option:: -p <port>, --port=<port>
 
     Specifies the port to which the benchmarking tool must connect.
-    
+
     Argument
-        An integer representing the address the server listens on.  
+        An integer representing the address the server listens on.
 
     Default value
         5909
 
     Example
         Run the test on the server listening on 31337::
-            
-            wrp_me_comparison -p 31337
+
+            wrpme_comparison -p 31337
 
 .. option:: --protocol=<protocol>
 
     Specifies the protocol to use.
 
     Argument
-        A string representing the name of the protocol to use. Only wrpme and memcached are currently supported.
+        A string representing the name of the protocol to use. Supported values are local, memcached and wrpme.
 
     Default value
         wrpme
@@ -114,7 +121,7 @@ Parameters reference
     Example
         Run the test on  a memcached compatible server::
 
-            wrp_me_comparison --protocol=memcached
+            wrpme_comparison --protocol=memcached
 
 .. option:: -f <path>, --test-file=<path>
 
@@ -129,7 +136,7 @@ Parameters reference
     Example
         Runs the tests written in ``stress.cfg``::
 
-            wrp_me_comparison -f stress.cfg
+            wrpme_comparison -f stress.cfg
 
 .. option:: -o <path>, --output-file=<path>
 
@@ -146,4 +153,3 @@ Parameters reference
 
             wrpmed --output-file=results.csv
 
-        
