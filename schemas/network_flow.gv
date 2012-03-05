@@ -1,0 +1,24 @@
+digraph g
+{
+
+accept [shape=box] ;
+recycle [shape=box, color=gray] ;
+
+error [shape=diamond, color=red];
+timeout [shape=diamond, color=orange];
+
+ accept -> receive [color=blue] ;
+ receive -> process [color=blue] ;
+ process -> send [color=blue] ;
+ send -> receive[color=blue] ;
+
+send -> error [color=red];
+receive -> error [color=red];
+
+receive -> timeout [color=orange];
+
+
+error -> recycle [color=gray];
+timeout -> recycle  [color=gray];
+
+}

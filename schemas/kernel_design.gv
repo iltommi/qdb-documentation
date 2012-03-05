@@ -1,0 +1,16 @@
+digraph g {
+
+request [shape=box];
+result[shape=box];
+
+request -> limiter;
+limiter -> evictor [label="Full capacity"];
+limiter -> cache [label="Forward"];
+evictor -> cache [label="Evict and forward"];
+cache -> persistence [color="red", label="Save"];
+cache -> result;
+persistence -> cache [color="red", label="Load"] ;
+cache -> statistics [color="gray",label="Update"];
+cache -> status [color="gray",label="Update"];
+
+} 
