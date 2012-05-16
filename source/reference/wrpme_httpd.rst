@@ -21,20 +21,15 @@ or on Windows: ::
 
     wrpme_httpd
 
-The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account). 
+The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
 Interfacing with the cluster
 ==============================
 
-To function properly, the web server must:
+To function properly, the web server must know the address and port of the target wrpme daemon. This is all that is needed!
 
- #. Run on the same :term:`node` than a wrpme :term:`server` from the :term:`hive` you wish to interface to. It is of course possible to run one web server per node but this is not necessary.
- #. Run with privileges greater or equal than the wrpme server. The most practical solution is to run as the same user.
- #. If the daemon does not listen on the default port, you must specify the daemon's port with the daemon-port option.
+The web bridge is extremly flexible:
 
-If these two conditions are met the web server is *hot plug'n'play*. In other words:
-
- * No configuration on the cluster nor on the web server is required.
  * There is no launch order. The cluster can be started after the web server and vice versa.
  * The web server can be stopped and started at any time without any information loss.
  * The content provided by the web server is *real time*.
@@ -202,7 +197,7 @@ URL reference
 
     *Example*:
         Get the entry with the alias ``MyData`` from the server ``myserver.org listening`` on the port 8080::
-            
+
             http://myserver.org:8080/get?alias=MyData
 
     .. note::
@@ -301,6 +296,12 @@ URL reference
                         "description":"the total number of adds performed on the cluster",
                         "required":true
                     },
+                    "get_update_count":
+                    {
+                        "type":"number",
+                        "description":"the total number of adds performed on the cluster",
+                        "required":true
+                    },
                     "update_count":
                     {
                         "type":"number",
@@ -337,11 +338,11 @@ URL reference
 
     *Example*:
         Regular JSON output from the server myserver.org listening on the port 8080::
-            
+
             http://myserver.org:8080/global_status
 
         JSONP output with a callback named "MyCallback" from the server myserver.org listening on the port 8080::
-            
+
             http://myserver.org:8080/global_status?callback=MyCallback
 
 .. describe:: view

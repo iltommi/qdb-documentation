@@ -26,9 +26,6 @@ Cheat sheet
  :option:`--peer`                      one peer to form a hive
  :option:`--flush-interval`            persistence flush            10
  :option:`--transient`                 disable persistence
- :option:`--accept-threads`            accepter threads count       platform dependent
- :option:`--server-threads`            server threads count         platform dependent
- :option:`--client-threads`            client threads count         platform dependent
  :option:`--limiter-max-entries-count` max entries in cache 10000
  :option:`--limiter-max-bytes`         max bytes in cache           1 GiB
  :option:`-o`                          log on console
@@ -250,51 +247,6 @@ The arguments format is parameter dependent.
 .. option:: --transient
 
     Disable persistence. Equivalent to --flush-interval=0. Evicted data is lost when wrpmed is :term:`transient`.
-
-.. option:: --accept-threads=<count>
-
-    The number of threads to handle incoming connections.
-
-    Argument
-        An integer representing the number of threads to use to handle incoming connections.
-
-    Default value
-        Platform dependent.
-
-    Example
-        Use two threads to handle incoming connections::
-
-            wrpmed --accept-threads=2
-
-.. option:: --server-threads=<count>
-
-    The number of threads allocated to server I/O.
-
-    Argument
-        An integer representing the number of threads to use for server I/O.
-
-    Default value
-        Platform dependent.
-
-    Example
-        Use four threads for server I/O processing::
-
-            wrpmed --server-threads=4
-
-.. option:: --client-threads=<count>
-
-    The number of threads allocated to client I/O.
-
-    Argument
-        An integer representing the number of threads to use for client I/O.
-
-    Default value
-        Platform dependent.
-
-    Example
-        Use four threads for client I/O processing::
-
-            wrpmed --client-threads=4
 
 .. option:: --limiter-max-entries-count=<count>
 

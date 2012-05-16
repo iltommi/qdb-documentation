@@ -150,9 +150,9 @@ The function will update content_length even if the buffer isn't large enough, g
 Removing entries
 ---------------------
 
-Removing is done with the function :c:func:`wrpme_delete`::
+Removing is done with the function :c:func:`wrpme_remove`::
 
-    r = wrpme_delete(handle, "myalias");
+    r = wrpme_remove(handle, "myalias");
     if (r != wrpme_error_ok)
     {
         // error management
@@ -308,7 +308,7 @@ Reference
 
 .. c:function:: wrpme_error_t wrpme_update(wrpme_handle_t handle, const char * alias, const char * content, size_t content_length)
 
-    Updates an :term:`entry` of the wrpme server. If the entry already exists, the content will be update. If the entry does not exist, it will be created.
+    Updates an :term:`entry` on the wrpme server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
     The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
 
@@ -319,8 +319,22 @@ Reference
 
     :return: An error code of type :c:type:`wrpme_error_t`
 
+.. c:function:: wrpme_error_t wrpme_get_buffer_update(wrpme_handle_t handle, const char * alias, const char * update_content, size_t update_content_length, char ** get_content, size_t * get_content_length)
 
-.. c:function:: wrpme_error_t wrpme_delete(wrpme_handle_t handle, const char * alias)
+    Atomically gets and updates (in this order) the :term:`entry` on the wrpme server. The entry must already exists.
+
+    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+
+    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param alias: A pointer to a null terminated string representing the entry's alias to update.
+    :param update_content: A pointer to a buffer that represents the entry's content to be updated to the server.
+    :param update_content_length: The length of the entry's content, in bytes.
+    :param get_content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content, before the update.
+    :param get_content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+
+    :return: An error code of type :c:type:`wrpme_error_t`
+
+.. c:function:: wrpme_error_t wrpme_remove(wrpme_handle_t handle, const char * alias)
 
     Removes an :term:`entry` from the wrpme server. If the entry does not exist, the function will fail and return ``wrpme_e_alias_not_found``.
 
@@ -331,3 +345,10 @@ Reference
 
     :return: An error code of type :c:type:`wrpme_error_t`
 
+.. c:function:: wrpme_error_t wrpme_remove_all(wrpme_handle_t handle)
+
+    Removes all the :term:`entry` present on the wrpme server. 
+
+    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+
+    :return: An error code of type :c:type:`wrpme_error_t`

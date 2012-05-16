@@ -34,17 +34,19 @@ Command line options
 Commands
 --------
 
- ===================================== =======================================
+ ===================================== ==========================================================
                 Command                                  Usage
- ===================================== =======================================
+ ===================================== ==========================================================
  :ref:`help <wrpmesh_help>`            display help
  :ref:`version <wrpmesh_version>`      display wrpme version
  :ref:`get <wrpmesh_get>`              get a piece of data
  :ref:`put <wrpmesh_put>`              put data, fails if entry already exists
  :ref:`update <wrpmesh_update>`        put data, replace existing entry if any
- :ref:`del <wrpmesh_del>`              del given entry
+ :ref:`get_update <wrpmesh_getupdate>` atomically get and udpdate an existing entry if any
+ :ref:`remove <wrpmesh_del>`           remove given entry
+ :ref:`remove_all <wrpmesh_removeall`  remove all entries (experimental)
  :ref:`exit <wrpmesh_exit>`            exit the shell (interactive mode only)
- ===================================== =======================================
+ ===================================== ==========================================================
 
 .. _wrpmesh-interactive-mode:
 
@@ -227,8 +229,31 @@ A command generally requires one or several arguments. Each argument is separate
         The alias cannot contain the space character and its length must be below 1024.
         There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
 
+.. _wrpmesh_getupdate:
+.. option:: get_update <alias> <content>
+
+    Atomically gets the previous value of an existing entry and replace it with the specified content. The entry must already exist.
+
+    :param alias: *(string)* the :term:`alias` of the entry to get and update.
+    :param content: *(string)* the content of the entry.
+    :return: *(string)* the entry's content or an error message
+
+    *Example*
+        Adds an entry whose alias is "myentry", and whose content is the string "MagicValue"::
+
+            put myentry MagicValue
+
+        Update the content to "VeryMagicValue" and gets the previous content::
+
+            get_update myentry MagicValue
+            VeryMagicValue
+
+    .. note::
+        The alias cannot contain the space character and its length must be below 1024.
+        There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
+
 .. _wrpmesh_del:
-.. option:: del <alias>
+.. option:: remove <alias>
 
     Removes an existing entry on the server. It is an error to delete a non-existing entry.
 
@@ -239,6 +264,16 @@ A command generally requires one or several arguments. Each argument is separate
         Removes an entry named "obsolete"::
 
             del obsolete
+
+.. _wrpmesh_removeall:
+.. option:: remove_all
+
+    Removes all entries on the server. 
+
+    :return: Nothing if successful, an error message otherwise
+
+    .. note::
+        This feature is experimental.
 
 .. _wrpmesh_exit:
 .. option:: exit
