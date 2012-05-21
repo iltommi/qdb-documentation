@@ -21,11 +21,11 @@ Cheat sheet
  ===================================== ============================ ===================
  :option:`-h`                          display help
  :option:`-a`                          address to listen on         127.0.0.1:5909
- :option:`-s`                          max client sessions          200
+ :option:`-s`                          max client sessions          1000
  :option:`-r`                          persistence directory        ./db
  :option:`--peer`                      one peer to form a hive
- :option:`--flush-interval`            persistence flush            10
  :option:`--transient`                 disable persistence
+ :option:`--sync``                     sync every disk write
  :option:`--limiter-max-entries-count` max entries in cache 10000
  :option:`--limiter-max-bytes`         max bytes in cache           1 GiB
  :option:`-o`                          log on console
@@ -74,9 +74,12 @@ Persistence
 
 Data is persisted on disk, by default in a `db` directory under the current working directory. 
 You can change this to any directory you want using the :option:`-r` option.
-Data persistence on disk is asynchronous: when an user requests ends, the data may or may not be persisted on the disk yet.
+Data persistence on disk is buffered: when an user requests ends, the data may or may not be persisted on the disk yet.
 Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
-You can change the flush interval (:option:`--flush-interval`), which defaults to one (1) second.
+
+However, should you need every write to be synced to disk, you can do so with the :option:`--sync` option. Syncing every write do disk
+negatively impacts performances while slightly increasing reliability.
+
 You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure in-memory :term:`repository`.
 
 .. note::
@@ -87,8 +90,8 @@ You can also disable the persistence altogether (:option:`--transient`), making 
 Cache
 -----
 
-In order to achieve high performances, the daemon keeps most of the data in cache.
-However, the physical memory available for a node may not suffice to maintain all the data in memory.
+In order to achieve high performances, the daemon keeps as much data as possible in memory. However, the physical memory available for a node may not suffice.
+
 Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
 Use :option:`--limiter-max-entries-count` (defaults to 10000) and :option:`--limiter-max-bytes` (defaults to 1 GiB) options to configure these thresholds.
 
@@ -225,28 +228,16 @@ The arguments format is parameter dependent.
 
             wrpmed --peer=192.168.1.1:5909
 
-.. option:: --flush-interval=<delay>
-
-    How often entries are persisted to disk. If this value is zero, persistence is disabled.
-
-    Argument
-        An integer representing the number of seconds between each flush.
-
-    Default value
-        10
-
-    Example
-        Disable persistence altogether: ::
-
-            wrpmed --flush-interval=0
-
-        Flush the data every minute: ::
-
-            wrpmed --flush-interval=60
-
 .. option:: --transient
 
     Disable persistence. Equivalent to --flush-interval=0. Evicted data is lost when wrpmed is :term:`transient`.
+
+.. option:: --sync
+
+    Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. 
+
+.. note::
+    This option increases reliability at the cost of performances.
 
 .. option:: --limiter-max-entries-count=<count>
 
