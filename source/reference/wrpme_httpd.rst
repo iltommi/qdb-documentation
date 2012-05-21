@@ -11,15 +11,15 @@ The wrpme web server is a web bridge that enables any software that understands 
 Launching the web server
 ========================
 
-The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`wrpme_httpd-parameters-reference`
+The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`wrpme_httpd-parameters-reference`.
 
-In other words, for most cases, the command line will look as: ::
+Assuming a daemon that listens on the port 5909 on the machine 192.168.1.1, the command line is::
 
-    ./wrpme_httpd &
+    ./wrpme_httpd --daemon 192.168.1.1:5909 &
 
-or on Windows: ::
+or on Windows::
 
-    wrpme_httpd
+    wrpme_httpd --daemon 192.168.1.1:5909 
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 

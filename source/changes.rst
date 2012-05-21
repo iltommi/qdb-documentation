@@ -7,12 +7,12 @@ v0.6.5 - 06/01/2012
     * Client API: Major performance increase (up to 100%) for small entries (below 1 kiB)
     * Client API: Added more error codes
     * Client API: Added status query function
-    * Client API: Added new, atomic, get and update function
-    * Client API: Added experimental "remove_all" function
+    * Client API: Added new, atomic, "get and update" function
+    * Client API: Added experimental "remove all" function
     * Daemon: Greatly improved scalability for machines with more than 4 physical cores
     * Daemon: Removed obsolete options
     * Daemon: Improved Windows console logging performance
-    * Upgraded LevelDB
+    * Upgraded to LevelDB 1.4
     * Upgraded to Boost 1.49.0
 
 v0.6.0 - 01/16/2011
