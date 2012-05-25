@@ -12,10 +12,12 @@ v0.6.5 - 06/01/2012
     * Daemon: Greatly improved scalability for machines with more than 4 physical cores
     * Daemon: Removed obsolete options
     * Daemon: Improved Windows console logging performance
+    * FreeBSD: Now requires FreeBSD 9.0 or later
+    * FreeBSD: switched from gcc to Clang
     * Upgraded to LevelDB 1.4
     * Upgraded to Boost 1.49.0
 
-v0.6.0 - 01/16/2011
+v0.6.0 - 01/16/2012
 -------------------
 
     * Python API: Brand new Python API!
