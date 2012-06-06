@@ -91,10 +91,10 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --daemon <address>:<port>
 
-   Specifies the address and port of the daemon daemon on which the server will connect.
+   Specifies the address and port of the daemon daemon to which the server will connect.
 
    Argument
-        The address and port of a machines where a wrpme daemon is running.
+        The address and port of a machine where a wrpme daemon is running.
 
    Default value
         127.0.0.0:5909, the IPv4 localhost address and the port 5909

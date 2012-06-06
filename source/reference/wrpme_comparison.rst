@@ -78,35 +78,20 @@ Parameters reference
 
             wrpme_comparison --help
 
-.. option:: -a <address>, --address=<address>
+.. option:: --daemon <address>:<port>
 
-    Specifies the address to which the benchmarking tool must connect.
+   Specifies the address and port of the daemon daemon to which the comparison tool must connect. The daemon must conform to the protocol specified by the ``protocol`` parameter.
 
-    Argument
-        A string representing the address the server listens on. The string can be a host name or an IP address.
+   Argument
+        The address and port of a machine where a daemon is running.
 
-    Default value
-        127.0.0.1, the IPv4 localhost
+   Default value
+        127.0.0.0:5909, the IPv4 localhost address and the port 5909
 
-    Example
-        Run the test on the server listening on 192.168.1.1::
+   Example
+        If the daemon listen on the localhost and on the port 5009::
 
-            wrpme_comparison -a 192.168.1.1
-
-.. option:: -p <port>, --port=<port>
-
-    Specifies the port to which the benchmarking tool must connect.
-
-    Argument
-        An integer representing the address the server listens on.
-
-    Default value
-        5909
-
-    Example
-        Run the test on the server listening on 31337::
-
-            wrpme_comparison -p 31337
+            wrpme_httpd --daemon-port=localhost:5009
 
 .. option:: --protocol=<protocol>
 
