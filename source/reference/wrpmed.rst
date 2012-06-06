@@ -23,6 +23,7 @@ Cheat sheet
  :option:`-a`                          address to listen on         127.0.0.1:5909
  :option:`-s`                          max client sessions          1000
  :option:`-r`                          persistence directory        ./db
+ :option:`--id`                        set the node id              generated
  :option:`--peer`                      one peer to form a hive
  :option:`--transient`                 disable persistence
  :option:`--sync``                     sync every disk write
@@ -186,7 +187,7 @@ The arguments format is parameter dependent.
         A number greater or equal to fifty (50) representing the number of allowed simultaneous sessions.
 
     Default value
-        200
+        1,000
 
     Example
         Allow 2,000 simultaneous session::
@@ -197,6 +198,43 @@ The arguments format is parameter dependent.
     The sessions count determines the number of simultaneous clients the server may handle at any given time. 
     Increasing the value increases the memory load.
     Values below 50 are ignored.
+
+
+.. option:: --id=<id string>
+
+    Sets the node ID.
+
+    Argument
+        A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing
+        the 256-bit ID to use. This value may not be zero (0-0-0-0).
+
+    Default value
+        Unique random value.
+
+    Example
+        Set the node ID to 1-a-2-b::
+
+            wrpmed --id=1-a-2-b
+
+.. note::
+    Having two nodes with the same ID on the ring leads to undefined behaviour. By default the daemon generates
+    an ID that is guaranteed to be unique on any given ring. This function's purpose is to modify the topology of
+    the ring, should the topology be unsatisfactory.
+
+.. option:: --idle-timeout=<timeout>
+
+    Sets the timeout after which inactive session will be considered for termination.
+
+    Argument
+        A float representing the number of seconds after which an idle session will be considered for termination.
+
+    Default value
+        300.0 (300 seconds, 5 minutes)
+
+    Example
+        Set the timeout to one minute::
+        
+            wrpmed --idle-timeout=60.0
 
 .. option:: -r <path>, --root=<path>
 
