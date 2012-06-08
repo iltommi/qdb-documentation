@@ -1,7 +1,7 @@
 Change log
 ***************
 
-v0.6.5 - 06/01/2012
+v0.6.5 - 06/08/2012
 -------------------
 
     * Client API: Major performance increase (up to 100%) for small entries (below 1 kiB)
@@ -16,6 +16,7 @@ v0.6.5 - 06/01/2012
     * FreeBSD: switched from gcc to Clang
     * Upgraded to LevelDB 1.4
     * Upgraded to Boost 1.49.0
+    * Upgraded to TBB 4.0 SP4
 
 v0.6.0 - 01/16/2012
 -------------------
