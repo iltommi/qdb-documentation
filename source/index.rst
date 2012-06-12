@@ -12,6 +12,7 @@ wrpme documentation
    
    primer
    tutorials/index
+   concepts/index
    reference/index   
    api/index
    faq

@@ -26,6 +26,9 @@ Here is a list of definitions of words in the context of this documentation.
     node
         An active computer attached to a network.
 
+    predecessor
+        An entry or node whose ID is lower than the considered ID
+
     repository
         A software module enabling data storage and retrieval.
 
@@ -37,6 +40,9 @@ Here is a list of definitions of words in the context of this documentation.
 
     stabilization
         The process that makes a :term:`hive` :term:`stable`.
+
+    successor
+        An entry or node whose ID is greater than the considered ID
 
     transient
         A :term:`server` whose content is not persisted.
