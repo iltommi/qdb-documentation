@@ -43,7 +43,7 @@ Usage
 Building a hive
 ----------------
 
-To build a hive, nodes are added to each other. A node only needs to know one other node within the ring (see :doc:`../tutorial/one_ring`). What is paramount is to make sure that rings are not disjoint, that is, all nodes will eventually join the same large ring. 
+To build a hive, nodes are added to each other. A node only needs to know one other node within the ring (see :doc:`../tutorials/one_ring`). What is paramount is to make sure that rings are not disjoint, that is, all nodes will eventually join the same large ring. 
 
 The most simple way to ensure this is to make all nodes initially join the same node. This will not create a single point of failure as once the ring is stabilized, the nodes will properly reference each other.
 
@@ -53,6 +53,7 @@ Connecting to a hive
 A client may connect to any node within the hive. It will progressively discover the rest of the ring as queries are made.
 
 .. _fault-tolerance:
+
 Fault tolerance
 =====================================================
 
@@ -88,11 +89,11 @@ That means that although a ring's segment may be unable to serve requests for a 
 Minimum number of working nodes required
 -------------------------------------------
 
-A ring can successfully operate with a single node, however, the single node may not be able to handle all the load of the ring by itself.
+A hive can successfully operate with a single node, however, the single node may not be able to handle all the load of the ring by itself. Additionally, managing nodes failures implies extra work for the nodes. Frequent failures will severely impact performances.
 
-As a rule of thumb, a ring operates best when more than 90% of the nodes are fully functional.
+.. tip::
+    A hive operates best when more than 90% of the nodes are fully functional.
 
-Things to keep in mind
-=====================================================
+
 
 

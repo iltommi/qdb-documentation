@@ -1,6 +1,15 @@
 Change log
 ***************
 
+v0.6.66 - 07/01/2012
+--------------------
+
+    * Client API: New streaming API (C only)
+    * Client API: New compare and swap operation
+    * Daemon: Automatically detects the best eviction threshold (can be overriden)
+    * Java API: Fixed invalid method name (delete instead of remove)
+    * Upgrade to LevelDB 1.5
+
 v0.6.5 - 06/08/2012
 -------------------
 

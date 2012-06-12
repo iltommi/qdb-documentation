@@ -44,7 +44,7 @@ Commands
  :ref:`update <wrpmesh_update>`        put data, replace existing entry if any
  :ref:`get_update <wrpmesh_getupdate>` atomically get and udpdate an existing entry if any
  :ref:`remove <wrpmesh_del>`           remove given entry
- :ref:`remove_all <wrpmesh_removeall`  remove all entries (experimental)
+ :ref:`remove_all <wrpmesh_removeall>`  remove all entries (experimental)
  :ref:`exit <wrpmesh_exit>`            exit the shell (interactive mode only)
  ===================================== ==========================================================
 

@@ -8,16 +8,22 @@ Principles
 Server
 -------
 
-The server can serve as many conccurent requests as the operating system and the underlying hardware permit. It is heavily multithreaded and thrives on multiprocessor hardware.
+At the heart of many design and technology decisions of wrpme lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, it uses a combination of asynchronous I/O, lock-free containers and parallel processing.
+
+As of now, the server can serve as many conccurent requests as the operating system and the underlying hardware permit. 
 
 The server will make sure that requests do not conflict with each other. It will spread the load on all the processing power available, if need be.
 
 The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several servers instances on the same node is counter-productive.
 
+Multiple clients can simultaneously access the same entry for reading. The server will however ensure that only one client access an entry for writing at any time.
+
+Multiple clients can simultaneously access different entries for reading and writing.
+
 Client
 -------
 
-All API are thread safe. All calls are synchronous unless otherwise noted.
+All API are single threaded but thread safe. All calls are synchronous unless otherwise noted.
 
 When the client receives a reply from the server, the request is guaranteed to have been carried out by the server, as specified by the answer.
 
@@ -34,9 +40,10 @@ Guarantees
      * Once the server replies, it means the request has been fully carried on
      * Synchronous clients requests are executed in order. However multiple requests coming from mutliple clients are executed in an arbitrary order (see :ref:`conflicts-resolution`)
 
-The notable exception to the ACID guarantees are streaming operations (see :doc:`streaming`)
+The notable exception to the ACID guarantees are streaming operations (see :doc:`streaming`).
 
 .. _conflicts-resolution:
+
 Conflicts resolution
 =====================================================
 
@@ -87,9 +94,7 @@ As you can see what was previously considered a conflict is now the expected beh
 
 It is possible to create more complex scenarii thanks to the get_update and compare_and_swap commands. get_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and return the old/unchanged value.
 
-Rule of thumb:
-
-    * DO NOT mix put and update calls
+.. tip:: DO NOT mix put and update calls
 
 Updating multiple entries at a time
 -------------------------------------
