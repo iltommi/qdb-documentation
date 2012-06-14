@@ -272,6 +272,10 @@ Reference
 
     An opaque handle that represents a wrpme client instance.
 
+.. c:type:: wrpme_stream_tracker_t
+
+    A structure used to track a stream state. 
+
 .. c:type:: wrpme_error_t
 
     An enum representing possible error codes returned by the API functions. "No error" evaluates to 0.
@@ -444,7 +448,7 @@ Reference
 
 .. c:function:: wrpme_error_t wrpme_open_stream(wrpme_handle_t handle, const char * alias, wrpme_stream_tracker_t * stream_tracker)
 
-    Open, allocate and initialize all resources necessary to stream the :term:`entry` from the server. The size of the streaming buffer is specified by the wrpme_o_stream_buffer_size option (see :c:func:`wrpme_set_option`).
+    Opens, allocates and initializes all resources necessary to stream the :term:`entry` from the server. The size of the streaming buffer is specified by the wrpme_o_stream_buffer_size option (see :c:func:`wrpme_set_option`).
 
     The entry_size field of the stream_tracker structure will be updated to the total size, in bytes, of the entry on the remote server. The offset is initially set to 0.
 
@@ -474,9 +478,18 @@ Reference
 
     Sets the streaming offset to the value specified by new_offset, in bytes. The offset may not point at or beyond the end of the :term:`entry`.
 
-    :param stream_tracker:
+    :param stream_tracker: An initialized stream handle (see :c:func:`wrpme_open_stream`).
+    :param new_offset: The offset to stream from, in bytes.
+
+    :return: An error code of type :c:type:`wrpme_error_t`
 
 .. c:function:: wrpme_error_t wrpme_close_stream(wrpme_stream_tracker_t * stream_tracker)
+
+    Closes the stream and frees all allocated resources. 
+
+    :param stream_tracker: An initialized stream handle (see :c:func:`wrpme_open_stream`).
+
+    :return: An error code of type :c:type:`wrpme_error_t`
 
 .. c:function:: wrpme_error_t wrpme_remove(wrpme_handle_t handle, const char * alias)
 
