@@ -160,6 +160,97 @@ Removing is done with the function :c:func:`wrpme_remove`::
 
 The function fails if the entry does not exist.
 
+
+Streaming entries
+--------------------
+
+It is often impractical to download very large entries at once. For these cases, a streaming API is available.
+
+Initializing streaming
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+One first start by creating a streaming handle from an existing wrpme handle::
+
+    wrpme_stream_tracker_t trk;
+    wrpme_error_t e = wrpme_open_stream(h, alias_name, &trk);
+
+.. note::
+    The connection to the remote server must be done before initializing the streaming handle as the API will request information from the remote server.
+
+The stream tracker holds the streaming buffer and maintains information to properly stream data from the server::
+
+    typedef struct
+    {
+        wrpme_handle_t handle;      /* [in] */
+        const void * token;         /* [in] */
+
+        const void * buffer;        /* [out] */
+        size_t buffer_size;         /* [out] */
+
+        size_t current_offset;      /* [out] */
+        size_t last_read_size;      /* [out] */
+
+        size_t entry_size;          /* [out] */
+    } wrpme_stream_tracker_t;
+
+.. warning::
+    The streaming buffer is read only. Freeing or writing to the streaming buffer results in undefined behaviour.
+
+The buffer size can be adjusted with :c:func:`wrpme_set_option` and the wrpme_o_stream_buffer_size option. It accepts an integer representing the number of bytes the streaming buffer should have. The default size is 1 MiB. The buffer cannot be smaller than 1024 bytes or greater than 10 MiB. The buffer size must be adjusted **prior** to calling :c:func:`wrpme_open_stream`.
+
+All streaming handles have a dedicated streaming buffer, it is therefore safe to stream from different handles at the same time. However, having many streaming handles open at the same time may result in an important memory usage.
+
+Streaming data from the server
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the streaming context is properly initialized, one may start streaming with :c:func:`wrpme_get_stream`::
+
+    while(trk.current_offset < trk.entry_size)
+    {
+        e = wrpme_get_stream(&trk);
+        if (e != wrpme_e_ok)
+        {
+            // handle error
+            break;
+        }
+
+        // process content in trk.buffer
+        // the size of the data available in the buffer is last_read_size
+    }
+
+If the content you are streaming is being modified by another user, :c:func:`wrpme_get_stream` will return wrpme_e_conflict. If you attempt to stream beyond the end, the function will return wrpme_e_out_of_bounds.
+
+After each call, the values in the streaming context are updated. 
+
+Seeking the stream
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+It might be desirable to go directly to a specific point in the stream. The user cannot update directly the wrpme_stream_tracker_t structure as the values in the structure are ignored by the API (they are *write only* from the point of view of the API). To update the offset, one uses the :c:func:`wrpme_set_stream_offset`::
+
+    // go directly to the 1024th byte in the stream
+    wrpme_set_stream_offset(&trk, 1024);
+
+The offset must be within bounds. The user may refer to the entry_size member field of the wrpme_stream_tracker_t to check that it is within bounds. 
+
+Closing the stream
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Once the last byte of the stream has been read, the user may:
+
+    * Rewind with :c:func:`wrpme_set_stream_offset` or
+    * Close the stream
+
+Calling wrpme_get_stream once the end of the stream has been reached will result in a wrpme_e_out_of_bounds error.
+
+The stream is closed with :c:func:`wrpme_close_stream`::
+
+    wrpme_close_stream(&trk);
+
+Closing the stream will free the streaming buffer and release all resources needed to manage the stream. Not closing the stream will result in memory and resources leaks.
+
+.. warning::
+    Calling :c:func:`wrpme_close` **does not** close all open streams. 
+
 Cleaning up
 --------------------
 
@@ -328,11 +419,64 @@ Reference
     :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias to update.
     :param update_content: A pointer to a buffer that represents the entry's content to be updated to the server.
-    :param update_content_length: The length of the entry's content, in bytes.
+    :param update_content_length: The length of the buffer, in bytes.
     :param get_content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content, before the update.
     :param get_content_length: A pointer to a size_t that will be set to the content's size, in bytes.
 
     :return: An error code of type :c:type:`wrpme_error_t`
+
+.. c:function:: wrpme_error_t wrpme_compare_and_swap(wrpme_handle_t handle, const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, char ** original_value, size_t * original_value_length)
+
+    Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
+
+    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+
+    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param alias: A pointer to a null terminated string representing the entry's alias to compare to.
+    :param new_value: A pointer to a buffer that represents the entry's content to be updated to the server in case of match.
+    :param new_value: The length of the buffer, in bytes.
+    :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
+    :param new_value: The length of the buffer, in bytes.
+    :param original_value: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's original content, before the update, if any.
+    :param original_value_length: A pointer to a size_t that will be set to the content's size, in bytes.
+
+    :return: An error code of type :c:type:`wrpme_error_t`
+
+.. c:function:: wrpme_error_t wrpme_open_stream(wrpme_handle_t handle, const char * alias, wrpme_stream_tracker_t * stream_tracker)
+
+    Open, allocate and initialize all resources necessary to stream the :term:`entry` from the server. The size of the streaming buffer is specified by the wrpme_o_stream_buffer_size option (see :c:func:`wrpme_set_option`).
+
+    The entry_size field of the stream_tracker structure will be updated to the total size, in bytes, of the entry on the remote server. The offset is initially set to 0.
+
+    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+
+    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param alias: A pointer to a null terminated string representing the entry's alias to stream.
+    :param stream_tracker: A pointer to a caller allocated structure that will receive the stream tracker handle and information.
+
+    :return: An error code of type :c:type:`wrpme_error_t`
+
+.. c:function:: wrpme_error_t wrpme_get_stream(wrpme_stream_tracker_t * stream_tracker)
+
+    Streams bytes from the buffer into the stream buffer. It will get at most as many bytes as the stream buffer may old, or the remainder if it cannot fill the stream buffer. 
+
+    It will stream at current_offset as informed in the stream_tracker structure. Note that, however, the api will ignore changes made by the user to this value and update it to the correct value when it returns from the call.
+
+    Once the end of the buffer has been reached, it must be either closed or rewound.
+
+    The stream_tracker structure must have been initialized by :c:func:`wrpme_open_stream`.
+
+    :param stream_tracker: An initialized stream handle (see :c:func:`wrpme_open_stream`).
+
+    :return: An error code of type :c:type:`wrpme_error_t`
+
+.. c:function:: wrpme_error_t wrpme_set_stream_offset(wrpme_stream_tracker_t * stream_tracker, size_t new_offset)
+
+    Sets the streaming offset to the value specified by new_offset, in bytes. The offset may not point at or beyond the end of the :term:`entry`.
+
+    :param stream_tracker:
+
+.. c:function:: wrpme_error_t wrpme_close_stream(wrpme_stream_tracker_t * stream_tracker)
 
 .. c:function:: wrpme_error_t wrpme_remove(wrpme_handle_t handle, const char * alias)
 
@@ -347,7 +491,7 @@ Reference
 
 .. c:function:: wrpme_error_t wrpme_remove_all(wrpme_handle_t handle)
 
-    Removes all the :term:`entry` present on the wrpme server. 
+    Removes all the :term:`entry` present on the wrpme server.
 
     The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
 
