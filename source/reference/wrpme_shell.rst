@@ -43,6 +43,7 @@ Commands
  :ref:`put <wrpmesh_put>`              put data, fails if entry already exists
  :ref:`update <wrpmesh_update>`        put data, replace existing entry if any
  :ref:`get_update <wrpmesh_getupdate>` atomically get and udpdate an existing entry if any
+ :ref:`cas <wrpmesh_cas>` atomically   compare and swap an entry in case of match
  :ref:`remove <wrpmesh_del>`           remove given entry
  :ref:`remove_all <wrpmesh_removeall>`  remove all entries (experimental)
  :ref:`exit <wrpmesh_exit>`            exit the shell (interactive mode only)
@@ -235,7 +236,7 @@ A command generally requires one or several arguments. Each argument is separate
     Atomically gets the previous value of an existing entry and replace it with the specified content. The entry must already exist.
 
     :param alias: *(string)* the :term:`alias` of the entry to get and update.
-    :param content: *(string)* the content of the entry.
+    :param content: *(string)* the new content of the entry.
     :return: *(string)* the entry's content or an error message
 
     *Example*
@@ -251,6 +252,21 @@ A command generally requires one or several arguments. Each argument is separate
     .. note::
         The alias cannot contain the space character and its length must be below 1024.
         There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
+
+.. _wrpmesh_cas:
+.. option:: cas <alias> <content> <comparand>
+
+    Atomically compares the value of an existing entry with comparand and replaces it with content in case of match. The entry must already exist.
+
+    :param alias: *(string)* the :term:`alias` of the entry to get and update.
+    :param content: *(string)* the new content of the entry.
+    :param comparand: *(string)* the value to compare the content to
+    :return: *(string)* the entry's original content or an error message
+
+    .. note::
+        The alias cannot contain the space character and its length must be below 1024.
+        The new content can only be printable characters. This is a wrpmesh restriction only.
+        There must be one space and only one space between the comparand and the content. There is no practical limit to the comparand length and all characters until the end of the input will be used for the comparand, including space characters.
 
 .. _wrpmesh_del:
 .. option:: remove <alias>
