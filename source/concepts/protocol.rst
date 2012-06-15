@@ -16,11 +16,14 @@ A client attempts to locate the valid node only three times. That means that thr
 Data management
 =====================================================
 
-Data is sent and stored "as is", bit for bit. The user may add kind of content to the wrpme hive, provided that the nodes have sufficient storage space. wrpme uses a low-level binary protocol that adds only few bytes of overhead per requests.
+Data is sent and stored "as is", bit for bit. The user may add any kind of content to the wrpme hive, provided that the nodes have sufficient storage space. wrpme uses a low-level binary protocol that adds only few bytes of overhead per request.
 
 Most high levels API support the language native serialization mechanism to transparently add and retrives objects to a wrpme hive (see :doc:`../api/index`).
 
-Metadata is associated with each entry. The wrpme hive ensures the metadata and the actual data are consistent at all time. It is currently not possible to query the metadata via the API.
+Metadata is associated with each entry. The wrpme hive ensures the metadata and the actual data are consistent at all time. 
+
+.. note::
+    It is currently not possible to query the metadata via the API.
 
 
 Timeout
