@@ -164,7 +164,7 @@ The function fails if the entry does not exist.
 Streaming entries
 --------------------
 
-It is often impractical to download very large entries at once. For these cases, a streaming API is available.
+It is often impractical to download very large entries at once. For these cases, a streaming API is available. For more information, see :doc:`../concepts/streaming`.
 
 Initializing streaming
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

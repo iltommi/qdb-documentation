@@ -6,7 +6,7 @@ Principle
 
 Persistence is done using `LevelDB <http://code.google.com/p/leveldb/>`_. All software that is LevelDB compatible can process the wrpme persistence layer.
 
-Entries are stored "as is", unmodified. The wrpme technology ensures that the most frequent entries stay in memory in a way that allows to serve a very large amount of simultenous requests (see :doc:`concurrency`).
+Entries are stored "as is", unmodified. The wrpme technology ensures that the most frequent entries stay in memory in a way that allows the serving of a very large amount of simultenous requests (see :doc:`concurrency`).
 
 All entries are persisted to disk as they are added and updated. When a put or add request has been processed, it is guaranteed that the persistence layer has fully acknowledged the persistence request. 
 
@@ -21,9 +21,9 @@ Since entries are persisted to disk as they are added, an eviction cannot result
 
 Eviction is an atomic operation that respects the ACID properties of requests (see :doc:`concurrency`). 
 
-An evicted entry stays on disk until requested, at which point it is "paged in".
+An evicted entry stays on disk until requested at which point it is "paged in".
 
-Entries are elected for eviction using a combination of statistics and probablity (fast monte carlo algorithm).
+Entries are elected for eviction using a combination of statistics and probablity (*fast monte carlo* algorithm).
 
 Transient mode
 =======================================
@@ -34,7 +34,7 @@ In this mode:
 
     * Performance may increase 
     * Memory usage may be reduced
-    * Disk usage will be significantely 
+    * Disk usage will be significantely lowered
 
 But:
 

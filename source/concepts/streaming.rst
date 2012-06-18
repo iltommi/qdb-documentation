@@ -18,12 +18,12 @@ Usage
 
 The typical usage scenario is the following:
 
-    1. A client opens a streaming handle for a given entry. The default buffer size is 1 MiB. If it is inappropriate, it needs to be set *before* opening the streaming handle via the appropriate API call.
-    1. The client reads content for the entry. The API automatically reads the next chunk of available data. The result of the read is placed in the API allocated buffer.
-    1. The client processes the buffer. For example, it may send the buffer to a video decoder.
-    1. The client may manually set the offset if need be. Positioning the offset beyond the end of the content results in an error.
-    1. The client stops reading when the offset reaches the end. Reading beyond the end will result in an error.
-    1. The client closes the handle. This frees all resources.
+    #. A client opens a streaming handle for a given entry. The default buffer size is 1 MiB. If it is inappropriate, it needs to be set *before* opening the streaming handle via the appropriate API call.
+    #. The client reads content for the entry. The API automatically reads the next chunk of available data. The result of the read is placed in the API allocated buffer.
+    #. The client processes the buffer. For example, it may send the buffer to a video decoder.
+    #. The client may manually set the offset if need be. Positioning the offset beyond the end of the content results in an error.
+    #. The client stops reading when the offset reaches the end. Reading beyond the end will result in an error.
+    #. The client closes the handle. This frees all resources.
 
 .. important::
     The streaming buffer is allocated by the API. The client should only read from the buffer and never attempt to free it manually. All resources are freed when the streaming handle is closed.
