@@ -28,7 +28,7 @@ Cheat sheet
  :option:`--transient`                 disable persistence
  :option:`--sync``                     sync every disk write
  :option:`--limiter-max-entries-count` max entries in cache 10000
- :option:`--limiter-max-bytes`         max bytes in cache           1 GiB
+ :option:`--limiter-max-bytes`         max bytes in cache           Automatic
  :option:`-o`                          log on console
  :option:`-l`                          log on given file
  :option:`--log-syslog`                log on syslog
@@ -285,7 +285,7 @@ The arguments format is parameter dependent.
         An integer representing the maximum number of entries allowed in memory.
 
     Default value
-        1,000
+        10,000
 
     Example
         To keep the number of entries in memory below 101::
@@ -305,7 +305,7 @@ The arguments format is parameter dependent.
         An integer representing the maximum size, in bytes, of the entries in memory.
 
    Default value
-        1,073,741,824 (1 GiB)
+        0 (automatic, half the available physical memory).
 
    Example
        To allow only 100 kiB of entries::
