@@ -504,8 +504,12 @@ Reference
 
 .. c:function:: wrpme_error_t wrpme_remove_all(wrpme_handle_t handle)
 
-    Removes all the :term:`entry` present on the wrpme server.
+    Removes all the entries on all the nodes of the wrpme cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occured.
+
+    If the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a wrpme_e_unstable code.
 
     The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
 
     :return: An error code of type :c:type:`wrpme_error_t`
+
+    .. caution:: This call is meant for very specific use case and should not be used in production environments.

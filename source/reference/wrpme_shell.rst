@@ -45,7 +45,7 @@ Commands
  :ref:`get_update <wrpmesh_getupdate>` atomically get and udpdate an existing entry if any
  :ref:`cas <wrpmesh_cas>` atomically   compare and swap an entry in case of match
  :ref:`remove <wrpmesh_del>`           remove given entry
- :ref:`remove_all <wrpmesh_removeall>`  remove all entries (experimental)
+ :ref:`remove_all <wrpmesh_removeall>` remove all entries
  :ref:`exit <wrpmesh_exit>`            exit the shell (interactive mode only)
  ===================================== ==========================================================
 
@@ -284,12 +284,12 @@ A command generally requires one or several arguments. Each argument is separate
 .. _wrpmesh_removeall:
 .. option:: remove_all
 
-    Removes all entries on the server. 
+    Removes all entries from the server. 
 
     :return: Nothing if successful, an error message otherwise
 
-    .. note::
-        This feature is experimental.
+    .. caution::
+        All entries will be deleted and will not be recoverable. If the hive is unstable, the command may not be executed by all nodes.
 
 .. _wrpmesh_exit:
 .. option:: exit
