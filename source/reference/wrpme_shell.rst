@@ -284,12 +284,12 @@ A command generally requires one or several arguments. Each argument is separate
 .. _wrpmesh_removeall:
 .. option:: remove_all
 
-    Removes all entries from the server. 
+    Removes all entries from the server. This command is not atomic.
 
     :return: Nothing if successful, an error message otherwise
 
     .. caution::
-        All entries will be deleted and will not be recoverable. If the hive is unstable, the command may not be executed by all nodes.
+        All entries will be deleted and will not be recoverable. If the hive is unstable, the command may not be executed by all nodes. The command will nevertheless return success.
 
 .. _wrpmesh_exit:
 .. option:: exit
