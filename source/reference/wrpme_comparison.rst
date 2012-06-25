@@ -86,7 +86,7 @@ Parameters reference
         The address and port of a machine where a daemon is running.
 
    Default value
-        127.0.0.0:5909, the IPv4 localhost address and the port 5909
+        127.0.0.0:2836, the IPv4 localhost address and the port 2836
 
    Example
         If the daemon listen on the localhost and on the port 5009::

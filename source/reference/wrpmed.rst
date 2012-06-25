@@ -20,7 +20,7 @@ Cheat sheet
                 Option                               Usage               Default
  ===================================== ============================ ===================
  :option:`-h`                          display help
- :option:`-a`                          address to listen on         127.0.0.1:5909
+ :option:`-a`                          address to listen on         127.0.0.1:2836
  :option:`-s`                          max client sessions          1000
  :option:`-r`                          persistence directory        ./db
  :option:`--id`                        set the node id              generated
@@ -169,7 +169,7 @@ The arguments format is parameter dependent.
         A string representing one address the :term:`server` listens on and a port. The address string can be a host name or an IP address.
 
     Default value
-        127.0.0.1:5909, the IPv4 localhost and the port 5909
+        127.0.0.1:2836, the IPv4 localhost and the port 2836
 
     Example
         Listen on localhost and the port 5910::
@@ -262,9 +262,9 @@ The arguments format is parameter dependent.
         None
 
     Example
-        Join a :term:`hive` where the machine 192.168.1.1 listening on the port 5909 is already connected::
+        Join a :term:`hive` where the machine 192.168.1.1 listening on the port 2836 is already connected::
 
-            wrpmed --peer=192.168.1.1:5909
+            wrpmed --peer=192.168.1.1:2836
 
 .. option:: --transient
 

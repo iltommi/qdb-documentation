@@ -12,7 +12,7 @@ Installing a wrpme daemon in three steps
   * On Windows it comes as an automated setup *which includes both the 32-bit and the 64-bit version*.
 #. Run the daemon
 
-   The daemon binary is wrpmed on Unix, wrpmed.exe on Windows. The daemon will by default listen on the IPv4 localhost, on the port 5909, persist its content to the disk asynchronously, limit itself to 1 GiB and will not log at all. See :doc:`../reference/wrpmed` for more configuration options.
+   The daemon binary is wrpmed on Unix, wrpmed.exe on Windows. The daemon will by default listen on the IPv4 localhost, on the port 2836, persist its content to the disk asynchronously, limit itself to 1 GiB and will not log at all. See :doc:`../reference/wrpmed` for more configuration options.
 
 Using the wrpme shell to test your wrpme installation
 =====================================================
@@ -20,7 +20,7 @@ Using the wrpme shell to test your wrpme installation
 The wrpme shell offers an interactive mode from which the user can enter commands. The name of the binary is wrpmesh and it is included in the server package.
 
 #. Run wrpmesh.
-  By default wrpmesh will attempt to connect to a daemon running on the same machine and listening on the port 5909. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run wrpmesh as such::
+  By default wrpmesh will attempt to connect to a daemon running on the same machine and listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run wrpmesh as such::
 
     wrpmesh --daemon=192.168.1.1:303
 #. Add an entry into the server::

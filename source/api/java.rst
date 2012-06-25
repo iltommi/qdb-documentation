@@ -42,7 +42,7 @@ Then you run the example::
 
     java -classpath /tmp/wrpme-java-api-master.jar:. WrpmeExample
 
-The example requires a wrpme server listening on ``127.0.0.1`` (IPV4 localhost) port 5909. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/wrpmed` to configure a wrpme :term:`hive`.
+The example requires a wrpme server listening on ``127.0.0.1`` (IPV4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/wrpmed` to configure a wrpme :term:`hive`.
 
 Using the high-level API
 ------------------------
@@ -63,7 +63,7 @@ You have to use a Map<String,String> to store the wrpme instance configuration p
     Map<String,String> config = new HashMap<String,String>();
     config.put("name", "test");
     config.put("host", "127.0.0.1");
-    config.put("port", "5909");
+    config.put("port", "2836");
 
 Once the parameters are valid, you can create the corresponding wrpme instance using the WrpmeManager singleton: ::
 
@@ -127,7 +127,7 @@ The connection is a two steps process.
 
     #. Connect to a :term:`server` within a :term:`hive`: ::
 
-        wrpme_error_t r = wrpme.connect(session, "192.168.1.1", 5909);
+        wrpme_error_t r = wrpme.connect(session, "192.168.1.1", 2836);
 
 In this case we're connecting to the server ``192.168.1.1`` but we could have specified a domain name or an IPv6 address.
 
@@ -230,7 +230,7 @@ Reference
 
     :param handle: An initialized handle (see :js:func:`wrpme.open`)
     :param host: A string representing the IP address or the name of the server to which to connect
-    :param port: The port number used by the server. The default wrpme port is 5909.
+    :param port: The port number used by the server. The default wrpme port is 2836.
 
     :return: An error code of type :cpp:class:`wrpme_error_t`
 

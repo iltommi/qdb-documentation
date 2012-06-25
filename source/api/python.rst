@@ -109,7 +109,7 @@ Reference
     The client serializes the keys and the data using the standard :py:mod:`pickle` module.
 
     :param string hostname: either the DNS name, the IPv4 address or the IPv6 address.
-    :param integer port: the port, defaults to 5909.
+    :param integer port: the port, defaults to 2836.
 
     .. py:method:: put(key, obj)
 
@@ -158,7 +158,7 @@ Reference
     It has the same methods as the :py:class:`wrpme.Client`, except all **key** and **obj** parameters must be strings.
 
     :param string hostname: string giving the hostname. Either the DNS name, the IPv4 address or the IPv6 address.
-    :param integer port: port, defaults to 5909.
+    :param integer port: port, defaults to 2836.
 
     .. py:method:: put(key, obj)
 
