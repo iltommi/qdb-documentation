@@ -15,7 +15,7 @@ In :ref:`non-interactive mode <wrpmesh-noninteractive-mode>`, a single command -
 Cheat sheet
 ===========
 
-By default wrpmesh will attempt to connect to a wrpmed running on the same machine and listening on the port 5909. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run wrpmesh as such::
+By default wrpmesh will attempt to connect to a wrpmed running on the same machine and listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run wrpmesh as such::
 
     wrpmesh --daemon=192.168.1.1:303
 
@@ -28,7 +28,7 @@ Command line options
                 Option                             Usage                Default
  ===================================== ============================ ==============
  :option:`-h`                          display help
- :option:`--daemon`                    the daemon to connect to     127.0.0.1:5909
+ :option:`--daemon`                    the daemon to connect to     127.0.0.1:2836
  ===================================== ============================ ==============
 
 Commands
@@ -112,7 +112,7 @@ In case of error, the shell will output an error message on the standard error o
 Examples
 --------
 
-Unless otherwise specified, the server is listening on the port 5909 on the localhost.
+Unless otherwise specified, the server is listening on the port 2836 on the localhost.
 
 Save the content of an entry named "biography" in a text file named "biography.txt"::
 
@@ -151,7 +151,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         The address and port of a machines where a wrpme daemon is running.
 
    Default value
-        127.0.0.0:5909, the IPv4 localhost address and the port 5909
+        127.0.0.0:2836, the IPv4 localhost address and the port 2836
 
    Example
         If the daemon listen on the localhost and on the port 3001::

@@ -49,7 +49,7 @@ We can also use the convenience fonction :c:func:`wrpme_open_tcp`: ::
 
 Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are established and closed as needed. This code will establish a connection to a wrpme server listening on the localhost with the :c:func:`wrpme_connect` function: ::
 
-    r = wrpme_connect(handle, "localhost", 5909);
+    r = wrpme_connect(handle, "localhost", 2836);
     if (r != wrpme_error_ok)
     {
         // error management
@@ -57,7 +57,7 @@ Once the handle is initialized, it can be used to establish a connection. Keep i
 
 Note that we could have used the IP address instead: ::
 
-    r = wrpme_connect(handle, "127.0.0.1", 5909);
+    r = wrpme_connect(handle, "127.0.0.1", 2836);
     if (r != wrpme_error_ok)
     {
         // error management
@@ -65,7 +65,7 @@ Note that we could have used the IP address instead: ::
 
 `IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported: ::
 
-    r = wrpme_connect(handle, "::1", 5909);
+    r = wrpme_connect(handle, "::1", 2836);
     if (r != wrpme_error_ok)
     {
         // error management
@@ -334,7 +334,7 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
     :param host: A pointer to a null terminated string representing the IP address or the name of the server to which to connect
-    :param port: The port number used by the server. The default wrpme port is 5909.
+    :param port: The port number used by the server. The default wrpme port is 2836.
 
     :return: An error code of type :c:type:`wrpme_error_t`
 

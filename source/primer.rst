@@ -47,7 +47,7 @@ Here is a short Python code snippet::
 
     import wrpme
 
-    # connecting, default port is 5909
+    # connecting, default port is 2836
     c = wrpme.Client("127.0.0.1")
     # adding an entry
     c.put("entry", "really amazing...")

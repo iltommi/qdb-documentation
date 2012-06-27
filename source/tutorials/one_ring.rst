@@ -11,17 +11,17 @@ It is assumed we have a network of three machines: 192.168.1.1, 192.168.1.2 and 
 
 #. Run an instance on the first machine. Each instance has got a different database directory (here it is instance1)::
 
-    wrpmed -a 192.168.1.1:5909 -l wrpmed1.log --root=./instance1
+    wrpmed -a 192.168.1.1:2836 -l wrpmed1.log --root=./instance1
 
   By default wrpmed listens on 127.0.0.1. To have other machines access to it you need to specify 192.168.1.1 as the listen address.
 
 #. Run an instance on the second machine, and indicate that its peer is the first machine. We also use a different database directory (instance2)::
 
-    wrpmed -a 192.168.1.2:5909 --peer=192.168.1.1:5909 -l wrpmed2.log --root=./instance2
+    wrpmed -a 192.168.1.2:2836 --peer=192.168.1.1:2836 -l wrpmed2.log --root=./instance2
 
 #. Run an instance on the second machine, and indicate that its peer is the first machine::
 
-    wrpmed -a 192.168.1.3:5909 --peer=192.168.1.1:5909 -l wrpmed3.log --root=./instance3
+    wrpmed -a 192.168.1.3:2836 --peer=192.168.1.1:2836 -l wrpmed3.log --root=./instance3
 
 The hive will now automatically *stabilize* it self. :term:`Stabilization` is the process during which nodes agree on how and where the data should be distributed. During the stabilization phase the hive is considered *unstable* which means requests may fail.
 
@@ -39,7 +39,7 @@ If you add a node to the hive, you do not have to make *any* change on the clien
 
 #. Run wrpmesh::
 
-    wrpmesh --daemon=192.168.1.2:5909
+    wrpmesh --daemon=192.168.1.2:2836
 
 #. Test a couple of commands::
 
@@ -50,7 +50,7 @@ If you add a node to the hive, you do not have to make *any* change on the clien
 
 #. Test that a different node acknowledges the entry::
 
-    wrpmesh --daemon=192.168.1.3:5909
+    wrpmesh --daemon=192.168.1.3:2836
 
     > get entry
     thisismyentry

@@ -13,13 +13,13 @@ Launching the web server
 
 The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`wrpme_httpd-parameters-reference`.
 
-Assuming a daemon that listens on the port 5909 on the machine 192.168.1.1, the command line is::
+Assuming a daemon that listens on the port 2836 on the machine 192.168.1.1, the command line is::
 
-    ./wrpme_httpd --daemon 192.168.1.1:5909 &
+    ./wrpme_httpd --daemon 192.168.1.1:2836 &
 
 or on Windows::
 
-    wrpme_httpd --daemon 192.168.1.1:5909 
+    wrpme_httpd --daemon 192.168.1.1:2836 
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
@@ -97,7 +97,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         The address and port of a machine where a wrpme daemon is running.
 
    Default value
-        127.0.0.0:5909, the IPv4 localhost address and the port 5909
+        127.0.0.0:2836, the IPv4 localhost address and the port 2836
 
    Example
         If the daemon listen on the localhost and on the port 5009::
