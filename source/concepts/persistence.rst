@@ -10,6 +10,8 @@ Entries are stored "as is", unmodified. The wrpme technology ensures that the mo
 
 All entries are persisted to disk as they are added and updated. When a put or add request has been processed, it is guaranteed that the persistence layer has fully acknowledged the persistence request. 
 
+The persistence layer may compress data for efficency purposes. This is transparent to the client.
+
 By default, the persistence layer uses a write cache to increase performance, but this can be disabled (see :doc:`../reference/wrpmed`). When the write cache is disabled, the server will not return from a put or update request until the entry has been actually persisted on disk.
 
 Eviction

@@ -42,6 +42,27 @@ The entry is then placed on the node whose ID is the :term:`successor` of the en
 
 When a client queries the hive, it locates the node who is the successor of the entry and queries that node.
 
+Stabilization
+---------------
+
+Each node periodically "stabilizes" itself. 
+
+Stabilizing means a node will exchange information with its neighbourgs in order to:
+
+    * Make sure the neighbours are still up and running
+    * A new node isn't a best neighbourg that the existing ones
+
+In a sane, stable cluster, stabilization is extremely short and does not result in any modification. However, if one or several node fail or new nodes join the hive, stabilization will migrate keys and adjust the neighourgh information.
+
+Thus the stabilization time depends on the amount of data to migrate, if any. wrpme is as fast as the underlying architecture permits at migrating data.
+
+The duration between each stabilization is between 1 (one) second and 20 (twenty) seconds.
+
+When the node evaluates its surrounding to be stable, it will increase the duration between each stabilization. On the contrary, when the surrounding are deemed *unstable* this duration will be reduced.
+
+.. tip::
+    Stabilization happens when bootstraping a hive, in case of failure or when adding nodes. It is transparent and does not require any intervention.
+
 Usage
 =====================================================
 
@@ -91,7 +112,10 @@ When a node joins a ring, it is in an unstable state until the join is complete.
 
 That means that although a ring's segment may be unable to serve requests for a short period of time, the rest of the ring remains unaffected.
 
-In a production environement, hive segments may become unstable for a short period (in the order of minutes) of time after a node fails. This unstability is temporary and does not require human intervention to be resolved.
+In a production environement, hive segments may become unstable for a short period (in the order of minutes, generally in less than one minute) of time after a node fails. This unstability is temporary and does not require human intervention to be resolved. 
+
+.. tip::
+    To sum up, when a hive's segment is unstable request *may* temporarly fail. The probability for failure is correlated with the number of simultaneous failures.
 
 Minimum number of working nodes required
 -------------------------------------------
