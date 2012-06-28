@@ -92,7 +92,7 @@ As you can see what was previously considered a conflict is now the expected beh
 
 It is possible to create more complex scenarii thanks to the get_update and compare_and_swap commands. get_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and returns the old/unchanged value.
 
-.. tip:: Remember Ghostbusters: don't cross the stream.
+.. tip:: Remember Ghostbusters: don't cross the streams.
 
 Updating multiple entries at a time
 -------------------------------------
