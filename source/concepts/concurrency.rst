@@ -13,7 +13,7 @@ As of now, the server can serve as many concurrent requests as the operating sys
 
 The server will make sure that requests do not conflict with each other. It will spread the load on the entire processing power available, if need be.
 
-The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several servers instances on the same node is counter-productive.
+The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several  instances on the same node is counter-productive.
 
 Multiple clients can simultaneously access the same entry for reading. The server will however ensure that only one client access an entry for writing at any time.
 
@@ -27,7 +27,6 @@ All API are thread safe and synchronous unless otherwise noted.
 When the client receives a reply from the server, the request is guaranteed to have been carried out by the server, as specified by the answer.
 
 The client takes care of locating the proper node for the request. The client will either find the proper node or fail (this may happen if the ring is unstable, see :ref:`fault-tolerance`).
-
 
 Guarantees
 =======================================
@@ -46,25 +45,25 @@ A notable exception to the ACID guarantees are streaming operations (see :doc:`s
 Conflicts resolution
 =====================================================
 
-When conflict may occur
--------------------------
+When a conflict may occur?
+---------------------------
 
-When executing a series of requests, each request is ACID (Atomic, Consistent, Isolated and Durable) and the requests will be executed in the given order.
+When executing a series of requests, each request is atomic, consistent, isolated and durable (ACID) and the requests will be executed in the given order.
 
 For example, if a client adds an entry and later gets it, the get is guaranteed to succeed if the add was successful (unless an external error occurs such as a low memory condition, a hardware or power failure, an operating system fault, etc.).
 
 For example:
 
-    * Client A adds an entry "car" and sets it to "roadster"
-    * Client A gets the entry "car" and obtains the value "roadster"
+    * **Client A** *adds* an entry "car" and sets it to "roadster"
+    * **Client A** *gets* the entry "car" and obtains the value "roadster"
 
 However, in a multiclient context, conflicts may arise. What happens if a Client B updates the entry before Client A is finished?
 
-    * Client A adds an entry "car" and sets it to "roadster"
-    * Client B updates the entry "car" to "sedan"
-    * Client A gets the entry "car" and obtains the value "sedan"
+    * **Client A** *adds* an entry "car" and sets it to "roadster"
+    * **Client B** *updates* the entry "car" to "sedan"
+    * **Client A** *gets* the entry "car" and obtains the value "sedan"
 
-From the point of view of wrpme, everything is perfectly valid and coherent, but from the point of view of the client A, something is wrong!
+From the point of view of wrpme, everything is perfectly valid and coherent, but from the point of view of Client A, something is wrong!
 
 How to use the API to avoid conflicts
 --------------------------------------
@@ -73,38 +72,38 @@ Conflicts arise when the **usage is not carefully thought out**. It's a client's
 
 On one hand it does not make sense to have clients simultaneously update the same entry and expect the value to be coherent. wrpme could leave it as is and require the client to have a coherent usage scenario.
 
-On the other hand it's a shame the clients cannot rely on the power of wrpme to at least detect something is wrong.
+On the other hand it's a shame the clients cannot rely on the power of wrpme to *at the very least detect* something is wrong.
 
-That's why our API can help clients avoid or at the very least detect conflicts (see :doc:`../api/index`).
+That's why our API can help clients detect and even avoid conflicts (see :doc:`../api/index`).
 
 The above can be avoided thanks to the way put works. Put fails if the entry already exist, therefore, our example becomes:
 
-    * Client A adds an entry "car" and sets it to "roadster"
-    * Client B puts the entry "car" and fails because the entry already exists
-    * Client A gets the entry "car" and obtains the value "sedan"
+    * **Client A** *adds* an entry "car" and sets it to "roadster"
+    * **Client B** *puts* the entry "car" and fails because the entry already exists
+    * **Client A** *gets* the entry "car" and obtains the value "roadster"
 
 Since updates always succeed, it is however possible to share a single value amongst different clients with the usage of the update command:
 
-    * Client A updates the entry "stock3" to "503.5"
-    * Client B updates the entry "stock3" to "504.5"
-    * Client A gets the entry "stock3" and gets the newest value "504.5"
+    * **Client A** *updates* the entry "stock3" to "503.5"
+    * **Client B** *updates* the entry "stock3" to "504.5"
+    * **Client A** *gets* the entry "stock3" and obtains the newest value "504.5"
 
 As you can see what was previously considered a conflict is now the expected behaviour.
 
 It is possible to create more complex scenarii thanks to the get_update and compare_and_swap commands. get_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and returns the old/unchanged value.
 
-.. tip:: Don't mix put and update calls
+.. tip:: Remember Ghostbusters: don't cross the stream.
 
 Updating multiple entries at a time
 -------------------------------------
 
 We've seen a trivial conflict case, but what about this one:
 
-    * Client A updates an entry "car" and sets it to "roadster"
-    * Client A updates an entry "motorbike" and sets it to "roadster"
-    * Client B gets "car" and "motorbike" and checks that they match
+    * **Client A** *updates* an entry "car" and sets it to "roadster"
+    * **Client A** *updates* an entry "motorbike" and sets it to "roadster"
+    * **Client B** *gets* "car" and "motorbike" and checks that they match
 
-As you can see, if client B makes the query too early, it does not match. There are things you can do with get_update and compare_and_swap, but it can quickly become intricate and unmaintainable.
+As you can see, if Client B makes the query too early, it does not match. There are things you can do with get_update and compare_and_swap, but it can quickly become intricate and unmaintainable.
 
 The one thing to understand is that it's a design usage problem on the client side.
 
@@ -121,10 +120,9 @@ wrpme provides several mechanisms to allow clients to synchronize themselves and
 
 Things to consider:
 
-    * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing one "fits all" client.
+    * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing one size fits all client.
     * There is always an update delay, whatever system you're using. The question is, what delay can your business case tolerate? For example a high frequency trading automaton and a reservation system have different requirements.
     * The problem is never the conflict in itself. The problem is operating without realizing that there was a conflict in the first place.
     * wrpme provides ways to synchronize clients. For example, put fails if the entry already exists and update always succeed.
-
-
+    * Last but not least, if you are trying to squeeze a schema into a non-relational database, disaster will ensue. A system such as wrpme generaly implies to rethink your modelization.
 

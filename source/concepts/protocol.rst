@@ -28,7 +28,6 @@ Metadata is associated with each entry. The wrpme hive ensures the metadata and 
 .. note::
     It is currently not possible to obtain the metadata via the API.
 
-
 Timeout
 =====================================================
 

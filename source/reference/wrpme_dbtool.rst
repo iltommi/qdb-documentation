@@ -77,8 +77,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --repair, -r
 
-    Attempts to repair the database. All data may not be recovered. Note that the :doc:`wrpmed` automatically attempts to repair the database if needed, this option
-    is intended for offline operations.
+    Attempts to repair the database. All data may not be recovered. Note that the :doc:`wrpmed` automatically attempts to repair the database if needed, this option is intended for offline operations.
 
     Example
         Repairs the database in the current directory::

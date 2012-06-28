@@ -50,14 +50,12 @@ Each server within one hive needs:
     * At least one :term:`node` within the hive to contact (:option:`--peer`)
 
 .. note::
-
     It's counter-productive to run several instances on the same :term:`node`.
     wrpmed is hyper-scalar and will be able to use all the memory and processors of your server.
     The same remark applies for virtual machines: running wrpme multiple times in multiple virtual machines on a single physical server will not increase the performances.
 
 The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests, 
 depending on the actual hardware configuration of your server.
-You can however set these values manually using the :option:`--accept-threads`, :option:`--server-threads` and :option:`--client-threads` options respectively.
 
 Logging
 -------
@@ -94,7 +92,7 @@ Cache
 In order to achieve high performances, the daemon keeps as much data as possible in memory. However, the physical memory available for a node may not suffice.
 
 Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
-Use :option:`--limiter-max-entries-count` (defaults to 10000) and :option:`--limiter-max-bytes` (defaults to 1 GiB) options to configure these thresholds.
+Use :option:`--limiter-max-entries-count` (defaults to 10000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 
 .. note:: 
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.

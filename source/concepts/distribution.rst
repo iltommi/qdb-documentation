@@ -13,7 +13,7 @@ A wrpme hive is a peer-to-peer distributed hash table based on `Chord <http://pd
         Nodes organize themselves and exchange data as needed
 
     Fault tolerance
-        The failure of one node does not compromise the hive
+        The failure of one or several nodes does not compromise the hive
  
     Transparent topology
         A client queries the hive from any node without any concern for performance
@@ -49,12 +49,12 @@ Each node periodically "stabilizes" itself.
 
 Stabilizing means a node will exchange information with its neighbourgs in order to:
 
-    * Make sure the neighbors are still up and running
-    * A new node isn't a best neighbor that the existing ones
+    * Make sure the neighbors (the :term:`successor` and the :term:`predecessor`) are still up and running
+    * A new node isn't a best :term:`successor` that the existing one
 
-In a sane, stable cluster, stabilization is extremely short and does not result in any modification. However, if one or several node fail or new nodes join the hive, stabilization will migrate keys and adjust the neighbor information.
+In a sane, stable cluster, stabilization is extremely short and does not result in any modification. However, if one or several node fail or new nodes join the hive, stabilization will migrate keys and change the neighbors.
 
-Thus the stabilization time depends on the amount of data to migrate, if any. wrpme is as fast as the underlying architecture permits at migrating data.
+Thus the stabilization duration depends on the amount of data to migrate, if any. Migrating data is done as fast as the underlying architecture permits.
 
 The duration between each stabilization is between 1 (one) second and 20 (twenty) seconds.
 
@@ -78,6 +78,11 @@ Connecting to a hive
 
 A client may connect to any node within the hive. It will automatically discover the nodes as needed.
 
+Recovering a node
+--------------------
+
+When a node recovers from failure, it needs to reference a peer within the need to properly rejoin. The first node in a ring generally does not reference any other, thus, if the first node of the ring fails, it needs to be restarted with a different command line.
+
 .. _fault-tolerance:
 
 Fault tolerance
@@ -86,22 +91,22 @@ Fault tolerance
 Data loss
 --------------
 
-wrpme is designed to be extremely resilient. All failures are temporary; assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). 
+wrpme is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). 
 
 However, there is one case where data may be lost:
 
     1. A node fails **and**
     2. Data is not replicated **and**
-    3. The data is not persisted to disk 
+    3. The data was not persisted to disk **or** storage failed
 
-The persistence layer is able to recover from write failures, which means that one write error will not compromise all the data on a node. It is also possible to make sure write are synced to disks (see :doc:`../reference/wrpmed`). 
+The persistence layer is able to recover from write failures, which means that one write error will not compromise everything. It is also possible to make sure writes are synced to disks (see :doc:`../reference/wrpmed`) to increase reliability further. 
 
 Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is negligible for *read-mostly* hives.
 
 Unstable state
 -----------------
 
-When a node fails, a segment of the ring will become unstable. When a ring's segment is unstable, requests may fail. This happens when:
+When a node fails, a segment of the ring will become unstable. When a ring's segment is unstable, requests might fail. This happens when:
 
     1. The requested node's :term:`predecessor` or :term:`successor` is unavailable **and**
     2. The requested node is currently looking for a valid :term:`predecessor` or :term:`successor`
@@ -115,7 +120,7 @@ That means that although a ring's segment may be unable to serve requests for a 
 In a production environment, hive segments may become unstable for a short period (in the order of minutes, generally in less than one minute) of time after a node fails. This instability is temporary and does not require human intervention to be resolved. 
 
 .. tip::
-    To sum up, when a hive's segment is unstable request *may* temporarily fail. The probability for failure is correlated with the number of simultaneous failures.
+    When a hive's segment is unstable request *might* temporarily fail. The probability for failure is exponentially correlated with the number of simultaneous failures.
 
 Minimum number of working nodes required
 -------------------------------------------
@@ -123,7 +128,7 @@ Minimum number of working nodes required
 A hive can successfully operate with a single node; however, the single node may not be able to handle all the load of the ring by itself. Additionally, managing nodes failures implies extra work for the nodes. Frequent failures will severely impact performances.
 
 .. tip::
-    A hive operates best when more than 90% of the nodes are fully functional.
+    A hive operates best when more than 90% of the nodes are fully functional. Anticipate traffic growth and add nodes before the hive is saturated.
 
 
 
