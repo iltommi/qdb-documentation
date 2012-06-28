@@ -7,7 +7,7 @@ Python
 Introduction
 --------------
 
-The `wrpme` module includes two client implementation.
+The `wrpme` module includes two client implementations.
 
 The :py:class:`wrpme.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `wrpme` hive.
 
@@ -31,8 +31,7 @@ All required libraries and extensions are included in the Python package.
 Windows
 ```````
 
-Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to `download the installer <http://www.wrpme.com/downloads.html>`_ and
-follow the on-screen instructions.
+Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to `download the installer <http://www.wrpme.com/downloads.html>`_ and follow the on-screen instructions.
 
 Keep in mind that you need to download the version matching your Python architecture, not the OS.
 For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit wrpme package.
@@ -198,7 +197,7 @@ Reference
 
 .. py:exception:: System
 
-    A system error occured.
+    A system error occurred.
     Can typically be raised if the number of entries on each node is too large.
 
 .. py:exception:: Internal

@@ -74,7 +74,7 @@ Note that we could have used the IP address instead: ::
 Of course for the above to work the server needs to listen on an IPv6 address.
 
 .. note::
-    When you call :c:func:`wrpme_open` and :c:func:`wrpme_connect` a lot of initialization and systems calls are made. It is therefore advised to reduce the calls to these function to the strict minimum, ideally keeping the handle alive for the whole program lifetime.
+    When you call :c:func:`wrpme_open` and :c:func:`wrpme_connect` a lot of initialization and systems calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the handle alive for the whole program lifetime.
 
 
 Adding entries
@@ -83,7 +83,7 @@ Adding entries
 Each entry is identified by an unique :term:`alias`. You pass the alias as a null-terminated string.
 The alias may contain arbitrary characters but it's probably more convenient to use printable characters only.
 
-The :term:`content` is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no  built-in limit on the content's size, you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
+The :term:`content` is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
 There are two ways to add entries into the repository. You can use :c:func:`wrpme_put`: ::
 
@@ -307,7 +307,7 @@ Reference
 
 .. c:function:: wrpme_error_t wrpme_open(wrpme_handle_t * handle, wrpme_protocol_t proto)
 
-    Creates a client instance. To avoir resource and memory leaks, the :c:func:`wrpme_close` must be used on the initialized handle when it is no longer needed.
+    Creates a client instance. To avoid resource and memory leaks, the :c:func:`wrpme_close` must be used on the initialized handle when it is no longer needed.
 
     :param handle: A pointer to a :c:type:`wrpme_handle_t` that will be initialized to represent a new client instance.
     :param proto: The protocol to use of type :c:type:`wrpme_protocol_t`
@@ -504,7 +504,7 @@ Reference
 
 .. c:function:: wrpme_error_t wrpme_remove_all(wrpme_handle_t handle)
 
-    Removes all the entries on all the nodes of the wrpme cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occured.
+    Removes all the entries on all the nodes of the wrpme cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
     This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a wrpme_e_ok code. 
 

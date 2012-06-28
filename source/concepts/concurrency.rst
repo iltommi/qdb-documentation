@@ -9,9 +9,9 @@ Server
 
 At the heart of many design and technology decisions of wrpme lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, it uses a combination of asynchronous I/O, lock-free containers and parallel processing.
 
-As of now, the server can serve as many conccurent requests as the operating system and the underlying hardware permit. 
+As of now, the server can serve as many concurrent requests as the operating system and the underlying hardware permit. 
 
-The server will make sure that requests do not conflict with each other. It will spread the load on all the processing power available, if need be.
+The server will make sure that requests do not conflict with each other. It will spread the load on the entire processing power available, if need be.
 
 The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several servers instances on the same node is counter-productive.
 
@@ -37,7 +37,7 @@ Guarantees
      * All requests, unless otherwise noted, are isolated
      * All requests, unless otherwise noted, are durable (see :ref:`fault-tolerance`)
      * Once the server replies, it means the request has been fully carried on
-     * Synchronous requests emanating from the same client are executed in order. However multiple requests coming from mutliple clients are executed in an arbitrary order (see :ref:`conflicts-resolution`)
+     * Synchronous requests emanating from the same client are executed in order. However multiple requests coming from multiple clients are executed in an arbitrary order (see :ref:`conflicts-resolution`)
 
 A notable exception to the ACID guarantees are streaming operations (see :doc:`streaming`).
 
@@ -83,7 +83,7 @@ The above can be avoided thanks to the way put works. Put fails if the entry alr
     * Client B puts the entry "car" and fails because the entry already exists
     * Client A gets the entry "car" and obtains the value "sedan"
 
-Since update always succeed, it is however possible to share a single value amongst different clients with the usage of the update command:
+Since updates always succeed, it is however possible to share a single value amongst different clients with the usage of the update command:
 
     * Client A updates the entry "stock3" to "503.5"
     * Client B updates the entry "stock3" to "504.5"
@@ -104,12 +104,12 @@ We've seen a trivial conflict case, but what about this one:
     * Client A updates an entry "motorbike" and sets it to "roadster"
     * Client B gets "car" and "motorbike" and checks that they match
 
-As you can see, if client B makes the query too early, it does not match. There are things you can do with get_update and compare_and_swap, but it can quickly become intricate and unmaintenable.
+As you can see, if client B makes the query too early, it does not match. There are things you can do with get_update and compare_and_swap, but it can quickly become intricate and unmaintainable.
 
 The one thing to understand is that it's a design usage problem on the client side.
 
     * Is it a problem for Client B to have a mismatch? Client B may try again later.
-    * If you always need to update several entries and have them consistent, why have several entries?
+    * If you always need to update several entries and have those consistent, why have several entries?
     * Shouldn't be Client A and B be synchronized? That is, shouldn't Client B query the entry only once it knows they have been updated?
 
 As you can see, a conflict is a question of context and usage.
@@ -117,11 +117,11 @@ As you can see, a conflict is a question of context and usage.
 The best way to avoid conflicts: plan out
 ------------------------------------------------------
 
-wrpme provides several mechanisms to allow clients to synchronize themselves and avoid conflicts. However, the most important step to ensure proper operation is to plan out. What is a conflict? Is it a problem? Only a thorough planification can tell.
+wrpme provides several mechanisms to allow clients to synchronize themselves and avoid conflicts. However, the most important step to ensure proper operation is to plan out. What is a conflict? Is it a problem? Only a thorough plan can tell.
 
 Things to consider:
 
-    * Clients are generally heterogenous. Some clients update content while other only consume content. It is more simple to design each client according to its purpose rather than writing one "fits all" client.
+    * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing one "fits all" client.
     * There is always an update delay, whatever system you're using. The question is, what delay can your business case tolerate? For example a high frequency trading automaton and a reservation system have different requirements.
     * The problem is never the conflict in itself. The problem is operating without realizing that there was a conflict in the first place.
     * wrpme provides ways to synchronize clients. For example, put fails if the entry already exists and update always succeed.

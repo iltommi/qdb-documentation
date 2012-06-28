@@ -6,9 +6,9 @@ wrpme is developed in C++11 and assembly with performance in mind.
 Multithreading
 =======================================
 
-The server is actually organized in a network of mini-daemons that exchange messages. This is done in such a way that preserves low-latency while  increasing parallelism.
+The server is actually organized in a network of mini-daemons that exchange messages. This is done in such a way that preserves low-latency while increasing parallelism.
 
-Mutlithreading generally implies locking. Locking has been reduced to the minimum with the use of lock-free structures and lightweight locks. 
+Multithreading generally implies locking. Locking has been reduced to the minimum with the use of lock-free structures and lightweight locks. 
 
 Networking
 =====================================================

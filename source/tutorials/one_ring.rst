@@ -1,7 +1,7 @@
 Your first wrpme hive
 **************************************************
 
-wrpme is designed to be run as a hive. A hive is multiple instances of the daemon running a separate servers which collaborate to balance the load.
+wrpme is designed to be run as a hive. A hive is multiple instances of the daemon running separate servers which collaborate to balance the load.
 This tutorial will guide you through the steps required to setup such hive. If you have not done so yet, going through the introductory tutorial is highly recommended (see :doc:`tut_quick`).
 
 Create a three instances hive

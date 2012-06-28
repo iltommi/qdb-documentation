@@ -49,10 +49,10 @@ Each node periodically "stabilizes" itself.
 
 Stabilizing means a node will exchange information with its neighbourgs in order to:
 
-    * Make sure the neighbours are still up and running
-    * A new node isn't a best neighbourg that the existing ones
+    * Make sure the neighbors are still up and running
+    * A new node isn't a best neighbor that the existing ones
 
-In a sane, stable cluster, stabilization is extremely short and does not result in any modification. However, if one or several node fail or new nodes join the hive, stabilization will migrate keys and adjust the neighourgh information.
+In a sane, stable cluster, stabilization is extremely short and does not result in any modification. However, if one or several node fail or new nodes join the hive, stabilization will migrate keys and adjust the neighbor information.
 
 Thus the stabilization time depends on the amount of data to migrate, if any. wrpme is as fast as the underlying architecture permits at migrating data.
 
@@ -61,7 +61,7 @@ The duration between each stabilization is between 1 (one) second and 20 (twenty
 When the node evaluates its surrounding to be stable, it will increase the duration between each stabilization. On the contrary, when the surrounding are deemed *unstable* this duration will be reduced.
 
 .. tip::
-    Stabilization happens when bootstraping a hive, in case of failure or when adding nodes. It is transparent and does not require any intervention.
+    Stabilization happens when bootstrapping a hive, in case of failure or when adding nodes. It is transparent and does not require any intervention.
 
 Usage
 =====================================================
@@ -71,7 +71,7 @@ Building a hive
 
 To build a hive, nodes are added to each other. A node only needs to know one other node within the ring (see :doc:`../tutorials/one_ring`). It is paramount to make sure that rings are not disjoint, that is, that all nodes will eventually join the same large ring. 
 
-The most simple way to ensure this is to make all nodes initially join the same node. This will not create a single point of failure as once the ring is stabilized, the nodes will properly reference each other.
+The simplest way to ensure this is to make all nodes initially join the same node. This will not create a single point of failure as once the ring is stabilized the nodes will properly reference each other.
 
 Connecting to a hive
 ------------------------
@@ -86,7 +86,7 @@ Fault tolerance
 Data loss
 --------------
 
-wrpme is designed to be extremly resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). 
+wrpme is designed to be extremely resilient. All failures are temporary; assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). 
 
 However, there is one case where data may be lost:
 
@@ -96,7 +96,7 @@ However, there is one case where data may be lost:
 
 The persistence layer is able to recover from write failures, which means that one write error will not compromise all the data on a node. It is also possible to make sure write are synced to disks (see :doc:`../reference/wrpmed`). 
 
-Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is neglible for *read-mostly* hives.
+Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is negligible for *read-mostly* hives.
 
 Unstable state
 -----------------
@@ -112,15 +112,15 @@ When a node joins a ring, it is in an unstable state until the join is complete.
 
 That means that although a ring's segment may be unable to serve requests for a short period of time, the rest of the ring remains unaffected.
 
-In a production environement, hive segments may become unstable for a short period (in the order of minutes, generally in less than one minute) of time after a node fails. This unstability is temporary and does not require human intervention to be resolved. 
+In a production environment, hive segments may become unstable for a short period (in the order of minutes, generally in less than one minute) of time after a node fails. This instability is temporary and does not require human intervention to be resolved. 
 
 .. tip::
-    To sum up, when a hive's segment is unstable request *may* temporarly fail. The probability for failure is correlated with the number of simultaneous failures.
+    To sum up, when a hive's segment is unstable request *may* temporarily fail. The probability for failure is correlated with the number of simultaneous failures.
 
 Minimum number of working nodes required
 -------------------------------------------
 
-A hive can successfully operate with a single node, however, the single node may not be able to handle all the load of the ring by itself. Additionally, managing nodes failures implies extra work for the nodes. Frequent failures will severely impact performances.
+A hive can successfully operate with a single node; however, the single node may not be able to handle all the load of the ring by itself. Additionally, managing nodes failures implies extra work for the nodes. Frequent failures will severely impact performances.
 
 .. tip::
     A hive operates best when more than 90% of the nodes are fully functional.

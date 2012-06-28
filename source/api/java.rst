@@ -49,7 +49,7 @@ Using the high-level API
 
 The high-level API enables you to add any Java object to a wrpme cluster, it takes care of the serialization of said object for you.
 
-This API take cares of loading ad hoc native librairies, no matter which OS you are running (FreeBSD, Linux, Win32 or Win64).
+This API take cares of loading ad hoc native libraries, no matter which OS you are running (FreeBSD, Linux, Win32 or Win64).
 
 Last but not least this API is thread-safe unlike the low-level API.
 
@@ -74,7 +74,7 @@ Your wrpme instance is now ready to use.
 Using the Wrpme instance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-First you have to get your configurated wrpme instance by using its name::
+First you have to get your configured wrpme instance by using its name::
 
     Wrpme cache = WrpmeManager.getInstance().getCache("test");
 
@@ -82,18 +82,18 @@ Then you can use your instance as you like::
 
     // You can put a simple String Object...
     cache.put("obj1", "My First value !!!");
-	// ... or any Java Object you want (even a POJO)
-	cache.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
+    // ... or any Java Object you want (even a POJO)
+    cache.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
 
-	// You can get your values:
-	String value = cache.get("obj1");
+    // You can get your values:
+    String value = cache.get("obj1");
     System.out.println("Result: " + value);
 
-	// You can delete values:
+    // You can delete values:
     cache.delete("obj2");
 
-	// And update stored values:
-	cache.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
+    // And update stored values:
+    cache.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
 
 When you're finished with your instance, close it::
 
@@ -102,7 +102,7 @@ When you're finished with your instance, close it::
 Using the low-level API
 ----------------------------
 
-The low-level API provides direct access to the C API. It is not thread-safe and the high-level API should be prefered.
+The low-level API provides direct access to the C API. It is not thread-safe and the high-level API should be preferred.
 
 Loading the JNI
 ^^^^^^^^^^^^^^^^^^

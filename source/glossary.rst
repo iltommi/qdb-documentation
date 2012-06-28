@@ -6,7 +6,7 @@ Here is a list of definitions of words in the context of this documentation.
 .. glossary::
 
     alias
-        An unique string of bytes identifying an entry within a given cluster.
+        A unique string of bytes identifying an entry within the hive.
 
     cluster
         Another word for :term:`hive`.

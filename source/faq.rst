@@ -93,9 +93,9 @@ Yes, we have a special license for this case. Contact us for more information, s
 Do I need a licence to write a client?
 ========================================================
 
-No licence is required to write a wrpme client, but the software's documentation and credits must state the following "this software features wrpme, a Bureau 14 technology. All rights reserved.".
+No license is required to write a wrpme client, but the software's documentation and credits must state the following "this software features wrpme, a Bureau 14 technology. All rights reserved.".
 
-A client is a software that connects to a remote or local wrpme server running as a separate instance. If your product needs to include the server as well, a licence is required. Contact us for more information, see :doc:`contact`
+A client is software that connects to a remote or local wrpme server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
 
 Is support available for non-registered users?
 =================================================

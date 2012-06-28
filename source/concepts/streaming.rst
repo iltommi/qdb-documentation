@@ -6,7 +6,7 @@ Motivation
 
 wrpme can store entries of arbitrary size, limited only by the hardware capabilities of the hive's node. However, the server capability often exceeds the client's capability, especially in terms of memory.
 
-Additionnally, the client may wish to consume the content as it receives it and waiting for everything to be received can be counter productive. 
+Additionally, the client may wish to consume the content as it receives it and waiting for everything to be received can be counterproductive. 
 
 For example, if you use a wrpme hive to store digital videos and clients are video players, it is expected to be able to display the video as you download it.
 
@@ -21,7 +21,7 @@ The typical usage scenario is the following:
     #. A client opens a streaming handle for a given entry. The default buffer size is 1 MiB. If it is inappropriate, it needs to be set *before* opening the streaming handle via the appropriate API call.
     #. The client reads content for the entry. The API automatically reads the next chunk of available data. The result of the read is placed in the API allocated buffer.
     #. The client processes the buffer. For example, it may send the buffer to a video decoder.
-    #. The client may manually set the offset if need be. Positioning the offset beyond the end of the content results in an error.
+    #. The client may manually set the offset if need be. Positioning the offset beyond the end results in an error.
     #. The client stops reading when the offset reaches the end. Reading beyond the end will result in an error.
     #. The client closes the handle. This frees all resources.
 
