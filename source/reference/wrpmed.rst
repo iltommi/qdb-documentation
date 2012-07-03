@@ -97,7 +97,7 @@ Use :option:`--limiter-max-entries-count` (defaults to 10000) and :option:`--lim
 .. note:: 
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
 
-The wrpme daemon uses a proprietary *fast monte-carlo* eviction heuristic. It is not configurable.
+The wrpme daemon uses a proprietary *fast monte-carlo* eviction heuristic. This algorithm is currently not configurable.
 
 Operating limits
 ================
@@ -108,9 +108,6 @@ Theoretical limits
 **Entry size**
     An :term:`entry` cannot be larger than the amount of virtual memory available on a single :term:`node`. This ranges from several megabytes to several gigabytes depending on the amount of physical memory available on the system. It is recommended to keep entries size well below the amount of available physical memory.
 
-**Memory per instance**
-    Each instance is limited by the amount of memory the operating system is able to manage
-
 **Key size**
     As it is the case for entries, a key cannot be larger than the amount of virtual memory available on a single :term:`node`.
 
@@ -120,9 +117,8 @@ Theoretical limits
 **Number of entries on a single grid**
     The maximum number of entries is :math:`2^{63}` (9,223,372,036,854,775,808)
 
-**Number of entries per node**
-    The maximum number of entries per node depends on the :option:`--limiter-max-bytes` parameter.
-    Each entry uses around 320 bytes of memory
+**Node maximum capacity**
+    The node capacity depends on the available disk space on a given node.
 
 **Total amount of data**
     The total amount of data a single :term:`grid` may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes)

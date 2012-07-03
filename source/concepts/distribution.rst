@@ -117,10 +117,10 @@ When a node joins a ring, it is in an unstable state until the join is complete.
 
 That means that although a ring's segment may be unable to serve requests for a short period of time, the rest of the ring remains unaffected.
 
-In a production environment, hive segments may become unstable for a short period (in the order of minutes, generally in less than one minute) of time after a node fails. This instability is temporary and does not require human intervention to be resolved. 
+In a production environment, hive segments may become unstable for a short period of time after a node fails. This temporary instability does not require human intervention to be resolved. 
 
 .. tip::
-    When a hive's segment is unstable request *might* temporarily fail. The probability for failure is exponentially correlated with the number of simultaneous failures.
+    When a hive's segment is unstable requests *might* temporarily fail. The probability for failure is exponentially correlated with the number of simultaneous failures.
 
 Minimum number of working nodes required
 -------------------------------------------
