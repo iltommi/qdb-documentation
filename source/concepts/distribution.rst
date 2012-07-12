@@ -52,7 +52,7 @@ Stabilizing means a node will exchange information with its neighbourgs in order
     * Make sure the neighbors (the :term:`successor` and the :term:`predecessor`) are still up and running
     * A new node isn't a best :term:`successor` that the existing one
 
-In a sane, stable cluster, stabilization is extremely short and does not result in any modification. However, if one or several node fail or new nodes join the hive, stabilization will migrate keys and change the neighbors.
+In a sane, stable cluster, stabilization is extremely short and does not result in any modification. However, if one or several node fail or new nodes join the hive, stabilization will migrate keys and change the neighbors (see :ref:`data-migration`).
 
 Thus the stabilization duration depends on the amount of data to migrate, if any. Migrating data is done as fast as the underlying architecture permits.
 
@@ -62,6 +62,27 @@ When the node evaluates its surrounding to be stable, it will increase the durat
 
 .. tip::
     Stabilization happens when bootstrapping a hive, in case of failure or when adding nodes. It is transparent and does not require any intervention.
+
+.. _data-migration:
+
+Data migration
+----------------
+
+When a new node joins the ring, it may imply data migration. Data migration occurs if the new node is the successor of keys already bound to another node. Data migration occurs regardless of replication as it makes sure entries are always bound to the correct node.
+
+The protocol for data migration is the following:
+
+    1. N joins the ring by looking for its successor M
+    2. N stabilizes itself, informing its successor and predecessor of its existence
+    3. When N has got both predecessor M and successor O, N request its successor M for the range ]O, N] of keys
+    4. M sends the requested keys, one by one. 
+
+It has to be noted that, without replication, between steps 2 and 4 the entries in the range ]O, N] may not be available. This is a temporary failure that resolves itself automatically.
+
+If there is a large amount of entries to migrate, this may negatively impact performances. Migration speed therefore depends on the available network bandwidth.
+
+.. tip::
+    Add nodes when the trafic is at its lowest point.
 
 Usage
 =====================================================
