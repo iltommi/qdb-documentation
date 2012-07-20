@@ -70,19 +70,61 @@ Data migration
 
 When a new node joins the ring, it may imply data migration. Data migration occurs if the new node is the successor of keys already bound to another node. Data migration occurs regardless of replication as it makes sure entries are always bound to the correct node.
 
-The protocol for data migration is the following:
+.. note::
+    Data migration is always enabled. 
 
-    1. N joins the ring by looking for its successor M
-    2. N stabilizes itself, informing its successor and predecessor of its existence
-    3. When N has got both predecessor M and successor O, N request its successor M for the range ]O, N] of keys
-    4. M sends the requested keys, one by one. 
+At the end of each stabilization cycle, a node will check if it holds entries that its successor, or its predecessor should have. If yes, it will migrate those entries to the proper node.
 
-It has to be noted that, without replication, between steps 2 and 4 the entries in the range ]O, N] may not be available. This is a temporary failure that resolves itself automatically.
+More precisely:
 
-If there is a large amount of entries to migrate, this may negatively impact performances. Migration speed therefore depends on the available network bandwidth.
+    1. The node N enumerates the entries that belong to its successor S, the count of those entries is c
+    2. Each entry is retrieved from N, migrated to S and upon success removed from N 
+    3. Step #1 is executed for the predecessor as well
+
+.. note::
+    Migration speed depends on the available network bandwidth, therefore, a large amount (several gigabytes) of data to migrate may negatively impact performances.
+
+During migration nodes remain available and will answer to requests, however since migration occurs *after* the node is registered there is a time interval during which entries in migration may be temporarly unvailable. 
+
+Failure scenario:
+
+    1. A new node *N* joins the ring, its predecessor is *P* and tits successor *S*
+    2. A client looks for the entry *e*, it is currently bound to *S* but ought to be on *N*
+    3. As *N* has joined the ring, the client correctly requests *N* for *e*
+    4. N answers "not found" as *S* has not migrated e yet
+
+This unvailability is only for the duration of the migration and cannot result in a data loss.
+
+.. tip::
+    This problem can be solved with the use of replication (see :ref:`data-replication`).
+
+Migration only occurs when a new node joins the ring. This happens only:
+
+    1. In case of failure, when the node rejoins the ring upon recovery
+    2. When the administrator expands the hive by adding new nodes
+
+Removing nodes does not cause data migration. Removing nodes results in data loss, unless replication is in place.
 
 .. tip::
     Add nodes when the trafic is at its lowest point.
+
+.. _data-replication:
+
+Data replication
+-----------------
+
+Data replication greatly reduces the odds of functional failures at the cost of increasing memory usage.
+
+.. note::
+    Replication is optional and disabled by default (see :doc:`../reference/wrpmed`).
+
+Given a :math:`\lambda(N)` failure rate of a node N, the mean time :math:`\tau` between failures of any given entry for an x replication factor is:
+
+.. math::
+    \tau:x \to \frac{1}{{\lambda(N)}^{x}}
+
+.. tip::
+    A replication factor is two is a good compromise between reliability and memory usage.
 
 Usage
 =====================================================
