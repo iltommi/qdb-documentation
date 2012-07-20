@@ -24,6 +24,7 @@ Cheat sheet
  :option:`-s`                          max client sessions          1000
  :option:`-r`                          persistence directory        ./db
  :option:`--id`                        set the node id              generated
+ :option:`--replication`               Sets the replication factor  1
  :option:`--peer`                      one peer to form a hive
  :option:`--transient`                 disable persistence
  :option:`--sync``                     sync every disk write
@@ -146,6 +147,11 @@ Parameters reference
 Parameters can be supplied in any order and are prefixed with ``--``. 
 The arguments format is parameter dependent.
 
+Instance specific parameters only apply to the instance ran while global parameters are for the whole ring. Global parameters are applied when the first instance of a ring is launched.
+
+Instance specific
+--------------------
+
 .. option:: -h, --help
 
     Displays basic usage information.
@@ -173,26 +179,20 @@ The arguments format is parameter dependent.
 .. note::
     The unspecified address (0.0.0.0 for IPv4, :: for IPv6) is not allowed.
 
-.. option:: -s <count>, --sessions=<count>
+.. option:: -r <path>, --root=<path>
 
-    Specifies the number of simultaneous sessions.
+    Specifies the directory where data will be persisted.
 
     Argument
-        A number greater or equal to fifty (50) representing the number of allowed simultaneous sessions.
+        A string representing a full path to the directory where data will be persisted.
 
     Default value
-        1,000
+        The "db" subdirectory relative to the current working directory.
 
     Example
-        Allow 2,000 simultaneous session::
+        Persist data in /var/wrpme/db ::
 
-            wrpmed --sessions=2000
-
-.. note::
-    The sessions count determines the number of simultaneous clients the server may handle at any given time. 
-    Increasing the value increases the memory load.
-    Values below 50 are ignored.
-
+            wrpmed --root=/var/wrpme/db
 
 .. option:: --id=<id string>
 
@@ -215,36 +215,6 @@ The arguments format is parameter dependent.
     an ID that is guaranteed to be unique on any given ring. This function's purpose is to modify the topology of
     the ring, should the topology be unsatisfactory.
 
-.. option:: --idle-timeout=<timeout>
-
-    Sets the timeout after which inactive session will be considered for termination.
-
-    Argument
-        A float representing the number of seconds after which an idle session will be considered for termination.
-
-    Default value
-        300.0 (300 seconds, 5 minutes)
-
-    Example
-        Set the timeout to one minute::
-        
-            wrpmed --idle-timeout=60.0
-
-.. option:: -r <path>, --root=<path>
-
-    Specifies the directory where data will be persisted.
-
-    Argument
-        A string representing a full path to the directory where data will be persisted.
-
-    Default value
-        The "db" subdirectory relative to the current working directory.
-
-    Example
-        Persist data in /var/wrpme/db ::
-
-            wrpmed --root=/var/wrpme/db
-
 .. option:: --peer=<address>:<port>
 
     The address and port of a peer to which to connect within the :term:`hive`. It can be any :term:`server` belonging to the :term:`hive`.
@@ -259,59 +229,6 @@ The arguments format is parameter dependent.
         Join a :term:`hive` where the machine 192.168.1.1 listening on the port 2836 is already connected::
 
             wrpmed --peer=192.168.1.1:2836
-
-.. option:: --transient
-
-    Disable persistence. Equivalent to --flush-interval=0. Evicted data is lost when wrpmed is :term:`transient`.
-
-.. option:: --sync
-
-    Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. 
-
-.. note::
-    This option increases reliability at the cost of performances.
-
-.. option:: --limiter-max-entries-count=<count>
-
-    The maximum number of entries allowed in memory. Entries will be evicted as needed to enforce this limit.
-
-    Argument
-        An integer representing the maximum number of entries allowed in memory.
-
-    Default value
-        10,000
-
-    Example
-        To keep the number of entries in memory below 101::
-
-            wrpmed --limiter-max-entries=100
-
-.. note::
-    Setting this value too low may cause the :term:`server` to spend more time evicting entries than processing requests.
-
-.. option:: --limiter-max-bytes=<value>
-
-   The maximum usable memory by entries, in bytes. Entries will be evicted as needed to enforce this limit. The alias length as well
-   as the content size are both accounted to measure the actual size of entries in memory.
-   The :term:`server` may use more than the specified amount of memory because of internal data structures and temporary copies.
-
-   Argument
-        An integer representing the maximum size, in bytes, of the entries in memory.
-
-   Default value
-        0 (automatic, half the available physical memory).
-
-   Example
-       To allow only 100 kiB of entries::
-
-            wrpmed --limiter-max-bytes=102400
-
-       To allow up to 8 GiB::
-
-            wrpmed --limiter-max-bytes=8589934592
-
-.. note::
-    Setting this value too high may lead to `trashing <http://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
 
 .. option:: -o, --log-console
 
@@ -369,4 +286,113 @@ The arguments format is parameter dependent.
         Flush the log every minute::
 
             wrpmed --log-flush-interval=60
+
+Global
+----------
+
+
+.. option:: --replication=<factor>
+
+    Specifies the replication factor (global parameter).
+
+    Argument
+        A positive integer between 1 and 4 (inclusive) specifying the replication factor
+
+    Default value
+        1 (replication disabled)
+
+    Example
+        Have one copy of every entry in the hive::
+
+            wrpmed --replication=2
+
+.. option:: --transient
+
+    Disable persistence. Evicted data is lost when wrpmed is :term:`transient`. 
+
+.. option:: --sync
+
+    Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. (global parameter)
+
+.. note::
+    This option increases reliability at the cost of performances.
+
+.. option:: -s <count>, --sessions=<count>
+
+    Specifies the number of simultaneous sessions 
+
+    Argument
+        A number greater or equal to fifty (50) representing the number of allowed simultaneous sessions.
+
+    Default value
+        1,000
+
+    Example
+        Allow 2,000 simultaneous session::
+
+            wrpmed --sessions=2000
+
+.. note::
+    The sessions count determines the number of simultaneous clients the server may handle at any given time. 
+    Increasing the value increases the memory load.
+    Values below 50 are ignored.
+
+.. option:: --idle-timeout=<timeout>
+
+    Sets the timeout after which inactive session will be considered for termination.
+
+    Argument
+        A float representing the number of seconds after which an idle session will be considered for termination.
+
+    Default value
+        300.0 (300 seconds, 5 minutes)
+
+    Example
+        Set the timeout to one minute::
+        
+            wrpmed --idle-timeout=60.0
+
+.. option:: --limiter-max-bytes=<value>
+
+   The maximum usable memory by entries, in bytes. Entries will be evicted as needed to enforce this limit. The alias length as well
+   as the content size are both accounted to measure the actual size of entries in memory.
+   The :term:`server` may use more than the specified amount of memory because of internal data structures and temporary copies. (global parameter)
+
+   Argument
+        An integer representing the maximum size, in bytes, of the entries in memory.
+
+   Default value
+        0 (automatic, half the available physical memory).
+
+   Example
+       To allow only 100 kiB of entries::
+
+            wrpmed --limiter-max-bytes=102400
+
+       To allow up to 8 GiB::
+
+            wrpmed --limiter-max-bytes=8589934592
+
+.. note::
+    Setting this value too high may lead to `trashing <http://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
+
+
+.. option:: --limiter-max-entries-count=<count>
+
+    The maximum number of entries allowed in memory. Entries will be evicted as needed to enforce this limit. 
+
+    Argument
+        An integer representing the maximum number of entries allowed in memory.
+
+    Default value
+        10,000
+
+    Example
+        To keep the number of entries in memory below 101::
+
+            wrpmed --limiter-max-entries=100
+
+.. note::
+    Setting this value too low may cause the :term:`server` to spend more time evicting entries than processing requests.
+
 

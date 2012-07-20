@@ -73,18 +73,19 @@ When a new node joins the ring, it may imply data migration. Data migration occu
 .. note::
     Data migration is always enabled. 
 
-At the end of each stabilization cycle, a node will check if it holds entries that its successor, or its predecessor should have. If yes, it will migrate those entries to the proper node.
+At the end of each stabilization cycle, a node will request its successor and its predecessor for entries within its range.
 
 More precisely:
 
-    1. The node N enumerates the entries that belong to its successor S, the count of those entries is c
-    2. Each entry is retrieved from N, migrated to S and upon success removed from N 
-    3. Step #1 is executed for the predecessor as well
+    1. N joins the ring by looking for its successor S
+    2. N stabilizes itself, informing its successor and predecessor of its existence
+    3. When N has got both predecessor P and successor S, N request both of them for the ]P; N] range of keys
+    4. P and S send the requested keys, if any, one by one. 
 
 .. note::
     Migration speed depends on the available network bandwidth, therefore, a large amount (several gigabytes) of data to migrate may negatively impact performances.
 
-During migration nodes remain available and will answer to requests, however since migration occurs *after* the node is registered there is a time interval during which entries in migration may be temporarly unvailable. 
+During migration nodes remain available and will answer to requests, however since migration occurs *after* the node is registered there is a time interval during which entries in migration may be temporarly unvailable (between step #3 and #4).
 
 Failure scenario:
 
@@ -93,7 +94,7 @@ Failure scenario:
     3. As *N* has joined the ring, the client correctly requests *N* for *e*
     4. N answers "not found" as *S* has not migrated e yet
 
-This unvailability is only for the duration of the migration and cannot result in a data loss.
+This unvailability is only for the duration of the migration and cannot result in a data loss. This is because a node will not remove an entry until the peer fully acknowledged the migration.
 
 .. tip::
     This problem can be solved with the use of replication (see :ref:`data-replication`).
@@ -113,18 +114,62 @@ Removing nodes does not cause data migration. Removing nodes results in data los
 Data replication
 -----------------
 
-Data replication greatly reduces the odds of functional failures at the cost of increasing memory usage.
+Data replication greatly reduces the odds of functional failures at the cost of increasing memory usage and reduced performances when adding or updating.
 
 .. note::
     Replication is optional and disabled by default (see :doc:`../reference/wrpmed`).
 
-Given a :math:`\lambda(N)` failure rate of a node N, the mean time :math:`\tau` between failures of any given entry for an x replication factor is:
+Principle
+^^^^^^^^^^
+
+Data is replicated on a node's successors. For example with a factor two replication, an entry will be maintained by a node and by its successor. With a factor three replication, an entry will be maintained by a node and and by its two successors. Thus replication linearly increases memory usage.
+
+.. note::
+    The replication factor is identical for all nodes of a hive and is configurable (see :doc:`../reference/wrpmed`). By default it is set to one (replication disabled).
+
+The limit to this rule is for hives with fewer nodes than the replication factor. For example, a two nodes hive cannot have a factor three replication.
+
+Replication is done synchronously as data is added or updated. The call will not successfully return until the data has been stored and fully replicated.
+
+When a node fails, data will be replicated on the new successor after stabilization completes. This means that simultaneous failures between two stabilizations may result in inaccessible entries (see :ref:`data-replication-reliability-impact`)
+
+.. note::
+    Since the location of the replication depends on the order of nodes, control of the physical location can be done via a control of the nodes's id.
+
+Benefits
+^^^^^^^^^^
+
+Replication main benefits are in the field of reliability and resilience:
+
+    * When adding a new node, data remains accessible during migration. The client will look on replicas should it fail accessing the original entrie (see :ref:`data-migration`)
+    * When a node becomes unreachable, replicas will take over and service requests
+
+.. _data-replication-reliability-impact:
+
+Impact on reliability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+For an entry x to become unavailable, all replicas must *simultaneously* fail.
+
+More formally, given a :math:`\lambda(N)` failure rate of a node N, the mean time :math:`\tau` between failures of any given entry for an x replication factor is:
 
 .. math::
     \tau:x \to \frac{1}{{\lambda(N)}^{x}}
 
+This formula assumes that failures are unrelated, which is never completly the case. For example, the failure rates of blades in the same enclosure is correlated. However, the formula a good enough approximation to exhibit the exponential relation between replication and reliability.
+
 .. tip::
-    A replication factor is two is a good compromise between reliability and memory usage.
+    A replication factor is two is a good compromise between reliability and memory usage as it gives a quadratic increase on reliablity while increase memory usage by a factor two.
+
+Impact on performance
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+All add and update operations are :math:`\tau` slower when replication is active. Get operations are not impacted. 
+
+Replication also increases the time needed to add a new node to the ring by a factor of :math:`\tau`.
+
+.. tip::
+    *Read-mostly* hives greatly benefit from replication without any noticeable performance penalty.
 
 Usage
 =====================================================
