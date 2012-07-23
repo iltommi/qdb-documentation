@@ -179,20 +179,55 @@ Instance specific
 .. note::
     The unspecified address (0.0.0.0 for IPv4, :: for IPv6) is not allowed.
 
-.. option:: -r <path>, --root=<path>
+.. option:: -s <count>, --sessions=<count>
 
-    Specifies the directory where data will be persisted.
+    Specifies the number of simultaneous sessions 
 
     Argument
-        A string representing a full path to the directory where data will be persisted.
+        A number greater or equal to fifty (50) representing the number of allowed simultaneous sessions.
 
     Default value
-        The "db" subdirectory relative to the current working directory.
+        1,000
 
     Example
-        Persist data in /var/wrpme/db ::
+        Allow 2,000 simultaneous session::
 
-            wrpmed --root=/var/wrpme/db
+            wrpmed --sessions=2000
+
+.. note::
+    The sessions count determines the number of simultaneous clients the server may handle at any given time. 
+    Increasing the value increases the memory load.
+    Values below 50 are ignored.
+
+.. option:: --idle-duration=<duration>
+
+    Sets the timeout after which inactive session will be considered for termination.
+
+    Argument
+        An integer representing the number of seconds after which an idle session will be considered for termination.
+
+    Default value
+        300 (300 seconds, 5 minutes)
+
+    Example
+        Set the timeout to one minute::
+        
+            wrpmed --idle-duration=60
+
+.. option:: --request-timeout=<timeout>
+
+    Sets the timeout after which a request from the server to another server must be considered to have timed out.
+
+    Argument
+        An integer representing the number of seconds after which a request must be considered to have timed out.
+
+    Default value
+        60 (60 seconds, 1 minute)
+
+    Example
+        Set the timeout to two minutes::
+
+            wrpmed --request-timeout=120
 
 .. option:: --id=<id string>
 
@@ -310,6 +345,24 @@ Global
 
     Disable persistence. Evicted data is lost when wrpmed is :term:`transient`. 
 
+.. option:: -r <path>, --root=<path>
+
+    Specifies the directory where data will be persisted for the node where the process has been launched.
+
+    Argument
+        A string representing a full path to the directory where data will be persisted.
+
+    Default value
+        The "db" subdirectory relative to the current working directory.
+
+    Example
+        Persist data in /var/wrpme/db ::
+
+            wrpmed --root=/var/wrpme/db
+
+.. note::
+    Although this parameter is global, the directory refers to the local node of each instance.
+
 .. option:: --sync
 
     Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. (global parameter)
@@ -317,40 +370,6 @@ Global
 .. note::
     This option increases reliability at the cost of performances.
 
-.. option:: -s <count>, --sessions=<count>
-
-    Specifies the number of simultaneous sessions 
-
-    Argument
-        A number greater or equal to fifty (50) representing the number of allowed simultaneous sessions.
-
-    Default value
-        1,000
-
-    Example
-        Allow 2,000 simultaneous session::
-
-            wrpmed --sessions=2000
-
-.. note::
-    The sessions count determines the number of simultaneous clients the server may handle at any given time. 
-    Increasing the value increases the memory load.
-    Values below 50 are ignored.
-
-.. option:: --idle-timeout=<timeout>
-
-    Sets the timeout after which inactive session will be considered for termination.
-
-    Argument
-        A float representing the number of seconds after which an idle session will be considered for termination.
-
-    Default value
-        300.0 (300 seconds, 5 minutes)
-
-    Example
-        Set the timeout to one minute::
-        
-            wrpmed --idle-timeout=60.0
 
 .. option:: --limiter-max-bytes=<value>
 
