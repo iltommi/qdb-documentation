@@ -97,24 +97,21 @@ Failure scenario:
 This unvailability is only for the duration of the migration and cannot result in a data loss. This is because a node will not remove an entry until the peer fully acknowledged the migration.
 
 .. tip::
-    This problem can be solved with the use of replication (see :ref:`data-replication`).
+    Add nodes when the trafic is at its lowest point.
 
 Migration only occurs when a new node joins the ring. This happens only:
 
     1. In case of failure, when the node rejoins the ring upon recovery
     2. When the administrator expands the hive by adding new nodes
 
-Removing nodes does not cause data migration. Removing nodes results in data loss, unless replication is in place.
-
-.. tip::
-    Add nodes when the trafic is at its lowest point.
+Removing nodes does not cause data migration. Removing nodes results in unaccessible entries, unless replication is in place (see :ref:`data-replication`).
 
 .. _data-replication:
 
 Data replication
 -----------------
 
-Data replication greatly reduces the odds of functional failures at the cost of increasing memory usage and reduced performances when adding or updating.
+Data replication greatly reduces the odds of functional failures at the cost of increased memory usage and reduced performances when adding or updating.
 
 .. note::
     Replication is optional and disabled by default (see :doc:`../reference/wrpmed`).
@@ -122,7 +119,7 @@ Data replication greatly reduces the odds of functional failures at the cost of 
 Principle
 ^^^^^^^^^^
 
-Data is replicated on a node's successors. For example with a factor two replication, an entry will be maintained by a node and by its successor. With a factor three replication, an entry will be maintained by a node and and by its two successors. Thus replication linearly increases memory usage.
+Data is replicated on a node's successors. For example with a factor two replication, an entry will be maintained by a node and by its successor. With a factor three replication, an entry will be maintained by a node and and by its two successors. Thus, replication linearly increases memory usage.
 
 .. note::
     The replication factor is identical for all nodes of a hive and is configurable (see :doc:`../reference/wrpmed`). By default it is set to one (replication disabled).
@@ -139,10 +136,33 @@ When a node fails, data will be replicated on the new successor after stabilizat
 Benefits
 ^^^^^^^^^^
 
-Replication main benefits are in the field of reliability and resilience:
+Replication main benefits are in the fields of reliability and resilience:
 
     * When adding a new node, data remains accessible during migration. The client will look on replicas should it fail accessing the original entrie (see :ref:`data-migration`)
     * When a node becomes unreachable, replicas will take over and service requests
+
+How replication minimizes unavailability
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When a node becomes unavailable, the entries it was holding are no longer accessible for reading or writing. With replication, as the successor holds a complete copy of all its predecessor entries, all entries will be instantly accessible once the ring stabilizes.
+
+How replication works with migration
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+When a new node joins a ring, data is migrated (see :ref:`data-migration`). When replication is in place, the migration phase also includes a replication phase that consists in copying all the entries to the successor. Thus, replication increases the migration duration.
+
+Conflicts resolution
+^^^^^^^^^^^^^^^^^^^^^^
+
+The way replication work, an original and a replica cannot be simultenously edited. The client will always access the version considered *original* and replicas are always overwritten in favor or the considered *original*.
+
+A version is original if it belongs to the node range, if not, it is a replica. A replica becomes original when the range of the node changes. 
+
+In other words, the client access the replica **after** ring stabilization. It does not attempt to directly read the entry at the successor: replication is totally transparent to the client.
+
+This comes at the cost that an entry my be unavailable when the ring is in unstable phase.
+
+Formally put, this means that wrpme may chose to sacrifice Availability for Consistency and Partionability during short periods of time.
 
 .. _data-replication-reliability-impact:
 
@@ -159,12 +179,14 @@ More formally, given a :math:`\lambda(N)` failure rate of a node N, the mean tim
 This formula assumes that failures are unrelated, which is never completly the case. For example, the failure rates of blades in the same enclosure is correlated. However, the formula a good enough approximation to exhibit the exponential relation between replication and reliability.
 
 .. tip::
-    A replication factor is two is a good compromise between reliability and memory usage as it gives a quadratic increase on reliablity while increase memory usage by a factor two.
+    A replication factor of two is a good compromise between reliability and memory usage as it gives a quadratic increase on reliablity while increasing memory usage by a factor two.
+
+
 
 Impact on performance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All add and update operations are :math:`\tau` slower when replication is active. Get operations are not impacted. 
+All add and update operations are :math:`\tau` slower when replication is active. Read-only operations are not impacted. 
 
 Replication also increases the time needed to add a new node to the ring by a factor of :math:`\tau`.
 
