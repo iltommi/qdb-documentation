@@ -1,6 +1,16 @@
 Change log
 ***************
 
+v0.7.0 - 08/20/2012
+-------------------
+
+    * Daemon: Automatic, integrated and distributed replication to up to 4 copies (disabled by default)
+    * Daemon: Support for global configuration
+    * Daemon: Fixed bug that could cause a connection reset between two nodes if they were using a half-duplex channel
+    * Client API: Fixed bug that prevented the 32-bit Windows API to add entries larger than 4 GiB
+    * Greatly improved the `documentation <http://doc.wrpme.com/>`_
+    * Upgraded to Boost 1.50.0
+
 v0.6.66 - 07/02/2012
 --------------------
 

@@ -13,9 +13,9 @@ As of now, the server can serve as many concurrent requests as the operating sys
 
 The server will make sure that requests do not conflict with each other. It will spread the load on the entire processing power available, if need be.
 
-The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several  instances on the same node is counter-productive.
+The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
 
-Multiple clients can simultaneously access the same entry for reading. The server will however ensure that only one client access an entry for writing at any time.
+Multiple clients can simultaneously access the same entry for reading. The server will however ensure that only one client accesses an entry for writing at any time.
 
 Multiple clients can simultaneously access different entries for reading and writing.
 
@@ -120,7 +120,7 @@ wrpme provides several mechanisms to allow clients to synchronize themselves and
 
 Things to consider:
 
-    * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing one size fits all client.
+    * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing a *one size fits all* client.
     * There is always an update delay, whatever system you're using. The question is, what delay can your business case tolerate? For example a high frequency trading automaton and a reservation system have different requirements.
     * The problem is never the conflict in itself. The problem is operating without realizing that there was a conflict in the first place.
     * wrpme provides ways to synchronize clients. For example, put fails if the entry already exists and update always succeed.

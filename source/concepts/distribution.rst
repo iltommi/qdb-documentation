@@ -12,6 +12,9 @@ A wrpme hive is a peer-to-peer distributed hash table based on `Chord <http://pd
     Automatic configuration
         Nodes organize themselves and exchange data as needed
 
+    Integrated replication
+        Data can be replicated on several nodes for increased resilience
+
     Fault tolerance
         The failure of one or several nodes does not compromise the hive
  
@@ -56,7 +59,7 @@ In a sane, stable cluster, stabilization is extremely short and does not result 
 
 Thus the stabilization duration depends on the amount of data to migrate, if any. Migrating data is done as fast as the underlying architecture permits.
 
-The duration between each stabilization is between 1 (one) second and 20 (twenty) seconds.
+The interval length between each stabilization is between 1 (one) second and 2 (two) minutes.
 
 When the node evaluates its surrounding to be stable, it will increase the duration between each stabilization. On the contrary, when the surrounding are deemed *unstable* this duration will be reduced.
 
@@ -144,7 +147,7 @@ Replication main benefits are in the fields of reliability and resilience:
 How replication minimizes unavailability
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When a node becomes unavailable, the entries it was holding are no longer accessible for reading or writing. With replication, as the successor holds a complete copy of all its predecessor entries, all entries will be instantly accessible once the ring stabilizes.
+When a node becomes unavailable, the entries it was holding are no longer accessible for reading or writing. With replication, as the successor holds a complete copy of all its predecessor entries, all entries will be instantly accessible as soon as the ring is stabilized.
 
 How replication works with migration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,9 +163,9 @@ A version is original if it belongs to the node range, if not, it is a replica. 
 
 In other words, the client access the replica **after** ring stabilization. It does not attempt to directly read the entry at the successor: replication is totally transparent to the client.
 
-This comes at the cost that an entry my be unavailable when the ring is in unstable phase.
+This comes at the cost that an entry may be unavailable when the ring is in unstable phase.
 
-Formally put, this means that wrpme may chose to sacrifice Availability for Consistency and Partionability during short periods of time.
+Formally put, this means that wrpme may chose to sacrifice *Availability* for *Consistency* and *Partionability* during short periods of time.
 
 .. _data-replication-reliability-impact:
 
@@ -176,19 +179,17 @@ More formally, given a :math:`\lambda(N)` failure rate of a node N, the mean tim
 .. math::
     \tau:x \to \frac{1}{{\lambda(N)}^{x}}
 
-This formula assumes that failures are unrelated, which is never completly the case. For example, the failure rates of blades in the same enclosure is correlated. However, the formula a good enough approximation to exhibit the exponential relation between replication and reliability.
+This formula assumes that failures are unrelated, which is never completly the case. For example, the failure rates of blades in the same enclosure is correlated. However, the formula is a good enough approximation to exhibit the exponential relation between replication and reliability.
 
 .. tip::
     A replication factor of two is a good compromise between reliability and memory usage as it gives a quadratic increase on reliablity while increasing memory usage by a factor two.
 
-
-
 Impact on performance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All add and update operations are :math:`\tau` slower when replication is active. Read-only operations are not impacted. 
+All add and update ("write") operations are :math:`\tau` slower when replication is active. Read-only operations are not impacted. 
 
-Replication also increases the time needed to add a new node to the ring by a factor of :math:`\tau`.
+Replication also increases the time needed to add a new node to the ring by a factor of at most :math:`\tau`.
 
 .. tip::
     *Read-mostly* hives greatly benefit from replication without any noticeable performance penalty.
@@ -203,6 +204,8 @@ To build a hive, nodes are added to each other. A node only needs to know one ot
 
 The simplest way to ensure this is to make all nodes initially join the same node. This will not create a single point of failure as once the ring is stabilized the nodes will properly reference each other.
 
+If following to a major network failures a ring forms two disjoint rings, the two rings will be able to unite again once the underlying failure is resolved. This is because each node "remembers" past topologies.
+
 Connecting to a hive
 ------------------------
 
@@ -211,7 +214,7 @@ A client may connect to any node within the hive. It will automatically discover
 Recovering a node
 --------------------
 
-When a node recovers from failure, it needs to reference a peer within the need to properly rejoin. The first node in a ring generally does not reference any other, thus, if the first node of the ring fails, it needs to be restarted with a different command line.
+When a node recovers from failure, it needs to reference a peer within the need to properly rejoin. The first node in a ring generally does not reference any other, thus, if the first node of the ring fails, it needs to be restarted with a reference to a peer within the existing ring.
 
 .. _fault-tolerance:
 

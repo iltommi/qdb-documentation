@@ -16,26 +16,41 @@ Configuration
 Cheat sheet
 -----------
 
- ===================================== ============================ ===================
-                Option                               Usage               Default
- ===================================== ============================ ===================
- :option:`-h`                          display help
- :option:`-a`                          address to listen on         127.0.0.1:2836
- :option:`-s`                          max client sessions          1000
- :option:`-r`                          persistence directory        ./db
- :option:`--id`                        set the node id              generated
- :option:`--replication`               Sets the replication factor  1
- :option:`--peer`                      one peer to form a hive
- :option:`--transient`                 disable persistence
- :option:`--sync``                     sync every disk write
- :option:`--limiter-max-entries-count` max entries in cache 10000
- :option:`--limiter-max-bytes`         max bytes in cache           Automatic
- :option:`-o`                          log on console
- :option:`-l`                          log on given file
- :option:`--log-syslog`                log on syslog
- :option:`--log-level`                 change log level             info
- :option:`--log-flush-interval`        change log flush             3
- ===================================== ============================ ===================
+ ===================================== ============================ =================== ============
+                Option                               Usage               Default           Global
+ ===================================== ============================ =================== ============
+ :option:`-h`                          display help                                         No
+ :option:`-a`                          address to listen on         127.0.0.1:2836          No
+ :option:`-s`                          max client sessions          1000                    No
+ :option:`-r`                          persistence directory        ./db                    Yes
+ :option:`--id`                        set the node id              generated               No
+ :option:`--replication`               Sets the replication factor  1                       Yes
+ :option:`--peer`                      one peer to form a hive                              No
+ :option:`--transient`                 disable persistence                                  Yes
+ :option:`--sync``                     sync every disk write                                Yes
+ :option:`--limiter-max-entries-count` max entries in cache 10000                           Yes
+ :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes
+ :option:`-o`                          log on console                                       No
+ :option:`-l`                          log on given file                                    No
+ :option:`--log-syslog`                log on syslog                                        No
+ :option:`--log-level`                 change log level             info                    No
+ :option:`--log-flush-interval`        change log flush             3                       No
+ ===================================== ============================ =================== ============
+
+Global and local options
+------------------------
+
+When a node connects to a ring, it will first download the configuration of this ring and overwrites its parameters with the ring's parameters.
+
+This way, you can be sure that parameters are consistent over all the nodes. This is especially important for parameters such as replication where you need all nodes to agree on a single replication factor.
+
+This is also important for persistance as having a mix of transient and non-transient nodes will result in undefined behaviours and unwanted data loss.
+
+However, not all options are taken from the ring. It makes sense to have a heterogenous logging threshold for example, as you may want to analyze the behaviour of a specific part of your cluster.
+
+In addition, some parameters are node specific, such as the listening address or the node ID.
+
+An option that applies cluster-wide is said to be *global* whereas other options are said to be *local*. The value of a global option is set by the first node that creates the ring, all other nodes will copy these parameters. On the other hand, local options are read from the command line as you run the daemon.
 
 Network distribution
 --------------------
@@ -72,20 +87,20 @@ You can also change the log flush interval (:option:`--log-flush-interval`), whi
 Persistence
 -----------
 
-Data is persisted on disk, by default in a `db` directory under the current working directory. 
-You can change this to any directory you want using the :option:`-r` option.
-Data persistence on disk is buffered: when an user requests ends, the data may or may not be persisted on the disk yet.
-Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
+.. note::
+    Persistence option are global for any given ring.
 
-However, should you need every write to be synced to disk, you can do so with the :option:`--sync` option. Syncing every write do disk
-negatively impacts performances while slightly increasing reliability.
+Data is persisted on disk, by default in a `db` directory under the current working directory. You can change this to any directory you want using the :option:`-r` option. All nodes will use the same directory as this is a global parameter.
+
+Data persistence on disk is buffered: when an user requests ends, the data may or may not be persisted on the disk yet. Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
+
+Should you need every write to be synced to disk, you can do so with the :option:`--sync` option. Syncing every write do disk negatively impacts performances while slightly increasing reliability.
 
 You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure in-memory :term:`repository`.
 
-.. note::
-    
-    If you disable the persistence, any entry evicted is lost for good. 
-    This is the expected behaviour for a pure in-memory cache, but be careful with your eviction thresholds.
+.. caution::    
+    If you disable the persistence, any entry evicted is lost for good as this is the expected behaviour for a pure in-memory cache.
+
 
 Cache
 -----
@@ -93,7 +108,7 @@ Cache
 In order to achieve high performances, the daemon keeps as much data as possible in memory. However, the physical memory available for a node may not suffice.
 
 Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
-Use :option:`--limiter-max-entries-count` (defaults to 10000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+Use :option:`--limiter-max-entries-count` (defaults to 10,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 
 .. note:: 
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
