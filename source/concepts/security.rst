@@ -19,5 +19,5 @@ Should write access be given, a better approach is to design a proxy client that
 
 Design
 -------
-The wrpme protocol, especially the serialization part, has been designed to resist buffer overflows and most of current denial of service (DOS) attacks, keep in mind however that wrpme is *designed* to accept large amounts of requests and will therefore not limit incoming or outgoing requests.
+The wrpme protocol, especially the serialization part, has been designed to resist buffer overflows and most of current denial of service (DOS) attacks, keep in mind however that wrpme is *designed* to accept large amounts of requests or arbitraty sizes and will therefore not limit incoming or outgoing requests in any way.
 
