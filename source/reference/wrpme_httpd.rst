@@ -74,6 +74,16 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             wrpmed --address=0.0.0.0:80
 
+.. option:: -r <path>, --root <path>
+
+    Specifies the root directory where the administration HTML files lie.
+
+    Argument
+        A string representing the path (relative or absolute) to the administration HTML files.
+
+    Default value
+        html
+
 .. option:: -t <count>, --threads=<count>
 
     Specifies the number of threads to use. May improve performance.
