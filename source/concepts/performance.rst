@@ -13,7 +13,7 @@ Multithreading generally implies locking. Locking has been reduced to the minimu
 Networking
 =====================================================
 
-Network I/O are done asynchronously for maximum performance. Most of the I/O framework is based on `Boost.Asio <http://www.boost.org/doc/libs/1_49_0/doc/html/boost_asio.html>`_.
+Network I/O are done asynchronously for maximum performance. Most of the I/O framework is based on `Boost.Asio <http://www.boost.org/doc/libs/1_51_0/doc/html/boost_asio.html>`_.
 
 Memory management
 =====================================================
@@ -27,7 +27,7 @@ Measuring performance
 
 The only way to properly configure your hive is to measure performance. 
 
-The comparison tool can be used to create a wide range of test scenarii. It understands the wrpme protocol as well as the memcached protocol (see :doc:`../reference/wrpme_comparison`).
+The comparison tool can be used to create a wide range of test scenarii. It understands the wrpme protocol as well as the memcached and the redis protocol (see :doc:`../reference/wrpme_comparison`).
 
 
 
