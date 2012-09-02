@@ -21,14 +21,14 @@ Cheat sheet
  ===================================== ============================ =================== ============
  :option:`-h`                          display help                                         No
  :option:`-a`                          address to listen on         127.0.0.1:2836          No
- :option:`-s`                          max client sessions          1000                    No
+ :option:`-s`                          max client sessions          2000                    No
  :option:`-r`                          persistence directory        ./db                    Yes
  :option:`--id`                        set the node id              generated               No
  :option:`--replication`               Sets the replication factor  1                       Yes
  :option:`--peer`                      one peer to form a hive                              No
  :option:`--transient`                 disable persistence                                  Yes
  :option:`--sync``                     sync every disk write                                Yes
- :option:`--limiter-max-entries-count` max entries in cache 10000                           Yes
+ :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes
  :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes
  :option:`-o`                          log on console                                       No
  :option:`-l`                          log on given file                                    No
@@ -202,12 +202,12 @@ Instance specific
         A number greater or equal to fifty (50) representing the number of allowed simultaneous sessions.
 
     Default value
-        1,000
+        2,000
 
     Example
-        Allow 2,000 simultaneous session::
+        Allow 10,000 simultaneous session::
 
-            wrpmed --sessions=2000
+            wrpmed --sessions=10000
 
 .. note::
     The sessions count determines the number of simultaneous clients the server may handle at any given time. 
@@ -419,7 +419,7 @@ Global
         An integer representing the maximum number of entries allowed in memory.
 
     Default value
-        10,000
+        100,000
 
     Example
         To keep the number of entries in memory below 101::
