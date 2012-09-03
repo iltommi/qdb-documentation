@@ -4,7 +4,7 @@ Change log
 v0.7.0 - 09/04/2012
 -------------------
 
-    * Daemon: Automatic, integrated and distributed replication to up to 4 copies (disabled by default)
+    * Daemon: Automatic, integrated and distributed replication up to 4 copies
     * Daemon: Support for global configuration
     * Daemon: Fixed bug that could cause a connection reset between two nodes if they were using a half-duplex channel
     * Benchmarking tool: Added Redis support
