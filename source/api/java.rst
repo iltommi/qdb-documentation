@@ -65,20 +65,16 @@ You have to use a Map<String,String> to store the wrpme instance configuration p
     config.put("host", "127.0.0.1");
     config.put("port", "2836");
 
-Once the parameters are valid, you can create the corresponding wrpme instance using the WrpmeManager singleton: ::
+Once the parameters are valid, you can create a wrpme instance as this::
 
-    WrpmeManager.getInstance().createCache(config);
+    Wrpme cache = new Wrpme(config);
 
 Your wrpme instance is now ready to use.
 
 Using the Wrpme instance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-First you have to get your configured wrpme instance by using its name::
-
-    Wrpme cache = WrpmeManager.getInstance().getCache("test");
-
-Then you can use your instance as you like::
+Serializable Java objects can be added and retrieved directly::
 
     // You can put a simple String Object...
     cache.put("obj1", "My First value !!!");
@@ -95,14 +91,10 @@ Then you can use your instance as you like::
     // And update stored values:
     cache.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
 
-When you're finished with your instance, close it::
-
-    WrpmeManager.getInstance().getCache("test").close();
-
 Using the low-level API
 ----------------------------
 
-The low-level API provides direct access to the C API. It is not thread-safe and the high-level API should be preferred.
+The low-level API provides direct access to the C API via JNI. Usage of the low-level API is discouraged.
 
 Loading the JNI
 ^^^^^^^^^^^^^^^^^^
