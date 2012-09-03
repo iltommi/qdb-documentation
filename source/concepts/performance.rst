@@ -8,7 +8,7 @@ Multithreading
 
 The server is actually organized in a network of mini-daemons that exchange messages. This is done in such a way that it preserves low-latency while increasing parallelism.
 
-Multithreading generally implies locking. Locking has been reduced to the minimum with the use of lock-free structures and lightweight locks. 
+Multithreading generally implies locking. Locking has been reduced to the minimum with the use of lock-free structures and transactional memory.
 
 Networking
 =====================================================

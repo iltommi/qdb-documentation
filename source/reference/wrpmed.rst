@@ -27,7 +27,7 @@ Cheat sheet
  :option:`--replication`               Sets the replication factor  1                       Yes
  :option:`--peer`                      one peer to form a hive                              No
  :option:`--transient`                 disable persistence                                  Yes
- :option:`--sync``                     sync every disk write                                Yes
+ :option:`--sync`                     sync every disk write                                Yes
  :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes
  :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes
  :option:`-o`                          log on console                                       No
@@ -99,7 +99,7 @@ Should you need every write to be synced to disk, you can do so with the :option
 You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure in-memory :term:`repository`.
 
 .. caution::    
-    If you disable the persistence, any entry evicted is lost for good as this is the expected behaviour for a pure in-memory cache.
+    If you disable the persistence, evicted entries are lost.
 
 
 Cache
