@@ -27,7 +27,7 @@ Cheat sheet
  :option:`--replication`               Sets the replication factor  1                       Yes
  :option:`--peer`                      one peer to form a hive                              No
  :option:`--transient`                 disable persistence                                  Yes
- :option:`--sync`                     sync every disk write                                Yes
+ :option:`--sync`                      sync every disk write                                Yes
  :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes
  :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes
  :option:`-o`                          log on console                                       No
