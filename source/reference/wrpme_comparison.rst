@@ -18,7 +18,7 @@ Usage scenarii
 Supported protocols
 ======================
 
-The tool can be used to benchmark a memcached server, a redis server or a  wrpme server. It can also create a virtual "local" server to test the local machine memory bandwidth.
+The tool can be used to benchmark a memcached server, a redis server or a wrpme server. It can also create a virtual "local" server to test the local machine memory bandwidth.
 
 The local server can help identify memory-related bottlenecks or abnormal allocator behavior.
 

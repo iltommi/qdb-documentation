@@ -1,7 +1,7 @@
 Change log
 ***************
 
-v0.7.0 - 08/31/2012
+v0.7.0 - 09/04/2012
 -------------------
 
     * Daemon: Automatic, integrated and distributed replication to up to 4 copies (disabled by default)
@@ -12,6 +12,7 @@ v0.7.0 - 08/31/2012
     * Java API: Greatly improved performances, up to 100%!
     * Greatly improved the `documentation <http://doc.wrpme.com/>`_
     * Upgraded to Boost 1.50.0
+    * Known bug: the eviction, pagein and size count reported in the administration console are invalid
 
 v0.6.66 - 07/02/2012
 --------------------
