@@ -8,6 +8,10 @@ The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ pr
 
 The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon stopping.
 
+.. note:: 
+    A valid license is required to run the daemon (see :doc:`../license`).
+
+
 Configuration
 =====================
 
@@ -175,6 +179,21 @@ Instance specific
         To display the online help, type: ::
 
             wrpmed --help
+
+.. option:: --license-file
+
+    Specifies the location of the license file. A valid license is required to run the daemon (see :doc:`../license`).
+
+    Argument
+        The path to a valid license file.
+
+    Default value
+        wrpme_license.txt
+
+    Example
+        Load the license from license.txt::
+
+            wrpmed --license-file=license.txt
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
