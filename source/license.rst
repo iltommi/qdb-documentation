@@ -6,22 +6,22 @@ Usage
 
 The software requires a license to be operated successfully. 
 
-Do not hesitate to contact us to request your evaluation license (see :doc:`contact`)!
+Do not hesitate to contact us to request an evaluation license (see :doc:`contact`)!
 
 License file
 ------------
 
 The license file comes in the form of a text file containing printable characters. This file contains all the required information
-to validate your license.
+for wrpme to check the validity of your license.
 
-The file must be accessible by each daemon instance as the daemon will refuse to run without a valid license . Other executable do not require the license file.
+The file must be accessible by each daemon instance as a valid license file is required at startup. Other executables do not require a license file.
 
 The license file is for your exclusive usage and may not be be given to a third party.
 
 Expiration
 ----------
 
-The daemon will remind you the expiration date, if any. When the license expires, the daemon will no longer run. 
+The daemon will remind you the expiration date, if any. When the license expires, the daemon will refuse to start.
 
 Please contact your Bureau 14 representative to renew your license (see :doc:`contact`).
 
@@ -33,7 +33,7 @@ Support
 
 The daemon will remind you the support expiration date, if any. You may continue to use wrpme after the support expires.
 
-When your support expires, you are no longer elligible for upgrades an dedicated assistance.
+When your support expires, you are no longer elligible for upgrades and dedicated assistance. 
 
 Liability
 ---------
