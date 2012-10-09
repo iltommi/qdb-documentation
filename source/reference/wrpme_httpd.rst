@@ -15,11 +15,11 @@ The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it
 
 Assuming a daemon that listens on the port 2836 on the machine 192.168.1.1, the command line is::
 
-    ./wrpme_httpd --daemon 192.168.1.1:2836 &
+    ./wrpme_httpd --daemon=192.168.1.1:2836 &
 
 or on Windows::
 
-    wrpme_httpd --daemon 192.168.1.1:2836 
+    wrpme_httpd --daemon=192.168.1.1:2836 
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
@@ -229,7 +229,7 @@ URL reference
                 "node_id":
                 {
                     "type":"string",
-                    "description":"the unique 256-bit identifier of the node",
+                    "description":"the unique 256-bit node's identifier",
                     "required":true
                 },
                 "listening_addresses":
@@ -273,73 +273,91 @@ URL reference
                     "count":
                     {
                         "type":"number",
-                        "description":"the current number of entries in the cluster",
+                        "description":"the total number of entries on the node",
                         "required":true
                     },
-                    "paged_count":
+                    "resident_count":
                     {
                         "type":"number",
-                        "description":"the entries on the cluster that are paged to disk",
+                        "description":"the current number of entries resident in memory on the node",
                         "required":true
                     },
                     "max_count":
                     {
                         "type":"number",
-                        "description":"the maximum allowed count of entries in memory",
+                        "description":"the maximum allowed resident count of entries on the node",
                         "required":true
                     },
                     "size":
                     {
                         "type":"number",
-                        "description":"the current amount of data, in bytes, managed by the cluster",
+                        "description":"the total amount of data, in bytes, managed by the node",
+                        "required":true
+                    },
+                    "resident_size":
+                    {
+                        "type":"number",
+                        "description":"the current number amount of data, in bytes, resident in memory on the node",
                         "required":true
                     },
                     "max_size":
                     {
                         "type":"number",
-                        "description":"the maximum allowed amount of data in memory",
+                        "description":"the maximum allowed resident amount of data on the node",
                         "required":true
                     },
                     "add_count":
                     {
                         "type":"number",
-                        "description":"the total number of adds performed on the cluster",
+                        "description":"the total number of adds performed on the node",
                         "required":true
                     },
                     "get_update_count":
                     {
                         "type":"number",
-                        "description":"the total number of adds performed on the cluster",
+                        "description":"the total number of adds performed on the node",
                         "required":true
                     },
                     "update_count":
                     {
                         "type":"number",
-                        "description":"the total number of updates performed on the cluster",
+                        "description":"the total number of updates performed on the node",
+                        "required":true
+                    },
+                    "compare_and_swap_count":
+                    {
+                        "type":"number",
+                        "description":"the total number of compare and swaps performed on the node",
                         "required":true
                     },
                     "remove_count":
                     {
                         "type":"number",
-                        "description":"the total number of removals performed on the cluster",
+                        "description":"the total number of removals performed on the node",
                         "required":true
                     },
                     "get_count":
                     {
                         "type":"number",
-                        "description":"the total number of gets performed on the cluster",
+                        "description":"the total number of gets performed on the node",
                         "required":true
                     },
                     "eviction_count":
                     {
                         "type":"number",
-                        "description":"the number of entries that have been evicted",
+                        "description":"the number of entries that have been evicted on the node",
                         "required":true
                     },
                     "pagein_count":
                     {
                         "type":"number",
-                        "description":"the number of entries that have been paged in",
+                        "description":"the number of entries that have been paged in on the node",
+                        "required":true
+                    },
+                    "total_failures":
+                    {
+                        "type":"number",
+                        "description":"the number of failures on the node",
                         "required":true
                     }
                 }

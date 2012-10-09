@@ -25,7 +25,7 @@ Yes, wrpme has been *designed for* such architectures.
 How is data transmitted on the network?
 =========================================
 
-wrpme uses a proprietary low-overhead binary protocol with variable multi-level compression.
+wrpme uses a proprietary low-overhead binary protocol.
 
 How fast is wrpme?
 =====================
@@ -73,15 +73,9 @@ See :doc:`../reference/wrpme_httpd` for more information.
 Is wrpme free of charge?
 ===========================
 
-wrpme is free of charge for non-commercial purposes.
+wrpme requires a license.
 
-For example if you run a personal blog and wish to speed it up with wrpme, you do not need to acquire a license.
-If your personal blog generates revenues, you will need to acquire a license.
-
-Non-profit organizations are not *required* to acquire a license, but may have to, should they need support.
-
-What do I get when I register?
-==================================
+Non-profit organizations and non-commercial usage are elligible for free licenses.
 
 Contact us for more information, see :doc:`contact`
 
@@ -112,7 +106,7 @@ Yes! Contact us for more information, see :doc:`contact`
 In what language is wrpme written?
 ====================================
 
-The core wrpme engine (that we also call kernel) is written in C++ 11. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
+The core wrpme engine (that we also call kernel) is written in C++ 11 and assembly. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
 
 The administration interface is written in HTML5/Javascript.
 
@@ -133,15 +127,16 @@ Yes it does! Here is the list as of August 2011:
 
 * `Boost <http://www.boost.org/>`_
 * `Datejs <http://code.google.com/p/datejs/>`_
-* `Highcharts <http://www.highcharts.com/>`_  (commercial license)
+* `hiredis <https://github.com/antirez/hiredis>`_
 * `LevelDB <http://code.google.com/p/leveldb/>`_
 * `javabi-sizeof <http://code.google.com/p/javabi-sizeof/>`_
 * `JQuery <http://jquery.com/>`_
 * `Kryo <http://code.google.com/p/kryo/>`_
 * `Intel Threading Building Blocks <http://threadingbuildingblocks.org/>`_ (commercial license)
+* `memcachepp <https://github.com/mikhailberis/memcachepp>`_
 * `Snappy <http://code.google.com/p/snappy/>`_
 
-If you find the list to be inaccurate or discover a license violation, mail to `bug@wrp.me <bug@wrp.me>`_.
+If you find the list to be inaccurate or suspect a license violation, mail to `bug@wrp.me <bug@wrp.me>`_.
 
 Where are you located?
 =========================

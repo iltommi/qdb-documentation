@@ -125,7 +125,7 @@ Parameters reference
 
 .. option:: -o <path>, --output-file=<path>
 
-    Specifies the path for the `CSV <http://en.wikipedia.org/wiki/Comma-separated_values>` output.
+    Specifies the path for the `CSV <http://en.wikipedia.org/wiki/Comma-separated_values>`_ output.
 
     Argument
         A string representing the full path to the results file:

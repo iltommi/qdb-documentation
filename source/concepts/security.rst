@@ -9,7 +9,7 @@ wrpme only need to be able to listen to a TCP port, to write to its log files an
 
 Authentication
 ----------------
-There is no authentication mechanism of any sort, access to the server implies access to all the entries, should the key be known. 
+There is no authentication mechanism of any sort, access to the server implies access to any entry, should the key be known. 
 
 If the data to store is sensitive, it is strongly advised to cipher this data.
 
@@ -19,5 +19,6 @@ Should write access be given, a better approach is to design a proxy client that
 
 Design
 -------
-The wrpme protocol, especially the serialization part, has been designed to resist buffer overflows and most of current denial of service (DOS) attacks, keep in mind however that wrpme is *designed* to accept large amounts of requests or arbitraty sizes and will therefore not limit incoming or outgoing requests in any way.
+
+The wrpme protocol, especially the serialization part, has been designed to resist buffer overflows and most of current denial of service (DOS) attacks. Keep in mind, however, that wrpme is *designed* to accept large amounts of requests or arbitraty sizes and will therefore not limit incoming or outgoing requests in any way.
 

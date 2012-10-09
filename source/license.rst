@@ -60,9 +60,6 @@ Intel Threading Building Blocks a property of Intel Corporation. All rights rese
 
 All other trademarks and copyrights are property of their respective owners.
 
-Support
-=======
 
-Registered and non-registered users may report bug and request features by mailing `bug@wrp.me <bug@wrp.me>`_ or going to the `Bureau 14 customer service web site <http://support.bureau14.fr/home>`_.
 
 

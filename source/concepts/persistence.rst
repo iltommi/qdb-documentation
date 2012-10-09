@@ -13,6 +13,7 @@ All entries are persisted to disk as they are added and updated. When a put or a
 The persistence layer may compress data for efficiency purposes. This is transparent to the client and never done to the detriment of performances.
 
 By default, the persistence layer uses a write cache to increase performance, but this can be disabled (see :doc:`../reference/wrpmed`). When the write cache is disabled, the server will not return from a put or update request until the entry is acknowledged by the file system.
+
 Eviction
 =====================================================
 

@@ -39,7 +39,7 @@ Each node periodically checks the validity of its :term:`successor` and :term:`p
 Entries
 ---------
 
-Each entry is assigned an unique ID. This unique ID is a `SHA-3 <http://en.wikipedia.org/wiki/Skein_(hash_function)>`_ of the alias. 
+Each entry is assigned an unique ID. This unique ID is a `SHA-3 <http://en.wikipedia.org/wiki/SHA-3>`_ of the alias. 
 
 The entry is then placed on the node whose ID is the :term:`successor` of the entry's ID. If replication is in place, the entry will also be placed on the successor's successor.
 
