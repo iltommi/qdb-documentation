@@ -4,8 +4,8 @@ Change log
 v0.7.1 - 10/15/2012
 -------------------
 
-    * Daemon: Integrated licensing mechanism.
-    * Daemon: Fixed invalid statistics update.
+    * Daemon: Integrated licensing mechanism
+    * Daemon: Fixed invalid statistics update
     * Upgraded to Boost 1.51.0
 
 v0.7.0 - 09/04/2012
