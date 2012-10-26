@@ -3,6 +3,10 @@ An installation tutorial for people with very little time
 
 A minimal wrpme setup requires deploying the wrpme daemon (wrpmed executable) on a server and making sure that the client can access it.
 
+.. important:: 
+    A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the ``--license-file`` option (see :doc:`../reference/wrpmed`).
+
+
 Installing a wrpme daemon in three steps
 ========================================
 
@@ -47,12 +51,12 @@ All information is available in both JSON and JSONP format.
 
     An HTML 5 web interface is available to monitor your node. If your server is on the machine 192.168.1.1, you therefore access the statistics as such::
 
-      http://192.168.1.1/view
+      http://192.168.1.1:8080/view
 
     You can also access to the statistics in JSON format. The global statistics URL is /global_status::
 
-      http://192.168.1.1/global_status
+      http://192.168.1.1:8080/global_status
 
     If you want the content in JSONP format, the URL becomes::
 
-      http://192.168.1.1/global_status?callback=MyCallBack
+      http://192.168.1.1:8080/global_status?callback=MyCallBack

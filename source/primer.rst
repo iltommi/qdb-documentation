@@ -62,7 +62,7 @@ Working on web-oriented technologies? We've thought about you as well and built 
 
 The web bridge can help you monitor the node and get entries in JSON or JSONP format, for example, with wget::
 
-    wget "localhost/get?entry=alias"
+    wget "localhost:8080/get?alias=entry"
 
 Still not convinced?
 --------------------
