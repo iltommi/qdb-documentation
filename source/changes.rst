@@ -1,6 +1,15 @@
 Change log
 ***************
 
+v0.7.2 -
+-------------------
+
+    * Daemon: Reduced thread switching to reduce latency
+    * Windows: Upgraded to VC11
+    * Upgraded to Boost 1.52.0
+    * Upgraded to TBB 4.1
+    * Upgraded to LevelDB 1.6
+
 v0.7.1 - 10/15/2012
 -------------------
 
