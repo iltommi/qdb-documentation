@@ -8,7 +8,7 @@ The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ pr
 
 The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
 
-.. important:: 
+.. important::
     A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the :option:`--license-file` option.
 
 Configuration
@@ -26,6 +26,7 @@ Cheat sheet
  :option:`--license-file`              specify license              wrpme_license.txt       No
  :option:`-a`                          address to listen on         127.0.0.1:2836          No
  :option:`-s`                          max client sessions          2000                    No
+ :option:`--partitions`                number of partitions         Variable                No
  :option:`-r`                          persistence directory        ./db                    Yes
  :option:`--id`                        set the node id              generated               No
  :option:`--replication`               Sets the replication factor  1                       Yes
@@ -62,7 +63,7 @@ Network distribution
 wrpmed distribution is peer-to-peer. This means:
 
     * The unavailability of one :term:`server` does not compromise the whole :term:`hive`
-    * The memory load is automatically distributed amongst all instances within a :term:`hive` 
+    * The memory load is automatically distributed amongst all instances within a :term:`hive`
 
 Each server within one hive needs:
 
@@ -74,7 +75,7 @@ Each server within one hive needs:
     wrpmed is hyper-scalar and will be able to use all the memory and processors of your server.
     The same remark applies for virtual machines: running wrpme multiple times in multiple virtual machines on a single physical server will not increase the performances.
 
-The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests, 
+The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests,
 depending on the actual hardware configuration of your server.
 
 Logging
@@ -102,9 +103,21 @@ Should you need every write to be synced to disk, you can do so with the :option
 
 You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure in-memory :term:`repository`.
 
-.. caution::    
+.. caution::
     If you disable the persistence, evicted entries are lost.
 
+Partitions
+----------
+
+A partition can be seen as a worker threads. The more partitions, the more work can be done in parallel. However if the number of partitions is too high relative to your server capabilities to actually do parallel work performance will decrease.
+
+wrpme is highly scalable and partitions do not interfere with each other. The daemon's scheduler will assign incoming requests to the partition
+with the least workload.
+
+The ideal number of partitions is close to the number of physical cores your server has. By default the daemon chooses the best compromise it can. If this value is not satisfactory, you can use the :option:`--partitions` options to set the value manually.
+
+.. note::
+    Unless a performance issue is identified, it is best to let the daemon compute the partition count.
 
 Cache
 -----
@@ -114,7 +127,7 @@ In order to achieve high performances, the daemon keeps as much data as possible
 Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
 Use :option:`--limiter-max-entries-count` (defaults to 10,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 
-.. note:: 
+.. note::
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
 
 The wrpme daemon uses a proprietary *fast monte-carlo* eviction heuristic. This algorithm is currently not configurable.
@@ -163,7 +176,7 @@ Practical limits
 Parameters reference
 ====================
 
-Parameters can be supplied in any order and are prefixed with ``--``. 
+Parameters can be supplied in any order and are prefixed with ``--``.
 The arguments format is parameter dependent.
 
 Instance specific parameters only apply to the instance ran while global parameters are for the whole ring. Global parameters are applied when the first instance of a ring is launched.
@@ -215,7 +228,7 @@ Instance specific
 
 .. option:: -s <count>, --sessions=<count>
 
-    Specifies the number of simultaneous sessions 
+    Specifies the number of simultaneous sessions per partition.
 
     Argument
         A number greater or equal to fifty (50) representing the number of allowed simultaneous sessions.
@@ -229,9 +242,31 @@ Instance specific
             wrpmed --sessions=10000
 
 .. note::
-    The sessions count determines the number of simultaneous clients the server may handle at any given time. 
-    Increasing the value increases the memory load.
+    The sessions count determines the number of simultaneous clients the server may handle at any given time.
+    Increasing the value increases the memory load. The total number of sessions depends on the number of partitions.
+    If you have two partitions and 2,000 sessions per partitions, then the total number of sessions is 4,000.
     Values below 50 are ignored.
+
+.. option:: --partitions=<count>
+
+    Specifies the number of partitions.
+
+    Argument
+        A number greater or equal to one (1) representing the number of partitions.
+
+    Default value
+        Hardware dependant. Cannot be less than 1.
+
+    Example
+        Have 10 partitions::
+
+            wrpmed --partitions=10
+
+.. note::
+    The number of partitions directly impacts the server scalability. If this number is too low, scalability will be
+    negatively impacted. If this number is too high respective to the capabilities of the server, performances will be
+    negatively impacted.
+    By default the daemon attemps to compute a good values, but in some scenarii this value may be invalid.
 
 .. option:: --idle-duration=<duration>
 
@@ -245,7 +280,7 @@ Instance specific
 
     Example
         Set the timeout to one minute::
-        
+
             wrpmed --idle-duration=60
 
 .. option:: --request-timeout=<timeout>
@@ -377,7 +412,7 @@ Global
 
 .. option:: --transient
 
-    Disable persistence. Evicted data is lost when wrpmed is :term:`transient`. 
+    Disable persistence. Evicted data is lost when wrpmed is :term:`transient`.
 
 .. option:: -r <path>, --root=<path>
 
@@ -432,7 +467,7 @@ Global
 
 .. option:: --limiter-max-entries-count=<count>
 
-    The maximum number of entries allowed in memory. Entries will be evicted as needed to enforce this limit. 
+    The maximum number of entries allowed in memory. Entries will be evicted as needed to enforce this limit.
 
     Argument
         An integer representing the maximum number of entries allowed in memory.
