@@ -1,8 +1,8 @@
 Change log
 **********
 
-v0.7.2 - 12/21/2012
--------------------
+0.7.2 - 12/21/2012
+------------------
 
     * Now officially named quasardb!
     * Daemon: Minimized thread switching to reduce latency
@@ -12,15 +12,15 @@ v0.7.2 - 12/21/2012
     * Upgraded to TBB 4.1 SP1
     * Upgraded to LevelDB 1.6
 
-v0.7.1 - 10/15/2012
--------------------
+0.7.1 - 10/15/2012
+------------------
 
     * Daemon: Integrated licensing mechanism
     * Daemon: Fixed invalid statistics update
     * Upgraded to Boost 1.51.0
 
-v0.7.0 - 09/04/2012
--------------------
+0.7.0 - 09/04/2012
+------------------
 
     * Daemon: Automatic, integrated and distributed replication up to 4 copies
     * Daemon: Support for global configuration
@@ -32,8 +32,8 @@ v0.7.0 - 09/04/2012
     * Upgraded to Boost 1.50.0
     * Known bug: the eviction, pagein and size counts reported in the administration console are invalid
 
-v0.6.66 - 07/02/2012
---------------------
+0.6.66 - 07/02/2012
+-------------------
 
     * Client API: New streaming API (C only)
     * Client API: New compare and swap operation (C only)
@@ -45,8 +45,8 @@ v0.6.66 - 07/02/2012
     * Java API: Fixed invalid method name (delete instead of remove)
     * Upgraded to LevelDB 1.5
 
-v0.6.5 - 06/08/2012
--------------------
+0.6.5 - 06/08/2012
+------------------
 
     * Client API: Major performance increase (up to 100%) for small entries (below 1 kiB)
     * Client API: Added more error codes
@@ -62,8 +62,8 @@ v0.6.5 - 06/08/2012
     * Upgraded to Boost 1.49.0
     * Upgraded to TBB 4.0 SP4
 
-v0.6.0 - 01/16/2012
--------------------
+0.6.0 - 01/16/2012
+------------------
 
     * Python API: Brand new Python API!
     * Daemon: new "transient" option
@@ -72,8 +72,8 @@ v0.6.0 - 01/16/2012
     * Daemon: Reduced latency
     * Upgraded LevelDB
 
-v0.5.2 - 11/14/2011
--------------------
+0.5.2 - 11/14/2011
+------------------
 
     * Windows: Digital signatures now include a timestamp.
     * Web bridge: Improved the internal data exchange format.
@@ -83,8 +83,8 @@ v0.5.2 - 11/14/2011
     * Upgraded LevelDB
     * Upgraded to TBB 4.0 SP1
 
-v0.5.1 - 10/01/2011
--------------------
+0.5.1 - 10/01/2011
+------------------
 
     * Java API: Major rework, better and easier than before!
     * Daemon: Added an icon in the Windows binary.
@@ -93,8 +93,8 @@ v0.5.1 - 10/01/2011
     * Client API: Made the connection process more resilient.
     * Upgraded LevelDB
 
-v0.5.0 - 08/01/2011
--------------------
+0.5.0 - 08/01/2011
+------------------
 
     * Peer-to-peer network distribution
     * Web bridge with JSON/JSONP interfaces
@@ -109,8 +109,8 @@ v0.5.0 - 08/01/2011
     * Upgraded Linux and FreeBSD compilers to gcc 4.6.1
     * Upgraded to Boost 1.47.0
 
-v0.4.2 - 05/26/2011
--------------------
+0.4.2 - 05/26/2011
+------------------
 
     * Increased reliability
     * Major performance improvements for entries larger than 50 MiB
@@ -119,15 +119,15 @@ v0.4.2 - 05/26/2011
     * Reduced memory footprint
     * fix: The 0.4.1 Linux API could not be linked to due to a misconfiguration on our build machine
 
-v0.4.1 - 05/07/2011
--------------------
+0.4.1 - 05/07/2011
+------------------
 
     * Multiplatform Python API package with installer
     * Fixed FreeBSD invalid rpath
     * qdbsh can now process standard input and output
 
-v0.4.0 - 04/22/2011
--------------------
+0.4.0 - 04/22/2011
+------------------
 
     * Python API
     * Improved server network code
@@ -139,8 +139,8 @@ v0.4.0 - 04/22/2011
     * Upgraded Windows compiler to Visual Studio 2010 SP1
     * Upgraded Linux and FreeBSD compilers to gcc 4.6.0
 
-v0.3.2 - 02/26/2011
--------------------
+0.3.2 - 02/26/2011
+------------------
 
     * Windows binaries are now digitally signed.
     * High-performance slab allocator is now used for logging.
@@ -149,8 +149,8 @@ v0.3.2 - 02/26/2011
       load libraries present in quasardb's lib subdirectory.
     * Upgraded TBB to version 3.0 Update 5
 
-v0.3.1 - 02/22/2011
--------------------
+0.3.1 - 02/22/2011
+------------------
 
     * Asynchronous standalone TCP (IPv4 and IPv6) server
     * Fast monte carlo eviction
@@ -159,16 +159,16 @@ v0.3.1 - 02/22/2011
     * New API
     * May contain up to 1% of awesomeness
 
-v0.2.0 - 11/11/2010
--------------------
+0.2.0 - 11/11/2010
+------------------
 
     * Update and remove now accessible via the C API
     * More efficient logging
     * Improved internal memory model
     * Internal statistics
 
-v0.1.0 - 07/26/2010
--------------------
+0.1.0 - 07/26/2010
+------------------
 
     * First official beta version!
     * nginx support
