@@ -6,19 +6,19 @@ C
 Introduction
 --------------
 
-The wrpme C API is the lowest-level API offered but also the fastest and the most powerful.
+The quasardb C API is the lowest-level API offered but also the fastest and the most powerful.
 
 Installing
 --------------
 
-Download the C API from `the wrpme website <http://www.wrpme.com/downloads.html>`_ and unpack the archive.
+Download the C API from `the quasardb website <http://www.quasardb.com/downloads.html>`_ and unpack the archive.
 
 All needed libraries are included in the package.
 
 Header file
 --------------
 
-All functions, typedefs and enums are made available in the ``include/wrpme/client.h`` header file.
+All functions, typedefs and enums are made available in the ``include/quasardb/client.h`` header file.
 
 Examples
 --------------
@@ -30,43 +30,43 @@ Connecting to a cluster
 
 The first thing to do is to initialize a handle.
 A handle is an opaque structure that represents a client side instance.
-It is initialized by the function :c:func:`wrpme_open`: ::
+It is initialized by the function :c:func:`qdb_open`: ::
 
-    wrpme_handle_t handle = 0;
-    wrpme_error_t r = wrpme_open(&handle, wrpme_proto_tcp);
-    if (r != wrpme_error_ok)
+    qdb_handle_t handle = 0;
+    qdb_error_t r = qdb_open(&handle, qdb_proto_tcp);
+    if (r != qdb_error_ok)
     {
         // error management
     }
 
-We can also use the convenience fonction :c:func:`wrpme_open_tcp`: ::
+We can also use the convenience fonction :c:func:`qdb_open_tcp`: ::
 
-    wrpme_handle_t handle = wrpme_open_tcp();
+    qdb_handle_t handle = qdb_open_tcp();
     if (!handle)
     {
         // error management
     }
 
-Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are established and closed as needed. This code will establish a connection to a wrpme server listening on the localhost with the :c:func:`wrpme_connect` function: ::
+Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are established and closed as needed. This code will establish a connection to a quasardb server listening on the localhost with the :c:func:`qdb_connect` function: ::
 
-    r = wrpme_connect(handle, "localhost", 2836);
-    if (r != wrpme_error_ok)
+    r = qdb_connect(handle, "localhost", 2836);
+    if (r != qdb_error_ok)
     {
         // error management
     }
 
 Note that we could have used the IP address instead: ::
 
-    r = wrpme_connect(handle, "127.0.0.1", 2836);
-    if (r != wrpme_error_ok)
+    r = qdb_connect(handle, "127.0.0.1", 2836);
+    if (r != qdb_error_ok)
     {
         // error management
     }
 
 `IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported: ::
 
-    r = wrpme_connect(handle, "::1", 2836);
-    if (r != wrpme_error_ok)
+    r = qdb_connect(handle, "::1", 2836);
+    if (r != qdb_error_ok)
     {
         // error management
     }
@@ -74,7 +74,7 @@ Note that we could have used the IP address instead: ::
 Of course for the above to work the server needs to listen on an IPv6 address.
 
 .. note::
-    When you call :c:func:`wrpme_open` and :c:func:`wrpme_connect` a lot of initialization and systems calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the handle alive for the whole program lifetime.
+    When you call :c:func:`qdb_open` and :c:func:`qdb_connect` a lot of initialization and systems calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the handle alive for the whole program lifetime.
 
 
 Adding entries
@@ -85,50 +85,50 @@ The alias may contain arbitrary characters but it's probably more convenient to 
 
 The :term:`content` is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
-There are two ways to add entries into the repository. You can use :c:func:`wrpme_put`: ::
+There are two ways to add entries into the repository. You can use :c:func:`qdb_put`: ::
 
     char content[100];
 
     // ...
 
-    r = wrpme_put(handle, "myalias", content, sizeof(content));
-    if (r != wrpme_error_ok)
+    r = qdb_put(handle, "myalias", content, sizeof(content));
+    if (r != qdb_error_ok)
     {
         // error management
     }
 
-or you can use :c:func:`wrpme_update`: ::
+or you can use :c:func:`qdb_update`: ::
 
     char content[100];
 
     // ...
 
-    r = wrpme_update(handle, "myalias", content, sizeof(content));
-    if (r != wrpme_error_ok)
+    r = qdb_update(handle, "myalias", content, sizeof(content));
+    if (r != qdb_error_ok)
     {
         // error management
     }
 
-The difference is that :c:func:`wrpme_put` fails when the entry already exists. :c:func:`wrpme_update` will create the entry if it does not, or update its content if it does.
+The difference is that :c:func:`qdb_put` fails when the entry already exists. :c:func:`qdb_update` will create the entry if it does not, or update its content if it does.
 
 Getting entries
 --------------------
 
-The most convenient way to fetch an entry is :c:func:`wrpme_get_buffer`::
+The most convenient way to fetch an entry is :c:func:`qdb_get_buffer`::
 
     char * allocated_content = 0;
     size_t allocated_content_length = 0;
-    r = wrpme_get_buffer(handle, "myalias", &allocated_content, &allocated_content_length);
-    if (r != wrpme_error_ok)
+    r = qdb_get_buffer(handle, "myalias", &allocated_content, &allocated_content_length);
+    if (r != qdb_error_ok)
     {
         // error management
     }
 
-The function will allocate the buffer and update the length. You will need to release the memory later with :c:func:`wrpme_free_buffer`::
+The function will allocate the buffer and update the length. You will need to release the memory later with :c:func:`qdb_free_buffer`::
 
-    wrpme_free_buffer(allocated_content);
+    qdb_free_buffer(allocated_content);
 
-However, for maximum performance you might want to manage allocation yourself and reuse buffers (for example). In which case you will prefer to use :c:func:`wrpme_get`::
+However, for maximum performance you might want to manage allocation yourself and reuse buffers (for example). In which case you will prefer to use :c:func:`qdb_get`::
 
     char buffer[1024];
 
@@ -138,8 +138,8 @@ However, for maximum performance you might want to manage allocation yourself an
 
     // content_length must be initialized with the buffer's size
     // and will be update with the retrieved content's size
-    r = wrpme_get(handle, "myalias", buffer, &content_length);
-    if (r != wrpme_error_ok)
+    r = qdb_get(handle, "myalias", buffer, &content_length);
+    if (r != qdb_error_ok)
     {
         // error management
     }
@@ -150,10 +150,10 @@ The function will update content_length even if the buffer isn't large enough, g
 Removing entries
 ---------------------
 
-Removing is done with the function :c:func:`wrpme_remove`::
+Removing is done with the function :c:func:`qdb_remove`::
 
-    r = wrpme_remove(handle, "myalias");
-    if (r != wrpme_error_ok)
+    r = qdb_remove(handle, "myalias");
+    if (r != qdb_error_ok)
     {
         // error management
     }
@@ -169,10 +169,10 @@ It is often impractical to download very large entries at once. For these cases,
 Initializing streaming
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-One first start by creating a streaming handle from an existing wrpme handle::
+One first start by creating a streaming handle from an existing quasardb handle::
 
-    wrpme_stream_tracker_t trk;
-    wrpme_error_t e = wrpme_open_stream(h, alias_name, &trk);
+    qdb_stream_tracker_t trk;
+    qdb_error_t e = qdb_open_stream(h, alias_name, &trk);
 
 .. note::
     The connection to the remote server must be done before initializing the streaming handle as the API will request information from the remote server.
@@ -181,7 +181,7 @@ The stream tracker holds the streaming buffer and maintains information to prope
 
     typedef struct
     {
-        wrpme_handle_t handle;      /* [in] */
+        qdb_handle_t handle;      /* [in] */
         const void * token;         /* [in] */
 
         const void * buffer;        /* [out] */
@@ -191,24 +191,24 @@ The stream tracker holds the streaming buffer and maintains information to prope
         size_t last_read_size;      /* [out] */
 
         size_t entry_size;          /* [out] */
-    } wrpme_stream_tracker_t;
+    } qdb_stream_tracker_t;
 
 .. warning::
     The streaming buffer is read only. Freeing or writing to the streaming buffer results in undefined behaviour.
 
-The buffer size can be adjusted with :c:func:`wrpme_set_option` and the wrpme_o_stream_buffer_size option. It accepts an integer representing the number of bytes the streaming buffer should have. The default size is 1 MiB. The buffer cannot be smaller than 1024 bytes or greater than 10 MiB. The buffer size must be adjusted **prior** to calling :c:func:`wrpme_open_stream`.
+The buffer size can be adjusted with :c:func:`qdb_set_option` and the qdb_o_stream_buffer_size option. It accepts an integer representing the number of bytes the streaming buffer should have. The default size is 1 MiB. The buffer cannot be smaller than 1024 bytes or greater than 10 MiB. The buffer size must be adjusted **prior** to calling :c:func:`qdb_open_stream`.
 
 All streaming handles have a dedicated streaming buffer, it is therefore safe to stream from different handles at the same time. However, having many streaming handles open at the same time may result in an important memory usage.
 
 Streaming data from the server
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Once the streaming context is properly initialized, one may start streaming with :c:func:`wrpme_get_stream`::
+Once the streaming context is properly initialized, one may start streaming with :c:func:`qdb_get_stream`::
 
     while(trk.current_offset < trk.entry_size)
     {
-        e = wrpme_get_stream(&trk);
-        if (e != wrpme_e_ok)
+        e = qdb_get_stream(&trk);
+        if (e != qdb_e_ok)
         {
             // handle error
             break;
@@ -218,47 +218,47 @@ Once the streaming context is properly initialized, one may start streaming with
         // the size of the data available in the buffer is last_read_size
     }
 
-If the content you are streaming is being modified by another user, :c:func:`wrpme_get_stream` will return wrpme_e_conflict. If you attempt to stream beyond the end, the function will return wrpme_e_out_of_bounds.
+If the content you are streaming is being modified by another user, :c:func:`qdb_get_stream` will return qdb_e_conflict. If you attempt to stream beyond the end, the function will return qdb_e_out_of_bounds.
 
 After each call, the values in the streaming context are updated. 
 
 Seeking the stream
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It might be desirable to go directly to a specific point in the stream. The user cannot update directly the wrpme_stream_tracker_t structure as the values in the structure are ignored by the API (they are *write only* from the point of view of the API). To update the offset, one uses the :c:func:`wrpme_set_stream_offset`::
+It might be desirable to go directly to a specific point in the stream. The user cannot update directly the qdb_stream_tracker_t structure as the values in the structure are ignored by the API (they are *write only* from the point of view of the API). To update the offset, one uses the :c:func:`qdb_set_stream_offset`::
 
     // go directly to the 1024th byte in the stream
-    wrpme_set_stream_offset(&trk, 1024);
+    qdb_set_stream_offset(&trk, 1024);
 
-The offset must be within bounds. The user may refer to the entry_size member field of the wrpme_stream_tracker_t to check that it is within bounds. 
+The offset must be within bounds. The user may refer to the entry_size member field of the qdb_stream_tracker_t to check that it is within bounds. 
 
 Closing the stream
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Once the last byte of the stream has been read, the user may:
 
-    * Rewind with :c:func:`wrpme_set_stream_offset` or
+    * Rewind with :c:func:`qdb_set_stream_offset` or
     * Close the stream
 
-Calling wrpme_get_stream once the end of the stream has been reached will result in a wrpme_e_out_of_bounds error.
+Calling qdb_get_stream once the end of the stream has been reached will result in a qdb_e_out_of_bounds error.
 
-The stream is closed with :c:func:`wrpme_close_stream`::
+The stream is closed with :c:func:`qdb_close_stream`::
 
-    wrpme_close_stream(&trk);
+    qdb_close_stream(&trk);
 
 Closing the stream will free the streaming buffer and release all resources needed to manage the stream. Not closing the stream will result in memory and resources leaks.
 
 .. warning::
-    Calling :c:func:`wrpme_close` **does not** close all open streams. 
+    Calling :c:func:`qdb_close` **does not** close all open streams. 
 
 Cleaning up
 --------------------
 
-When you are done working with a wrpme repository, call :c:func:`wrpme_close`::
+When you are done working with a quasardb repository, call :c:func:`qdb_close`::
 
-    wrpme_close(handle);
+    qdb_close(handle);
 
-:c:func:`wrpme_close` **does not** release memory allocated by :c:func:`wrpme_get_buffer`. You will need to make appropriate calls to :c:func:`wrpme_free_buffer` for each call to :c:func:`wrpme_get_buffer`.
+:c:func:`qdb_close` **does not** release memory allocated by :c:func:`qdb_get_buffer`. You will need to make appropriate calls to :c:func:`qdb_free_buffer` for each call to :c:func:`qdb_get_buffer`.
 
 .. note ::
 
@@ -268,174 +268,174 @@ When you are done working with a wrpme repository, call :c:func:`wrpme_close`::
 Reference
 ----------------
 
-.. c:type:: wrpme_handle_t
+.. c:type:: qdb_handle_t
 
-    An opaque handle that represents a wrpme client instance.
+    An opaque handle that represents a quasardb client instance.
 
-.. c:type:: wrpme_stream_tracker_t
+.. c:type:: qdb_stream_tracker_t
 
     A structure used to track a stream state. 
 
-.. c:type:: wrpme_error_t
+.. c:type:: qdb_error_t
 
     An enum representing possible error codes returned by the API functions. "No error" evaluates to 0.
 
-.. c:type:: wrpme_protocol_t
+.. c:type:: qdb_protocol_t
 
     An enum representing available network protocols.
 
-.. c:function:: const char * wrpme_error(wrpme_error_t error, char * message, size_t message_length)
+.. c:function:: const char * qdb_error(qdb_error_t error, char * message, size_t message_length)
 
     Translates an error into a meaningful message.
 
-    :param error: An error code of type :c:type:`wrpme_handle_t`
+    :param error: An error code of type :c:type:`qdb_handle_t`
     :param message: A pointer to a buffer that will received the translated error message.
     :param message_length: The length of the buffer that will received the translated error message, in bytes.
     :return: A pointer to the buffer that received the translated error message.
 
-.. c:function:: const char * wrpme_version(void)
+.. c:function:: const char * qdb_version(void)
 
     Returns a null terminated string describing the API version. The buffer is API managed and should not be freed or written to by the caller.
 
     :return: A pointer to a null terminated string describing the API version.
 
-.. c:function:: const char * wrpme_build(void)
+.. c:function:: const char * qdb_build(void)
 
     Returns a null terminated string with a build number and date. The buffer is API managed and should be be freed or written to by the caller.
 
     :return: A pointer to a null terminated string describing the build number and date.
 
-.. c:function:: wrpme_error_t wrpme_open(wrpme_handle_t * handle, wrpme_protocol_t proto)
+.. c:function:: qdb_error_t qdb_open(qdb_handle_t * handle, qdb_protocol_t proto)
 
-    Creates a client instance. To avoid resource and memory leaks, the :c:func:`wrpme_close` must be used on the initialized handle when it is no longer needed.
+    Creates a client instance. To avoid resource and memory leaks, the :c:func:`qdb_close` must be used on the initialized handle when it is no longer needed.
 
-    :param handle: A pointer to a :c:type:`wrpme_handle_t` that will be initialized to represent a new client instance.
-    :param proto: The protocol to use of type :c:type:`wrpme_protocol_t`
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :param handle: A pointer to a :c:type:`qdb_handle_t` that will be initialized to represent a new client instance.
+    :param proto: The protocol to use of type :c:type:`qdb_protocol_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_handle_t wrpme_open_tcp(void)
+.. c:function:: qdb_handle_t qdb_open_tcp(void)
 
     Creates a client instance for the TCP network protocol. This is a convenience function.
 
-    :return: A valid handle when successful, 0 in case of failure. The handle must be closed with :c:func:`wrpme_close`.
+    :return: A valid handle when successful, 0 in case of failure. The handle must be closed with :c:func:`qdb_close`.
 
-.. c:function:: wrpme_error_t wrpme_set_option(wrpme_handle_t handle, wrpme_option_t option, ...)
+.. c:function:: qdb_error_t qdb_set_option(qdb_handle_t handle, qdb_option_t option, ...)
 
-    Sets an option for the given wrpme handle.
+    Sets an option for the given quasardb handle.
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param option: The option to set.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_connect(wrpme_handle_t handle, const char * host, unsigned short port)
+.. c:function:: qdb_error_t qdb_connect(qdb_handle_t handle, const char * host, unsigned short port)
 
-    Binds the client instance to a wrpme :term:`server` and connects to it.
+    Binds the client instance to a quasardb :term:`server` and connects to it.
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param host: A pointer to a null terminated string representing the IP address or the name of the server to which to connect
-    :param port: The port number used by the server. The default wrpme port is 2836.
+    :param port: The port number used by the server. The default quasardb port is 2836.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_close(wrpme_handle_t handle)
+.. c:function:: qdb_error_t qdb_close(qdb_handle_t handle)
 
     Terminates all connections and releases all client-side allocated resources.
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_get(wrpme_handle_t handle, const char * alias, char * content, size_t * content_length)
+.. c:function:: qdb_error_t qdb_get(qdb_handle_t handle, const char * alias, char * content, size_t * content_length)
 
-    Retrieves an :term:`entry`'s content from the wrpme server. The caller is responsible for allocating and freeing the provided buffer.
+    Retrieves an :term:`entry`'s content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
 
-    If the entry does not exist, the function will fail and return ``wrpme_e_alias_not_found``.
+    If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
-    If the buffer is not large enough to hold the data, the function will fail and return ``wrpme_e_buffer_too_small``. The content length will nevertheless be updated so that the caller may resize its buffer and try again.
+    If the buffer is not large enough to hold the data, the function will fail and return ``qdb_e_buffer_too_small``. The content length will nevertheless be updated so that the caller may resize its buffer and try again.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
     :param handle: An initialized handle
     :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
     :param content: A pointer to an user allocated buffer that will receive the entry's content.
     :param content_length: A pointer to a size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function::  wrpme_error_t wrpme_get_buffer(wrpme_handle_t handle, const char * alias, char ** content, size_t * content_length)
+.. c:function::  qdb_error_t qdb_get_buffer(qdb_handle_t handle, const char * alias, char ** content, size_t * content_length)
 
-    Retrieves an :term:`entry`'s content from the wrpme server.
+    Retrieves an :term:`entry`'s content from the quasardb server.
 
-    If the entry does not exist, the function will fail and return ``wrpme_e_alias_not_found``.
+    If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
-    The function will allocate a buffer large enough to hold the entry's content. This buffer must be released by the caller with a call to :c:func:`wrpme_close`.
+    The function will allocate a buffer large enough to hold the entry's content. This buffer must be released by the caller with a call to :c:func:`qdb_close`.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
     :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content.
     :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: void wrpme_free_buffer(char * buffer)
+.. c:function:: void qdb_free_buffer(char * buffer)
 
-    Frees a buffer allocated by :c:func:`wrpme_get_buffer`.
+    Frees a buffer allocated by :c:func:`qdb_get_buffer`.
 
-    :param buffer: A pointer to a buffer to release allocated by :c:func:`wrpme_get_buffer`.
+    :param buffer: A pointer to a buffer to release allocated by :c:func:`qdb_get_buffer`.
 
     :return: This function does not return a value.
 
-.. c:function:: wrpme_error_t wrpme_put(wrpme_handle_t handle, const char * alias, const char * content, size_t content_length)
+.. c:function:: qdb_error_t qdb_put(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
 
-    Adds an :term:`entry` to the wrpme server. If the entry already exists the function will fail and will return ``wrpme_e_alias_already_exists``.
+    Adds an :term:`entry` to the quasardb server. If the entry already exists the function will fail and will return ``qdb_e_alias_already_exists``.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias to create.
     :param content: A pointer to a buffer that represents the entry's content to be added to the server.
     :param content_length: The length of the entry's content, in bytes.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_update(wrpme_handle_t handle, const char * alias, const char * content, size_t content_length)
+.. c:function:: qdb_error_t qdb_update(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
 
-    Updates an :term:`entry` on the wrpme server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
+    Updates an :term:`entry` on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias to update.
     :param content: A pointer to a buffer that represents the entry's content to be updated to the server.
     :param content_length: The length of the entry's content, in bytes.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_get_buffer_update(wrpme_handle_t handle, const char * alias, const char * update_content, size_t update_content_length, char ** get_content, size_t * get_content_length)
+.. c:function:: qdb_error_t qdb_get_buffer_update(qdb_handle_t handle, const char * alias, const char * update_content, size_t update_content_length, char ** get_content, size_t * get_content_length)
 
-    Atomically gets and updates (in this order) the :term:`entry` on the wrpme server. The entry must already exists.
+    Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exists.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias to update.
     :param update_content: A pointer to a buffer that represents the entry's content to be updated to the server.
     :param update_content_length: The length of the buffer, in bytes.
     :param get_content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content, before the update.
     :param get_content_length: A pointer to a size_t that will be set to the content's size, in bytes.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_compare_and_swap(wrpme_handle_t handle, const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, char ** original_value, size_t * original_value_length)
+.. c:function:: qdb_error_t qdb_compare_and_swap(qdb_handle_t handle, const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, char ** original_value, size_t * original_value_length)
 
     Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias to compare to.
     :param new_value: A pointer to a buffer that represents the entry's content to be updated to the server in case of match.
     :param new_value: The length of the buffer, in bytes.
@@ -444,23 +444,23 @@ Reference
     :param original_value: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's original content, before the update, if any.
     :param original_value_length: A pointer to a size_t that will be set to the content's size, in bytes.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_open_stream(wrpme_handle_t handle, const char * alias, wrpme_stream_tracker_t * stream_tracker)
+.. c:function:: qdb_error_t qdb_open_stream(qdb_handle_t handle, const char * alias, qdb_stream_tracker_t * stream_tracker)
 
-    Opens, allocates and initializes all resources necessary to stream the :term:`entry` from the server. The size of the streaming buffer is specified by the wrpme_o_stream_buffer_size option (see :c:func:`wrpme_set_option`).
+    Opens, allocates and initializes all resources necessary to stream the :term:`entry` from the server. The size of the streaming buffer is specified by the qdb_o_stream_buffer_size option (see :c:func:`qdb_set_option`).
 
     The entry_size field of the stream_tracker structure will be updated to the total size, in bytes, of the entry on the remote server. The offset is initially set to 0.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias to stream.
     :param stream_tracker: A pointer to a caller allocated structure that will receive the stream tracker handle and information.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_get_stream(wrpme_stream_tracker_t * stream_tracker)
+.. c:function:: qdb_error_t qdb_get_stream(qdb_stream_tracker_t * stream_tracker)
 
     Streams bytes from the buffer into the stream buffer. It will get at most as many bytes as the stream buffer may old, or the remainder if it cannot fill the stream buffer. 
 
@@ -468,48 +468,48 @@ Reference
 
     Once the end of the buffer has been reached, it must be either closed or rewound.
 
-    The stream_tracker structure must have been initialized by :c:func:`wrpme_open_stream`.
+    The stream_tracker structure must have been initialized by :c:func:`qdb_open_stream`.
 
-    :param stream_tracker: An initialized stream handle (see :c:func:`wrpme_open_stream`).
+    :param stream_tracker: An initialized stream handle (see :c:func:`qdb_open_stream`).
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_set_stream_offset(wrpme_stream_tracker_t * stream_tracker, size_t new_offset)
+.. c:function:: qdb_error_t qdb_set_stream_offset(qdb_stream_tracker_t * stream_tracker, size_t new_offset)
 
     Sets the streaming offset to the value specified by new_offset, in bytes. The offset may not point at or beyond the end of the :term:`entry`.
 
-    :param stream_tracker: An initialized stream handle (see :c:func:`wrpme_open_stream`).
+    :param stream_tracker: An initialized stream handle (see :c:func:`qdb_open_stream`).
     :param new_offset: The offset to stream from, in bytes.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_close_stream(wrpme_stream_tracker_t * stream_tracker)
+.. c:function:: qdb_error_t qdb_close_stream(qdb_stream_tracker_t * stream_tracker)
 
     Closes the stream and frees all allocated resources. 
 
-    :param stream_tracker: An initialized stream handle (see :c:func:`wrpme_open_stream`).
+    :param stream_tracker: An initialized stream handle (see :c:func:`qdb_open_stream`).
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_remove(wrpme_handle_t handle, const char * alias)
+.. c:function:: qdb_error_t qdb_remove(qdb_handle_t handle, const char * alias)
 
-    Removes an :term:`entry` from the wrpme server. If the entry does not exist, the function will fail and return ``wrpme_e_alias_not_found``.
+    Removes an :term:`entry` from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :param handle: An initialized handle (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`)
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param alias: A pointer to a null terminated string representing the entry's alias to delete.
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: wrpme_error_t wrpme_remove_all(wrpme_handle_t handle)
+.. c:function:: qdb_error_t qdb_remove_all(qdb_handle_t handle)
 
-    Removes all the entries on all the nodes of the wrpme cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
+    Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
-    This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a wrpme_e_ok code. 
+    This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code. 
 
-    The handle must be initialized (see :c:func:`wrpme_open` and :c:func:`wrpme_open_tcp`) and the connection established (see :c:func:`wrpme_connect`).
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-    :return: An error code of type :c:type:`wrpme_error_t`
+    :return: An error code of type :c:type:`qdb_error_t`
 
     .. caution:: This function is meant for very specific use cases and its usage is discouraged.

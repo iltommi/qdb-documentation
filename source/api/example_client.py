@@ -1,8 +1,8 @@
-import wrpme
+import quasardb
 
-# Assuming we have a wrpme server running on dataserver.mydomain:3001
-# Note this will throw an exception if the wrpme hive is not available.
-cl = wrpme.Client('dataserver.mydomain', 3001)
+# Assuming we have a quasardb server running on dataserver.mydomain:3001
+# Note this will throw an exception if the quasardb hive is not available.
+cl = quasardb.Client('dataserver.mydomain', 3001)
 
 # We want to silently create or update the object
 # depending on the existence of the key in the hive.
@@ -13,5 +13,5 @@ def save(key, obj):
 def load(key):
     try:
         return cl.get(key)
-    except wrpme.AliasNotFound:
+    except quasardb.AliasNotFound:
         return None

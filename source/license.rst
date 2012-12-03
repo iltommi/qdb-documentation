@@ -12,7 +12,7 @@ License file
 ------------
 
 The license file comes in the form of a text file containing printable characters. This file contains all the required information
-for wrpme to check the validity of your license.
+for quasardb to check the validity of your license.
 
 The file must be accessible by each daemon instance as a valid license file is required at startup. Other executables do not require a license file.
 
@@ -31,7 +31,7 @@ Please contact your Bureau 14 representative to renew your license (see :doc:`co
 Support
 --------
 
-The daemon will remind you the support expiration date, if any. You may continue to use wrpme after the support expires.
+The daemon will remind you the support expiration date, if any. You may continue to use quasardb after the support expires.
 
 When your support expires, you are no longer elligible for upgrades and dedicated assistance. 
 
@@ -54,7 +54,7 @@ If you have any doubt about the legitimacy of your usage, do not hesitate contac
 Copyrights
 ----------
 
-wrpme and the wrpme logo is a registered trademark of Bureau 14 SARL. All rights reserved.
+quasardb and the quasardb logo is a registered trademark of Bureau 14 SARL. All rights reserved.
 Bureau 14 is a registered trademark of Bureau 14 SARL. All rights reserved.
 Intel Threading Building Blocks a property of Intel Corporation. All rights reserved.
 

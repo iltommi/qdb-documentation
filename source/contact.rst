@@ -4,7 +4,7 @@ Contacting us
 About Bureau 14
 ---------------
 
-wrpme is the work of `Bureau 14 <http://www.bureau14.fr/>`_ a startup located in Paris, France.
+quasardb is the work of `Bureau 14 <http://www.bureau14.fr/>`_ a startup located in Paris, France.
 
 Address 
     Bureau 14 SARL - 14, avenue de l'Opéra - 75001 Paris - *France*
@@ -18,17 +18,17 @@ Google+
 Twitter
     `http://www.twitter.com/bureau14 <http://www.twitter.com/bureau14>`_.
 
-wrpme on the web
+quasardb on the web
 ----------------------
 
-The official wrpme website is `http://www.wrpme.com/ <http://www.wrpme.com/>`_.
+The official quasardb website is `http://www.quasardb.com/ <http://www.quasardb.com/>`_.
 
-You can also follow us on Facebook (`http://www.facebook.com/wrpme <http://www.facebook.com/wrpme>`_), Google+ (`https://plus.google.com/u/0/b/118097784098045720220/ <https://plus.google.com/u/0/b/118097784098045720220/>`_) and Twitter (`http://www.twitter.com/wrpme <http://www.twitter.com/wrpme>`_).
+You can also follow us on Facebook (`http://www.facebook.com/quasardb <http://www.facebook.com/quasardb>`_), Google+ (`https://plus.google.com/u/0/b/118097784098045720220/ <https://plus.google.com/u/0/b/118097784098045720220/>`_) and Twitter (`http://www.twitter.com/quasardb <http://www.twitter.com/quasardb>`_).
 
 Contacting a salesperson
 ------------------------
 
-Interested in acquiring a wrpme licence? Not sure if wrpme the right tool for the job? Send an e-mail to `sales@wrp.me <sales@wrp.me>`_ and a salesperson will contact you as soon as possible.
+Interested in acquiring a quasardb licence? Not sure if quasardb the right tool for the job? Send an e-mail to `sales@wrp.me <sales@wrp.me>`_ and a salesperson will contact you as soon as possible.
 
 Reporting a bug or requesting a feature
 ---------------------------------------

@@ -1,32 +1,32 @@
-wrpme web server
-****************
+quasardb web server
+*******************
 
 .. highlight:: js
 
 Introduction
 ============
 
-The wrpme web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a wrpme :term:`hive`.
+The quasardb web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a quasardb :term:`hive`.
 
 Launching the web server
 ========================
 
-The web server binary is wrpme_httpd (wrpme_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`wrpme_httpd-parameters-reference`.
+The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`qdb_httpd-parameters-reference`.
 
 Assuming a daemon that listens on the port 2836 on the machine 192.168.1.1, the command line is::
 
-    ./wrpme_httpd --daemon=192.168.1.1:2836 &
+    ./qdb_httpd --daemon=192.168.1.1:2836 &
 
 or on Windows::
 
-    wrpme_httpd --daemon=192.168.1.1:2836 
+    qdb_httpd --daemon=192.168.1.1:2836 
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
 Interfacing with the cluster
 ==============================
 
-To function properly, the web server must know the address and port of the target wrpme daemon. This is all that is needed!
+To function properly, the web server must know the address and port of the target quasardb daemon. This is all that is needed!
 
 The web bridge is extremly flexible:
 
@@ -37,18 +37,18 @@ The web bridge is extremly flexible:
 Using the server
 ================
 
-The server accepts specific URLs (See :ref:`wrpme_httpd-url-reference`) and will service data depending on the URL and its parameters.
+The server accepts specific URLs (See :ref:`qdb_httpd-url-reference`) and will service data depending on the URL and its parameters.
 
 If the URL does not exists, the server will return a page not found (404) error.
 
-.. _wrpme_httpd-parameters-reference:
+.. _qdb_httpd-parameters-reference:
 
 Parameters reference
 ====================
 
 Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
 
-.. program:: wrpme_httpd
+.. program:: qdb_httpd
 
 .. option:: -h, --help
 
@@ -57,7 +57,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         To display the online help, type: ::
 
-            wrpme_httpd --help
+            qdb_httpd --help
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
@@ -72,7 +72,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Listen on all addresses and the port 80::
 
-            wrpmed --address=0.0.0.0:80
+            qdbd --address=0.0.0.0:80
 
 .. option:: -r <path>, --root <path>
 
@@ -97,14 +97,14 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         To use two listening threads::
 
-            wrpme_httpd --threads=2
+            qdb_httpd --threads=2
 
 .. option:: --daemon <address>:<port>
 
    Specifies the address and port of the daemon daemon to which the server will connect.
 
    Argument
-        The address and port of a machine where a wrpme daemon is running.
+        The address and port of a machine where a quasardb daemon is running.
 
    Default value
         127.0.0.0:2836, the IPv4 localhost address and the port 2836
@@ -112,7 +112,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
    Example
         If the daemon listen on the localhost and on the port 5009::
 
-            wrpme_httpd --daemon-port=localhost:5009
+            qdb_httpd --daemon-port=localhost:5009
 
 .. option:: -o, --log-console
 
@@ -126,9 +126,9 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         A string representing one (or several) path(s) to the log file(s).
 
     Example
-        Log in /var/log/wrpmed.log: ::
+        Log in /var/log/qdbd.log: ::
 
-            wrpme_httpd --log-file=/var/log/wrpmed.log
+            qdb_httpd --log-file=/var/log/qdbd.log
 
 .. option:: --log-level=<value>
 
@@ -150,7 +150,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Request a debug level logging: ::
 
-            wrpme_httpd --log-level=debug
+            qdb_httpd --log-level=debug
 
 .. option:: --log-flush-interval=<delay>
 
@@ -165,13 +165,13 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Flush the log every minute: ::
 
-            wrpme_httpd --log-flush-interval=60
+            qdb_httpd --log-flush-interval=60
 
 
 
 .. highlight:: html
 
-.. _wrpme_httpd-url-reference:
+.. _qdb_httpd-url-reference:
 
 URL reference
 =============

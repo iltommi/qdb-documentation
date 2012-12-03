@@ -7,7 +7,7 @@ Principles
 Server
 -------
 
-At the heart of many design and technology decisions of wrpme lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, it uses a combination of asynchronous I/O, lock-free containers and parallel processing.
+At the heart of many design and technology decisions of quasardb lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, it uses a combination of asynchronous I/O, lock-free containers and parallel processing.
 
 As of now, the server can serve as many concurrent requests as the operating system and the underlying hardware permit. 
 
@@ -63,16 +63,16 @@ However, in a multiclient context, conflicts may arise. What happens if a Client
     * **Client B** *updates* the entry "car" to "sedan"
     * **Client A** *gets* the entry "car" and obtains the value "sedan"
 
-From the point of view of wrpme, everything is perfectly valid and coherent, but from the point of view of Client A, something is wrong!
+From the point of view of quasardb, everything is perfectly valid and coherent, but from the point of view of Client A, something is wrong!
 
 How to use the API to avoid conflicts
 --------------------------------------
 
 Conflicts arise when the **usage is not carefully thought out**. It's a client's design problem, not a server problem.
 
-On one hand it does not make sense to have clients simultaneously update the same entry and expect the value to be coherent. wrpme could leave it as is and require the client to have a coherent usage scenario.
+On one hand it does not make sense to have clients simultaneously update the same entry and expect the value to be coherent. quasardb could leave it as is and require the client to have a coherent usage scenario.
 
-On the other hand it's a shame the clients cannot rely on the power of wrpme to *at the very least detect* something is wrong.
+On the other hand it's a shame the clients cannot rely on the power of quasardb to *at the very least detect* something is wrong.
 
 That's why our API can help clients detect and even avoid conflicts (see :doc:`../api/index`).
 
@@ -116,13 +116,13 @@ As you can see, a conflict is a question of context and usage.
 The best way to avoid conflicts: plan out
 ------------------------------------------------------
 
-wrpme provides several mechanisms to allow clients to synchronize themselves and avoid conflicts. However, the most important step to ensure proper operation is to plan out. What is a conflict? Is it a problem? Only a thorough plan can tell.
+quasardb provides several mechanisms to allow clients to synchronize themselves and avoid conflicts. However, the most important step to ensure proper operation is to plan out. What is a conflict? Is it a problem? Only a thorough plan can tell.
 
 Things to consider:
 
     * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing a *one size fits all* client.
     * There is always an update delay, whatever system you're using. The question is, what delay can your business case tolerate? For example a high frequency trading automaton and a reservation system have different requirements.
     * The problem is never the conflict in itself. The problem is operating without realizing that there was a conflict in the first place.
-    * wrpme provides ways to synchronize clients. For example, put fails if the entry already exists and update always succeed.
-    * Last but not least, if you are trying to squeeze a schema into a non-relational database, disaster will ensue. A system such as wrpme generaly implies to rethink your modelization.
+    * quasardb provides ways to synchronize clients. For example, put fails if the entry already exists and update always succeed.
+    * Last but not least, if you are trying to squeeze a schema into a non-relational database, disaster will ensue. A system such as quasardb generaly implies to rethink your modelization.
 

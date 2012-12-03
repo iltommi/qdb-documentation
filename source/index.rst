@@ -1,27 +1,27 @@
-.. wrpme documentation master file, created by
+.. quasardb documentation master file, created by
    sphinx-quickstart on Fri Apr 22 17:52:41 2011.
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome!
+quasardb
 ********
 
 .. image:: /_static/b14-logo.png
     :align: right
     :class: b14-logo
 
-After years of research and development, `Bureau 14 <http://www.bureau14.fr>`_ is proud to introduce **quasardb**.
+**quasardb** - a creation of  `Bureau 14 <http://www.bureau14.fr>`_  - is a high-performance, non-relational database designed from the ground up for the most demanding environments.
 
-quasardb is a non-relational database designed from the ground up for the most demanding environments.
+If you are new to **quasardb** the :doc:`primer` is a good introduction. The :doc:`faq` may also have the information you are looking for.
 
-Thanks to its **hyperscalable architecture**, quasardb supports **hot plug'n'play growth** while delivering **unrivalled performance and reliability**.
+ If you would like a step by step guide to install and use your first cluster, we have two tutorials in the :doc:`tutorials/index` chapter.
 
-quasardb brings industrial strength software to the world of nosql and will become the corner stone of your information system.
+If you are looking for specific information regarding the usage or the administration of a **quasardb** component, please read the :doc:`reference/index`. All the information related to development is in the :doc:`api/index` chapter.
 
-Should you wish to know more, please visit the official `quasardb website <http://www.quasardb.net>`_ for more informations.
+Is this documentation helpful? Let us know! (see :doc:`contact`).
 
-quasardb documentation
--------------------
+Table of contents
+-----------------
 
 .. toctree::
    :numbered:

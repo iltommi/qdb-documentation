@@ -1,46 +1,46 @@
 FAQ
 *********
 
-Does wrpme support IPv6?
+Does quasardb support IPv6?
 ============================
 
 Yes.
 
-Which platform does wrpme support?
+Which platform does quasardb support?
 =====================================
 
 FreeBSD, Linux and Windows.
 
-What is the best platform to use wrpme?
+What is the best platform to use quasardb?
 ========================================
 
 All platforms are equally supported.
 
-Does wrpme support multi-core and/or multi-processor computers?
+Does quasardb support multi-core and/or multi-processor computers?
 =================================================================
 
-Yes, wrpme has been *designed for* such architectures.
+Yes, quasardb has been *designed for* such architectures.
 
 How is data transmitted on the network?
 =========================================
 
-wrpme uses a proprietary low-overhead binary protocol.
+quasardb uses a proprietary low-overhead binary protocol.
 
-How fast is wrpme?
+How fast is quasardb?
 =====================
 
 In terms of requests per second, a Core i7 desktop computer can serve more than 1,000,000 (one million) requests per second.
 
 In terms of bandwidth, the same computer easily saturates a ten gigabit network. Your maximum bandwidth will depend on the size and the type of your data and your network capability.
 
-Is wrpme faster than... ?
+Is quasardb faster than... ?
 ==========================
 
 We are working on fair and reproducible benchmarks.
 
-Our preliminarily results show that wrpme can be an order of magnitude faster than other engines (open source or commercial), especially as entries size grow.
+Our preliminarily results show that quasardb can be an order of magnitude faster than other engines (open source or commercial), especially as entries size grow.
 
-Does wrpme support 32-bit operating systems?
+Does quasardb support 32-bit operating systems?
 ==============================================
 
 Only Windows 32-bit is supported. Linux and FreeBSD are 64-bit only.
@@ -55,30 +55,30 @@ On most operating systems, this is close to the amount of physical memory (RAM) 
 What is the maximum entries count?
 ==================================
 
-As long as you have the disk space for it, there is no limit (unless otherwise configured) to the numbers of entries into a wrpme server.
+As long as you have the disk space for it, there is no limit (unless otherwise configured) to the numbers of entries into a quasardb server.
 
-How much RAM can wrpme handle?
+How much RAM can quasardb handle?
 ================================
 
 As much as the operating system can.
 
-How can one administrate a wrpme cluster?
+How can one administrate a quasardb cluster?
 ============================================
 
 A web bridge enables the user to monitor a node with a HTML 5 interface. The bridge also offers JSON/JSONP interfaces to access data and statistics.
 
-See :doc:`../reference/wrpme_httpd` for more information.
+See :doc:`../reference/qdb_httpd` for more information.
 
-Is wrpme free of charge?
+Is quasardb free of charge?
 ===========================
 
-wrpme requires a license.
+quasardb requires a license.
 
 Non-profit organizations and non-commercial usage are elligible for free licenses.
 
 Contact us for more information, see :doc:`contact`
 
-Can I embed the wrpme technology in my hardware/software?
+Can I embed the quasardb technology in my hardware/software?
 ============================================================
 
 Yes, we have a special license for this case. Contact us for more information, see :doc:`contact`
@@ -86,9 +86,9 @@ Yes, we have a special license for this case. Contact us for more information, s
 Do I need a licence to write a client?
 ========================================================
 
-No license is required to write a wrpme client, but the software's documentation and credits must state the following "this software features wrpme, a Bureau 14 technology. All rights reserved.".
+No license is required to write a quasardb client, but the software's documentation and credits must state the following "this software features quasardb, a Bureau 14 technology. All rights reserved.".
 
-A client is software that connects to a remote or local wrpme server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
+A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
 
 Is support available for non-registered users?
 =================================================
@@ -102,10 +102,10 @@ Do you offer consulting or bespoke services?
 
 Yes! Contact us for more information, see :doc:`contact`
 
-In what language is wrpme written?
+In what language is quasardb written?
 ====================================
 
-The core wrpme engine (that we also call kernel) is written in C++ 11 and assembly. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
+The core quasardb engine (that we also call kernel) is written in C++ 11 and assembly. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
 
 The administration interface is written in HTML5/Javascript.
 
@@ -114,12 +114,12 @@ Is the version I downloaded from the web site limited or crippled in any way?
 
 No. If you feel like it, you can build a petabyte datacenter with it!
 
-Is wrpme open source?
+Is quasardb open source?
 ========================
 
 No.
 
-Does wrpme use open source libraries?
+Does quasardb use open source libraries?
 ==========================================
 
 Yes it does! Here is the list as of August 2011:

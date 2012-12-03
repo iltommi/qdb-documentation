@@ -1,17 +1,17 @@
-wrpme database tool
+quasardb database tool
 ******************************
 
 Introduction
 ============
 
-The wrpme database tool enables you to analyze, dump, repair and backup the persisted data of a wrpme instance.
+The quasardb database tool enables you to analyze, dump, repair and backup the persisted data of a quasardb instance.
 
 Parameters reference
 ====================
 
 Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
 
-.. program:: wrpme_db_tool
+.. program:: qdb_dbtool
 
 .. option:: -h, --help
 
@@ -20,7 +20,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         To display the online help, type: ::
 
-            wrpme_db_tool --help
+            qdb_dbtool --help
 
 .. option:: --database=<path>
 
@@ -35,11 +35,11 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Work on a database in the current directory::
 
-            wrpme_db_tool --database=.
+            qdb_dbtool --database=.
 
-        Work on a database in the /var/wrpme/db directory::
+        Work on a database in the /var/quasardb/db directory::
 
-            wrpme_db_tool --database=/var/wrpme/db directory
+            qdb_dbtool --database=/var/quasardb/db directory
 
 .. option:: --analyze, -a
 
@@ -48,7 +48,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Analyze the database in the current directory::
 
-            wrpme_db_tool --database=. --analyze
+            qdb_dbtool --database=. --analyze
 
 .. option:: --dump, -d
 
@@ -57,7 +57,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         Dump the database in the current directory::
 
-            wrpme_db_tool --database=. --dump
+            qdb_dbtool --database=. --dump
 
 .. option:: --backup=<path>, -b <path>
 
@@ -71,18 +71,18 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         None
 
     Example
-        Backup the database in /var/wrpme/db to /var/wrpme/db/backup ::
+        Backup the database in /var/quasardb/db to /var/quasardb/db/backup ::
 
-            wrpme_db_tool --database=/var/wrpme/db --backup=/var/wrpme/db/backup
+            qdb_dbtool --database=/var/quasardb/db --backup=/var/quasardb/db/backup
 
 .. option:: --repair, -r
 
-    Attempts to repair the database. All data may not be recovered. Note that the :doc:`wrpmed` automatically attempts to repair the database if needed, this option is intended for offline operations.
+    Attempts to repair the database. All data may not be recovered. Note that the :doc:`qdbd` automatically attempts to repair the database if needed, this option is intended for offline operations.
 
     Example
         Repairs the database in the current directory::
 
-            wrpme_db_tool --database=. --repair
+            qdb_dbtool --database=. --repair
 
 
 

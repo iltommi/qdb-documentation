@@ -28,7 +28,7 @@ v0.7.0 - 09/04/2012
     * Benchmarking tool: Added Redis support
     * Client API: Fixed bug that prevented the 32-bit Windows API to add entries larger than 4 GiB
     * Java API: Greatly improved performances, up to 100%!
-    * Greatly improved the `documentation <http://doc.wrpme.com/>`_
+    * Greatly improved the `documentation <http://doc.quasardb.com/>`_
     * Upgraded to Boost 1.50.0
     * Known bug: the eviction, pagein and size counts reported in the administration console are invalid
 
@@ -104,8 +104,8 @@ v0.5.0 - 08/01/2011
     * Reduced overall memory load
     * Improved performance by 10-20 %
     * Removed legacy code and API
-    * `Documentation <http://doc.wrpme.com/>`_!
-    * The wrpme shell now handles binary input and output
+    * `Documentation <http://doc.quasardb.com/>`_!
+    * The quasardb shell now handles binary input and output
     * Upgraded Linux and FreeBSD compilers to gcc 4.6.1
     * Upgraded to Boost 1.47.0
 
@@ -124,7 +124,7 @@ v0.4.1 - 05/07/2011
 
     * Multiplatform Python API package with installer
     * Fixed FreeBSD invalid rpath
-    * wrpmesh can now process standard input and output
+    * qdbsh can now process standard input and output
 
 v0.4.0 - 04/22/2011
 -------------------
@@ -146,7 +146,7 @@ v0.3.2 - 02/26/2011
     * High-performance slab allocator is now used for logging.
     * Fixed a minor memory leak.
     * The Linux and FreeBSD binaries now have a rpath to automatically
-      load libraries present in wrpme's lib subdirectory.
+      load libraries present in quasardb's lib subdirectory.
     * Upgraded TBB to version 3.0 Update 5
 
 v0.3.1 - 02/22/2011

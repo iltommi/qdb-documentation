@@ -1,12 +1,12 @@
-wrpme daemon
+quasardb daemon
 ************
 
-The wrpme daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
+The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
 The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
 
-The wrpme daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
+The quasardb daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
 
 .. important::
     A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the :option:`--license-file` option.
@@ -14,7 +14,7 @@ The wrpme daemon does not require privileges (unless listening on a port under 1
 Configuration
 =====================
 
-.. program:: wrpmed
+.. program:: qdbd
 
 Cheat sheet
 -----------
@@ -23,7 +23,7 @@ Cheat sheet
                 Option                               Usage               Default           Global
  ===================================== ============================ =================== ============
  :option:`-h`                          display help                                         No
- :option:`--license-file`              specify license              wrpme_license.txt       No
+ :option:`--license-file`              specify license              qdb_license.txt       No
  :option:`-a`                          address to listen on         127.0.0.1:2836          No
  :option:`-s`                          max client sessions          2000                    No
  :option:`--partitions`                number of partitions         Variable                No
@@ -60,7 +60,7 @@ An option that applies cluster-wide is said to be *global* whereas other options
 Network distribution
 --------------------
 
-wrpmed distribution is peer-to-peer. This means:
+qdbd distribution is peer-to-peer. This means:
 
     * The unavailability of one :term:`server` does not compromise the whole :term:`hive`
     * The memory load is automatically distributed amongst all instances within a :term:`hive`
@@ -72,8 +72,8 @@ Each server within one hive needs:
 
 .. note::
     It's counter-productive to run several instances on the same :term:`node`.
-    wrpmed is hyper-scalar and will be able to use all the memory and processors of your server.
-    The same remark applies for virtual machines: running wrpme multiple times in multiple virtual machines on a single physical server will not increase the performances.
+    qdbd is hyper-scalar and will be able to use all the memory and processors of your server.
+    The same remark applies for virtual machines: running quasardb multiple times in multiple virtual machines on a single physical server will not increase the performances.
 
 The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests,
 depending on the actual hardware configuration of your server.
@@ -101,7 +101,7 @@ Data persistence on disk is buffered: when an user requests ends, the data may o
 
 Should you need every write to be synced to disk, you can do so with the :option:`--sync` option. Syncing every write do disk negatively impacts performances while slightly increasing reliability.
 
-You can also disable the persistence altogether (:option:`--transient`), making wrpme a pure in-memory :term:`repository`.
+You can also disable the persistence altogether (:option:`--transient`), making quasardb a pure in-memory :term:`repository`.
 
 .. caution::
     If you disable the persistence, evicted entries are lost.
@@ -111,7 +111,7 @@ Partitions
 
 A partition can be seen as a worker threads. The more partitions, the more work can be done in parallel. However if the number of partitions is too high relative to your server capabilities to actually do parallel work performance will decrease.
 
-wrpme is highly scalable and partitions do not interfere with each other. The daemon's scheduler will assign incoming requests to the partition
+quasardb is highly scalable and partitions do not interfere with each other. The daemon's scheduler will assign incoming requests to the partition
 with the least workload.
 
 The ideal number of partitions is close to the number of physical cores your server has. By default the daemon chooses the best compromise it can. If this value is not satisfactory, you can use the :option:`--partitions` options to set the value manually.
@@ -130,7 +130,7 @@ Use :option:`--limiter-max-entries-count` (defaults to 10,000) and :option:`--li
 .. note::
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
 
-The wrpme daemon uses a proprietary *fast monte-carlo* eviction heuristic. This algorithm is currently not configurable.
+The quasardb daemon uses a proprietary *fast monte-carlo* eviction heuristic. This algorithm is currently not configurable.
 
 Operating limits
 ================
@@ -161,8 +161,8 @@ Practical limits
 
 **Entry size**
     Very small entries (below a hundred bytes) do not offer a very good throughput because the network overhead is larger than the payload. This is a limitation of TCP.
-    Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a wrpme :term:`cluster` "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
-    If you have a lot of RAM (several gigabytes per :term:`node`) do not be afraid to add large entries to a wrpme :term:`cluster`.
+    Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a quasardb :term:`cluster` "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
+    If you have a lot of RAM (several gigabytes per :term:`node`) do not be afraid to add large entries to a quasardb :term:`cluster`.
     For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.
 
 **Simultaneous clients**
@@ -171,7 +171,7 @@ Practical limits
     You can set the :option:`-s` to a higher number to handle more simultaneous clients per :term:`node`.
     Also you should make sure the clients connects to the nodes of the hive in a load-balanced fashion.
 
-.. _wrpmed-parameters-reference:
+.. _qdbd-parameters-reference:
 
 Parameters reference
 ====================
@@ -191,7 +191,7 @@ Instance specific
     Example
         To display the online help, type: ::
 
-            wrpmed --help
+            qdbd --help
 
 .. option:: --license-file
 
@@ -201,12 +201,12 @@ Instance specific
         The path to a valid license file.
 
     Default value
-        wrpme_license.txt
+        qdb_license.txt
 
     Example
         Load the license from license.txt::
 
-            wrpmed --license-file=license.txt
+            qdbd --license-file=license.txt
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
@@ -221,7 +221,7 @@ Instance specific
     Example
         Listen on localhost and the port 5910::
 
-            wrpmed --address=localhost:5910
+            qdbd --address=localhost:5910
 
 .. note::
     The unspecified address (0.0.0.0 for IPv4, :: for IPv6) is not allowed.
@@ -239,7 +239,7 @@ Instance specific
     Example
         Allow 10,000 simultaneous session::
 
-            wrpmed --sessions=10000
+            qdbd --sessions=10000
 
 .. note::
     The sessions count determines the number of simultaneous clients the server may handle at any given time.
@@ -260,7 +260,7 @@ Instance specific
     Example
         Have 10 partitions::
 
-            wrpmed --partitions=10
+            qdbd --partitions=10
 
 .. note::
     The number of partitions directly impacts the server scalability. If this number is too low, scalability will be
@@ -281,7 +281,7 @@ Instance specific
     Example
         Set the timeout to one minute::
 
-            wrpmed --idle-duration=60
+            qdbd --idle-duration=60
 
 .. option:: --request-timeout=<timeout>
 
@@ -296,7 +296,7 @@ Instance specific
     Example
         Set the timeout to two minutes::
 
-            wrpmed --request-timeout=120
+            qdbd --request-timeout=120
 
 .. option:: --id=<id string>
 
@@ -312,7 +312,7 @@ Instance specific
     Example
         Set the node ID to 1-a-2-b::
 
-            wrpmed --id=1-a-2-b
+            qdbd --id=1-a-2-b
 
 .. note::
     Having two nodes with the same ID on the ring leads to undefined behaviour. By default the daemon generates
@@ -324,7 +324,7 @@ Instance specific
     The address and port of a peer to which to connect within the :term:`hive`. It can be any :term:`server` belonging to the :term:`hive`.
 
     Argument
-        The address and port of a machines where a wrpme daemon is running. The address string can be a host name or an IP address.
+        The address and port of a machines where a quasardb daemon is running. The address string can be a host name or an IP address.
 
     Default value
         None
@@ -332,7 +332,7 @@ Instance specific
     Example
         Join a :term:`hive` where the machine 192.168.1.1 listening on the port 2836 is already connected::
 
-            wrpmed --peer=192.168.1.1:2836
+            qdbd --peer=192.168.1.1:2836
 
 .. option:: -o, --log-console
 
@@ -346,9 +346,9 @@ Instance specific
         A string representing one (or several) path(s) to the log file(s).
 
     Example
-        Log in /var/log/wrpmed.log: ::
+        Log in /var/log/qdbd.log: ::
 
-            wrpmed --log-file=/var/log/wrpmed.log
+            qdbd --log-file=/var/log/qdbd.log
 
 .. option:: --log-syslog
 
@@ -374,7 +374,7 @@ Instance specific
     Example
         Request a `debug` level logging::
 
-            wrpmed --log-level=debug
+            qdbd --log-level=debug
 
 .. option:: --log-flush-interval=<delay>
 
@@ -389,7 +389,7 @@ Instance specific
     Example
         Flush the log every minute::
 
-            wrpmed --log-flush-interval=60
+            qdbd --log-flush-interval=60
 
 Global
 ----------
@@ -408,11 +408,11 @@ Global
     Example
         Have one copy of every entry in the hive::
 
-            wrpmed --replication=2
+            qdbd --replication=2
 
 .. option:: --transient
 
-    Disable persistence. Evicted data is lost when wrpmed is :term:`transient`.
+    Disable persistence. Evicted data is lost when qdbd is :term:`transient`.
 
 .. option:: -r <path>, --root=<path>
 
@@ -425,9 +425,9 @@ Global
         The "db" subdirectory relative to the current working directory.
 
     Example
-        Persist data in /var/wrpme/db ::
+        Persist data in /var/quasardb/db ::
 
-            wrpmed --root=/var/wrpme/db
+            qdbd --root=/var/quasardb/db
 
 .. note::
     Although this parameter is global, the directory refers to the local node of each instance.
@@ -455,11 +455,11 @@ Global
    Example
        To allow only 100 kiB of entries::
 
-            wrpmed --limiter-max-bytes=102400
+            qdbd --limiter-max-bytes=102400
 
        To allow up to 8 GiB::
 
-            wrpmed --limiter-max-bytes=8589934592
+            qdbd --limiter-max-bytes=8589934592
 
 .. note::
     Setting this value too high may lead to `trashing <http://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
@@ -478,7 +478,7 @@ Global
     Example
         To keep the number of entries in memory below 101::
 
-            wrpmed --limiter-max-entries=100
+            qdbd --limiter-max-entries=100
 
 .. note::
     Setting this value too low may cause the :term:`server` to spend more time evicting entries than processing requests.

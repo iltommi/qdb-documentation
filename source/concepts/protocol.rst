@@ -17,13 +17,13 @@ A client attempts to locate the valid node only three times. In other words, thr
 Data management
 =====================================================
 
-Data is sent and stored "as is", bit for bit. The user may add any kind of content to the wrpme hive, provided that the nodes have sufficient storage space. wrpme uses a low-level binary protocol that adds only few bytes of overhead per request.
+Data is sent and stored "as is", bit for bit. The user may add any kind of content to the quasardb hive, provided that the nodes have sufficient storage space. quasardb uses a low-level binary protocol that adds only few bytes of overhead per request.
 
 The persistence layer may compress data for efficiency purposes. This is transparent to the client.
 
-Most high levels API support the language native serialization mechanism to transparently add and retrieve objects to/from a wrpme hive (see :doc:`../api/index`).
+Most high levels API support the language native serialization mechanism to transparently add and retrieve objects to/from a quasardb hive (see :doc:`../api/index`).
 
-Metadata is associated with each entry. The wrpme hive ensures the metadata and the actual data are consistent at all time. 
+Metadata is associated with each entry. The quasardb hive ensures the metadata and the actual data are consistent at all time. 
 
 .. note::
     It is currently not possible to obtain the metadata via the API.

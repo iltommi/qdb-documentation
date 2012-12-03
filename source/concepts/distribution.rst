@@ -4,7 +4,7 @@ Distribution
 Features
 =====================================================
 
-A wrpme hive is a peer-to-peer distributed hash table based on `Chord <http://pdos.csail.mit.edu/chord/>`_. It has the following features:
+A quasardb hive is a peer-to-peer distributed hash table based on `Chord <http://pdos.csail.mit.edu/chord/>`_. It has the following features:
 
     Distributed load
         The load is fairly and automatically distributed amongst the nodes of the hive
@@ -30,7 +30,7 @@ Nodes
 
 To be properly operated a ring needs to be stable (see :ref:`fault-tolerance`).
 
-A ring is stable when each node is connected to the proper :term:`successor` and :term:`predecessor`, that is, when all nodes are ordered by their respective ids. Each node requires an unique id that may either be automatically generated or given by the user (see :doc:`../reference/wrpmed`).
+A ring is stable when each node is connected to the proper :term:`successor` and :term:`predecessor`, that is, when all nodes are ordered by their respective ids. Each node requires an unique id that may either be automatically generated or given by the user (see :doc:`../reference/qdbd`).
 
 If a node detects that its id is already in use, it will part the ring.
 
@@ -117,7 +117,7 @@ Data replication
 Data replication greatly reduces the odds of functional failures at the cost of increased memory usage and reduced performances when adding or updating.
 
 .. note::
-    Replication is optional and disabled by default (see :doc:`../reference/wrpmed`).
+    Replication is optional and disabled by default (see :doc:`../reference/qdbd`).
 
 Principle
 ^^^^^^^^^^
@@ -125,7 +125,7 @@ Principle
 Data is replicated on a node's successors. For example with a factor two replication, an entry will be maintained by a node and by its successor. With a factor three replication, an entry will be maintained by a node and and by its two successors. Thus, replication linearly increases memory usage.
 
 .. note::
-    The replication factor is identical for all nodes of a hive and is configurable (see :doc:`../reference/wrpmed`). By default it is set to one (replication disabled).
+    The replication factor is identical for all nodes of a hive and is configurable (see :doc:`../reference/qdbd`). By default it is set to one (replication disabled).
 
 The limit to this rule is for hives with fewer nodes than the replication factor. For example, a two nodes hive cannot have a factor three replication.
 
@@ -165,7 +165,7 @@ In other words, the client access the replica **after** ring stabilization. It d
 
 This comes at the cost that an entry may be unavailable when the ring is in unstable phase.
 
-Formally put, this means that wrpme may chose to sacrifice *Availability* for *Consistency* and *Partionability* during short periods of time.
+Formally put, this means that quasardb may chose to sacrifice *Availability* for *Consistency* and *Partionability* during short periods of time.
 
 .. _data-replication-reliability-impact:
 
@@ -224,7 +224,7 @@ Fault tolerance
 Data loss
 --------------
 
-wrpme is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). 
+quasardb is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). 
 
 However, there is one case where data may be lost:
 
@@ -232,7 +232,7 @@ However, there is one case where data may be lost:
     2. Data is not replicated **and**
     3. The data was not persisted to disk **or** storage failed
 
-The persistence layer is able to recover from write failures, which means that one write error will not compromise everything. It is also possible to make sure writes are synced to disks (see :doc:`../reference/wrpmed`) to increase reliability further. 
+The persistence layer is able to recover from write failures, which means that one write error will not compromise everything. It is also possible to make sure writes are synced to disks (see :doc:`../reference/qdbd`) to increase reliability further. 
 
 Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is negligible for *read-mostly* hives.
 

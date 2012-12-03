@@ -1,4 +1,4 @@
-wrpme benchmark tool
+quasardb benchmark tool
 ******************************
 
 .. highlight:: js
@@ -6,19 +6,19 @@ wrpme benchmark tool
 Introduction
 ============
 
-The wrpme benchmark tool enables you to evaluate the performance of your wrpme hive. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
+The quasardb benchmark tool enables you to evaluate the performance of your quasardb hive. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
 
 Usage scenarii
 ===============
 
- * Identifiying hardware limits in a wrpme cluster (network bandwidth, server processing power, etc.)
+ * Identifiying hardware limits in a quasardb cluster (network bandwidth, server processing power, etc.)
  * Determining the maximum throughput of your cluster
  * Tuning
 
 Supported protocols
 ======================
 
-The tool can be used to benchmark a memcached server, a redis server or a wrpme server. It can also create a virtual "local" server to test the local machine memory bandwidth.
+The tool can be used to benchmark a memcached server, a redis server or a quasardb server. It can also create a virtual "local" server to test the local machine memory bandwidth.
 
 The local server can help identify memory-related bottlenecks or abnormal allocator behavior.
 
@@ -67,7 +67,7 @@ The accepted commands are:
 Parameters reference
 ====================
 
-.. program:: wrpme_comparison
+.. program:: qdb_comparison
 
 .. option:: -h, --help
 
@@ -76,7 +76,7 @@ Parameters reference
     Example
         To display the online help, type: ::
 
-            wrpme_comparison --help
+            qdb_comparison --help
 
 .. option:: --daemon <address>:<port>
 
@@ -91,22 +91,22 @@ Parameters reference
    Example
         If the daemon listen on the localhost and on the port 5009::
 
-            wrpme_httpd --daemon-port=localhost:5009
+            qdb_httpd --daemon-port=localhost:5009
 
 .. option:: --protocol=<protocol>
 
     Specifies the protocol to use.
 
     Argument
-        A string representing the name of the protocol to use. Supported values are local, memcached, redis and wrpme.
+        A string representing the name of the protocol to use. Supported values are local, memcached, redis and quasardb.
 
     Default value
-        wrpme
+        quasardb
 
     Example
         Run the test on  a memcached compatible server::
 
-            wrpme_comparison --protocol=memcached
+            qdb_comparison --protocol=memcached
 
 .. option:: -f <path>, --test-file=<path>
 
@@ -121,7 +121,7 @@ Parameters reference
     Example
         Runs the tests written in ``stress.cfg``::
 
-            wrpme_comparison -f stress.cfg
+            qdb_comparison -f stress.cfg
 
 .. option:: -o <path>, --output-file=<path>
 
@@ -136,5 +136,5 @@ Parameters reference
     Example
         Output the results to ``results.csv``::
 
-            wrpmed --output-file=results.csv
+            qdbd --output-file=results.csv
 

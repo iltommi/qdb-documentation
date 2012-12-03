@@ -1,23 +1,23 @@
-﻿wrpme shell
-***********
+﻿quasardb shell
+**************
 
-.. program:: wrpmesh
+.. program:: qdbsh
 
 Introduction
 ============
 
-The wrpme shell is a command line tool that enables you to add, update, delete and retrieve entries from a wrpme :term:`server` or :term:`cluster`.
+The quasardb shell is a command line tool that enables you to add, update, delete and retrieve entries from a quasardb :term:`server` or :term:`cluster`.
 The shell can be used interactively and non-interactively.
-In :ref:`interactive mode <wrpmesh-interactive-mode>`, the user enters commands to be executed on the server. Feedback is provided to indicate failure.
-In :ref:`non-interactive mode <wrpmesh-noninteractive-mode>`, a single command - supplied as a parameter - is executed and the program exits.
+In :ref:`interactive mode <qdbsh-interactive-mode>`, the user enters commands to be executed on the server. Feedback is provided to indicate failure.
+In :ref:`non-interactive mode <qdbsh-noninteractive-mode>`, a single command - supplied as a parameter - is executed and the program exits.
 
 
 Cheat sheet
 ===========
 
-By default wrpmesh will attempt to connect to a wrpmed running on the same machine and listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run wrpmesh as such::
+By default qdbsh will attempt to connect to a qdbd running on the same machine and listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run qdbsh as such::
 
-    wrpmesh --daemon=192.168.1.1:303
+    qdbsh --daemon=192.168.1.1:303
 
 When connecting to a cluster, any server within the cluster is capable of servicing requests. There is no "master" or "preferred" server. There is no performance impact of choosing one server instead of the other, except, perhaps, the physical capabilities of the server.
 
@@ -37,71 +37,71 @@ Commands
  ===================================== ==========================================================
                 Command                                  Usage
  ===================================== ==========================================================
- :ref:`help <wrpmesh_help>`            display help
- :ref:`version <wrpmesh_version>`      display wrpme version
- :ref:`get <wrpmesh_get>`              get a piece of data
- :ref:`put <wrpmesh_put>`              put data, fails if entry already exists
- :ref:`update <wrpmesh_update>`        put data, replace existing entry if any
- :ref:`get_update <wrpmesh_getupdate>` atomically get and udpdate an existing entry if any
- :ref:`cas <wrpmesh_cas>` atomically   compare and swap an entry in case of match
- :ref:`remove <wrpmesh_del>`           remove given entry
- :ref:`remove_all <wrpmesh_removeall>` remove all entries
- :ref:`exit <wrpmesh_exit>`            exit the shell (interactive mode only)
+ :ref:`help <qdbsh_help>`              display help
+ :ref:`version <qdbsh_version>`        display quasardb version
+ :ref:`get <qdbsh_get>`                get a piece of data
+ :ref:`put <qdbsh_put>`                put data, fails if entry already exists
+ :ref:`update <qdbsh_update>`          put data, replace existing entry if any
+ :ref:`get_update <qdbsh_getupdate>`   atomically get and udpdate an existing entry if any
+ :ref:`cas <qdbsh_cas>` atomically     compare and swap an entry in case of match
+ :ref:`remove <qdbsh_del>`             remove given entry
+ :ref:`remove_all <qdbsh_removeall>`   remove all entries
+ :ref:`exit <qdbsh_exit>`              exit the shell (interactive mode only)
  ===================================== ==========================================================
 
-.. _wrpmesh-interactive-mode:
+.. _qdbsh-interactive-mode:
 
 Interactive mode
 ================
 
 The interactive mode enables the user to enter as many commands as needed. The shell will provide the user with feedback upon success and failure. If needed, it will display the content of retrieved entries.
 
-As soon as wrpmesh is properly initialized, the following prompt is displayed::
+As soon as qdbsh is properly initialized, the following prompt is displayed::
 
-    wrpmesh:ok >
+    qdbsh:ok >
 
 This means the shell is ready to accept commands. Only one command at a time may be specified.
 It is executed as soon as enter is pressed and cannot be canceled or roll-backed.
 
 To exit the shell, enter the command ``exit``. To list the available commands, type ``help``.
-For the list of supported commands, see :ref:`wrpmesh-commands-reference`
+For the list of supported commands, see :ref:`qdbsh-commands-reference`
 
 If the command is expected to output content on success (such as the get command), it will be printed on the standard output stream.
 Keep in mind though, that binary content may not be correctly printed and may even corrupt your terminal display.
 
 When the last command has been successfully executed, the prompt will stay::
 
-    wrpmesh:ok >
+    qdbsh:ok >
 
 In case of error, the prompt turns into::
 
-    wrpmesh:ko >
+    qdbsh:ko >
 
 Examples
 --------
 
 Add a new :term:`entry` named "alias" whose content is "content" and print it::
 
-    wrpmesh:ok > put alias content
-    wrpmesh:ok > get alias
+    qdbsh:ok > put alias content
+    qdbsh:ok > get alias
     content
-    wrpmesh:ok >
+    qdbsh:ok >
 
 Remove an entry named "alias"::
 
-    wrpmesh:ok >delete alias
-    wrpmesh:ok >
+    qdbsh:ok >delete alias
+    qdbsh:ok >
 
-.. _wrpmesh-noninteractive-mode:
+.. _qdbsh-noninteractive-mode:
 
 Non-interactive mode
 ====================
 
 Non-interactive mode enables the user to run one command without waiting for any input.
 Non-interactive mode supports standard input and output and can be integrated in a tool chain à la Unix.
-Performance-wise, non-interactive mode implies establishing and closing a connection to the wrpme server every time the shell is run.
+Performance-wise, non-interactive mode implies establishing and closing a connection to the quasardb server every time the shell is run.
 
-The command to be executed is supplied as a parameter to the shell. For the list of supported commands, see :ref:`wrpmesh-commands-reference`.
+The command to be executed is supplied as a parameter to the shell. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
 
 As for interactive, mode, the server and port to which to connect is specified with the :option:`--daemon` parameter. Only one command may be specified per run.
 
@@ -116,14 +116,14 @@ Unless otherwise specified, the server is listening on the port 2836 on the loca
 
 Save the content of an entry named "biography" in a text file named "biography.txt"::
 
-    wrpmesh get biography > biography.txt
+    qdbsh get biography > biography.txt
 
 
-Compress a file named "myfile" and add its content to an entry named "myfile" to a wrpme server deployed on 192.168.1.1: ::
+Compress a file named "myfile" and add its content to an entry named "myfile" to a quasardb server deployed on 192.168.1.1: ::
 
-    bzip2 -c myfile | wrpmesh --server=192.168.1.1 put myfile
+    bzip2 -c myfile | qdbsh --server=192.168.1.1 put myfile
 
-.. _wrpmesh-parameters-reference:
+.. _qdbsh-parameters-reference:
 
 Reference
 =========
@@ -131,7 +131,7 @@ Reference
 Options
 -------
 
-Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent. Any parameter not in this list will be parsed by wrpmesh as a wrpme command. See :ref:`wrpmesh-interactive-mode` for more information.
+Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent. Any parameter not in this list will be parsed by qdbsh as a quasardb command. See :ref:`qdbsh-interactive-mode` for more information.
 
 .. option:: -h, --help
 
@@ -140,7 +140,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         To display the online help, type: ::
 
-            wrpmesh --help
+            qdbsh --help
 
 .. option:: --daemon <address>:<port>
 
@@ -148,7 +148,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
    Either a DNS name, an IPv4 or an IPv6 address.
 
    Argument
-        The address and port of a machines where a wrpme daemon is running.
+        The address and port of a machines where a quasardb daemon is running.
 
    Default value
         127.0.0.0:2836, the IPv4 localhost address and the port 2836
@@ -156,21 +156,21 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
    Example
         If the daemon listen on the localhost and on the port 3001::
 
-            wrpmesh --daemon=localhost:3001
+            qdbsh --daemon=localhost:3001
 
-.. _wrpmesh-commands-reference:
+.. _qdbsh-commands-reference:
 
 Commands
 --------
 
 A command generally requires one or several arguments. Each argument is separated by one or several space characters.
 
-.. _wrpmesh_help:
+.. _qdbsh_help:
 .. option:: help
 
     Displays basic usage information and list all available commands.
 
-.. _wrpmesh_get:
+.. _qdbsh_get:
 .. option:: get <alias>
 
     Retrieves an existing entry from the server and print it to standard output.
@@ -181,15 +181,15 @@ A command generally requires one or several arguments. Each argument is separate
     *Example*
         Retrives an entry whose alias is "alias" and whose content is the string "content"::
 
-            wrpmesh:ok > get alias
+            qdbsh:ok > get alias
             content
-            wrpmesh:ok >
+            qdbsh:ok >
 
     .. note::
         The entry alias may not contain the space character.
         The alias may not be longer than 1024 characters.
 
-.. _wrpmesh_put:
+.. _qdbsh_put:
 .. option:: put <alias> <content>
 
     Adds a new entry to the server. The entry must not already exist.
@@ -208,7 +208,7 @@ A command generally requires one or several arguments. Each argument is separate
         There must be one space and only one space between the alias and the content.
         There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
 
-.. _wrpmesh_update:
+.. _qdbsh_update:
 .. option:: update <alias> <content>
 
     Adds or updates an entry to the server. If the entry doesn't exist it will be created, otherwise it will be changed to the new specified value.
@@ -230,7 +230,7 @@ A command generally requires one or several arguments. Each argument is separate
         The alias cannot contain the space character and its length must be below 1024.
         There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
 
-.. _wrpmesh_getupdate:
+.. _qdbsh_getupdate:
 .. option:: get_update <alias> <content>
 
     Atomically gets the previous value of an existing entry and replace it with the specified content. The entry must already exist.
@@ -253,7 +253,7 @@ A command generally requires one or several arguments. Each argument is separate
         The alias cannot contain the space character and its length must be below 1024.
         There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
 
-.. _wrpmesh_cas:
+.. _qdbsh_cas:
 .. option:: cas <alias> <content> <comparand>
 
     Atomically compares the value of an existing entry with comparand and replaces it with content in case of match. The entry must already exist.
@@ -265,10 +265,10 @@ A command generally requires one or several arguments. Each argument is separate
 
     .. note::
         The alias cannot contain the space character and its length must be below 1024.
-        The new content can only be printable characters. This is a wrpmesh restriction only.
+        The new content can only be printable characters. This is a qdbsh restriction only.
         There must be one space and only one space between the comparand and the content. There is no practical limit to the comparand length and all characters until the end of the input will be used for the comparand, including space characters.
 
-.. _wrpmesh_del:
+.. _qdbsh_del:
 .. option:: remove <alias>
 
     Removes an existing entry on the server. It is an error to delete a non-existing entry.
@@ -281,7 +281,7 @@ A command generally requires one or several arguments. Each argument is separate
 
             del obsolete
 
-.. _wrpmesh_removeall:
+.. _qdbsh_removeall:
 .. option:: remove_all
 
     Removes all entries from the server. This command is not atomic.
@@ -291,12 +291,12 @@ A command generally requires one or several arguments. Each argument is separate
     .. caution::
         All entries will be deleted and will not be recoverable. If the hive is unstable, the command may not be executed by all nodes. The command will nevertheless return success.
 
-.. _wrpmesh_exit:
+.. _qdbsh_exit:
 .. option:: exit
 
     Exits the shell.
 
-.. _wrpmesh_version:
+.. _qdbsh_version:
 .. option:: version
 
     Displays version information.

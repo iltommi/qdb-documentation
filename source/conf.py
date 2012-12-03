@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# wrpme documentation build configuration file, created by
+# quasardb documentation build configuration file, created by
 # sphinx-quickstart on Fri Apr 22 17:52:41 2011.
 #
 # This file is execfile()d with the current directory set to its containing dir.
@@ -164,7 +164,7 @@ html_static_path = ['_static']
 #html_file_suffix = None
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'quasardbdoc'
+htmlhelp_basename = 'qdbdoc'
 
 
 # -- Options for LaTeX output --------------------------------------------------
