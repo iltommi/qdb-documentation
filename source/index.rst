@@ -26,11 +26,11 @@ Table of contents
 .. toctree::
    :numbered:
    :maxdepth: 1
-   
+
    primer
    tutorials/index
    concepts/index
-   reference/index   
+   reference/index
    api/index
    faq
    changes

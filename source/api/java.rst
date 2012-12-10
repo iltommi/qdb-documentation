@@ -55,7 +55,7 @@ Last but not least this API is thread-safe unlike the low-level API.
 The API documentation is available in Javadoc format `here <http://doc.quasardb.com/javaapi>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
 
 Configuring the quasardb instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You have to use a Map<String,String> to store the quasardb instance configuration parameters::
 
@@ -71,7 +71,7 @@ Once the parameters are valid, you can create a quasardb instance as this::
 Your quasardb instance is now ready to use.
 
 Using the quasardb instance
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Serializable Java objects can be added and retrieved directly::
 
@@ -108,7 +108,7 @@ Your Java program must load the native JNI library to use the quasardb API: ::
 All the dependencies must be resolved for the load to be successful. This should be the case if you copy all the libraries present in the ``bin`` directory (Windows) or ``lib`` directory (FreeBSD and Linux).
 
 Connecting to a quasardb cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The connection is a two steps process.
 

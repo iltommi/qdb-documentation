@@ -1,5 +1,5 @@
 quasardb daemon
-************
+***************
 
 The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
 
@@ -12,7 +12,7 @@ The quasardb daemon does not require privileges (unless listening on a port unde
     A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the :option:`--license-file` option.
 
 Configuration
-=====================
+=============
 
 .. program:: qdbd
 

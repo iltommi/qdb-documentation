@@ -1,5 +1,5 @@
 FAQ
-*********
+***
 
 Does quasardb support IPv6?
 ============================
@@ -12,17 +12,17 @@ Which platform does quasardb support?
 FreeBSD, Linux and Windows.
 
 What is the best platform to use quasardb?
-========================================
+==========================================
 
 All platforms are equally supported.
 
 Does quasardb support multi-core and/or multi-processor computers?
-=================================================================
+==================================================================
 
 Yes, quasardb has been *designed for* such architectures.
 
 How is data transmitted on the network?
-=========================================
+=======================================
 
 quasardb uses a proprietary low-overhead binary protocol.
 
@@ -34,19 +34,19 @@ In terms of requests per second, a Core i7 desktop computer can serve more than 
 In terms of bandwidth, the same computer easily saturates a ten gigabit network. Your maximum bandwidth will depend on the size and the type of your data and your network capability.
 
 Is quasardb faster than... ?
-==========================
+============================
 
 We are working on fair and reproducible benchmarks.
 
 Our preliminarily results show that quasardb can be an order of magnitude faster than other engines (open source or commercial), especially as entries size grow.
 
 Does quasardb support 32-bit operating systems?
-==============================================
+===============================================
 
 Only Windows 32-bit is supported. Linux and FreeBSD are 64-bit only.
 
 What is the largest possible size for an entry?
-================================================
+===============================================
 
 Unless otherwise configured, an entry cannot be larger than the largest contiguous amount of memory the operating system may allocate.
 
@@ -58,7 +58,7 @@ What is the maximum entries count?
 As long as you have the disk space for it, there is no limit (unless otherwise configured) to the numbers of entries into a quasardb server.
 
 How much RAM can quasardb handle?
-================================
+=================================
 
 As much as the operating system can.
 
@@ -84,43 +84,45 @@ Can I embed the quasardb technology in my hardware/software?
 Yes, we have a special license for this case. Contact us for more information, see :doc:`contact`
 
 Do I need a licence to write a client?
-========================================================
+======================================
 
 No license is required to write a quasardb client, but the software's documentation and credits must state the following "this software features quasardb, a Bureau 14 technology. All rights reserved.".
 
 A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
 
 Is support available for non-registered users?
-=================================================
+==============================================
 
 Anyone can submit a bug or request a feature in mailing to `bug@wrp.me <bug@wrp.me>`_. All bug reports and feature requests are reviewed.
 
 Support, however, is only available to registered users.
 
 Do you offer consulting or bespoke services?
-=================================================
+============================================
 
 Yes! Contact us for more information, see :doc:`contact`
 
 In what language is quasardb written?
-====================================
+=====================================
 
 The core quasardb engine (that we also call kernel) is written in C++ 11 and assembly. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
 
 The administration interface is written in HTML5/Javascript.
 
 Is the version I downloaded from the web site limited or crippled in any way?
-==============================================================================
+=============================================================================
 
 No. If you feel like it, you can build a petabyte datacenter with it!
 
 Is quasardb open source?
 ========================
 
-No.
+We want to open source as much as we can of quasardb in the form of packaged libraries.
+
+You can find `the open sourced code on github <https://github.com/bureau14/open_lib>`_ under a three-clauses BSD license. 
 
 Does quasardb use open source libraries?
-==========================================
+========================================
 
 Yes it does! Here is the list as of August 2011:
 
@@ -138,6 +140,6 @@ Yes it does! Here is the list as of August 2011:
 If you find the list to be inaccurate or suspect a license violation, mail to `bug@wrp.me <bug@wrp.me>`_.
 
 Where are you located?
-=========================
+======================
 
 We are located in Paris, France. We offer worldwide off-site and on-site consulting.
