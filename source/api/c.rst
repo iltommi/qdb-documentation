@@ -11,7 +11,7 @@ The quasardb C API is the lowest-level API offered but also the fastest and the 
 Installing
 --------------
 
-Download the C API from `the quasardb website <http://www.quasardb.com/downloads.html>`_ and unpack the archive.
+The C API package is downloadable from the Bureau 14 download site. All information regarding the Bureau 14 download site are in your welcome e-mail.
 
 All needed libraries are included in the package.
 

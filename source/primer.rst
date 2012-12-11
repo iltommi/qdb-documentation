@@ -64,15 +64,8 @@ The web bridge can help you monitor the node and get entries in JSON or JSONP fo
 
     wget "localhost:8080/get?alias=entry"
 
-Still not convinced?
---------------------
-
-We could tell you much more about quasardb, such as its distribution capabilities, its ability to persist data, its scalability or simply the fact that it runs on FreeBSD, Linux and Windows...
-
-...but what about seeing for yourself? quasardb is `free of charge for non-commercial use <http://www.quasardb.com/purchase.html>`_. Get it `here <http://www.quasardb.com/downloads.html>`_.
-
 Wrap up
---------------------------
+-------
 
 Things to remember about quasardb:
 

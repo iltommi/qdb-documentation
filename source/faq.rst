@@ -36,9 +36,9 @@ In terms of bandwidth, the same computer easily saturates a ten gigabit network.
 Is quasardb faster than... ?
 ============================
 
-We are working on fair and reproducible benchmarks.
+Quasardb is not only faster but also more frugal: it will consume less memory, less disk space and less CPU while achieving a higher level of performance.
 
-Our preliminarily results show that quasardb can be an order of magnitude faster than other engines (open source or commercial), especially as entries size grow.
+Nevertheless, keep in mind that what matters is *your usage scenario*. We will be happy to help you answer this question: contact us for more information (see :doc:`contact`).
 
 Does quasardb support 32-bit operating systems?
 ===============================================
@@ -55,7 +55,7 @@ On most operating systems, this is close to the amount of physical memory (RAM) 
 What is the maximum entries count?
 ==================================
 
-As long as you have the disk space for it, there is no limit (unless otherwise configured) to the numbers of entries into a quasardb server.
+The maximum entries count depends on the physical capabilities of your cluster and the size of the entries.
 
 How much RAM can quasardb handle?
 =================================
@@ -93,7 +93,7 @@ A client is software that connects to a remote or local quasardb server running 
 Is support available for non-registered users?
 ==============================================
 
-Anyone can submit a bug or request a feature in mailing to `bug@wrp.me <bug@wrp.me>`_. All bug reports and feature requests are reviewed.
+Anyone can submit a bug or request a feature in mailing to `bug@quasardb.net <bug@quasardb.net>`_. All bug reports and feature requests are reviewed.
 
 Support, however, is only available to registered users.
 

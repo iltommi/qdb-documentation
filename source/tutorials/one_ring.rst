@@ -14,17 +14,18 @@ It is assumed we have a network of three machines: 192.168.1.1, 192.168.1.2 and 
 
 #. Run an instance on the first machine. Each instance has got a different database directory (here it is instance1)::
 
-    qdbd -a 192.168.1.1:2836 -l qdbd1.log --root=./instance1
+     qdbd -a 192.168.1.1:2836 -l qdbd1.log --root=./instance1
 
-  By default qdbd listens on 127.0.0.1. To have other machines access to it you need to specify 192.168.1.1 as the listen address.
+   By default qdbd listens on 127.0.0.1. To have other machines access to it you need to specify 192.168.1.1 as the listen address.
 
-#. Run an instance on the second machine, and indicate that its peer is the first machine. We also use a different database directory (instance2)::
+#. Run an instance on the second machine, and indicate that its peer is the first machine. 
+   We also use a different database directory (instance2)::
 
-    qdbd -a 192.168.1.2:2836 --peer=192.168.1.1:2836 -l qdbd2.log --root=./instance2
+     qdbd -a 192.168.1.2:2836 --peer=192.168.1.1:2836 -l qdbd2.log --root=./instance2
 
 #. Run an instance on the second machine, and indicate that its peer is the first machine::
 
-    qdbd -a 192.168.1.3:2836 --peer=192.168.1.1:2836 -l qdbd3.log --root=./instance3
+     qdbd -a 192.168.1.3:2836 --peer=192.168.1.1:2836 -l qdbd3.log --root=./instance3
 
 The hive will now automatically *stabilize* it self. :term:`Stabilization` is the process during which nodes agree on how and where the data should be distributed. During the stabilization phase the hive is considered *unstable* which means requests may fail.
 
@@ -46,14 +47,14 @@ If you add a node to the hive, you do not have to make *any* change on the clien
 
 #. Test a couple of commands::
 
-    > put entry thisismyentry
-    > get entry
-    thisismyentry
-    > exit
+     > put entry thisismyentry
+     > get entry
+     thisismyentry
+     > exit
 
 #. Test that a different node acknowledges the entry::
 
-    qdbsh --daemon=192.168.1.3:2836
+     qdbsh --daemon=192.168.1.3:2836
 
-    > get entry
-    thisismyentry
+     > get entry
+     thisismyentry

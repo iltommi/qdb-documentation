@@ -23,7 +23,7 @@ Cheat sheet
                 Option                               Usage               Default           Global
  ===================================== ============================ =================== ============
  :option:`-h`                          display help                                         No
- :option:`--license-file`              specify license              qdb_license.txt       No
+ :option:`--license-file`              specify license              qdb_license.txt         No
  :option:`-a`                          address to listen on         127.0.0.1:2836          No
  :option:`-s`                          max client sessions          2000                    No
  :option:`--partitions`                number of partitions         Variable                No
@@ -125,7 +125,7 @@ Cache
 In order to achieve high performances, the daemon keeps as much data as possible in memory. However, the physical memory available for a node may not suffice.
 
 Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
-Use :option:`--limiter-max-entries-count` (defaults to 10,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+Use :option:`--limiter-max-entries-count` (defaults to 100,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 
 .. note::
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.

@@ -71,9 +71,9 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         None
 
     Example
-        Backup the database in /var/quasardb/db to /var/quasardb/db/backup ::
+        Backup the database in /var/quasardb/db to /var/backup/quasardb/db ::
 
-            qdb_dbtool --database=/var/quasardb/db --backup=/var/quasardb/db/backup
+            qdb_dbtool --database=/var/quasardb/db --backup=/var/backup/quasardb/db
 
 .. option:: --repair, -r
 

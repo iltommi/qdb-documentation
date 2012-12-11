@@ -19,7 +19,7 @@ Assuming a daemon that listens on the port 2836 on the machine 192.168.1.1, the 
 
 or on Windows::
 
-    qdb_httpd --daemon=192.168.1.1:2836 
+    qdb_httpd --daemon=192.168.1.1:2836
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
@@ -226,10 +226,58 @@ URL reference
             "name":"global_status",
             "properties":
             {
+                "name":"memory",
+                "properties":
+                {
+                    "name":"physical",
+                    "properties":
+                    {
+                        "used":
+                        {
+                            "type":"number",
+                            "description":"the number of physical memory bytes used",
+                            "required":true
+                        },
+                        "total":
+                        {
+                            "type":"number",
+                            "description":"the total number of physical memory bytes",
+                            "required":true
+                        }
+                    },
+                    "name":"virtual",
+                    "properties":
+                    {
+                        "used":
+                        {
+                            "type":"number",
+                            "description":"the number of virtual memory bytes used",
+                            "required":true
+                        },
+                        "total":
+                        {
+                            "type":"number",
+                            "description":"the total number of virtual memory bytes",
+                            "required":true
+                        }
+                    },
+                },
                 "node_id":
                 {
                     "type":"string",
                     "description":"the unique 256-bit node's identifier",
+                    "required":true
+                },
+                "operating_system":
+                {
+                    "type":"string",
+                    "description":"the operating system the daemon is running on",
+                    "required":true
+                },
+                "hardware_concurrency":
+                {
+                    "type":"string",
+                    "description":"the maximum number of threads that may concurrently execute on the platform the daemon is running on",
                     "required":true
                 },
                 "listening_addresses":
@@ -242,6 +290,12 @@ URL reference
                     "description":"the addresses and port the daemon listens on",
                     "required":true
                 },
+                "partitions_count":
+                {
+                    "type":"number",
+                    "description":"the number of partitions",
+                    "required":true
+                }
                 "timestamp":
                 {
                     "type":"string",
@@ -266,7 +320,6 @@ URL reference
                     "description":"the engine build timestamp",
                     "required":true
                 },
-
                 "name":"entries",
                 "properties":
                 {
@@ -276,16 +329,16 @@ URL reference
                         "description":"the total number of entries on the node",
                         "required":true
                     },
-                    "resident_count":
-                    {
-                        "type":"number",
-                        "description":"the current number of entries resident in memory on the node",
-                        "required":true
-                    },
                     "max_count":
                     {
                         "type":"number",
                         "description":"the maximum allowed resident count of entries on the node",
+                        "required":true
+                    },
+                    "resident_count":
+                    {
+                        "type":"number",
+                        "description":"the current number of entries resident in memory on the node",
                         "required":true
                     },
                     "size":
@@ -294,25 +347,19 @@ URL reference
                         "description":"the total amount of data, in bytes, managed by the node",
                         "required":true
                     },
-                    "resident_size":
-                    {
-                        "type":"number",
-                        "description":"the current number amount of data, in bytes, resident in memory on the node",
-                        "required":true
-                    },
                     "max_size":
                     {
                         "type":"number",
                         "description":"the maximum allowed resident amount of data on the node",
                         "required":true
                     },
-                    "add_count":
+                    "resident_size":
                     {
                         "type":"number",
-                        "description":"the total number of adds performed on the node",
+                        "description":"the current number amount of data, in bytes, resident in memory on the node",
                         "required":true
                     },
-                    "get_update_count":
+                    "add_count":
                     {
                         "type":"number",
                         "description":"the total number of adds performed on the node",
@@ -322,6 +369,12 @@ URL reference
                     {
                         "type":"number",
                         "description":"the total number of updates performed on the node",
+                        "required":true
+                    },
+                    "get_update_count":
+                    {
+                        "type":"number",
+                        "description":"the total number of adds performed on the node",
                         "required":true
                     },
                     "compare_and_swap_count":
