@@ -25,7 +25,7 @@ If the allocation cannot be avoided, the zero-copy architecture makes sure no cy
 Measuring performance
 ==================================
 
-The only way to properly configure your hive is to measure performance. 
+The only way to properly configure your cluster is to measure performance. 
 
 The comparison tool can be used to create a wide range of test scenarii. It understands the quasardb protocol as well as the memcached and the redis protocol (see :doc:`../reference/qdb_comparison`).
 

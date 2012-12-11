@@ -8,9 +8,9 @@ Introduction
 
 The `quasardb` module includes two client implementations.
 
-The :py:class:`quasardb.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `quasardb` hive.
+The :py:class:`quasardb.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `quasardb` cluster.
 
-If you want to manipulate your data directly using strings or binary buffers, you should rather use the :py:class:`quasardb.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `quasardb` hive. This may improve performance but most of all enables you to work with the data with different languages.
+If you want to manipulate your data directly using strings or binary buffers, you should rather use the :py:class:`quasardb.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `quasardb` cluster. This may improve performance but most of all enables you to work with the data with different languages.
 
 The API comes with a BSD license and can be freely used in your clients.
 
@@ -90,7 +90,7 @@ Is here a first sample using the :py:class:`quasardb.Client`. This module provid
 
 .. literalinclude:: example_client.py
 
-The second example uses the :py:class:`quasardb.RawClient` for direct binary access. This module uses a quasardb hive as a document store, providing upload() and download() methods, with not limit on the file size:
+The second example uses the :py:class:`quasardb.RawClient` for direct binary access. This module uses a quasardb cluster as a document store, providing upload() and download() methods, with not limit on the file size:
 
 .. literalinclude:: example_raw_client.py
 
@@ -101,7 +101,7 @@ Reference
 
 .. py:class:: Client(hostname, port)
 
-    The classic interface to a quasardb hive.
+    The classic interface to a quasardb cluster.
     It connects to the given hostname at instanciation, disconnects automatically at destruction.
     The connection is dropped and restarted as needed depending on usage.
     The client serializes the keys and the data using the standard :py:mod:`pickle` module.
@@ -111,48 +111,48 @@ Reference
 
     .. py:method:: put(key, obj)
 
-        Put an object in the quasardb hive. Raises if the object already exists.
+        Put an object in the quasardb cluster. Raises if the object already exists.
 
         :param key: any unique item used to identify the object
         :type key: any picklable object
-        :param obj: the object to be put in the hive.
+        :param obj: the object to be put in the cluster.
         :type obj: any picklable object
-        :raise: :py:exc:`quasardb.AliasAlreadyExists` if the **key** already exists in the hive.
+        :raise: :py:exc:`quasardb.AliasAlreadyExists` if the **key** already exists in the cluster.
         :raise: :py:exc:`pickle.PicklingError` if either the **key** or the **obj** can not be pickled.
 
     .. py:method:: update(key, obj)
 
-        Update an object in the quasardb hive.
+        Update an object in the quasardb cluster.
         Create the record if it does not exist at given key.
 
         :param key: any unique item used to identify the object.
         :type key: any picklable object
-        :param obj: the new object to be put in the hive, replacing the old value.
+        :param obj: the new object to be put in the cluster, replacing the old value.
         :type obj: any picklable object
         :raise: :py:exc:`pickle.PicklingError` if either the **key** or the **obj** can not be pickled.
 
     .. py:method:: get(key)
 
-        Retrieve an object from the quasardb hive.
+        Retrieve an object from the quasardb cluster.
 
         :param key: the unique item used to identify the object.
         :type key: any picklable object
         :return: the unpickled object matching the **key**
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the hive.
+        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
         :raise: :py:exc:`pickle.PicklingError` if either the **key** can not be pickled.
 
     .. py:method:: remove(key)
 
-        Remove an object from the quasardb hive.
+        Remove an object from the quasardb cluster.
 
         :param key: the unique item used to identify the object.
         :type key: any picklable object
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the hive.
+        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
         :raise: :py:exc:`pickle.PicklingError` if either the **key** can not be pickled.
 
 .. py:class:: RawClient(hostname, port)
 
-    The raw interface to a quasardb hive.
+    The raw interface to a quasardb cluster.
     It has the same methods as the :py:class:`quasardb.Client`, except all **key** and **obj** parameters must be strings.
 
     :param string hostname: string giving the hostname. Either the DNS name, the IPv4 address or the IPv6 address.
@@ -160,35 +160,35 @@ Reference
 
     .. py:method:: put(key, obj)
 
-        Put a string in the quasardb hive.
+        Put a string in the quasardb cluster.
 
         :param string key: any unique string used to identify the string
-        :param string obj: the string to be put in the hive.
-        :raise: :py:exc:`quasardb.AliasAlreadyExists` if the **key** already exists in the hive.
+        :param string obj: the string to be put in the cluster.
+        :raise: :py:exc:`quasardb.AliasAlreadyExists` if the **key** already exists in the cluster.
 
     .. py:method:: update(key, obj)
 
-        Update a string in the quasardb hive.
+        Update a string in the quasardb cluster.
         Create the record if it does not already exist at given key.
 
         :param string key: any unique string used to identify the string.
-        :param string obj: the new string to be put in the hive, replacing the old value.
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the hive.
+        :param string obj: the new string to be put in the cluster, replacing the old value.
+        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
 
     .. py:method:: get(key)
 
-        Retrieve a string from the quasardb hive.
+        Retrieve a string from the quasardb cluster.
 
         :param string key: the unique string used to identify the string.
         :return: the string matching the **key**
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the hive.
+        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
 
     .. py:method:: remove(key)
 
-        Remove a string from the quasardb hive.
+        Remove a string from the quasardb cluster.
 
         :param string key: the unique string used to identify the string.
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the hive.
+        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
 
 .. py:exception:: quasardbException
 

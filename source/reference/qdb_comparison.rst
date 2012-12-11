@@ -6,7 +6,7 @@ quasardb benchmarking tool
 Introduction
 ============
 
-The quasardb benchmarking tool enables you to evaluate the performance of your quasardb hive. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
+The quasardb benchmarking tool enables you to evaluate the performance of your quasardb cluster. To do so, it runs a script on the specified cluster and measures - as accuratly as the operating systems allows it - the time taken to process the commands.
 
 Usage scenarii
 ===============

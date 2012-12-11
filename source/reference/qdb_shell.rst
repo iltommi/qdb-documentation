@@ -289,7 +289,7 @@ A command generally requires one or several arguments. Each argument is separate
     :return: Nothing if successful, an error message otherwise
 
     .. caution::
-        All entries will be deleted and will not be recoverable. If the hive is unstable, the command may not be executed by all nodes. The command will nevertheless return success.
+        All entries will be deleted and will not be recoverable. If the cluster is unstable, the command may not be executed by all nodes. The command will nevertheless return success.
 
 .. _qdbsh_exit:
 .. option:: exit

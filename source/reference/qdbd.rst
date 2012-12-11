@@ -1,7 +1,7 @@
 quasardb daemon
 ***************
 
-The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`hive`.
+The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`cluster`.
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
 The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
@@ -30,7 +30,7 @@ Cheat sheet
  :option:`-r`                          persistence directory        ./db                    Yes
  :option:`--id`                        set the node id              generated               No
  :option:`--replication`               Sets the replication factor  1                       Yes
- :option:`--peer`                      one peer to form a hive                              No
+ :option:`--peer`                      one peer to form a cluster                              No
  :option:`--transient`                 disable persistence                                  Yes
  :option:`--sync`                      sync every disk write                                Yes
  :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes
@@ -62,13 +62,13 @@ Network distribution
 
 qdbd distribution is peer-to-peer. This means:
 
-    * The unavailability of one :term:`server` does not compromise the whole :term:`hive`
-    * The memory load is automatically distributed amongst all instances within a :term:`hive`
+    * The unavailability of one :term:`server` does not compromise the whole :term:`cluster`
+    * The memory load is automatically distributed amongst all instances within a :term:`cluster`
 
-Each server within one hive needs:
+Each server within one cluster needs:
 
     * An unique address on which to listen (you cannot use the *any* address) (:option:`-a`)
-    * At least one :term:`node` within the hive to contact (:option:`--peer`)
+    * At least one :term:`node` within the cluster to contact (:option:`--peer`)
 
 .. note::
     It's counter-productive to run several instances on the same :term:`node`.
@@ -169,7 +169,7 @@ Practical limits
     A single instance can serve thousands of clients simultaneously.
     The actual limit is the network bandwidth, not the server.
     You can set the :option:`-s` to a higher number to handle more simultaneous clients per :term:`node`.
-    Also you should make sure the clients connects to the nodes of the hive in a load-balanced fashion.
+    Also you should make sure the clients connects to the nodes of the cluster in a load-balanced fashion.
 
 .. _qdbd-parameters-reference:
 
@@ -321,7 +321,7 @@ Instance specific
 
 .. option:: --peer=<address>:<port>
 
-    The address and port of a peer to which to connect within the :term:`hive`. It can be any :term:`server` belonging to the :term:`hive`.
+    The address and port of a peer to which to connect within the :term:`cluster`. It can be any :term:`server` belonging to the :term:`cluster`.
 
     Argument
         The address and port of a machines where a quasardb daemon is running. The address string can be a host name or an IP address.
@@ -330,7 +330,7 @@ Instance specific
         None
 
     Example
-        Join a :term:`hive` where the machine 192.168.1.1 listening on the port 2836 is already connected::
+        Join a :term:`cluster` where the machine 192.168.1.1 listening on the port 2836 is already connected::
 
             qdbd --peer=192.168.1.1:2836
 
@@ -406,7 +406,7 @@ Global
         1 (replication disabled)
 
     Example
-        Have one copy of every entry in the hive::
+        Have one copy of every entry in the cluster::
 
             qdbd --replication=2
 

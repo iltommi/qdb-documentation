@@ -6,7 +6,7 @@ quasardb web server
 Introduction
 ============
 
-The quasardb web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a quasardb :term:`hive`.
+The quasardb web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a quasardb :term:`cluster`.
 
 Launching the web server
 ========================

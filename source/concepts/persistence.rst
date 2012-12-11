@@ -43,6 +43,6 @@ But:
     * Evicted entries will be lost
     * Node failure may imply irrecoverable data loss
 
-Transient mode is a clever way to transform a quasardb hive into a powerful cache.
+Transient mode is a clever way to transform a quasardb cluster into a powerful cache.
 
 

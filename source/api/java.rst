@@ -41,7 +41,7 @@ Then you run the example::
 
     java -classpath /tmp/quasardb-java-api-master.jar:. quasardbExample
 
-The example requires a quasardb server listening on ``127.0.0.1`` (IPV4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb :term:`hive`.
+The example requires a quasardb server listening on ``127.0.0.1`` (IPV4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb :term:`cluster`.
 
 Using the high-level API
 ------------------------
@@ -116,7 +116,7 @@ The connection is a two steps process.
 
         SWIGTYPE_p_qdb_session session = quasardb.open();
 
-    #. Connect to a :term:`server` within a :term:`hive`: ::
+    #. Connect to a :term:`server` within a :term:`cluster`: ::
 
         qdb_error_t r = quasardb.connect(session, "192.168.1.1", 2836);
 
