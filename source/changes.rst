@@ -28,7 +28,7 @@ Change log
     * Benchmarking tool: Added Redis support
     * Client API: Fixed bug that prevented the 32-bit Windows API to add entries larger than 4 GiB
     * Java API: Greatly improved performances, up to 100%!
-    * Greatly improved the `documentation <http://doc.quasardb.com/>`_
+    * Greatly improved the `documentation <http://doc.quasardb.net/>`_
     * Upgraded to Boost 1.50.0
     * Known bug: the eviction, pagein and size counts reported in the administration console are invalid
 
@@ -104,7 +104,7 @@ Change log
     * Reduced overall memory load
     * Improved performance by 10-20 %
     * Removed legacy code and API
-    * `Documentation <http://doc.quasardb.com/>`_!
+    * `Documentation <http://doc.quasardb.net/>`_!
     * The quasardb shell now handles binary input and output
     * Upgraded Linux and FreeBSD compilers to gcc 4.6.1
     * Upgraded to Boost 1.47.0

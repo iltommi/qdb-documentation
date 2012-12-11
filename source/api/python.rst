@@ -30,12 +30,12 @@ All required libraries and extensions are included in the Python package.
 Windows
 ```````
 
-Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to `download the installer <http://www.quasardb.com/downloads.html>`_ and follow the on-screen instructions.
+Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to download the installerand follow the on-screen instructions.
 
 Keep in mind that you need to download the version matching your Python architecture, not the OS.
 For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit quasardb package.
 
-If you have a different Python version or if you want to recompile the extension, `download the source package <http://www.quasardb.com/downloads.html>`_.
+If you have a different Python version or if you want to recompile the extension, download the source package.
 
 To compile it, you need the appropriate Visual Studio version (e.g. Visual Studio 2008 for Python 2.7). Unpack the archive and in the directory run::
 

@@ -52,7 +52,7 @@ This API take cares of loading ad hoc native libraries, no matter which OS you a
 
 Last but not least this API is thread-safe unlike the low-level API.
 
-The API documentation is available in Javadoc format `here <http://doc.quasardb.com/javaapi>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
+The API documentation is available in Javadoc format `here <http://doc.quasardb.net/javaapi>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
 
 Configuring the quasardb instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
