@@ -1,13 +1,13 @@
-WRPME
------
+quasardb
+--------
 
 Thank you for downloading and testing our software!
 
-wrpme is a high-performance, scalable, persistant and peer-to-peer key/value database.
+Quasardb is a high-performance, scalable, persistant and peer-to-peer key/value database.
 
-Up to date documentation can be found at this address: http://doc.wrpme.com/
+Up to date documentation can be found at this address: http://doc.quasardb.net/
 
-Report bugs to: bug@wrp.me
+Report bugs to: bug@quasardb.net
 
 CONTACT INFORMATION
 -------------------
@@ -17,8 +17,8 @@ Bureau 14
 75001 Paris
 France
 
-www : http://www.wrpme.com/
-e-mail : contact@wrpme.com
-bug reports : bug@wrp.me
+www : http://www.quasardb.net/
+e-mail : contact@bureau14.fr
+bug reports : bug@quasardb.net
 tel: +33 (0)1 73 02 82 95
 fax: +33 (0)1 58 62 58 59

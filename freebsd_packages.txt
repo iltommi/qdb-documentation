@@ -1,7 +1,7 @@
 Required FreeBSD packages
 -------------------------
 
-You will need the following packages to use wrpme on your FreeBSD system:
+You will need the following packages to use quasardb on your FreeBSD system:
 
     - tbb 3.0 or later
     - gcc 4.6.0 or later

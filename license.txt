@@ -1,7 +1,7 @@
 SOFTWARE LICENSE AGREEMENT
 --------------------------
 
-This beta vesion of wrpme is provided "as is" without any warranty of
+This beta vesion of quasardb is provided "as is" without any warranty of
 any kind.
 
 It may be used free of charge for educational, testing, demonstration
@@ -30,10 +30,10 @@ use of the Software.
 Bureau 14 is registered trademark of Bureau 14 SARL. All rights
 reserved.
 
-wrpme is registered trademark of Bureau 14 SARL. All rights
+quasardb is registered trademark of Bureau 14 SARL. All rights
 reserved.
 
-wrpme uses Intel Threading Building Blocks a property of Intel
+quasardb uses Intel Threading Building Blocks a property of Intel
 Corporation. All rights reserved.
 
 CONTACT INFORMATION
