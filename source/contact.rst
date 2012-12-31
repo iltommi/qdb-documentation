@@ -6,15 +6,15 @@ About Bureau 14
 
 quasardb is the work of `Bureau 14 <http://www.bureau14.fr/>`_ a startup located in Paris, France.
 
-Address 
+Address
     Bureau 14 SARL - 14, avenue de l'Opéra - 75001 Paris - *France*
-    
+
 Website
     `http://www.bureau14.fr/ <http://www.bureau14.fr/>`_.
 
 Google+
 	`https://plus.google.com/u/0/b/108272249160387172129/ <https://plus.google.com/u/0/b/108272249160387172129/>`_.
-    
+
 Twitter
     `http://www.twitter.com/bureau14 <http://www.twitter.com/bureau14>`_.
 
@@ -33,7 +33,7 @@ Reporting a bug or requesting a feature
 
 Found a bug? Have a feature request? Send an email as descriptive as possible to `bug@quasardb.net <bug@quasardb.net>`_ and it will automatically be submitted to the quality assurance team.
 
-If additional information is required to work on your issue, the team will get back at you. 
+If additional information is required to work on your issue, the team will get back at you.
 
 *All bug reports* are read, even from users without a support plan. However, keep in mind that users with a support plan have a higher processing priority.
 

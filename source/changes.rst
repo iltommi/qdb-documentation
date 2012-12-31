@@ -1,7 +1,7 @@
 Change log
 **********
 
-0.7.2 - 12/21/2012
+0.7.2 - 01/14/2013
 ------------------
 
     * Now officially named quasardb!
