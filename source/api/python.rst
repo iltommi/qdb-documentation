@@ -6,11 +6,11 @@ Python
 Introduction
 --------------
 
-The `quasardb` module includes two client implementations.
+The `qdb` module includes two client implementations.
 
-The :py:class:`quasardb.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `quasardb` cluster.
+The :py:class:`qdb.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `quasardb` cluster.
 
-If you want to manipulate your data directly using strings or binary buffers, you should rather use the :py:class:`quasardb.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `quasardb` cluster. This may improve performance but most of all enables you to work with the data with different languages.
+If you want to manipulate your data directly using strings or binary buffers, you should rather use the :py:class:`qdb.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `quasardb` cluster. This may improve performance but most of all enables you to work with the data with different languages.
 
 The API comes with a BSD license and can be freely used in your clients.
 
@@ -33,7 +33,7 @@ Windows
 Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to download the installerand follow the on-screen instructions.
 
 Keep in mind that you need to download the version matching your Python architecture, not the OS.
-For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit quasardb package.
+For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit qdb package.
 
 If you have a different Python version or if you want to recompile the extension, download the source package.
 
@@ -47,7 +47,7 @@ Keep in mind the install phase may require administrative privileges.
 Linux and FreeBSD
 `````````````````
 
-`Download the package <http://www.quasardb.com/downloads.html>`_ for your operating system (Linux or FreeBSD) and make sure you have both a C compiler and the Python development headers installed.
+`Download the package <http://www.qdb.net/downloads.html>`_ for your operating system (Linux or FreeBSD) and make sure you have both a C compiler and the Python development headers installed.
 
 Unpack the archive and in the directory run::
 
@@ -69,7 +69,7 @@ Once the installation is complete, you must be able to import quasardb without a
     Python 2.7.2 (default, Dec  5 2011, 15:17:56)
     [GCC 4.2.1 20070831 patched [FreeBSD]] on freebsd9
     Type "help", "copyright", "credits" or "license" for more information.
-    >>> import quasardb
+    >>> import qdb
     >>>
 
 .. attention::
@@ -77,7 +77,7 @@ Once the installation is complete, you must be able to import quasardb without a
 
 If you have a server up and running, you must be able to add and access entries::
 
-    >>> w = quasardb.Client("127.0.0.1")
+    >>> w = qdb.Client("127.0.0.1")
     >>> w.put("entry", "content")
     >>> print w.get("entry")
     content
@@ -86,18 +86,18 @@ If you have a server up and running, you must be able to add and access entries:
 Examples
 --------
 
-Is here a first sample using the :py:class:`quasardb.Client`. This module provides save() and load() methods:
+Is here a first sample using the :py:class:`qdb.Client`. This module provides save() and load() methods:
 
 .. literalinclude:: example_client.py
 
-The second example uses the :py:class:`quasardb.RawClient` for direct binary access. This module uses a quasardb cluster as a document store, providing upload() and download() methods, with not limit on the file size:
+The second example uses the :py:class:`qdb.RawClient` for direct binary access. This module uses a quasardb cluster as a document store, providing upload() and download() methods, with not limit on the file size:
 
 .. literalinclude:: example_raw_client.py
 
 Reference
 ---------
 
-.. py:module:: quasardb
+.. py:module:: qdb
 
 .. py:class:: Client(hostname, port)
 
@@ -117,7 +117,7 @@ Reference
         :type key: any picklable object
         :param obj: the object to be put in the cluster.
         :type obj: any picklable object
-        :raise: :py:exc:`quasardb.AliasAlreadyExists` if the **key** already exists in the cluster.
+        :raise: :py:exc:`qdb.AliasAlreadyExists` if the **key** already exists in the cluster.
         :raise: :py:exc:`pickle.PicklingError` if either the **key** or the **obj** can not be pickled.
 
     .. py:method:: update(key, obj)
@@ -138,7 +138,7 @@ Reference
         :param key: the unique item used to identify the object.
         :type key: any picklable object
         :return: the unpickled object matching the **key**
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
+        :raise: :py:exc:`qdb.AliasNotFound` if the **key** does not exist in the cluster.
         :raise: :py:exc:`pickle.PicklingError` if either the **key** can not be pickled.
 
     .. py:method:: remove(key)
@@ -147,13 +147,13 @@ Reference
 
         :param key: the unique item used to identify the object.
         :type key: any picklable object
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
+        :raise: :py:exc:`qdb.AliasNotFound` if the **key** does not exist in the cluster.
         :raise: :py:exc:`pickle.PicklingError` if either the **key** can not be pickled.
 
 .. py:class:: RawClient(hostname, port)
 
     The raw interface to a quasardb cluster.
-    It has the same methods as the :py:class:`quasardb.Client`, except all **key** and **obj** parameters must be strings.
+    It has the same methods as the :py:class:`qdb.Client`, except all **key** and **obj** parameters must be strings.
 
     :param string hostname: string giving the hostname. Either the DNS name, the IPv4 address or the IPv6 address.
     :param integer port: port, defaults to 2836.
@@ -164,7 +164,7 @@ Reference
 
         :param string key: any unique string used to identify the string
         :param string obj: the string to be put in the cluster.
-        :raise: :py:exc:`quasardb.AliasAlreadyExists` if the **key** already exists in the cluster.
+        :raise: :py:exc:`qdb.AliasAlreadyExists` if the **key** already exists in the cluster.
 
     .. py:method:: update(key, obj)
 
@@ -173,7 +173,7 @@ Reference
 
         :param string key: any unique string used to identify the string.
         :param string obj: the new string to be put in the cluster, replacing the old value.
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
+        :raise: :py:exc:`qdb.AliasNotFound` if the **key** does not exist in the cluster.
 
     .. py:method:: get(key)
 
@@ -181,14 +181,14 @@ Reference
 
         :param string key: the unique string used to identify the string.
         :return: the string matching the **key**
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
+        :raise: :py:exc:`qdb.AliasNotFound` if the **key** does not exist in the cluster.
 
     .. py:method:: remove(key)
 
         Remove a string from the quasardb cluster.
 
         :param string key: the unique string used to identify the string.
-        :raise: :py:exc:`quasardb.AliasNotFound` if the **key** does not exist in the cluster.
+        :raise: :py:exc:`qdb.AliasNotFound` if the **key** does not exist in the cluster.
 
 .. py:exception:: quasardbException
 
@@ -201,7 +201,7 @@ Reference
 
 .. py:exception:: Internal
 
-    An internal error occured in quasardb. Please report it to the quasardb support teams.
+    An internal error occured in qdb. Please report it to the quasardb support teams.
 
 .. py:exception:: NoMemory
 
