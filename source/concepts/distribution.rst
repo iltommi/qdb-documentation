@@ -198,7 +198,7 @@ Usage
 =====================================================
 
 Building a cluster
-----------------
+------------------
 
 To build a cluster, nodes are added to each other. A node only needs to know one other node within the ring (see :doc:`../tutorials/one_ring`). It is paramount to make sure that rings are not disjoint, that is, that all nodes will eventually join the same large ring. 
 
