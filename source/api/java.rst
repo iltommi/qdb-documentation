@@ -7,7 +7,7 @@ Java
 Introduction
 ------------
 
-The quasardb Java API uses JNI to bring the power and speed of quasardb to the Java world without compromising performances.
+The QuasarDB Java API uses JNI to bring the power and speed of QuasarDB to the Java world without compromising performances.
 
 It fully integrates itself into the Java environment thanks to a wrapper (also called 'high-level API'). The wrapper itself comes with a BSD license and can be freely used in your clients. The wrapper uses a low-level API that is also directly useable although with severe restrictions.
 
@@ -54,7 +54,7 @@ Last but not least this API is thread-safe unlike the low-level API.
 
 The API documentation is available in Javadoc format `here <http://doc.quasardb.net/javaapi>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
 
-Configuring the quasardb instance
+Configuring the QuasarDB instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You have to use a Map<String,String> to store the quasardb instance configuration parameters::
@@ -64,31 +64,31 @@ You have to use a Map<String,String> to store the quasardb instance configuratio
     config.put("host", "127.0.0.1");
     config.put("port", "2836");
 
-Once the parameters are valid, you can create a quasardb instance as this::
+Once the parameters are valid, you can create a QuasarDB instance as this::
 
-    quasardb cache = new quasardb(config);
+    Quasardb qdb = new Quasardb(config);
 
-Your quasardb instance is now ready to use.
+Your QuasarDB instance is now ready to use.
 
-Using the quasardb instance
+Using the QuasarDB instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Serializable Java objects can be added and retrieved directly::
 
     // You can put a simple String Object...
-    cache.put("obj1", "My First value !!!");
+    qdb.put("obj1", "My First value !!!");
     // ... or any Java Object you want (even a POJO)
-    cache.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
+    qdb.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
 
     // You can get your values:
-    String value = cache.get("obj1");
+    String value = qdb.get("obj1");
     System.out.println("Result: " + value);
 
     // You can delete values:
-    cache.delete("obj2");
+    qdb.delete("obj2");
 
     // And update stored values:
-    cache.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
+    qdb.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
 
 Using the low-level API
 ----------------------------
@@ -98,7 +98,7 @@ The low-level API provides direct access to the C API via JNI. Usage of the low-
 Loading the JNI
 ^^^^^^^^^^^^^^^^^^
 
-Your Java program must load the native JNI library to use the quasardb API: ::
+Your Java program must load the native JNI library to use the QuasarDB API: ::
 
     static
     {
@@ -107,7 +107,7 @@ Your Java program must load the native JNI library to use the quasardb API: ::
 
 All the dependencies must be resolved for the load to be successful. This should be the case if you copy all the libraries present in the ``bin`` directory (Windows) or ``lib`` directory (FreeBSD and Linux).
 
-Connecting to a quasardb cluster
+Connecting to a QuasarDB cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The connection is a two steps process.
@@ -175,7 +175,7 @@ We pass an int array to receive the actual size of the data we obtained from the
 Memory management
 ^^^^^^^^^^^^^^^^^^
 
-The API uses a logic very close the quasardb C API (Feel free to review the C API documentation for useful background information, see :doc:`c`).
+The API uses a logic very close the QuasarDB C API (Feel free to review the C API documentation for useful background information, see :doc:`c`).
 
 In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' :term:`content` are wrapped in `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ objects instead of byte arrays or `String <http://download.oracle.com/javase/1.4.2/docs/api/java/lang/String.html>`_ objects.
 
