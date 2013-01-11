@@ -7,10 +7,10 @@ Change log
     * Now officially named quasardb!
     * Daemon: Minimized thread switching to reduce latency
     * Various minor optimizations and improvements
-    * Windows: Upgraded to VC11
+    * Windows: Upgraded to Visual Studio 2012
     * Upgraded to Boost 1.52.0
     * Upgraded to TBB 4.1 SP1
-    * Upgraded to LevelDB 1.6
+    * Upgraded to LevelDB 1.9
 
 0.7.1 - 10/15/2012
 ------------------
