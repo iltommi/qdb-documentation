@@ -78,6 +78,21 @@ Each server within one cluster needs:
 The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests,
 depending on the actual hardware configuration of your server.
 
+Replication
+-----------
+
+The replication factor (:option:`--replication`) is the number of copies for any given entry within the cluster. Each copy is made on a different node, this implies that a replication factor greater than the number of nodes will be lowered to the actual number of nodes.
+
+The purpose of replication is to increase fault tolerance at the cost of decreased write performance.
+
+For example a cluster of three nodes with a replication factor of four (4) will have an effective replication factor of three (3). If a fourth node is added, effective replication will be increased to four automatically.
+
+By default the replication factor is one (1) which is equivalent to no replication. A replication factor of two (2) means that each entry has got a backup copy. A replication factor of three (3) means that each entry has got two (2) backup copies. The maximum replication factor is four (4).
+
+When adding an entry to a node, the call returns only when the add and all replications have been successful. If a node part or joins the ring, replication and migration occurs automatically as soon as possible.
+
+Replication is a cluster-wide parameter.
+
 Logging
 -------
 

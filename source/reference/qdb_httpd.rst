@@ -344,7 +344,7 @@ URL reference
                     "size":
                     {
                         "type":"number",
-                        "description":"the total amount of data, in bytes, managed by the node",
+                        "description":"the total amount of data, in bytes, managed by the node. This value may lag.",
                         "required":true
                     },
                     "max_size":
@@ -356,7 +356,7 @@ URL reference
                     "resident_size":
                     {
                         "type":"number",
-                        "description":"the current number amount of data, in bytes, resident in memory on the node",
+                        "description":"the current amount of data, in bytes, resident in memory on the node",
                         "required":true
                     },
                     "add_count":
