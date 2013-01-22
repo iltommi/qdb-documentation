@@ -63,6 +63,9 @@ Note that we could have used the IP address instead: ::
         // error management
     }
 
+.. caution::
+    Concurrent calls to :c:func:`qdb_connect` to the same handle results in undefined behaviour.
+
 `IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported: ::
 
     r = qdb_connect(handle, "::1", 2836);
@@ -76,6 +79,28 @@ Of course for the above to work the server needs to listen on an IPv6 address.
 .. note::
     When you call :c:func:`qdb_open` and :c:func:`qdb_connect` a lot of initialization and systems calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the handle alive for the whole program lifetime.
 
+Connecting to multiple nodes within the same cluster
+------------------------------------------------------
+
+Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that it is advised to use :c:func:`qdb_multi_connect` which takes a list of hosts and ports as input parameters. The call will succeed as long as one connection within the list was successful::
+
+    const char addresses[3] = { "192.168.1.1", "192.168.1.2", "192.168.1.3" };
+    const unsigned short ports[3] = { 2836, 2836, 2836 };
+    qdb_error_t errors[3];
+
+    // will connect to 192.168.1.1:2836, 192.168.1.2:2836 and 192.168.1.3:2836
+    // errors will be updated with the error status for each connection and the
+    // function will return the number of successful connections
+    size_t connections = qdb_multi_connect(handle, addresses, ports, errors, 3);
+    if (!connections)
+    {
+        // error management...
+    }
+
+The list of addresses/ports must be unique, that is, providing the same address/port combination more than one time is an error and will make the call fail.
+
+.. caution::
+    Concurrent calls to :c:func:`qdb_multi_connect` to the same handle results in undefined behaviour.
 
 Adding entries
 -----------------
@@ -338,6 +363,20 @@ Reference
 
     :return: An error code of type :c:type:`qdb_error_t`
 
+.. c:function:: size_t qdb_multi_connect(qdb_handle_t handle,  const char ** hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
+
+    Binds the client instance to a quasardb :term:`server` and connects to multiple nodes within the same cluster. 
+
+    If the same host/port combination is present within the lists, the function will fail and return qdb_e_invalid_input.
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :param hosts: An array of null terminated strings designating the hosts to connect to.
+    :param ports: An array of unsigned integers designating the corresponding ports for each host to connect to.
+    :param errors: An array of error codes that will receive the result for each connection.
+    :param count: The size of the input arrays. All arrays must have identical sizes.
+
+    :return: The number of successful connections.
+
 .. c:function:: qdb_error_t qdb_close(qdb_handle_t handle)
 
     Terminates all connections and releases all client-side allocated resources.
@@ -352,7 +391,7 @@ Reference
 
     If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
-    If the buffer is not large enough to hold the data, the function will fail and return ``qdb_e_buffer_too_small``. The content length will nevertheless be updated so that the caller may resize its buffer and try again.
+    If the buffer is not large enough to hold the data, the function will fail and return ``qdb_e_buffer_too_small``. content_length will nevertheless be updated with entry size so that the caller may resize its buffer and try again.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -440,7 +479,7 @@ Reference
     :param new_value: A pointer to a buffer that represents the entry's content to be updated to the server in case of match.
     :param new_value: The length of the buffer, in bytes.
     :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
-    :param new_value: The length of the buffer, in bytes.
+    :param comparand_length: The length of the buffer, in bytes.
     :param original_value: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's original content, before the update, if any.
     :param original_value_length: A pointer to a size_t that will be set to the content's size, in bytes.
 
@@ -509,6 +548,8 @@ Reference
     This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code. 
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
 
     :return: An error code of type :c:type:`qdb_error_t`
 

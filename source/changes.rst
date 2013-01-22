@@ -1,6 +1,17 @@
 Change log
 **********
 
+0.7.3 
+------------------
+
+    * New C++ API!
+    * C API: Added qdb_error to translate an error code into a meaningful message
+    * C/C++ API: Can connect to multiple remote hosts at a time for increased client-side resilience
+    * Console: Now display statistics for compare_and_swap and get_update operations
+    * Daemon: Fixed invalid replication parameter logging
+    * Daemon: Improved replication factor documentation
+    * Upgraded to Boost 1.53.0
+
 0.7.2 - 01/14/2013
 ------------------
 
