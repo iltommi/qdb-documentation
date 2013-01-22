@@ -99,9 +99,6 @@ Although quasardb is fault tolerant, if the client tries to connect to the clust
 
 The list of addresses/ports must be unique, that is, providing the same address/port combination more than one time is an error and will make the call fail.
 
-.. caution::
-    Concurrent calls to :c:func:`qdb_multi_connect` to the same handle results in undefined behaviour.
-
 Adding entries
 -----------------
 
@@ -363,7 +360,7 @@ Reference
 
     :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: size_t qdb_multi_connect(qdb_handle_t handle,  const char ** hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
+.. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, const char * const * hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
 
     Binds the client instance to a quasardb :term:`server` and connects to multiple nodes within the same cluster. 
 

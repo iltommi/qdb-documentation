@@ -12,7 +12,7 @@ The quasardb C++ API is a wrapper around the C API that brings convenience and f
 Installing
 --------------
 
-The C++ API package consists of one header and is included with the C API (see :doc:`c`). It is required to link with the C API to use the C++ API.
+The C++ API package consists of one header and is included with the C API (see :doc:`c`). It is required to link with the C API to use the C++ header, but no additional linking is required.
 
 Header file
 --------------
@@ -22,12 +22,12 @@ All functions, typedefs and enums are made available in the ``include/qdb/client
 Exceptions
 ------------
 
-The quasardb C++ API does not throw any exception on its behalf.
+The quasardb C++ API does not throw any exception on its behalf, however situations such as low memory conditions may cause exceptions to be thrown.
 
 The handle object
 -------------------
 
-The :cpp:class:`handle` object is non-copiable. Move semantics are supported through rvalue references. Rvalue references support is activated in setting the macro QDBAPI_RVALUE_SUPPORT to 1. For example::
+The :cpp:class:`handle` object is non-copiable. Move semantics are supported through rvalue references. Rvalue references support is activated in setting the macro ``QDBAPI_RVALUE_SUPPORT`` to 1. For example::
 
     #define QDBAPI_RVALUE_SUPPORT 1
     #include <qdb/client.hpp>
@@ -41,6 +41,19 @@ Handle objects can be used directly with the C API thanks to the overload of the
         // ...
     }
 
+    // initialization and connection
+
+    // removes the entry "myalias" if it exists
+    qdb_error_t r = qdb_remove(h, "myalias");
+    if (r != qdb_e_ok)
+    {
+        // error management
+    }
+
+
+.. caution::
+    Calling :c:func:`qdb_close` on a :cpp:class:`handle` leads to undefined behaviour. Generally speaking it is advised to use the methods provided rather than the C API functions. The cast operator is provided for compatibility only.
+
 Handle objects can also be encapsulated in smart pointers. A definition as :cpp:type:`handle_ptr` is available. This requires a compiler with std::shared_ptr support.
 
 Connecting to a cluster
@@ -53,7 +66,8 @@ The connection requires a :cpp:class:`handle` object and is done with the :cpp:f
 
 Connect will both initialize the handle and connect to the cluster. If the connection failed, the handle will be reset.  Note that when the handle object goes out of scope, the connection will be terminated and the handle will be released.
 
-Concurrent calls to connect on the same handle object leads to undefined behaviour.
+.. caution::
+    Concurrent calls to connect on the same handle object leads to undefined behaviour.
 
 Adding and getting data to and from a cluster
 ---------------------------------------------
@@ -77,7 +91,7 @@ Although one may use the handle object with the C API, methods are provided for 
         // error management
     }
 
-There is however one strong difference as the C call :c:func:`qdb_get_buffer`, which allocates a buffer of the needed size, is replaced with a more convenient method that uses smart pointers to manage allocation. 
+There is however one strong difference as the C call :c:func:`qdb_get_buffer` - which allocates a buffer of the needed size - is replaced with a more convenient method that uses smart pointers to manage allocation. 
 
 In C, one would write::
 
@@ -109,7 +123,7 @@ In C++, one writes::
 The api_buffer object
 -----------------------
 
-The :cpp:class:`api_buffer` object is designed to be used via a smart pointer, whose definition is provided, and is returned by methods from the handle object. It is possible to access the managed buffer directly (read-only) and query its size.
+The :cpp:class:`api_buffer` object is designed to be used via a smart pointer - whose definition is provided - and is returned by methods from the :cpp:class:`handle` object. It is possible to access the managed buffer directly (read-only) and query its size (see :cpp:func:`handle::data`and :cpp:func:`handle::size`).
 
 Closing a connection
 -----------------------
@@ -120,6 +134,9 @@ A connection can be explicitely closed and the handle released with the :cpp:fun
 
 Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::close` is automatically closed.
 
+.. caution::
+    The usage of :c:func:`qdb_close` with :cpp:class:`handle` object results in undefined behaviour.
+
 Reference
 ----------------
 
@@ -127,15 +144,17 @@ Reference
 
     .. cpp:function:: void close(void)
 
-        Close the handle and releases all associated resources.
+        Close the handle and release all associated resources.
 
     .. cpp:function:: bool connected(void) const
+
+        Determine if the handle is connected or not.
 
         :return: true if the handle is connected, false otherwise
 
     .. cpp:function:: void set_timeout(int timeout)
 
-        Sets the timeout, in milliseconds, for all operations.
+        Set the timeout, in milliseconds, for all operations.
 
         :param timeout: The timeout, in milliseconds.
 
@@ -148,11 +167,13 @@ Reference
 
         :return: An error code of type :c:type:`qdb_error_t`
 
-    .. cpp:function:: size_t multi_connect(const char ** hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
+    .. cpp:function:: size_t multi_connect(const char * const * hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
 
         Initialize all required resources and connect to multiple nodes within the same cluster. 
 
         If the same host/port combination is present within the lists, the function will fail and return qdb_e_invalid_input.
+
+        Only one connection within the list has to complete for the call to succeed.
 
         :param hosts: An array of null terminated strings designating the hosts to connect to.
         :param ports: An array of unsigned integers designating the corresponding ports for each host to connect to.
