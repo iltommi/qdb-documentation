@@ -18,7 +18,7 @@ All needed libraries are included in the package.
 Header file
 --------------
 
-All functions, typedefs and enums are made available in the ``include/quasardb/client.h`` header file.
+All functions, typedefs and enums are made available in the ``include/qdb/client.h`` header file.
 
 Examples
 --------------
