@@ -112,6 +112,9 @@ Persistence
 
 Data is persisted on disk, by default in a `db` directory under the current working directory. You can change this to any directory you want using the :option:`-r` option. All nodes will use the same directory as this is a global parameter.
 
+.. caution::
+    Never operate directly on files in the persistence directory, use the provided tools (see :doc:`qdb_dbtool`). Never save any other file in this directory, it might be deleted or modified by the daemon.
+
 Data persistence on disk is buffered: when an user requests ends, the data may or may not be persisted on the disk yet. Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
 
 Should you need every write to be synced to disk, you can do so with the :option:`--sync` option. Syncing every write do disk negatively impacts performances while slightly increasing reliability.
