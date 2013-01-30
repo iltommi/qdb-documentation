@@ -352,7 +352,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_connect(qdb_handle_t handle, const char * host, unsigned short port)
 
-    Binds the client instance to a quasardb :term:`server` and connects to it.
+    Bind the client instance to a quasardb :term:`cluster` and connect to one node within.
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :param host: A pointer to a null terminated string representing the IP address or the name of the server to which to connect
@@ -360,17 +360,19 @@ Reference
 
     :return: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, const char * const * hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
+.. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, qdb_remote_node_t * servers, size_t count)
 
-    Binds the client instance to a quasardb :term:`server` and connects to multiple nodes within the same cluster. 
+    Bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within. The function returns the number of successful
+    connections. If the same node (address and port) is present several times in the input array, it will count as only one successful 
+    connection.
 
-    If the same host/port combination is present within the lists, the function will fail and return qdb_e_invalid_input.
+    The user supplies an array of qdb_remote_node_t and the function updates the error member of each entry according to the result of the operation.
+
+    Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
-    :param hosts: An array of null terminated strings designating the hosts to connect to.
-    :param ports: An array of unsigned integers designating the corresponding ports for each host to connect to.
-    :param errors: An array of error codes that will receive the result for each connection.
-    :param count: The size of the input arrays. All arrays must have identical sizes.
+    :param servers: An array of qdb_remote_node_t designating the nodes to connect to. The error member will be updated depending on the result of the operation.
+    :param count: The size of the input array.
 
     :return: The number of successful connections.
 

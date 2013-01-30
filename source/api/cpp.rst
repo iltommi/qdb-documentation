@@ -169,16 +169,15 @@ Reference
 
     .. cpp:function:: size_t multi_connect(const char * const * hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
 
-        Initialize all required resources and connect to multiple nodes within the same cluster. 
+        Initialize all required resources, bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within. The function returns the number of successful connections. If the same node (address and port) is present several times in the input array, it will count as only one successful connection.
 
-        If the same host/port combination is present within the lists, the function will fail and return qdb_e_invalid_input.
+        The user supplies an array of qdb_remote_node_t and the function updates the error member of each entry according to the result of the operation.
 
-        Only one connection within the list has to complete for the call to succeed.
+        Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
 
-        :param hosts: An array of null terminated strings designating the hosts to connect to.
-        :param ports: An array of unsigned integers designating the corresponding ports for each host to connect to.
-        :param errors: An array of error codes that will receive the result for each connection.
-        :param count: The size of the input arrays. All arrays must have identical sizes.
+        :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+        :param servers: An array of qdb_remote_node_t designating the nodes to connect to. The error member will be updated depending on the result of the operation.
+        :param count: The size of the input array.
 
         :return: The number of successful connections.
 
