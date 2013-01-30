@@ -308,7 +308,7 @@ Reference
 
 .. c:function:: const char * qdb_error(qdb_error_t error, char * message, size_t message_length)
 
-    Translates an error into a meaningful message.
+    Translate an error into a meaningful message. If the content does not fit into the buffer, the content is truncated. A null terminator is always added. The function never fails and returns a pointer to the translated message for convenience.
 
     :param error: An error code of type :c:type:`qdb_handle_t`
     :param message: A pointer to a buffer that will received the translated error message.
