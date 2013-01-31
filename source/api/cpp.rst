@@ -140,6 +140,14 @@ Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::c
 Reference
 ----------------
 
+.. cpp:function: std::string make_error_string(qdb_error_t err)
+
+    Translate an error code into a meaningful English message.
+
+    :param err: The error code to translate
+
+    :return: A STL string containing an explicit English sentence describing the error.
+
 .. cpp:class:: handle
 
     .. cpp:function:: void close(void)

@@ -308,7 +308,7 @@ Reference
 
 .. c:function:: const char * qdb_error(qdb_error_t error, char * message, size_t message_length)
 
-    Translate an error into a meaningful message. If the content does not fit into the buffer, the content is truncated. A null terminator is always added. The function never fails and returns a pointer to the translated message for convenience.
+    Translate an error into a meaningful message. If the content does not fit into the buffer, the content is truncated. A null terminator is always appended, except if the buffer is empty. The function never fails and returns a pointer to the translated message for convenience.
 
     :param error: An error code of type :c:type:`qdb_handle_t`
     :param message: A pointer to a buffer that will received the translated error message.
@@ -363,7 +363,7 @@ Reference
 .. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, qdb_remote_node_t * servers, size_t count)
 
     Bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within. The function returns the number of successful
-    connections. If the same node (address and port) is present several times in the input array, it will count as only one successful 
+    unique connections. If the same node (address and port) is present several times in the input array, it will count as only one successful 
     connection.
 
     The user supplies an array of qdb_remote_node_t and the function updates the error member of each entry according to the result of the operation.
@@ -374,7 +374,7 @@ Reference
     :param servers: An array of qdb_remote_node_t designating the nodes to connect to. The error member will be updated depending on the result of the operation.
     :param count: The size of the input array.
 
-    :return: The number of successful connections.
+    :return: The number of unique successful connections.
 
 .. c:function:: qdb_error_t qdb_close(qdb_handle_t handle)
 
