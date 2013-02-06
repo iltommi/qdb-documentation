@@ -229,7 +229,7 @@ URL reference
                 "name":"memory",
                 "properties":
                 {
-                    "name":"physical",
+                    "name":"physmem",
                     "properties":
                     {
                         "used":
@@ -245,7 +245,7 @@ URL reference
                             "required":true
                         }
                     },
-                    "name":"virtual",
+                    "name":"vm",
                     "properties":
                     {
                         "used":
