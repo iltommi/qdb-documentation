@@ -45,11 +45,11 @@ Cheat sheet
 Global and local options
 ------------------------
 
-When a node connects to a ring, it will first download the configuration of this ring and overwrites its parameters with the ring's parameters.
+When a node connects to a ring, it will first download the configuration of this ring and overwrite its parameters with the ring's parameters.
 
 This way, you can be sure that parameters are consistent over all the nodes. This is especially important for parameters such as replication where you need all nodes to agree on a single replication factor.
 
-This is also important for persistance as having a mix of transient and non-transient nodes will result in undefined behaviours and unwanted data loss.
+This is also important for persistance as having a mix of transient and non-transient nodes will result in undefined behaviour and unwanted data loss.
 
 However, not all options are taken from the ring. It makes sense to have a heterogenous logging threshold for example, as you may want to analyze the behaviour of a specific part of your cluster.
 

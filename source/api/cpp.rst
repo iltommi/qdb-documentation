@@ -12,7 +12,7 @@ The quasardb C++ API is a wrapper around the C API that brings convenience and f
 Installing
 --------------
 
-The C++ API package consists of one header and is included with the C API (see :doc:`c`). It is required to link with the C API to use the C++ header, but no additional linking is required.
+The C++ API package consists of one header and is included in the C API package (see :doc:`c`). It is required to link with the C API to use the C++ header, but no additional linking is required.
 
 Header file
 --------------
@@ -91,7 +91,7 @@ Although one may use the handle object with the C API, methods are provided for 
         // error management
     }
 
-There is however one strong difference as the C call :c:func:`qdb_get_buffer` - which allocates a buffer of the needed size - is replaced with a more convenient method that uses smart pointers to manage allocation. 
+There is however one strong difference as the C call :c:func:`qdb_get_buffer` - which allocates a buffer of the needed size - is replaced with a more convenient method that uses smart pointers to manage allocations lifetime. 
 
 In C, one would write::
 

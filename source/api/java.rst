@@ -84,8 +84,8 @@ Serializable Java objects can be added and retrieved directly::
     String value = qdb.get("obj1");
     System.out.println("Result: " + value);
 
-    // You can delete values:
-    qdb.delete("obj2");
+    // You can remove values:
+    qdb.remove("obj2");
 
     // And update stored values:
     qdb.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
