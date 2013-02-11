@@ -142,11 +142,11 @@ Reference
 
 .. cpp:function: std::string make_error_string(qdb_error_t err)
 
-    Translate an error code into a meaningful English message.
+    Translate an error code into a meaningful English message. This function never fails.
 
     :param err: The error code to translate
 
-    :return: A STL string containing an explicit English sentence describing the error.
+    :return: A STL string containing an explicit English sentence describing the error. 
 
 .. cpp:class:: handle
 
@@ -175,7 +175,7 @@ Reference
 
         :return: An error code of type :c:type:`qdb_error_t`
 
-    .. cpp:function:: size_t multi_connect(const char * const * hosts, const unsigned short * ports, qdb_error_t * errors, size_t count)
+    .. cpp:function:: size_t multi_connect(qdb_remote_node_t * servers, size_t count)
 
         Initialize all required resources, bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within. The function returns the number of successful connections. If the same node (address and port) is present several times in the input array, it will count as only one successful connection.
 
