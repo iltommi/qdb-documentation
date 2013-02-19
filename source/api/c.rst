@@ -82,22 +82,29 @@ Of course for the above to work the server needs to listen on an IPv6 address.
 Connecting to multiple nodes within the same cluster
 ------------------------------------------------------
 
-Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that it is advised to use :c:func:`qdb_multi_connect` which takes a list of hosts and ports as input parameters. The call will succeed as long as one connection within the list was successful::
+Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that it is advised to use :c:func:`qdb_multi_connect` which takes an array of qdb_remote_node_t as input and output. Each entry of the array with be updated with an error status reflecting the success or failure of the operation for this specific entry. The call, as a whole, will succeed as long as one connection within the list was successful established::
 
-    const char addresses[3] = { "192.168.1.1", "192.168.1.2", "192.168.1.3" };
-    const unsigned short ports[3] = { 2836, 2836, 2836 };
-    qdb_error_t errors[3];
+    qdb_remote_node_t remote_nodes[3];
+
+    // there is no need to update the error member as it will be ignored by the function
+    remote_nodes[0].address = "192.168.1.1";
+    remote_nodes[0].port = 2836;
+    remote_nodes[1].address = "192.168.1.2";
+    remote_nodes[1].port = 2836;
+    remote_nodes[2].address = "192.168.1.3";
+    remote_nodes[2].port = 2836;
 
     // will connect to 192.168.1.1:2836, 192.168.1.2:2836 and 192.168.1.3:2836
-    // errors will be updated with the error status for each connection and the
-    // function will return the number of successful connections
-    size_t connections = qdb_multi_connect(handle, addresses, ports, errors, 3);
+    // the error member of each entry will be updated accordingly to the success
+    // of each operation
+    // the function will return the number of successful connections
+    size_t connections = qdb_multi_connect(handle, remote_nodes, 3);
     if (!connections)
     {
         // error management...
     }
 
-The list of addresses/ports must be unique, that is, providing the same address/port combination more than one time is an error and will make the call fail.
+If the same address/port pair is present multiple times within the array, only the first occurence can be successful.
 
 Adding entries
 -----------------
@@ -294,6 +301,10 @@ Reference
 
     An opaque handle that represents a quasardb client instance.
 
+.. c:type:: qdb_remote_node_t
+
+    A structure to represent a remote node with an associated error status updated by the last API call.
+
 .. c:type:: qdb_stream_tracker_t
 
     A structure used to track a stream state. 
@@ -308,12 +319,12 @@ Reference
 
 .. c:function:: const char * qdb_error(qdb_error_t error, char * message, size_t message_length)
 
-    Translate an error into a meaningful message. If the content does not fit into the buffer, the content is truncated. A null terminator is always appended, except if the buffer is empty. The function never fails and returns a pointer to the translated message for convenience.
+    Translate an error into a meaningful message. If the content does not fit into the buffer, the content is truncated. A null terminator is always appended, except if the buffer is empty. The function never fails and returns the passed pointer for convenience.
 
     :param error: An error code of type :c:type:`qdb_handle_t`
     :param message: A pointer to a buffer that will received the translated error message.
     :param message_length: The length of the buffer that will received the translated error message, in bytes.
-    :return: A pointer to the buffer that received the translated error message.
+    :return: The pointer to the buffer that received the translated error message.
 
 .. c:function:: const char * qdb_version(void)
 
