@@ -52,7 +52,6 @@ This API take cares of loading ad hoc native libraries, no matter which OS you a
 
 Last but not least this API is thread-safe unlike the low-level API.
 
-The API documentation is available in Javadoc format `here <http://doc.quasardb.net/javaapi>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
 
 Configuring the QuasarDB instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -91,7 +90,7 @@ Serializable Java objects can be added and retrieved directly::
     qdb.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
 
 Using the low-level API
-----------------------------
+-----------------------
 
 The low-level API provides direct access to the C API via JNI. Usage of the low-level API is discouraged.
 
@@ -127,7 +126,7 @@ Each connection to a server must be terminated manually: ::
     quasardb.close(session);
 
 Adding an entry to the cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 To add an entry to the cluster you need to specify it's :term:`alias` and wrap the :term:`content` in a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_, see :ref:`java-memory-management`: ::
 
@@ -147,7 +146,7 @@ To add an entry to the cluster you need to specify it's :term:`alias` and wrap t
             }
 
 Getting an entry from the cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Retrieving an entry requires knowing the alias and allocating a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ large enough to hold all the :term:`content`, see :ref:`java-memory-management`: ::
 
@@ -185,108 +184,7 @@ The ByteBuffer must be initialized with `allocateDirect <http://download.oracle.
 
 When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the :js:func:`get_size` to obtain the size of an entry.
 
-
 Reference
-^^^^^^^^^^^^^^^^^^
+---------
 
-.. js:class:: SWIGTYPE_p_qdb_session()
-
-    An opaque structure that wraps the session handle.
-
-.. js:class:: qdb_error_t()
-
-    A wrapper for the error code used by most quasardb methods to indicate success status.
-
-.. js:class:: quasardb()
-
-    A fully-featured low level class to add, update, get and delete entries from a quasardb :term:`cluster`
-
-.. js:function:: static SWIGTYPE_p_qdb_session quasardb.open()
-
-    Creates a client instance for the TCP network protocol.
-
-    :return: A valid handle when successful, 0 in case of failure. The handle must be closed with :js:func:`close`.
-
-.. js:function:: static qdb_error_t quasardb.close(SWIGTYPE_p_qdb_session handle)
-
-    Terminates all connections and releases all client-side allocated resources.
-
-    :param handle: An initialized handle (see :js:func:`quasardb.open`)
-
-    :return: An error code of type :cpp:class:`qdb_error_t`
-
-.. js:function:: static qdb_error_t quasardb.connect(SWIGTYPE_p_qdb_session handle, String host, int port)
-
-    Binds the client instance to a quasardb :term:`server` and connects to it.
-
-    :param handle: An initialized handle (see :js:func:`quasardb.open`)
-    :param host: A string representing the IP address or the name of the server to which to connect
-    :param port: The port number used by the server. The default quasardb port is 2836.
-
-    :return: An error code of type :cpp:class:`qdb_error_t`
-
-.. js:function:: qdb_error_t quasardb.put(SWIGTYPE_p_qdb_session handle, String alias, java.nio.ByteBuffer content, long content_length)
-
-    Adds an :term:`entry` to the quasardb server. If the entry already exists the function will fail and will return ``qdb_e_alias_already_exists``.
-
-    The handle must be initialized (see :js:func:`quasardb.open`) and the connection established (see :js:func:`quasardb.connect`).
-
-    :param handle: An initialized handle (see :js:func:`quasardb.open`)
-    :param alias: A string representing the entry's alias to create.
-    :param content: A `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ holding the entry's content to be added to the server.
-    :param content_length: The length of the entry's content, in bytes.
-
-    :return: An error code of type :cpp:class:`qdb_error_t`
-
-.. js:function:: static qdb_error_t quasardb.update(SWIGTYPE_p_qdb_session handle, String alias, java.nio.ByteBuffer content, long content_length)
-
-    Updates an :term:`entry` of the quasardb server. If the entry already exists, the content will be update. If the entry does not exist, it will be created.
-
-    The handle must be initialized (see :js:func:`quasardb.open`) and the connection established (see :js:func:`quasardb.connect`).
-
-    :param handle: An initialized handle (see :js:func:`quasardb.open`)
-    :param alias: A string representing the entry's alias to update.
-    :param content: A `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ holding the entry's content to be added to the server.
-    :param content_length: The length of the entry's content, in bytes.
-
-    :return: An error code of type :cpp:class:`qdb_error_t`
-
-.. js:function:: static long quasardb.get_size(SWIGTYPE_p_qdb_session handle, String alias)
-
-    Obtains the size of an entry's :term:`content`.
-
-    :param handle: An initialized handle (see :js:func:`quasardb.open`)
-    :param alias: The :term:`alias` for which the size is queried
-    :return: The size of the content, in bytes. 0 if the entry does not exist.
-
-.. js:function:: static qdb_error_t quasardb.get(SWIGTYPE_p_qdb_session handle, String alias, java.nio.ByteBuffer content, int[] actual_length)
-
-    Retrieves an :term:`entry`'s content from the quasardb server. The caller is responsible for allocating provided `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_. The allocation *must* be done with `allocateDirect <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html#allocateDirect%28int%29>`_.
-
-    If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
-
-    If the buffer is not large enough to hold the data, the function will fail and return ``qdb_e_buffer_too_small``. The actual_length parameter will nevertheless be updated so that the caller may resize its buffer and try again.
-
-    The handle must be initialized (see :js:func:`quasardb.open`) and the connection established (see :js:func:`quasardb.connect`).
-
-    :param handle: An initialized handle (see :js:func:`quasardb.open`)
-    :param alias: A string representing the entry's alias to obtain.
-    :param content: A `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ large enough to receive the content.
-    :param actual_length: An array of int of at least size one. The first entry of the array will be updated with the size of the content, if the entry exists.
-
-    :return: An error code of type :cpp:class:`qdb_error_t`
-
-.. js:function:: static qdb_error_t quasardb.delete(SWIGTYPE_p_qdb_session handle, String alias)
-
-    Removes an :term:`entry` from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
-
-    The handle must be initialized (see :js:func:`open`) and the connection established (see :js:func:`quasardb.connect`).
-
-    :param handle: An initialized handle (see :js:func:`open`)
-    :param alias: A string representing the entry's alias to delete.
-
-    :return: An error code of type :c:type:`qdb_error_t`
-
-
-
-
+The whole reference is available in `the javadoc format <javadoc/index.html>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
