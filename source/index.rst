@@ -30,6 +30,7 @@ Table of contents
    primer
    tutorials/index
    concepts/index
+   administration/index
    reference/index
    api/index
    faq
