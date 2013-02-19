@@ -1,6 +1,21 @@
 Change log
 **********
 
+0.7.4 - 03/04/2013
+------------------
+
+    * API: Can now retrieve a remote node configuration in JSON format
+    * API: Added a qdb_e_uninitialized value to the error enumeration
+    * Web bridge: Richer global status information
+    * Web bridge: More verbose logging
+    * Daemon: In case of segmentation fault a detailled status will be dumped to disk (in addition to previously existing log errors)
+    * Daemon: Stabilization is one order of magnitude faster in case of failure
+    * Daemon: The daemon now exits right away if the listening port is unavailable
+    * Daemon: Better and more coherent network log messages
+    * Daemon: A node that was started with incoherent parameters will now be forced out of the ring
+    * FreeBSD: upgraded to clang 3.2 and libc++ 1
+    * Upgraded to Boost 1.53.0
+
 0.7.3 - 02/11/2013
 ------------------
 

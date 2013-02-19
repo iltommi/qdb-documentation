@@ -260,7 +260,7 @@ URL reference
                             "description":"the total number of virtual memory bytes",
                             "required":true
                         }
-                    },
+                    }
                 },
                 "node_id":
                 {
@@ -276,7 +276,7 @@ URL reference
                 },
                 "hardware_concurrency":
                 {
-                    "type":"string",
+                    "type":"number",
                     "description":"the maximum number of threads that may concurrently execute on the platform the daemon is running on",
                     "required":true
                 },
@@ -295,7 +295,7 @@ URL reference
                     "type":"number",
                     "description":"the number of partitions",
                     "required":true
-                }
+                },
                 "timestamp":
                 {
                     "type":"string",
@@ -320,98 +320,364 @@ URL reference
                     "description":"the engine build timestamp",
                     "required":true
                 },
-                "name":"entries",
+                "name":"overall",
                 "properties":
                 {
                     "count":
                     {
                         "type":"number",
-                        "description":"the total number of entries on the node",
+                        "description":"The total number of operations",
                         "required":true
                     },
-                    "max_count":
+                    "successes":
                     {
                         "type":"number",
-                        "description":"the maximum allowed resident count of entries on the node",
+                        "description":"The total number of successful operations",
                         "required":true
                     },
-                    "resident_count":
+                    "failures":
                     {
                         "type":"number",
-                        "description":"the current number of entries resident in memory on the node",
+                        "description":"The total number of failed operations",
+                        "required":true
+                    },
+                    "pageins":
+                    {
+                        "type":"number",
+                        "description":"The total number of pageins",
+                        "required":true
+                    },
+                    "evictions":
+                    {
+                        "type":"number",
+                        "description":"The total number of evictions",
                         "required":true
                     },
                     "size":
                     {
                         "type":"number",
-                        "description":"the total amount of data, in bytes, managed by the node. This value may lag.",
+                        "description":"The total size of data in bytes moved in and out",
                         "required":true
-                    },
-                    "max_size":
+                    }
+                },
+                "name":"entries",
+                "properties":
+                {
+                    "name":"resident",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the maximum allowed resident amount of data on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of resident entries",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total number of resident bytes",
+                            "required":true
+                        }
                     },
-                    "resident_size":
+                    "name":"persisted",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the current amount of data, in bytes, resident in memory on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of persisted entries (may lag)",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total number of persisted bytes (may lag)",
+                            "required":true
+                        }
+                    }
+                },
+                "name":"operations",
+                "properties":
+                {
+                    "name":"find",
+                    "properties":
+                    {
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of times the operation has been requested",
+                            "required":true
+                        },
+                        "successes":
+                        {
+                            "type":"number",
+                            "description":"The total number of successful operations",
+                            "required":true
+                        },
+                        "failures":
+                        {
+                            "type":"number",
+                            "description":"The total number of failed operations",
+                            "required":true
+                        },
+                        "pageins":
+                        {
+                            "type":"number",
+                            "description":"The total number of pageins",
+                            "required":true
+                        },
+                        "evictions":
+                        {
+                            "type":"number",
+                            "description":"The total number of evictions",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total size of data in bytes moved in and out",
+                            "required":true
+                        }
                     },
-                    "add_count":
+                    "name":"put",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the total number of adds performed on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of times the operation has been requested",
+                            "required":true
+                        },
+                        "successes":
+                        {
+                            "type":"number",
+                            "description":"The total number of successful operations",
+                            "required":true
+                        },
+                        "failures":
+                        {
+                            "type":"number",
+                            "description":"The total number of failed operations",
+                            "required":true
+                        },
+                        "pageins":
+                        {
+                            "type":"number",
+                            "description":"The total number of pageins",
+                            "required":true
+                        },
+                        "evictions":
+                        {
+                            "type":"number",
+                            "description":"The total number of evictions",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total size of data in bytes moved in and out",
+                            "required":true
+                        }
                     },
-                    "update_count":
+                    "name":"update",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the total number of updates performed on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of times the operation has been requested",
+                            "required":true
+                        },
+                        "successes":
+                        {
+                            "type":"number",
+                            "description":"The total number of successful operations",
+                            "required":true
+                        },
+                        "failures":
+                        {
+                            "type":"number",
+                            "description":"The total number of failed operations",
+                            "required":true
+                        },
+                        "pageins":
+                        {
+                            "type":"number",
+                            "description":"The total number of pageins",
+                            "required":true
+                        },
+                        "evictions":
+                        {
+                            "type":"number",
+                            "description":"The total number of evictions",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total size of data in bytes moved in and out",
+                            "required":true
+                        }
                     },
-                    "get_update_count":
+                    "name":"find_update",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the total number of adds performed on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of times the operation has been requested",
+                            "required":true
+                        },
+                        "successes":
+                        {
+                            "type":"number",
+                            "description":"The total number of successful operations",
+                            "required":true
+                        },
+                        "failures":
+                        {
+                            "type":"number",
+                            "description":"The total number of failed operations",
+                            "required":true
+                        },
+                        "pageins":
+                        {
+                            "type":"number",
+                            "description":"The total number of pageins",
+                            "required":true
+                        },
+                        "evictions":
+                        {
+                            "type":"number",
+                            "description":"The total number of evictions",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total size of data in bytes moved in and out",
+                            "required":true
+                        }
                     },
-                    "compare_and_swap_count":
+                    "name":"compare_and_swap",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the total number of compare and swaps performed on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of times the operation has been requested",
+                            "required":true
+                        },
+                        "successes":
+                        {
+                            "type":"number",
+                            "description":"The total number of successful operations",
+                            "required":true
+                        },
+                        "failures":
+                        {
+                            "type":"number",
+                            "description":"The total number of failed operations",
+                            "required":true
+                        },
+                        "pageins":
+                        {
+                            "type":"number",
+                            "description":"The total number of pageins",
+                            "required":true
+                        },
+                        "evictions":
+                        {
+                            "type":"number",
+                            "description":"The total number of evictions",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total size of data in bytes moved in and out",
+                            "required":true
+                        }
                     },
-                    "remove_count":
+                    "name":"remove",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the total number of removals performed on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of times the operation has been requested",
+                            "required":true
+                        },
+                        "successes":
+                        {
+                            "type":"number",
+                            "description":"The total number of successful operations",
+                            "required":true
+                        },
+                        "failures":
+                        {
+                            "type":"number",
+                            "description":"The total number of failed operations",
+                            "required":true
+                        },
+                        "pageins":
+                        {
+                            "type":"number",
+                            "description":"The total number of pageins",
+                            "required":true
+                        },
+                        "evictions":
+                        {
+                            "type":"number",
+                            "description":"The total number of evictions",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total size of data in bytes moved in and out",
+                            "required":true
+                        }
                     },
-                    "get_count":
+                    "name":"remove_all",
+                    "properties":
                     {
-                        "type":"number",
-                        "description":"the total number of gets performed on the node",
-                        "required":true
-                    },
-                    "eviction_count":
-                    {
-                        "type":"number",
-                        "description":"the number of entries that have been evicted on the node",
-                        "required":true
-                    },
-                    "pagein_count":
-                    {
-                        "type":"number",
-                        "description":"the number of entries that have been paged in on the node",
-                        "required":true
-                    },
-                    "total_failures":
-                    {
-                        "type":"number",
-                        "description":"the number of failures on the node",
-                        "required":true
+                        "count":
+                        {
+                            "type":"number",
+                            "description":"The total number of times the operation has been requested",
+                            "required":true
+                        },
+                        "successes":
+                        {
+                            "type":"number",
+                            "description":"The total number of successful operations",
+                            "required":true
+                        },
+                        "failures":
+                        {
+                            "type":"number",
+                            "description":"The total number of failed operations",
+                            "required":true
+                        },
+                        "pageins":
+                        {
+                            "type":"number",
+                            "description":"The total number of pageins",
+                            "required":true
+                        },
+                        "evictions":
+                        {
+                            "type":"number",
+                            "description":"The total number of evictions",
+                            "required":true
+                        },
+                        "size":
+                        {
+                            "type":"number",
+                            "description":"The total size of data in bytes moved in and out",
+                            "required":true
+                        }
                     }
                 }
             }
