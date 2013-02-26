@@ -213,9 +213,16 @@ URL reference
     .. note::
         Requesting large entries (i.e., larger than 10 MiB) through the web bridge is not recommended.
 
+.. decribe:: config
+
+    Obtain node configuration.
+
+    :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
+    :returns: A JSON or JSONP structure with the node configuration.
+
 .. describe:: global_status
 
-    Displays global statistics.
+    Obtain global statistics.
 
     :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
     :returns: A JSON or JSONP structure with up-to-date statistics.

@@ -311,7 +311,7 @@ Reference
 
 .. c:type:: qdb_error_t
 
-    An enum representing possible error codes returned by the API functions. "No error" evaluates to 0.
+    An enum representing possible error codes returned by the API functions. "No error" evaluates to 0. When the error is qdb_e_system, errno or GetLastError (depending on the platform) is updated to the corresponding system error.
 
 .. c:type:: qdb_protocol_t
 
