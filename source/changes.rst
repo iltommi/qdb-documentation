@@ -1,10 +1,12 @@
 Change log
 **********
 
-0.7.4 - 03/04/2013
+0.7.4 - 03/11/2013
 ------------------
 
-    * API: Can now retrieve a remote node configuration in JSON format
+    * API: Can now retrieve a remote node's configuration in JSON format
+    * API: Can now retrive a remote node's topology in JSON format
+    * API: Can now remotely stop a node
     * API: Added a qdb_e_uninitialized value to the error enumeration
     * Web bridge: Richer global status information
     * Web bridge: More verbose logging
@@ -13,6 +15,7 @@ Change log
     * Daemon: The daemon now exits right away if the listening port is unavailable
     * Daemon: Better and more coherent network log messages
     * Daemon: A node that was started with incoherent parameters will now be forced out of the ring
+    * Daemon: Fixed ignored remove_all commands in certain circumstances
     * FreeBSD: upgraded to clang 3.2 and libc++ 1
     * Upgraded to Boost 1.53.0
 
