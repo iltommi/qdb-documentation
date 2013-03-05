@@ -295,6 +295,53 @@ Reference
 
         .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
+    .. cpp:function:: qdb_error_t node_status(const qdb_remote_node_t & node, qdb_error_t & error)
+
+        Obtains a node status as a JSON string. 
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param node: A constant reference to the remote node to get the status from
+        :param error: A reference to an error code that will be updated according to the success of the operation
+
+        :return: The status of the node as a JSON string.
+
+    .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
+
+        Obtains a node configuration as a JSON string. 
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param node: A constant reference to the remote node to get the configuration from
+        :param error: A reference to an error code that will be updated according to the success of the operation
+
+        :return: The configuration of the node as a JSON string.
+
+    .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
+
+        Obtains a node topology as a JSON string. 
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param node: A constant reference to the remote node to get the topology from
+        :param error: A reference to an error code that will be updated according to the success of the operation
+
+        :return: The topology of the node as a JSON string.
+
+    .. cpp:function:: qdb_error_t stop_node(const qdb_remote_node_t & node, const char * reason)
+
+        Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued, enabling inflight calls
+    to complete successfully.
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param node: A constant reference to the remote node to stop
+        :param reason: A pointer to a null terminated string detailling the reason for the stop that will appear in the remote node's log.
+
+        :return: An error code of type :c:type:`qdb_error_t`
+
+        .. caution:: This function is meant for very specific use cases and its usage is discouraged.
+
 .. cpp:type:: handle_ptr
 
     A smart pointer to a handle object.

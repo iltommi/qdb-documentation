@@ -220,6 +220,13 @@ URL reference
     :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
     :returns: A JSON or JSONP structure with the node configuration.
 
+.. desceribe:: topology
+
+    Obtain node topology, that is, the id, ip address and port of the node's successor and predecessor.
+
+    :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
+    :returns: A JSON or JSONP structure with the node topology.
+
 .. describe:: global_status
 
     Obtain global statistics.

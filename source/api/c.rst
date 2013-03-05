@@ -303,7 +303,7 @@ Reference
 
 .. c:type:: qdb_remote_node_t
 
-    A structure to represent a remote node with an associated error status updated by the last API call.
+    A structure to represent a remote node with an associated error status updated by the last API call, unless the structure is passed as constant.
 
 .. c:type:: qdb_stream_tracker_t
 
@@ -418,7 +418,7 @@ Reference
 
     If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
-    The function will allocate a buffer large enough to hold the entry's content. This buffer must be released by the caller with a call to :c:func:`qdb_close`.
+    The function will allocate a buffer large enough to hold the entry's content. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -561,6 +561,65 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
 
+    :return: An error code of type :c:type:`qdb_error_t`
+
+    .. caution:: This function is meant for very specific use cases and its usage is discouraged.
+
+.. c:function:: qdb_error_t qdb_node_status(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+
+    Obtains a node status as a JSON string. 
+
+    The function will allocate a buffer large enough to hold the status string and a terminating zero. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the status from
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the status string.
+    :param content_length: A pointer to a size_t that will be set to the status string length, in bytes.
+
+    :return: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_node_config(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+
+    Obtains a node configuration as a JSON string. 
+
+    The function will allocate a buffer large enough to hold the configuration string and a terminating zero. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the configuration from
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the configuration string.
+    :param content_length: A pointer to a size_t that will be set to the configuration string length, in bytes.
+
+    :return: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_node_topology(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+
+    Obtains a node topology as a JSON string. 
+
+    The function will allocate a buffer large enough to hold the topology string and a terminating zero. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the topology from
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the topology string.
+    :param content_length: A pointer to a size_t that will be set to the topology string length, in bytes.
+
+    :return: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_stop_node(qdb_handle_t handle, const qdb_remote_node_t * node, const char * reason)
+
+    Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued, enabling inflight calls
+    to complete successfully.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :param node: A pointer to a qdb_remote_node_t structure designating the node to stop
+    :param reason: A pointer to a null terminated string detailling the reason for the stop that will appear in the remote node's log.
     :return: An error code of type :c:type:`qdb_error_t`
 
     .. caution:: This function is meant for very specific use cases and its usage is discouraged.

@@ -1,12 +1,12 @@
 import uuid
-import quasardb
+import qdb
 
 # If the document is bigger than 10 MiB, we slice it
 SIZE_LIMIT = 10 * 1024 * 1024
 
 # Note given what we are doing here, the server should be configure with
 # a limiter-max-bytes of 1 GiB at least for proper caching
-cl = quasardb.RawClient('docserver.mydomain', 3002)
+cl = qdb.RawClient('docserver.mydomain', 3002)
 
 # We expect a readable file-like object
 def upload(f):
@@ -32,5 +32,5 @@ def download(key, f):
 
     # If count is >0, we had at least one slice, so it is ok
     # If not, we have really not found the file.
-    except quasardb.AliasNotFound:
+    except qdb.QuasardbException:
         if not count: raise

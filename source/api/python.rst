@@ -17,7 +17,7 @@ The API comes with a BSD license and can be freely used in your clients.
 Requirements
 ------------------------
 
-Python 2.5 or higher is required.
+Python 2.6 or higher is required.
 
 Installation
 ------------
