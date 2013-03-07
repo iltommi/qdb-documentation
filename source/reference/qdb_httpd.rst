@@ -213,14 +213,14 @@ URL reference
     .. note::
         Requesting large entries (i.e., larger than 10 MiB) through the web bridge is not recommended.
 
-.. decribe:: config
+.. describe:: config
 
     Obtain node configuration.
 
     :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
     :returns: A JSON or JSONP structure with the node configuration.
 
-.. desceribe:: topology
+.. describe:: topology
 
     Obtain node topology, that is, the id, ip address and port of the node's successor and predecessor.
 

@@ -83,7 +83,7 @@ Stopping quasardb
 
 The daemon can be stopped in hitting CTRL-C when it is running in the foreground or sending a stop signal if it's running in the background. For a cluster to be stopped, all the nodes within the cluster have to be stopped.
 
-Any node can also be remotely stopped with the shell thanks to the "node_stop" command (see :doc:`../reference/qdbsh`).
+Any node can also be remotely stopped with the shell thanks to the "node_stop" command (see :doc:`../reference/qdb_shell`).
 
 Building a cluster
 ------------------

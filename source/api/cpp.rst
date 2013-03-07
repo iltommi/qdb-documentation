@@ -330,8 +330,8 @@ Reference
 
     .. cpp:function:: qdb_error_t stop_node(const qdb_remote_node_t & node, const char * reason)
 
-        Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued, enabling inflight calls
-    to complete successfully.
+        Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued,
+        enabling inflight calls to complete successfully.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
