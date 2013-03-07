@@ -6,12 +6,14 @@ if(CMAKE_BUILD_TYPE STREQUAL Release)
     IF(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
         add_custom_target(build_doc ALL
                 COMMAND gmake html 
+                DEPENDS qdb_api qdb_python_api
                 COMMENT "Build documentation with Sphinx"
                 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
                 VERBATIM)
     else(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
         add_custom_target(build_doc ALL
             COMMAND make html 
+            DEPENDS qdb_api qdb_python_api
             COMMENT "Build documentation with Sphinx"
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             VERBATIM)
