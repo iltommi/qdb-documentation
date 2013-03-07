@@ -18,8 +18,6 @@ if(CMAKE_BUILD_TYPE STREQUAL Release)
     endif(${CMAKE_SYSTEM_NAME} MATCHES "FreeBSD")
 endif(CMAKE_BUILD_TYPE STREQUAL Release)
 
-add_dependencies(build_doc qdb_api qdb_python_api qdb_java_api)
-
 install(FILES 
     license.txt
     README.txt
