@@ -45,10 +45,10 @@ That's why we have an API! We currently support :doc:`api/c`, :doc:`api/java` an
 
 Here is a short Python code snippet::
 
-    import quasardb
+    import qdb
 
     # connecting, default port is 2836
-    c = quasardb.Client("127.0.0.1")
+    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
     # adding an entry
     c.put("entry", "really amazing...")
     # getting and printing the content
