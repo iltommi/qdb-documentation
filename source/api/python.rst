@@ -63,11 +63,12 @@ or::
 
 GCC 4.6.0 or later is required to build the extension. You can specify the compiler with the following command::
 
-    python setup.py build --compiler=g++46
+    setenv CC gcc46
+    python setup.py build 
 
 Provided that g++46 is the name of your GCC 4.6 compiler.
 
-It is also possible - and even recommended on FreeBSD - to build the extension with clang. Unfortunately, Python distutils may not recognize clang as a valid compiler, thus you will need to set the CC environment variable to use clang::
+It is also possible - and even recommended on FreeBSD - to build the extension with clang::
 
     setenv CC clang
     python setup.py build
