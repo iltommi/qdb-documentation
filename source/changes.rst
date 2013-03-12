@@ -1,7 +1,7 @@
 Change log
 **********
 
-0.7.4 - 03/15/2013
+0.7.4 - 03/18/2013
 ------------------
 
     * API: Can now retrieve a remote node's configuration in JSON format
