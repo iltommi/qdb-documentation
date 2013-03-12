@@ -5,3 +5,6 @@ Administration
    :maxdepth: 2
    
    installation
+   operations
+   tuning
+   troubleshooting

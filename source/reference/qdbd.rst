@@ -30,13 +30,14 @@ Cheat sheet
  :option:`-r`                          persistence directory        ./db                    Yes
  :option:`--id`                        set the node id              generated               No
  :option:`--replication`               Sets the replication factor  1                       Yes
- :option:`--peer`                      one peer to form a cluster                              No
+ :option:`--peer`                      one peer to form a cluster                           No
  :option:`--transient`                 disable persistence                                  Yes
  :option:`--sync`                      sync every disk write                                Yes
  :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes
  :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes
  :option:`-o`                          log on console                                       No
  :option:`-l`                          log on given file                                    No
+ :option:`--log-dump`                  dump file location           qdb_error_dump.txt      No
  :option:`--log-syslog`                log on syslog                                        No
  :option:`--log-level`                 change log level             info                    No
  :option:`--log-flush-interval`        change log flush             3                       No
@@ -351,6 +352,21 @@ Instance specific
         Join a :term:`cluster` where the machine 192.168.1.1 listening on the port 2836 is already connected::
 
             qdbd --peer=192.168.1.1:2836
+
+.. option:: --log-dump
+
+    Specifies the dump file location. The dump file is a text file that is written to when quasardb detects a critical error.
+
+    Argument
+        A string representing a path to a dump file.
+
+    Default
+        qdb_error_dump.txt
+
+    Example
+        Dump to /var/log/qdb_error_dump.log::
+
+            qdb --log-dump=/var/log/qdb_error_dump.log
 
 .. option:: -o, --log-console
 
