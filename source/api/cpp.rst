@@ -145,8 +145,9 @@ Reference
     Translate an error code into a meaningful English message. This function never fails.
 
     :param err: The error code to translate
+    :type err: qdb_error_t
 
-    :return: A STL string containing an explicit English sentence describing the error. 
+    :returns: A STL string containing an explicit English sentence describing the error. 
 
 .. cpp:class:: handle
 
@@ -158,13 +159,14 @@ Reference
 
         Determine if the handle is connected or not.
 
-        :return: true if the handle is connected, false otherwise
+        :returns: true if the handle is connected, false otherwise
 
     .. cpp:function:: void set_timeout(int timeout)
 
         Set the timeout, in milliseconds, for all operations.
 
         :param timeout: The timeout, in milliseconds.
+        :type timeout: int
 
     .. cpp:function:: qdb_error_t connect(const char * host, unsigned short port)
 
@@ -173,7 +175,7 @@ Reference
         :param host: A null terminated string designating the host to connect to.
         :param port: An unsigned integer designating the port to connect to.
 
-        :return: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :c:type:`qdb_error_t`
 
     .. cpp:function:: size_t multi_connect(qdb_remote_node_t * servers, size_t count)
 
@@ -183,11 +185,10 @@ Reference
 
         Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
 
-        :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
         :param servers: An array of qdb_remote_node_t designating the nodes to connect to. The error member will be updated depending on the result of the operation.
         :param count: The size of the input array.
 
-        :return: The number of successful connections.
+        :returns: The number of successful connections.
 
     .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length)
 
@@ -199,7 +200,7 @@ Reference
         :param content: A pointer to a buffer that represents the entry's content to be added to the server.
         :param content_length: The length of the entry's content, in bytes.
 
-        :return: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :c:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t update(const char * alias, const char * content, size_t content_length)
 
@@ -207,12 +208,11 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
-        :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
         :param alias: A pointer to a null terminated string representing the entry's alias to update.
         :param content: A pointer to a buffer that represents the entry's content to be updated to the server.
         :param content_length: The length of the entry's content, in bytes.
 
-        :return: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :c:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t get(const char * alias, char * content, size_t * content_length)
 
@@ -228,7 +228,7 @@ Reference
         :param content: A pointer to an user allocated buffer that will receive the entry's content.
         :param content_length: A pointer to a size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
 
-        :return: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :c:type:`qdb_error_t`
 
     .. cpp:function:: api_buffer_ptr get(const char * alias, qdb_error_t & error)
 
@@ -243,7 +243,7 @@ Reference
         :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
         :param error: A reference to an error that will receive the result of the operation.
 
-        :return: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
     .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_error_t & error)
 
@@ -256,7 +256,7 @@ Reference
         :param update_content_length: The length of the buffer, in bytes.
         :param error: A reference to an error that will receive the result of the operation.
 
-        :return: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
     .. cpp:function:: api_buffer_ptr compare_and_swap(const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, qdb_error_t & error)
 
@@ -266,12 +266,12 @@ Reference
 
         :param alias: A pointer to a null terminated string representing the entry's alias to compare to.
         :param new_value: A pointer to a buffer that represents the entry's content to be updated to the server in case of match.
-        :param new_value: The length of the buffer, in bytes.
+        :param new_value_length: The length of the buffer, in bytes.
         :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
-        :param new_value: The length of the buffer, in bytes.
+        :param comparand_length: The length of the buffer, in bytes.
         :param error: A reference to an error that will receive the result of the operation.
 
-        :return: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
     .. cpp:function:: qdb_error_t remove(const char * alias)
 
@@ -281,7 +281,7 @@ Reference
 
         :param alias: A pointer to a null terminated string representing the entry's alias to delete.
 
-        :return: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :c:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t remove_all(void)
 
@@ -291,7 +291,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
-        :return: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :c:type:`qdb_error_t`
 
         .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
@@ -304,7 +304,7 @@ Reference
         :param node: A constant reference to the remote node to get the status from
         :param error: A reference to an error code that will be updated according to the success of the operation
 
-        :return: The status of the node as a JSON string.
+        :returns: The status of the node as a JSON string.
 
     .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
 
@@ -315,7 +315,7 @@ Reference
         :param node: A constant reference to the remote node to get the configuration from
         :param error: A reference to an error code that will be updated according to the success of the operation
 
-        :return: The configuration of the node as a JSON string.
+        :returns: The configuration of the node as a JSON string.
 
     .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
 
@@ -326,7 +326,7 @@ Reference
         :param node: A constant reference to the remote node to get the topology from
         :param error: A reference to an error code that will be updated according to the success of the operation
 
-        :return: The topology of the node as a JSON string.
+        :returns: The topology of the node as a JSON string.
 
     .. cpp:function:: qdb_error_t stop_node(const qdb_remote_node_t & node, const char * reason)
 
@@ -338,7 +338,7 @@ Reference
         :param node: A constant reference to the remote node to stop
         :param reason: A pointer to a null terminated string detailling the reason for the stop that will appear in the remote node's log.
 
-        :return: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :c:type:`qdb_error_t`
 
         .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
@@ -354,13 +354,13 @@ Reference
 
         Access the managed buffer, read-only.
 
-        :return: A pointer to the managed buffer.
+        :returns: A pointer to the managed buffer.
 
     .. cpp:function:: size_t size(void) const
 
         Gives the size of the managed buffer.
 
-        :return: The size of the managed buffer.
+        :returns: The size of the managed buffer.
 
 .. cpp:type:: api_buffer_ptr
 
