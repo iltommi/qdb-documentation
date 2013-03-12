@@ -128,7 +128,7 @@ The :cpp:class:`api_buffer` object is designed to be used via a smart pointer - 
 Closing a connection
 -----------------------
 
-A connection can be explicitely closed and the handle released with the :cpp:func:`handle::close` method::
+A connection can be explicitly closed and the handle released with the :cpp:func:`handle::close` method::
 
     h.close();
 

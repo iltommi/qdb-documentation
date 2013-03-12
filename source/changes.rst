@@ -7,7 +7,7 @@ Change log
     * API: Can now retrieve a remote node's configuration in JSON format
     * API: Can now retrieve a remote node's topology in JSON format
     * API: Can now remotely stop a node
-    * API: Added a qdb_e_uninitialized value to the error enumeration
+    * C/C++ API: Added a qdb_e_uninitialized value to the error enumeration
     * Python API: Improved documentation and added examples
     * Web bridge: Richer global status information
     * Web bridge: More verbose logging

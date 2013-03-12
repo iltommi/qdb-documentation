@@ -31,5 +31,5 @@ Unless otherwise noted, all calls are atomic. When you return from a call, the d
 Memory management
 -----------------
 
-A lot of calls allocate memory on the client side. For example, when you get an entry, the calls allocate a buffer large enough to hold the entry for you. In C, the memory needs to be explicitely released. In C++, Java and Python, this is not necessary as a memory management mechanism is included with the API.
+A lot of calls allocate memory on the client side. For example, when you get an entry, the calls allocate a buffer large enough to hold the entry for you. In C, the memory needs to be explicitly released. In C++, Java and Python, this is not necessary as a memory management mechanism is included with the API.
 
