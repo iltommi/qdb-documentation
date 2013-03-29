@@ -283,6 +283,18 @@ Reference
 
         :returns: An error code of type :c:type:`qdb_error_t`
 
+    .. cpp:function:: qdb_error_t remove_if(const char * alias, const char * comparand, size_t comparand_length)
+
+        Removes an :term:`entry` from the quasardb server if it matches comparand. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+        :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
+        :param comparand_length: The length of the buffer, in bytes.
+
+        :returns: An error code of type :c:type:`qdb_error_t`
+
     .. cpp:function:: qdb_error_t remove_all(void)
 
         Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
