@@ -285,7 +285,7 @@ Reference
 
     .. cpp:function:: qdb_error_t remove_if(const char * alias, const char * comparand, size_t comparand_length)
 
-        Removes an :term:`entry` from the quasardb server if it matches comparand. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+        Removes an :term:`entry` from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
