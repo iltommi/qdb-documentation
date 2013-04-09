@@ -91,7 +91,7 @@ Although one may use the handle object with the C API, methods are provided for 
         // error management
     }
 
-There is however one strong difference as the C call :c:func:`qdb_get_buffer` - which allocates a buffer of the needed size - is replaced with a more convenient method that uses smart pointers to manage allocations lifetime. 
+There is however one strong difference as the C call :c:func:`qdb_get_buffer` - which allocates a buffer of the needed size - is replaced with a more convenient method that uses smart pointers to manage allocations lifetime.
 
 In C, one would write::
 
@@ -147,7 +147,7 @@ Reference
     :param err: The error code to translate
     :type err: qdb_error_t
 
-    :returns: A STL string containing an explicit English sentence describing the error. 
+    :returns: A STL string containing an explicit English sentence describing the error.
 
 .. cpp:class:: handle
 
@@ -245,6 +245,21 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
+    .. cpp:function:: api_buffer_ptr get_remove(const char * alias, qdb_error_t & error)
+
+        Atomically gets an :term:`entry` from the quasardb server and removes it.
+
+        If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
+
+        The function will allocate a buffer large enough to hold the entry's content.
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
+        :param error: A reference to an error that will receive the result of the operation.
+
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+
     .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_error_t & error)
 
         Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exists.
@@ -299,7 +314,7 @@ Reference
 
         Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
-        This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code. 
+        This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -309,7 +324,7 @@ Reference
 
     .. cpp:function:: qdb_error_t node_status(const qdb_remote_node_t & node, qdb_error_t & error)
 
-        Obtains a node status as a JSON string. 
+        Obtains a node status as a JSON string.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -320,7 +335,7 @@ Reference
 
     .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
 
-        Obtains a node configuration as a JSON string. 
+        Obtains a node configuration as a JSON string.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -331,7 +346,7 @@ Reference
 
     .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
 
-        Obtains a node topology as a JSON string. 
+        Obtains a node topology as a JSON string.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 

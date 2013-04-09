@@ -455,6 +455,25 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
+.. c:function:: qdb_error_t qdb_get_remove(qdb_handle_t handle, const char * alias, const char ** content, size_t * content_length)
+
+    Atomically gets an :term:`entry` from the quasardb server and removes it. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+
+    The function will allocate a buffer large enough to hold the entry's content. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+    :type alias: const char *
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content.
+    :type content: char **
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+
+    :returns: An error code of type :c:type:`qdb_error_t`
+
 .. c:function:: void qdb_free_buffer(qdb_handle_t handle, char * buffer)
 
     Frees a buffer allocated by :c:func:`qdb_get_buffer`.

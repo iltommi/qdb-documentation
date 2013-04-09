@@ -1,8 +1,35 @@
 Change log
 **********
 
+1.0.0 - "Zeno" - 04/30/2013
+===========================
+
+About
+-----
+
+From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+   `Zeno of Citium <http://en.wikipedia.org/wiki/Zeno_of_Citium>`_ was the founder of the `Stoic <http://en.wikipedia.org/wiki/Stoicism>`_ school of philosophy, which he taught in Athens from about 300 BC. [...] Stoicism laid great emphasis on goodness and peace of mind gained from living a life of Virtue in accordance with Nature.
+
+After years of research and developement it is an overwhelming pleasure to annonce the availability of version 1.0.0. The last eighteen months have been dedicated to the everlasting quest of performance and stability. It is now time for the version number to reflect the level of quality and trustworthiness that quasardb delivers.
+
+A big *thank you* to all our customers for their time, courage and patience that helped make quasardb a reality.
+
+Changes in this version
+-----------------------
+
+    * API: New atomical conditional remove (remove_if) operation
+    * API: New atomical get and remove (get_remove) operation
+    * API: Can now iterate on a cluster's entries
+    * Java API: Full JSR 107 Support
+    * Daemon: Replica do not stay hot in memory to reduce memory usage 
+    * Upgraded to TBB 4.1 update 3
+
 0.7.4 - 03/18/2013
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * API: Can now retrieve a remote node's configuration in JSON format
     * API: Can now retrieve a remote node's topology in JSON format
@@ -22,7 +49,10 @@ Change log
     * Upgraded to Boost 1.53.0
 
 0.7.3 - 02/11/2013
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * New C++ API!
     * C and Java API: Added qdb_error to translate an error code into a meaningful message
@@ -34,7 +64,10 @@ Change log
     * Daemon: Improved replication factor documentation
 
 0.7.2 - 01/14/2013
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Now officially named quasardb!
     * Daemon: Minimized thread switching to reduce latency
@@ -45,14 +78,20 @@ Change log
     * Upgraded to LevelDB 1.9
 
 0.7.1 - 10/15/2012
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Daemon: Integrated licensing mechanism
     * Daemon: Fixed invalid statistics update
     * Upgraded to Boost 1.51.0
 
 0.7.0 - 09/04/2012
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Daemon: Automatic, integrated and distributed replication up to 4 copies
     * Daemon: Support for global configuration
@@ -65,7 +104,10 @@ Change log
     * Known bug: the eviction, pagein and size counts reported in the administration console are invalid
 
 0.6.66 - 07/02/2012
--------------------
+===================
+
+Changes in this version
+-----------------------
 
     * Client API: New streaming API (C only)
     * Client API: New compare and swap operation (C only)
@@ -78,7 +120,10 @@ Change log
     * Upgraded to LevelDB 1.5
 
 0.6.5 - 06/08/2012
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Client API: Major performance increase (up to 100%) for small entries (below 1 kiB)
     * Client API: Added more error codes
@@ -95,7 +140,10 @@ Change log
     * Upgraded to TBB 4.0 SP4
 
 0.6.0 - 01/16/2012
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Python API: Brand new Python API!
     * Daemon: new "transient" option
@@ -105,7 +153,10 @@ Change log
     * Upgraded LevelDB
 
 0.5.2 - 11/14/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Windows: Digital signatures now include a timestamp.
     * Web bridge: Improved the internal data exchange format.
@@ -116,7 +167,10 @@ Change log
     * Upgraded to TBB 4.0 SP1
 
 0.5.1 - 10/01/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Java API: Major rework, better and easier than before!
     * Daemon: Added an icon in the Windows binary.
@@ -126,7 +180,10 @@ Change log
     * Upgraded LevelDB
 
 0.5.0 - 08/01/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Peer-to-peer network distribution
     * Web bridge with JSON/JSONP interfaces
@@ -142,7 +199,10 @@ Change log
     * Upgraded to Boost 1.47.0
 
 0.4.2 - 05/26/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Increased reliability
     * Major performance improvements for entries larger than 50 MiB
@@ -152,14 +212,20 @@ Change log
     * fix: The 0.4.1 Linux API could not be linked to due to a misconfiguration on our build machine
 
 0.4.1 - 05/07/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Multiplatform Python API package with installer
     * Fixed FreeBSD invalid rpath
     * qdbsh can now process standard input and output
 
 0.4.0 - 04/22/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Python API
     * Improved server network code
@@ -172,7 +238,10 @@ Change log
     * Upgraded Linux and FreeBSD compilers to gcc 4.6.0
 
 0.3.2 - 02/26/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Windows binaries are now digitally signed.
     * High-performance slab allocator is now used for logging.
@@ -182,7 +251,10 @@ Change log
     * Upgraded TBB to version 3.0 Update 5
 
 0.3.1 - 02/22/2011
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Asynchronous standalone TCP (IPv4 and IPv6) server
     * Fast monte carlo eviction
@@ -192,7 +264,10 @@ Change log
     * May contain up to 1% of awesomeness
 
 0.2.0 - 11/11/2010
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * Update and remove now accessible via the C API
     * More efficient logging
@@ -200,7 +275,10 @@ Change log
     * Internal statistics
 
 0.1.0 - 07/26/2010
-------------------
+==================
+
+Changes in this version
+-----------------------
 
     * First official beta version!
     * nginx support
