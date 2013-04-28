@@ -1,7 +1,7 @@
 Change log
 **********
 
-1.0.0 - "Zeno" - 04/30/2013
+1.0.0 - "Zeno" - 05/31/2013
 ===========================
 
 About
@@ -13,16 +13,17 @@ From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedi
 
 After years of research and developement it is an overwhelming pleasure to annonce the availability of version 1.0.0. The last eighteen months have been dedicated to the everlasting quest of performance and stability. It is now time for the version number to reflect the level of quality and trustworthiness that quasardb delivers.
 
-A big *thank you* to all our customers for their time, courage and patience that helped make quasardb a reality.
+A big *thank you* to all our friends, family, partners and customers for their support that helped make quasardb a reality.
 
 Changes in this version
 -----------------------
 
     * API: New atomical conditional remove (remove_if) operation
     * API: New atomical get and remove (get_remove) operation
-    * API: Can now iterate on a cluster's entries
+    * API: Can now iterate on entries
     * Java API: Full JSR 107 Support
-    * Daemon: Replica do not stay hot in memory to reduce memory usage 
+    * Daemon: Replica do not stay hot in memory to reduce memory usage
+    * Daemon: Timeout for inter-node communications is now properly accounted on all platforms
     * Upgraded to TBB 4.1 update 3
 
 0.7.4 - 03/18/2013
