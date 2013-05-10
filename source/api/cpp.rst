@@ -137,6 +137,30 @@ Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::c
 .. caution::
     The usage of :c:func:`qdb_close` with :cpp:class:`handle` object results in undefined behaviour.
 
+Iteration
+-------------
+
+Iteration on the cluster's entries can be done forward and backward. 
+
+An STL-like iterator API is provided which is compatible with STL algorithms::
+
+    // forward loop
+    std::for_each(h.begin(), h.end(), [](const qdb::const_iterator::value_type & v) { /* work on entry */ }));
+
+    // backward loop
+    std::for_each(h.rbegin(), h.rend(), [](const qdb::const_reverse_iterator::value_type & v) { /* work on entry */ }));
+
+There is however a significant difference with regular STL iterators: since entries are accessed remotely, an error may prevent the next entry from being retrieved, in which case the iterator will be considered to have reached the "end" of the iteration.
+
+It is however possible to query the last error through the last_error() member function. The qdb_e_alias_not_found indicates the normal end of the iteration whereas other error status indicate that the iteration could not successfully complete. It is up to the programmer to decide what to do in case of error.
+
+Iterators value is an std::pair<std::string, qdb::api_buffer_ptr> which makes the manipulation of iterator associated data safe in most scenarii. Associated ressources will be freed automatically through RAII.
+
+The iterator api may throw the std::bad_alloc exception should a memory allocation fail.
+
+.. note::
+    Although each entry is returned only once, the order in which entries are returned is undefined.
+
 Reference
 ----------------
 
@@ -149,7 +173,69 @@ Reference
 
     :returns: A STL string containing an explicit English sentence describing the error.
 
+.. cpp:class:: const_iterator
+
+    A forward iterator. 
+
+    .. cpp:function: const_iterator & operator ++ (void)
+
+        Moves the iterator one entry forward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+
+        :returns: The updated iterator
+
+    .. cpp:function: const_iterator & operator -- (void)
+
+        Moves the iterator one entry backward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+
+    .. cpp:function:: qdb_error_t last_error(void) const
+
+        :returns: The error code of the last iterator operation
+
+    .. cpp:function:: bool valid(void) const
+
+        :returns: true if the iterator is valid and points to an entry
+
+.. cpp:class:: const_reverse_iterator
+
+    A reverse iterator.
+
+    .. cpp:function: const_iterator & operator ++ (void)
+
+        Moves the iterator one entry backward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+
+        :returns: The updated iterator
+
+    .. cpp:function: const_iterator & operator -- (void)
+
+        Moves the iterator one entry forward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+
+    .. cpp:function:: qdb_error_t last_error(void) const
+
+        :returns: The error code of the last iterator operation
+
+    .. cpp:function:: bool valid(void) const
+
+        :returns: true if the iterator is valid and points to an entry
+
+.. cpp:class:: const_reverse_iterator
+
 .. cpp:class:: handle
+
+    .. cpp:function:: const_iterator begin(void)
+
+       :returns: A forward iterator pointing to the first entry in the cluster.
+
+    .. cpp:function:: const_iterator end(void)
+
+       :returns: A forward iterator pointing beyond the last entry in the cluster.
+
+    .. cpp:function:: const_reverse_iterator rbegin(void)
+
+       :returns: A reverse iterator pointing to the last entry in the cluster.
+
+    .. cpp:function:: const_reverse_iterator rend(void)
+
+       :returns: A reverse iterator pointing before the first entry in the cluster.
 
     .. cpp:function:: void close(void)
 

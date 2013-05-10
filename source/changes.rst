@@ -13,7 +13,7 @@ From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedi
 
 After years of research and developement it is an overwhelming pleasure to annonce the availability of version 1.0.0. The last eighteen months have been dedicated to the everlasting quest of performance and stability. It is now time for the version number to reflect the level of quality and trustworthiness that quasardb delivers.
 
-A big *thank you* to all our friends, family, partners and customers for their support that helped make quasardb a reality.
+A big *thank you* to all our families, friends, partners and customers for their continued support that helped make quasardb a reality.
 
 Changes in this version
 -----------------------
@@ -24,6 +24,7 @@ Changes in this version
     * Java API: Full JSR 107 Support
     * Daemon: Replica do not stay hot in memory to reduce memory usage
     * Daemon: Timeout for inter-node communications is now properly accounted on all platforms
+    * Daemon: Fixed a race condition where a session could be freed twice during shutdown
     * Upgraded to TBB 4.1 update 3
 
 0.7.4 - 03/18/2013

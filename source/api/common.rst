@@ -33,3 +33,14 @@ Memory management
 
 A lot of calls allocate memory on the client side. For example, when you get an entry, the calls allocate a buffer large enough to hold the entry for you. In C, the memory needs to be explicitly released. In C++, Java and Python, this is not necessary as a memory management mechanism is included with the API.
 
+Iteration
+---------
+
+Iteration is unordered, that is, the order in which entries are returned is undefined. Every entry will be returned once: no entry may be returned twice.
+
+If nodes become unavailable during the iteration, contents of those nodes may be skipped over, depending on the replication configuration of the cluster. 
+
+If it is impossible to recover from an error during the iteration, the iteration will prematurely stop. It is the caller's decision to try again or give up.
+
+The "current" state of the cluster is what is iterated upon, that is, no "snapshot" is made. If an entry is added during iteration it may, or may not, be included in the iteration, depending on its placement respective to the iteration cursor. It is planned to change this behaviour to allow "consistent" iteration in a future release.
+

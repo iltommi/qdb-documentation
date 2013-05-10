@@ -294,6 +294,44 @@ When you are done working with a quasardb repository, call :c:func:`qdb_close`::
     Avoid opening and closing connections needlessly. A handle consumes very little memory and resources. It is safe to keep it open for the whole duration of
     your program.
 
+Timeout
+-------
+
+It is possible to configure the client-sidetimeout with the :c:func:`qdb_set_option`::
+
+    // sets the timeout to 5000 ms
+    qdb_set_option(h, qdb_o_operation_timeout, 5000);
+
+Currently running requests are not affected by the modification, only new requests will account the new timeout value. The default client-side timeout is one minute. Keep in mind that the server-side timeout might be shorter.
+
+Iteration
+-----------
+
+Iteration on the cluster's entries can be done forward and backward. One initializes the iterator with :c:func:`qdb_iterator_begin` or :c:func:`qdb_iterator_rbegin` depending on whether one would want to start from the first entry or the last entry.
+
+Actual teration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_iterator_previous`. Once completed, the iterator should be freed with :c:func:`qdb_iterator_close`::
+
+    qdb_const_iterator_t it;
+
+    // forward loop
+    for(qdb_error_t err = qdb_iterator_begin(h, &it); err == qdb_e_ok; err = qdb_iterator_next(&it))
+    {
+        // work on entry
+    }
+
+    qdb_iterator_close(&it);
+
+    // backward loop
+    for(qdb_error_t err = qdb_iterator_rbegin(h, &it); err = qdb_e_ok; err = qdb_iterator_previous(&it))
+    {
+        // work on entry
+    }
+
+    qdb_iterator_close(&it);
+
+.. note::
+    Although each entry is returned only once, the order in which entries are returned is undefined.
+
 Reference
 ----------------
 
@@ -735,3 +773,75 @@ Reference
     :returns: An error code of type :c:type:`qdb_error_t`
 
     .. caution:: This function is meant for very specific use cases and its usage is discouraged.
+
+.. c:function:: qdb_error_t qdb_iterator_begin(qdb_handle_t handle, qdb_const_iterator *iterator)
+
+    Initializes an iterator and make it point to the first entry in the cluster. Iteration is unordered. If no entry is found, the function wil return qdb_e_alias_not_found.
+
+    The iterator must be released with a call to :c:func:`qdb_iterator_close`.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`). 
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param iterator: A pointer to qdb_const_iterator structure that will be initialized.
+    :type iterator: qdb_const_iterator *
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_iterator_rbegin(qdb_handle_t handle, qdb_const_iterator *iterator)
+
+    Initializes an iterator and make it point to the last entry in the cluster. Iteration is unordered. If no entry is found, the function wil return qdb_e_alias_not_found.
+
+    The iterator must be released with a call to :c:func:`qdb_iterator_close`.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`). 
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param iterator: A pointer to qdb_const_iterator structure that will be initialized.
+    :type iterator: qdb_const_iterator *
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_iterator_next(qdb_const_iterator_t * iterator)
+
+    Updates the iterator to point to the next available entry in the cluster. Iteration is unordered. If no other entry is available, the function wil return qdb_e_alias_not_found.
+
+    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+
+    :param iterator: A pointer to a qdb_const_iterator structure that has been previously been initialized.
+    :type iterator: qdb_const_iterator *
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_iterator_previous(qdb_const_iterator_t * iterator)
+
+    Updates the iterator to point to the previous available entry in the cluster. Iteration is unordered. If no other entry is available, the function wil return qdb_e_alias_not_found.
+
+    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+
+    :param iterator: A pointer to a qdb_const_iterator structure that has been previously been initialized.
+    :type iterator: qdb_const_iterator *
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_iterator_copy(const qdb_const_iterator_t * original,  qdb_const_iterator_t * copy)
+
+    Copies the state of the original iterator to a new iterator. Both iterators can afterward be independtly operated.
+
+    The iterator copy must be released with a call to :c:func:`qdb_iterator_close`.
+
+    The original iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+
+    :param original: A pointer to a qdb_const_iterator structure that has been previously been initialized.
+    :type iterator: qdb_const_iterator *
+    :param copy: A pointer to a qdb_const_iterator structure to which the iterator should be copied.
+    :type iterator: qdb_const_iterator *
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_iterator_close(qdb_const_iterator_t * iterator)
+
+    Releases all resources associated to the iterator.
+
+    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+
+    :param iterator: A pointer to a qdb_const_iterator structure that has been previously been initialized.
+    :type iterator: qdb_const_iterator *
+    :returns: An error code of type :c:type:`qdb_error_t`
