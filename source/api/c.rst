@@ -317,6 +317,7 @@ Actual teration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_iterat
     for(qdb_error_t err = qdb_iterator_begin(h, &it); err == qdb_e_ok; err = qdb_iterator_next(&it))
     {
         // work on entry
+        // it.content and it.content_size is the entry content
     }
 
     qdb_iterator_close(&it);
@@ -325,6 +326,7 @@ Actual teration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_iterat
     for(qdb_error_t err = qdb_iterator_rbegin(h, &it); err = qdb_e_ok; err = qdb_iterator_previous(&it))
     {
         // work on entry
+        // it.content and it.content_size is the entry content
     }
 
     qdb_iterator_close(&it);
@@ -831,9 +833,9 @@ Reference
     The original iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
 
     :param original: A pointer to a qdb_const_iterator structure that has been previously been initialized.
-    :type iterator: qdb_const_iterator *
+    :type original: qdb_const_iterator *
     :param copy: A pointer to a qdb_const_iterator structure to which the iterator should be copied.
-    :type iterator: qdb_const_iterator *
+    :type copy: qdb_const_iterator *
     :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_iterator_close(qdb_const_iterator_t * iterator)

@@ -145,10 +145,15 @@ Iteration on the cluster's entries can be done forward and backward.
 An STL-like iterator API is provided which is compatible with STL algorithms::
 
     // forward loop
-    std::for_each(h.begin(), h.end(), [](const qdb::const_iterator::value_type & v) { /* work on entry */ }));
+    std::for_each(h.begin(), h.end(), [](const qdb::const_iterator::value_type & v) 
+    {
+        // work on the entry
+        // v.first is an std::string refering to the entry's alias
+        // v.second is qdb::api_buffer_ptr with the entry's content
+    }));
 
     // backward loop
-    std::for_each(h.rbegin(), h.rend(), [](const qdb::const_reverse_iterator::value_type & v) { /* work on entry */ }));
+    std::for_each(h.rbegin(), h.rend(), [](const qdb::const_reverse_iterator::value_type & v) { /* work on the entry */ }));
 
 There is however a significant difference with regular STL iterators: since entries are accessed remotely, an error may prevent the next entry from being retrieved, in which case the iterator will be considered to have reached the "end" of the iteration.
 
