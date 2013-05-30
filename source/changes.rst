@@ -1,7 +1,7 @@
 Change log
 **********
 
-1.0.0 - "Zeno" - 05/31/2013
+1.0.0 - "Zeno" - 06/10/2013
 ===========================
 
 About
@@ -21,11 +21,11 @@ Changes in this version
     * API: New atomical conditional remove (remove_if) operation
     * API: New atomical get and remove (get_remove) operation
     * API: Can now iterate on entries
-    * Java API: Full JSR 107 Support
     * Daemon: Replica do not stay hot in memory to reduce memory usage
     * Daemon: Timeout for inter-node communications is now properly accounted on all platforms
     * Daemon: Fixed a race condition where a session could be freed twice during shutdown
     * Upgraded to TBB 4.1 update 3
+    * Upgraded to LevelDB 1.10
 
 0.7.4 - 03/18/2013
 ==================
