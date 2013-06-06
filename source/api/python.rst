@@ -89,11 +89,22 @@ Once the installation is complete, you must be able to import quasardb without a
 
 If you have a server up and running, you must be able to add and access entries::
 
-    >>> w = qdb.Client(qdb.RemoteNode("127.0.0.1"))
-    >>> w.put("entry", "content")
-    >>> print w.get("entry")
+    >>> c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    >>> c.put("entry", "content")
+    >>> print c.get("entry")
     content
     >>>
+
+Iteration
+---------
+
+Iteration is supported in pythonesque way::
+
+    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    for e in c:
+        print e
+
+Each entry will be automatically *pickled* as you iterate. It is currently not possible to specify the range of iteration: you can only iterate on all entries.
 
 Examples
 --------

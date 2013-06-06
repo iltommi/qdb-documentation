@@ -150,16 +150,16 @@ An STL-like iterator API is provided which is compatible with STL algorithms::
         // work on the entry
         // v.first is an std::string refering to the entry's alias
         // v.second is qdb::api_buffer_ptr with the entry's content
-    }));
+    });
 
     // backward loop
-    std::for_each(h.rbegin(), h.rend(), [](const qdb::const_reverse_iterator::value_type & v) { /* work on the entry */ }));
+    std::for_each(h.rbegin(), h.rend(), [](const qdb::const_reverse_iterator::value_type & v) { /* work on the entry */ });
 
 There is however a significant difference with regular STL iterators: since entries are accessed remotely, an error may prevent the next entry from being retrieved, in which case the iterator will be considered to have reached the "end" of the iteration.
 
-It is however possible to query the last error through the last_error() member function. The qdb_e_alias_not_found indicates the normal end of the iteration whereas other error status indicate that the iteration could not successfully complete. It is up to the programmer to decide what to do in case of error.
+It is however possible to query the last error through the last_error() member function. The qdb_e_alias_not_found indicates the normal end of the iteration whereas other error statuses indicate that the iteration could not successfully complete. It is up to the programmer to decide what to do in case of error.
 
-Iterators value is an std::pair<std::string, qdb::api_buffer_ptr> which makes the manipulation of iterator associated data safe in most scenarii. Associated ressources will be freed automatically through RAII.
+Iterators' value is a std::pair<std::string, qdb::api_buffer_ptr> which makes the manipulation of iterator associated data safe in most scenarii. Associated resources will be freed automatically through RAII.
 
 The iterator api may throw the std::bad_alloc exception should a memory allocation fail.
 
