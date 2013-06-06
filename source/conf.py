@@ -28,11 +28,11 @@ import sys, os
 extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.mathjax', 'sphinx.ext.autodoc']
 
 # crawl back to where the API is being built
+sys.path.insert(0, os.path.join(os.getcwd(), '..', 'qdb', 'api', 'python'))
+sys.path.insert(0, os.path.join(os.getcwd(), '..', 'qdb', 'api', 'python', 'qdb'))
+# one up extra for UNIX builds
 sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', 'qdb', 'api', 'python'))
 sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', 'qdb', 'api', 'python', 'qdb'))
-# one up extra for UNIX builds
-sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', '..', 'qdb', 'api', 'python'))
-sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', '..', 'qdb', 'api', 'python', 'qdb'))
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
