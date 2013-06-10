@@ -98,7 +98,7 @@ If you have a server up and running, you must be able to add and access entries:
 Iteration
 ---------
 
-Iteration is supported in pythonesque way::
+Iteration is supported in a pythonesque way::
 
     c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
     for e in c:

@@ -20,9 +20,6 @@ For specific information regarding the usage or the administration of a **quasar
 
 Is this documentation helpful? Let us know! (see :doc:`contact`).
 
-.. note::
-  This is a pre-release of the 1.0.0 documentation.
-
 Table of contents
 -----------------
 
