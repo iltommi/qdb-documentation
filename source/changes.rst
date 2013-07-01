@@ -1,6 +1,28 @@
 Change log
 **********
 
+1.0.1 - 07/01/2013
+==================
+
+About
+-----
+
+**This maintenance release includes an important security fix.**
+
+No new functionnality has been added.
+
+Changes in this version
+-----------------------
+
+    * Daemon: **security fix** Carefully crafted messages could cause the server to allocate an excessive amount of memory resulting in a denial of service
+    * Console: Fixed glitches introduced in 1.0.0
+    * API: The reported persisted size is now much more accurate
+    * Daemon: Greatly improved performance for all status APIs
+    * Daemon: Reworded some network error messages for clarity
+    * Daemon: Minor performance improvement (less than 5%) for requests smaller than 1 kiB
+    * Upgraded to TBB 4.1 update 4
+    * Upgraded to LevelDB 1.12
+
 1.0.0 - "Zeno" - 06/10/2013
 ===========================
 
