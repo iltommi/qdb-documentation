@@ -20,6 +20,7 @@ Changes in this version
     * Daemon: Greatly improved performance for all status APIs
     * Daemon: Reworded some network error messages for clarity
     * Daemon: Minor performance improvement (less than 5%) for requests smaller than 1 kiB
+    * Upgraded to Visual Studio 2012 Update 3
     * Upgraded to TBB 4.1 update 4
     * Upgraded to LevelDB 1.12
 
