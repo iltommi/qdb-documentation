@@ -33,6 +33,17 @@ Memory management
 
 A lot of calls allocate memory on the client side. For example, when you get an entry, the calls allocate a buffer large enough to hold the entry for you. In C, the memory needs to be explicitly released. In C++, Java and Python, this is not necessary as a memory management mechanism is included with the API.
 
+Expiry
+------
+
+Any entry within quasardb can have an expiry time. Once the expiry time is passed, the entry is removed and is no longer accessible. Through the API the expiry time precision is one second. Internally, quasardb clock resolution is operating system dependant, but often below 100 µs.
+
+Expiry time can either be absolute (with the number of seconds relative to epoch) or relative (with the number of seconds relative to when the call is made). To prevent an entry from expirying, one provides a 0 absolute time. By default entries never expire. Specifying an expiry in the past results in the entry being removed. 
+
+Modifying an entry in any way (via an update, removal, compare and swap operation...) resets the expiry to 0.
+
+All absolute expiry time are UTC and 64-bit large, meaning there is no practical limit to an expiry time.
+
 Iteration
 ---------
 

@@ -304,6 +304,49 @@ It is possible to configure the client-sidetimeout with the :c:func:`qdb_set_opt
 
 Currently running requests are not affected by the modification, only new requests will account the new timeout value. The default client-side timeout is one minute. Keep in mind that the server-side timeout might be shorter.
 
+Expiry
+-------
+
+Expiry is set with :c:func:`qdb_expires_at` and :c:func:`qdb_expires_from_now`. It is obtained with :c:func:`qdb_get_expiry_time`. Expiry time is always in second, either relative to epoch (January 1st, 1970 00:00 UTC) when using :c:func:`qdb_expires_at` or relative to the call time when using :c:func:`qdb_expires_from_now`.
+
+.. danger::
+    The behavior of :c:func:`qdb_expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
+
+To set the expiry time of an entry to 1 minute, relative to the call time::
+
+    char content[100];
+
+    // ...
+
+    r = qdb_put(handle, "myalias", content, sizeof(content));
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+    r = qdb_expires_from_now(handle, "myalias", 60);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+To prevent an entry from ever expiring:
+
+    r = qdb_expires_at(handle, "myalias", 0);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+By default, entries never expire. To obtain the expiry time of an existing entry:
+
+    qdb_time_t expiry_time = 0;
+    r = qdb_get_expiry_time(handle, "myalias", &expiry_time);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
 Iteration
 -----------
 
@@ -684,6 +727,51 @@ Reference
     :type comparand: const char *
     :param comparand_length: The length of the buffer, in bytes.
     :type comparand_length: size_t
+
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_expires_at(qdb_handle_t handle, const char * alias, qdb_time_t expiry_time)
+
+    Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry never expires.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+    :type alias: const char *
+    :param expiry_time: Absolute time after which the entry expires
+    :type expiry_time: :c:type:`qdb_time_t`
+
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_expires_from_now(qdb_handle_t handle, const char * alias, qdb_time_t expiry_delta)
+
+    Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry expires as soon as possible.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+    :type alias: const char *
+    :param expiry_time: Time in seconds, relative to the call time, after which the entry expires
+    :type expiry_time: :c:type:`qdb_time_t`
+
+    :returns: An error code of type :c:type:`qdb_error_t`
+
+.. c:function:: qdb_error_t qdb_get_expiry_time(qdb_handle_t handle, const char * alias, qdb_time_t * expiry_time)
+
+    Retrives the expiry time of an existing :term:`entry`. A value of zero means the entry never expires.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+    :type alias: const char *
+    :param expiry_time: A pointer to a qdb_time_t that will receive the absolute expiry time.
+    :type expiry_time: :c:type:`qdb_time_t` *
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
