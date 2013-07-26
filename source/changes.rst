@@ -1,8 +1,23 @@
 Change log
 **********
 
-1.0.1 - 08/01/2013
-==================
+1.1.0 - "Pythagoras" - 08/20/2013
+=================================
+
+About
+-----
+
+From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+   `Pythagoras of Samos <http://en.wikipedia.org/wiki/Pythagoras>`_ was an Ionian Greek philosopher, mathematician, and founder of the religious movement called Pythagoreanism. [...] Pythagoras made influential contributions to philosophy and religious teaching in the late 6th century BC. He is often revered as a great mathematician, mystic and scientist, but he is best known for the Pythagorean theorem which bears his name.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+
+1.0.1 - "Zeno" - 07/08/2013
+===========================
 
 About
 -----
@@ -14,6 +29,7 @@ No new functionnality has been added.
 Changes in this version
 -----------------------
 
+    * Protocol version: 13
     * Daemon: **security fix** Carefully crafted messages could cause the server to allocate an excessive amount of memory resulting in a denial of service
     * Console: Fixed glitches introduced in 1.0.0
     * API: The reported persisted size is now much more accurate
@@ -41,6 +57,7 @@ A big *thank you* to all our families, friends, partners and customers for their
 Changes in this version
 -----------------------
 
+    * Protocol version: 12
     * API: New atomical conditional remove (remove_if) operation
     * API: New atomical get and remove (get_remove) operation
     * API: Can now iterate on entries
