@@ -330,7 +330,7 @@ To set the expiry time of an entry to 1 minute, relative to the call time::
         // error management
     }
 
-To prevent an entry from ever expiring:
+To prevent an entry from ever expiring::
 
     r = qdb_expires_at(handle, "myalias", 0);
     if (r != qdb_error_ok)
@@ -338,7 +338,7 @@ To prevent an entry from ever expiring:
         // error management
     }
 
-By default, entries never expire. To obtain the expiry time of an existing entry:
+By default, entries never expire. To obtain the expiry time of an existing entry::
 
     qdb_time_t expiry_time = 0;
     r = qdb_get_expiry_time(handle, "myalias", &expiry_time);
@@ -496,6 +496,25 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
+.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * results_count)
+
+    Search the cluster for entries with the provided prefix. The function will return the list of matching aliases, but not the associated content.
+
+    The returned results must be freed with :c:func:`qdb_free_results`
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the prefix to use for the search
+    :type alias: const char *
+    :param results: A pointer to a const char ** that will receive an API allocated array of NULL terminated strings representing the list of matching aliases
+    :type results: const char ***
+    :param results_count: A pointer to a size_t that will receive the number of results
+    :type  results_count: size_t *
+
+    :returns: An error code of type :c:type:`qdb_error_t`
+
 .. c:function:: qdb_error_t qdb_get(qdb_handle_t handle, const char * alias, char * content, size_t * content_length)
 
     Retrieves an :term:`entry`'s content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
@@ -567,6 +586,17 @@ Reference
     :type buffer: char *
 
     :returns: This function does not return a value.
+
+.. c:function:: void qdb_free_results(qdb_handle_t handle, const char ** results, size_t results_count)
+
+    Frees a buffer allocated by :c:func:`qdb_prefix_get`.
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param results: A pointer to a buffer to release allocated by :c:func:`qdb_prefix_get`
+    :type results: const char **
+    :param results_count: The number of entries in results
+    :type results_count: size_t
 
 .. c:function:: qdb_error_t qdb_put(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
 
