@@ -507,11 +507,11 @@ Reference
     :param handle: An initialized handle
     :type handle: qdb_handle_t
     :param alias: A pointer to a null terminated string representing the prefix to use for the search
-    :type alias: const char *
+    :type alias: const char ``*``
     :param results: A pointer to a const char ** that will receive an API allocated array of NULL terminated strings representing the list of matching aliases
-    :type results: const char ***
+    :type results: const char ``***``
     :param results_count: A pointer to a size_t that will receive the number of results
-    :type  results_count: size_t *
+    :type  results_count: size_t ``*``
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
