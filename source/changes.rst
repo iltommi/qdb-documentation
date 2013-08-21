@@ -11,10 +11,21 @@ From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedi
 
    `Pythagoras of Samos <http://en.wikipedia.org/wiki/Pythagoras>`_ was an Ionian Greek philosopher, mathematician, and founder of the religious movement called Pythagoreanism. [...] Pythagoras made influential contributions to philosophy and religious teaching in the late 6th century BC. He is often revered as a great mathematician, mystic and scientist, but he is best known for the Pythagorean theorem which bears his name.
 
+This release brings major new features. quasardb now support prefix based research, configurable expiration and batch operations. These features are brought to you without compromising on performance or reliability.
+
 Changes in this version
 -----------------------
 
     * Protocol version: 14
+    * API: Support for prefix-based research
+    * API: Support for configurable expiration
+    * API: Support for batch operations (C/C++ only)
+    * API: Deprecated streaming API
+    * Daemon: Daemonization command switch on UNIXes
+    * Daemon: Clarified many error messages
+    * Daemon, web bridge: The HUP signal is now ignored on UNIXes
+    * FreeBSD: upgraded to Clang 3.3
+    * Upgraded to Boost 1.54.0
 
 1.0.1 - "Zeno" - 07/08/2013
 ===========================
