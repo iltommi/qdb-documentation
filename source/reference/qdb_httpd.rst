@@ -15,7 +15,7 @@ The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it lis
 
 Assuming a daemon that listens on the port 2836 on the machine 192.168.1.1, the command line is::
 
-    ./qdb_httpd --daemon=192.168.1.1:2836 &
+    ./qdb_httpd --daemon=192.168.1.1:2836 -d
 
 or on Windows::
 
@@ -58,6 +58,15 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To display the online help, type: ::
 
             qdb_httpd --help
+
+.. option:: -d, --daemonize
+
+    Runs the server as a daemon (UNIX only). In this mode, the process will fork and prevent console interactions. This is the recommended running mode for UNIX environments.
+
+    Example
+        To run as a daemon::
+
+            qdb_httpd -d
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 

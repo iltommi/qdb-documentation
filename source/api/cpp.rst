@@ -137,6 +137,12 @@ Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::c
 .. caution::
     The usage of :c:func:`qdb_close` with :cpp:class:`handle` object results in undefined behaviour.
 
+Prefix based search
+---------------------
+
+Batch operations
+-------------------
+
 Iteration
 -------------
 

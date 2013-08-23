@@ -24,6 +24,7 @@ Cheat sheet
  ===================================== ============================ =================== ============
  :option:`-h`                          display help                                         No
  :option:`--license-file`              specify license              qdb_license.txt         No
+ :option:`-d`                          daemonize                                            No
  :option:`-a`                          address to listen on         127.0.0.1:2836          No
  :option:`-s`                          max client sessions          2000                    No
  :option:`--partitions`                number of partitions         Variable                No
@@ -226,6 +227,18 @@ Instance specific
         Load the license from license.txt::
 
             qdbd --license-file=license.txt
+
+.. option:: -d, --daemonize
+
+    Runs the server as a daemon (UNIX only). In this mode, the process will fork and prevent console interactions. This is the recommended running mode for UNIX environments.
+
+    Example
+        To run as a daemon::
+
+            qdbd -d
+
+.. note::
+    Logging to the console is not allowed when running as a daemon.
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 

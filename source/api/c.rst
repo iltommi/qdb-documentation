@@ -190,95 +190,8 @@ Removing is done with the function :c:func:`qdb_remove`::
 The function fails if the entry does not exist.
 
 
-Streaming entries
---------------------
 
-It is often impractical to download very large entries at once. For these cases, a streaming API is available. For more information, see :doc:`../concepts/streaming`.
 
-Initializing streaming
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-One first start by creating a streaming handle from an existing quasardb handle::
-
-    qdb_stream_tracker_t trk;
-    qdb_error_t e = qdb_open_stream(h, alias_name, &trk);
-
-.. note::
-    The connection to the remote server must be done before initializing the streaming handle as the API will request information from the remote server.
-
-The stream tracker holds the streaming buffer and maintains information to properly stream data from the server::
-
-    typedef struct
-    {
-        qdb_handle_t handle;      /* [in] */
-        const void * token;         /* [in] */
-
-        const void * buffer;        /* [out] */
-        size_t buffer_size;         /* [out] */
-
-        size_t current_offset;      /* [out] */
-        size_t last_read_size;      /* [out] */
-
-        size_t entry_size;          /* [out] */
-    } qdb_stream_tracker_t;
-
-.. warning::
-    The streaming buffer is read only. Freeing or writing to the streaming buffer results in undefined behaviour.
-
-The buffer size can be adjusted with :c:func:`qdb_set_option` and the qdb_o_stream_buffer_size option. It accepts an integer representing the number of bytes the streaming buffer should have. The default size is 1 MiB. The buffer cannot be smaller than 1024 bytes or greater than 10 MiB. The buffer size must be adjusted **prior** to calling :c:func:`qdb_open_stream`.
-
-All streaming handles have a dedicated streaming buffer, it is therefore safe to stream from different handles at the same time. However, having many streaming handles open at the same time may result in an important memory usage.
-
-Streaming data from the server
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Once the streaming context is properly initialized, one may start streaming with :c:func:`qdb_get_stream`::
-
-    while(trk.current_offset < trk.entry_size)
-    {
-        e = qdb_get_stream(&trk);
-        if (e != qdb_e_ok)
-        {
-            // handle error
-            break;
-        }
-
-        // process content in trk.buffer
-        // the size of the data available in the buffer is last_read_size
-    }
-
-If the content you are streaming is being modified by another user, :c:func:`qdb_get_stream` will return qdb_e_conflict. If you attempt to stream beyond the end, the function will return qdb_e_out_of_bounds.
-
-After each call, the values in the streaming context are updated. 
-
-Seeking the stream
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-It might be desirable to go directly to a specific point in the stream. The user cannot update directly the qdb_stream_tracker_t structure as the values in the structure are ignored by the API (they are *write only* from the point of view of the API). To update the offset, one uses the :c:func:`qdb_set_stream_offset`::
-
-    // go directly to the 1024th byte in the stream
-    qdb_set_stream_offset(&trk, 1024);
-
-The offset must be within bounds. The user may refer to the entry_size member field of the qdb_stream_tracker_t to check that it is within bounds. 
-
-Closing the stream
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Once the last byte of the stream has been read, the user may:
-
-    * Rewind with :c:func:`qdb_set_stream_offset` or
-    * Close the stream
-
-Calling qdb_get_stream once the end of the stream has been reached will result in a qdb_e_out_of_bounds error.
-
-The stream is closed with :c:func:`qdb_close_stream`::
-
-    qdb_close_stream(&trk);
-
-Closing the stream will free the streaming buffer and release all resources needed to manage the stream. Not closing the stream will result in memory and resources leaks.
-
-.. warning::
-    Calling :c:func:`qdb_close` **does not** close all open streams. 
 
 Cleaning up
 --------------------
@@ -346,6 +259,14 @@ By default, entries never expire. To obtain the expiry time of an existing entry
     {
         // error management
     }
+
+Prefix based search
+--------------------
+
+
+
+Batch operations
+-----------------
 
 Iteration
 -----------

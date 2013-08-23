@@ -1,6 +1,9 @@
 Common principles
 =================
 
+.. cpp:namespace:: qdb
+.. highlight:: cpp
+
 All the API have been designed to be close the *way of thinking* of each programming language, but they share common principle. This chapter will give you a rapid overview of how the API works and the principles behind.
 
 Error management
@@ -47,11 +50,172 @@ All absolute expiry time are UTC and 64-bit large, meaning there is no practical
 Iteration
 ---------
 
-Iteration is unordered, that is, the order in which entries are returned is undefined. Every entry will be returned once: no entry may be returned twice.
+Iteration is unordered, that is, the order in which entries are returned is undetermined. Every entry will be returned once: no entry may be returned twice.
 
 If nodes become unavailable during the iteration, contents of those nodes may be skipped over, depending on the replication configuration of the cluster. 
 
 If it is impossible to recover from an error during the iteration, the iteration will prematurely stop. It is the caller's decision to try again or give up.
 
 The "current" state of the cluster is what is iterated upon, that is, no "snapshot" is made. If an entry is added during iteration it may, or may not, be included in the iteration, depending on its placement respective to the iteration cursor. It is planned to change this behaviour to allow "consistent" iteration in a future release.
+
+Prefix based search
+-------------------
+
+Introduction
+^^^^^^^^^^^^
+
+Quasardb enables you to access entries provided that you know the associated key. But what if you don't know the key? It is still possible to iterate on the whole cluster to list all entries but this is not very efficient.
+
+Fortunately, quasardb provides you with a prefix based search. This feature enables you to list all key based on a prefix, in other words, you can list all keys starting with a specified bytes sequence.
+
+This feature transforms quasardb into a hierarchical database, since with an appropriate naming scheme it is easy to group keys. 
+
+C++ Example
+^^^^^^^^^^^^^
+
+Let's say you want to store financial instruments values into quasardb. Imagine we have the following entries:
+
+    * instruments.forex.spot.usd.eur
+    * instruments.forex.spot.usd.cad
+    * instruments.debt.bond.mybound1
+    * instruments.equity.stock.mystock1
+
+In one query you can efficiently list all available forex spots for a given currency, all you have to do is the following::
+
+    // we assume a properly initialized qdb::handle named h
+    qdb_error_t err = qdb_e_uninitialized;
+    std::vector<std::string> usd_spots = h.prefix_get("instruments.forex.spot.usd.", err);
+    if (err != qdb_e_ok)
+    {
+        // error management
+        // ...
+    }
+
+`usd_spots` will contain the list of all keys (with their full name) starting with "instruments.forex.spot.usd.", in our case the list will contain:
+
+    * instruments.forex.spot.usd.eur
+    * instruments.forex.spot.usd.cad
+
+Once you have this list, it's easy to query the content.
+
+Limitations
+^^^^^^^^^^^^
+
+    * The client needs to have enough memory to allocate the results list
+    * The search prefix needs to be at least three bytes long
+    * It is not possible to list reserved entries (entries starting with "qdb")
+    * Once the list is returned, it may change as concurrent requests may add or remove entries that ought to be in the list
+
+Complexity
+^^^^^^^^^^^
+
+How fast is the query? The complexity isn't dependent on the number of entries in your cluster. Whether you have 1 billion entries or only two, the query runs in comparable time (if you set aside the memory management overhead which depends on the result's size).
+
+The complexity of the request is dependent on the number of nodes and the length of the key.
+
+Formally, if :math:`k` is the number of characters in the prefix, and :math:`n` the number of nodes in the cluster, the complexity is:
+
+.. math::
+    O(k.n)
+
+This means that run time grows linearly with the cluster size.
+
+.. note::
+    As of this writing, we are working on an improved version whose run time complexity will be:
+
+    .. math::
+        O(k.log(n))
+
+Summary
+^^^^^^^^^^^^^^^^
+
+Prefix-based search brings a lot of flexibility to quasardb, enabling you to organize your data into logical trees for efficient queries. Although the runtime performance is dependent on the cluster size, performance is excellent and an order of magnitude faster than iteration. Additionally, performance for large clusters will be greatly improved in future releases.
+
+Batch operations
+----------------
+
+Introduction
+^^^^^^^^^^^^^^
+
+If you have used quasardb to manage small entries (that is entries smaller than 1 kiB) you certainly have noticed that performance isn't as good as with larger entries. The reason for this is that whatever optimizations we might put into quasardb, every time you request the cluster, the request has to go through the network back and forth.
+
+Assuming that you have a 1 ms latency between the client and the server, if you want to query 1,000 entries sequentially it will take you at least 2 seconds, however small the entry might be, however large the bandwidth might be.
+
+Batch operations solve this problem by enabling you to group multiple queries into a single request. This grouping can speed up processing by several orders of magnitude.
+
+C++ Example
+^^^^^^^^^^^^
+
+How to query the content of many small entries at once? If we assume we have a vector of strings containing the entries named "entries" getting all entries is a matter of building the batch and running it::
+
+    // we assume the existence and correctness of std::vector<std::string> entries;
+    std::vector<qdb_operations_t> operations(entries.size());
+
+    std::transform(entries.begin(), entries.end(), operations.begin(), [](const std::string & str) -> qdb_operation_t
+    {
+        qdb_operation_t op;
+
+        // it is paramount that unused parameters are set to zero
+        memset(&op, 0, sizeof(op));
+        op.error = qdb_e_uninitialized; // this is optional
+        op.type = qdb_op_get_alloc; // this specifies the kind of operation we want
+        op.alias = str.c_str();
+
+        return op;
+    });
+
+    // we assume a properly initialized qdb::handle named h
+    size_t success_count = h.run_batch(&operations[0], operations.size());
+    if (success_count != operations.size())
+    {
+        // error management
+        // each operation will have its error member updated properly
+    }
+
+Each result is now available in the "result" structure member and its size is stored in the "result_size". This an API allocated buffer. Releasing all memory is done in the following way::
+
+    qdb_free_operations(h, &operations[0], operations.size());
+    operations.clear();
+
+Limitations
+^^^^^^^^^^^^
+
+    * The order in which operations in a batch are executed is undetermined
+    * Each operation in a batch is ACID, however the batch as a whole is neither ACID nor transactional
+    * Running a batch adds overhead. Using the batch API for small batches may therefore yield unsatisfactory performance
+
+Allowed operations
+^^^^^^^^^^^^^^^^^^^^
+
+Batches may contain any combination of gets, puts, updates, removes, compare and swaps, get and updates (atomic), get and removes (atomic) and conditional removes.
+
+.. warning::
+    Since the execution order is undetermined, it is strongly advised to avoid dependencies within a single batch. For performance reasons the API doesn't perform any semantic check.
+
+Error management
+^^^^^^^^^^^^^^^^^^
+
+Each operation receives a status, independent from other operations. If for some reason the cluster estimates that running the batch may be unsafe or unreliable, operations may be skipped and will have the qdb_e_skipped error code. This can also happen in case of a global error (unstable ring, low memory condition) or malformed batch.
+
+Complexity
+^^^^^^^^^^^^
+
+Batch operations have three stages:
+
+    1. Mapping - The API maps all operations to the proper nodes in making all necessary requests. This phase, although very fast, is dependant on the cluster size and has a worst case of three requests per node.
+    2. Dispatching - The API sends groups of operations in optimal packets to each node. This phase is only dependant on the size of the batch.
+    3. Reduction - Results from the cluster are received, checked and reduced. This phase is only dependant on the size of the batch.
+
+Formally, if you consider the first phase as a constant overhead, the complexity of batch operations, with :math:`i` being the number of operations inside a batch is:
+
+.. math::
+    O(i)
+
+.. note::
+    Because of the first phase, running batches that are smaller than three times the size of the cluster may not yield the expected performance improvement. For example, if you cluster is 10 nodes large, it is recommended to have batches of at least 30 operations.
+
+Summary
+^^^^^^^^^^
+
+Used properly, batch operations can turn around performance and enable you to process extremely fast large sets of small operations.
 
