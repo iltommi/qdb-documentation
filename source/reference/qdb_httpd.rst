@@ -15,11 +15,11 @@ The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it lis
 
 Assuming a daemon that listens on the port 2836 on the machine 192.168.1.1, the command line is::
 
-    ./qdb_httpd --daemon=192.168.1.1:2836 -d
+    ./qdb_httpd --node=192.168.1.1:2836 -d
 
 or on Windows::
 
-    qdb_httpd --daemon=192.168.1.1:2836
+    qdb_httpd --node=192.168.1.1:2836
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
@@ -108,20 +108,20 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --threads=2
 
-.. option:: --daemon <address>:<port>
+.. option:: --node <address>:<port>
 
-   Specifies the address and port of the daemon daemon to which the server will connect.
+   Specifies the address and port of the node to which the server will connect.
 
    Argument
-        The address and port of a machine where a quasardb daemon is running.
+        The address and port of a machine where a quasardb node is running.
 
    Default value
         127.0.0.0:2836, the IPv4 localhost address and the port 2836
 
    Example
-        If the daemon listen on the localhost and on the port 5009::
+        If the node listen on the localhost and on the port 5009::
 
-            qdb_httpd --daemon-port=localhost:5009
+            qdb_httpd --node=localhost:5009
 
 .. option:: -o, --log-console
 
