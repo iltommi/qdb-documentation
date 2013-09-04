@@ -76,7 +76,7 @@ Although one may use the handle object with the C API, methods are provided for 
 
     const char in_data[10];
 
-    qdb_error_t r = h.put("entry", in_data);
+    qdb_error_t r = h.put("entry", in_data, 0);
     if (r != qdb_e_ok)
     {
         // error management
@@ -136,6 +136,63 @@ Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::c
 
 .. caution::
     The usage of :c:func:`qdb_close` with :cpp:class:`handle` object results in undefined behaviour.
+
+Expiry
+-------
+
+Expiry is set with :cpp:func:`handle::expires_at` and :cpp:func:`expires_from_now`. It is obtained with :cpp:func:`handle::get_expiry_time`. Expiry time is always in second, either relative to epoch (January 1st, 1970 00:00 UTC) when using :cpp:func:`handle::expires_at` or relative to the call time when using :cpp:func:`expires_from_now`.
+
+.. danger::
+    The behavior of :c:func:`qdb_expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
+
+To set the expiry time of an entry to 1 minute, relative to the call time::
+
+    char content[100];
+
+    // ...
+
+    r = h.put("myalias", content, sizeof(content), 0);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+    r = h.expires_from_now("myalias", 60);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+Or alternatively::
+
+    char content[100];
+
+    // ...
+
+    // expiration can be set at creation, in which case it's atomic
+    r = h.put("myalias", content, sizeof(content), 60);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+To prevent an entry from ever expiring::
+
+    r = h.expires_at("myalias", 0);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+By default, entries never expire. To obtain the expiry time of an existing entry::
+
+    qdb_time_t expiry_time = 0;
+    r = h.get_expiry_time("myalias", &expiry_time);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
 
 Prefix based search
 ---------------------
@@ -287,7 +344,7 @@ Reference
 
         :returns: The number of successful connections.
 
-    .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length)
+    .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
         Adds an :term:`entry` to the quasardb server. If the entry already exists the method will fail and will return ``qdb_e_alias_already_exists``.
 
@@ -296,10 +353,11 @@ Reference
         :param alias: A pointer to a null terminated string representing the entry's alias to create.
         :param content: A pointer to a buffer that represents the entry's content to be added to the server.
         :param content_length: The length of the entry's content, in bytes.
+        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
 
         :returns: An error code of type :c:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_error_t update(const char * alias, const char * content, size_t content_length)
+    .. cpp:function:: qdb_error_t update(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
         Updates an :term:`entry` on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
@@ -308,6 +366,7 @@ Reference
         :param alias: A pointer to a null terminated string representing the entry's alias to update.
         :param content: A pointer to a buffer that represents the entry's content to be updated to the server.
         :param content_length: The length of the entry's content, in bytes.
+        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
 
         :returns: An error code of type :c:type:`qdb_error_t`
 
@@ -357,7 +416,7 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
 
         Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exists.
 
@@ -366,11 +425,12 @@ Reference
         :param alias: A pointer to a null terminated string representing the entry's alias to update.
         :param update_content: A pointer to a buffer that represents the entry's content to be updated to the server.
         :param update_content_length: The length of the buffer, in bytes.
+        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: api_buffer_ptr compare_and_swap(const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr compare_and_swap(const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, qdb_time_t expiry_time, qdb_error_t & error)
 
         Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
 
@@ -381,6 +441,7 @@ Reference
         :param new_value_length: The length of the buffer, in bytes.
         :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
         :param comparand_length: The length of the buffer, in bytes.
+        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
@@ -418,6 +479,62 @@ Reference
         :returns: An error code of type :c:type:`qdb_error_t`
 
         .. caution:: This function is meant for very specific use cases and its usage is discouraged.
+
+    .. cpp:function:: size_t run_batch(qdb_operation_t * operations, size_t operations_count)
+
+        Runs the provided operations in batch on the cluster. The operations are run in arbitrary order. 
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param operations: Pointer to an array of qdb_operations_t
+        :param operations_count: Size of the array, in entry count
+
+        :returns: The number of successful operations
+
+    .. cpp:function:: std::vector<std::string> prefix_get(const char * prefix, qdb_error_t & error)
+
+        Searches the cluster for all entries whose aliases start with "prefix". The method will return a std::vector of std::string containing the aliases of matching entries.
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param prefix: A pointer to a null terminated string representing the search prefix
+        :param error: A reference to an error that will receive the result of the operation.
+
+        :returns: A std::vector of std::string containing the aliases of matching entries.
+
+    .. cpp:function:: qdb_error_t expires_at(const char * alias, qdb_time_t expiry_time)
+
+        Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry never expires.
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
+        :param expiry_time: Absolute time after which the entry expires
+
+        :returns: An error code of type :c:type:`qdb_error_t`
+
+    .. cpp:function:: qdb_error_t expires_from_now(const char * alias, qdb_time_t expiry_delta)
+
+        Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry expires as soon as possible.
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
+        :param expiry_time: Time in seconds, relative to the call time, after which the entry expires
+        :type expiry_time: :c:type:`qdb_time_t`
+
+        :returns: An error code of type :c:type:`qdb_error_t`
+
+    .. cpp:function:: qdb_error_t get_expiry_time(const char * alias, qdb_time_t & expiry_time)
+
+        Retrieves the expiry time of an existing :term:`entry`. A value of zero means the entry never expires.
+
+        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be get.
+        :param expiry_time: A pointer to a qdb_time_t that will receive the absolute expiry time.
+
+        :returns: An error code of type :c:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t node_status(const qdb_remote_node_t & node, qdb_error_t & error)
 

@@ -120,7 +120,7 @@ There are two ways to add entries into the repository. You can use :c:func:`qdb_
 
     // ...
 
-    r = qdb_put(handle, "myalias", content, sizeof(content));
+    r = qdb_put(handle, "myalias", content, sizeof(content), 0);
     if (r != qdb_error_ok)
     {
         // error management
@@ -132,7 +132,7 @@ or you can use :c:func:`qdb_update`: ::
 
     // ...
 
-    r = qdb_update(handle, "myalias", content, sizeof(content));
+    r = qdb_update(handle, "myalias", content, sizeof(content), 0);
     if (r != qdb_error_ok)
     {
         // error management
@@ -190,9 +190,6 @@ Removing is done with the function :c:func:`qdb_remove`::
 The function fails if the entry does not exist.
 
 
-
-
-
 Cleaning up
 --------------------
 
@@ -231,13 +228,26 @@ To set the expiry time of an entry to 1 minute, relative to the call time::
 
     // ...
 
-    r = qdb_put(handle, "myalias", content, sizeof(content));
+    r = qdb_put(handle, "myalias", content, sizeof(content), 0);
     if (r != qdb_error_ok)
     {
         // error management
     }
 
     r = qdb_expires_from_now(handle, "myalias", 60);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+Or alternatively::
+
+    char content[100];
+
+    // ...
+
+    // expiration can be set at creation, in which case it's atomic
+    r = qdb_put(handle, "myalias", content, sizeof(content), 60);
     if (r != qdb_error_ok)
     {
         // error management
@@ -263,10 +273,99 @@ By default, entries never expire. To obtain the expiry time of an existing entry
 Prefix based search
 --------------------
 
+Prefix based search is a powerful tool that helps you lookup entries efficiently. 
 
+For example, if you want to find all entries whose aliases start with "record":
+
+    const char ** results = 0;
+    size_t results_count = 0;
+
+    r = qdb_prefix_get(handle, "record", &results, &results_count);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+    // you know have in results an array of null terminated strings
+    // representing the matching entries
+
+The function automatically alocates all required memory. This memory must be released by the caller at a later time::
+
+    qdb_free_results(handle, &results, &results_count);
 
 Batch operations
 -----------------
+
+Batch operations can greatly increase performance when it is required to run many small operations. Using properly the batch operations requires initializing, running and freeing and array of operations.
+
+The :c:func:`qdb_init_operations` ensures that the operations are properly reset before setting any value::
+
+    qdb_operations_t ops[3];
+    r = qdb_init_operations(ops, 3);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
+
+Once this is done, you can fill the array with the operations you would like to run. :c:func:`qdb_init_operations` just makes sure all the values have proper defaults::
+
+    // the first operation will be a get for "entry1"
+    ops[0].type = qdb_op_get_alloc;
+    ops[0].alias = "entry1";
+
+    // the second operation will be a get for "entry2"
+    ops[1].type = qdb_op_get_alloc;
+    ops[1].alias = "entry2";
+
+    char content[100];
+
+    // the third operation will be an update for "entry3"
+    ops[2].type = qdb_op_update;
+    ops[2].alias = "entry3";
+    ops[2].content = content;
+    ops[2].content_size = 100;
+
+You know have an operations batch that can be run on the cluster::
+
+    // runs the three operations on the cluster
+    size_t success_count = qdb_run_batch(handle, ops, 3);
+    if (success_count != 3)
+    {
+        // error management
+    }
+
+Note that the order in which operations are run is undefined. Error management with batch operations is a little bit more delicate than with other functions. :c:func:`qdb_run_batch` returns the number of successful operations. If this number is not equal to the number of submited operations, it means you have an error.
+
+The error field of each operation is updated to reflect its status. If it is not qdb_e_ok, an error occured.
+
+Let's imagine in our case we have an error, here is a possible error lookup code::
+
+    if (success_count != 3)
+    {
+        for(size_t i = 0; i < 3; ++i)
+        {
+            if (ops[i].error != qdb_e_ok)
+            {
+                // we have an error in this operation
+            }
+        }
+    }
+
+What you must do when in error is entirely dependent on your application. Now, in our case, there has been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
+
+    const char * entry1_content = op[0].result;
+    size_t entry1_size = op[0].result_size;
+
+    const char * entry2_content = op[1].result;
+    size_t entry2_size = op[1].result_size;
+
+The memory is API allocated and the caller must release it with a call to :c:func:`qdb_free_operations`. The call releases all buffers at once::
+
+    r = qdb_free_operations(ops, 3);
+    if (r != qdb_error_ok)
+    {
+        // error management
+    }
 
 Iteration
 -----------
@@ -519,7 +618,63 @@ Reference
     :param results_count: The number of entries in results
     :type results_count: size_t
 
-.. c:function:: qdb_error_t qdb_put(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
+.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * results_count)
+
+    Searches the cluster for all entries whose aliases start with "prefix". The function will allocate an array of strings countaining the aliases of matching entries. This array must be freed later with :c:func:`qdb_free_results`.
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param prefix: A pointer to a null terminated string representing the search prefix
+    :type prefix: const char *
+    :param results: A pointer to an array of results to be freed with :c:func:`qdb_free_results`
+    :type results: const char **
+    :param results_count: A pointer to a size_t that will received the number of results
+    :type results_count: size_t *
+
+    :returns: An error code of type :c:type:`qdb_error_t` 
+
+.. c:function:: qdb_error_t qdb_init_operations(qdb_operations_t * operations, size_t operations_count)
+
+    Initializes an array of operations to the default value, making its later usage safe.
+
+    :param operations: Pointer to an array of qdb_operations_t
+    :type operations: qdb_operations_t *
+    :param operations_count: Size of the array, in entry count
+    :type operations_count: size_t
+
+    :returns: An error code of type :c:type:`qdb_error_t` 
+
+.. c:function:: qdb_error_t qdb_run_batch(qdb_handle_t handle, qdb_operations_t * operations, size_t operations_count)
+
+    Runs the provided operations in batch on the cluster. The operations are run in arbitrary order. 
+
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param operations: Pointer to an array of qdb_operations_t
+    :type operations: qdb_operations_t *
+    :param operations_count: Size of the array, in entry count
+    :type operations_count: size_t
+
+    :returns: The number of successful operations
+
+.. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, size_t operations_count)
+
+    Releases all API-allocated memory by a :c:func:`qdb_run_batch` call. This function is safe to call even if the :c:func:`qdb_run_batch` didn't allocate any memory.
+
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param operations: Pointer to an array of qdb_operations_t
+    :type operations: qdb_operations_t *
+    :param operations_count: Size of the array, in entry count
+    :type operations_count: size_t
+
+    :returns: An error code of type :c:type:`qdb_error_t` 
+
+.. c:function:: qdb_error_t qdb_put(qdb_handle_t handle, const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time, qdb_time_t expiry_time)
 
     Adds an :term:`entry` to the quasardb server. If the entry already exists the function will fail and will return ``qdb_e_alias_already_exists``.
 
@@ -533,10 +688,12 @@ Reference
     :type content: const char *
     :param content_length: The length of the entry's content, in bytes.
     :type content_length: size_t
+    :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+    :type expiry_time: qdb_time_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_update(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
+.. c:function:: qdb_error_t qdb_update(qdb_handle_t handle, const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
     Updates an :term:`entry` on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
@@ -550,10 +707,12 @@ Reference
     :type content: const char *
     :param content_length: The length of the entry's content, in bytes.
     :type content_length: size_t
+    :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+    :type expiry_time: qdb_time_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_buffer_update(qdb_handle_t handle, const char * alias, const char * update_content, size_t update_content_length, char ** get_content, size_t * get_content_length)
+.. c:function:: qdb_error_t qdb_get_buffer_update(qdb_handle_t handle, const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, char ** get_content, size_t * get_content_length)
 
     Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exists.
 
@@ -567,6 +726,8 @@ Reference
     :type update_content: const char *
     :param update_content_length: The length of the buffer, in bytes.
     :type udpate_content_length: const char *
+    :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+    :type expiry_time: qdb_time_t
     :param get_content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content, before the update.
     :type get_content: char **
     :param get_content_length: A pointer to a size_t that will be set to the content's size, in bytes.
@@ -574,7 +735,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_compare_and_swap(qdb_handle_t handle, const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, char ** original_value, size_t * original_value_length)
+.. c:function:: qdb_error_t qdb_compare_and_swap(qdb_handle_t handle, const char * alias, const char * new_value, size_t new_value_length, const char * comparand, qdb_time_t expiry_time, size_t comparand_length, char ** original_value, size_t * original_value_length)
 
     Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
 
@@ -592,62 +753,12 @@ Reference
     :type comparand: const char *
     :param comparand_length: The length of the buffer, in bytes.
     :type comparand_length: size_t
+    :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+    :type expiry_time: qdb_time_t
     :param original_value: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's original content, before the update, if any.
     :type original_value: char **
     :param original_value_length: A pointer to a size_t that will be set to the content's size, in bytes.
     :type original_value_length: size_t *
-
-    :returns: An error code of type :c:type:`qdb_error_t`
-
-.. c:function:: qdb_error_t qdb_open_stream(qdb_handle_t handle, const char * alias, qdb_stream_tracker_t * stream_tracker)
-
-    Opens, allocates and initializes all resources necessary to stream the :term:`entry` from the server. The size of the streaming buffer is specified by the qdb_o_stream_buffer_size option (see :c:func:`qdb_set_option`).
-
-    The entry_size field of the stream_tracker structure will be updated to the total size, in bytes, of the entry on the remote server. The offset is initially set to 0.
-
-    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
-
-    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
-    :type handle: qdb_handle_t
-    :param alias: A pointer to a null terminated string representing the entry's alias to stream.
-    :type alias: const char *
-    :param stream_tracker: A pointer to a caller allocated structure that will receive the stream tracker handle and information.
-    :type stream_tracker: qdb_stream_tracker_t *
-
-    :returns: An error code of type :c:type:`qdb_error_t`
-
-.. c:function:: qdb_error_t qdb_get_stream(qdb_stream_tracker_t * stream_tracker)
-
-    Streams bytes from the buffer into the stream buffer. It will get at most as many bytes as the stream buffer may old, or the remainder if it cannot fill the stream buffer. 
-
-    It will stream at current_offset as informed in the stream_tracker structure. Note that, however, the api will ignore changes made by the user to this value and update it to the correct value when it returns from the call.
-
-    Once the end of the buffer has been reached, it must be either closed or rewound.
-
-    The stream_tracker structure must have been initialized by :c:func:`qdb_open_stream`.
-
-    :param stream_tracker: An initialized stream handle (see :c:func:`qdb_open_stream`).
-    :type stream_tracker: qdb_stream_tracker_t *
-
-    :returns: An error code of type :c:type:`qdb_error_t`
-
-.. c:function:: qdb_error_t qdb_set_stream_offset(qdb_stream_tracker_t * stream_tracker, size_t new_offset)
-
-    Sets the streaming offset to the value specified by new_offset, in bytes. The offset may not point at or beyond the end of the :term:`entry`.
-
-    :param stream_tracker: An initialized stream handle (see :c:func:`qdb_open_stream`).
-    :type stream_tracker: qdb_stream_tracker_t *
-    :param new_offset: The offset to stream from, in bytes.
-    :type new_offset: size_t
-
-    :returns: An error code of type :c:type:`qdb_error_t`
-
-.. c:function:: qdb_error_t qdb_close_stream(qdb_stream_tracker_t * stream_tracker)
-
-    Closes the stream and frees all allocated resources. 
-
-    :param stream_tracker: An initialized stream handle (see :c:func:`qdb_open_stream`).
-    :type stream_tracker: qdb_stream_tracker_t *
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
@@ -689,7 +800,7 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+    :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
     :type alias: const char *
     :param expiry_time: Absolute time after which the entry expires
     :type expiry_time: :c:type:`qdb_time_t`
@@ -704,7 +815,7 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+    :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
     :type alias: const char *
     :param expiry_time: Time in seconds, relative to the call time, after which the entry expires
     :type expiry_time: :c:type:`qdb_time_t`
@@ -713,13 +824,13 @@ Reference
 
 .. c:function:: qdb_error_t qdb_get_expiry_time(qdb_handle_t handle, const char * alias, qdb_time_t * expiry_time)
 
-    Retrives the expiry time of an existing :term:`entry`. A value of zero means the entry never expires.
+    Retrieves the expiry time of an existing :term:`entry`. A value of zero means the entry never expires.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+    :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be get.
     :type alias: const char *
     :param expiry_time: A pointer to a qdb_time_t that will receive the absolute expiry time.
     :type expiry_time: :c:type:`qdb_time_t` *

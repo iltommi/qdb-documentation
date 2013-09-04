@@ -43,7 +43,7 @@ Any entry within quasardb can have an expiry time. Once the expiry time is passe
 
 Expiry time can either be absolute (with the number of seconds relative to epoch) or relative (with the number of seconds relative to when the call is made). To prevent an entry from expirying, one provides a 0 absolute time. By default entries never expire. Specifying an expiry in the past results in the entry being removed. 
 
-Modifying an entry in any way (via an update, removal, compare and swap operation...) resets the expiry to 0.
+Modifying an entry in any way (via an update, removal, compare and swap operation...) resets the expiry to 0 if no expiry is specified.
 
 All absolute expiry time are UTC and 64-bit large, meaning there is no practical limit to an expiry time.
 
@@ -68,7 +68,7 @@ Quasardb enables you to access entries provided that you know the associated key
 
 Fortunately, quasardb provides you with a prefix based search. This feature enables you to list all key based on a prefix, in other words, you can list all keys starting with a specified bytes sequence.
 
-This feature transforms quasardb into a hierarchical database, since with an appropriate naming scheme it is easy to group keys. 
+This feature transforms quasardb into a hierarchical database, since with an appropriate naming scheme it becomes possible to group keys. 
 
 C++ Example
 ^^^^^^^^^^^^^
@@ -80,7 +80,7 @@ Let's say you want to store financial instruments values into quasardb. Imagine 
     * instruments.debt.bond.mybound1
     * instruments.equity.stock.mystock1
 
-In one query you can efficiently list all available forex spots for a given currency, all you have to do is the following::
+In one query you can efficiently list all available forex spots for a given currency::
 
     // we assume a properly initialized qdb::handle named h
     qdb_error_t err = qdb_e_uninitialized;
