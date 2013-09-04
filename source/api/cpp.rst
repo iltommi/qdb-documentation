@@ -143,7 +143,7 @@ Expiry
 Expiry is set with :cpp:func:`handle::expires_at` and :cpp:func:`expires_from_now`. It is obtained with :cpp:func:`handle::get_expiry_time`. Expiry time is always in second, either relative to epoch (January 1st, 1970 00:00 UTC) when using :cpp:func:`handle::expires_at` or relative to the call time when using :cpp:func:`expires_from_now`.
 
 .. danger::
-    The behavior of :c:func:`qdb_expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
+    The behavior of :cpp:func:`expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
 
 To set the expiry time of an entry to 1 minute, relative to the call time::
 
@@ -158,19 +158,6 @@ To set the expiry time of an entry to 1 minute, relative to the call time::
     }
 
     r = h.expires_from_now("myalias", 60);
-    if (r != qdb_error_ok)
-    {
-        // error management
-    }
-
-Or alternatively::
-
-    char content[100];
-
-    // ...
-
-    // expiration can be set at creation, in which case it's atomic
-    r = h.put("myalias", content, sizeof(content), 60);
     if (r != qdb_error_ok)
     {
         // error management
@@ -197,8 +184,25 @@ By default, entries never expire. To obtain the expiry time of an existing entry
 Prefix based search
 ---------------------
 
+Prefix based search is a powerful tool that helps you lookup entries efficiently. 
+
+For example, if you want to find all entries whose aliases start with "record"::
+
+    qdb_error_t err = qdb_e_uninitialized;
+    std::vector<std::string> results = h.prefix_get("record", err);
+    if (err != qdb_e_ok)
+    {
+        // error management
+    }
+
+    // you now have in results an array string representing the matching entries
+
+The method takes care of allocating all necessary intermerdiate buffers. The caller does not need to do any explicit memory release.
+
 Batch operations
 -------------------
+
+Batch operations are used similarly as in C, except a method :cpp:func:`handle::run_batch` is provided for convenience.
 
 Iteration
 -------------

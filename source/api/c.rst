@@ -240,19 +240,6 @@ To set the expiry time of an entry to 1 minute, relative to the call time::
         // error management
     }
 
-Or alternatively::
-
-    char content[100];
-
-    // ...
-
-    // expiration can be set at creation, in which case it's atomic
-    r = qdb_put(handle, "myalias", content, sizeof(content), 60);
-    if (r != qdb_error_ok)
-    {
-        // error management
-    }
-
 To prevent an entry from ever expiring::
 
     r = qdb_expires_at(handle, "myalias", 0);
@@ -275,7 +262,7 @@ Prefix based search
 
 Prefix based search is a powerful tool that helps you lookup entries efficiently. 
 
-For example, if you want to find all entries whose aliases start with "record":
+For example, if you want to find all entries whose aliases start with "record"::
 
     const char ** results = 0;
     size_t results_count = 0;
@@ -286,7 +273,7 @@ For example, if you want to find all entries whose aliases start with "record":
         // error management
     }
 
-    // you know have in results an array of null terminated strings
+    // you now have in results an array of null terminated strings
     // representing the matching entries
 
 The function automatically alocates all required memory. This memory must be released by the caller at a later time::

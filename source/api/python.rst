@@ -95,6 +95,37 @@ If you have a server up and running, you must be able to add and access entries:
     content
     >>>
 
+Expiry
+------
+
+Expiry is either set at creation or through the :py:func:`qdb.Client.expires_at` and :py:func:`qdb.Client.expires_from_now` methods.
+
+.. danger::
+    The behavior of :py:func:`qdb.Client.expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
+
+To set the expiry time of an entry to 1 minute, relative to the call time::
+
+    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    c.put("entry", "content")
+    c.expires_from_now("entry", 60)
+
+To set the expiry time of an entry to January, 1st 2020::
+
+    c.put("entry", "content")
+    c.expires_at("entry", datetime.datetime(year=2020, month=1, day=1))
+
+Or alternatively::
+
+    c.put("entry", "content", datetime.datetime(year=2020, month=1, day=1))
+
+To prevent an entry from ever expiring::
+
+    c.expires_at("entry", None);
+
+By default, entries never expire. To obtain the expiry time of an existing entry as a :py:class:`datetime.datetime` object::
+
+    expiry = c.get_expiry_time("entry")
+
 Iteration
 ---------
 
