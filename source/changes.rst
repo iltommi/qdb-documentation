@@ -1,7 +1,7 @@
 Change log
 **********
 
-1.1.0 - "Pythagoras" - 08/20/2013
+1.1.0 - "Pythagoras" - 09/16/2013
 =================================
 
 About
@@ -21,11 +21,26 @@ Changes in this version
     * API: Support for configurable expiration
     * API: Support for batch operations (C/C++ only)
     * API: Deprecated streaming API
-    * Daemon: Daemonization command switch on UNIXes
+    * Upgraded to LevelDB 1.13
+
+1.0.1 SR1 - "Zeno" - 09/11/2013
+===============================
+
+About
+-----
+
+This version is 100 % compatible with quasardb 1.0.1 "Zeno" and only includes important fixes. 
+
+Changes in this version
+-----------------------
+
+    * Windows API: *reliability fix* The unability to securely generate an unique path could result in an ungraceful failure of qdb_open
     * Daemon: Clarified many error messages
+    * Daemon, web bridge: Daemonization command switch on UNIXes
     * Daemon, web bridge: The HUP signal is now ignored on UNIXes
     * FreeBSD: upgraded to Clang 3.3
     * Upgraded to Boost 1.54.0
+
 
 1.0.1 - "Zeno" - 07/08/2013
 ===========================
