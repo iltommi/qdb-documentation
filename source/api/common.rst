@@ -41,9 +41,9 @@ Expiry
 
 Any entry within quasardb can have an expiry time. Once the expiry time is passed, the entry is removed and is no longer accessible. Through the API the expiry time precision is one second. Internally, quasardb clock resolution is operating system dependant, but often below 100 µs.
 
-Expiry time can either be absolute (with the number of seconds relative to epoch) or relative (with the number of seconds relative to when the call is made). To prevent an entry from expirying, one provides a 0 absolute time. By default entries never expire. Specifying an expiry in the past results in the entry being removed. 
+Expiry time can either be absolute (with the number of seconds relative to epoch) or relative (with the number of seconds relative to when the call is made). To prevent an entry from expiring, one provides a 0 absolute time. By default entries never expire. Specifying an expiry in the past results in the entry being removed. 
 
-Modifying an entry in any way (via an update, removal, compare and swap operation...) resets the expiry to 0 if no expiry is specified.
+Modifying an entry in any way (via an update, removal, compare and swap operation...) resets the expiry to 0 unless otherwise specified.
 
 All absolute expiry time are UTC and 64-bit large, meaning there is no practical limit to an expiry time.
 
@@ -66,7 +66,7 @@ Introduction
 
 Quasardb enables you to access entries provided that you know the associated key. But what if you don't know the key? It is still possible to iterate on the whole cluster to list all entries but this is not very efficient.
 
-Fortunately, quasardb provides you with a prefix based search. This feature enables you to list all key based on a prefix, in other words, you can list all keys starting with a specified bytes sequence.
+Fortunately, quasardb provides you with a prefix based search. This feature enables you to list all keys based on a prefix, in other words, you can list all keys starting with a specified bytes sequence.
 
 This feature transforms quasardb into a hierarchical database, since with an appropriate naming scheme it becomes possible to group keys. 
 

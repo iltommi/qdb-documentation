@@ -58,6 +58,9 @@ The daemon
 
 The heart of quasardb is the daemon (see :doc:`../reference/qdbd`) whose executable name is "qdbd" . This executable does not require any privilege to function. Starting up quasardb is merely a matter of running the daemon.
 
+.. note::
+    On UNIXes it is advised to use the `--daemonize` switch to run the server in the background.
+
 By default, logging is disabled. It is advised to - at the very least - log to a file. The daemon does not keep a lock on the logging file, enabling you to rotate log files as you see fit.
 
 Data is by default persisted to a directory named "db" relative to the run directory. You can change this directory or simply disable persistence altogether.
@@ -68,6 +71,9 @@ The web bridge
 ^^^^^^^^^^^^^^^^
 
 The web bridge (see :doc:`../reference/qdb_httpd`) - whose executable name is "qdb_httpd" - enables you to remotely monitor the node via HTTP requests and access the monitoring console.
+
+.. note::
+    On UNIXes it is advised to use the `--daemonize` switch to run the server in the background.
 
 One web bridge should be run by daemon. The web bridge does not need to run on the same node than the daemon, however, a bridge can only be bound to one daemon at the time.
 

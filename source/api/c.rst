@@ -283,7 +283,7 @@ The function automatically alocates all required memory. This memory must be rel
 Batch operations
 -----------------
 
-Batch operations can greatly increase performance when it is required to run many small operations. Using properly the batch operations requires initializing, running and freeing and array of operations.
+Batch operations can greatly increase performance when it is necessary to run many small operations. Using properly the batch operations requires initializing, running and freeing and array of operations.
 
 The :c:func:`qdb_init_operations` ensures that the operations are properly reset before setting any value::
 
@@ -312,7 +312,7 @@ Once this is done, you can fill the array with the operations you would like to 
     ops[2].content = content;
     ops[2].content_size = 100;
 
-You know have an operations batch that can be run on the cluster::
+You now have an operations batch that can be run on the cluster::
 
     // runs the three operations on the cluster
     size_t success_count = qdb_run_batch(handle, ops, 3);
@@ -321,7 +321,7 @@ You know have an operations batch that can be run on the cluster::
         // error management
     }
 
-Note that the order in which operations are run is undefined. Error management with batch operations is a little bit more delicate than with other functions. :c:func:`qdb_run_batch` returns the number of successful operations. If this number is not equal to the number of submited operations, it means you have an error.
+Note that the order in which operations run is undefined. Error management with batch operations is a little bit more delicate than with other functions. :c:func:`qdb_run_batch` returns the number of successful operations. If this number is not equal to the number of submited operations, it means you have an error.
 
 The error field of each operation is updated to reflect its status. If it is not qdb_e_ok, an error occured.
 
@@ -338,7 +338,9 @@ Let's imagine in our case we have an error, here is a possible error lookup code
         }
     }
 
-What you must do when in error is entirely dependent on your application. Now, in our case, there has been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
+What you must do when in error is entirely dependent on your application. 
+
+In our case, there has been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
 
     const char * entry1_content = op[0].result;
     size_t entry1_size = op[0].result_size;
@@ -359,7 +361,7 @@ Iteration
 
 Iteration on the cluster's entries can be done forward and backward. One initializes the iterator with :c:func:`qdb_iterator_begin` or :c:func:`qdb_iterator_rbegin` depending on whether one would want to start from the first entry or the last entry.
 
-Actual teration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_iterator_previous`. Once completed, the iterator should be freed with :c:func:`qdb_iterator_close`::
+Actual iteration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_iterator_previous`. Once completed, the iterator should be freed with :c:func:`qdb_iterator_close`::
 
     qdb_const_iterator_t it;
 
@@ -395,9 +397,9 @@ Reference
 
     A structure to represent a remote node with an associated error status updated by the last API call, unless the structure is passed as constant.
 
-.. c:type:: qdb_stream_tracker_t
+.. c:type:: qdb_operation_t
 
-    A structure used to track a stream state. 
+    A structure to represent an operation request with an associated error status updated by the last API call.
 
 .. c:type:: qdb_error_t
 
@@ -516,7 +518,7 @@ Reference
     :param alias: A pointer to a null terminated string representing the prefix to use for the search
     :type alias: const char ``*``
     :param results: A pointer to a const char ** that will receive an API allocated array of NULL terminated strings representing the list of matching aliases
-    :type results: const char ``***``
+    :type results: const char ``*````*````*``
     :param results_count: A pointer to a size_t that will receive the number of results
     :type  results_count: size_t ``*``
 

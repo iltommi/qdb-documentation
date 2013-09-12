@@ -275,9 +275,7 @@ Instance specific
 
 .. note::
     The sessions count determines the number of simultaneous clients the server may handle at any given time.
-    Increasing the value increases the memory load. The total number of sessions depends on the number of partitions.
-    If you have two partitions and 2,000 sessions per partitions, then the total number of sessions is 4,000.
-    Values below 50 are ignored.
+    Increasing the value increases the memory load. This value may be limited by your license.
 
 .. option:: --partitions=<count>
 
@@ -295,10 +293,7 @@ Instance specific
             qdbd --partitions=10
 
 .. note::
-    The number of partitions directly impacts the server scalability. If this number is too low, scalability will be
-    negatively impacted. If this number is too high respective to the capabilities of the server, performances will be
-    negatively impacted.
-    By default the daemon attemps to compute a good values, but in some scenarii this value may be invalid.
+    This value should be changed only in case of problem.
 
 .. option:: --idle-duration=<duration>
 

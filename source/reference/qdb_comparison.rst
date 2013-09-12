@@ -18,9 +18,15 @@ Usage scenarii
 Supported protocols
 ======================
 
-The tool can be used to benchmark a memcached server, a redis server or a quasardb server. It can also create a virtual "local" server to test the local machine memory bandwidth.
+The tool can be used to benchmark on servers supporting the following protocols (in alphabetical order):
 
-The local server can help identify memory-related bottlenecks or abnormal allocator behavior.
+ * aerospike
+ * local
+ * memcached
+ * quasardb
+ * redis
+
+The local protocol creates a virtual "local" server to test the local machine memory bandwidth. This can help identify memory-related bottlenecks or abnormal allocator behavior.
 
 Benchmark script
 ====================
@@ -98,7 +104,7 @@ Parameters reference
     Specifies the protocol to use.
 
     Argument
-        A string representing the name of the protocol to use. Supported values are local, memcached, redis and quasardb.
+        A string representing the name of the protocol to use. Supported values are aerospike, local, memcached, quasardb and redis.
 
     Default value
         quasardb

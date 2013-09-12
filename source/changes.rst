@@ -34,6 +34,7 @@ This version is 100 % compatible with quasardb 1.0.1 "Zeno" and only includes im
 Changes in this version
 -----------------------
 
+    * Protocol version: 13
     * Windows API: *reliability fix* The unability to securely generate an unique path could result in an ungraceful failure of qdb_open
     * Daemon: Clarified many error messages
     * Daemon, web bridge: Daemonization command switch on UNIXes
