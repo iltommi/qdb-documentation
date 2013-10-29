@@ -4,19 +4,19 @@ Performance tuning
 Rule of thumb
 -------------
 
-    * Pageins - If you see a lot of pageins, it means you should allocate more physical memory to the daemon (see :doc:`../reference/qdbd`)
-    * Physical memory usage - If physical memory usage is too high (the node swaps), you will need to either reduce the memory usage of the daemon, add more memory to the node or add more nodes to the cluster
+    * Pageins - If you see a lot of pageins, it means you should allocate more physical memory to the daemon (see :doc:`../reference/qdbd`).
+    * Physical memory usage - If physical memory usage is too high (the node swaps), you will need to either reduce the memory usage of the daemon, add more memory to the node or add more nodes to the cluster.
     * Disk usage - If the disk is full, the quasardb node will refuse to serve requests resulting in failures and performance drop. The disk may be full for two reasons:
-        * The database takes too much space: either clean up the database, increase disk space or add more nodes to your cluster. Also ensure that your users don't "forget" to remove entries.
+        * The database takes up too much space: either clean up the database, increase disk space or add more nodes to your cluster. Also ensure that your users don't "forget" to remove entries.
         * The log files take too much space: clean up the log and archive them on a different node.
     * CPU usage - If your cpu usage is too high, you will need to add more nodes to your cluster.
-    * Network I/O - If you network bandwidth is saturated on one or several nodes, you will need to add more nodes to your cluster.
+    * Network I/O - If your network bandwidth is saturated on one or several nodes, you will need to add more nodes to your cluster.
 
-Recommandations
+Recommendations
 ---------------
 
-    * The more RAM the better -- For small clusters, it's less expensive to add RAM to every node than to add new nodes.
-    * Homogenous nodes configuration make it easier to diagnose performance issues.
+    * The more RAM the better. For small clusters, it's less expensive to add RAM to every node than to add new nodes.
+    * Homogenous node configurations make it easier to diagnose performance issues.
     * A quasardb cluster can be very network intensive. Make sure you have the network infrastructure the handle the load.
     * Don't be afraid to add nodes. It's simple and safe.
 

@@ -7,15 +7,15 @@ Principles
 Server
 -------
 
-At the heart of many design and technology decisions of quasardb lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, it uses a combination of asynchronous I/O, lock-free containers and parallel processing.
+At the heart of many quasardb design and technology decisions lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, quasardb uses a combination of asynchronous I/O, lock-free containers and parallel processing.
 
 As of now, the server can serve as many concurrent requests as the operating system and the underlying hardware permit. 
 
-The server will make sure that requests do not conflict with each other. It will spread the load on the entire processing power available, if need be.
+The server will make sure that requests do not conflict with each other. It will spread the load across the entire processing power available, if need be.
 
 The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
 
-Multiple clients can simultaneously access the same entry for reading. The server will however ensure that only one client accesses an entry for writing at any time.
+Multiple clients can simultaneously access the same entry for reading. The server will ensure that only one client accesses an entry for writing at any time.
 
 Multiple clients can simultaneously access different entries for reading and writing.
 
@@ -45,12 +45,12 @@ A notable exception to the ACID guarantees is streaming (see :doc:`streaming`).
 Conflicts resolution
 =====================================================
 
-When a conflict may occur?
+When may a conflict occur?
 ---------------------------
 
 When executing a series of requests, each request is atomic, consistent, isolated and durable (ACID) and the requests will be executed in the given order.
 
-For example, if a client adds an entry and later gets it, the get is guaranteed to succeed if the add was successful (unless an external error occurs such as a low memory condition, a hardware or power failure, an operating system fault, etc.).
+For example, if a client adds an entry and later gets it, the get is guaranteed to succeed if the add was successful (unless an external error occurs, such as a low memory condition, a hardware or power failure, an operating system fault, etc.).
 
 For example:
 
@@ -68,7 +68,7 @@ From the point of view of quasardb, everything is perfectly valid and coherent, 
 How to use the API to avoid conflicts
 --------------------------------------
 
-Conflicts arise when the **usage is not carefully thought out**. It's a client's design problem, not a server problem.
+Conflicts arise when **client usage is not carefully thought out**. Conflicts are a client's design problem, not a server problem.
 
 On one hand it does not make sense to have clients simultaneously update the same entry and expect the value to be coherent. quasardb could leave it as is and require the client to have a coherent usage scenario.
 

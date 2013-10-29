@@ -5,7 +5,7 @@ What is quasardb?
 -----------------
 
 quasardb is a key / value store. It is fast and scalable, handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a `NoSQL database <http://en.wikipedia.org/wiki/NoSQL>`_.
-quasardb is *limitless*. If your computer has got enough memory and enough disk space, quasardb can handle it.
+quasardb is *limitless*. If your computer has enough memory and enough disk space to store it, quasardb can handle it.
 
 Where would you want to use quasardb? Here are a couple of use cases:
 
@@ -18,23 +18,34 @@ Where would you want to use quasardb? Here are a couple of use cases:
 Shall we dance?
 ---------------
 
-Deploying quasardb is running a :term:`server`. That's just one program to launch, :doc:`reference/qdbd`::
+To start the quasardb :term:`server`, simply run the :doc:`reference/qdbd` from a terminal, passing it your license file:: 
 
-    ./qdbd &
+    $ ./qdbd --license-file="./qdb_license.txt" &
 
-Now that the server is ready, you can add anything that crosses your mind into it. For example with :doc:`reference/qdb_shell`::
+Now that the server is running, you can begin storing anything that crosses your mind into the database. Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
 
-    qdbsh put entry amazing...
-    qdbsh get entry
+    $ ./qdbsh put entry amazing...
+    $ ./qdbsh get entry
     amazing...
 
-Oh well, that was not very original. Let's stress the engine a bit more! We'll add a whole directory named "directory" to it::
+Now let's store the number of files in a folder, based on the output of a shell command::
 
-    tar cf - directory | gzip -9 | qdbsh update entry
+    $ ./qdbsh put num_files $(ls -1 | wc -l)
+    $ ./qdbsh get num_files
+    7
 
-And later, we can extract it a such::
+Oh well, that was not very exciting. Let's stress the engine a bit more! We will zip up a whole directory and overwrite the entry key's value (previously "amazing..." using shell pipes::
 
-    qdbsh get entry | gzip -cd | tar x -
+    $ tar czf - ./directory | ./qdbsh update entry
+
+And later, we can extract that directory::
+
+    $ ./qdbsh get entry | tar -xz ./
+
+Or just export the tar.gz file::
+
+    $ ./qdbsh get entry > directory.tar.gz
+
 
 But, wait, there's more!
 ------------------------

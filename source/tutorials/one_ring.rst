@@ -23,7 +23,7 @@ It is assumed we have a network of three machines: 192.168.1.1, 192.168.1.2 and 
 
      qdbd -a 192.168.1.2:2836 --peer=192.168.1.1:2836 -l qdbd2.log --root=./instance2
 
-#. Run an instance on the second machine, and indicate that its peer is the first machine::
+#. Run an instance on the third machine, and indicate that its peer is the first machine::
 
      qdbd -a 192.168.1.3:2836 --peer=192.168.1.1:2836 -l qdbd3.log --root=./instance3
 

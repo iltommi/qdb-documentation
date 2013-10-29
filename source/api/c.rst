@@ -77,12 +77,12 @@ Note that we could have used the IP address instead: ::
 Of course for the above to work the server needs to listen on an IPv6 address.
 
 .. note::
-    When you call :c:func:`qdb_open` and :c:func:`qdb_connect` a lot of initialization and systems calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the handle alive for the whole program lifetime.
+    When you call :c:func:`qdb_open` and :c:func:`qdb_connect` a lot of initialization and system calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the same handle alive for the lifetime of the program.
 
 Connecting to multiple nodes within the same cluster
 ------------------------------------------------------
 
-Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that it is advised to use :c:func:`qdb_multi_connect` which takes an array of qdb_remote_node_t as input and output. Each entry of the array with be updated with an error status reflecting the success or failure of the operation for this specific entry. The call, as a whole, will succeed as long as one connection within the list was successful established::
+Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to use :c:func:`qdb_multi_connect` which takes an array of qdb_remote_node_t as input and output. Each entry of the array with be updated with an error status reflecting the success or failure of the operation for this specific entry. The call, as a whole, will succeed as long as one connection within the list was successful established::
 
     qdb_remote_node_t remote_nodes[3];
 
@@ -201,23 +201,22 @@ When you are done working with a quasardb repository, call :c:func:`qdb_close`::
 
 .. note ::
 
-    Avoid opening and closing connections needlessly. A handle consumes very little memory and resources. It is safe to keep it open for the whole duration of
-    your program.
+    Avoid opening and closing connections needlessly. A handle consumes very little memory and resources. It is safe to keep it open for the duration of your program.
 
 Timeout
 -------
 
-It is possible to configure the client-sidetimeout with the :c:func:`qdb_set_option`::
+It is possible to configure the client-side timeout with the :c:func:`qdb_set_option`::
 
     // sets the timeout to 5000 ms
     qdb_set_option(h, qdb_o_operation_timeout, 5000);
 
-Currently running requests are not affected by the modification, only new requests will account the new timeout value. The default client-side timeout is one minute. Keep in mind that the server-side timeout might be shorter.
+Currently running requests are not affected by the modification, only new requests will use the new timeout value. The default client-side timeout is one minute. Keep in mind that the server-side timeout might be shorter.
 
 Expiry
 -------
 
-Expiry is set with :c:func:`qdb_expires_at` and :c:func:`qdb_expires_from_now`. It is obtained with :c:func:`qdb_get_expiry_time`. Expiry time is always in second, either relative to epoch (January 1st, 1970 00:00 UTC) when using :c:func:`qdb_expires_at` or relative to the call time when using :c:func:`qdb_expires_from_now`.
+Expiry is set with :c:func:`qdb_expires_at` and :c:func:`qdb_expires_from_now`. It is obtained with :c:func:`qdb_get_expiry_time`. Expiry time is always passed in as seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :c:func:`qdb_expires_at` or relative to the call time when using :c:func:`qdb_expires_from_now`.
 
 .. danger::
     The behavior of :c:func:`qdb_expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
@@ -273,10 +272,10 @@ For example, if you want to find all entries whose aliases start with "record"::
         // error management
     }
 
-    // you now have in results an array of null terminated strings
+    // results now contains an array of null terminated strings
     // representing the matching entries
 
-The function automatically alocates all required memory. This memory must be released by the caller at a later time::
+The qdb_prefix_get function automatically allocates all required memory. This memory must be released by the caller at a later time::
 
     qdb_free_results(handle, &results, &results_count);
 
@@ -294,7 +293,7 @@ The :c:func:`qdb_init_operations` ensures that the operations are properly reset
         // error management
     }
 
-Once this is done, you can fill the array with the operations you would like to run. :c:func:`qdb_init_operations` just makes sure all the values have proper defaults::
+Once this is done, you can fill the array with the operations you would like to run. :c:func:`qdb_init_operations` makes sure all the values have proper defaults::
 
     // the first operation will be a get for "entry1"
     ops[0].type = qdb_op_get_alloc;
@@ -321,7 +320,7 @@ You now have an operations batch that can be run on the cluster::
         // error management
     }
 
-Note that the order in which operations run is undefined. Error management with batch operations is a little bit more delicate than with other functions. :c:func:`qdb_run_batch` returns the number of successful operations. If this number is not equal to the number of submited operations, it means you have an error.
+Note that the order in which operations run is undefined. Error management with batch operations is a little bit more delicate than with other functions. :c:func:`qdb_run_batch` returns the number of successful operations. If this number is not equal to the number of submitted operations, it means you have an error.
 
 The error field of each operation is updated to reflect its status. If it is not qdb_e_ok, an error occured.
 
@@ -338,9 +337,9 @@ Let's imagine in our case we have an error, here is a possible error lookup code
         }
     }
 
-What you must do when in error is entirely dependent on your application. 
+What you must do when an error occurs is entirely dependent on your application. 
 
-In our case, there has been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
+In our case, there have been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
 
     const char * entry1_content = op[0].result;
     size_t entry1_size = op[0].result_size;
@@ -403,7 +402,7 @@ Reference
 
 .. c:type:: qdb_error_t
 
-    An enum representing possible error codes returned by the API functions. "No error" evaluates to 0. When the error is qdb_e_system, errno or GetLastError (depending on the platform) is updated to the corresponding system error.
+    An enum representing possible error codes returned by the API functions. "No error" evaluates to 0. When the error is qdb_e_system, either errno or GetLastError (depending on the platform) will be updated with the corresponding system error.
 
 .. c:type:: qdb_option_t
 
@@ -419,9 +418,9 @@ Reference
 
     :param error: An error code 
     :type error: qdb_error_t
-    :param message: A pointer to a buffer that will received the translated error message.
+    :param message: A pointer to a buffer that will receive the translated error message.
     :type message: char *
-    :param message_length: The length of the buffer that will received the translated error message, in bytes.
+    :param message_length: The length of the buffer that will receive the translated error message, in bytes.
     :type message_length: size_t
     :returns: The pointer to the buffer that received the translated error message.
 
@@ -479,7 +478,7 @@ Reference
 
 .. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, qdb_remote_node_t * servers, size_t count)
 
-    Bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within. The function returns the number of successful
+    Bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within the cluster. The function returns the number of successful
     unique connections. If the same node (address and port) is present several times in the input array, it will count as only one successful 
     connection.
 
@@ -609,7 +608,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * results_count)
 
-    Searches the cluster for all entries whose aliases start with "prefix". The function will allocate an array of strings countaining the aliases of matching entries. This array must be freed later with :c:func:`qdb_free_results`.
+    Searches the cluster for all entries whose aliases start with "prefix". The function will allocate an array of strings containing the aliases of matching entries. This array must be freed later with :c:func:`qdb_free_results`.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -619,7 +618,7 @@ Reference
     :type prefix: const char *
     :param results: A pointer to an array of results to be freed with :c:func:`qdb_free_results`
     :type results: const char **
-    :param results_count: A pointer to a size_t that will received the number of results
+    :param results_count: A pointer to a size_t that will receive the number of results
     :type results_count: size_t *
 
     :returns: An error code of type :c:type:`qdb_error_t` 
@@ -652,7 +651,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, size_t operations_count)
 
-    Releases all API-allocated memory by a :c:func:`qdb_run_batch` call. This function is safe to call even if the :c:func:`qdb_run_batch` didn't allocate any memory.
+    Releases all API-allocated memory by a :c:func:`qdb_run_batch` call. This function is safe to call even if :c:func:`qdb_run_batch` didn't allocate any memory.
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
@@ -703,7 +702,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_get_buffer_update(qdb_handle_t handle, const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, char ** get_content, size_t * get_content_length)
 
-    Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exists.
+    Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exist.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -726,7 +725,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_compare_and_swap(qdb_handle_t handle, const char * alias, const char * new_value, size_t new_value_length, const char * comparand, qdb_time_t expiry_time, size_t comparand_length, char ** original_value, size_t * original_value_length)
 
-    Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
+    Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always returns the original value of the entry.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -791,7 +790,7 @@ Reference
     :type handle: qdb_handle_t
     :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
     :type alias: const char *
-    :param expiry_time: Absolute time after which the entry expires
+    :param expiry_time: Absolute time after which the entry expires, in seconds, relative to epoch
     :type expiry_time: :c:type:`qdb_time_t`
 
     :returns: An error code of type :c:type:`qdb_error_t`
@@ -830,7 +829,7 @@ Reference
 
     Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
-    This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code. 
+    This call is **not** atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code. 
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -900,8 +899,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_stop_node(qdb_handle_t handle, const qdb_remote_node_t * node, const char * reason)
 
-    Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued, enabling inflight calls
-    to complete successfully.
+    Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued, enabling inflight calls to complete successfully.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -909,7 +907,7 @@ Reference
     :type handle: qdb_handle_t
     :param node: A pointer to a qdb_remote_node_t structure designating the node to stop
     :type node: const qdb_remote_node_t *
-    :param reason: A pointer to a null terminated string detailling the reason for the stop that will appear in the remote node's log.
+    :param reason: A pointer to a null terminated string detailing the reason for the stop that will appear in the remote node's log.
     :type reason: const char *
     :returns: An error code of type :c:type:`qdb_error_t`
 
@@ -917,7 +915,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_begin(qdb_handle_t handle, qdb_const_iterator *iterator)
 
-    Initializes an iterator and make it point to the first entry in the cluster. Iteration is unordered. If no entry is found, the function wil return qdb_e_alias_not_found.
+    Initializes an iterator and make it point to the first entry in the cluster. Iteration is unordered. If no entry is found, the function will return qdb_e_alias_not_found.
 
     The iterator must be released with a call to :c:func:`qdb_iterator_close`.
 
@@ -931,7 +929,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_rbegin(qdb_handle_t handle, qdb_const_iterator *iterator)
 
-    Initializes an iterator and make it point to the last entry in the cluster. Iteration is unordered. If no entry is found, the function wil return qdb_e_alias_not_found.
+    Initializes an iterator and make it point to the last entry in the cluster. Iteration is unordered. If no entry is found, the function will return qdb_e_alias_not_found.
 
     The iterator must be released with a call to :c:func:`qdb_iterator_close`.
 
@@ -945,7 +943,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_next(qdb_const_iterator_t * iterator)
 
-    Updates the iterator to point to the next available entry in the cluster. Iteration is unordered. If no other entry is available, the function wil return qdb_e_alias_not_found.
+    Updates the iterator to point to the next available entry in the cluster. Iteration is unordered. If no other entry is available, the function will return qdb_e_alias_not_found.
 
     The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
 
@@ -955,7 +953,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_previous(qdb_const_iterator_t * iterator)
 
-    Updates the iterator to point to the previous available entry in the cluster. Iteration is unordered. If no other entry is available, the function wil return qdb_e_alias_not_found.
+    Updates the iterator to point to the previous available entry in the cluster. Iteration is unordered. If no other entry is available, the function will return qdb_e_alias_not_found.
 
     The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
 
@@ -965,7 +963,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_copy(const qdb_const_iterator_t * original,  qdb_const_iterator_t * copy)
 
-    Copies the state of the original iterator to a new iterator. Both iterators can afterward be independtly operated.
+    Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated.
 
     The iterator copy must be released with a call to :c:func:`qdb_iterator_close`.
 
@@ -979,7 +977,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_close(qdb_const_iterator_t * iterator)
 
-    Releases all resources associated to the iterator.
+    Releases all resources associated with the iterator.
 
     The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
 

@@ -4,7 +4,7 @@ Network protocol
 Description
 =====================================================
 
-A client needs to know the address of only one node within the cluster to access the whole. The only requirement is that the node needs to be fully joined. A node needs only a couple of minutes after startup to be fully joined.
+A client only needs to know the address of one node within the cluster. However, in order to access entries within the cluster, the node must be fully joined. Usually a node is fully joined within a few minutes of startup. For more information, see :doc:`./distribution`.
 
 When a request is made, an ID is computed from the alias (with the `SHA-3 <http://en.wikipedia.org/wiki/Skein_(hash_function)>`_ algorithm) and the ring is explored to find the proper node. If the ring cannot be explored because it's too unstable, the client will return an "unstable" error code (see :ref:`fault-tolerance`).
 

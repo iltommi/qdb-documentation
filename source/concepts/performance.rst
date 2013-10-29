@@ -18,16 +18,14 @@ Network I/O are done asynchronously for maximum performance. Most of the I/O fra
 Memory management
 =====================================================
 
-quasardb uses various custom memory allocators that are multithread-friendly. The most important optimization is that allocations are reduced to the minimum and that the stack is used whenever possible.
-
-If the allocation cannot be avoided, the zero-copy architecture makes sure no cycle is wasted duplicating data, unless it causes contention.
+quasardb uses custom memory allocators that are multithread-friendly. Whenever possible, quasardb allocates memory on the stack rather than on the heap. If a heap allocation cannot be avoided, quasardb's zero-copy architecture makes sure no cycle is wasted duplicating data, unless it causes data contention.
 
 Measuring performance
 ==================================
 
 The only way to properly configure your cluster is to measure performance. 
 
-The comparison tool can be used to create a wide range of test scenarii. It understands the quasardb protocol as well as the memcached and the redis protocol (see :doc:`../reference/qdb_comparison`).
+The quasardb comparison tool can be used to create a wide range of test scenarii. It understands the quasardb protocol as well as the memcached and the redis protocol (see :doc:`../reference/qdb_comparison`).
 
 
 

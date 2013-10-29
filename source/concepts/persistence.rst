@@ -6,11 +6,11 @@ Principle
 
 Persistence is done using `LevelDB <http://code.google.com/p/leveldb/>`_. All software that is LevelDB compatible can process the quasardb persistence layer.
 
-Entries are stored "as is", unmodified. The quasardb technology ensures that the most frequent entries stay in memory in a way that allows the serving of a very large amount of simultaneous requests (see :doc:`concurrency`).
+Entries are stored "as is", unmodified. The quasardb ensures that the most frequently access entries stay in memory so it can rapidly serve a large amount of simultaneous requests (see :doc:`concurrency`).
 
 All entries are persisted to disk as they are added and updated. When a put or add request has been processed, it is guaranteed that the persistence layer has fully acknowledged the modification. 
 
-The persistence layer may compress data for efficiency purposes. This is transparent to the client and never done to the detriment of performances.
+The persistence layer may compress data for efficiency purposes. This is transparent to the client and never done to the detriment of performance.
 
 By default, the persistence layer uses a write cache to increase performance, but this can be disabled (see :doc:`../reference/qdbd`). When the write cache is disabled, the server will not return from a put or update request until the entry is acknowledged by the file system.
 

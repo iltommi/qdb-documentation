@@ -181,8 +181,8 @@ Changes in this version
     * Client API: New streaming API (C only)
     * Client API: New compare and swap operation (C only)
     * Client API: "remove all" is no longer experimental
-    * Daemon: Faster lookup on hives with more than 20 nodes
-    * Daemon: Faster stabilization on hives with more than 5 nodes
+    * Daemon: Faster lookup on clusters with more than 20 nodes
+    * Daemon: Faster stabilization on clusters with more than 5 nodes
     * Daemon: Automatically detects the best memory eviction threshold (can be overriden)
     * Daemon: changed the default port from 5909 to 2836 (can be overriden)
     * Java API: Fixed invalid method name (delete instead of remove)
