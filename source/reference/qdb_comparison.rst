@@ -114,6 +114,21 @@ Parameters reference
 
             qdb_comparison --protocol=memcached
 
+.. option:: --threads=<threads>
+
+    Specifies the number of threads to run the test. This duplicates the amount of testing by the number of threads. This function is helpful to simulate multiple clients from a single test instance.
+
+    Argument
+        An integer between 1 and 100 representing the number of threads to use.
+
+    Default value
+        1
+
+    Example
+        Run the test two times in two separate threads::
+
+            qdb_comparison --threads=2
+
 .. option:: -f <path>, --test-file=<path>
 
     The test script to run.

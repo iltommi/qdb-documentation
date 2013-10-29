@@ -1,6 +1,29 @@
 Change log
 **********
 
+1.1.1 - "Pythagoras" - ??/??/2013
+=================================
+
+About
+-----
+
+This maintenance release comes with many new features and performance improvements. It is fully compatible with release 1.1.0.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+    * Daemon: various optimizations to reduce latency
+    * Comparison tool: support for multithreaded benchmarks
+    * C/C++ API: Added client-side logging
+    * C++ API: Batch and prefix operations can now be chained
+    * Java API: Support for batch operations
+    * Java API: Support for expiry
+    * Python API: Support for batch operations
+    * Upgraded to LevelDB 1.14
+    * Upgraded to TBB 4.2
+    * Upgraded to Boost 1.55.0
+
 1.1.0 - "Pythagoras" - 09/16/2013
 =================================
 
