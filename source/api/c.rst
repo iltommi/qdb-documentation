@@ -385,6 +385,61 @@ Actual iteration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_itera
 .. note::
     Although each entry is returned only once, the order in which entries are returned is undefined.
 
+
+Logging
+----------
+
+It can be useful, for debugging and information purposes, to obtain all logs. The C API provides access to the internal log system through a callback which is called each time the API has to log something.
+
+.. warning::
+    Improper usage of the logging API can seriously affect the performance and the reliability of the quasardb API. Make sure your logging callback is as simple as possible.
+
+The thread and context in which the callback is called is undefined and the developer should not assume anything about the memory layout. However, calls to the callback are not concurrent: the user only has to take care of thread safety in the context of its application. In other words, **calls are serialized**.
+
+Logging is asynchronous, however buffers are flushed when :c:func:`qdb_close` is successfully called.
+
+The callback profile is the following::
+
+     void qdb_log_callback(const char * log_level,
+                           const unsigned long * date,  // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
+                           unsigned long pid,           // process id
+                           unsigned long tid,           // thread id
+                           const char * message_buffer,  // message buffer (valid only in the context of the callback)
+                           size_t message_size);        // message buffer size
+
+
+The parameters passed to the callback are:
+
+    * *log_level:* a null-terminated string describing the log level for the message. The possible log levels are: detailed, debug, info, warning, error and panic. The string is static and valid as long as the dynamic library remains loaded in memory.
+    * *date:* an array of six unsigned longs describing the timestamp of the log message. They are ordered as such: year, month, day, hours, minutes, seconds. The time is in 24h format.
+    * *pid:* the process id of the log message.
+    * *tid:* the thread id of the log message.
+    * *message_buffer:* a null-terminated buffer that is valid only in the context of the callback. 
+    * *message_size:* the size of the buffer, in bytes.
+
+Here is a callback example::
+
+     void my_log_callback(const char * log_level,
+                          const unsigned long * date,  // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
+                          unsigned long pid,           // process id
+                          unsigned long tid,           // thread id
+                          const char * message_buffer,  // message buffer (valid only in the context of the callback)
+                          size_t message_size)
+    {
+        // will print to the console the log message, e.g.
+        // 12/31/2013-23:12:01 debug: here is the message
+        // note that you don't have to use all provided information, only use what you need!
+        printf("%02d/%02d/%04d-%02d:%02d:%02d %s: %s", date[1], date[2], date[0], date[3], date[4], date[5], log_level, message_buffer);
+    }
+
+Setting the callback is done with :c:func:`qdb_set_option`::
+
+    qdb_set_option(handle, qdb_o_log_callback, my_log_callback);
+
+.. warning::
+    It is not possible to unregister a log callback. Multiple calls to :c:func:`qdb_set_option` will result in several callbacks being registered. Registering the same callback multiple times results in undefined behaviour. 
+
+
 Reference
 ----------------
 
