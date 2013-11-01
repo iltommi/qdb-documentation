@@ -149,6 +149,24 @@ Iteration is supported in a pythonesque way::
 
 Each entry will be automatically *pickled* as you iterate. It is currently not possible to specify the range of iteration: you can only iterate on all entries.
 
+Batch operations
+----------------
+
+A batch is run by providing the run_batch method with an array of :py:class:`qdb.BatchRequest`::
+
+    requests = [ qdb.BatchRequest(qdb.Operations.get_alloc, "my_entry1"), qdb.BatchRequest(qdb.Operations.get_alloc, "my_entry2") ]
+
+    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    successes, results = c.run_batch(requests)
+
+The run_batch method returns a couple. The left member is the number of successful operations and the right member is an array of :py:class:`qdb.BatchResult`. For example to get the content for the first entry::
+
+    mycontent1 = results[0].result
+
+The error member of each :py:class:`qdb.BatchResult` is updated to reflect the success of the operation. If the success count returned by run_batch isn't equal to the number of requests, the error field of each entry can be inspected to isolate the faulty requests.
+
+All batchable operations are supported in Python, namely:  get (get_alloc), put, update, remove, compare and swap (cas), get and update (get_update), get and remove (get_remove) and conditional remove (remove_if).
+
 Examples
 --------
 
