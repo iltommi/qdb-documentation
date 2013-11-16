@@ -15,7 +15,7 @@ In :ref:`non-interactive mode <qdbsh-noninteractive-mode>`, a single command - s
 Cheat sheet
 ===========
 
-By default qdbsh will attempt to connect to a qdbd running on the same machine and listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will run qdbsh as such::
+By default qdbsh will attempt to connect to a qdbd running on the same machine, listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will need to set the --daemon parameter as shown below::
 
     qdbsh --daemon=192.168.1.1:303
 
@@ -42,7 +42,7 @@ Commands
  :ref:`get <qdbsh_get>`                get a piece of data
  :ref:`put <qdbsh_put>`                put data, fails if entry already exists
  :ref:`update <qdbsh_update>`          put data, replace existing entry if any
- :ref:`get_update <qdbsh_getupdate>`   atomically get and udpdate an existing entry if any
+ :ref:`get_update <qdbsh_getupdate>`   atomically get and update an existing entry if any
  :ref:`cas <qdbsh_cas>` atomically     compare and swap an entry in case of match
  :ref:`remove <qdbsh_del>`             remove given entry
  :ref:`remove_all <qdbsh_removeall>`   remove all entries
@@ -61,7 +61,8 @@ As soon as qdbsh is properly initialized, the following prompt is displayed::
     qdbsh:ok >
 
 This means the shell is ready to accept commands. Only one command at a time may be specified.
-It is executed as soon as enter is pressed and cannot be canceled or roll-backed.
+
+**A command is executed as soon as Enter is pressed and cannot be canceled or rolled back.**
 
 To exit the shell, enter the command ``exit``. To list the available commands, type ``help``.
 For the list of supported commands, see :ref:`qdbsh-commands-reference`
@@ -69,7 +70,7 @@ For the list of supported commands, see :ref:`qdbsh-commands-reference`
 If the command is expected to output content on success (such as the get command), it will be printed on the standard output stream.
 Keep in mind though, that binary content may not be correctly printed and may even corrupt your terminal display.
 
-When the last command has been successfully executed, the prompt will stay::
+When the last command has been successfully executed, the prompt will show::
 
     qdbsh:ok >
 
@@ -103,7 +104,7 @@ Performance-wise, non-interactive mode implies establishing and closing a connec
 
 The command to be executed is supplied as a parameter to the shell. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
 
-As for interactive, mode, the server and port to which to connect is specified with the :option:`--daemon` parameter. Only one command may be specified per run.
+As it is in interactive mode, the server and port is specified with the :option:`--daemon` parameter. Only one command may be specified per run.
 
 When successful, the result of the command will be printed on the standard output stream and the shell will exit with the code 0. Most commands produce no output when successful (silent success).
 
@@ -112,14 +113,14 @@ In case of error, the shell will output an error message on the standard error o
 Examples
 --------
 
-Unless otherwise specified, the server is listening on the port 2836 on the localhost.
+Unless otherwise specified, qdbsh assumes the server is running on localhost and on the port 2836.
 
 Save the content of an entry named "biography" in a text file named "biography.txt"::
 
     qdbsh get biography > biography.txt
 
 
-Compress a file named "myfile" and add its content to an entry named "myfile" to a quasardb server deployed on 192.168.1.1: ::
+Compress a file named "myfile", then add its content to an entry named "myfile" on the quasardb server at 192.168.1.1: ::
 
     bzip2 -c myfile | qdbsh --server=192.168.1.1 put myfile
 
@@ -144,7 +145,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --daemon <address>:<port>
 
-   Specifies the address and port of the daemon daemon on which the shell will connect.
+   Specifies the address and port of the quasardb daemon on which the shell will connect.
    Either a DNS name, an IPv4 or an IPv6 address.
 
    Argument
@@ -154,7 +155,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         127.0.0.0:2836, the IPv4 localhost address and the port 2836
 
    Example
-        If the daemon listen on the localhost and on the port 3001::
+        If the daemon is on localhost and listens on port 3001::
 
             qdbsh --daemon=localhost:3001
 
@@ -168,7 +169,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. _qdbsh_help:
 .. option:: help
 
-    Displays basic usage information and list all available commands.
+    Displays basic usage information and lists all available commands.
 
 .. _qdbsh_get:
 .. option:: get <alias>
@@ -279,7 +280,7 @@ A command generally requires one or several arguments. Each argument is separate
     *Example*
         Removes an entry named "obsolete"::
 
-            del obsolete
+            remove obsolete
 
 .. _qdbsh_removeall:
 .. option:: remove_all

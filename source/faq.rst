@@ -86,7 +86,7 @@ Yes, we have a special license for this case. Contact us for more information, s
 Do I need a licence to write a client?
 ======================================
 
-No license is required to write a quasardb client, but the software's documentation and credits must state the following "this software features quasardb, a Bureau 14 technology. All rights reserved.".
+No license is required to write a quasardb client, but the software's documentation and credits must state the following: "This software features quasardb, a Bureau 14 technology. All rights reserved."
 
 A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
 
@@ -119,7 +119,7 @@ Is quasardb open source?
 
 We want to open source as much as we can of quasardb in the form of packaged libraries.
 
-You can find `the open sourced code on github <https://github.com/bureau14/open_lib>`_ under a three-clauses BSD license. 
+You can find `the open sourced code on github <https://github.com/bureau14/open_lib>`_ under a three-clauses BSD license.
 
 Does quasardb use open source libraries?
 ========================================

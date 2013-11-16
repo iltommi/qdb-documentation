@@ -28,9 +28,9 @@ Interfacing with the cluster
 
 To function properly, the web server must know the address and port of the target quasardb daemon. This is all that is needed!
 
-The web bridge is extremly flexible:
+The web bridge is extremely flexible:
 
- * There is no launch order. The cluster can be started after the web server and vice versa.
+ * There is no launch order. The cluster can be started after the web server or vice versa.
  * The web server can be stopped and started at any time without any information loss.
  * The content provided by the web server is *real time*.
 
@@ -73,7 +73,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Specifies the address and port on which the server will listen.
 
     Argument
-        A string representing one address the server listens on and a port. The string can be a host name or an IP address.
+        A string representing an address and port the server should listen on. The string can be a host name or an IP address.
 
     Default value
         127.0.0.1:8080, the IPv4 localhost and the port 8080
@@ -110,22 +110,22 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --node <address>:<port>
 
-   Specifies the address and port of the node to which the server will connect.
+   Specifies the address and port of the node to which the http server will connect.
 
    Argument
-        The address and port of a machine where a quasardb node is running.
+        The address and port of a machine where a quasardb node is running. The string can be a host name or an IP address.
 
    Default value
         127.0.0.0:2836, the IPv4 localhost address and the port 2836
 
    Example
-        If the node listen on the localhost and on the port 5009::
+        If the node listens on localhost and the port 5009::
 
             qdb_httpd --node=localhost:5009
 
 .. option:: -o, --log-console
 
-    Activates logging on the console.
+    Activates logging to the console.
 
 .. option:: -l <path>, --log-file=<path>
 
@@ -215,7 +215,7 @@ URL reference
         }
 
     *Example*:
-        Get the entry with the alias ``MyData`` from the server ``myserver.org listening`` on the port 8080::
+        Get the entry with the alias ``MyData`` from the server ``myserver.org`` listening on the port 8080::
 
             http://myserver.org:8080/get?alias=MyData
 
@@ -707,7 +707,7 @@ URL reference
         }
 
     *Example*:
-        Regular JSON output from the server myserver.org listening on the port 8080::
+        Regular JSON output from the server ``myserver.org`` listening on the port 8080::
 
             http://myserver.org:8080/global_status
 

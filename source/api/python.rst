@@ -10,7 +10,7 @@ The `qdb` module includes two client implementations.
 
 The :py:class:`qdb.Client` class uses the standard :py:mod:`pickle` module to serialize your objects to and from the `quasardb` cluster.
 
-If you want to manipulate your data directly using strings or binary buffers, you should rather use the :py:class:`qdb.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `quasardb` cluster. This may improve performance but most of all enables you to have a cross-languages data approach.
+If you want to manipulate your data directly using strings or binary buffers, you should use the :py:class:`qdb.RawClient` class. This class does not perform any transformation on the data and will store it "as is" on the `quasardb` cluster. This may improve performance but most of all enables you to have a cross-language data approach.
 
 The API is BSD licensed.
 
@@ -32,7 +32,7 @@ Windows
 
 Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to download the installer and follow the on-screen instructions.
 
-You need to download the version matching your Python architecture, not the OS. For example, you may have installed Python 2.7 32-bit on a Windows 64-bit 
+You need to download the version matching your Python architecture, not the OS. For example, you may have installed Python 2.7 32-bit on a Windows 64-bit
 platform, in which case you must get the Python 32-bit quasardb package.
 
 If you have a different Python version or if you want to recompile the extension, download the source package.
@@ -64,7 +64,7 @@ or::
 GCC 4.6.0 or later is required to build the extension. You can specify the compiler with the following command::
 
     setenv CC gcc46
-    python setup.py build 
+    python setup.py build
 
 Provided that g++46 is the name of your GCC 4.6 compiler.
 
@@ -129,7 +129,7 @@ By default, entries never expire. To obtain the expiry time of an existing entry
 Prefix based search
 ---------------------
 
-Prefix based search is a powerful tool that helps you lookup entries efficiently. 
+Prefix based search is a powerful tool that helps you lookup entries efficiently.
 
 For example, if you want to find all entries whose aliases start with "record"::
 

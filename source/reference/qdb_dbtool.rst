@@ -43,7 +43,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --analyze, -a
 
-    Requests an analysis of the database. A report will be printed on the standard output.
+    Requests an analysis of the database. A report will be printed to the standard output.
 
     Example
         Analyze the database in the current directory::
@@ -52,7 +52,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --dump, -d
 
-    Dumps the content of the database on the standard output.
+    Dumps the content of the database to the standard output.
 
     Example
         Dump the database in the current directory::
@@ -77,20 +77,11 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --repair, -r
 
-    Attempts to repair the database. All data may not be recovered. Note that the :doc:`qdbd` automatically attempts to repair the database if needed, this option is intended for offline operations.
+    Attempts to repair the database. All data may not be recovered. Note that the :doc:`qdbd` daemon automatically attempts to repair the database if needed; this option is intended for offline operations.
 
     Example
         Repairs the database in the current directory::
 
             qdb_dbtool --database=. --repair
-
-
-
-
-
-
-
-
-
 
 

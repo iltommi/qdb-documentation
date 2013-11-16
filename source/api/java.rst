@@ -19,9 +19,9 @@ Java 1.6 or later is required.
 Installation
 ------------
 
-The Java API package is downloadable from the Bureau 14 download site. All information regarding the Bureau 14 download site are in your welcome e-mail.
+The Java API package is downloadable from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail.
 
-The archive contains a JAR named ``quasardb-java-api-master.jar`` that contains all the dependencies including the required binaries for FreeBSD, Linux and Windows. It is not needed to download another archive to use the Java API.
+The archive contains a JAR named ``quasardb-java-api-master.jar`` that contains all the dependencies including the required binaries for FreeBSD, Linux and Windows. It is not necessary to download another archive to use the Java API.
 
 You will also find two examples in the ``examples`` directory, one for the high-level API, one for the low-level API.
 
@@ -63,7 +63,7 @@ You have to use a Map<String,String> to store the quasardb instance configuratio
     config.put("host", "127.0.0.1");
     config.put("port", "2836");
 
-Once the parameters are valid, you can create a QuasarDB instance as this::
+Once the parameters are valid, you can create a QuasarDB instance like this::
 
     Quasardb qdb = new Quasardb(config);
 
@@ -109,7 +109,7 @@ All the dependencies must be resolved for the load to be successful. This should
 Connecting to a QuasarDB cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The connection is a two steps process.
+The connection is a two step process.
 
     #. *Initialize* the quasardb client session: ::
 
@@ -174,11 +174,11 @@ We pass an int array to receive the actual size of the data we obtained from the
 Memory management
 ^^^^^^^^^^^^^^^^^^
 
-The API uses a logic very close the QuasarDB C API (Feel free to review the C API documentation for useful background information, see :doc:`c`).
+The API uses a logic very close to the QuasarDB C API (Feel free to review the C API documentation for useful background information, see :doc:`c`).
 
 In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' :term:`content` are wrapped in `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ objects instead of byte arrays or `String <http://download.oracle.com/javase/1.4.2/docs/api/java/lang/String.html>`_ objects.
 
-Aliases - on the other hand - use regular String objects as a convenience.
+Aliases - on the other hand - use regular String objects for convenience.
 
 The ByteBuffer must be initialized with `allocateDirect <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html#allocateDirect%28int%29>`_ so that the JNI may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
 

@@ -30,7 +30,7 @@ Cheat sheet
  :option:`--partitions`                number of partitions         Variable                No
  :option:`-r`                          persistence directory        ./db                    Yes
  :option:`--id`                        set the node id              generated               No
- :option:`--replication`               Sets the replication factor  1                       Yes
+ :option:`--replication`               sets the replication factor  1                       Yes
  :option:`--peer`                      one peer to form a cluster                           No
  :option:`--transient`                 disable persistence                                  Yes
  :option:`--sync`                      sync every disk write                                Yes
@@ -110,7 +110,7 @@ Persistence
 -----------
 
 .. note::
-    Persistence option are global for any given ring.
+    Persistence options are global for any given ring.
 
 Data is persisted on disk, by default in a `db` directory under the current working directory. You can change this to any directory you want using the :option:`-r` option. All nodes will use the same directory as this is a global parameter.
 
@@ -129,7 +129,7 @@ You can also disable the persistence altogether (:option:`--transient`), making 
 Partitions
 ----------
 
-A partition can be seen as a worker threads. The more partitions, the more work can be done in parallel. However if the number of partitions is too high relative to your server capabilities to actually do parallel work performance will decrease.
+A partition can be seen as a worker thread. The more partitions, the more work can be done in parallel. However if the number of partitions is too high relative to your server capabilities to actually do parallel work, performance will decrease.
 
 quasardb is highly scalable and partitions do not interfere with each other. The daemon's scheduler will assign incoming requests to the partition
 with the least workload.
@@ -199,7 +199,7 @@ Parameters reference
 Parameters can be supplied in any order and are prefixed with ``--``.
 The arguments format is parameter dependent.
 
-Instance specific parameters only apply to the instance ran while global parameters are for the whole ring. Global parameters are applied when the first instance of a ring is launched.
+Instance specific parameters only apply to the instance, while global parameters are for the whole ring. Global parameters are applied when the first instance of a ring is launched.
 
 Instance specific
 --------------------
@@ -293,11 +293,11 @@ Instance specific
             qdbd --partitions=10
 
 .. note::
-    This value should be changed only in case of problem.
+    This value should be changed only in case of performance problems.
 
 .. option:: --idle-duration=<duration>
 
-    Sets the timeout after which inactive session will be considered for termination.
+    Sets the timeout after which inactive sessions will be considered for termination.
 
     Argument
         An integer representing the number of seconds after which an idle session will be considered for termination.

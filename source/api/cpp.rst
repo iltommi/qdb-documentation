@@ -12,7 +12,7 @@ The quasardb C++ API is a wrapper around the C API that brings convenience and f
 Installing
 --------------
 
-The C++ API package consists of one header and is included in the C API package (see :doc:`c`). It is required to link with the C API to use the C++ header, but no additional linking is required.
+The C++ API package consists of one header and is included in the C API package (see :doc:`c`). Both the C and C++ header files must be linked into the client executable, but no additional linking is required.
 
 Header file
 --------------
@@ -27,7 +27,7 @@ The quasardb C++ API does not throw any exception on its behalf, however situati
 The handle object
 -------------------
 
-The :cpp:class:`handle` object is non-copiable. Move semantics are supported through rvalue references. Rvalue references support is activated in setting the macro ``QDBAPI_RVALUE_SUPPORT`` to 1. For example::
+The :cpp:class:`handle` object is non-copiable. Move semantics are supported through rvalue references but must be enabled by setting the  ``QDBAPI_RVALUE_SUPPORT`` macro to 1. For example::
 
     #define QDBAPI_RVALUE_SUPPORT 1
     #include <qdb/client.hpp>
@@ -52,7 +52,7 @@ Handle objects can be used directly with the C API thanks to the overload of the
 
 
 .. caution::
-    Calling :c:func:`qdb_close` on a :cpp:class:`handle` leads to undefined behaviour. Generally speaking it is advised to use the methods provided rather than the C API functions. The cast operator is provided for compatibility only.
+    Calling :c:func:`qdb_close` on a :cpp:class:`handle` leads to undefined behaviour. Generally speaking it is advised to use the handle object's methods rather than the C API functions. The cast operator is provided for compatibility only.
 
 Handle objects can also be encapsulated in smart pointers. A definition as :cpp:type:`handle_ptr` is available. This requires a compiler with std::shared_ptr support.
 
@@ -72,7 +72,7 @@ Connect will both initialize the handle and connect to the cluster. If the conne
 Adding and getting data to and from a cluster
 ---------------------------------------------
 
-Although one may use the handle object with the C API, methods are provided for convenience. The usage is close to the original C API. For example to add and get an entry, the C++ way::
+Although one may use the handle object with the C API, using the handle object's methods is recommended. For example, to put and get an entry, the C++ way::
 
     const char in_data[10];
 
@@ -91,7 +91,7 @@ Although one may use the handle object with the C API, methods are provided for 
         // error management
     }
 
-There is however one strong difference as the C call :c:func:`qdb_get_buffer` - which allocates a buffer of the needed size - is replaced with a more convenient method that uses smart pointers to manage allocations lifetime.
+The largest difference between the C and C++ get calls are their memory allocation lifetimes. The C call :c:func:`qdb_get_buffer` allocates a buffer of the needed size and must be explicitly freed. The C++ handle.get() method uses uses smart pointers to manage allocations lifetime.
 
 In C, one would write::
 
@@ -132,7 +132,7 @@ A connection can be explicitly closed and the handle released with the :cpp:func
 
     h.close();
 
-Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::close` is automatically closed.
+Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::close` is automatically called.
 
 .. caution::
     The usage of :c:func:`qdb_close` with :cpp:class:`handle` object results in undefined behaviour.
@@ -140,7 +140,7 @@ Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::c
 Expiry
 -------
 
-Expiry is set with :cpp:func:`handle::expires_at` and :cpp:func:`expires_from_now`. It is obtained with :cpp:func:`handle::get_expiry_time`. Expiry time is always in second, either relative to epoch (January 1st, 1970 00:00 UTC) when using :cpp:func:`handle::expires_at` or relative to the call time when using :cpp:func:`expires_from_now`.
+Expiry is set with :cpp:func:`handle::expires_at` and :cpp:func:`expires_from_now`. It is obtained with :cpp:func:`handle::get_expiry_time`. Expiry time is always in seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :cpp:func:`handle::expires_at` or relative to the call time when using :cpp:func:`expires_from_now`.
 
 .. danger::
     The behavior of :cpp:func:`expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
@@ -171,7 +171,7 @@ To prevent an entry from ever expiring::
         // error management
     }
 
-By default, entries never expire. To obtain the expiry time of an existing entry::
+By default, entries do not expire. To obtain the expiry time of an existing entry::
 
     qdb_time_t expiry_time = 0;
     r = h.get_expiry_time("myalias", &expiry_time);
@@ -184,7 +184,7 @@ By default, entries never expire. To obtain the expiry time of an existing entry
 Prefix based search
 ---------------------
 
-Prefix based search is a powerful tool that helps you lookup entries efficiently. 
+Prefix based search is a powerful tool that helps you lookup entries efficiently.
 
 For example, if you want to find all entries whose aliases start with "record"::
 
@@ -197,7 +197,7 @@ For example, if you want to find all entries whose aliases start with "record"::
 
     // you now have in results an array string representing the matching entries
 
-The method takes care of allocating all necessary intermerdiate buffers. The caller does not need to do any explicit memory release.
+The method takes care of allocating all necessary intermediate buffers. The caller does not need to do any explicit memory release.
 
 Batch operations
 -------------------
@@ -207,12 +207,12 @@ Batch operations are used similarly as in C, except a method :cpp:func:`handle::
 Iteration
 -------------
 
-Iteration on the cluster's entries can be done forward and backward. 
+Iteration on the cluster's entries can be done forward and backward.
 
 An STL-like iterator API is provided which is compatible with STL algorithms::
 
     // forward loop
-    std::for_each(h.begin(), h.end(), [](const qdb::const_iterator::value_type & v) 
+    std::for_each(h.begin(), h.end(), [](const qdb::const_iterator::value_type & v)
     {
         // work on the entry
         // v.first is an std::string refering to the entry's alias
@@ -243,11 +243,11 @@ Reference
     :param err: The error code to translate
     :type err: qdb_error_t
 
-    :returns: A STL string containing an explicit English sentence describing the error.
+    :returns: A STL string containing an English sentence describing the error.
 
 .. cpp:class:: const_iterator
 
-    A forward iterator. 
+    A forward iterator.
 
     .. cpp:function: const_iterator & operator ++ (void)
 
@@ -422,7 +422,7 @@ Reference
 
     .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
 
-        Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exists.
+        Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exist.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -476,7 +476,7 @@ Reference
 
         Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
-        This call is *not* atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code.
+        This call is *not* atomic; if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -486,7 +486,7 @@ Reference
 
     .. cpp:function:: size_t run_batch(qdb_operation_t * operations, size_t operations_count)
 
-        Runs the provided operations in batch on the cluster. The operations are run in arbitrary order. 
+        Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
