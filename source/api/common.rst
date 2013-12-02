@@ -197,6 +197,10 @@ Error management
 
 Each operation receives a status, independent from other operations. If for some reason the cluster estimates that running the batch may be unsafe or unreliable, operations may be skipped and will have the qdb_e_skipped error code. This can also happen in case of a global error (unstable ring, low memory condition) or malformed batch.
 
+A batch with an invalid request or an invalid number of operations is considered malformed as a whole and ignored. This is because quasardb considers that a batch with invalid entries is probably erroneous as a whole and even requests that look valid should not be run as a precaution.
+
+For example, if you submit a batch of put operations and one of the operations has an invalid parameter (for example an empty alias), the whole batch will be in error. The operation with the invalid parameter will have the qdb_e_invalid_argument error code and other operations will have the qdb_e_skipped error code.
+
 Complexity
 ^^^^^^^^^^^^
 

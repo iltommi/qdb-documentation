@@ -43,7 +43,7 @@ Nevertheless, keep in mind that what matters is *your usage scenario*. We will b
 Does quasardb support 32-bit operating systems?
 ===============================================
 
-Only Windows 32-bit is supported. Linux and FreeBSD are 64-bit only.
+Only the Windows port is available for Windows 32-bit and Windows 64-bit. Linux and FreeBSD are 64-bit only.
 
 What is the largest possible size for an entry?
 ===============================================
