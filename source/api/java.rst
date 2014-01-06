@@ -7,7 +7,7 @@ Java
 Introduction
 ------------
 
-The QuasarDB Java API uses JNI to bring the power and speed of QuasarDB to the Java world without compromising performances.
+The quasardb Java API uses JNI to bring the power and speed of quasardb to the Java world without compromising performances.
 
 It fully integrates itself into the Java environment thanks to a wrapper (also called 'high-level API'). The wrapper itself comes with a BSD license and can be freely used in your clients. The wrapper uses a low-level API that is also directly useable although with severe restrictions.
 
@@ -35,11 +35,11 @@ Running the examples
 
 You first need to compile the example with ``javac``. Assuming ``quasardb-java-api-master.jar`` is in ``/tmp``::
 
-    javac -classpath /tmp/quasardb-java-api-master.jar quasardbExample.java
+    javac -classpath /tmp/quasardb-java-api-master.jar QuasardbExample.java
 
 Then you run the example::
 
-    java -classpath /tmp/quasardb-java-api-master.jar:. quasardbExample
+    java -classpath /tmp/quasardb-java-api-master.jar:. QuasardbExample
 
 The example requires a quasardb server listening on ``127.0.0.1`` (IPV4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb :term:`cluster`.
 
@@ -53,7 +53,7 @@ This API take cares of loading ad hoc native libraries, no matter which OS you a
 Last but not least this API is thread-safe unlike the low-level API.
 
 
-Configuring the QuasarDB instance
+Configuring the quasardb instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 You have to use a Map<String,String> to store the quasardb instance configuration parameters::
@@ -67,15 +67,16 @@ Once the parameters are valid, you can create a QuasarDB instance like this::
 
     Quasardb qdb = new Quasardb(config);
 
-Your QuasarDB instance is now ready to use.
+Your quasardb instance is now ready to use.
 
-Using the QuasarDB instance
+Using the quasardb instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Serializable Java objects can be added and retrieved directly::
+Java objects can be added and retrieved directly::
 
     // You can put a simple String Object...
     qdb.put("obj1", "My First value !!!");
+	
     // ... or any Java Object you want (even a POJO)
     qdb.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
 
@@ -89,15 +90,26 @@ Serializable Java objects can be added and retrieved directly::
     // And update stored values:
     qdb.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
 
+	
+Note about java entries :
+
+A majority of entries type can be stored in quasardb without any further work (for example all `Serializable <http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html>`_ and `Externalizable <http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html>`_ objects can be used directly).
+
+You can use almost any java objects you want (for example a `POJO <http://en.wikipedia.org/wiki/Plain_Old_Java_Object>`_).
+
+But there are some limitations. 
+As Kryo is the underlying framework used to serialize objects in quasardb, you can find all limitations by consulting `Kryo's documentation <https://github.com/EsotericSoftware/kryo#compatibility>`_.
+	
 Using the low-level API
 -----------------------
 
-The low-level API provides direct access to the C API via JNI. Usage of the low-level API is discouraged.
+The low-level API provides direct access to the C API via JNI. 
+Usage of the low-level API is discouraged.
 
 Loading the JNI
 ^^^^^^^^^^^^^^^^^^
 
-Your Java program must load the native JNI library to use the QuasarDB API: ::
+Your Java program must load the native JNI library to use the quasardb API: ::
 
     static
     {
@@ -106,7 +118,7 @@ Your Java program must load the native JNI library to use the QuasarDB API: ::
 
 All the dependencies must be resolved for the load to be successful. This should be the case if you copy all the libraries present in the ``bin`` directory (Windows) or ``lib`` directory (FreeBSD and Linux).
 
-Connecting to a QuasarDB cluster
+Connecting to a quasardb cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 The connection is a two step process.
