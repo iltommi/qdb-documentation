@@ -7,8 +7,10 @@ Hardware requirements
     * An IA32 or AMD64 platform
     * End-to-end ECC memory (motherboard, CPU and memory)
     * At least 1 GiB of RAM (the exact amount depends on your use case)
-    * At least 10 GiB of disk (the exact amount depends on your use case)
-    * 1 Gbit ethernet port 
+    * At least 10 GiB of disk space. Calculate your disk requirements using the equation at :ref:`operations-db-storage`.
+    * 1 Gbit ethernet port
+    
+It is strongly advised to have a homogenous hardware configuration within a cluster.
 
 Platform specific instructions
 ------------------------------
@@ -97,10 +99,5 @@ Building a cluster
 A cluster is built organically. Each node is added as needed. All that is needed is to supply the node with the address of a node already in the cluster: a peer (see :doc:`../reference/qdbd`). If a parameter conflicts with a parameter of the cluster (for example, the replication factor), the cluster's parameter takes precedence. If the differences cannot be reconciled with certainty, the new node will exit itself.
 
 As you add a node, the cluster enters a phase known as stabilization. During this phase the nodes agree on the workload to share. During this phase some nodes might refuse to serve requests and return instead the "unstable" error message. Those errors are temporary. Depending on the use case, the client should try again or drop the request.
-
-It is strongly advised to have a homogenous hardware configuration within a cluster.
-
-
-
 
 
