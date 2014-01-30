@@ -20,7 +20,7 @@ Supported protocols
 
 The tool can be used to benchmark on servers supporting the following protocols (in alphabetical order):
 
- * aerospike
+ * aerospike (only on Linux)
  * local
  * memcached
  * quasardb
@@ -67,6 +67,7 @@ The accepted commands are:
 
     * ``single_put_multiple_get``: adds one entry of *size* bytes and retrives it *count* times
     * ``multiple_put``: puts *count* entry of *size* bytes and then deletes them all
+    * ``multiple_put_remain``: puts *count* entry of *size* bytes, but does not delete them
     * ``multiple_put_get_delete``: adds an entry of *size* bytes, retrieves it and deletes it *count* times
     * ``multiple_put_get_update_delete``: adds an entry of *size* bytes, retrieves it, updates it and deletes it *count* times
 
