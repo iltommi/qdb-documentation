@@ -1,6 +1,28 @@
 Change log
 **********
 
+1.1.1 - "Pythagoras" - 02/03/2014
+=================================
+
+About
+-----
+
+This maintenance release focuses on disk usage control. It is now possible to limit the persisted size. When the limit is reached, any operation which would result in a size increase will be aborted and an error will be returned.
+
+This release is fully compatible with 1.1.0 and 1.1.1.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+    * Daemon: added option to limit the persisted size
+    * Daemon: fixed long log paths parsing
+    * Web bridge: added network usage information
+    * Comparison tool: new "put only" command
+    * Comparison tool: added progress bar
+    * Shell: fixed space related parsing bug
+    * Upgraded to LevelDB 1.15
+
 1.1.1 - "Pythagoras" - 01/07/2014
 =================================
 
