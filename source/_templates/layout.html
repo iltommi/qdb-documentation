@@ -4,11 +4,10 @@
 
 {% block rootrellink %}
     <li>
-        quasardb
+        <a href="{{ pathto(master_doc) }}">quasardb</a>
+        <span class="version_switcher_placeholder"><!-- Filled in by _static/version_switch.js --></span>
+        <a href="{{ pathto(master_doc) }}">Documentation </a>
+        {{ reldelim1 }}
     </li>
-    <li>
-        <span class="version_switcher_placeholder">Filled in by _static/version_switch.js</span>
-    </li>
-    {{ super() }}
 {% endblock %}
 
