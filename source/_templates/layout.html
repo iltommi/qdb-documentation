@@ -1,0 +1,14 @@
+{% extends "!layout.html" %}
+
+{% set script_files = script_files + ["_static/version_switch.js"] %}
+
+{% block rootrellink %}
+    <li>
+        quasardb
+    </li>
+    <li>
+        <span class="version_switcher_placeholder">Filled in by _static/version_switch.js</span>
+    </li>
+    {{ super() }}
+{% endblock %}
+
