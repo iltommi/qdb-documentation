@@ -2,8 +2,7 @@
   'use strict';
 
   var all_versions = {
-    // 'url_string': 'display_name'
-    '1.0': '1.0',
+    // 'url_string': 'display_name_when_not_active'
     '1.1': '1.1'
   };
   
