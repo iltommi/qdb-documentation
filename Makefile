@@ -37,42 +37,60 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/html/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html/VERSION."
 
 dirhtml:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/dirhtml/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml/VERSION."
 
 singlehtml:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/singlehtml/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml/VERSION."
 
 pickle:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/pickle/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished; now you can process the pickle files."
 
 json:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/pickle/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
 htmlhelp:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/htmlhelp/$$VERSION ;\
 	done
 	@echo
@@ -80,7 +98,10 @@ htmlhelp:
 	      ".hhp project file in $(BUILDDIR)/htmlhelp/VERSION."
 
 qthelp:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/qthelp/$$VERSION ;\
 	done
 	@echo
@@ -91,7 +112,10 @@ qthelp:
 	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/VERSION/wrpme.qhc"
 
 devhelp:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/devhelp/$$VERSION ;\
 	done
 	@echo
@@ -102,14 +126,20 @@ devhelp:
 	@echo "# devhelp"
 
 epub:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/epub/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished. The epub file is in $(BUILDDIR)/epub/VERSION."
 
 latex:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/latex/$$VERSION ;\
 	done
 	@echo
@@ -118,7 +148,10 @@ latex:
 	      "(use \`make latexpdf' here to do that automatically)."
 
 latexpdf:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/latex/$$VERSION ;\
 	    echo "Running LaTeX files through pdflatex..." ;\
 	    make -C $(BUILDDIR)/latex/$$VERSION all-pdf ;\
@@ -126,28 +159,40 @@ latexpdf:
 	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex/VERSION."
 
 text:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b text $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/text/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished. The text files are in $(BUILDDIR)/text/VERSION."
 
 man:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b man $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/man/$$VERSION ;\
 	done
 	@echo
 	@echo "Build finished. The manual pages are in $(BUILDDIR)/man/VERSION."
 
 changes:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/changes/$$VERSION ;\
 	done
 	@echo
 	@echo "The overview file is in $(BUILDDIR)/changes/VERSION."
 
 linkcheck:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/linkcheck/$$VERSION ;\
 	done
 	@echo
@@ -155,7 +200,10 @@ linkcheck:
 	      "or in $(BUILDDIR)/linkcheck/VERSION/output.txt."
 
 doctest:
-	for VERSION in `find source/* -maxdepth 0 -type d | cut -d "/" -f 2`; do \
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
 	    $(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/doctest/$$VERSION ;\
 	done
 	@echo "Testing of doctests in the sources finished, look at the " \
