@@ -6,7 +6,7 @@
 quasardb
 ********
 
-.. image:: /_static/b14-logo.png
+.. image:: /../shared/_static/b14-logo.png
     :align: right
     :class: b14-logo
 
