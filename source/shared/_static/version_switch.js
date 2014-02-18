@@ -37,28 +37,25 @@
     
     // Find url instances like:
     //   .net/1/
-    //   .net/py3k/
-    //   .net/dev/
+    //   .net/1.0/
+    //   .net/1.0*/
     //   .net/2.7.6*/
-    //   .net/release/2.7.6*/
     //
-    var url_regex = /\.net\/(\d|py3k|dev|((release\/)?\d\.\d[\w\d\.]*))\//;
+    // Test at http://regexpal.com/ by removing the first and last forward slashes.
+    //
+    var url_regex = /\.net\/(\d|(\d\.\d[\w\d\.]*))\//;
     
     // Replace the part of the url that matched the regex with '.net/version/
     var new_url = url.replace(url_regex, '.net/' + new_version + '/');
     
-    
-    if (new_url == url && !new_url.match(url_regex)) {
-      
-      // Catch the simple case where the URL didn't match the above regex
-      // and matches what we passed in.
-      // 
-      // Hard-replace '.net/' with '.net/version/'.
-      // 
-      new_url = url.replace(/\.net\//, '.net/' + new_version + '/');
+	// If the regex changed the incoming string, use that.
+    if (new_url != url) {
+        return new_url;
+	}
+    else {
+        // Otherwise hard-replace '.net/' with '.net/version/'.
+        return url.replace(/\.net\//, '.net/' + new_version + '/');
     }
-    
-    return new_url;
   }
   
   
@@ -71,7 +68,7 @@
     var url = window.location.href;
     var new_url = patch_url(url, selected);
     
-    // So long as the patched URL doesn't match our existing URL...
+    // So long as the patched URL doesn't match our existing URL... (e.g. user clicked same version)
     if (new_url != url) {
       
       // Ensure the patched URL exists before loading it, otherwise redirect to version's start page
