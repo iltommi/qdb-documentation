@@ -6,7 +6,7 @@ if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
 set BUILDDIR=build
-set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% source
+set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS%
 if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
 )
@@ -41,8 +41,8 @@ if "%1" == "clean" (
 )
 
 if "%1" == "html" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b html %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/html/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b html %ALLSPHINXOPTS% source\%%V %BUILDDIR%/html/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -52,8 +52,8 @@ if "%1" == "html" (
 )
 
 if "%1" == "dirhtml" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/dirhtml/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% source\%%V %BUILDDIR%/dirhtml/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -63,8 +63,8 @@ if "%1" == "dirhtml" (
 )
 
 if "%1" == "singlehtml" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/singlehtml/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% source\%%V %BUILDDIR%/singlehtml/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -74,8 +74,8 @@ if "%1" == "singlehtml" (
 )
 
 if "%1" == "pickle" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/pickle/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% source\%%V %BUILDDIR%/pickle/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -85,8 +85,8 @@ if "%1" == "pickle" (
 )
 
 if "%1" == "json" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b json %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/json/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b json %ALLSPHINXOPTS% source\%%V %BUILDDIR%/json/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -96,8 +96,8 @@ if "%1" == "json" (
 )
 
 if "%1" == "htmlhelp" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/htmlhelp/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/htmlhelp/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -108,8 +108,8 @@ if "%1" == "htmlhelp" (
 )
 
 if "%1" == "qthelp" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/qthelp/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/qthelp/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -123,8 +123,8 @@ if "%1" == "qthelp" (
 )
 
 if "%1" == "devhelp" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/devhelp/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/devhelp/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -134,8 +134,8 @@ if "%1" == "devhelp" (
 )
 
 if "%1" == "epub" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b epub %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/epub/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b epub %ALLSPHINXOPTS% source\%%V %BUILDDIR%/epub/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -145,8 +145,8 @@ if "%1" == "epub" (
 )
 
 if "%1" == "latex" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b latex %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/latex/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b latex %ALLSPHINXOPTS% source\%%V %BUILDDIR%/latex/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -156,8 +156,8 @@ if "%1" == "latex" (
 )
 
 if "%1" == "text" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b text %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/text/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b text %ALLSPHINXOPTS% source\%%V %BUILDDIR%/text/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -167,8 +167,8 @@ if "%1" == "text" (
 )
 
 if "%1" == "man" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b man %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/man/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b man %ALLSPHINXOPTS% source\%%V %BUILDDIR%/man/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -178,8 +178,8 @@ if "%1" == "man" (
 )
 
 if "%1" == "changes" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b changes %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/changes/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b changes %ALLSPHINXOPTS% source\%%V %BUILDDIR%/changes/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -189,8 +189,8 @@ if "%1" == "changes" (
 )
 
 if "%1" == "linkcheck" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/linkcheck/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% source\%%V %BUILDDIR%/linkcheck/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
@@ -201,8 +201,8 @@ or in %BUILDDIR%/linkcheck/output.txt.
 )
 
 if "%1" == "doctest" (
-	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/doctest/%%VERSION
+	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% source\%%V %BUILDDIR%/doctest/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
