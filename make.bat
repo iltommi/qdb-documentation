@@ -41,48 +41,66 @@ if "%1" == "clean" (
 )
 
 if "%1" == "html" (
-	%SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b html %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/html/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/html.
+	echo.Build finished. The HTML pages are in %BUILDDIR%/html/VERSION.
 	goto end
 )
 
 if "%1" == "dirhtml" (
-	%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% %BUILDDIR%/dirhtml
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/dirhtml/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/dirhtml.
+	echo.Build finished. The HTML pages are in %BUILDDIR%/dirhtml/VERSION.
 	goto end
 )
 
 if "%1" == "singlehtml" (
-	%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% %BUILDDIR%/singlehtml
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/singlehtml/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/singlehtml.
+	echo.Build finished. The HTML pages are in %BUILDDIR%/singlehtml/VERSION.
 	goto end
 )
 
 if "%1" == "pickle" (
-	%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% %BUILDDIR%/pickle
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/pickle/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished; now you can process the pickle files.
 	goto end
 )
 
 if "%1" == "json" (
-	%SPHINXBUILD% -b json %ALLSPHINXOPTS% %BUILDDIR%/json
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b json %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/json/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished; now you can process the JSON files.
 	goto end
 )
 
 if "%1" == "htmlhelp" (
-	%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% %BUILDDIR%/htmlhelp
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/htmlhelp/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished; now you can run HTML Help Workshop with the ^
 .hhp project file in %BUILDDIR%/htmlhelp.
@@ -90,68 +108,92 @@ if "%1" == "htmlhelp" (
 )
 
 if "%1" == "qthelp" (
-	%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% %BUILDDIR%/qthelp
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/qthelp/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished; now you can run "qcollectiongenerator" with the ^
-.qhcp project file in %BUILDDIR%/qthelp, like this:
-	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\wrpme.qhcp
+.qhcp project file in %BUILDDIR%/qthelp/VERSION, like this:
+	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\1.0\wrpme.qhcp
 	echo.To view the help file:
-	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\wrpme.ghc
+	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\VERSION\wrpme.ghc
 	goto end
 )
 
 if "%1" == "devhelp" (
-	%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% %BUILDDIR%/devhelp
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/devhelp/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished.
 	goto end
 )
 
 if "%1" == "epub" (
-	%SPHINXBUILD% -b epub %ALLSPHINXOPTS% %BUILDDIR%/epub
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b epub %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/epub/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished. The epub file is in %BUILDDIR%/epub.
 	goto end
 )
 
 if "%1" == "latex" (
-	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% %BUILDDIR%/latex
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b latex %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/latex/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished; the LaTeX files are in %BUILDDIR%/latex.
 	goto end
 )
 
 if "%1" == "text" (
-	%SPHINXBUILD% -b text %ALLSPHINXOPTS% %BUILDDIR%/text
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b text %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/text/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished. The text files are in %BUILDDIR%/text.
 	goto end
 )
 
 if "%1" == "man" (
-	%SPHINXBUILD% -b man %ALLSPHINXOPTS% %BUILDDIR%/man
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b man %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/man/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Build finished. The manual pages are in %BUILDDIR%/man.
 	goto end
 )
 
 if "%1" == "changes" (
-	%SPHINXBUILD% -b changes %ALLSPHINXOPTS% %BUILDDIR%/changes
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b changes %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/changes/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.The overview file is in %BUILDDIR%/changes.
 	goto end
 )
 
 if "%1" == "linkcheck" (
-	%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% %BUILDDIR%/linkcheck
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/linkcheck/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Link check complete; look for any errors in the above output ^
 or in %BUILDDIR%/linkcheck/output.txt.
@@ -159,8 +201,11 @@ or in %BUILDDIR%/linkcheck/output.txt.
 )
 
 if "%1" == "doctest" (
-	%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% %BUILDDIR%/doctest
-	if errorlevel 1 exit /b 1
+	for /f "usebackq" %%VERSION in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+		%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% source\%%VERSION %BUILDDIR%/doctest/%%VERSION
+		
+		if errorlevel 1 exit /b 1
+	)
 	echo.
 	echo.Testing of doctests in the sources finished, look at the ^
 results in %BUILDDIR%/doctest/output.txt.
