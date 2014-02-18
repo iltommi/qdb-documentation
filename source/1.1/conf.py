@@ -54,6 +54,9 @@ copyright = u'2014, Bureau 14 SARL'
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
+# Adding a new version of the docs? Make sure you update 
+# ../shared/_static/version_switch.js so your new version appears in the drop down!
+#
 # The short X.Y version.
 version = '1.1'
 # The full version, including alpha/beta/rc tags.
