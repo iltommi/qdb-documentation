@@ -46,7 +46,7 @@ html:
 	    echo "Building" $$VERSION ;\
 	    echo "" ;\
 	    $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/html/$$VERSION ;\
-	    sed -i.bak "s;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;" $(BUILDDIR)/html/index.html ;\
+	    sed -i.bak "s;http://doc.quasardb.net/[0-9].[0-9].*/;http://doc.quasardb.net/$$VERSION/;" $(BUILDDIR)/html/index.html ;\
 	done
 	
 	@echo
@@ -62,7 +62,7 @@ dirhtml:
 	    echo "Building" $$VERSION ;\
 	    echo "" ;\
 	    $(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/dirhtml/$$VERSION ;\
-	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;' $(BUILDDIR)/dirhtml/index.html ;\
+	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9].*/;http://doc.quasardb.net/$$VERSION/;' $(BUILDDIR)/dirhtml/index.html ;\
 	done
 	
 	@echo
@@ -78,7 +78,7 @@ singlehtml:
 	    echo "Building" $$VERSION ;\
 	    echo "" ;\
 	    $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/singlehtml/$$VERSION ;\
-	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;' $(BUILDDIR)/singlehtml/index.html ;\
+	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9].*/;http://doc.quasardb.net/$$VERSION/;' $(BUILDDIR)/singlehtml/index.html ;\
 	done
 	
 	@echo
