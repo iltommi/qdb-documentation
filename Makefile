@@ -37,32 +37,50 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
+	# Copy redirect HTML file.
+	mkdir -p $(BUILDDIR)/html
+	install -m 644 source/index.html $(BUILDDIR)/html/index.html
+	
 	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
 	    echo "" ;\
 	    echo "Building" $$VERSION ;\
 	    echo "" ;\
 	    $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/html/$$VERSION ;\
+	    sed -i.bak "s;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;" $(BUILDDIR)/html/index.html ;\
 	done
+	
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html/VERSION."
 
 dirhtml:
+	# Copy redirect HTML file.
+	mkdir -p $(BUILDDIR)/html
+	install -m 644 source/index.html $(BUILDDIR)/dirhtml
+	
 	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
 	    echo "" ;\
 	    echo "Building" $$VERSION ;\
 	    echo "" ;\
 	    $(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/dirhtml/$$VERSION ;\
+	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;' $(BUILDDIR)/dirhtml/index.html ;\
 	done
+	
 	@echo
 	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml/VERSION."
 
 singlehtml:
+	# Copy redirect HTML file.
+	mkdir -p $(BUILDDIR)/html
+	install -m 644 source/index.html $(BUILDDIR)/singlehtml
+	
 	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
 	    echo "" ;\
 	    echo "Building" $$VERSION ;\
 	    echo "" ;\
 	    $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/singlehtml/$$VERSION ;\
+	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;' $(BUILDDIR)/singlehtml/index.html ;\
 	done
+	
 	@echo
 	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml/VERSION."
 
