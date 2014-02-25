@@ -8,9 +8,9 @@ PAPER         =
 BUILDDIR      = build
 
 # Internal variables.
-PAPEROPT_a4     = -D latex_paper_size=a4
-PAPEROPT_letter = -D latex_paper_size=letter
-ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
+PAPEROPT_a4      = -D latex_paper_size=a4
+PAPEROPT_letter  = -D latex_paper_size=letter
+ALLSPHINXOPTS    = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS)
 
 .PHONY: help clean html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest
 
@@ -37,94 +37,192 @@ clean:
 	-rm -rf $(BUILDDIR)/*
 
 html:
-	$(SPHINXBUILD) -b html $(ALLSPHINXOPTS) $(BUILDDIR)/html
+	# Copy redirect HTML file.
+	mkdir -p $(BUILDDIR)/html
+	install -m 644 source/index.html $(BUILDDIR)/html/index.html
+	
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b html $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/html/$$VERSION ;\
+	    sed -i.bak "s;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;" $(BUILDDIR)/html/index.html ;\
+	done
+	
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html."
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/html/VERSION."
 
 dirhtml:
-	$(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) $(BUILDDIR)/dirhtml
+	# Copy redirect HTML file.
+	mkdir -p $(BUILDDIR)/html
+	install -m 644 source/index.html $(BUILDDIR)/dirhtml
+	
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b dirhtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/dirhtml/$$VERSION ;\
+	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;' $(BUILDDIR)/dirhtml/index.html ;\
+	done
+	
 	@echo
-	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml."
+	@echo "Build finished. The HTML pages are in $(BUILDDIR)/dirhtml/VERSION."
 
 singlehtml:
-	$(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) $(BUILDDIR)/singlehtml
+	# Copy redirect HTML file.
+	mkdir -p $(BUILDDIR)/html
+	install -m 644 source/index.html $(BUILDDIR)/singlehtml
+	
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b singlehtml $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/singlehtml/$$VERSION ;\
+	    sed -i.bak 's;http://doc.quasardb.net/[0-9].[0-9];http://doc.quasardb.net/$$VERSION;' $(BUILDDIR)/singlehtml/index.html ;\
+	done
+	
 	@echo
-	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml."
+	@echo "Build finished. The HTML page is in $(BUILDDIR)/singlehtml/VERSION."
 
 pickle:
-	$(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) $(BUILDDIR)/pickle
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/pickle/$$VERSION ;\
+	done
 	@echo
 	@echo "Build finished; now you can process the pickle files."
 
 json:
-	$(SPHINXBUILD) -b json $(ALLSPHINXOPTS) $(BUILDDIR)/json
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b pickle $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/pickle/$$VERSION ;\
+	done
 	@echo
 	@echo "Build finished; now you can process the JSON files."
 
 htmlhelp:
-	$(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) $(BUILDDIR)/htmlhelp
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b htmlhelp $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/htmlhelp/$$VERSION ;\
+	done
 	@echo
 	@echo "Build finished; now you can run HTML Help Workshop with the" \
-	      ".hhp project file in $(BUILDDIR)/htmlhelp."
+	      ".hhp project file in $(BUILDDIR)/htmlhelp/VERSION."
 
 qthelp:
-	$(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) $(BUILDDIR)/qthelp
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b qthelp $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/qthelp/$$VERSION ;\
+	done
 	@echo
 	@echo "Build finished; now you can run "qcollectiongenerator" with the" \
 	      ".qhcp project file in $(BUILDDIR)/qthelp, like this:"
 	@echo "# qcollectiongenerator $(BUILDDIR)/qthelp/wrpme.qhcp"
 	@echo "To view the help file:"
-	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/wrpme.qhc"
+	@echo "# assistant -collectionFile $(BUILDDIR)/qthelp/VERSION/wrpme.qhc"
 
 devhelp:
-	$(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) $(BUILDDIR)/devhelp
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b devhelp $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/devhelp/$$VERSION ;\
+	done
 	@echo
 	@echo "Build finished."
 	@echo "To view the help file:"
 	@echo "# mkdir -p $$HOME/.local/share/devhelp/wrpme"
-	@echo "# ln -s $(BUILDDIR)/devhelp $$HOME/.local/share/devhelp/wrpme"
+	@echo "# ln -s $(BUILDDIR)/devhelp/<VERSION>/ $$HOME/.local/share/devhelp/wrpme"
 	@echo "# devhelp"
 
 epub:
-	$(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) $(BUILDDIR)/epub
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b epub $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/epub/$$VERSION ;\
+	done
 	@echo
-	@echo "Build finished. The epub file is in $(BUILDDIR)/epub."
+	@echo "Build finished. The epub file is in $(BUILDDIR)/epub/VERSION."
 
 latex:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/latex/$$VERSION ;\
+	done
 	@echo
 	@echo "Build finished; the LaTeX files are in $(BUILDDIR)/latex."
 	@echo "Run \`make' in that directory to run these through (pdf)latex" \
 	      "(use \`make latexpdf' here to do that automatically)."
 
 latexpdf:
-	$(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) $(BUILDDIR)/latex
-	@echo "Running LaTeX files through pdflatex..."
-	make -C $(BUILDDIR)/latex all-pdf
-	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex."
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b latex $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/latex/$$VERSION ;\
+	    echo "Running LaTeX files through pdflatex..." ;\
+	    make -C $(BUILDDIR)/latex/$$VERSION all-pdf ;\
+	done
+	@echo "pdflatex finished; the PDF files are in $(BUILDDIR)/latex/VERSION."
 
 text:
-	$(SPHINXBUILD) -b text $(ALLSPHINXOPTS) $(BUILDDIR)/text
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b text $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/text/$$VERSION ;\
+	done
 	@echo
-	@echo "Build finished. The text files are in $(BUILDDIR)/text."
+	@echo "Build finished. The text files are in $(BUILDDIR)/text/VERSION."
 
 man:
-	$(SPHINXBUILD) -b man $(ALLSPHINXOPTS) $(BUILDDIR)/man
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b man $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/man/$$VERSION ;\
+	done
 	@echo
-	@echo "Build finished. The manual pages are in $(BUILDDIR)/man."
+	@echo "Build finished. The manual pages are in $(BUILDDIR)/man/VERSION."
 
 changes:
-	$(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) $(BUILDDIR)/changes
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b changes $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/changes/$$VERSION ;\
+	done
 	@echo
-	@echo "The overview file is in $(BUILDDIR)/changes."
+	@echo "The overview file is in $(BUILDDIR)/changes/VERSION."
 
 linkcheck:
-	$(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) $(BUILDDIR)/linkcheck
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b linkcheck $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/linkcheck/$$VERSION ;\
+	done
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
-	      "or in $(BUILDDIR)/linkcheck/output.txt."
+	      "or in $(BUILDDIR)/linkcheck/VERSION/output.txt."
 
 doctest:
-	$(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) $(BUILDDIR)/doctest
+	for VERSION in `find source/* -maxdepth 0 -type d -not -path source/shared | cut -d "/" -f 2`; do \
+	    echo "" ;\
+	    echo "Building" $$VERSION ;\
+	    echo "" ;\
+	    $(SPHINXBUILD) -b doctest $(ALLSPHINXOPTS) source/$$VERSION $(BUILDDIR)/doctest/$$VERSION ;\
+	done
 	@echo "Testing of doctests in the sources finished, look at the " \
-	      "results in $(BUILDDIR)/doctest/output.txt."
+	      "results in $(BUILDDIR)/doctest/VERSION/output.txt."
