@@ -1,5 +1,7 @@
 @ECHO OFF
 
+setlocal enabledelayedexpansion
+
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
@@ -41,40 +43,68 @@ if "%1" == "clean" (
 )
 
 if "%1" == "html" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b html %ALLSPHINXOPTS% source\%%V %BUILDDIR%/html/%%V
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
+		set last_built_ver=%%V
 		
+		%SPHINXBUILD% -b html %ALLSPHINXOPTS% source\%%V %BUILDDIR%/html/%%V
 		if errorlevel 1 exit /b 1
 	)
+	
+	copy source\index.html %BUILDDIR%\html\index.html
+	
+	REM Due to enabledelayedexpansion, the !last_built_ver! variable should be set to the highest number.
+	REM Find / Replace it in the redirect file.
+	find_and_replace_in_file.js "%BUILDDIR%\html\index.html" "http://doc.quasardb.net/1.1/" "http://doc.quasardb.net/!last_built_ver!/"
+	
 	echo.
 	echo.Build finished. The HTML pages are in %BUILDDIR%/html/VERSION.
 	goto end
 )
 
 if "%1" == "dirhtml" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
-		%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% source\%%V %BUILDDIR%/dirhtml/%%V
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
+		set last_built_ver=%%V
 		
+		%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% source\%%V %BUILDDIR%/dirhtml/%%V
 		if errorlevel 1 exit /b 1
 	)
+	
+	copy source\index.html %BUILDDIR%\dirhtml\index.html
+	
+	REM Due to enabledelayedexpansion, the !last_built_ver! variable should be set to the highest number.
+	REM Find / Replace it in the redirect file.
+	find_and_replace_in_file.js "%BUILDDIR%\dirhtml\index.html" "http://doc.quasardb.net/1.1/" "http://doc.quasardb.net/!last_built_ver!/"
+	
 	echo.
 	echo.Build finished. The HTML pages are in %BUILDDIR%/dirhtml/VERSION.
 	goto end
 )
 
 if "%1" == "singlehtml" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
+		set last_built_ver=%%V
 		%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% source\%%V %BUILDDIR%/singlehtml/%%V
 		
 		if errorlevel 1 exit /b 1
 	)
+	
+	copy source\index.html %BUILDDIR%\singlehtml\index.html
+	
+	REM Due to enabledelayedexpansion, the !last_built_ver! variable should be set to the highest number.
+	REM Find / Replace it in the redirect file.
+	find_and_replace_in_file.js "%BUILDDIR%\singlehtml\index.html" "http://doc.quasardb.net/1.1/" "http://doc.quasardb.net/!last_built_ver!/"
+	
 	echo.
 	echo.Build finished. The HTML pages are in %BUILDDIR%/singlehtml/VERSION.
 	goto end
 )
 
 if "%1" == "pickle" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% source\%%V %BUILDDIR%/pickle/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -85,7 +115,8 @@ if "%1" == "pickle" (
 )
 
 if "%1" == "json" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b json %ALLSPHINXOPTS% source\%%V %BUILDDIR%/json/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -96,7 +127,8 @@ if "%1" == "json" (
 )
 
 if "%1" == "htmlhelp" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/htmlhelp/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -108,7 +140,8 @@ if "%1" == "htmlhelp" (
 )
 
 if "%1" == "qthelp" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/qthelp/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -123,7 +156,8 @@ if "%1" == "qthelp" (
 )
 
 if "%1" == "devhelp" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/devhelp/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -134,7 +168,8 @@ if "%1" == "devhelp" (
 )
 
 if "%1" == "epub" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b epub %ALLSPHINXOPTS% source\%%V %BUILDDIR%/epub/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -145,7 +180,8 @@ if "%1" == "epub" (
 )
 
 if "%1" == "latex" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b latex %ALLSPHINXOPTS% source\%%V %BUILDDIR%/latex/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -156,7 +192,8 @@ if "%1" == "latex" (
 )
 
 if "%1" == "text" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b text %ALLSPHINXOPTS% source\%%V %BUILDDIR%/text/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -167,7 +204,8 @@ if "%1" == "text" (
 )
 
 if "%1" == "man" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b man %ALLSPHINXOPTS% source\%%V %BUILDDIR%/man/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -178,7 +216,8 @@ if "%1" == "man" (
 )
 
 if "%1" == "changes" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b changes %ALLSPHINXOPTS% source\%%V %BUILDDIR%/changes/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -189,7 +228,8 @@ if "%1" == "changes" (
 )
 
 if "%1" == "linkcheck" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% source\%%V %BUILDDIR%/linkcheck/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -201,7 +241,8 @@ or in %BUILDDIR%/linkcheck/output.txt.
 )
 
 if "%1" == "doctest" (
-	for /f "usebackq" %%V in (`dir "source\*" /b ^| findstr /i "^[0-9]\.[0-9]*"`) do (
+	REM Build each directory conforming to source\N.N, where N is a number.
+	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
 		%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% source\%%V %BUILDDIR%/doctest/%%V
 		
 		if errorlevel 1 exit /b 1
@@ -211,5 +252,7 @@ if "%1" == "doctest" (
 results in %BUILDDIR%/doctest/output.txt.
 	goto end
 )
+
+endlocal
 
 :end
