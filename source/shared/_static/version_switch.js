@@ -3,7 +3,7 @@
 
   var all_versions = {
     // 'url_string': 'display_name_when_not_active'
-    '1.1': '1.1'
+    '1.1.2': '1.1.2'
   };
   
   // Builds a <select> tag with options from each of the all_versions variable above.
