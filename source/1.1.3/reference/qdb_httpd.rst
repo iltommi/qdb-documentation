@@ -11,15 +11,15 @@ The quasardb web server is a web bridge that enables any software that understan
 Launching the web server
 ========================
 
-The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured, see :ref:`qdb_httpd-parameters-reference`.
+The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured using either a configuration file or by command-line arguments. See :ref:`qdb_httpd-config-file-reference` and :ref:`qdb_httpd-parameters-reference`, respectively. A configuration file is recommended.
 
-Assuming a daemon that listens on the port 2836 on the machine 192.168.1.1, the command line is::
+In FreeBSD or Linux you can run the http daemon with::
 
-    ./qdb_httpd --node=192.168.1.1:2836 -d
+    ./qdb_httpd -c qdb_httpd_config_file.json
 
 or on Windows::
 
-    qdb_httpd --node=192.168.1.1:2836
+    qdb_httpd qdb_httpd_config_file.json
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
@@ -39,7 +39,9 @@ Using the server
 
 The server accepts specific URLs (See :ref:`qdb_httpd-url-reference`) and will service data depending on the URL and its parameters.
 
-If the URL does not exists, the server will return a page not found (404) error.
+If the URL does not exist, the server will return a page not found (404) error.
+
+
 
 .. _qdb_httpd-parameters-reference:
 
@@ -67,10 +69,12 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To create a new config file with the name "qdb_httpd_default_config.json", type: ::
 
             qdb_httpd --gen-config > qdb_httpd_default_config.json
+.. note::
+     The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
 
 .. option:: -c, --config-file
 
-    Specifies a configuration file to use.
+    Specifies a configuration file to use. See :ref:`qdb_httpd-config-file-reference`.
     
         * Any other command-line options will be ignored.
         * If an option is omitted in the config file, the default will be used.
@@ -83,6 +87,9 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To use a configuration file named "qdb_httpd_default_config.json", type: ::
 
             qdb_httpd --config-file=qdb_httpd_default_config.json
+        
+.. note::
+     The --config-file argument is only available with QuasarDB 1.1.3 or higher.
 
 .. option:: -d, --daemonize
 
@@ -92,6 +99,16 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To run as a daemon::
 
             qdb_httpd -d
+
+.. option:: -r <path>, --root <path>
+
+    Specifies the root directory where the administration HTML files lie.
+
+    Argument
+        A string representing the path (relative or absolute) to the administration HTML files.
+
+    Default value
+        html
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
@@ -108,15 +125,81 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdbd --address=0.0.0.0:80
 
-.. option:: -r <path>, --root <path>
 
-    Specifies the root directory where the administration HTML files lie.
+.. option:: --log-dump=<path>
+
+    Activates logging to a system error dump file in case of a crash.
 
     Argument
-        A string representing the path (relative or absolute) to the administration HTML files.
+        A string representing a relative or absolute path to the dump file.
+
+    Example
+        Dump to qdb_error_dump.txt: ::
+
+            qdb_httpd --log-dump=qdb_error_dump.txt
+
+
+.. option:: --log-flush-interval=<delay>
+
+    How frequently log messages are flushed to output, in seconds.
+
+    Argument
+        An integer representing the number of seconds between each flush.
 
     Default value
-        html
+        3
+
+    Example
+        Flush the log every minute: ::
+
+            qdb_httpd --log-flush-interval=60
+
+
+.. option:: -l <path>, --log-file=<path>
+
+    Activates logging to one or several files.
+
+    Argument
+        A string representing one (or several) path(s) to the log file(s).
+
+    Example
+        Log in /var/log/qdbd.log: ::
+
+            qdb_httpd --log-file=/var/log/qdbd.log
+
+
+.. option:: --log-level=<value>
+
+    Specifies the log verbosity.
+
+    Argument
+        A string representing the amount of logging required. Must be one of:
+
+        * detailed (most output)
+        * debug
+        * info
+        * warning
+        * error
+        * panic (least output)
+
+    Default value
+        info
+
+    Example
+        Request a debug level logging: ::
+
+            qdb_httpd --log-level=debug
+
+
+.. option:: -o, --log-console
+
+    Activates logging to the console.
+
+
+.. option:: --log-syslog
+
+    Activates logging to the system log.
+
 
 .. option:: -t <count>, --threads=<count>
 
@@ -148,62 +231,99 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --node=localhost:5009
 
-.. option:: -o, --log-console
 
-    Activates logging to the console.
-
-.. option:: -l <path>, --log-file=<path>
-
-    Activates logging to one or several files.
-
-    Argument
-        A string representing one (or several) path(s) to the log file(s).
-
-    Example
-        Log in /var/log/qdbd.log: ::
-
-            qdb_httpd --log-file=/var/log/qdbd.log
-
-.. option:: --log-level=<value>
-
-    Specifies the log verbosity.
-
-    Argument
-        A string representing the amount of logging required. Must be one of:
-
-        * detailed (most output)
-        * debug
-        * info
-        * warning
-        * error
-        * panic (least output)
-
-    Default value
-        info
-
-    Example
-        Request a debug level logging: ::
-
-            qdb_httpd --log-level=debug
-
-.. option:: --log-flush-interval=<delay>
-
-    How frequently log messages are flushed to output, in seconds.
-
-    Argument
-        An integer representing the number of seconds between each flush.
-
-    Default value
-        3
-
-    Example
-        Flush the log every minute: ::
-
-            qdb_httpd --log-flush-interval=60
 
 
 
 .. highlight:: html
+
+.. _qdb_httpd-config-file-reference:
+
+Config File Reference
+=====================
+
+As of QuasarDB version 1.1.3, the qdb_httpd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
+
+Some things to note when working with a configuration file:
+
+ * If a configuration file is specified, all other command-line options will be ignored. Only values from the configuration file will be used.
+ * The configuration file must be valid JSON in ASCII format.
+ * If a key or value is missing from the configuration file or malformed, the default value will be used.
+ * If a key or value is unknown, it will be ignored.
+
+The default configuration file is shown below::
+
+    {
+        "daemonize": false,
+        "doc_root": "html",
+        "listen_on": "127.0.0.1:8080",
+        "log_config":
+        {
+            "dump_file": "qdb_error_dump.txt",
+            "flush_interval": 2,
+            "log_files": [  ],
+            "log_level": 2,
+            "log_to_console": false,
+            "log_to_syslog": false
+        },
+        "remote_node": "127.0.0.1:2836",
+        "threads": 1
+    }
+
+.. describe:: daemonize
+
+    A boolean value representing whether or not the qdb_httpd daemon should daemonize on launch.
+    
+.. describe:: doc_root
+
+    A string representing the relative or absolute path to the administration HTML files.
+
+.. describe:: listen_on
+
+    A string representing an address and port the web server should listen on. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
+
+.. describe:: dump_file
+
+    A string representing the relative or absolute path to the system error dump file.
+
+.. describe:: flush_interval
+
+    An integer representing how frequently qdb_httpd log messages should be flushed to the log locations, in seconds.
+
+.. describe:: log_files
+
+    An array of strings representing the relative or absolute paths to the qdb_httpd log files.
+
+.. describe:: log_level
+
+    An integer representing the verbosity of the log output. Acceptable values are::
+    
+        0 = detailed (most output)
+        1 = debug
+        2 = info (default)
+        3 = warning
+        4 = error
+        5 = panic (least output)
+
+.. describe:: log_to_console
+
+    A boolean value representing whether or not the qdb_httpd daemon should log to the console it was spawned from.
+
+.. describe:: log_to_syslog
+
+    A boolean value representing whether or not the qdb_httpd daemon should log to the syslog.
+
+.. describe:: remote_node
+
+    A string representing an address and port where the server can find a QuasarDB daemon. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
+
+.. describe:: threads
+
+    An integer representing the number of listening threads qdb_httpd should use. Higher numbers of threads may increase qdb_httpd performance.
+
+
+
+
 
 .. _qdb_httpd-url-reference:
 
