@@ -66,7 +66,7 @@ The quasardb shell offers an interactive mode from which the user can enter comm
        qdbsh:ok >put entry thisismycontent
        qdbsh:ok >get entry
        thisismycontent
-       qdbsh:ok >
+       qdbsh:ok >exit
   
 Type `help` to get a list of available commands. See :doc:`../reference/qdb_shell` for more information.
 
