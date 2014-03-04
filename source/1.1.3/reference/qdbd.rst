@@ -232,7 +232,7 @@ Instance specific
 
 .. option:: -c, --config-file
 
-    Specifies a configuration file to use.
+    Specifies a configuration file to use. See :ref:`qdbd-config-file-reference`.
     
         * Any other command-line options will be ignored.
         * If an option is omitted in the config file, the default will be used.
@@ -615,3 +615,171 @@ Global
      Using a max depot size may cause a slight performance penalty on writes.
 
 
+.. _qdbd-config-file-reference:
+
+Config File Reference
+=====================
+
+As of QuasarDB version 1.1.3, the qdbd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
+
+Some things to note when working with a configuration file:
+
+ * If a configuration file is specified, all other command-line options will be ignored. Only values from the configuration file will be used.
+ * The configuration file must be valid JSON in ASCII format.
+ * If a key or value is missing from the configuration file or malformed, the default value will be used.
+ * If a key or value is unknown, it will be ignored.
+
+The default configuration file is shown below::
+
+    {
+       "global":
+       {
+           "depot":
+           {
+               "max_bytes": 0,
+               "replication_factor": 2,
+               "root": "db",
+               "sync": false,
+               "transient": false
+           },
+           "limiter":
+           {
+               "max_bytes": 0,
+               "max_in_entries_count": 100000
+           }
+       },
+       "local":
+        {
+            "chord":
+            {
+                "bootstrapping_peers": [  ],
+                "no_stabilization": false,
+                "node_id": "0-0-0-0"
+            },
+            "logger":
+            {
+                "dump_file": "qdb_error_dump.txt",
+                "flush_interval": 3,
+                "log_files": ["/var/log/qdbd.log"],
+                "log_level": 2,
+                "log_to_console": false,
+                "log_to_syslog": false
+            },
+            "network":
+            {
+                "client_timeout": 60,
+                "idle_timeout": 600,
+                "listen_on": "192.168.1.1:2836",
+                "partitions_count": 10,
+                "server_sessions": 2000
+            },
+            "user":
+            {
+                "daemon": false,
+                "license_file": "qdb_license.txt"
+            }
+        }
+    }
+
+.. describe:: global::depot::max_bytes
+
+    An integer representing the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
+    
+    Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
+    
+    See :option:`--max-depot-size` for more details and examples to calculate the max_bytes value.
+
+.. describe:: global::depot::replication_factor
+
+    An integer between 1 and 4 (inclusive) specifying the replication factor for the cluster. A higher value indicates more copies of data on each node.
+
+.. describe:: global::depot::root
+
+    A string representing the relative or absolute path to the directory where data will be stored.
+
+.. describe:: global::depot::sync
+
+    A boolean representing whether or not the node should sync to the underlying filesystem for each write command.
+
+.. describe:: global::depot::transient
+
+    A boolean representing whether or not to persist data on the hard drive. If true, all data will be stored in memory.
+
+.. describe:: global::limiter::max_bytes
+
+    An integer representing the maximum number of bytes that can be allocated for a single entry.
+
+.. describe:: global::limiter::max_in_entries_count
+
+    An integer representing the maximum number of entries that can be stored in the cluster.
+    
+.. describe:: local::chord::bootstrapping_peers
+
+    An array of strings representing other nodes in the cluster which will bootstrap this node upon startup. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
+
+.. describe:: local::chord::no_stabilization
+
+    A boolean value representing whether or not this node should stabilize upon startup. **Contact a QuasarDB representative before editing this value.**
+
+.. describe:: local::chord::node_id
+
+    A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing the 256-bit ID to use. If left at the default of 0-0-0-0, the daemon will assign a random node ID at startup.
+
+.. describe:: local::logger::dump_file
+
+    A string representing the relative or absolute path to the system error dump file.
+
+.. describe:: local::logger::flush_interval
+
+    An integer representing how frequently quasardb log messages should be flushed to the log locations, in seconds.
+
+.. describe:: local::logger::log_files
+
+    An array of strings representing the relative or absolute paths to the quasardb log files.
+    
+.. describe:: local::logger::log_level
+
+    An integer representing the verbosity of the log output. Acceptable values are::
+    
+        0 = detailed (most output)
+        1 = debug
+        2 = info (default)
+        3 = warning
+        4 = error
+        5 = panic (least output)
+    
+.. describe:: local::logger::log_to_console
+
+    A boolean value representing whether or not the quasardb daemon should log to the console it was spawned from.
+
+.. describe:: local::logger::log_to_syslog
+
+    A boolean value representing whether or not the quasardb daemon should log to the syslog.
+
+.. describe:: local::network::client_timeout
+
+    An integer representing the number of seconds after which a client session will be considered for termination.
+
+.. describe:: local::network::idle_timeout
+
+    An integer representing the number of seconds after which an inactive session will be considered for termination.
+
+.. describe:: local::network::listen_on
+
+    A string representing an address and port the web server should listen on. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
+
+.. describe:: local::network::partitions_count
+
+    An integer representing the number of partitions, or worker threads, quasardb can spawn to perform operations. The ideal number of partitions is close to the number of physical cores your server has. If left to its default value of 0, the daemon will choose the best compromise it can.
+
+.. describe:: local::network::server_sessions
+
+    An integer representing the number of server sessions the quasardb daemon can provide.
+
+.. describe:: local::user::daemon
+
+    A boolean value representing whether or not the quasardb daemon should daemonize on launch.
+
+.. describe:: local::user::license_file
+
+    A string representing the relative or absolute path to the license file.
