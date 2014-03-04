@@ -2,15 +2,15 @@ Your first quasardb cluster
 **************************************************
 
 quasardb is designed to be run as a cluster. A cluster is multiple instances of the daemon running separate servers which collaborate to balance the load.
-This tutorial will guide you through the steps required to setup such cluster. If you have not done so yet, going through the introductory tutorial is highly recommended (see :doc:`tut_quick`).
+This tutorial will guide you through the steps required to setup such a cluster. If you have not done so yet, going through the introductory tutorial is highly recommended (see :doc:`tut_quick`).
 
 .. important:: 
-    A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the ``--license-file`` option (see :doc:`../reference/qdbd`).
+    A valid license is required to run the daemon (see :doc:`../license`). In the examples below, we will use the default path and filename of "qdb_license.txt". Ensure your license file is properly named and placed in same folder as qdbd before continuing.
 
 Create a Cluster with Three Nodes
 =================================
 
-It is assumed we have a network of three machines: 192.168.1.1, 192.168.1.2 and 192.168.1.3. All nodes are equal in features and responsibility, making a cluster very resilient to failure. The theoretical limit to the number of nodes a cluster may have is so high (more than several trillions) that there is no practical limit.
+In this tutorial we will set up a cluster of three machines with static IP addresses of 192.168.1.1, 192.168.1.2 and 192.168.1.3. All nodes are equal in features and responsibility, making our cluster very resilient to failure. The theoretical limit to the number of nodes a cluster may have is so high (more than several trillions) that there is no practical limit, but three will do for this exercise.
 
 
 Configure the First Node
@@ -42,7 +42,7 @@ Configure the First Node
              }
          },
     
-#. Set the local parameters that will be unique to this node. For the first node, we will enter a non-localhost IP address and port into the "listen_on" parameter and leave the rest at defaults::
+#. Set the local parameters that will be unique to this node. For the first node, we will enter a non-localhost IP address and port into the "listen_on" parameter and a log file of "/var/log/qdbd.log", then leave the rest at defaults::
    
          "local":
           {
@@ -56,7 +56,7 @@ Configure the First Node
               {
                   "dump_file": "qdb_error_dump.txt",
                   "flush_interval": 3,
-                  "log_files": [  ],
+                  "log_files": ["/var/log/qdbd.log"],
                   "log_level": 2,
                   "log_to_console": false,
                   "log_to_syslog": false
@@ -89,13 +89,13 @@ Configure the Second and Third Nodes
 
 #. Leave the global cluster parameters at default. These will be overwritten by the global settings from our first node.
 
-#. Set the local parameters that will be unique to this node. The important changes from default are the "bootstrapping_peers", "listen_on", and "license_file" parameters. In this example, we will set the "bootstrapping_peers" value to the first node's IP address and port. The "listen_on" parameter will be set to a non-localhost IP address, like the first node. ::
+#. Set the local parameters that will be unique to this node. The important changes from default are the "bootstrapping_peers", "listen_on", and "license_file" parameters. In this example, we will set the "bootstrapping_peers" value to a string containing the first node's IP address and port. The "listen_on" parameter will be set to a non-localhost IP address, like the first node. Finally, the log file will be set to the same "/var/log/qdbd.log" location. ::
 
          "local":
           {
               "chord":
               {
-                  "bootstrapping_peers": [192.168.1.1:2836],
+                  "bootstrapping_peers": ["192.168.1.1:2836"],
                   "no_stabilization": false,
                   "node_id": "0-0-0-0"
               },
@@ -103,7 +103,7 @@ Configure the Second and Third Nodes
               {
                   "dump_file": "qdb_error_dump.txt",
                   "flush_interval": 3,
-                  "log_files": [  ],
+                  "log_files": ["/var/log/qdbd.log"],
                   "log_level": 2,
                   "log_to_console": false,
                   "log_to_syslog": false

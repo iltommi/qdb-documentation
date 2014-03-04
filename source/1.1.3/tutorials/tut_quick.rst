@@ -1,10 +1,10 @@
 An installation tutorial for people with very little time
 *********************************************************
 
-A minimal quasardb setup requires deploying the quasardb daemon (qdbd executable) on a server and making sure that the client can access it.
+A minimal quasardb setup requires deploying the quasardb daemon on a single server and making sure that the client can access it.
 
 .. important:: 
-    A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the ``--license-file`` option (see :doc:`../reference/qdbd`).
+    A valid license is required to run the daemon (see :doc:`../license`). In the examples below, we will use the default path and filename of "qdb_license.txt". Ensure your license file is properly named and placed in same folder as qdbd before continuing.
 
 
 Installing a quasardb daemon in three steps
