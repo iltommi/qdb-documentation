@@ -23,6 +23,8 @@ Cheat sheet
                 Option                               Usage               Default           Global
  ===================================== ============================ =================== ============
  :option:`-h`                          display help                                         No
+ :option:`-g`, `--gen-config`          generate default config file                         No
+ :option:`-c`, `--config-file`         specify config file                                  No
  :option:`--license-file`              specify license              qdb_license.txt         No
  :option:`-d`                          daemonize                                            No
  :option:`-a`                          address to listen on         127.0.0.1:2836          No
@@ -213,6 +215,33 @@ Instance specific
         To display the online help, type: ::
 
             qdbd --help
+
+.. option:: -g, --gen-config
+
+    Generates a JSON configuration file with default values and prints it to STDOUT.
+
+    Example
+        To create a new config file with the name "qdbd_default_config.json", type: ::
+
+            qdbd --gen-config > qdbd_default_config.json
+
+
+.. option:: -c, --config-file
+
+    Specifies a configuration file to use.
+    
+        * Any other command-line options will be ignored.
+        * If an option is omitted in the config file, the default will be used.
+        * If an option is malformed in the config file, it will be ignored.
+    
+    Argument
+        The path to a valid configuration file.
+
+    Example
+        To use a configuration file named "qdbd_default_config.json", type: ::
+
+            qdbd --config-file=qdbd_default_config.json
+
 
 .. option:: --license-file
 

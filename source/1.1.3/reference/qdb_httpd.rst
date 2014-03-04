@@ -59,6 +59,31 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --help
 
+.. option:: -g, --gen-config
+
+    Generates a JSON configuration file with default values and prints it to STDOUT.
+
+    Example
+        To create a new config file with the name "qdb_httpd_default_config.json", type: ::
+
+            qdb_httpd --gen-config > qdb_httpd_default_config.json
+
+.. option:: -c, --config-file
+
+    Specifies a configuration file to use.
+    
+        * Any other command-line options will be ignored.
+        * If an option is omitted in the config file, the default will be used.
+        * If an option is malformed in the config file, it will be ignored.
+    
+    Argument
+        The path to a valid configuration file.
+
+    Example
+        To use a configuration file named "qdb_httpd_default_config.json", type: ::
+
+            qdb_httpd --config-file=qdb_httpd_default_config.json
+
 .. option:: -d, --daemonize
 
     Runs the server as a daemon (UNIX only). In this mode, the process will fork and prevent console interactions. This is the recommended running mode for UNIX environments.
