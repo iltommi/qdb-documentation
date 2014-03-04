@@ -9,7 +9,7 @@
   // Builds a <select> tag with options from each of the all_versions variable above.
   // 
   //
-  function build_select(major_minor_version, full_version) {
+  function build_select(version_number) {
     var new_select_tag = ['<select>'];
     
     // For each of the versions in var all_versions...
@@ -21,8 +21,8 @@
         // If the all_versions item we're on matches the SPHINX Documentation version,
         // set the combo box to display it as the selected item.
         // Also, replace the var all_versions display name with SPHINX Documentation full version number.
-        if (url_string == major_minor_version)
-            new_select_tag.push(' selected="selected">' + full_version + '</option>');
+        if (url_string == version_number)
+            new_select_tag.push(' selected="selected">' + version_number + '</option>');
         else
             new_select_tag.push('>' + display_name + '</option>');
     });
@@ -88,13 +88,10 @@
     
     // Get the MAJOR.MINOR.PATCH version from the SPHINX version embedded in the HTML.
     // e.g. "2.6.7"
-    var full_version = DOCUMENTATION_OPTIONS.VERSION;
-    
-    // Strip off the end so it's just MAJOR.MINOR version, e.g. 2.6
-    var mm_version = full_version.substr(0, 3);
+    var docs_version = DOCUMENTATION_OPTIONS.VERSION;
     
     // Build the <select> tag in the header.
-    var select = build_select(mm_version, full_version);
+    var select = build_select(docs_version);
     
     // Bind the on_switch() function to the <select> tag's on-change event.
     $('.version_switcher_placeholder').html(select);
