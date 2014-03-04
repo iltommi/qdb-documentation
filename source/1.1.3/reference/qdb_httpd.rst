@@ -282,19 +282,19 @@ The default configuration file is shown below::
 
     A string representing an address and port the web server should listen on. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
 
-.. describe:: dump_file
+.. describe:: log_config::dump_file
 
     A string representing the relative or absolute path to the system error dump file.
 
-.. describe:: flush_interval
+.. describe:: log_config::flush_interval
 
     An integer representing how frequently qdb_httpd log messages should be flushed to the log locations, in seconds.
 
-.. describe:: log_files
+.. describe:: log_config::log_files
 
     An array of strings representing the relative or absolute paths to the qdb_httpd log files.
 
-.. describe:: log_level
+.. describe:: log_config::log_level
 
     An integer representing the verbosity of the log output. Acceptable values are::
     
@@ -305,11 +305,11 @@ The default configuration file is shown below::
         4 = error
         5 = panic (least output)
 
-.. describe:: log_to_console
+.. describe:: log_config::log_to_console
 
     A boolean value representing whether or not the qdb_httpd daemon should log to the console it was spawned from.
 
-.. describe:: log_to_syslog
+.. describe:: log_config::log_to_syslog
 
     A boolean value representing whether or not the qdb_httpd daemon should log to the syslog.
 
