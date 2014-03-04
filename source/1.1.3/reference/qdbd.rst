@@ -19,33 +19,33 @@ Configuration
 Cheat sheet
 -----------
 
- ===================================== ============================ =================== ============
-                Option                               Usage               Default           Global
- ===================================== ============================ =================== ============
- :option:`-h`                          display help                                         No
- :option:`-g`, `--gen-config`          generate default config file                         No
- :option:`-c`, `--config-file`         specify config file                                  No
- :option:`--license-file`              specify license              qdb_license.txt         No
- :option:`-d`                          daemonize                                            No
- :option:`-a`                          address to listen on         127.0.0.1:2836          No
- :option:`-s`                          max client sessions          2000                    No
- :option:`--partitions`                number of partitions         Variable                No
- :option:`-r`                          persistence directory        ./db                    Yes
- :option:`--id`                        set the node id              generated               No
- :option:`--replication`               sets the replication factor  1                       Yes
- :option:`--peer`                      one peer to form a cluster                           No
- :option:`--transient`                 disable persistence                                  Yes
- :option:`--sync`                      sync every disk write                                Yes
- :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes
- :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes
- :option:`--max-depot-size`            max db size on node          0 (disabled)            Yes
- :option:`-o`                          log on console                                       No
- :option:`-l`                          log on given file                                    No
- :option:`--log-dump`                  dump file location           qdb_error_dump.txt      No
- :option:`--log-syslog`                log on syslog                                        No
- :option:`--log-level`                 change log level             info                    No
- :option:`--log-flush-interval`        change log flush             3                       No
- ===================================== ============================ =================== ============
+ ===================================== ============================ =================== ============ ==============
+                Option                               Usage               Default           Global     Req. Version
+ ===================================== ============================ =================== ============ ==============
+ :option:`-h`                          display help                                         No       
+ :option:`-g`, `--gen-config`          generate default config file                         No        >=1.1.3
+ :option:`-c`, `--config-file`         specify config file                                  No        >=1.1.3
+ :option:`--license-file`              specify license              qdb_license.txt         No       
+ :option:`-d`                          daemonize                                            No       
+ :option:`-a`                          address to listen on         127.0.0.1:2836          No       
+ :option:`-s`                          max client sessions          2000                    No       
+ :option:`--partitions`                number of partitions         Variable                No       
+ :option:`-r`                          persistence directory        ./db                    Yes      
+ :option:`--id`                        set the node id              generated               No       
+ :option:`--replication`               sets the replication factor  1                       Yes      
+ :option:`--peer`                      one peer to form a cluster                           No       
+ :option:`--transient`                 disable persistence                                  Yes      
+ :option:`--sync`                      sync every disk write                                Yes      
+ :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes      
+ :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes      
+ :option:`--max-depot-size`            max db size on node          0 (disabled)            Yes       >=1.1.3
+ :option:`-o`                          log on console                                       No       
+ :option:`-l`                          log on given file                                    No       
+ :option:`--log-dump`                  dump file location           qdb_error_dump.txt      No       
+ :option:`--log-syslog`                log on syslog                                        No       
+ :option:`--log-level`                 change log level             info                    No       
+ :option:`--log-flush-interval`        change log flush             3                       No       
+ ===================================== ============================ =================== ============ ==============
 
 Global and local options
 ------------------------
@@ -225,6 +225,10 @@ Instance specific
 
             qdbd --gen-config > qdbd_default_config.json
 
+.. note::
+     The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
+
+
 
 .. option:: -c, --config-file
 
@@ -241,6 +245,10 @@ Instance specific
         To use a configuration file named "qdbd_default_config.json", type: ::
 
             qdbd --config-file=qdbd_default_config.json
+
+.. note::
+     The --config-file argument is only available with QuasarDB 1.1.3 or higher.
+
 
 
 .. option:: --license-file
