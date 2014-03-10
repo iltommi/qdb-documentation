@@ -4,17 +4,20 @@ Operations
 Monitoring
 -----------
 
-Monitoring can be done through the administration console. The administration console requires to deploy a web bridge per node (see :doc:`../reference/qdb_httpd`). Once this is done, you connect to the administration console via a HTML5 capable web browser.
+There are three ways to monitor the health and activity of your QuasarDB cluster:
 
-It is also possible to get the status in JSON format through a RESTful API.
+ 1. Through the HTML5 web interface provided by qdb_httpd. See :doc:`../reference/qdb_httpd`.
+ 2. Through the JSON and JSONP interfaces provided by qdb_httpd's RESTful API. See :ref:`qdb_httpd-url-reference`.
+ 3. Writing your own monitoring programs via the language API. See :doc:`../api/index`.
 
-Last but not least, thanks to the Python API it is possible to write your own monitoring scripts without any need for a web bridge (see :doc:`../api/python`).
+The HTML5 web interface is recommended for most users. It offers both cluster-wide and node specific views of entries, storage operations, as well as disk, memory, and CPU usage.
 
-The important things to monitor are:
+If using the JSON/JSONP output from qdb_httpd or writing your own monitoring program, the most important statistics to monitor are:
 
     * Memory usage
     * Disk usage
     * Node failures
+
 
 Graceful shutdown
 ------------------
