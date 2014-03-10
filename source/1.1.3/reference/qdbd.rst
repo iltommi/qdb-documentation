@@ -669,7 +669,7 @@ The default configuration file is shown below::
             {
                 "client_timeout": 60,
                 "idle_timeout": 600,
-                "listen_on": "192.168.1.1:2836",
+                "listen_on": "127.0.0.1:2836",
                 "partitions_count": 10,
                 "server_sessions": 2000
             },
@@ -719,11 +719,11 @@ The default configuration file is shown below::
 
 .. describe:: local::chord::no_stabilization
 
-    A boolean value representing whether or not this node should stabilize upon startup. **Contact a QuasarDB representative before editing this value.**
+    A read-only boolean value representing whether or not this node should stabilize upon startup. Even if set to true, stabilization will still occur.
 
 .. describe:: local::chord::node_id
 
-    A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing the 256-bit ID to use. If left at the default of 0-0-0-0, the daemon will assign a random node ID at startup.
+    A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing the 256-bit ID to use. If left at the default of 0-0-0-0, the daemon will assign a random node ID at startup. **Contact a Bureau14 representative before changing this from the default value.**
 
 .. describe:: local::logger::dump_file
 
