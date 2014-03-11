@@ -6,10 +6,20 @@ quasardb web server
 Introduction
 ============
 
-The quasardb web server is a web bridge that enables any software that understands JSON or JSONP to communicate with a quasardb :term:`cluster`.
+The quasardb web server, qdb_httpd, provides two services:
+ * An HTML5 GUI that shows an overview of cluster and node activity
+ * A RESTful API that can translate entries from the cluster into JSON or JSONP.
 
-Launching the web server
-========================
+
+The web bridge is extremely flexible:
+ * There is no launch order. The cluster can be started after the web server or vice versa.
+ * The web server can be stopped and started at any time without any information loss.
+ * All content provided by the web server, whether HTML or JSON, is *real time*.
+
+
+
+Launching the qdb_httpd daemon
+==============================
 
 The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured using either a configuration file or by command-line arguments. See :ref:`qdb_httpd-config-file-reference` and :ref:`qdb_httpd-parameters-reference`, respectively. A configuration file is recommended.
 
@@ -23,30 +33,179 @@ or on Windows::
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
-Interfacing with the cluster
-==============================
 
-To function properly, the web server must know the address and port of the target quasardb daemon. This is all that is needed!
+Using the qdb_httpd HTML interface
+==================================
 
-The web bridge is extremely flexible:
+To view the qdb_httpd web interface, simply point a browser to the server's IP address and port. By default this is localhost (127.0.0.1) and port 8080, but if viewing from a remote machine, consult the qdb_httpd daemon's configuration file.
 
- * There is no launch order. The cluster can be started after the web server or vice versa.
- * The web server can be stopped and started at any time without any information loss.
- * The content provided by the web server is *real time*.
+The web interface has two tabs, the "Your Cluster" tab, showing an overview of the cluster, and the "Node Data" tab, where you can drill down into a specific qdbd node.
 
-Using the server
-================
+Your Cluster
+~~~~~~~~~~~~
 
-The server accepts specific URLs (See :ref:`qdb_httpd-url-reference`) and will service data depending on the URL and its parameters.
+The "Your Cluster" tab begins with a list of current cluster statistics.
 
-If the URL does not exist, the server will return a page not found (404) error.
+.. image:: qdb_httpd_cluster_statistics.png
+    :align: center
+    :alt: Cluster statistics at the top of the Your Cluster tab.
+
+The cluster stability and number of nodes are shown in the image to the left. Each hexagon corresponds to a node. When you hover over a hexagon, an overview of the node will appear. From there, you can access its Node Data tab for more detailed information.
+
+The table on the right shows live statistics from the cluster.
+
+ * General Data
+ 
+   - Cluster Status: The overall status of the cluster.
+   - Evictions Count: The number of entries that were rejected due to node or cluster limits.
+ 
+ * Aggregated Data
+ 
+   - Persisted Size: The size of data stored in RAM across all nodes.
+   - Resident Size: The size of data stored on disk across all nodes.
+   - Resident Entries Count: The number of entries stored on disk across all nodes.
+   - Persisted Entries Count: The number of entries stored in RAM across all nodes.
+ 
+ * Aggregated operations statistics
+ 
+   - put: The number of put operations the cluster has received from clients.
+   - get: The number of get operations the cluster has received from clients.
+   - update: The number of get operations the cluster has received from clients.
+   - compare and swap: The number of compare and swap operations the cluster has received from clients.
+   - get and update: The number of get and update operations the cluster has received from clients.
+   - remove: The number of remove operations the cluster has received from clients.
+   - remove if: The number of remove if operations the cluster has received from clients.
+
+
+Beneath the statistics are six live graphs:
+
+.. image:: qdb_httpd_aggregated_persistent_size_graph.png
+    :align: center
+    :alt: The Aggregated Memory Usage Graph from the Your Cluster tab.
+
+The graphs show:
+
+ * CPU usage percentage over time
+ * Memory usage percentage over time
+ * Persistent size (RAM usage) percentage over time
+ * Resident size (disk usage) percentage over time
+ * Input network traffic percentage over time
+ * Output network traffic percentage over time
+
+You can adjust the time scale by selecting a time tab above each graph.
+
+ * The red line across the top of each graph corresponds to 100%.
+ * The dark lines show the measured data.
+ * The dashed blue line shows the estimated trend of the data, if available.
+
+If the cluster is nearing 100% in any of its monitored categories, a light-blue warning triangle will appear on the top right of the graph, along with a short status code about the error. The image above shows a RAM saturation limit being reached.
+
+
+Node Data
+~~~~~~~~~
+
+The "Node Data" tab begins with a list of statistics about the selected node.
+
+.. image:: qdb_httpd_node_statistics.png
+    :align: center
+    :alt: Node statistics at the top of the Node Data tab.
+
+The node stability is shown at the top left. The hexagon in the center corresponds to the current node. When you click the left or right arrows, you can switch between each node in the ring.
+
+The table on the right shows live statistics from the selected node.
+
+ * Node ID: The unique hexadecimal node ID assigned as part of its configuration file or when it joined the cluster.
+ * Machine Configuration
+ 
+   - OS: The operating system of the node.
+   - CPU: The CPU model of the node.
+ 
+ * Node Data
+ 
+   - Uptime: The amount of time in hours and minutes the node has been online.
+   - Virtual Memory: The total amount of memory in the node, including swap space.
+   - Physical Memory: The total amount of physical memory in the node.
+   - Disk Capacity: The total storage capacity of this node's disk.
+   - Evictions Count: The number of entries that were rejected due to node or cluster limits.
+   - Resident Entries Count: The number of entries stored on this node's disk.
+   - Persisted Entries Count: The number of entries stored in this node's RAM.
+
+
+Beneath the node stats are operation statistics. These detail the operations the node has been performing for clients, as well as the partitions (similar to threads) the node has been using to perform the operations.
+
+.. image:: qdb_httpd_node_operation_statistics.png
+    :align: center
+    :alt: Node operation statistics in the middle of the Node Data tab.
+
+Node Operation Statistics
+
+   - put: The number of put operations the cluster has received from clients.
+   - get: The number of get operations the cluster has received from clients.
+   - update: The number of get operations the cluster has received from clients.
+   - compare and swap: The number of compare and swap operations the cluster has received from clients.
+   - get and update: The number of get and update operations the cluster has received from clients.
+   - remove: The number of remove operations the cluster has received from clients.
+   - remove if: The number of remove if operations the cluster has received from clients.
+
+Sessions information by partition
+ 
+   - Each partition is shown with a number of operations it performed out of 10,000 operations.
+
+
+.. image:: qdb_httpd_node_downloads.png
+    :align: center
+    :alt: The download buttons from the center of the Node Data tab.
+
+Two download buttons are below the operation statistics.
+
+ * The "Raw JSON data" button retrieves the status information of the node in JSON form. See "global_status" in the :ref:`qdb_httpd-url-reference` below.
+ * The "Configuration as JSON" button retrives the configuration information of the node. See "config" in the :ref:`qdb_httpd-url-reference` below.
+
+
+Beneath the statistics and the downloads are six live graphs:
+
+.. image:: qdb_httpd_node_persistent_size_graph.png
+    :align: center
+    :alt: The Node Persistent Size Graph from the bottom of the Node Data tab.
+
+The graphs show:
+
+ * CPU usage percentage over time
+ * Memory usage percentage over time
+ * Persistent size (RAM usage) percentage over time
+ * Resident size (disk usage) percentage over time
+ * Input network traffic percentage over time
+ * Output network traffic percentage over time
+
+You can adjust the time scale by selecting a time tab above each graph.
+
+ * The red line across the top of each graph corresponds to 100%.
+ * The dark lines show the measured data.
+ * The dashed blue line shows the estimated trend of the data, if available.
+
+If the node is nearing 100% in any of its monitored categories, a light-blue warning triangle will appear on the top right of the graph, along with a short status code about the error. The image above shows a RAM saturation limit being reached.
+
+
+
+
+
+
+
+
+
+Using the qdb_httpd JSON interface
+==================================
+
+The server only accepts specific URLs and will service JSON or JSONP data depending on the URL and its parameters. If the URL does not exist, the server will return a page not found (404) error.
+
+A comprehensive list of urls and parameters is listed below at :ref:`qdb_httpd-url-reference`. 
 
 
 
 .. _qdb_httpd-parameters-reference:
 
-Parameters reference
-====================
+qdb_httpd Command-line Parameters Reference
+===========================================
 
 Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
 
@@ -239,8 +398,8 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. _qdb_httpd-config-file-reference:
 
-Config File Reference
-=====================
+qdb_httpd Config File Reference
+===============================
 
 As of QuasarDB version 1.1.3, the qdb_httpd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
 
@@ -327,8 +486,8 @@ The default configuration file is shown below::
 
 .. _qdb_httpd-url-reference:
 
-URL reference
-=============
+qdb_httpd JSON/JSONP URL reference
+==================================
 
 .. describe:: get
 
@@ -860,8 +1019,3 @@ URL reference
 
             http://myserver.org:8080/global_status?callback=MyCallback
 
-.. describe:: view
-
-    Interactive node status display.
-
-    :returns: HTML 5 and javascript code to be rendered in a capable browser that represent the current node status.
