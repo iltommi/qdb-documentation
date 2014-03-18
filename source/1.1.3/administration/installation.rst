@@ -72,12 +72,12 @@ Only one daemon should be run by node. Running several daemons on the same node 
 The web bridge
 ^^^^^^^^^^^^^^^^
 
-The web bridge (see :doc:`../reference/qdb_httpd`) - whose executable name is "qdb_httpd" - enables you to remotely monitor the node via HTTP requests and access the monitoring console.
+The web bridge (see :doc:`../reference/qdb_httpd`) - whose executable name is "qdb_httpd" - allows you to remotely monitor the cluster via HTTP requests and access the monitoring console.
 
 .. note::
     On UNIXes it is advised to use the `--daemonize` switch to run the server in the background.
 
-One web bridge should be run by daemon. The web bridge does not need to run on the same node than the daemon, however, a bridge can only be bound to one daemon at the time.
+The web bridge does not need to run on the same node as the daemon. Simply point it at a running node in the cluster. Multiple web bridges can be installed and run simultaneously for redundancy, but only one web bridge is needed to monitor the entire cluster.
 
 The shell
 ^^^^^^^^^^

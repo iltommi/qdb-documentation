@@ -16,6 +16,7 @@ The web bridge is extremely flexible:
  * The web server can be stopped and started at any time without any information loss.
  * All content provided by the web server, whether HTML or JSON, is *real time*.
 
+Multiple web bridges can be installed and run simultaneously for redundancy, but only one web bridge is needed to monitor the entire cluster.
 
 
 Launching the qdb_httpd daemon
