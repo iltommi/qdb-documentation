@@ -40,7 +40,7 @@ Using the qdb_httpd HTML interface
 
 To view the qdb_httpd web interface, simply point a browser to the server's IP address and port. By default this is localhost (127.0.0.1) and port 8080, but if viewing from a remote machine, consult the qdb_httpd daemon's configuration file.
 
-The web interface has two tabs, the "Your Cluster" tab, showing an overview of the cluster, and the "Node Data" tab, where you can drill down into a specific qdbd node.
+The web interface has two tabs, the "Your Cluster" tab, showing an overview of the cluster, and the "Node Data" tab, where you can drill down into a specific qdbd node. As of 1.1.3, the web interface can display up to 32 nodes in a cluster.
 
 Your Cluster
 ~~~~~~~~~~~~
