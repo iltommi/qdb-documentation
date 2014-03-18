@@ -86,12 +86,12 @@ Beneath the statistics are six live graphs:
 
 The graphs show:
 
- * CPU usage percentage over time
- * Memory usage percentage over time
- * Persistent size (disk usage) percentage over time
- * Resident size (RAM usage) percentage over time
- * Input network traffic percentage over time
- * Output network traffic percentage over time
+ * CPU usage percentage for all nodes over time
+ * Memory usage percentage for all nodes over time
+ * Persistent size (disk usage) percentage for all nodes over time
+ * Resident size (RAM usage) percentage for all nodes over time
+ * Input network traffic percentage for all nodes over time
+ * Output network traffic percentage for all nodes over time
 
 You can adjust the time scale by selecting a time tab above each graph.
 
@@ -172,12 +172,12 @@ Beneath the statistics and the downloads are six live graphs:
 
 The graphs show:
 
- * CPU usage percentage over time
- * Memory usage percentage over time
- * Persistent size (disk usage) percentage over time
- * Resident size (RAM usage) percentage over time
- * Input network traffic percentage over time
- * Output network traffic percentage over time
+ * CPU usage percentage for all processes on the node over time
+ * Memory usage percentage for all processes on the node over time
+ * Persistent size (disk usage) percentage for all processes on the node over time
+ * Resident size (RAM usage) percentage for all processes on the node over time
+ * Input network traffic percentage for all processes on the node over time
+ * Output network traffic percentage for all processes on the node over time
 
 You can adjust the time scale by selecting a time tab above each graph.
 
