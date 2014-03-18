@@ -62,10 +62,10 @@ The table on the right shows live statistics from the cluster.
  
  * Aggregated Data
  
-   - Persisted Size: The size of data stored in RAM across all nodes.
-   - Resident Size: The size of data stored on disk across all nodes.
-   - Resident Entries Count: The number of entries stored on disk across all nodes.
-   - Persisted Entries Count: The number of entries stored in RAM across all nodes.
+   - Persisted Size: The size of data stored in disk across all nodes.
+   - Resident Size: The size of data stored on RAM across all nodes.
+   - Resident Entries Count: The number of entries stored on RAM across all nodes.
+   - Persisted Entries Count: The number of entries stored in disk across all nodes.
  
  * Aggregated operations statistics
  
@@ -88,8 +88,8 @@ The graphs show:
 
  * CPU usage percentage over time
  * Memory usage percentage over time
- * Persistent size (RAM usage) percentage over time
- * Resident size (disk usage) percentage over time
+ * Persistent size (disk usage) percentage over time
+ * Resident size (RAM usage) percentage over time
  * Input network traffic percentage over time
  * Output network traffic percentage over time
 
@@ -128,8 +128,8 @@ The table on the right shows live statistics from the selected node.
    - Physical Memory: The total amount of physical memory in the node.
    - Disk Capacity: The total storage capacity of this node's disk.
    - Evictions Count: The number of entries that were rejected due to node or cluster limits.
-   - Resident Entries Count: The number of entries stored on this node's disk.
-   - Persisted Entries Count: The number of entries stored in this node's RAM.
+   - Resident Entries Count: The number of entries stored on this node's RAM.
+   - Persisted Entries Count: The number of entries stored in this node's disk.
 
 
 Beneath the node stats are operation statistics. These detail the operations the node has been performing for clients, as well as the partitions (similar to threads) the node has been using to perform the operations.
@@ -173,8 +173,8 @@ The graphs show:
 
  * CPU usage percentage over time
  * Memory usage percentage over time
- * Persistent size (RAM usage) percentage over time
- * Resident size (disk usage) percentage over time
+ * Persistent size (disk usage) percentage over time
+ * Resident size (RAM usage) percentage over time
  * Input network traffic percentage over time
  * Output network traffic percentage over time
 
