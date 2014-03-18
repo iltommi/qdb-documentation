@@ -95,11 +95,12 @@ The graphs show:
 
 You can adjust the time scale by selecting a time tab above each graph.
 
- * The red line across the top of each graph corresponds to 100%.
+ * The dotted blue lines show 25%, 50%, and 75% usage.
+ * The red line across the top of each graph corresponds to approximately 85% usage.
  * The dark lines show the measured data.
  * The dashed blue line shows the estimated trend of the data, if available.
 
-If the cluster is nearing 100% in any of its monitored categories, a light-blue warning triangle will appear on the top right of the graph, along with a short status code about the error. The image above shows a RAM saturation limit being reached.
+If the cluster is nearing 100% in any of its monitored categories, a light-blue warning triangle will appear on the top right of the graph, along with a short status code about the error. The image above shows a disk saturation limit being reached.
 
 
 Node Data
@@ -180,7 +181,8 @@ The graphs show:
 
 You can adjust the time scale by selecting a time tab above each graph.
 
- * The red line across the top of each graph corresponds to 100%.
+ * The dotted blue lines show 25%, 50%, and 75% usage.
+ * The red line across the top of each graph corresponds to approximately 85% usage.
  * The dark lines show the measured data.
  * The dashed blue line shows the estimated trend of the data, if available.
 
