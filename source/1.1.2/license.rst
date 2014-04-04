@@ -169,8 +169,8 @@ The foregoing states the Client’s sole and exclusive remedy and Bureau 14’s
 sole and exclusive liability for any alleged infringement of any third party
 property rights.
 
-Intelectual property and ownership
-----------------------------------
+Intellectual property and ownership
+-----------------------------------
 
 All ownership of and title to any intellectual property rights, including but
 not limited to copyrights and trade secrets, in the Software belong to Bureau
