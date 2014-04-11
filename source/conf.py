@@ -28,14 +28,14 @@ import sys, os
 extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.mathjax', 'sphinx.ext.autodoc']
 
 # crawl back to where the API is being built
+sys.path.insert(0, os.path.join(os.getcwd(), '..', 'qdb', 'api', 'python'))
+sys.path.insert(0, os.path.join(os.getcwd(), '..', 'qdb', 'api', 'python', 'qdb'))
+# one up extra for UNIX builds
 sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', 'qdb', 'api', 'python'))
 sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', 'qdb', 'api', 'python', 'qdb'))
-# one up extra for UNIX builds
-sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', '..', 'qdb', 'api', 'python'))
-sys.path.insert(0, os.path.join(os.getcwd(), '..', '..', '..', 'qdb', 'api', 'python', 'qdb'))
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['../shared/_templates']
+templates_path = ['_templates']
 
 # The suffix of source filenames.
 source_suffix = '.rst'
@@ -55,7 +55,7 @@ copyright = u'2014, Bureau 14 SAS'
 # built documents.
 #
 # Adding a new version of the docs? Make sure you update 
-# ../shared/_static/version_switch.js so your new version appears in the drop down!
+# "source/version_switch.js" in the qdb-doc repo so your new version appears in the drop down!
 #
 # The short X.Y version.
 version = '1.1'
@@ -129,7 +129,7 @@ html_theme_path = ['.']
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['../shared/_static']
+html_static_path = ['_static']
 
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
