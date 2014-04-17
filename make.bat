@@ -1,14 +1,12 @@
 @ECHO OFF
 
-setlocal enabledelayedexpansion
-
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
 	set SPHINXBUILD=sphinx-build
 )
 set BUILDDIR=build
-set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS%
+set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% source
 if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
 )
@@ -43,96 +41,48 @@ if "%1" == "clean" (
 )
 
 if "%1" == "html" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		set last_built_ver=%%V
-		
-		%SPHINXBUILD% -b html %ALLSPHINXOPTS% source\%%V %BUILDDIR%/html/%%V
-		if errorlevel 1 exit /b 1
-	)
-	
-	copy source\index.html %BUILDDIR%\html\index.html
-	
-	REM Due to enabledelayedexpansion, the !last_built_ver! variable should be set to the highest number.
-	REM Find / Replace it in the redirect file.
-	find_and_replace_in_file.js "%BUILDDIR%\html\index.html" "http://doc.quasardb.net/1.1/" "http://doc.quasardb.net/!last_built_ver!/"
-	
+	%SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
+	if errorlevel 1 exit /b 1
 	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/html/VERSION.
+	echo.Build finished. The HTML pages are in %BUILDDIR%/html.
 	goto end
 )
 
 if "%1" == "dirhtml" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		set last_built_ver=%%V
-		
-		%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% source\%%V %BUILDDIR%/dirhtml/%%V
-		if errorlevel 1 exit /b 1
-	)
-	
-	copy source\index.html %BUILDDIR%\dirhtml\index.html
-	
-	REM Due to enabledelayedexpansion, the !last_built_ver! variable should be set to the highest number.
-	REM Find / Replace it in the redirect file.
-	find_and_replace_in_file.js "%BUILDDIR%\dirhtml\index.html" "http://doc.quasardb.net/1.1/" "http://doc.quasardb.net/!last_built_ver!/"
-	
+	%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% %BUILDDIR%/dirhtml
+	if errorlevel 1 exit /b 1
 	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/dirhtml/VERSION.
+	echo.Build finished. The HTML pages are in %BUILDDIR%/dirhtml.
 	goto end
 )
 
 if "%1" == "singlehtml" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		set last_built_ver=%%V
-		%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% source\%%V %BUILDDIR%/singlehtml/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
-	
-	copy source\index.html %BUILDDIR%\singlehtml\index.html
-	
-	REM Due to enabledelayedexpansion, the !last_built_ver! variable should be set to the highest number.
-	REM Find / Replace it in the redirect file.
-	find_and_replace_in_file.js "%BUILDDIR%\singlehtml\index.html" "http://doc.quasardb.net/1.1/" "http://doc.quasardb.net/!last_built_ver!/"
-	
+	%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% %BUILDDIR%/singlehtml
+	if errorlevel 1 exit /b 1
 	echo.
-	echo.Build finished. The HTML pages are in %BUILDDIR%/singlehtml/VERSION.
+	echo.Build finished. The HTML pages are in %BUILDDIR%/singlehtml.
 	goto end
 )
 
 if "%1" == "pickle" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% source\%%V %BUILDDIR%/pickle/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% %BUILDDIR%/pickle
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished; now you can process the pickle files.
 	goto end
 )
 
 if "%1" == "json" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b json %ALLSPHINXOPTS% source\%%V %BUILDDIR%/json/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b json %ALLSPHINXOPTS% %BUILDDIR%/json
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished; now you can process the JSON files.
 	goto end
 )
 
 if "%1" == "htmlhelp" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/htmlhelp/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% %BUILDDIR%/htmlhelp
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished; now you can run HTML Help Workshop with the ^
 .hhp project file in %BUILDDIR%/htmlhelp.
@@ -140,100 +90,68 @@ if "%1" == "htmlhelp" (
 )
 
 if "%1" == "qthelp" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/qthelp/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% %BUILDDIR%/qthelp
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished; now you can run "qcollectiongenerator" with the ^
-.qhcp project file in %BUILDDIR%/qthelp/VERSION, like this:
-	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\1.0\wrpme.qhcp
+.qhcp project file in %BUILDDIR%/qthelp, like this:
+	echo.^> qcollectiongenerator %BUILDDIR%\qthelp\wrpme.qhcp
 	echo.To view the help file:
-	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\VERSION\wrpme.ghc
+	echo.^> assistant -collectionFile %BUILDDIR%\qthelp\wrpme.ghc
 	goto end
 )
 
 if "%1" == "devhelp" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% source\%%V %BUILDDIR%/devhelp/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% %BUILDDIR%/devhelp
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished.
 	goto end
 )
 
 if "%1" == "epub" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b epub %ALLSPHINXOPTS% source\%%V %BUILDDIR%/epub/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b epub %ALLSPHINXOPTS% %BUILDDIR%/epub
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The epub file is in %BUILDDIR%/epub.
 	goto end
 )
 
 if "%1" == "latex" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b latex %ALLSPHINXOPTS% source\%%V %BUILDDIR%/latex/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% %BUILDDIR%/latex
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished; the LaTeX files are in %BUILDDIR%/latex.
 	goto end
 )
 
 if "%1" == "text" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b text %ALLSPHINXOPTS% source\%%V %BUILDDIR%/text/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b text %ALLSPHINXOPTS% %BUILDDIR%/text
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The text files are in %BUILDDIR%/text.
 	goto end
 )
 
 if "%1" == "man" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b man %ALLSPHINXOPTS% source\%%V %BUILDDIR%/man/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b man %ALLSPHINXOPTS% %BUILDDIR%/man
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Build finished. The manual pages are in %BUILDDIR%/man.
 	goto end
 )
 
 if "%1" == "changes" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b changes %ALLSPHINXOPTS% source\%%V %BUILDDIR%/changes/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b changes %ALLSPHINXOPTS% %BUILDDIR%/changes
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.The overview file is in %BUILDDIR%/changes.
 	goto end
 )
 
 if "%1" == "linkcheck" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% source\%%V %BUILDDIR%/linkcheck/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b linkcheck %ALLSPHINXOPTS% %BUILDDIR%/linkcheck
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Link check complete; look for any errors in the above output ^
 or in %BUILDDIR%/linkcheck/output.txt.
@@ -241,18 +159,12 @@ or in %BUILDDIR%/linkcheck/output.txt.
 )
 
 if "%1" == "doctest" (
-	REM Build each directory conforming to source\N.N, where N is a number.
-	for /f "tokens=*" %%V in ('dir source\* /b /ad ^| findstr /i "^[0-9]\.[0-9]*"') do (
-		%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% source\%%V %BUILDDIR%/doctest/%%V
-		
-		if errorlevel 1 exit /b 1
-	)
+	%SPHINXBUILD% -b doctest %ALLSPHINXOPTS% %BUILDDIR%/doctest
+	if errorlevel 1 exit /b 1
 	echo.
 	echo.Testing of doctests in the sources finished, look at the ^
 results in %BUILDDIR%/doctest/output.txt.
 	goto end
 )
-
-endlocal
 
 :end
