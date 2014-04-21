@@ -178,6 +178,9 @@ htmlhelp_basename = 'qdbdoc'
 html_use_modindex = False
 html_show_sourcelink = False
 
+# Force MathJax to use https.
+mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js'
+
 # -- Options for LaTeX output --------------------------------------------------
 
 # The paper size ('letter' or 'a4').
