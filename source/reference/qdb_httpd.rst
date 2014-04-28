@@ -30,7 +30,7 @@ In FreeBSD or Linux you can run the http daemon with::
 
 or on Windows::
 
-    qdb_httpd qdb_httpd_config_file.json
+    .\qdb_httpd.exe -c qdb_httpd_config_file.json
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
@@ -38,7 +38,7 @@ The server does not require specific privileges to run (i.e. you don't need to r
 Using the qdb_httpd HTML interface
 ==================================
 
-To view the qdb_httpd web interface, simply point a browser to the server's IP address and port. By default this is localhost (127.0.0.1) and port 8080, but if viewing from a remote machine, consult the qdb_httpd daemon's configuration file.
+To view the qdb_httpd web interface, point a browser to the /view folder on the server's IP address and port. By default this URL is http://127.0.0.1:8080/view/index.html. If viewing from a remote machine, consult the qdb_httpd daemon's configuration file.
 
 The web interface has two tabs, the "Your Cluster" tab, showing an overview of the cluster, and the "Node Data" tab, where you can drill down into a specific qdbd node. As of 1.1.3, the web interface can display up to 32 nodes in a cluster.
 
@@ -80,9 +80,9 @@ The table on the right shows live statistics from the cluster.
 
 Beneath the statistics are six live graphs:
 
-.. image:: qdb_httpd_aggregated_persistent_size_graph.png
+.. image:: qdb_httpd_aggregated_cpu_usage_graph.png
     :align: center
-    :alt: The Aggregated Memory Usage Graph from the Your Cluster tab.
+    :alt: The Aggregated CPU Usage Graph from the Your Cluster tab.
 
 The graphs show:
 
@@ -93,15 +93,9 @@ The graphs show:
  * Input network traffic percentage for all nodes over time
  * Output network traffic percentage for all nodes over time
 
-You can adjust the time scale by selecting a time tab above each graph.
+Each graph displays up to an hour of historical data. You can adjust the time scale by resizing and moving the window at the bottom of each graph.
 
- * The dotted blue lines show 25%, 50%, and 75% usage.
- * The red line across the top of each graph corresponds to approximately 85% usage.
- * The dark lines show the measured data.
- * The dashed blue line shows the estimated trend of the data, if available.
-
-If the cluster is nearing 100% in any of its monitored categories, a light-blue warning triangle will appear on the top right of the graph, along with a short status code about the error. The image above shows a disk saturation limit being reached.
-
+Hover over the black line on the graph to display detailed information about the selected data point.
 
 Node Data
 ~~~~~~~~~
@@ -153,22 +147,11 @@ Sessions information by partition
  
    - Each partition is shown with a number of operations it performed out of 10,000 operations.
 
+Beneath the statistics are six live graphs:
 
-.. image:: qdb_httpd_node_downloads.png
+.. image:: qdb_httpd_node_cpu_usage_graph.png
     :align: center
-    :alt: The download buttons from the center of the Node Data tab.
-
-Two download buttons are below the operation statistics.
-
- * The "Raw JSON data" button retrieves the status information of the node in JSON form. See "global_status" in the :ref:`qdb_httpd-url-reference` below.
- * The "Configuration as JSON" button retrives the configuration information of the node. See "config" in the :ref:`qdb_httpd-url-reference` below.
-
-
-Beneath the statistics and the downloads are six live graphs:
-
-.. image:: qdb_httpd_node_persistent_size_graph.png
-    :align: center
-    :alt: The Node Persistent Size Graph from the bottom of the Node Data tab.
+    :alt: The Node CPU Usage Graph from the bottom of the Node Data tab.
 
 The graphs show:
 
@@ -179,14 +162,10 @@ The graphs show:
  * Input network traffic percentage for all processes on the node over time
  * Output network traffic percentage for all processes on the node over time
 
-You can adjust the time scale by selecting a time tab above each graph.
+Each graph displays up to an hour of historical data. You can adjust the time scale by resizing and moving the window at the bottom of each graph.
 
- * The dotted blue lines show 25%, 50%, and 75% usage.
- * The red line across the top of each graph corresponds to approximately 85% usage.
- * The dark lines show the measured data.
- * The dashed blue line shows the estimated trend of the data, if available.
+Hover over the black line on the graph to display detailed information about the selected data point.
 
-If the node is nearing 100% in any of its monitored categories, a light-blue warning triangle will appear on the top right of the graph, along with a short status code about the error. The image above shows a RAM saturation limit being reached.
 
 
 
