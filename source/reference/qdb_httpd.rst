@@ -401,7 +401,7 @@ The default configuration file is shown below::
         "log_config":
         {
             "dump_file": "qdb_error_dump.txt",
-            "flush_interval": 2,
+            "flush_interval": 3,
             "log_files": [  ],
             "log_level": 2,
             "log_to_console": false,

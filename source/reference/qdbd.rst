@@ -632,22 +632,22 @@ Some things to note when working with a configuration file:
 The default configuration file is shown below::
 
     {
-       "global":
-       {
-           "depot":
-           {
-               "max_bytes": 0,
-               "replication_factor": 2,
-               "root": "db",
-               "sync": false,
-               "transient": false
-           },
-           "limiter":
-           {
-               "max_bytes": 0,
-               "max_in_entries_count": 100000
-           }
-       },
+        "global":
+        {
+            "depot":
+            {
+                "max_bytes": 0,
+                "replication_factor": 1,
+                "root": "db",
+                "sync": false,
+                "transient": false
+            },
+            "limiter":
+            {
+                "max_bytes": 0,
+                "max_in_entries_count": 100000
+            }
+        },
        "local":
         {
             "chord":
@@ -660,7 +660,7 @@ The default configuration file is shown below::
             {
                 "dump_file": "qdb_error_dump.txt",
                 "flush_interval": 3,
-                "log_files": ["/var/log/qdbd.log"],
+                "log_files": [  ],
                 "log_level": 2,
                 "log_to_console": false,
                 "log_to_syslog": false
@@ -670,7 +670,7 @@ The default configuration file is shown below::
                 "client_timeout": 60,
                 "idle_timeout": 600,
                 "listen_on": "127.0.0.1:2836",
-                "partitions_count": 10,
+                "partitions_count": 3,
                 "server_sessions": 2000
             },
             "user":
