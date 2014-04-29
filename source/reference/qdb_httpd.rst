@@ -145,7 +145,7 @@ Node Operation Statistics
 
 Sessions information by partition
  
-   - Each partition is shown with a number of operations it performed out of 10,000 operations.
+   - Each partition is shown with a number of available simultaneous connections out of its maximum simultaneous connections. The maximum number of connections is determined by your license file.
 
 Beneath the statistics are six live graphs:
 

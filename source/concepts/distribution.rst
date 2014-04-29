@@ -170,7 +170,7 @@ In other words, the client accesses the replica **after** ring stabilization. It
 
 This comes at the cost of some unavailability. An when the ring is unstable and replicating entries.
 
-Formally put, this means that quasardb may chose to sacrifice *Availability* for *Consistency* and *Partionability* during short periods of time.
+Formally put, this means that quasardb may chose to sacrifice *Availability* for *Consistency* and *Partitionability* during short periods of time.
 
 .. _data-replication-reliability-impact:
 
