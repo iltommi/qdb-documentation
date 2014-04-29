@@ -1,7 +1,26 @@
 Change log
 **********
 
-1.1.1 - "Pythagoras" - 02/03/2014
+1.1.3 - "Pythagoras" - 04/29/2014
+=================================
+
+This maintenance release features a brand new administration interface, enabling users to monitor small to large clusters in just a couple of clicks!
+
+This release is fully compatible with 1.1.0, 1.1.1 and 1.1.2.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+    * Administration console: brand new administration console with many exciting features
+    * Daemon and web bridge: support for file based configuration
+    * Daemon: fixed a race condition where an error could be returned to successful long standing batch operations
+    * Web bridge: added CPU, disk and memory usage information
+    * Java API: it is now possible to specify an expiry for all write operations
+    * Comparison tool: fixed progress display
+    * Upgraded to LevelDB 1.16
+
+1.1.2 - "Pythagoras" - 02/03/2014
 =================================
 
 About
