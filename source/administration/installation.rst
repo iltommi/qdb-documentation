@@ -1,22 +1,14 @@
 Installation
 ============
 
-Hardware requirements
----------------------
+Requirements
+------------
 
-    * An IA32 or AMD64 platform
-    * End-to-end ECC memory (motherboard, CPU and memory)
-    * At least 1 GiB of RAM (the exact amount depends on your use case)
-    * At least 10 GiB of disk space. Calculate your disk requirements using the equation at :ref:`operations-db-storage`.
-    * 1 Gbit ethernet port
-    
-It is strongly advised to have a homogenous hardware configuration within a cluster.
+Ensure your system meets the :doc:`system_requirements`
 
-Platform specific instructions
-------------------------------
 
 FreeBSD
-^^^^^^^^^^^^^^^^
+-------
 
 The server comes as a gzipped tar archive. All needed libraries are included. FreeBSD 9 and libc++ v1 are required as quasardb.
 
@@ -32,12 +24,12 @@ To install libc++ v1, the most straightforward is to install the sources and cla
 Once you have this setup, quasardb runs out of the box.
 
 Linux
-^^^^^^^^^^^^^^^^
+-----
 
 All required libraries are included in gzipped tar archive. You will need the libc version 2.5 or later to run quasardb.
 
 Windows
-^^^^^^^^^^^^^^^^
+-------
 
 Windows XP SP3 or later is required to run quasardb. The setup program ensures all required libraries are installed. There is one setup program for Windows x86 and Windows x64, the setup will install the appropriate version.
 
