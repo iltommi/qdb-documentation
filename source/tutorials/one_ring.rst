@@ -128,11 +128,11 @@ Configure the Second and Third Nodes
 
 #. Repeat the above steps for the third node, providing either the first or the second node in the "bootstrapping_peers" value.
 
-As nodes come online, the cluster will automatically *stabilize* it self. :term:`Stabilization` is the process during which nodes agree on how and where the data should be distributed. During the stabilization phase the cluster is considered *unstable* which means requests may fail.
+As nodes come online, the cluster will automatically *stabilize* itself. :term:`Stabilization` is the process during which nodes agree on how and where the data should be distributed. During the stabilization phase the cluster is considered *unstable* which means requests may fail.
 
 The stabilization duration depends on the number of nodes. In our case the cluster should be fully stabilized in less than twenty seconds.
 
-If a node fails, the data it was responsible for will not be available, but the rest of the cluster will detect the failure, re-stabilize itself automatically and remain available. 
+If a node fails, the data it was responsible for will not be available, but the rest of the cluster will detect the failure, re-stabilize automatically and remain available. 
 
 See :doc:`../reference/qdbd` for more information.
 
