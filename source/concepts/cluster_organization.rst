@@ -36,28 +36,21 @@ Adding a Node to a Cluster
    :scale: 50%
    
    A fifth node is created and peered to the node at IP address 192.168.1.134. This begins the two-step process of :term:`Stabilization`, where nodes validate their position in the ring, then rearrange how and where data is distributed.
-
-
-.. figure:: qdb_add_node_process/03_qdb_id_assignment.png
-   :scale: 50%
    
-   The fifth node receives a unique ID from the cluster, in this example, ID 4. In a production environment, the IDs will be randomized hashes and a node may be given an ID anywhere in the ring rather than at the end.
-   
-   In the unlikely event that a new node is assigned an ID that has already been assigned to another node in the cluster, the new node will abort the join and stabilization process. The cluster remains unchanged.
+   Note that the fifth node assigned itself the unique ID of 4. In a production environment, the IDs are randomized hashes. In the unlikely event that a new node assigns itself an ID that is already taken by another node in the cluster, the new node will abort the join and stabilization process. The cluster remains unchanged.
 
 
-.. figure:: qdb_add_node_process/04_qdb_peering.png
+.. figure:: qdb_add_node_process/03_qdb_peering.png
    :scale: 50%
    
    The fifth node uses the predecessor and successor values of its neighbor nodes to move itself to its appropriate location within the cluster. In this example, it moves until it has a predecessor of 3 and a successor of 0.
    
-.. figure:: qdb_add_node_process/05_qdb_data_migration.png
+.. figure:: qdb_add_node_process/04_qdb_data_migration.png
    :scale: 50%
    
-   Once the node has a valid predecessor and successor, data is migrated based on the number of nodes and replication factor, in order to load balance across the cluster. During this period data is still accessible but the cluster may have degraded performance.
+   Once the node has a valid predecessor and successor, data is migrated based on the number of nodes and replication factor in order to load balance across the cluster. During this period, some nodes may be unavailable, namely the predecessor, the successor, and the node that was added.
 
-
-.. figure:: qdb_add_node_process/06_qdb_cluster_at_end.png
+.. figure:: qdb_add_node_process/05_qdb_cluster_at_end.png
    :scale: 50%
    
    Once data migration is complete, stabilization is complete and the finished cluster has five nodes.

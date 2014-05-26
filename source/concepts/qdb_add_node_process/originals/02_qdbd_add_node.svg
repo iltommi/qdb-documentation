@@ -14,9 +14,9 @@
    height="575"
    id="svg2"
    version="1.1"
-   inkscape:version="0.48.4 r9939"
-   sodipodi:docname="qdbd_join_node.svg"
-   inkscape:export-filename="/home/andrew/qdbd_join_node.png"
+   inkscape:version="0.48.3.1 r9886"
+   sodipodi:docname="02_qdbd_add_node.svg"
+   inkscape:export-filename="/home/andrew/Projects/Freelance/B14/wrpme-documentation/source/concepts/qdb_add_node_process/02_qdbd_add_node.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -3532,10 +3532,10 @@
      inkscape:cx="237.43201"
      inkscape:cy="292.75545"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="g13257"
      showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1025"
+     inkscape:window-width="1366"
+     inkscape:window-height="721"
      inkscape:window-x="-2"
      inkscape:window-y="-3"
      inkscape:window-maximized="1" />
@@ -3547,7 +3547,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -5288,7 +5288,7 @@
            id="tspan13251"
            y="847.12531"
            x="522.83307"
-           sodipodi:role="line">ID: ???</tspan></text>
+           sodipodi:role="line">ID: 4</tspan></text>
       <path
          sodipodi:open="true"
          sodipodi:end="8.6755992"
