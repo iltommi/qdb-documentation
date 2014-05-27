@@ -1,7 +1,7 @@
 Cluster Organization
 ====================
 
-.. The design of a cluster.
+.. The design and topology of a cluster.
 .. NOT about its data.
 .. NOT about its network protocols
 .. NOT about its ACID guarantees
@@ -17,28 +17,19 @@ Cluster Organization
 What is a Cluster?
 ------------------
 
-A quasardb cluster is a peer-to-peer distributed hash table based on `Chord <http://pdos.csail.mit.edu/chord/>`_
-
 Each server running a :doc:`../reference/qdbd` is called a node. By itself, a node can provide fast key-value storage for a project where a SQL database might be too slow or impose unwanted design limitations.
 
-However, the real power of a quasardb installation comes when multiple nodes are linked together into a cluster. In a cluster, quasardb nodes self-organize to share data and handle client requests, providing a scalable, concurrent, and fault tolerant database.
+However, the real power of a quasardb installation comes when multiple nodes are linked together into a cluster. A cluster is a peer-to-peer distributed hash table based on `Chord <http://pdos.csail.mit.edu/chord/>`_. In a cluster, quasardb nodes self-organize to share data and handle client requests, providing a scalable, concurrent, and fault tolerant database.
 
 .. Expand this section using the definitions of nodes, clusters, and links from a Chord perspective
 
 
-It is paramount to make sure that rings are not disjointed, that is, that all nodes will eventually join the same large ring. The simplest way to ensure this is to make all nodes initially join the same node. This will not create a single point of failure as once the ring is stabilized the nodes will properly reference each other.
+Stabilization
+-------------
 
-If following a major network failure, a ring forms two disjointed rings, the two rings will be able to unite again once the underlying failure is resolved. This is because each node "remembers" past topologies.
-
-
-
-.. Stabilization
-
-Stabilization happens when bootstrapping a cluster, in case of failure or when adding nodes. It is transparent and does not require any intervention.
+Stabilization happens when bootstrapping a cluster, in case of failure, or when adding nodes. It is transparent and does not require any intervention.
 
 As nodes are added to a cluster, the cluster automatically *stabilizes* itself. :term:`Stabilization` is the process during which nodes agree on how and where the data should be distributed. The time it takes to stabilize varies depending on the number of nodes and the amount of data to migrate. A cluster is considered stable when all nodes are ordered in the ring by their respective ids.
-
-If a node fails, the data it was responsible for will not be available, but the rest of the cluster will detect the failure, re-stabilize itself automatically and remain available.
 
 
 .. Periodic Stabilization
@@ -96,7 +87,13 @@ Removing nodes does not cause data migration. Removing nodes results in inaccess
 Recovering from Node Failure
 ----------------------------
 
+If a node fails and replication is disabled, the data the node was responsible for will not be available. If a node fails and replication is enabled, other nodes with duplicate data will respond to client requests. In both cases, the cluster will detect the failure, re-stabilize itself automatically, and remain available.
+
 When a node recovers from failure, it needs to reference a peer within the existing ring to properly rejoin. The first node in a ring generally does not reference any other, thus, if the first node of the ring fails, it needs to be restarted with a reference to a peer within the existing ring.
+
+If following a major network failure, a ring forms two disjointed rings, the two rings will be able to unite again once the underlying failure is resolved. This is because each node "remembers" past topologies.
+
+
 
 
 What is a Client?
