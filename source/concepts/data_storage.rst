@@ -97,7 +97,7 @@ Entry *e* will only be unavailable for the duration of the migration and does no
 Data replication
 -----------------
 
-Data replication is the process of duplicating entries across multiple nodes for the purpose of fault tolerance. Data replication greatly reduces the odds of functional failures at the cost of increased memory usage and reduced performance when adding or updating entries.
+Data replication is the process of duplicating entries across multiple nodes for the purpose of fault tolerance. Data replication greatly reduces the odds of functional failures at the cost of increased memory usage and reduced performance when adding or updating entries. Not to be confused with :ref:`data-migration`.
 
 .. note::
     Replication is optional and disabled by default (see :doc:`../reference/qdbd`).
@@ -181,6 +181,7 @@ Replication also increases the time needed to add a new node to the ring by a fa
 
 
 .. # Stolen from reference/qdbd.rst
+   # Merge into Replication above.
 
 Replication
 -----------

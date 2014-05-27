@@ -24,6 +24,8 @@ However, the real power of a quasardb installation comes when multiple nodes are
 .. Expand this section using the definitions of nodes, clusters, and links from a Chord perspective
 
 
+.. _stabilization:
+
 Stabilization
 -------------
 
@@ -36,7 +38,7 @@ As nodes are added to a cluster, the cluster automatically *stabilizes* itself. 
 
 In most clusters, the time required to stabilize is extremely short and does not result in any modification of order of nodes in the ring. However, if one or several nodes fail or if new nodes join the cluster, stabilization will migrate data and change the neighbors (see :ref:`data-migration`). Thus the stabilization duration depends on the amount of data to migrate, if any.
 
-The interval length between each stabilization can be anywhere between 1 (one) second and 2 (two) minutes.
+The interval length between each stabilization can be anywhere between 1 second and 2 minutes.
 
 When the node evaluates its neighbors in the cluster are stable, it will increase the duration between each stabilization check. On the contrary, when its neighbors are deemed *unstable*, the duration between stabilization checks will be reduced.
 
@@ -101,11 +103,9 @@ What is a Client?
 
 A client is any piece of software using the quasardb API to create, read, update, or delete data on a quasardb cluster. Clients that are bundled with the quasardb daemon include qdbsh, qdb_httpd, qdb_dbtool, and qdb_comparison. You can also create your own custom clients using the C, Java, or Python API documentation.
 
-Clients communicate to the cluster using the __ framework blah blah blah
-
 .. Expand this section using the definitions of clients from a Chord perspective
 
-
+.. Probably need to refer to data_transfer.rst, as a good chunk of being a client is data transfer.
 
 
 Multithreading
