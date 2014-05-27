@@ -9,7 +9,7 @@ Hardware Requirements
     * An IA32 or AMD64 platform
     * End-to-end ECC memory (motherboard, CPU and memory)
     * At least 1 GiB of RAM (the exact amount depends on your use case)
-    * At least 10 GiB of disk (the exact amount depends on your use case)
+    * At least 10 GiB of disk (the exact amount depends on your use case, see :ref:`operations-db-storage`)
     * 1 Gbit ethernet port
 
 It is strongly advised to have a homogenous hardware configuration within a cluster.
