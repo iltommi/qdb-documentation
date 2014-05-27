@@ -1,40 +1,14 @@
-Distribution
-**************************************************
+Data Storage
+============
 
-Features
-=====================================================
-
-A quasardb cluster is a peer-to-peer distributed hash table based on `Chord <http://pdos.csail.mit.edu/chord/>`_. It has the following features:
-
-    Distributed load
-        The load is fairly and automatically distributed amongst the nodes of the cluster
- 
-    Automatic configuration
-        Nodes organize themselves and exchange data as needed
-
-    Integrated replication
-        Data can be replicated on several nodes for increased resilience
-
-    Fault tolerance
-        The failure of one or several nodes does not compromise the cluster
- 
-    Transparent topology
-        A client queries the cluster from any node without any concern for performance
-
-
-Principles
-=====================================================
-
-Nodes
------------
-
-To be properly operated a ring needs to be stable (see :ref:`fault-tolerance`).
-
-A ring is stable when each node is connected to the proper :term:`successor` and :term:`predecessor`, that is, when all nodes are ordered by their respective ids. Each node requires an unique id that may either be automatically generated or given by the user (see :doc:`../reference/qdbd`).
-
-If a node detects that its id is already in use, it will leave the ring.
-
-Each node periodically checks the validity of its :term:`successor` and :term:`predecessor` and will adjust them if necessary. This process is called :term:`stabilization`.
+.. ### "Data Storage" Content Plan
+	- Where is the data stored on the filesystem?
+	- How is the data stored on the filesystem?
+	- Where is the data stored within the cluster? (refer where appropriate to Data Transfer)
+	- ACID guarantees
+	- Data replication
+	- Data storage performance
+	- Any other relevant information from current Persistence page
 
 Entries
 ---------
@@ -45,46 +19,46 @@ The entry is then placed on the node whose ID is the :term:`successor` of the en
 
 When a client queries the cluster, it locates the node who is the successor of the entry and queries that node.
 
-Stabilization
----------------
 
-Each node periodically "stabilizes" itself. 
+Persistence
+-----------
 
-Stabilizing means a node will exchange information with its neighbors in order to:
+Persistence is done using `LevelDB <http://code.google.com/p/leveldb/>`_. All software that is LevelDB compatible can process the quasardb persistence layer.
 
-    * Make sure the neighbors (the :term:`successor` and the :term:`predecessor`) are still up and running
-    * A new node isn't a better :term:`successor` than the existing one
+Entries are stored "as is", unmodified. The quasardb ensures that the most frequently access entries stay in memory so it can rapidly serve a large amount of simultaneous requests.
 
-In a sane, stable cluster, the time required to stabilize is extremely short and does not result in any modification. However, if one or several nodes fail or if new nodes join the cluster, stabilization will migrate data and change the neighbors (see :ref:`data-migration`).
+.. # DEAD LINK: (see :doc:`concurrency`).
 
-Thus the stabilization duration depends on the amount of data to migrate, if any. Migrating data is done as fast as the underlying architecture permits.
+All entries are persisted to disk as they are added and updated. When a put or add request has been processed, it is guaranteed that the persistence layer has fully acknowledged the modification. 
 
-The interval length between each stabilization can be anywhere between 1 (one) second and 2 (two) minutes.
+The persistence layer may compress data for efficiency purposes. This is transparent to the client and never done to the detriment of performance.
 
-When the node evaluates its neighbors in the cluster are stable, it will increase the duration between each stabilization check. On the contrary, when its neighbors are deemed *unstable*, the duration between stabilization checks will be reduced.
+By default, the persistence layer uses a write cache to increase performance, but this can be disabled (see :doc:`../reference/qdbd`). When the write cache is disabled, the server will not return from a put or update request until the entry is acknowledged by the file system.
 
-.. tip::
-    Stabilization happens when bootstrapping a cluster, in case of failure or when adding nodes. It is transparent and does not require any intervention.
+
+
+
 
 .. _data-migration:
 
-Data migration
-----------------
+Data Migration
+--------------
 
-Migration Timing
-^^^^^^^^^^^^^^^^
-
-Data migration only occurs when a new node joins the ring. If the new node is the successor of keys already bound to another node, data migration will take place. Data migration occurs regardless of data replication, as it makes sure entries are always bound to the correct node.
+Data migration is the process of transferring entries from one node to another for the purpose of load balancing. Not to be confused with :ref:`data-replication`.
 
 .. note::
     Data migration is always enabled.
 
-Nodes may join a ring when:
+Data migration only occurs when a new node joins the ring. Nodes may join a ring when:
 
-    1. In case of failure, when the node rejoins the ring upon recovery
-    2. When the administrator expands the cluster by adding new nodes
+    1. The administrator expands the cluster by adding new nodes
+    2. A node recovers from failure and rejoins the ring
 
-Removing nodes does not cause data migration. Removing nodes results in inaccessible entries, unless data replication is in place (see :ref:`data-replication`).
+If the new node is the successor of keys already bound to another node, data migration will take place. Data migration occurs regardless of data replication, as it makes sure entries are always bound to the correct node.
+
+.. ### EXAMPLE
+   ### Consider a cluster of 3 nodes with IDs 3, 5, and 10. A fourth node is added with the ID of 8.
+
 
 Migration Process
 ^^^^^^^^^^^^^^^^^
@@ -98,7 +72,7 @@ More precisely:
     4. P and S send the requested keys, if any, one by one.
 
 .. note::
-    Migration speed depends on the available network bandwidth. Therefore, a large amount of data (several gigabytes) to migrate may negatively impact performances.
+    Migration speed depends on the available network bandwidth, the speed of the underlying hardware, and the amount of data to migrate. Therefore, a large amount of data (several gigabytes) on older hardware may negatively impact client performance.
 
 During migration, nodes remain available and will answer to requests, however since migration occurs *after* the node is registered there is a time interval during which entries in migration may be temporarly unvailable (between steps #3 and #4).
 
@@ -114,12 +88,16 @@ Entry *e* will only be unavailable for the duration of the migration and does no
 .. tip::
     Add nodes when the traffic is at its lowest point.
 
+
+
+
+
 .. _data-replication:
 
 Data replication
 -----------------
 
-Data replication greatly reduces the odds of functional failures at the cost of increased memory usage and reduced performance when adding or updating entries.
+Data replication is the process of duplicating entries across multiple nodes for the purpose of fault tolerance. Data replication greatly reduces the odds of functional failures at the cost of increased memory usage and reduced performance when adding or updating entries.
 
 .. note::
     Replication is optional and disabled by default (see :doc:`../reference/qdbd`).
@@ -199,37 +177,39 @@ Replication also increases the time needed to add a new node to the ring by a fa
 .. tip::
     Clusters that mostly perform read operations greatly benefit from replication without any noticeable performance penalty.
 
-Usage
-=====================================================
 
-Building a cluster
-------------------
 
-To build a cluster, nodes are added to each other. A node only needs to know one other node within the ring (see :doc:`../tutorials/one_ring`). It is paramount to make sure that rings are not disjointed, that is, that all nodes will eventually join the same large ring. 
 
-The simplest way to ensure this is to make all nodes initially join the same node. This will not create a single point of failure as once the ring is stabilized the nodes will properly reference each other.
+.. # Stolen from reference/qdbd.rst
 
-If following a major network failure, a ring forms two disjointed rings, the two rings will be able to unite again once the underlying failure is resolved. This is because each node "remembers" past topologies.
+Replication
+-----------
 
-Connecting to a cluster
-------------------------
+The replication factor (:option:`--replication`) is the number of copies for any given entry within the cluster. Each copy is made on a different node, this implies that a replication factor greater than the number of nodes will be lowered to the actual number of nodes.
 
-A client may connect to any node within the cluster. It will automatically discover the nodes as needed.
+The purpose of replication is to increase fault tolerance at the cost of decreased write performance.
 
-Recovering a node
---------------------
+For example a cluster of three nodes with a replication factor of four (4) will have an effective replication factor of three (3). If a fourth node is added, effective replication will be increased to four automatically.
 
-When a node recovers from failure, it needs to reference a peer within the existing ring to properly rejoin. The first node in a ring generally does not reference any other, thus, if the first node of the ring fails, it needs to be restarted with a reference to a peer within the existing ring.
+By default the replication factor is one (1) which is equivalent to no replication. A replication factor of two (2) means that each entry has got a backup copy. A replication factor of three (3) means that each entry has got two (2) backup copies. The maximum replication factor is four (4).
+
+When adding an entry to a node, the call returns only when the add and all replications have been successful. If a node part or joins the ring, replication and migration occurs automatically as soon as possible.
+
+Replication is a cluster-wide parameter.
+
+
+
+
+
+
+.. MOST of this belongs in cluster_organization; cherry-pick out the data sections.
 
 .. _fault-tolerance:
 
 Fault tolerance
-=====================================================
+---------------
 
-Data loss
---------------
-
-quasardb is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). 
+quasardb is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). In most cases, simply repairing the cause of the failure then reconnecting the node to the cluster will resolve
 
 However, there is one case where data may be lost:
 
@@ -241,33 +221,40 @@ The persistence layer is able to recover from write failures, which means that o
 
 Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is negligible for clusters that mostly perform read operations.
 
-Unstable state
------------------
 
-When a node fails, a segment of the ring will become unstable. When a ring's segment is unstable, requests might fail. This happens when:
+Transient mode
+^^^^^^^^^^^^^^
 
-    1. The requested node's :term:`predecessor` or :term:`successor` is unavailable **and**
-    2. The requested node is currently looking for a valid :term:`predecessor` or :term:`successor`
+It is possible to disable persistence altogether (see :doc:`../reference/qdbd`). This is called the *transient* mode.
 
-In this context the node choses to answer to the client with an "unstable" error status. The client will then look for another node on the ring able to answer its query. If it fails to do so, the client will return an error to the user.
+In this mode:
 
-When a node joins a ring, it is in an unstable state until the join is complete.
+    * Performance may increase 
+    * Memory usage may be reduced
+    * Disk usage will be significantly lowered
 
-That means that although a ring's segment may be unable to serve requests for a short period of time, the rest of the ring remains unaffected.
+But:
 
-In a production environment, cluster segments may become unstable for a short period of time after a node fails. This temporary instability does not require human intervention to be resolved. 
+    * Evicted entries will be lost
+    * Node failure may imply irrecoverable data loss
 
-.. tip::
-    When a cluster's segment is unstable requests *might* temporarily fail. The probability for failure is exponentially correlated with the number of simultaneous failures.
-
-Minimum number of working nodes required
--------------------------------------------
-
-A cluster can successfully operate with a single node; however, the single node may not be able to handle all the load of the ring by itself. Additionally, managing node failures implies extra work for the nodes. Frequent failures will severely impact performances.
-
-.. tip::
-    A cluster operates best when more than 90% of the nodes are fully functional. Anticipate traffic growth and add nodes before the cluster is saturated.
+Transient mode is a clever way to transform a quasardb cluster into a powerful cache.
 
 
+
+
+.. ### This is really more of a concurrency / sysadmin-wants-more-RAM thing than a disk thing. No data is changed here.
+.. ### Consider moving elsewhere.
+
+
+Eviction
+--------
+
+In order to achieve high performance, quasardb keeps as much data as possible in memory. However, a node may not have enough physical memory available to hold all of its entries. Therefore, you may enable an eviction limit, which will remove entries from memory when the cache reaches a maximum number of entries or a given size in bytes. Use :option:`--limiter-max-entries-count` (defaults to 100,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+
+.. note::
+    The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
+
+The quasardb daemon chooses which entries to evict using a proprietary, *fast monte-carlo* heuristic. Evicted entries stay on disk until requested, at which point they are paged into the cache.
 
 

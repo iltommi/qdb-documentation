@@ -83,21 +83,6 @@ Each server within one cluster needs:
 The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests,
 depending on the actual hardware configuration of your server.
 
-Replication
------------
-
-The replication factor (:option:`--replication`) is the number of copies for any given entry within the cluster. Each copy is made on a different node, this implies that a replication factor greater than the number of nodes will be lowered to the actual number of nodes.
-
-The purpose of replication is to increase fault tolerance at the cost of decreased write performance.
-
-For example a cluster of three nodes with a replication factor of four (4) will have an effective replication factor of three (3). If a fourth node is added, effective replication will be increased to four automatically.
-
-By default the replication factor is one (1) which is equivalent to no replication. A replication factor of two (2) means that each entry has got a backup copy. A replication factor of three (3) means that each entry has got two (2) backup copies. The maximum replication factor is four (4).
-
-When adding an entry to a node, the call returns only when the add and all replications have been successful. If a node part or joins the ring, replication and migration occurs automatically as soon as possible.
-
-Replication is a cluster-wide parameter.
-
 Logging
 -------
 
@@ -141,19 +126,6 @@ The ideal number of partitions is close to the number of physical cores your ser
 
 .. note::
     Unless a performance issue is identified, it is best to let the daemon compute the partition count.
-
-Cache
------
-
-In order to achieve high performances, the daemon keeps as much data as possible in memory. However, the physical memory available for a node may not suffice.
-
-Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
-Use :option:`--limiter-max-entries-count` (defaults to 100,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
-
-.. note::
-    The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
-
-The quasardb daemon uses a proprietary *fast monte-carlo* eviction heuristic. This algorithm is currently not configurable.
 
 Operating limits
 ================
@@ -524,9 +496,8 @@ Global
 
 .. option:: --limiter-max-bytes=<value>
 
-   The maximum usable memory by entries, in bytes. Entries will be evicted as needed to enforce this limit. The alias length as well
-   as the content size are both accounted to measure the actual size of entries in memory.
-   The :term:`server` may use more than the specified amount of memory because of internal data structures and temporary copies. (global parameter)
+   The maximum usable memory by entries, in bytes (global parameter). Entries will be evicted as needed to enforce this limit. The alias length as well
+   as the content size are recorded to measure the actual size of entries in memory. Other contents such as bookkeping, temporary copies, or internal structures are not included. Therefore, the daemon memory usage may slightly exceed the specified maximum memory usage.
 
    Argument
         An integer representing the maximum size, in bytes, of the entries in memory.

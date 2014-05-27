@@ -5,10 +5,6 @@ Concepts
    :maxdepth: 2
 
    cluster_organization
-   distribution
-   protocol
-   persistence
-   concurrency
-   performance
-   streaming
+   data_storage
+   data_transfer
    security

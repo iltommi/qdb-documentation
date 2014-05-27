@@ -1,11 +1,19 @@
-Concurrency
-**************************************************
+Data Transfer
+=============
+
+.. ### "Data Transfer" Content Plan
+	- Connections between a client and the cluster
+	- Network protocol and performance
+	- An visual example of "get" - How the cluster determines where data is located
+	- An visual example of "set" - How the cluster determines where data gets stored
+	- Data Conflicts (reference Troubleshooting article)
+
 
 Principles
-=======================================
+----------
 
 Server
--------
+^^^^^^
 
 At the heart of many quasardb design and technology decisions lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, quasardb uses a combination of asynchronous I/O, lock-free containers and parallel processing.
 
@@ -20,7 +28,7 @@ Multiple clients can simultaneously access the same entry for reading. The serve
 Multiple clients can simultaneously access different entries for reading and writing.
 
 Client
--------
+^^^^^^
 
 All API are thread safe and synchronous unless otherwise noted.
 
@@ -29,7 +37,7 @@ When the client receives a reply from the server, the request is guaranteed to h
 The client takes care of locating the proper node for the request. The client will either find the proper node or fail (this may happen if the ring is unstable, see :ref:`fault-tolerance`).
 
 Guarantees
-=======================================
+----------
 
      * All requests, unless otherwise noted, are atomic
      * All requests, unless otherwise noted, are consistent
@@ -38,15 +46,18 @@ Guarantees
      * Once the server replies, it means the request has been fully carried on
      * Synchronous requests emanating from the same client are executed in order. However multiple requests coming from multiple clients are executed in an arbitrary order (see :ref:`conflicts-resolution`)
 
-A notable exception to the ACID guarantees is streaming (see :doc:`streaming`).
+A notable exception to the ACID guarantees is streaming.
+
+.. # DEAD LINK: (see :doc:`streaming`).
+
 
 .. _conflicts-resolution:
 
 Conflicts resolution
-=====================================================
+--------------------
 
 When may a conflict occur?
----------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 When executing a series of requests, each request is atomic, consistent, isolated and durable (ACID) and the requests will be executed in the given order.
 
@@ -66,7 +77,7 @@ However, in a multiclient context, conflicts may arise. What happens if a Client
 From the point of view of quasardb, everything is perfectly valid and coherent, but from the point of view of Client A, something is wrong!
 
 How to use the API to avoid conflicts
---------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Conflicts arise when **client usage is not carefully thought out**. Conflicts are a client's design problem, not a server problem.
 
@@ -95,7 +106,7 @@ It is possible to create more complex scenarii thanks to the get_update and comp
 .. tip:: Remember Ghostbusters: don't cross the streams.
 
 Updating multiple entries at a time
--------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 We've seen a trivial conflict case, but what about this one:
 
@@ -114,7 +125,7 @@ The one thing to understand is that it's a design usage problem on the client si
 As you can see, a conflict is a question of context and usage.
 
 The best way to avoid conflicts: plan out
-------------------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 quasardb provides several mechanisms to allow clients to synchronize themselves and avoid conflicts. However, the most important step to ensure proper operation is to plan out. What is a conflict? Is it a problem? Only a thorough plan can tell.
 
@@ -125,4 +136,88 @@ Things to consider:
     * The problem is never the conflict in itself. The problem is operating without realizing that there was a conflict in the first place.
     * quasardb provides ways to synchronize clients. For example, put fails if the entry already exists and update always succeed.
     * Last but not least, if you are trying to squeeze a schema into a non-relational database, disaster will ensue. A system such as quasardb generaly implies to rethink your modelization.
+
+
+
+
+
+Networking
+----------
+
+Network I/O are done asynchronously for maximum performance. Most of the I/O framework is based on `Boost.Asio <http://www.boost.org/doc/libs/1_51_0/doc/html/boost_asio.html>`_.
+
+Description
+-----------
+
+A client only needs to know the address of one node within the cluster. However, in order to access entries within the cluster, the node must be fully joined. Usually a node is fully joined within a few minutes of startup.
+
+.. # DEAD LINK: For more information, see :doc:`./distribution`.
+
+When a request is made, an ID is computed from the alias (with the `SHA-3 <http://en.wikipedia.org/wiki/Skein_(hash_function)>`_ algorithm) and the ring is explored to find the proper node. If the ring cannot be explored because it's too unstable, the client will return an "unstable" error code (see :ref:`fault-tolerance`).
+
+Once the proper node has been found, the request is sent. 
+
+If the topology has changed between the time the node has been found and the request has been made, the target node will return a "wrong node" error to the client, and the client will search again for the valid node.
+
+A client attempts to locate the valid node only three times. In other words, three consecutive errors will result in a definitive error returned to the user.
+
+Data management
+---------------
+
+Data is sent and stored "as is", bit for bit. The user may add any kind of content to the quasardb cluster, provided that the nodes have sufficient storage space. quasardb uses a low-level binary protocol that adds only few bytes of overhead per request.
+
+The persistence layer may compress data for efficiency purposes. This is transparent to the client.
+
+Most high levels API support the language native serialization mechanism to transparently add and retrieve objects to/from a quasardb cluster (see :doc:`../api/index`).
+
+Metadata is associated with each entry. The quasardb cluster ensures the metadata and the actual data are consistent at all time. 
+
+.. note::
+    It is currently not possible to obtain the metadata via the API.
+
+Timeout
+-------
+
+If the server does not reply to the client in the specified delay, the client will drop the request and return a "timeout" error code. This timeout is configurable and defaults to one minute.
+
+
+Streaming
+---------
+
+Motivation
+^^^^^^^^^^
+
+quasardb can store entries of arbitrary size, limited only by the hardware capabilities of the cluster's node. However, the server capability often exceeds the client's capability, especially in terms of memory.
+
+Additionally, the client may wish to consume the content as soon as possible. 
+
+For example, if you use a quasardb cluster to store digital videos and clients are video players, it is expected to be able to display the video as you download it.
+
+Usage
+^^^^^
+
+.. note:: The streaming API is currently only available in C (see :doc:`../api/c`), support for other languages will be added in future releases. One can currently stream entry *from* the server, but not *to* the server.
+
+The typical usage scenario is the following:
+
+    #. A client opens a streaming handle for a given entry. The default buffer size is 1 MiB. If it is inappropriate, it needs to be set *before* opening the streaming handle via the appropriate API call.
+    #. The client reads content for the entry. The API automatically reads the next chunk of available data. The result of the read is placed in the API allocated buffer.
+    #. The client processes the buffer. For example, it may send the buffer to a video decoder.
+    #. The client may manually set the offset if need be. Positioning the offset beyond the end results in an error.
+    #. The client stops reading when the offset reaches the end. Reading beyond the end will result in an error.
+    #. The client closes the handle. This frees all resources.
+
+.. important::
+    The streaming buffer is allocated by the API. The client should only read from the buffer and never attempt to free it manually. All resources are freed when the streaming handle is closed.
+
+Conflicts
+^^^^^^^^^
+
+By design, streaming an entry does not "lock" access to this entry. This is to prevent a client that does not properly close its streaming handle to "lock out" an entry.
+
+Therefore, streaming is one of the rare operations that is not ACID. When you stream an entry from the server, if this entry is updated by another client, the next call will result in a "conflicting operation" error and streaming will no longer be possible.
+
+The client must therefore close its streaming handle and reopen a new one to resume streaming. It may set the offset to the previous position if need be (and if the updated entry is large enough to support the operation).
+
+If another client removes the entry as you stream it, the next call will result in a "not found" error and streaming will no longer be possible.
 
