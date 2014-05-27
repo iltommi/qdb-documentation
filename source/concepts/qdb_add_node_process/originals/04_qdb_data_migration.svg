@@ -15,8 +15,8 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.3.1 r9886"
-   sodipodi:docname="05_qdb_data_migration.svg"
-   inkscape:export-filename="/home/andrew/Projects/Freelance/B14/wrpme-documentation/source/concepts/qdb_add_node_process/05_qdb_data_migration.png"
+   sodipodi:docname="04_qdb_data_migration.svg"
+   inkscape:export-filename="/home/andrew/Projects/Freelance/B14/wrpme-documentation/source/concepts/qdb_add_node_process/04_qdb_data_migration.png"
    inkscape:export-xdpi="90"
    inkscape:export-ydpi="90">
   <defs
@@ -5367,7 +5367,7 @@
        sodipodi:cy="258.38019"
        sodipodi:rx="147.14285"
        sodipodi:ry="147.14285"
-       d="M 401.42857,258.38019 A 147.14285,147.14285 0 0 1 350.12636,370.0296"
+       d="m 401.42857,258.38019 c 0,42.91723 -18.73737,83.69552 -51.30221,111.64941"
        transform="matrix(0.8464663,-0.53244231,-0.53244231,-0.8464663,209.89908,1213.0199)"
        sodipodi:start="0"
        sodipodi:end="0.86144176"
@@ -5380,49 +5380,10 @@
        sodipodi:cy="258.38019"
        sodipodi:rx="147.14285"
        sodipodi:ry="147.14285"
-       d="M 401.42857,258.38019 A 147.14285,147.14285 0 0 1 350.12636,370.0296"
+       d="m 401.42857,258.38019 c 0,42.91723 -18.73737,83.69552 -51.30221,111.64941"
        transform="matrix(-0.84458728,-0.5354179,0.5354179,-0.84458728,335.86661,1212.0615)"
        sodipodi:start="0"
        sodipodi:end="0.86144176"
-       sodipodi:open="true" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:12.00000003, 2.00000001;stroke-dashoffset:0;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
-       id="path11263-7-2-3"
-       sodipodi:cx="254.28572"
-       sodipodi:cy="258.38019"
-       sodipodi:rx="147.14285"
-       sodipodi:ry="147.14285"
-       d="M 401.42857,258.38019 A 147.14285,147.14285 0 0 1 350.12636,370.0296"
-       transform="matrix(-0.80192695,0.5974221,-0.5974221,-0.80192695,614.97745,940.80056)"
-       sodipodi:start="0"
-       sodipodi:end="0.86144176"
-       sodipodi:open="true" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:12.00000003, 2.00000001;stroke-dashoffset:0;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
-       id="path11263-7-2-3-0"
-       sodipodi:cx="254.28572"
-       sodipodi:cy="258.38019"
-       sodipodi:rx="147.14285"
-       sodipodi:ry="147.14285"
-       d="m 401.42857,258.38019 c 0,42.91723 -18.73737,83.69552 -51.30221,111.64941"
-       transform="matrix(0.78039103,0.6252918,0.6252918,-0.78039103,-62.369866,927.14528)"
-       sodipodi:start="0"
-       sodipodi:end="0.86144176"
-       sodipodi:open="true" />
-    <path
-       sodipodi:type="arc"
-       style="fill:none;stroke:#000000;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:11.99999992, 1.99999999;stroke-dashoffset:0;marker-start:url(#Arrow2Mstart);marker-end:url(#Arrow2Mend)"
-       id="path11263-7-3"
-       sodipodi:cx="254.28572"
-       sodipodi:cy="258.38019"
-       sodipodi:rx="147.14285"
-       sodipodi:ry="147.14285"
-       d="m 401.42857,258.38019 c 0,28.13703 -8.06737,55.68414 -23.24586,79.37604"
-       transform="matrix(-0.28632373,0.95813294,0.95813294,0.28632373,101.21364,586.19974)"
-       sodipodi:start="0"
-       sodipodi:end="0.56978239"
        sodipodi:open="true" />
   </g>
 </svg>
