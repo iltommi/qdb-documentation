@@ -1,8 +1,14 @@
 Performance tuning
 ==================
 
-Rule of thumb
--------------
+Measuring performance
+---------------------
+
+The best way to test the performance of your cluster is to use the :doc:`../reference/qdb_comparison`. It comes with a wide range of test scenarii and it understands quasardb, memchached, and redis protocols.
+
+
+Rules of thumb
+--------------
 
     * Pageins - If you see a lot of pageins, it means you should allocate more physical memory to the daemon (see :doc:`../reference/qdbd`).
     * Physical memory usage - If physical memory usage is too high (the node swaps), you will need to either reduce the memory usage of the daemon, add more memory to the node or add more nodes to the cluster.
