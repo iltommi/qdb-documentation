@@ -221,3 +221,24 @@ The client must therefore close its streaming handle and reopen a new one to res
 
 If another client removes the entry as you stream it, the next call will result in a "not found" error and streaming will no longer be possible.
 
+
+.. Rework this so it refers to "what happens when a query comes in during stabilization"
+
+Unstable state
+^^^^^^^^^^^^^^
+
+When a node fails, a segment of the ring will become unstable. When a ring's segment is unstable, requests might fail. This happens when:
+
+    1. The requested node's :term:`predecessor` or :term:`successor` is unavailable **and**
+    2. The requested node is currently looking for a valid :term:`predecessor` or :term:`successor`
+
+In this context the node choses to answer to the client with an "unstable" error status. The client will then look for another node on the ring able to answer its query. If it fails to do so, the client will return an error to the user.
+
+When a node joins a ring, it is in an unstable state until the join is complete.
+
+That means that although a ring's segment may be unable to serve requests for a short period of time, the rest of the ring remains unaffected.
+
+In a production environment, cluster segments may become unstable for a short period of time after a node fails. This temporary instability does not require human intervention to be resolved. 
+
+.. tip::
+    When a cluster's segment is unstable requests *might* temporarily fail. The probability for failure is exponentially correlated with the number of simultaneous failures.

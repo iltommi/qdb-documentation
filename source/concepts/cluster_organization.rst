@@ -21,6 +21,7 @@ Each server running a :doc:`../reference/qdbd` is called a node. By itself, a no
 
 However, the real power of a quasardb installation comes when multiple nodes are linked together into a cluster. A cluster is a peer-to-peer distributed hash table based on `Chord <http://pdos.csail.mit.edu/chord/>`_. In a cluster, quasardb nodes self-organize to share data and handle client requests, providing a scalable, concurrent, and fault tolerant database.
 
+
 .. Expand this section using the definitions of nodes, clusters, and links from a Chord perspective
 
 
@@ -83,19 +84,24 @@ Adding a Node to a Cluster
 Removing a Node from a Cluster
 ------------------------------
 
-Removing nodes does not cause data migration. Removing nodes results in inaccessible entries, unless data replication is in place (see :ref:`data-replication`).
+When a node is removed through a clean shutdown, it informs the other nodes in the ring on shutdown. The other nodes will immediately re-stabilize the cluster. If data replication is disabled, the entries stored on the node are effectively removed from the database. If data replication is enabled, the nodes with the duplicate data will serve client requests.
+
+When a node is removed due to a node failure, the cluster will detect the failure during the next periodic stabilization check. At that point the other nodes will automatically re-stabilize the cluster. If data replication is disabled, the entries stored on the node are effectively removed from the database. If data replication is enabled, the nodes with the duplicate data will serve client requests.
+
+Entries are not migrated when a node leaves the cluster, only when a node enters the cluster.
 
 
 Recovering from Node Failure
 ----------------------------
 
-If a node fails and replication is disabled, the data the node was responsible for will not be available. If a node fails and replication is enabled, other nodes with duplicate data will respond to client requests. In both cases, the cluster will detect the failure, re-stabilize itself automatically, and remain available.
+When a node recovers from failure, it needs to reference a node within the ring to rejoin the cluster. The configuration for the first node in a ring generally does not reference other nodes, thus, if the first node of the ring fails, you may need to adjust its configuration file to refer to an operational node.
 
-When a node recovers from failure, it needs to reference a peer within the existing ring to properly rejoin. The first node in a ring generally does not reference any other, thus, if the first node of the ring fails, it needs to be restarted with a reference to a peer within the existing ring.
+If following a major network failure, a cluster forms two disjointed rings, the two rings will be able to unite again once the underlying failure is resolved. This is because each node "remembers" past topologies.
 
-If following a major network failure, a ring forms two disjointed rings, the two rings will be able to unite again once the underlying failure is resolved. This is because each node "remembers" past topologies.
+The detection and re-stabilization process surrounding node failures can add a lot of extra work to the affected nodes. Frequent failures will severely impact performances.
 
-
+.. tip::
+    A cluster operates best when more than 90% of the nodes are fully functional. Anticipate traffic growth and add nodes before the cluster is saturated.
 
 
 What is a Client?
@@ -107,6 +113,10 @@ A client is any piece of software using the quasardb API to create, read, update
 
 .. Probably need to refer to data_transfer.rst, as a good chunk of being a client is data transfer.
 
+
+
+
+.. Move these two subsections to Primer? QDBD?
 
 Multithreading
 --------------
@@ -121,32 +131,3 @@ Resource management
 quasardb is developed in C++11 and assembly with performance in mind.
 
 quasardb uses custom memory allocators that are multithread-friendly. Whenever possible, quasardb allocates memory on the stack rather than on the heap. If a heap allocation cannot be avoided, quasardb's zero-copy architecture makes sure no cycle is wasted duplicating data, unless it causes data contention.
-
-Unstable state
-^^^^^^^^^^^^^^
-
-When a node fails, a segment of the ring will become unstable. When a ring's segment is unstable, requests might fail. This happens when:
-
-    1. The requested node's :term:`predecessor` or :term:`successor` is unavailable **and**
-    2. The requested node is currently looking for a valid :term:`predecessor` or :term:`successor`
-
-In this context the node choses to answer to the client with an "unstable" error status. The client will then look for another node on the ring able to answer its query. If it fails to do so, the client will return an error to the user.
-
-When a node joins a ring, it is in an unstable state until the join is complete.
-
-That means that although a ring's segment may be unable to serve requests for a short period of time, the rest of the ring remains unaffected.
-
-In a production environment, cluster segments may become unstable for a short period of time after a node fails. This temporary instability does not require human intervention to be resolved. 
-
-.. tip::
-    When a cluster's segment is unstable requests *might* temporarily fail. The probability for failure is exponentially correlated with the number of simultaneous failures.
-
-Minimum number of working nodes required
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-A cluster can successfully operate with a single node; however, the single node may not be able to handle all the load of the ring by itself. Additionally, managing node failures implies extra work for the nodes. Frequent failures will severely impact performances.
-
-.. tip::
-    A cluster operates best when more than 90% of the nodes are fully functional. Anticipate traffic growth and add nodes before the cluster is saturated.
-
-
