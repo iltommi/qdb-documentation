@@ -236,377 +236,245 @@ The iterator api may throw the std::bad_alloc exception should a memory allocati
 Reference
 ----------------
 
-.. cpp:function: std::string make_error_string(qdb_error_t err)
+.. cpp:class:: Exception
 
-    Translate an error code into a meaningful English message. This function never fails.
+    .. cpp:function:: Exception::ctor(System::Int32 error)
+        
+        Constructs an exception from a quasardb exception code. Do not use this constructor with codes that are not proper quasardb error codes.
+        
+        :param: error: The quasardb error code to convert to an Exception.
+        :returns: An exception.
 
-    :param err: The error code to translate
-    :type err: qdb_error_t
 
-    :returns: A STL string containing an English sentence describing the error.
+.. cpp:class:: Handle
 
-.. cpp:class:: const_iterator
+    .. cpp:function:: Handle Handle()
+        
+        Constructor. Creates a qdb.Handle object by which you can manipulate the cluster.
+        
+        :returns: A qdb.Handle object.
 
-    A forward iterator.
 
-    .. cpp:function: const_iterator & operator ++ (void)
+    .. cpp:function:: void ~Handle()
+        
+        Destructor. Destroys a qdb.Handle object. Automatically calls Close() on the handle before releasing the memory.
 
-        Moves the iterator one entry forward. If no entry is available, error code will be set to qdb_e_alias_not_found.
 
-        :returns: The updated iterator
+    .. cpp:function:: void Close()
+        
+        Terminates all connections and releases all client-side allocated resources.
 
-    .. cpp:function: const_iterator & operator -- (void)
 
-        Moves the iterator one entry backward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+    .. cpp:function:: bool Connected()
+        
+        Tests if the current handle is properly connected to a quasardb cluster.
+        
+        :returns: true if the handle is properly connected to a cluster.
 
-    .. cpp:function:: qdb_error_t last_error(void) const
 
-        :returns: The error code of the last iterator operation
+    .. cpp:function:: void SetTimeout(System::TimeSpan timeout)
+        
+        Sets the timeout for connections.
+        
+        :param: timeout: The amount of time after which the connection should timeout.
+        :type timeout: System::TimeSpan
 
-    .. cpp:function:: bool valid(void) const
 
-        :returns: true if the iterator is valid and points to an entry
+    .. cpp:function:: void Connect(System::Net::IPEndPoint host)
+        
+        Bind the client instance to a quasardb cluster and connect to the given node within the cluster.
+        
+        :param: host: The remote host to connect to.
+        :type host: System::Net::IPEndPoint
 
-.. cpp:class:: const_reverse_iterator
 
-    A reverse iterator.
+    .. cpp:function:: Exception[] Multiconnect(System::Net::IPEndPoint[] hosts)
+        
+        Bind the client instance to a quasardb cluster and connect to multiple nodes within the cluster. If the same node (address and port) is present several times in the input array, it will count as only one successful connection. All hosts must belong to the same quasardb cluster. Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
+        
+        :param: hosts: an array of remote hosts to connect to.
+        :returns: an array of Exceptions, matching each provided endpoint, or nullptr if no error occurred.
 
-    .. cpp:function: const_iterator & operator ++ (void)
 
-        Moves the iterator one entry backward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+    .. cpp:function:: void Put(System::String alias, System::Byte[] buffer)
+        
+        Adds an entry to the quasardb server. If the entry already exists the function will fail.
+        
+        :param: alias: The entry's alias to create.
+        :param: buffer: The entry's content to be added to the server.
 
-        :returns: The updated iterator
 
-    .. cpp:function: const_iterator & operator -- (void)
+    .. cpp:function:: void Put(System::String alias, System::Byte[] buffer, System::DateTime expiryTime)
+        
+        Adds an entry to the quasardb server. If the entry already exists the function will fail.
+        
+        :param: alias: The entry's alias to create.
+        :param: buffer: The entry's content to be added to the server.
+        :param: expiryTime: The absolute expiry time of the entry.
 
-        Moves the iterator one entry forward. If no entry is available, error code will be set to qdb_e_alias_not_found.
 
-    .. cpp:function:: qdb_error_t last_error(void) const
+    .. cpp:function:: void Update(System::String alias, System::Byte[] buffer)
+        
+        Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
+        
+        :param: alias: The entry's alias to update.
+        :param: buffer: The entry's content to be updated to the server.
 
-        :returns: The error code of the last iterator operation
 
-    .. cpp:function:: bool valid(void) const
+    .. cpp:function:: void Update(System::String alias, System::Byte[] buffer, System::DateTime expiryTime)
+        
+        Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
+        
+        :param: alias: The entry's alias to update.
+        :param: buffer: The entry's content to be updated to the server.
+        :param: expiryTime: The absolute expiry time of the entry.
 
-        :returns: true if the iterator is valid and points to an entry
 
-.. cpp:class:: const_reverse_iterator
+    .. cpp:function:: System::Byte[] Get(System::String alias)
+        
+        Retrieves an entry's content from the quasardb server. If the entry does not exist, the function will fail.
+        
+        :param: alias: The entry's alias whose content is to be retrieved.
+        :returns: The requested entry's content.
 
-.. cpp:class:: handle
 
-    .. cpp:function:: const_iterator begin(void)
-
-       :returns: A forward iterator pointing to the first entry in the cluster.
-
-    .. cpp:function:: const_iterator end(void)
-
-       :returns: A forward iterator pointing beyond the last entry in the cluster.
-
-    .. cpp:function:: const_reverse_iterator rbegin(void)
-
-       :returns: A reverse iterator pointing to the last entry in the cluster.
-
-    .. cpp:function:: const_reverse_iterator rend(void)
-
-       :returns: A reverse iterator pointing before the first entry in the cluster.
-
-    .. cpp:function:: void close(void)
-
-        Close the handle and release all associated resources.
-
-    .. cpp:function:: bool connected(void) const
-
-        Determine if the handle is connected or not.
-
-        :returns: true if the handle is connected, false otherwise
-
-    .. cpp:function:: void set_timeout(int timeout)
-
-        Set the timeout, in milliseconds, for all operations.
-
-        :param timeout: The timeout, in milliseconds.
-        :type timeout: int
-
-    .. cpp:function:: qdb_error_t connect(const char * host, unsigned short port)
-
-        Initialize all required resources and connect to a remote host.
-
-        :param host: A null terminated string designating the host to connect to.
-        :param port: An unsigned integer designating the port to connect to.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: size_t multi_connect(qdb_remote_node_t * servers, size_t count)
-
-        Initialize all required resources, bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within. The function returns the number of successful connections. If the same node (address and port) is present several times in the input array, it will count as only one successful connection.
-
-        The user supplies an array of qdb_remote_node_t and the function updates the error member of each entry according to the result of the operation.
-
-        Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
-
-        :param servers: An array of qdb_remote_node_t designating the nodes to connect to. The error member will be updated depending on the result of the operation.
-        :param count: The size of the input array.
-
-        :returns: The number of successful connections.
-
-    .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
-
-        Adds an :term:`entry` to the quasardb server. If the entry already exists the method will fail and will return ``qdb_e_alias_already_exists``.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to create.
-        :param content: A pointer to a buffer that represents the entry's content to be added to the server.
-        :param content_length: The length of the entry's content, in bytes.
-        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t update(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
-
-        Updates an :term:`entry` on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to update.
-        :param content: A pointer to a buffer that represents the entry's content to be updated to the server.
-        :param content_length: The length of the entry's content, in bytes.
-        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t get(const char * alias, char * content, size_t * content_length)
-
-        Retrieves an :term:`entry`'s content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
-
-        If the entry does not exist, the method will fail and return ``qdb_e_alias_not_found``.
-
-        If the buffer is not large enough to hold the data, the function will fail and return ``qdb_e_buffer_too_small``. content_length will nevertheless be updated with entry size so that the caller may resize its buffer and try again.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
-        :param content: A pointer to an user allocated buffer that will receive the entry's content.
-        :param content_length: A pointer to a size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: api_buffer_ptr get(const char * alias, qdb_error_t & error)
-
-        Retrieves an :term:`entry`'s content from the quasardb server.
-
-        If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
-
-        The function will allocate a buffer large enough to hold the entry's content.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
-        :param error: A reference to an error that will receive the result of the operation.
-
-        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
-
-    .. cpp:function:: api_buffer_ptr get_remove(const char * alias, qdb_error_t & error)
-
-        Atomically gets an :term:`entry` from the quasardb server and removes it.
-
-        If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
-
-        The function will allocate a buffer large enough to hold the entry's content.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
-        :param error: A reference to an error that will receive the result of the operation.
-
-        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
-
-    .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
-
-        Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exist.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to update.
-        :param update_content: A pointer to a buffer that represents the entry's content to be updated to the server.
-        :param update_content_length: The length of the buffer, in bytes.
-        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
-        :param error: A reference to an error that will receive the result of the operation.
-
-        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
-
-    .. cpp:function:: api_buffer_ptr compare_and_swap(const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, qdb_time_t expiry_time, qdb_error_t & error)
-
-        Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to compare to.
-        :param new_value: A pointer to a buffer that represents the entry's content to be updated to the server in case of match.
-        :param new_value_length: The length of the buffer, in bytes.
-        :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
-        :param comparand_length: The length of the buffer, in bytes.
-        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
-        :param error: A reference to an error that will receive the result of the operation.
-
-        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
-
-    .. cpp:function:: qdb_error_t remove(const char * alias)
-
-        Removes an :term:`entry` from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t remove_if(const char * alias, const char * comparand, size_t comparand_length)
-
-        Removes an :term:`entry` from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
-        :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
-        :param comparand_length: The length of the buffer, in bytes.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t remove_all(void)
-
+    .. cpp:function:: System::Byte[] GetRemove(System::String alias)
+        
+        Atomically gets an entry from the quasardb server and removes it. If the entry does not exist, the function will fail.
+        
+        :param: alias: The entry's alias whose content is to be retrieved.
+        :returns: The requested entry's content.
+
+
+    .. cpp:function:: System::Byte[] GetUpdate(System::String alias, System::Byte[] buffer)
+        
+        Atomically gets and updates (in this order) the entry on the quasardb server. If the entry does not exist, the function will fail.
+        
+        :param: alias: The entry's alias to update.
+        :param: buffer: The entry's content to be updated to the server.
+        :returns: The requested entry's content, before the update.
+
+
+    .. cpp:function:: System::Byte[] GetUpdate(System::String alias, System::Byte[] buffer, System::DateTime expiryTime)
+        
+        Atomically gets and updates (in this order) the entry on the quasardb server. If the entry does not exist, the function will fail.
+        
+        :param: alias: The entry's alias to update.
+        :param: buffer: The entry's content to be updated to the server.
+        :param: expiryTime: The absolute expiry time of the entry.
+        :returns: The requested entry's content, before the update.
+
+
+    .. cpp:function:: System::Byte[] CompareAndSwap(System::String alias, System::Byte[] newValue, System::Byte[] comparand)
+        
+        Atomically compares the entry with the comparand and updates it to newValue if, and only if, they match.
+        
+        :param: alias: The entry's alias to update.
+        :param: newValue: The entry's content to be updated to the server in case of match.
+        :param: comparand: The entry's content to be compared to.
+        :returns: The original content, before the update, if any.
+
+
+    .. cpp:function:: System::Byte[] CompareAndSwap(System::String alias, System::Byte[] newValue, System::Byte[] comparand, System::DateTime expiryTime)
+        
+        Atomically compares the entry with the comparand and updates it to newValue if, and only if, they match.
+        
+        :param: alias: The entry's alias to update.
+        :param: newValue: The entry's content to be updated to the server in case of match.
+        :param: comparand: The entry's content to be compared to.
+        :param: expiryTime: The absolute expiry time of the updated entry.
+        :returns: The original content, before the update, if any.
+
+
+    .. cpp:function:: void Remove(System::String alias)
+        
+        Removes an entry from the quasardb server. If the entry does not exist, the function will fail.
+        
+        :param: alias: The entry's alias to delete.
+
+
+    .. cpp:function:: bool RemoveIf(System::String alias, System::Byte[] comparand)
+        
+        Atomically compares the entry with the comparand and updates it to newValue if, and only if, they match.
+        
+        :param: alias: The entry's alias to delete.
+        :param: comparand: The entry's content to be compared to.
+        :returns: True if the entry was successfully removed, false otherwise.
+
+
+    .. cpp:function:: void RemoveAll()
+        
         Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
-        This call is *not* atomic; if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code.
 
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-        .. caution:: This function is meant for very specific use cases and its usage is discouraged.
-
-    .. cpp:function:: size_t run_batch(qdb_operation_t * operations, size_t operations_count)
-
+    .. cpp:function:: qdb::BatchResult[] RunBatch(qdb::BatchRequest[] requests)
+        
         Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
+        
+        :param: requests: An array of operations to run on the cluster in batch.
+        :returns: An array of results in the same order of the supplied operations.
 
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
-        :param operations: Pointer to an array of qdb_operations_t
-        :param operations_count: Size of the array, in entry count
+    .. cpp:function:: System::String[] PrefixGet(System::String prefix)
+        
+        Searches the cluster for all entries whose aliases start with "prefix". The method will return an array of strings containing the aliases of matching entries.
+        
+        :param: prefix: A string representing the search prefix.
+        :returns: An array of strings containing the aliases of matching entries.
 
-        :returns: The number of successful operations
 
-    .. cpp:function:: std::vector<std::string> prefix_get(const char * prefix, qdb_error_t & error)
+    .. cpp:function:: void ExpiresAt(System::String alias, System::DateTime expiryTime)
+        
+        Sets the expiry time of an existing entry from the quasardb cluster. A value of null means the entry never expires.
+        
+        :param: alias: A string representing the entry's alias for which the expiry must be set.
+        :param: expiryTime: The absolute time at which the entry expires.
 
-        Searches the cluster for all entries whose aliases start with "prefix". The method will return a std::vector of std::string containing the aliases of matching entries.
 
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
+    .. cpp:function:: void ExpiresFromNow(System::String alias, System::TimeSpan expiryDelta)
+        
+        Sets the expiry time of an existing entry from the quasardb cluster, relative to the current time.
+        
+        :param: alias: A string representing the entry's alias for which the expiry must be set.
+        :param: expiryDelta: Time, relative to the call time, after which the entry expires.
 
-        :param prefix: A pointer to a null terminated string representing the search prefix
-        :param error: A reference to an error that will receive the result of the operation.
 
-        :returns: A std::vector of std::string containing the aliases of matching entries.
+    .. cpp:function:: System::DateTime GetExpiryTime(System::String alias)
+        
+        Retrieves the expiry time of an existing entry. A value of null means the entry never expires.
+        
+        :param: alias: A string representing the entry's alias for which the expiry must be retrieved.
+        :returns: The absolute expiry time, null if there is no expiry.
 
-    .. cpp:function:: qdb_error_t expires_at(const char * alias, qdb_time_t expiry_time)
 
-        Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry never expires.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
-        :param expiry_time: Absolute time after which the entry expires
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t expires_from_now(const char * alias, qdb_time_t expiry_delta)
-
-        Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry expires as soon as possible.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
-        :param expiry_time: Time in seconds, relative to the call time, after which the entry expires
-        :type expiry_time: :c:type:`qdb_time_t`
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t get_expiry_time(const char * alias, qdb_time_t & expiry_time)
-
-        Retrieves the expiry time of an existing :term:`entry`. A value of zero means the entry never expires.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be get.
-        :param expiry_time: A pointer to a qdb_time_t that will receive the absolute expiry time.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t node_status(const qdb_remote_node_t & node, qdb_error_t & error)
-
+    .. cpp:function:: System::String NodeStatus(System::Net::IPEndPoint host)
+        
         Obtains a node status as a JSON string.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param node: A constant reference to the remote node to get the status from
-        :param error: A reference to an error code that will be updated according to the success of the operation
-
+        
+        :param: host: The remote node to get the status from.
         :returns: The status of the node as a JSON string.
 
-    .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
 
+    .. cpp:function:: System::String Handle::NodeConfig(System::Net::IPEndPoint host)
+        
         Obtains a node configuration as a JSON string.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param node: A constant reference to the remote node to get the configuration from
-        :param error: A reference to an error code that will be updated according to the success of the operation
-
+        
+        :param: host: The remote node to get the configuration from.
         :returns: The configuration of the node as a JSON string.
 
-    .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
 
+    .. cpp:function:: System::String Handle::NodeTopology(System::Net::IPEndPoint host)
+        
         Obtains a node topology as a JSON string.
-
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param node: A constant reference to the remote node to get the topology from
-        :param error: A reference to an error code that will be updated according to the success of the operation
-
+        
+        :param: host: The remote node to get the configuration from.
         :returns: The topology of the node as a JSON string.
 
-    .. cpp:function:: qdb_error_t stop_node(const qdb_remote_node_t & node, const char * reason)
 
-        Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued,
-        enabling inflight calls to complete successfully.
+    .. cpp:function:: void Handle::StopNode(System::Net::IPEndPoint host, System::String reason)
+        
+        Stops the node designated by its host and port number. This stop is generally effective within a few seconds of being issued, enabling inflight calls to complete successfully.
+        
+        :param: host: The remote node to stop.
+        :param: reason: A string detailing the reason for the stop that will appear in the remote node's log.
 
-        The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
-
-        :param node: A constant reference to the remote node to stop
-        :param reason: A pointer to a null terminated string detailling the reason for the stop that will appear in the remote node's log.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-        .. caution:: This function is meant for very specific use cases and its usage is discouraged.
-
-.. cpp:type:: handle_ptr
-
-    A smart pointer to a handle object.
-
-.. cpp:class:: api_buffer
-
-    An API allocated buffer returned by a method from the handle object. This object is meant to be used through the handle methods only.
-
-    .. cpp:function:: const char * data(void) const
-
-        Access the managed buffer, read-only.
-
-        :returns: A pointer to the managed buffer.
-
-    .. cpp:function:: size_t size(void) const
-
-        Gives the size of the managed buffer.
-
-        :returns: The size of the managed buffer.
-
-.. cpp:type:: api_buffer_ptr
-
-    A smart pointer definition used by the handle object.
