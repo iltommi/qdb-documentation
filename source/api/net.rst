@@ -7,177 +7,133 @@
 Introduction
 --------------
 
-The quasardb C++ API is a wrapper around the C API that brings convenience and flexibility without sacrificing performance. Behaviour is similar to that of the C API (see :doc:`c`).
+The quasardb .NET API is a wrapper around the C API that brings convenience and flexibility without sacrificing performance. Behaviour is similar to that of the C API (see :doc:`c`).
 
-Installing
---------------
+DLL
+---
 
-The C++ API package consists of one header and is included in the C API package (see :doc:`c`). Both the C and C++ header files must be linked into the client executable, but no additional linking is required.
-
-Header file
---------------
-
-All functions, typedefs and enums are made available in the ``include/qdb/client.hpp`` header file. All classes and methods reside in the ``qdb`` namespace.
+All object definitions and functions are made available in the ``QdbNetApi.dll`` file. All classes and methods reside in the ``qdb`` namespace.
 
 Exceptions
 ------------
 
-The quasardb C++ API does not throw any exception on its behalf, however situations such as low memory conditions may cause exceptions to be thrown.
+The quasardb .NET API will collect and throw Exceptions when the Handle.Close() method is called, or the Handle object goes out of scope.
 
 The handle object
 -------------------
 
-The :cpp:class:`handle` object is non-copiable. Move semantics are supported through rvalue references but must be enabled by setting the  ``QDBAPI_RVALUE_SUPPORT`` macro to 1. For example::
+Use the Handle object to interact with the cluster. Note that simply having a Handle object does not connect you to a cluster; you need to call Connect(). The following example shows creating a handle, connecting to a cluster, removing an entry, then handling errors::
 
-    #define QDBAPI_RVALUE_SUPPORT 1
-    #include <qdb/client.hpp>
-
-Handle objects can be used directly with the C API thanks to the overload of the cast operator. They will evaluate to false when not initialized::
-
-    qdb::handle h;
-    // some code...
-    if (!h) // true if h isn't initialized
+    try
     {
-        // ...
+        // Create a Handle.
+        qdb.Handle h = new qdb.Handle();
+        
+        // Connect to the cluster.
+        h.Connect(new System.Net.IPEndPoint(System.Net.IPAddress.Loopback, 2836));
+        
+        // Removes the entry "myalias" if it exists, errors otherwise
+        h.Remove("myalias");
+        
+        // An explicit Close() is not mandatory but permits catching errors in the surrounding try-catch block.
+        h.Close();
+    }
+    catch (qdb.Exception ex)
+    {
+        Console.WriteLine("There is something rotten in the kingdom of Denmark: {0}", ex.ToString());
     }
 
-    // initialization and connection
 
-    // removes the entry "myalias" if it exists
-    qdb_error_t r = qdb_remove(h, "myalias");
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
-
+If the handle object goes out of scope, the connection will automatically be terminated and the handle will be garbage collected.
 
 .. caution::
-    Calling :c:func:`qdb_close` on a :cpp:class:`handle` leads to undefined behaviour. Generally speaking it is advised to use the handle object's methods rather than the C API functions. The cast operator is provided for compatibility only.
-
-Handle objects can also be encapsulated in smart pointers. A definition as :cpp:type:`handle_ptr` is available. This requires a compiler with std::shared_ptr support.
-
-Connecting to a cluster
---------------------------
-
-The connection requires a :cpp:class:`handle` object and is done with the :cpp:func:`handle::connect` method::
-
-    qdb::handle h;
-    qdb_error_t r = h.connect("127.0.0.1", 2836);
-
-Connect will both initialize the handle and connect to the cluster. If the connection failed, the handle will be reset.  Note that when the handle object goes out of scope, the connection will be terminated and the handle will be released.
-
-.. caution::
-    Concurrent calls to connect on the same handle object leads to undefined behaviour.
+    Concurrent calls to the Connect() method on the same handle object leads to undefined behaviour.
 
 Adding and getting data to and from a cluster
 ---------------------------------------------
 
-Although one may use the handle object with the C API, using the handle object's methods is recommended. For example, to put and get an entry, the C++ way::
-
-    const char in_data[10];
-
-    qdb_error_t r = h.put("entry", in_data, 0);
-    if (r != qdb_e_ok)
+To put and get an entry, the C# way::
+    
+    try
     {
-        // error management
+        // Adds the entry "myalias" with the System::Byte[] value in_data, with no expiration time.
+        h.Put("myalias", in_data, 0);
+    }
+    catch (qdb.Exception ex)
+    {
+        Console.WriteLine("Putting entry 'myalias' failed: {0}", ex.ToString());
+    }
+    
+    try
+    {
+        // Gets the entry "myalias", with no expiration time.
+        System.Byte[] out_data = new System.Byte[];
+        h.Get("myalias", out_data);
+    }
+    catch (qdb.Exception ex)
+    {
+        Console.WriteLine("Getting entry 'myalias' failed: {0}", ex.ToString());
     }
 
-    // ...
-
-    char out_data[10];
-    qdb_error_t = r = h.get("entry", out_data, 10);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
-
-The largest difference between the C and C++ get calls are their memory allocation lifetimes. The C call :c:func:`qdb_get_buffer` allocates a buffer of the needed size and must be explicitly freed. The C++ handle.get() method uses uses smart pointers to manage allocations lifetime.
-
-In C, one would write::
-
-    char * allocated_content = 0;
-    size_t allocated_content_length = 0;
-    r = qdb_get_buffer(handle, "entry", &allocated_content, &allocated_content_length);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
-
-    // ...
-    // later
-    // ...
-
-    qdb_free_buffer(allocated_content);
-
-In C++, one writes::
-
-    qdb_error_t r = qdb_e_ok;
-    qdb::api_buffer_ptr allocated_content = h.get("entry", r);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
-
-    // allocated_content will be released when its usage count reaches zero
-
-The api_buffer object
------------------------
-
-The :cpp:class:`api_buffer` object is designed to be used via a smart pointer - whose definition is provided - and is returned by methods from the :cpp:class:`handle` object. It is possible to access the managed buffer directly (read-only) and query its size (see :cpp:func:`api_buffer::data` and :cpp:func:`api_buffer::size`).
 
 Closing a connection
 -----------------------
 
-A connection can be explicitly closed and the handle released with the :cpp:func:`handle::close` method::
+A connection can be explicitly closed and the handle released with the :cpp:func:`Handle::Close` method::
 
-    h.close();
+    h.Close();
 
-Note that when the :cpp:class:`handle` object is destroyed, :cpp:func:`handle::close` is automatically called.
+Note that when the :cpp:class:`Handle` object leaves scope, :cpp:func:`Handle::Close` is automatically called.
 
-.. caution::
-    The usage of :c:func:`qdb_close` with :cpp:class:`handle` object results in undefined behaviour.
 
 Expiry
 -------
 
-Expiry is set with :cpp:func:`handle::expires_at` and :cpp:func:`expires_from_now`. It is obtained with :cpp:func:`handle::get_expiry_time`. Expiry time is always in seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :cpp:func:`handle::expires_at` or relative to the call time when using :cpp:func:`expires_from_now`.
+Expiry is set with :cpp:func:`Handle::ExpiresAt` and :cpp:func:`ExpiresFromNow'. It is obtained with :cpp:func:`Handle::GetExpiryTime`. Expiry time is always in seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :cpp:func:`Handle::ExpiresAt` or relative to the call time when using :cpp:func:`ExpiresFromNow`.
 
 .. danger::
-    The behavior of :cpp:func:`expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
+    The behavior of :cpp:func:`ExpiresFromNow` is undefined if the time zone or the clock of the client computer is improperly configured.
 
 To set the expiry time of an entry to 1 minute, relative to the call time::
 
-    char content[100];
-
-    // ...
-
-    r = h.put("myalias", content, sizeof(content), 0);
-    if (r != qdb_error_ok)
+    TimeSpan sixty_seconds_from_now = new TimeSpan(0, 1, 0);
+    
+    try
     {
-        // error management
+        // Sets the entry "myalias" to an expiry time of 60 seconds from the call time.
+        h.ExpiresFromNow("myalias", sixty_seconds_from_now);
+    }
+    catch (qdb.Exception ex)
+    {
+        Console.WriteLine("Setting expiry time for 'myalias' failed: {0}", ex.ToString());
     }
 
-    r = h.expires_from_now("myalias", 60);
-    if (r != qdb_error_ok)
+To prevent an entry from ever expiring, use a default datetime object::
+
+    DateTime default_datetime_object = new DateTime();
+    
+    try
     {
-        // error management
+        // Sets the entry "myalias" to never expire.
+        h.ExpiresAt("myalias", default_datetime_object);
+    }
+    catch (qdb.Exception ex)
+    {
+        Console.WriteLine("Setting expiry time for 'myalias' failed: {0}", ex.ToString());
     }
 
-To prevent an entry from ever expiring::
+If an expiry time is not set when the entry is made, entries do not expire. To obtain the expiry time of an existing entry::
 
-    r = h.expires_at("myalias", 0);
-    if (r != qdb_error_ok)
+    DateTime datetime_of_myalias = new DateTime();
+    
+    try
     {
-        // error management
+        // Gets the expiry time for "myalias"
+        datetime_of_myalias = h.GetExpiryTime("myalias");
     }
-
-By default, entries do not expire. To obtain the expiry time of an existing entry::
-
-    qdb_time_t expiry_time = 0;
-    r = h.get_expiry_time("myalias", &expiry_time);
-    if (r != qdb_error_ok)
+    catch (qdb.Exception ex)
     {
-        // error management
+        Console.WriteLine("Getting expiry time for 'myalias' failed: {0}", ex.ToString());
     }
 
 
@@ -188,50 +144,21 @@ Prefix based search is a powerful tool that helps you lookup entries efficiently
 
 For example, if you want to find all entries whose aliases start with "record"::
 
-    qdb_error_t err = qdb_e_uninitialized;
-    std::vector<std::string> results = h.prefix_get("record", err);
-    if (err != qdb_e_ok)
+    System.String[] results = new System.String;
+    try
     {
-        // error management
+        
+        results = h.PrefixGet("record");
     }
-
-    // you now have in results an array string representing the matching entries
-
-The method takes care of allocating all necessary intermediate buffers. The caller does not need to do any explicit memory release.
+    catch (qdb.Exception ex)
+    {
+        Console.WriteLine("Getting prefixes for 'record' failed: {0}", ex.ToString());
+    }
 
 Batch operations
 -------------------
 
-Batch operations are used similarly as in C, except a method :cpp:func:`handle::run_batch` is provided for convenience.
-
-Iteration
--------------
-
-Iteration on the cluster's entries can be done forward and backward.
-
-An STL-like iterator API is provided which is compatible with STL algorithms::
-
-    // forward loop
-    std::for_each(h.begin(), h.end(), [](const qdb::const_iterator::value_type & v)
-    {
-        // work on the entry
-        // v.first is an std::string refering to the entry's alias
-        // v.second is qdb::api_buffer_ptr with the entry's content
-    });
-
-    // backward loop
-    std::for_each(h.rbegin(), h.rend(), [](const qdb::const_reverse_iterator::value_type & v) { /* work on the entry */ });
-
-There is however a significant difference with regular STL iterators: since entries are accessed remotely, an error may prevent the next entry from being retrieved, in which case the iterator will be considered to have reached the "end" of the iteration.
-
-It is however possible to query the last error through the last_error() member function. The qdb_e_alias_not_found indicates the normal end of the iteration whereas other error statuses indicate that the iteration could not successfully complete. It is up to the programmer to decide what to do in case of error.
-
-Iterators' value is a std::pair<std::string, qdb::api_buffer_ptr> which makes the manipulation of iterator associated data safe in most scenarii. Associated resources will be freed automatically through RAII.
-
-The iterator api may throw the std::bad_alloc exception should a memory allocation fail.
-
-.. note::
-    Although each entry is returned only once, the order in which entries are returned is undefined.
+Batch operations are used similarly as in C, except a method :cpp:func:`Handle::RunBatch` is provided for convenience.
 
 Reference
 ----------------
