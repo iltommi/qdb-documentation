@@ -1,6 +1,24 @@
 Change log
 **********
 
+1.1.4 - "Pythagoras" - 06/30/2014
+=================================
+
+This release features a brand new .NET API and various improvements to the administration interface.
+
+This release is fully compatible with 1.1.0, 1.1.1, 1.1.2 and 1.1.3.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+    * Shell: greatly improved online help
+    * .NET API: Fully functionnal .NET 4.0 API
+    * API: reduced the dependencies of libraries through static linking on all platforms
+    * Linux: upgraded to gcc 4.8.2
+    * Upgraded to Inteb TBB 4.2 Update 4
+    * Upgraded to LevelDB 1.17
+
 1.1.3 - "Pythagoras" - 04/29/2014
 =================================
 
