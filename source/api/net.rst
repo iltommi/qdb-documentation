@@ -1,7 +1,6 @@
 .NET
 ====
 
-.. cpp:namespace:: qdb
 .. highlight:: csharp
 
 Introduction
@@ -19,12 +18,12 @@ The library requires the Visual Studio 2012 Update 4 redist to function properly
 Exceptions
 ------------
 
-The quasardb .NET API will collect and throw Exceptions when the Handle.Close() method is called, or the Handle object goes out of scope.
+The quasardb .NET API will collect and throw Exceptions when the :ref:`Handle.Close() <csharp_handle_close>` method is called, or the :ref:`Handle <csharp_handle>` object goes out of scope.
 
 The handle object
 -------------------
 
-Use the Handle object to interact with the cluster. Note that simply having a Handle object does not connect you to a cluster; you need to call Connect(). The following example shows creating a handle, connecting to a cluster, removing an entry, then handling errors::
+Use the Handle object to interact with the cluster. Note that simply having a Handle object does not connect you to a cluster; you need to call :ref:`Handle.Connect() <csharp_handle_connect>`. The following example shows creating a handle, connecting to a cluster, removing an entry, then handling errors::
 
     try
     {
@@ -49,7 +48,7 @@ Use the Handle object to interact with the cluster. Note that simply having a Ha
 If the handle object goes out of scope, the connection will automatically be terminated and the handle will be garbage collected.
 
 .. caution::
-    Concurrent calls to the Connect() method on the same handle object leads to undefined behaviour.
+    Concurrent calls to the :ref:`Handle.Connect() <csharp_handle_connect>` method on the same handle object leads to undefined behaviour.
 
 Adding and getting data to and from a cluster
 ---------------------------------------------
@@ -80,20 +79,20 @@ To put and get an entry, the C# way::
 Closing a connection
 -----------------------
 
-A connection can be explicitly closed and the handle released with the :cpp:func:`Handle::Close` method::
+A connection can be explicitly closed and the handle released with the :ref:`Handle.Close() <csharp_handle_close>` method::
 
     h.Close();
 
-Note that when the :cpp:class:`Handle` object leaves scope, :cpp:func:`Handle::Close` is automatically called.
+Note that when the :ref:`Handle <csharp_handle>` object leaves scope, :ref:`Handle.Close() <csharp_handle_close>` is automatically called.
 
 
 Expiry
 -------
 
-Expiry is set with :cpp:func:`Handle::ExpiresAt` and :cpp:func:`ExpiresFromNow`. It is obtained with :cpp:func:`Handle::GetExpiryTime`. Expiry time is always in seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :cpp:func:`Handle::ExpiresAt` or relative to the call time when using :cpp:func:`ExpiresFromNow`.
+Expiry is set with :ref:`Handle.ExpiresAt() <csharp_handle_expires_at>` and :ref:`Handle.ExpiresFromNow() <csharp_handle_expires_from_now>`. It is obtained with :ref:`Handle.GetExpiryTime() <csharp_handle_get_expiry_time>`. Expiry time is always in seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :ref:`Handle.ExpiresAt() <csharp_handle_expires_at>` or relative to the call time when using :ref:`Handle.ExpiresFromNow() <csharp_handle_expires_from_now>`.
 
 .. danger::
-    The behavior of :cpp:func:`ExpiresFromNow` is undefined if the time zone or the clock of the client computer is improperly configured.
+    The behavior of :ref:`Handle.ExpiresFromNow() <csharp_handle_expires_from_now>` is undefined if the time zone or the clock of the client computer is improperly configured.
 
 To set the expiry time of an entry to 1 minute, relative to the call time::
 
@@ -160,50 +159,57 @@ For example, if you want to find all entries whose aliases start with "record"::
 Batch operations
 -------------------
 
-Batch operations are used similarly as in C, except a method :cpp:func:`Handle::RunBatch` is provided for convenience.
+Batch operations are used similarly as in C, except a method :ref:`Handle.RunBatch() <csharp_handle_run_batch>` is provided for convenience.
 
 Reference
 ----------------
 
+All classes and instance methods reside in the 'qdb' namespace.
 
-.. cpp:class:: Handle
 
-    .. cpp:function:: Handle()
+.. _csharp_handle:
+.. class:: Handle
+
+    .. _csharp_handle_constructor:
+    .. function:: Handle()
 
         Constructor. Creates a qdb.Handle object by which you can manipulate the cluster.
 
         :returns: A qdb.Handle object.
 
 
-    .. cpp:function:: void Close()
+    .. _csharp_handle_close:
+    .. function:: void Close()
 
         Terminates all connections and releases all client-side allocated resources.
 
 
-    .. cpp:function:: bool Connected()
+    .. _csharp_handle_connected:
+    .. function:: bool Connected()
 
         Tests if the current handle is properly connected to a quasardb cluster.
 
         :returns: true if the handle is properly connected to a cluster.
 
 
-    .. cpp:function:: void SetTimeout(System.TimeSpan timeout)
+    .. _csharp_handle_set_timeout:
+    .. function:: void SetTimeout(System.TimeSpan timeout)
 
         Sets the timeout for connections.
 
         :param timeout: The amount of time after which the connection should timeout.
-        :type timeout: System.TimeSpan
 
 
-    .. cpp:function:: void Connect(System.Net.IPEndPoint host)
+    .. _csharp_handle_connect:
+    .. function:: void Connect(System.Net.IPEndPoint host)
 
         Bind the client instance to a quasardb cluster and connect to the given node within the cluster.
 
         :param host: The remote host to connect to.
-        :type host: System.Net.IPEndPoint
 
 
-    .. cpp:function:: Exception[] Multiconnect(System.Net.IPEndPoint[] hosts)
+    .. _csharp_handle_multiconnect:
+    .. function:: Exception[] Multiconnect(System.Net.IPEndPoint[] hosts)
 
         Bind the client instance to a quasardb cluster and connect to multiple nodes within the cluster. If the same node (address and port) is present several times in the input array, it will count as only one successful connection. All hosts must belong to the same quasardb cluster. Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
 
@@ -211,7 +217,8 @@ Reference
         :returns: an array, matching each provided endpoint, with an exception in case of error or null if no error occurred.
 
 
-    .. cpp:function:: void Put(System.String alias, System.Byte[] buffer)
+    .. _csharp_handle_put_noexpiry:
+    .. function:: void Put(System.String alias, System.Byte[] buffer)
 
         Adds an entry to the quasardb server. If the entry already exists the function will fail.
 
@@ -219,7 +226,8 @@ Reference
         :param buffer: The entry's content to be added to the server.
 
 
-    .. cpp:function:: void Put(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
+    .. _csharp_handle_put:
+    .. function:: void Put(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
 
         Adds an entry to the quasardb server. If the entry already exists the function will fail.
 
@@ -228,7 +236,8 @@ Reference
         :param expiryTime: The absolute expiry time of the entry.
 
 
-    .. cpp:function:: void Update(System.String alias, System.Byte[] buffer)
+    .. _csharp_handle_update_noexpiry:
+    .. function:: void Update(System.String alias, System.Byte[] buffer)
 
         Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
@@ -236,7 +245,8 @@ Reference
         :param buffer: The entry's content to be updated to the server.
 
 
-    .. cpp:function:: void Update(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
+    .. _csharp_handle_update:
+    .. function:: void Update(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
 
         Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
@@ -245,7 +255,8 @@ Reference
         :param expiryTime: The absolute expiry time of the entry.
 
 
-    .. cpp:function:: System.Byte[] Get(System.String alias)
+    .. _csharp_handle_get:
+    .. function:: System.Byte[] Get(System.String alias)
 
         Retrieves an entry's content from the quasardb server. If the entry does not exist, the function will fail.
 
@@ -253,7 +264,8 @@ Reference
         :returns: The requested entry's content.
 
 
-    .. cpp:function:: System.Byte[] GetRemove(System.String alias)
+    .. _csharp_handle_get_remove:
+    .. function:: System.Byte[] GetRemove(System.String alias)
 
         Atomically gets an entry from the quasardb server and removes it. If the entry does not exist, the function will fail.
 
@@ -261,7 +273,8 @@ Reference
         :returns: The requested entry's content.
 
 
-    .. cpp:function:: System.Byte[] GetUpdate(System.String alias, System.Byte[] buffer)
+    .. _csharp_handle_get_update_no_expiry:
+    .. function:: System.Byte[] GetUpdate(System.String alias, System.Byte[] buffer)
 
         Atomically gets and updates (in this order) the entry on the quasardb server. If the entry does not exist, the function will fail.
 
@@ -270,7 +283,8 @@ Reference
         :returns: The requested entry's content, before the update.
 
 
-    .. cpp:function:: System.Byte[] GetUpdate(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
+    .. _csharp_handle_get_update:
+    .. function:: System.Byte[] GetUpdate(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
 
         Atomically gets and updates (in this order) the entry on the quasardb server. If the entry does not exist, the function will fail.
 
@@ -280,7 +294,8 @@ Reference
         :returns: The requested entry's content, before the update.
 
 
-    .. cpp:function:: System.Byte[] CompareAndSwap(System.String alias, System.Byte[] newValue, System.Byte[] comparand)
+    .. _csharp_handle_compare_and_swap_noexpiry:
+    .. function:: System.Byte[] CompareAndSwap(System.String alias, System.Byte[] newValue, System.Byte[] comparand)
 
         Atomically compares the entry with the comparand and updates it to newValue if, and only if, they match.
 
@@ -290,7 +305,8 @@ Reference
         :returns: The original content, before the update, if any.
 
 
-    .. cpp:function:: System.Byte[] CompareAndSwap(System.String alias, System.Byte[] newValue, System.Byte[] comparand, System.DateTime expiryTime)
+    .. _csharp_handle_compare_and_swap:
+    .. function:: System.Byte[] CompareAndSwap(System.String alias, System.Byte[] newValue, System.Byte[] comparand, System.DateTime expiryTime)
 
         Atomically compares the entry with the comparand and updates it to newValue if, and only if, they match.
 
@@ -301,14 +317,16 @@ Reference
         :returns: The original content, before the update, if any.
 
 
-    .. cpp:function:: void Remove(System.String alias)
+    .. _csharp_handle_remove:
+    .. function:: void Remove(System.String alias)
 
         Removes an entry from the quasardb server. If the entry does not exist, the function will fail.
 
         :param alias: The entry's alias to delete.
 
 
-    .. cpp:function:: bool RemoveIf(System.String alias, System.Byte[] comparand)
+    .. _csharp_handle_remove_if:
+    .. function:: bool RemoveIf(System.String alias, System.Byte[] comparand)
 
         Atomically compares the entry with the comparand and updates it to newValue if, and only if, they match.
 
@@ -317,12 +335,14 @@ Reference
         :returns: True if the entry was successfully removed, false otherwise.
 
 
-    .. cpp:function:: void RemoveAll()
+    .. _csharp_handle_remove_all:
+    .. function:: void RemoveAll()
 
         Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
 
-    .. cpp:function:: qdb.BatchResult[] RunBatch(qdb.BatchRequest[] requests)
+    .. _csharp_handle_run_batch:
+    .. function:: qdb.BatchResult[] RunBatch(qdb.BatchRequest[] requests)
 
         Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
@@ -330,7 +350,8 @@ Reference
         :returns: An array of results in the same order of the supplied operations.
 
 
-    .. cpp:function:: System.String[] PrefixGet(System.String prefix)
+    .. _csharp_handle_prefix_get:
+    .. function:: System.String[] PrefixGet(System.String prefix)
 
         Searches the cluster for all entries whose aliases start with "prefix". The method will return an array of strings containing the aliases of matching entries.
 
@@ -338,7 +359,8 @@ Reference
         :returns: An array of strings containing the aliases of matching entries.
 
 
-    .. cpp:function:: void ExpiresAt(System.String alias, System.DateTime expiryTime)
+    .. _csharp_handle_expires_at:
+    .. function:: void ExpiresAt(System.String alias, System.DateTime expiryTime)
 
         Sets the expiry time of an existing entry from the quasardb cluster. A value of null means the entry never expires.
 
@@ -346,7 +368,8 @@ Reference
         :param expiryTime: The absolute time at which the entry expires.
 
 
-    .. cpp:function:: void ExpiresFromNow(System.String alias, System.TimeSpan expiryDelta)
+    .. _csharp_handle_expires_from_now:
+    .. function:: void ExpiresFromNow(System.String alias, System.TimeSpan expiryDelta)
 
         Sets the expiry time of an existing entry from the quasardb cluster, relative to the current time.
 
@@ -354,7 +377,8 @@ Reference
         :param expiryDelta: Time, relative to the call time, after which the entry expires.
 
 
-    .. cpp:function:: bool GetExpiryTime(System.String alias, out System.DateTime expiryTime)
+    .. _csharp_handle_get_expiry_time:
+    .. function:: bool GetExpiryTime(System.String alias, out System.DateTime expiryTime)
 
         Retrieves the expiry time of an existing entry. A value of null means the entry never expires.
 
@@ -363,7 +387,8 @@ Reference
         :returns: True if there is an expiry, false otherwise.
 
 
-    .. cpp:function:: System.String NodeStatus(System.Net.IPEndPoint host)
+    .. _csharp_handle_node_status:
+    .. function:: System.String NodeStatus(System.Net.IPEndPoint host)
 
         Obtains a node status as a JSON string.
 
@@ -371,7 +396,8 @@ Reference
         :returns: The status of the node as a JSON string.
 
 
-    .. cpp:function:: System.String NodeConfig(System.Net.IPEndPoint host)
+    .. _csharp_handle_node_config:
+    .. function:: System.String NodeConfig(System.Net.IPEndPoint host)
 
         Obtains a node configuration as a JSON string.
 
@@ -379,7 +405,8 @@ Reference
         :returns: The configuration of the node as a JSON string.
 
 
-    .. cpp:function:: System.String NodeTopology(System.Net.IPEndPoint host)
+    .. _csharp_handle_node_topology:
+    .. function:: System.String NodeTopology(System.Net.IPEndPoint host)
 
         Obtains a node topology as a JSON string.
 
@@ -387,7 +414,8 @@ Reference
         :returns: The topology of the node as a JSON string.
 
 
-    .. cpp:function:: void StopNode(System.Net.IPEndPoint host, System.String reason)
+    .. _csharp_handle_stop_node:
+    .. function:: void StopNode(System.Net.IPEndPoint host, System.String reason)
 
         Stops the node designated by its host and port number. This stop is generally effective within a few seconds of being issued, enabling inflight calls to complete successfully.
 
