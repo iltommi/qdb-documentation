@@ -20,7 +20,7 @@ Shall we dance?
 
 Deploying quasardb is running a :term:`server`. That's just one program to launch, :doc:`reference/qdbd`::
 
-    ./qdbd &
+    ./qdbd -d
 
 Now that the server is ready, you can add anything that crosses your mind into it. For example with :doc:`reference/qdb_shell`::
 
@@ -82,7 +82,7 @@ But, wait, there's more!
 
 Working on web-oriented technologies? We've thought about you as well and built a web bridge, :doc:`reference/qdb_httpd`::
 
-    ./qdb_httpd &
+    ./qdb_httpd -d
 
 The web bridge can help you monitor the node and get entries in JSON or JSONP format, for example, with wget::
 
