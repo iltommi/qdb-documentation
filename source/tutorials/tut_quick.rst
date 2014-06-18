@@ -50,7 +50,7 @@ All information is available in both JSON and JSONP format.
 
     By default the server will listen on the localhost and on the port 8080. We may want to listen on all IPv4 interfaces instead. Note that we need to specify the daemon's address (192.168.1.1 on the port 303 in our example)::
 
-      qdb_httpd --address=0.0.0.0:8080 --daemon=192.168.1.1:303
+      qdb_httpd -d --address=0.0.0.0:8080 --daemon=192.168.1.1:303
 
  #. Test it from a browser
 
