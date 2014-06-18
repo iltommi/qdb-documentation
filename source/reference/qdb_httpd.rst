@@ -147,7 +147,23 @@ Sessions information by partition
  
    - Each partition is shown with a number of available simultaneous connections out of its maximum simultaneous connections. The maximum number of connections is determined by your license file.
 
-Beneath the statistics are six live graphs:
+
+There are two download buttons beneath the operation statistics:
+
+.. image:: qdb_httpd_raw_json_data.png
+    :align: center
+    
+.. image:: qdb_httpd_configuration_as_json.png
+    :align: center
+
+The buttons have the following effects:
+
+ * The "Raw JSON data" button retrieves the raw status information of the node. See "global_status" in the :ref:`qdb_httpd-url-reference` below.
+ * The "Configuration as JSON" button retrieves the configuration information of the node. See "config" in the :ref:`qdb_httpd-url-reference` below.
+
+
+
+The bottom half of the view shows six live graphs:
 
 .. image:: qdb_httpd_node_cpu_usage_graph.png
     :align: center
@@ -165,13 +181,6 @@ The graphs show:
 Each graph displays up to 45 minutes of historical data. You can adjust the time scale by resizing and moving the window at the bottom of each graph.
 
 Hover over the black line on the graph to display detailed information about the selected data point.
-
-
-
-
-
-
-
 
 
 
