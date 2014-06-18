@@ -20,7 +20,7 @@ Shall we dance?
 
 To start the quasardb :term:`server`, simply run the :doc:`reference/qdbd` from a terminal, passing it your license file:: 
 
-    $ ./qdbd --license-file="./qdb_license.txt" &
+    $ ./qdbd -d --license-file="./qdb_license.txt"
 
 Now that the server is running, you can begin storing anything that crosses your mind into the database. Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
 
@@ -93,7 +93,7 @@ But, wait, there's more!
 
 Working on web-oriented technologies? We've thought about you as well and built a web bridge, :doc:`reference/qdb_httpd`::
 
-    ./qdb_httpd &
+    ./qdb_httpd -d
 
 The web bridge can help you monitor the node and get entries in JSON or JSONP format, for example, with wget::
 
