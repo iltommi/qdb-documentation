@@ -4,6 +4,61 @@ C++
 .. cpp:namespace:: qdb
 .. highlight:: cpp
 
+
+.. // Can't pull the same :type: instead of :func: trick like I did in c.rst.
+.. // The CPP parser is too smart to be fooled. We'll have to live with the extra ().
+
+Quick Reference
+---------------
+
+ ====================================== ================================================== ===================
+        Return Type                                  Name                                       Arguments     
+ ====================================== ================================================== ===================
+  ..                                     :cpp:class:`const_iterator`;                       ..
+  :cpp:type:`qdb_error_t`                :cpp:func:`const_iterator::last_error`             (:cpp:type:`void`) const;
+  :cpp:type:`bool`                       :cpp:func:`const_iterator::valid`                  (:cpp:type:`void`) const;
+  ..                                     :cpp:class:`const_reverse_iterator`;               ..
+  :cpp:type:`qdb_error_t`                :cpp:func:`const_reverse_iterator::last_error`     (:cpp:type:`void`) const;
+  :cpp:type:`bool`                       :cpp:func:`const_reverse_iterator::valid`          (:cpp:type:`void`) const;
+  ..                                     :cpp:class:`handle`;                               ..
+  :cpp:type:`const_iterator`             :cpp:func:`handle::begin`                          (:cpp:type:`void`);
+  :cpp:type:`const_iterator`             :cpp:func:`handle::end`                            (:cpp:type:`void`);
+  :cpp:type:`const_reverse_iterator`     :cpp:func:`handle::rbegin`                         (:cpp:type:`void`);
+  :cpp:type:`const_reverse_iterator`     :cpp:func:`handle::rend`                           (:cpp:type:`void`);
+  :cpp:type:`void`                       :cpp:func:`handle::close`                          (:cpp:type:`void`);
+  :cpp:type:`bool`                       :cpp:func:`handle::connected`                      (:cpp:type:`void`) const;
+  :cpp:type:`void`                       :cpp:func:`handle::set_timeout`                    (:cpp:type:`int` timeout);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::connect`                        (:cpp:type:`const char *` host, :cpp:type:`unsigned short int` port);
+  :cpp:type:`size_t`                     :cpp:func:`handle::multi_connect`                  (:cpp:type:`qdb_remote_node_t` servers, :cpp:type:`size_t` count);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::put`                            (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`size_t` content_length, :cpp:type:`qdb_time_t` expiry_time);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::update`                         (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`size_t` content_length, :cpp:type:`qdb_time_t` expiry_time);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::get`                            (:cpp:type:`const char *` alias, :cpp:type:`char *` content, :cpp:type:`size_t *` content_length);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get`                            (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_remove`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_update`                     (:cpp:type:`const char *` alias, :cpp:type:`const char *` update_content, :cpp:type:`size_t` update_content_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::compare_and_swap`               (:cpp:type:`const char *` alias, :cpp:type:`const char *` new_value, :cpp:type:`size_t` new_value_length, :cpp:type:`const char *` comparand, :cpp:type:`size_t` comparand_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove`                         (:cpp:type:`const char *` alias);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_if`                      (:cpp:type:`const char *` alias, :cpp:type:`const char *` comparand, :cpp:type:`size_t` comparand_length);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_all`                     (:cpp:type:`void`);
+  :cpp:type:`size_t`                     :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` operations, :cpp:type:`size_t` operations_count);
+  :cpp:type:`std::vector<std::string>`   :cpp:func:`handle::prefix_get`                     (:cpp:type:`const char *` prefix, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_at`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_time);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_from_now`               (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_delta);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::get_expiry_time`                (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t &` expiry_time);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::node_status`                    (:cpp:type:`const qdb_remote_node_t &` node, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::node_config`                    (:cpp:type:`const qdb_remote_node_t &` node, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::node_topology`                  (:cpp:type:`const qdb_remote_node_t &` node, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::stop_node`                      (:cpp:type:`const qdb_remote_node_t &` node, :cpp:type:`const char *` reason);
+  ..                                     :cpp:type:`handle_ptr`;                            ..
+  ..                                     :cpp:class:`api_buffer`;                           ..
+  :cpp:type:`const char *`               :cpp:func:`api_buffer::data`                       (:cpp:type:`void`) const;
+  :cpp:type:`size_t`                     :cpp:func:`api_buffer::size`                       (:cpp:type:`void`) const;
+  ..                                     :cpp:type:`api_buffer_ptr`;                        ..
+  
+ ====================================== ================================================== ===================
+
+
+
 Introduction
 --------------
 
@@ -289,8 +344,6 @@ Reference
 
         :returns: true if the iterator is valid and points to an entry
 
-.. cpp:class:: const_reverse_iterator
-
 .. cpp:class:: handle
 
     .. cpp:function:: const_iterator begin(void)
@@ -562,7 +615,7 @@ Reference
 
         :returns: The configuration of the node as a JSON string.
 
-    .. cpp:function:: qdb_error_t node_config(const qdb_remote_node_t & node, qdb_error_t & error)
+    .. cpp:function:: qdb_error_t node_topology(const qdb_remote_node_t & node, qdb_error_t & error)
 
         Obtains a node topology as a JSON string.
 
