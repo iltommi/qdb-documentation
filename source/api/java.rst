@@ -14,7 +14,15 @@ It fully integrates itself into the Java environment thanks to a wrapper (also c
 Requirements
 ------------
 
-Java 1.6 or later is required.
+One of the following Java Development Kits:
+
+    * Oracle Java JDK SE 1.6
+    * Oracle Java JDK EE 1.6
+    * Oracle Java JDK SE 1.7
+    * Oracle Java JDK EE 1.7
+    * OpenJDK 6
+    * OpenJDK 7u
+
 
 Installation
 ------------

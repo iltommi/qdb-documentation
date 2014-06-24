@@ -26,7 +26,14 @@ FreeBSD Requirements
     * FreeBSD 8 or 9, amd64 only
     * libc++ v1
     * Python 2.7.x (optional)
-    * Java 1.6.x (optional)
+    * Java JDK (optional)
+        * Oracle Java JDK SE 1.6
+        * Oracle Java JDK EE 1.6
+        * Oracle Java JDK SE 1.7
+        * Oracle Java JDK EE 1.7
+        * OpenJDK 6
+        * OpenJDK 7u
+
 
 All other required libraries are included in the quasardb package.
 
@@ -40,7 +47,14 @@ Linux Requirements
     * Kernel 2.6 or higher
     * libc 2.5 or higher
     * Python 2.7.x (optional)
-    * Java 1.6.x (optional)
+    * Java JDK (optional)
+        * Oracle Java JDK SE 1.6
+        * Oracle Java JDK EE 1.6
+        * Oracle Java JDK SE 1.7
+        * Oracle Java JDK EE 1.7
+        * OpenJDK 6
+        * OpenJDK 7u
+
 
 All other required libraries are included in the quasardb package.
 
@@ -58,7 +72,14 @@ Windows Requirements
         * Server 2008
         * Server 2012
     * Python 2.7.x (optional)
-    * Java 1.6.x (optional)
+    * Java JDK (optional)
+        * Oracle Java JDK SE 1.6
+        * Oracle Java JDK EE 1.6
+        * Oracle Java JDK SE 1.7
+        * Oracle Java JDK EE 1.7
+        * OpenJDK 6
+        * OpenJDK 7u
+
 
 All other required libraries are included in the quasardb installer.
 
