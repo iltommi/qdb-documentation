@@ -207,4 +207,8 @@ When adding entries, this is generally not an issue as the caller knows the size
 Reference
 ---------
 
-The whole reference is available in `the javadoc format <javadoc/index.html>`_. This documentation is also included in the Java API archive. You will find it in the ``doc`` directory.
+The complete reference guide is available in the following locations:
+  * :doc:`QuasarDB Java Reference Guide <packages>`
+  * `Javadoc format <javadoc/index.html>`_
+  * Included as HTML in the Java API archive, in the ``doc`` directory.
+
