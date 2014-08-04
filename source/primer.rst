@@ -20,11 +20,11 @@ Shall we dance?
 
 Before you start the quasardb :term:`server`, generate a default configuration file::
 
-    $ ./qdbd -g > qdbd_config.json
+    $ ./qdbd -g > qdbd_config.conf
 
 Then, simply run the :doc:`reference/qdbd` from a terminal, passing in the configuration file:: 
 
-    $ ./qdbd -c qdbd_config.json
+    $ ./qdbd -c qdbd_config.conf
 
 Now that the server is running, you can begin storing anything that crosses your mind into the database. Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
 
@@ -99,11 +99,11 @@ Working on web-oriented technologies? We've thought about you as well and built 
 
 Like the qdb daemon, start by generating a default configuration file::
 
-    ./qdb_httpd -g > qdb_httpd_default_config.json
+    ./qdb_httpd -g > qdb_httpd_default_config.conf
 
 Then, start the web bridge with::
 
-    ./qdb_httpd -c qdb_httpd_default_config.json
+    ./qdb_httpd -c qdb_httpd_default_config.conf
 
 The web bridge can help you monitor the node and get entries in JSON or JSONP format, for example, with wget::
 
