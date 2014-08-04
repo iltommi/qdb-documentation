@@ -328,7 +328,7 @@ All classes and instance methods reside in the 'qdb' namespace.
     .. _csharp_handle_remove_if:
     .. function:: bool RemoveIf(System.String alias, System.Byte[] comparand)
 
-        Atomically compares the entry with the comparand and updates it to newValue if, and only if, they match.
+        Atomically compares the entry with the comparand and removes it if, and only if, they match.
 
         :param alias: The entry's alias to delete.
         :param comparand: The entry's content to be compared to.
