@@ -10,9 +10,10 @@ When a request is made, an ID is computed from the alias (with the `SHA-3 <http:
 
 Once the proper node has been found, the request is sent. 
 
-If the topology has changed between the time the node has been found and the request has been made, the target node will return a "wrong node" error to the client, and the client will search again for the valid node.
+If the topology has changed between the time the node has been found and the request has been made, the target node will return a "wrong node" error to the client, and the client will search again for the valid node. After three unsuccessful attempts to locate the node, the client reports an error to the user.
 
-A client attempts to locate the valid node only three times. In other words, three consecutive errors will result in a definitive error returned to the user.
+In the case of transmission errors, the protocol is failure resistant and will when it can reliably determine that the command hasn’t been executed on the node. When in doubt, it carefully avoid replays issues and returns an error. The client can then decide to try again or give up.
+
 
 Data management
 =====================================================
