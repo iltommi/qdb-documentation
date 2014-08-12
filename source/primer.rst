@@ -18,13 +18,9 @@ Where would you want to use quasardb? Here are a couple of use cases:
 Shall we dance?
 ---------------
 
-Before you start the quasardb :term:`server`, generate a default configuration file::
+To start the quasardb :term:`server`, simply run the :doc:`reference/qdbd` from a terminal, passing it your license file:: 
 
-    $ ./qdbd -g > qdbd_config.json
-
-Then, simply run the :doc:`reference/qdbd` from a terminal, passing in the configuration file:: 
-
-    $ ./qdbd -c qdbd_config.json
+    $ ./qdbd --license-file="./qdb_license.txt" &
 
 Now that the server is running, you can begin storing anything that crosses your mind into the database. Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
 
@@ -95,15 +91,9 @@ No problem, just tell quasardb the starting characters and it will return a matc
 But, wait, there's more!
 ------------------------
 
-Working on web-oriented technologies? We've thought about you as well and built a web bridge, :doc:`reference/qdb_httpd`.
+Working on web-oriented technologies? We've thought about you as well and built a web bridge, :doc:`reference/qdb_httpd`::
 
-Like the qdb daemon, start by generating a default configuration file::
-
-    ./qdb_httpd -g > qdb_httpd_default_config.json
-
-Then, start the web bridge with::
-
-    ./qdb_httpd -c qdb_httpd_default_config.json
+    ./qdb_httpd &
 
 The web bridge can help you monitor the node and get entries in JSON or JSONP format, for example, with wget::
 
