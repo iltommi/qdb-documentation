@@ -211,7 +211,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --help
 
-.. option:: -g, --gen-config
+.. option:: --gen-config
 
     Generates a JSON configuration file with default values and prints it to STDOUT.
 
