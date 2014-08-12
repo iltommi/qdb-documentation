@@ -20,7 +20,7 @@ Shall we dance?
 
 Before you start the quasardb :term:`server`, generate a default configuration file::
 
-    $ ./qdbd -g > qdbd_config.conf
+    $ ./qdbd --gen-config > qdbd_config.conf
 
 Then, simply run the :doc:`reference/qdbd` from a terminal, passing in the configuration file:: 
 
@@ -99,7 +99,7 @@ Working on web-oriented technologies? We've thought about you as well and built 
 
 Like the qdb daemon, start by generating a default configuration file::
 
-    ./qdb_httpd -g > qdb_httpd_default_config.conf
+    ./qdb_httpd --gen-config > qdb_httpd_default_config.conf
 
 Then, start the web bridge with::
 
