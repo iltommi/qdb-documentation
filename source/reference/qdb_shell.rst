@@ -193,7 +193,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. _qdbsh_put:
 .. option:: put <alias> <content>
 
-    Adds a new entry to the server. The entry must not already exist.
+    Adds a new entry to the server. The entry must not already exist. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
 
     :param alias: *(string)* the :term:`alias` of the entry to create
     :param content: *(string)* the content of the entry
