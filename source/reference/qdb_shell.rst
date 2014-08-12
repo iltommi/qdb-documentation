@@ -27,27 +27,38 @@ Command line options
  ===================================== ============================ ==============
                 Option                             Usage                Default
  ===================================== ============================ ==============
- :option:`-h`                          display help
+ :option:`-h`                          display help                  
+ :option:`-v`                          display quasardb version      
  :option:`--daemon`                    the daemon to connect to     127.0.0.1:2836
  ===================================== ============================ ==============
 
 Commands
 --------
 
- ===================================== ==========================================================
-                Command                                  Usage
- ===================================== ==========================================================
- :ref:`help <qdbsh_help>`              display help
- :ref:`version <qdbsh_version>`        display quasardb version
- :ref:`get <qdbsh_get>`                get a piece of data
- :ref:`put <qdbsh_put>`                put data, fails if entry already exists
- :ref:`update <qdbsh_update>`          put data, replace existing entry if any
- :ref:`get_update <qdbsh_getupdate>`   atomically get and update an existing entry if any
- :ref:`cas <qdbsh_cas>` atomically     compare and swap an entry in case of match
- :ref:`remove <qdbsh_del>`             remove given entry
- :ref:`remove_all <qdbsh_removeall>`   remove all entries
- :ref:`exit <qdbsh_exit>`              exit the shell (interactive mode only)
- ===================================== ==========================================================
+ ========================================================== ==========================================================
+                Command                                                  Usage
+ ========================================================== ==========================================================
+ :ref:`cas alias content comparand <qdbsh_cas>`              atomically compares and swaps the entry
+ :ref:`exit <qdbsh_exit>`                                    exit the shell (interactive mode only)
+ :ref:`expires_at alias expiry <qdbsh_expiresat>`            sets the absolute expiry time of the entry
+ :ref:`expires_from_now alias delta <qdbsh_expiresfromnow>`  sets the entry expiry time to seconds relative to now.
+ :ref:`get <qdbsh_get>`                                      returns the entry content
+ :ref:`get_expiry <qdbsh_getexpiry>`                         returns the entry's aboslute expiry time
+ :ref:`get_update alias [expiry] <qdbsh_getupdate>`          atomically get and update the entry
+ :ref:`help <qdbsh_help>`                                    display help
+ :ref:`node_config host <qdbsh_nodeconfig>`                  returns the node configuration as a JSON string
+ :ref:`node_status host <qdbsh_nodestatus>`                  returns the node status as a JSON string
+ :ref:`node_topology host <qdbsh_nodetopology>`              returns the node topology as a JSON string
+ :ref:`prefix_get prefix <qdbsh_prefixget>`                  returns the list of aliases matching the given prefix
+ :ref:`put <qdbsh_put>`                                      put data, fails if entry already exists
+ :ref:`remove alias <qdbsh_del>`                             removes the entry
+ :ref:`remove_all <qdbsh_removeall>`                         removes ALL entries on the WHOLE cluster (Dangerous!)
+ :ref:`remove_if alias data <qdbsh_removeif>`                removes the entry in case of match
+ :ref:`stop_node host reason <qdbsh_stopnode>`               stops the node
+ :ref:`update alias [expiry] data <qdbsh_update>`            updates the entry. The entry will be created if it doesn't exist
+ :ref:`version <qdbsh_version>`                              display quasardb version
+ 
+ ========================================================== ==========================================================
 
 .. _qdbsh-interactive-mode:
 
@@ -166,10 +177,47 @@ Commands
 
 A command generally requires one or several arguments. Each argument is separated by one or several space characters.
 
-.. _qdbsh_help:
-.. option:: help
+.. _qdbsh_cas:
+.. option:: cas <alias> <content> <comparand>
 
-    Displays basic usage information and lists all available commands.
+    Atomically compares the value of an existing entry with comparand and replaces it with content in case of match. The entry must already exist.
+
+    :param alias: *(string)* the :term:`alias` of the entry to get and update.
+    :param content: *(string)* the new content of the entry.
+    :param comparand: *(string)* the value to compare the content to
+    :return: *(string)* the entry's original content or an error message
+
+    .. note::
+        The alias cannot contain the space character and its length must be below 1024.
+        The new content can only be printable characters. This is a qdbsh restriction only.
+        There must be one space and only one space between the comparand and the content. There is no practical limit to the comparand length and all characters until the end of the input will be used for the comparand, including space characters.
+    
+    
+.. _qdbsh_exit:
+.. option:: exit
+
+    Exits the shell.
+
+
+.. _qdbsh_expiresat:
+.. option:: expires_at <alias> <expiry>
+    
+    Sets the expiry time of an existing entry from the quasardb cluster.
+    
+    :param alias: A string representing the entry's alias for which the expiry must be set.
+    :param expiry: The absolute time at which the entry expires.
+
+
+
+.. _qdbsh_expiresfromnow:
+.. option:: expires_from_now <alias> <delta>
+    
+    Sets the expiry time of an existing entry from the quasardb cluster.
+    
+    :param alias: A string representing the entry's alias for which the expiry must be set.
+    :param delta: A time, relative to the call time, after which the entry expires.
+
+
 
 .. _qdbsh_get:
 .. option:: get <alias>
@@ -190,46 +238,16 @@ A command generally requires one or several arguments. Each argument is separate
         The entry alias may not contain the space character.
         The alias may not be longer than 1024 characters.
 
-.. _qdbsh_put:
-.. option:: put <alias> <content>
 
-    Adds a new entry to the server. The entry must not already exist.
+.. _qdbsh_getexpiry:
+.. option:: get_expiry <alias>
 
-    :param alias: *(string)* the :term:`alias` of the entry to create
-    :param content: *(string)* the content of the entry
-    :return: nothing if successful, an error message otherwise
+    Retrieves the expiry time of an existing entry.
 
-    *Example*
-        Adds an entry whose alias is "myentry" and whose content is the string "MagicValue"::
+    :param alias: *(string)* the :term:`alias` of the entry
+    :return: *(string)* the expiry time of the alias
 
-            put myentry MagicValue
 
-    .. note::
-        The alias cannot contain the space character and its length must be below 1024.
-        There must be one space and only one space between the alias and the content.
-        There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
-
-.. _qdbsh_update:
-.. option:: update <alias> <content>
-
-    Adds or updates an entry to the server. If the entry doesn't exist it will be created, otherwise it will be changed to the new specified value.
-
-    :param alias: *(string)* the :term:`alias` of the entry to create or update.
-    :param content: *(string)* the content of the entry.
-    :return: Nothing if successful, an error message otherwise.
-
-    *Example*
-        Adds an entry whose alias is "myentry" and whose content is the string "MagicValue"::
-
-            update myentry MagicValue
-
-        Change the value of the entry "myentry" to the content "MagicValue2"::
-
-            update myentry Magicvalue2
-
-    .. note::
-        The alias cannot contain the space character and its length must be below 1024.
-        There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
 
 .. _qdbsh_getupdate:
 .. option:: get_update <alias> <content>
@@ -254,20 +272,66 @@ A command generally requires one or several arguments. Each argument is separate
         The alias cannot contain the space character and its length must be below 1024.
         There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
 
-.. _qdbsh_cas:
-.. option:: cas <alias> <content> <comparand>
 
-    Atomically compares the value of an existing entry with comparand and replaces it with content in case of match. The entry must already exist.
+.. _qdbsh_help:
+.. option:: help
 
-    :param alias: *(string)* the :term:`alias` of the entry to get and update.
-    :param content: *(string)* the new content of the entry.
-    :param comparand: *(string)* the value to compare the content to
-    :return: *(string)* the entry's original content or an error message
+    Displays basic usage information and lists all available commands.
+
+.. _qdbsh_nodeconfig:
+.. option:: node_config <host>
+    
+    Returns the node configuration as a JSON string
+    
+    :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
+    :return: *(string)* The node configuration.
+
+.. _qdbsh_nodestatus:
+.. option:: node_status <host>
+    
+    Returns the node status as a JSON string.
+    
+    :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
+    :return: *(string)* The node status.
+
+.. _qdbsh_nodetopology:
+.. option:: node_topology <host>
+    
+    Returns the node topology (list of predecessors and successors) as a JSON string.
+    
+    :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
+    :return: *(string)* The node topology.
+
+
+.. _qdbsh_prefixget:
+.. option:: prefix_get <prefix>
+    
+    Returns the list of aliases matching the given prefix.
+    
+    :param prefix: *(string)* A prefix to search for.
+    :return: *(string)* The list of matching aliases.
+
+
+.. _qdbsh_put:
+.. option:: put <alias> <content>
+
+    Adds a new entry to the server. The entry must not already exist.
+
+    :param alias: *(string)* the :term:`alias` of the entry to create
+    :param content: *(string)* the content of the entry
+    :return: nothing if successful, an error message otherwise
+
+    *Example*
+        Adds an entry whose alias is "myentry" and whose content is the string "MagicValue"::
+
+            put myentry MagicValue
 
     .. note::
         The alias cannot contain the space character and its length must be below 1024.
-        The new content can only be printable characters. This is a qdbsh restriction only.
-        There must be one space and only one space between the comparand and the content. There is no practical limit to the comparand length and all characters until the end of the input will be used for the comparand, including space characters.
+        There must be one space and only one space between the alias and the content.
+        There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
+
+
 
 .. _qdbsh_del:
 .. option:: remove <alias>
@@ -282,6 +346,7 @@ A command generally requires one or several arguments. Each argument is separate
 
             remove obsolete
 
+
 .. _qdbsh_removeall:
 .. option:: remove_all
 
@@ -292,10 +357,46 @@ A command generally requires one or several arguments. Each argument is separate
     .. caution::
         All entries will be deleted and will not be recoverable. If the cluster is unstable, the command may not be executed by all nodes. The command will nevertheless return success.
 
-.. _qdbsh_exit:
-.. option:: exit
 
-    Exits the shell.
+.. _qdbsh_removeif:
+.. option:: remove_if <alias> <comparand>
+
+    Atomically compares the entry with the comparand and removes it if, and only if, they match.
+
+    :param alias: The entry's alias to delete.
+    :param comparand: The entry's content to be compared to.
+    :returns: True if the entry was successfully removed, false otherwise.
+
+.. _qdbsh_stopnode:
+.. option:: stop_node <host>
+    
+    Stops the node designated by its host and port number. This stop is generally effective within a few seconds of being issued, enabling inflight calls to complete successfully.
+    
+    :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
+
+
+.. _qdbsh_update:
+.. option:: update <alias> <content>
+
+    Adds or updates an entry to the server. If the entry doesn't exist it will be created, otherwise it will be changed to the new specified value.
+
+    :param alias: *(string)* the :term:`alias` of the entry to create or update.
+    :param content: *(string)* the content of the entry.
+    :return: Nothing if successful, an error message otherwise.
+
+    *Example*
+        Adds an entry whose alias is "myentry" and whose content is the string "MagicValue"::
+
+            update myentry MagicValue
+
+        Change the value of the entry "myentry" to the content "MagicValue2"::
+
+            update myentry Magicvalue2
+
+    .. note::
+        The alias cannot contain the space character and its length must be below 1024.
+        There must be one space and only one space between the alias and the content. There is no practical limit to the content length and all characters until the end of the input will be added to the content, including space characters.
+
 
 .. _qdbsh_version:
 .. option:: version

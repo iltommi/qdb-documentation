@@ -12,11 +12,13 @@ Changes in this version
 -----------------------
 
     * Protocol version: 14
-    * Shell: greatly improved online help
+    * Reduced the dependencies of all binaries through static linking on all platforms
     * .NET API: Fully functionnal .NET 4.0 API
-    * API: reduced the dependencies of libraries through static linking on all platforms
+    * Administration console: added more information, fixed numerous glitches and greatly reduced memory usage
+    * Daemon: greatly reduced inter-node traffic in a stable cluster
+    * Shell: greatly improved online help
     * Linux: upgraded to gcc 4.8.2
-    * Upgraded to Inteb TBB 4.2 Update 4
+    * Upgraded to Intel TBB 4.2 Update 4
     * Upgraded to LevelDB 1.17
 
 1.1.3 - "Pythagoras" - 04/29/2014

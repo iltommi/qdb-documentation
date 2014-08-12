@@ -1,2 +1,6 @@
 source/api/*.pyc
 /build/
+
+# Javasphinx auto-built directories.
+source/api/com/
+source/api/packages.rst
