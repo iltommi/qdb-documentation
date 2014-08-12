@@ -259,7 +259,7 @@ All classes and instance methods reside in the 'qdb' namespace.
     .. _csharp_handle_put_noexpiry:
     .. function:: void Put(System.String alias, System.Byte[] buffer)
 
-        Adds an entry to the quasardb server. If the entry already exists the function will fail.
+        Adds an entry to the quasardb server. If the entry already exists the function will fail. Keys beginning with the string “qdb” are reserved and cannot be added to the cluster.
 
         :param alias: The entry's alias to create.
         :param buffer: The entry's content to be added to the server.
@@ -268,7 +268,7 @@ All classes and instance methods reside in the 'qdb' namespace.
     .. _csharp_handle_put:
     .. function:: void Put(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
 
-        Adds an entry to the quasardb server. If the entry already exists the function will fail.
+        Adds an entry to the quasardb server. If the entry already exists the function will fail. Keys beginning with the string “qdb” are reserved and cannot be added to the cluster.
 
         :param alias: The entry's alias to create.
         :param buffer: The entry's content to be added to the server.
