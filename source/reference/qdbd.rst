@@ -707,11 +707,11 @@ The default configuration file is shown below::
 
 .. describe:: global::limiter::max_bytes
 
-    An integer representing the maximum number of bytes that can be allocated for a single entry.
+    An integer representing the maximum amount of memory usage in bytes for each node's cache. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the byte limit.
 
 .. describe:: global::limiter::max_in_entries_count
 
-    An integer representing the maximum number of entries that can be stored in the cluster.
+    An integer representing the maximum number of entries that can be stored in memory. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the entry limit.
     
 .. describe:: local::chord::bootstrapping_peers
 
