@@ -157,6 +157,8 @@ To add an entry to the cluster you need to specify it's :term:`alias` and wrap t
                 // error
             }
 
+Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
+
 Getting an entry from the cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
