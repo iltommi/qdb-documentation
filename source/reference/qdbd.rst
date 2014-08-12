@@ -23,7 +23,7 @@ Cheat sheet
                 Option                               Usage               Default           Global     Req. Version
  ===================================== ============================ =================== ============ ==============
  :option:`-h`                          display help                                         No       
- :option:`-g`, `--gen-config`          generate default config file                         No        >=1.1.3
+ :option:`--gen-config`                generate default config file                         No        >=1.1.3
  :option:`-c`, `--config-file`         specify config file                                  No        >=1.1.3
  :option:`--license-file`              specify license              qdb_license.txt         No       
  :option:`-d`                          daemonize                                            No       
@@ -216,7 +216,7 @@ Instance specific
 
             qdbd --help
 
-.. option:: -g, --gen-config
+.. option:: --gen-config
 
     Generates a JSON configuration file with default values and prints it to STDOUT.
 
