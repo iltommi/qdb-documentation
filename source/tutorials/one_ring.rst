@@ -18,7 +18,7 @@ Configure the First Node
 
 #. Generate a default configuration file. ::
 
-   $ qdbd --gen-config > qdbd_config.json
+   $ qdbd --gen-config > qdbd_config.conf
 
 #. Edit the configuration file.
 
@@ -79,7 +79,7 @@ Configure the First Node
    
 #. Start the quasardb daemon on the first node. ::
 
-   $ ./qdbd -c qdbd_config.json
+   $ ./qdbd -c qdbd_config.conf
 
 
 Configure the Second and Third Nodes
