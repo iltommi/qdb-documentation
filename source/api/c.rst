@@ -3,6 +3,65 @@ C
 
 .. highlight:: c
 
+
+.. // The functions below are linked using :c:type: not :c:func: so that Sphinx 
+.. // does not add a (). This allows a reader to copy-and-paste the whole row. 
+
+Quick Reference
+---------------
+
+ =========================== ================================== ===================
+        Return Type                       Name                       Arguments     
+ =========================== ================================== ===================
+  ..                          :c:type:`qdb_handle_t`;            ..
+  ..                          :c:type:`qdb_remote_node_t`;       ..
+  ..                          :c:type:`qdb_operation_t`;         ..
+  ..                          :c:type:`qdb_error_t`;             ..
+  ..                          :c:type:`qdb_option_t`;            ..
+  ..                          :c:type:`qdb_protocol_t`;          ..
+  :c:type:`const char *`      :c:type:`qdb_error`                (:c:type:`qdb_error_t` error, char * message, size_t message_length);
+  :c:type:`const char *`      :c:type:`qdb_version`              (void);
+  :c:type:`const char *`      :c:type:`qdb_build`                (void);
+  :c:type:`qdb_error_t`       :c:type:`qdb_open`                 (:c:type:`qdb_handle_t` handle, :c:type:`qdb_protocol_t` proto);
+  :c:type:`qdb_handle_t`      :c:type:`qdb_open_tcp`             (void);
+  :c:type:`qdb_error_t`       :c:type:`qdb_set_option`           (:c:type:`qdb_handle_t` handle, :c:type:`qdb_option_t` option, ...);
+  :c:type:`qdb_error_t`       :c:type:`qdb_connect`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` host, :c:type:`unsigned short` port);
+  :c:type:`size_t`            :c:type:`qdb_multi_connect`        (:c:type:`qdb_handle_t` handle, :c:type:`qdb_remote_node_t *` servers, :c:type:`size_t` count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_close`                (:c:type:`qdb_handle_t` handle);
+  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t` results_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char *` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_buffer`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_remove`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`size_t *` content_length);
+  :c:type:`void`              :c:type:`qdb_free_buffer`          (:c:type:`qdb_handle_t` handle, :c:type:`char *` buffer);
+  :c:type:`void`              :c:type:`qdb_free_results`         (:c:type:`qdb_handle_t` handle, :c:type:`const char **` results, :c:type:`size_t` results_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t *` results_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_init_operations`      (:c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_run_batch`            (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_free_operations`      (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_put`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`size_t` content_length, :c:type:`qdb_time_t` expiry_time);
+  :c:type:`qdb_error_t`       :c:type:`qdb_update`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`size_t` content_length, :c:type:`qdb_time_t` expiry_time);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_buffer_update`    (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` update_content, :c:type:`size_t` update_content_length, :c:type:`qdb_time_t` expiry_time, :c:type:`char **` get_content, :c:type:`size_t *` get_content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_compare_and_swap`     (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` new_value, :c:type:`size_t` new_value_length, :c:type:`const char *` comparand, :c:type:`qdb_time_t` expiry_time, :c:type:`size_t` comparand_length, :c:type:`char **` original_value, :c:type:`size_t *` original_value_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_remove`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias);
+  :c:type:`qdb_error_t`       :c:type:`qdb_remove_if`            (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` comparand, :c:type:`size_t` comparand_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_expires_at`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_time);
+  :c:type:`qdb_error_t`       :c:type:`qdb_expires_from_now`     (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_delta);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_expiry_time`      (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_time);
+  :c:type:`qdb_error_t`       :c:type:`qdb_remove_all`           (:c:type:`qdb_handle_t` handle);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_status`          (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_config`          (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_topology`        (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stop_node`            (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char *` reason);
+  :c:type:`qdb_error_t`       :c:type:`qdb_iterator_begin`       (:c:type:`qdb_handle_t` handle, :c:type:`qdb_const_iterator_t *` iterator);
+  :c:type:`qdb_error_t`       :c:type:`qdb_iterator_rbegin`      (:c:type:`qdb_handle_t` handle, :c:type:`qdb_const_iterator_t *` iterator);
+  :c:type:`qdb_error_t`       :c:type:`qdb_iterator_next`        (:c:type:`qdb_const_iterator_t *` iterator);
+  :c:type:`qdb_error_t`       :c:type:`qdb_iterator_previous`    (:c:type:`qdb_const_iterator_t *` iterator);
+  :c:type:`qdb_error_t`       :c:type:`qdb_iterator_copy`        (:c:type:`qdb_const_iterator_t *` original, :c:type:`qdb_const_iterator_t *` copy);
+  :c:type:`qdb_error_t`       :c:type:`qdb_iterator_close`       (:c:type:`qdb_const_iterator_t *` iterator);
+  
+ =========================== ================================== ===================
+ 
+
 Introduction
 --------------
 

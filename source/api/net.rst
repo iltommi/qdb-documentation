@@ -3,6 +3,45 @@
 
 .. highlight:: csharp
 
+
+Quick Reference
+---------------
+
+ ==================== ================================================================== ===================
+     Return Type                                  Name                                       Arguments
+ ==================== ================================================================== ===================
+  Handle               :ref:`Handle <csharp_handle_constructor>`                          ()
+  void                 :ref:`Close <csharp_handle_close>`                                 ()
+  bool                 :ref:`Connected <csharp_handle_connected>`                         ()
+  void                 :ref:`SetTimeout <csharp_handle_set_timeout>`                      (System.TimeSpan timeout)
+  void                 :ref:`Connect <csharp_handle_connect>`                             (System.Net.IPEndPoint host)
+  Exception[]          :ref:`Multiconnect <csharp_handle_multiconnect>`                   (System.Net.IPEndPoint[] hosts)
+  void                 :ref:`Put <csharp_handle_put_noexpiry>`                            (System.String alias, System.Byte[] buffer)
+  void                 :ref:`Put <csharp_handle_put>`                                     (System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
+  void                 :ref:`Update <csharp_handle_update_noexpiry>`                      (System.String alias, System.Byte[] buffer)
+  void                 :ref:`Update <csharp_handle_update>`                               (System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
+  System.Byte[]        :ref:`Get <csharp_handle_get>`                                     (System.String alias)
+  System.Byte[]        :ref:`GetRemove <csharp_handle_get_remove>`                        (System.String alias)
+  System.Byte[]        :ref:`GetUpdate <csharp_handle_get_update_noexpiry>`               (System.String alias, System.Byte[] buffer)
+  System.Byte[]        :ref:`GetUpdate <csharp_handle_get_update>`                        (System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
+  System.Byte[]        :ref:`CompareAndSwap <csharp_handle_compare_and_swap_noexpiry>`    (System.String alias, System.Byte[] newValue, System.Byte[] comparand)
+  System.Byte[]        :ref:`CompareAndSwap <csharp_handle_compare_and_swap>`             (System.String alias, System.Byte[] newValue, System.Byte[] comparand, System.DateTime expiryTime)
+  void                 :ref:`Remove <csharp_handle_remove>`                               (System.String alias)
+  bool                 :ref:`RemoveIf <csharp_handle_remove_if>`                          (System.String alias, System.Byte[] comparand)
+  void                 :ref:`RemoveAll <csharp_handle_remove_all>`                        ()
+  qdb.BatchResult[]    :ref:`RunBatch <csharp_handle_run_batch>`                          (qdb.BatchRequest[] requests)
+  System.String[]      :ref:`PrefixGet <csharp_handle_prefix_get>`                        (System.String prefix)
+  void                 :ref:`ExpiresAt <csharp_handle_expires_at>`                        (System.String alias, System.DateTime expiryTime)
+  void                 :ref:`ExpiresFromNow <csharp_handle_expires_from_now>`             (System.String alias, System.TimeSpan expiryDelta)
+  bool                 :ref:`GetExpiryTime <csharp_handle_get_expiry_time>`               (System.String alias, out System.DateTime expiryTime)
+  System.String        :ref:`NodeStatus <csharp_handle_node_status>`                      (System.Net.IPEndPoint host)
+  System.String        :ref:`NodeConfig <csharp_handle_node_config>`                      (System.Net.IPEndPoint host)
+  System.String        :ref:`NodeTopology <csharp_handle_node_topology>`                  (System.Net.IPEndPoint host)
+  void                 :ref:`StopNode <csharp_handle_stop_node>`                          (System.Net.IPEndPoint host, System.String reason)
+  
+ ==================== ================================================================== ===================
+
+
 Introduction
 --------------
 
@@ -273,7 +312,7 @@ All classes and instance methods reside in the 'qdb' namespace.
         :returns: The requested entry's content.
 
 
-    .. _csharp_handle_get_update_no_expiry:
+    .. _csharp_handle_get_update_noexpiry:
     .. function:: System.Byte[] GetUpdate(System.String alias, System.Byte[] buffer)
 
         Atomically gets and updates (in this order) the entry on the quasardb server. If the entry does not exist, the function will fail.
