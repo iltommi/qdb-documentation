@@ -90,29 +90,12 @@ No license is required to write a quasardb client, but the software's documentat
 
 A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
 
-Is support available for non-registered users?
-==============================================
-
-Anyone can submit a bug or request a feature in mailing to `bug@quasardb.net <bug@quasardb.net>`_. All bug reports and feature requests are reviewed.
-
-Support, however, is only available to registered users.
-
-Do you offer consulting or bespoke services?
-============================================
-
-Yes! Contact us for more information, see :doc:`contact`
-
 In what language is quasardb written?
 =====================================
 
-The core quasardb engine (that we also call kernel) is written in C++ 11 and assembly. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
+The core quasardb engine (that we also call kernel) is written in C++ 14 and assembly. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
 
 The administration interface is written in HTML5/Javascript.
-
-Is the version I downloaded from the web site limited or crippled in any way?
-=============================================================================
-
-No. If you feel like it, you can build a petabyte datacenter with it!
 
 Is quasardb open source?
 ========================
@@ -142,4 +125,4 @@ If you find the list to be inaccurate or suspect a license violation, mail to `b
 Where are you located?
 ======================
 
-We are located in Paris, France. We offer worldwide off-site and on-site consulting.
+We are located in Paris, France. 
