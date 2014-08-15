@@ -22,7 +22,7 @@ If using the JSON/JSONP output from qdb_httpd or writing your own monitoring pro
 Graceful shutdown
 ------------------
 
-On UNIX, a node can be gracefully stopped in sending the QUIT signal to the daemon. On Windows, hitting CTRL-C in the console will also imply a graceful shutdown.
+On UNIX, a node can be gracefully stopped in sending the QUIT signal to the daemon. On Windows, hitting CTRL-C in the console will also imply a graceful shutdown. Nodes can also be shut down by issuing the stop_node command using qdbsh or a client built on the quasardb API.
 
 Log and Dump Files
 ------------------
