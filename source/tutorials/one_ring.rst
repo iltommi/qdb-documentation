@@ -17,8 +17,8 @@ Configure the First Node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 #. Generate a default configuration file. ::
-
-   qdbd --gen-config > qdbd_config.conf
+    
+    qdbd --gen-config > qdbd_config.conf
 
 #. Edit the configuration file.
 
