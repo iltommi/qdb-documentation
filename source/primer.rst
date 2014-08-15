@@ -40,7 +40,7 @@ Now let's store the number of files in a folder, based on the output of a shell 
 
 Oh well, that was not very exciting. Let's stress the engine a bit more! We will zip up a whole directory and overwrite the entry key's value (previously "amazing..." using shell pipes::
 
-    $ tar czf - ./directory | ./qdbsh update entry
+    tar czf - ./directory | ./qdbsh update entry
 
 And later, we can extract that directory::
 
