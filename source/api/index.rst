@@ -10,4 +10,3 @@ API
    python
    net
    java
-   packages

@@ -201,8 +201,11 @@ When adding entries, this is generally not an issue as the caller knows the size
 Reference
 ---------
 
-The complete reference guide is available in the following locations:
-  * :doc:`QuasarDB Java Reference Guide <packages>`
-  * `Javadoc format <javadoc/index.html>`_
-  * Included as HTML in the Java API archive, in the ``doc`` directory.
+.. toctree::
+    :maxdepth: 3
+    
+    packages
 
+The reference guide is also available in the following locations:
+  * `Single-page Javadoc format <javadoc/index.html>`_
+  * HTML pages in the Java API archive, in the ``doc`` directory.
