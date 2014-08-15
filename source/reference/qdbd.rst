@@ -36,7 +36,7 @@ Cheat sheet
  :option:`--peer`                      one peer to form a cluster                           No       
  :option:`--transient`                 disable persistence                                  Yes      
  :option:`--sync`                      sync every disk write                                Yes      
- :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes      
+ :option:`--limiter-max-entries-count` max entries in cache         1000000                 Yes      
  :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes      
  :option:`--max-depot-size`            max db size on node          0 (disabled)            Yes       >=1.1.3
  :option:`-o`                          log on console                                       No       
@@ -148,7 +148,7 @@ Cache
 In order to achieve high performances, the daemon keeps as much data as possible in memory. However, the physical memory available for a node may not suffice.
 
 Therefore, entries are evicted from the cache when the entries count or the size of data in memory exceeds a configurable threshold.
-Use :option:`--limiter-max-entries-count` (defaults to 100,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+Use :option:`--limiter-max-entries-count` (defaults to 1,000,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 
 .. note::
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
@@ -555,7 +555,7 @@ Global
         An integer representing the maximum number of entries allowed in memory.
 
     Default value
-        100,000
+        1,000,000
 
     Example
         To keep the number of entries in memory below 101::
@@ -645,7 +645,7 @@ The default configuration file is shown below::
             "limiter":
             {
                 "max_bytes": 0,
-                "max_in_entries_count": 100000
+                "max_in_entries_count": 1000000
             }
         },
        "local":

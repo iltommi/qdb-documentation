@@ -38,7 +38,7 @@ Configure the First Node
              "limiter":
              {
                  "max_bytes": 0,
-                 "max_in_entries_count": 100000
+                 "max_in_entries_count": 1000000
              }
          },
     
