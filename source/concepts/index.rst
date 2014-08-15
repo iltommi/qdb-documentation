@@ -9,5 +9,4 @@ Concepts
    persistence
    concurrency
    performance
-   streaming
    security
