@@ -22,11 +22,11 @@ Installing a quasardb daemon in three steps
    
    For FreeBSD and Linux, the command is::
 
-       $ ./qdbd --gen-config > qdbd_default_config.conf
+       qdbd --gen-config > qdbd_default_config.conf
    
    For Windows, the command is::
    
-       C:\> .\qdbd.exe --gen-config > qdbd_default_config.conf
+       qdbd.exe --gen-config > qdbd_default_config.conf
    
    The daemon will by default listen on the IPv4 localhost, on the port 2836, persist its content to the disk asynchronously, limit itself to 100,000 entries, and will not log at all. See :doc:`../reference/qdbd` for more configuration options.
    
@@ -34,11 +34,11 @@ Installing a quasardb daemon in three steps
 
    For FreeBSD and Linux, the command is::
 
-       $ ./qdbd -c qdbd_default_config.conf
+       qdbd -c qdbd_default_config.conf
    
    For Windows, the command is::
    
-       C:\> .\qdbd.exe -c qdbd_default_config.conf
+       qdbd.exe -c qdbd_default_config.conf
 
 Using the quasardb shell to test your quasardb installation
 ===========================================================
@@ -49,24 +49,24 @@ The quasardb shell offers an interactive mode from which the user can enter comm
 
    For FreeBSD and Linux, the command is::
 
-       $ ./qdbsh
+       qdbsh
    
    For Windows, the command is::
    
-       C:\> .\qdbsh.exe
+       qdbsh.exe
 
    By default qdbsh will connect to a quasardb daemon using the default settings of localhost, port 2836. If you have edited the qdbd configuration file already, for example to make the qdbd daemon run on 192.168.1.1 and listen on port 303 - you will run qdbsh as such::
 
-       $ ./qdbsh --daemon=192.168.1.1:303
+       qdbsh --daemon=192.168.1.1:303
    
    See :doc:`../reference/qdb_shell` for detailed configuration options.
 
 #. Add and get an entry from the server::
 
-       qdbsh:ok >put entry thisismycontent
-       qdbsh:ok >get entry
+       ok:qdbsh> put entry thisismycontent
+       ok:qdbsh> get entry
        thisismycontent
-       qdbsh:ok >exit
+       ok:qdbsh> exit
   
 Type `help` to get a list of available commands. See :doc:`../reference/qdb_shell` for more information.
 
@@ -81,11 +81,11 @@ All information is available in both JSON and JSONP format.
    
    For FreeBSD and Linux, the command is::
 
-       $ ./qdb_httpd --gen-config > qdb_httpd_default_config.conf
+       qdb_httpd --gen-config > qdb_httpd_default_config.conf
    
    For Windows, the command is::
    
-       C:\> .\qdb_httpd.exe --gen-config > qdb_httpd_default_config.conf
+       qdb_httpd.exe --gen-config > qdb_httpd_default_config.conf
    
    By default, the web bridge will listen on localhost, port 8080. It will connect to a quasardb daemon using the default settings of localhost, port 2836. See :doc:`../reference/qdb_httpd` for detailed configuration options.
 
@@ -93,11 +93,11 @@ All information is available in both JSON and JSONP format.
 
    For FreeBSD and Linux, the command is::
 
-       $ ./qdb_httpd -c qdb_httpd_default_config.conf
+       qdb_httpd -c qdb_httpd_default_config.conf
    
    For Windows, the command is::
    
-       C:\> .\qdb_httpd.exe -c qdb_httpd_default_config.conf
+       qdb_httpd.exe -c qdb_httpd_default_config.conf
    
 #. Test it from a browser
 

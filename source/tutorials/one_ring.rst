@@ -18,7 +18,7 @@ Configure the First Node
 
 #. Generate a default configuration file. ::
 
-   $ qdbd --gen-config > qdbd_config.conf
+   qdbd --gen-config > qdbd_config.conf
 
 #. Edit the configuration file.
 
@@ -79,7 +79,7 @@ Configure the First Node
    
 #. Start the quasardb daemon on the first node. ::
 
-   $ ./qdbd -c qdbd_config.conf
+    qdbd -c qdbd_config.conf
 
 
 Configure the Second and Third Nodes
@@ -144,18 +144,18 @@ If you add a node to the cluster, you do not have to make *any* change on the cl
 
 #. Run qdbsh::
 
-    $ ./qdbsh --daemon=192.168.1.2:2836
+    qdbsh --daemon=192.168.1.2:2836
 
 #. Test a couple of commands::
 
-       qdbsh:ok >put entry thisismycontent
-       qdbsh:ok >get entry
-       thisismycontent
-       qdbsh:ok >exit
+    ok:qdbsh> put entry thisismycontent
+    ok:qdbsh> get entry
+    thisismycontent
+    ok:qdbsh> exit
 
 #. Test that a different node acknowledges the entry::
 
-     ./qdbsh --daemon=192.168.1.3:2836
-
-     > get entry
-     thisismyentry
+    qdbsh --daemon=192.168.1.3:2836
+    
+    ok:qdbsh> get entry
+    thisismyentry
