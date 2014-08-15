@@ -38,8 +38,6 @@ Guarantees
      * Once the server replies, it means the request has been fully carried on
      * Synchronous requests emanating from the same client are executed in order. However multiple requests coming from multiple clients are executed in an arbitrary order (see :ref:`conflicts-resolution`)
 
-A notable exception to the ACID guarantees is streaming (see :doc:`streaming`).
-
 .. _conflicts-resolution:
 
 Conflicts resolution
