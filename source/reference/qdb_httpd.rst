@@ -62,7 +62,7 @@ The table on the right shows live statistics from the cluster.
  
  * Aggregated Data
  
-   - Persisted Size: The size of data stored in disk across all nodes divided by available space across all nodes.
+   - Persisted Size: The size of all data stored on all disks across all nodes.
    - Resident Size: The size of data stored on RAM across all nodes.
    - Persisted Entries Count: The number of entries stored in disk across all nodes.
    - Resident Entries Count: The number of entries stored on RAM across all nodes.
