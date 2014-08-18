@@ -125,6 +125,7 @@ The table on the right shows live statistics from the selected node.
    - Evictions Count: The number of entries that were rejected due to node or cluster limits.
    - Resident Entries Count: The number of entries stored on this node's RAM.
    - Persisted Entries Count: The number of entries stored in this node's disk.
+   - Persisted Size: The sum of all data stored on all disks on this node.
 
 
 Beneath the node stats are operation statistics. These detail the operations the node has been performing for clients, as well as the partitions (similar to threads) the node has been using to perform the operations.
