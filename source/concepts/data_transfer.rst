@@ -50,7 +50,6 @@ A notable exception to the ACID guarantees is streaming.
 
 .. # DEAD LINK: (see :doc:`streaming`).
 
-
 .. _conflicts-resolution:
 
 Conflicts resolution

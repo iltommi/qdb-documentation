@@ -20,35 +20,35 @@ Shall we dance?
 
 Before you start the quasardb :term:`server`, generate a default configuration file::
 
-    $ ./qdbd --gen-config > qdbd_config.conf
+    qdbd --gen-config > qdbd_config.conf
 
 Then, simply run the :doc:`reference/qdbd` from a terminal, passing in the configuration file:: 
 
-    $ ./qdbd -c qdbd_config.conf
+    qdbd -c qdbd_config.conf
 
 Now that the server is running, you can begin storing anything that crosses your mind into the database. Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
 
-    $ ./qdbsh put entry amazing...
-    $ ./qdbsh get entry
+    qdbsh put entry amazing...
+    qdbsh get entry
     amazing...
 
 Now let's store the number of files in a folder, based on the output of a shell command::
 
-    $ ./qdbsh put num_files $(ls -1 | wc -l)
-    $ ./qdbsh get num_files
+    qdbsh put num_files $(ls -1 | wc -l)
+    qdbsh get num_files
     7
 
 Oh well, that was not very exciting. Let's stress the engine a bit more! We will zip up a whole directory and overwrite the entry key's value (previously "amazing..." using shell pipes::
 
-    $ tar czf - ./directory | ./qdbsh update entry
+    tar czf - ./directory | ./qdbsh update entry
 
 And later, we can extract that directory::
 
-    $ ./qdbsh get entry | tar -xz ./
+    qdbsh get entry | tar -xz ./
 
 Or just export the tar.gz file::
 
-    $ ./qdbsh get entry > directory.tar.gz
+    qdbsh get entry > directory.tar.gz
 
 
 But, wait, there's more!
@@ -99,11 +99,11 @@ Working on web-oriented technologies? We've thought about you as well and built 
 
 Like the qdb daemon, start by generating a default configuration file::
 
-    ./qdb_httpd --gen-config > qdb_httpd_default_config.conf
+    qdb_httpd --gen-config > qdb_httpd_default_config.conf
 
 Then, start the web bridge with::
 
-    ./qdb_httpd -c qdb_httpd_default_config.conf
+    qdb_httpd -c qdb_httpd_default_config.conf
 
 The web bridge can help you monitor the node and get entries in JSON or JSONP format, for example, with wget::
 

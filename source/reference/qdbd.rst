@@ -36,7 +36,7 @@ Cheat sheet
  :option:`--peer`                      one peer to form a cluster                           No       
  :option:`--transient`                 disable persistence                                  Yes      
  :option:`--sync`                      sync every disk write                                Yes      
- :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes      
+ :option:`--limiter-max-entries-count` max entries in cache         1000000                 Yes      
  :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes      
  :option:`--max-depot-size`            max db size on node          0 (disabled)            Yes       >=1.1.3
  :option:`-o`                          log on console                                       No       
@@ -127,6 +127,7 @@ The ideal number of partitions is close to the number of physical cores your ser
 .. note::
     Unless a performance issue is identified, it is best to let the daemon compute the partition count.
 
+Use :option:`--limiter-max-entries-count` (defaults to 1,000,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 Operating limits
 ================
 
@@ -526,7 +527,7 @@ Global
         An integer representing the maximum number of entries allowed in memory.
 
     Default value
-        100,000
+        1,000,000
 
     Example
         To keep the number of entries in memory below 101::
@@ -616,7 +617,7 @@ The default configuration file is shown below::
             "limiter":
             {
                 "max_bytes": 0,
-                "max_in_entries_count": 100000
+                "max_in_entries_count": 1000000
             }
         },
        "local":

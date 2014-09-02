@@ -10,7 +10,7 @@ set ALLSPHINXOPTS=-d %BUILDDIR%/doctrees %SPHINXOPTS% source
 if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
 )
-set QDB_JAVA_SRC=qdb\api\java
+set QDB_JAVA_SRC=..\qdb\api\java
 set RST_API_DIR=source\api
 set JAVASPHINX=javasphinx-apidoc
 
