@@ -144,44 +144,19 @@ div.body h5 { font-size: 110%; }
 div.body h6 { font-size: 100%; }
 
 
-/* Rules for all API blocks. */
 dl.function,
-dl.type,
-dl.method,
-dl.class,
-dl.constructor {
+dl.type {
 		border: 1px solid #CCCCCC;
 		background-color: #EEEEEE;
 		padding: 5px;
 }
-
-/* Second-level API blocks. */
-dl.class dl.function,
-dl.class dl.type,
-dl.class dl.method,
-dl.class dl.constructor {
-		background-color: #DEDEDE;
-}
-
-
 
 dl > dt {
 		padding-bottom: 10px;
 }
 
 dl.function > dd > table th,
-dl.type > dd > table th,
-dl.method > dd > table th,
-dl.class > dd > table th,
-dl.constructor > dd > table th {
+dl.type > dd > table th {
     background-color: #EEEEEE;
 }
 
-/* Second level */
-dl.class dl.function > dd > table th,
-dl.class dl.type > dd > table th,
-dl.class dl.method > dd > table th,
-dl.class dl.class > dd > table th,
-dl.class dl.constructor > dd > table th {
-    background-color: #DEDEDE;
-}

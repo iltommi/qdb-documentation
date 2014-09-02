@@ -12,7 +12,7 @@ PAPEROPT_a4     = -D latex_paper_size=a4
 PAPEROPT_letter = -D latex_paper_size=letter
 ALLSPHINXOPTS   = -d $(BUILDDIR)/doctrees $(PAPEROPT_$(PAPER)) $(SPHINXOPTS) source
 
-QDB_JAVA_SRC = ../qdb/api/java
+QDB_JAVA_SRC = ./qdb/api/java
 RST_API_DIR  = ./source/api
 
 .PHONY: help clean javasphinx html dirhtml singlehtml pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest
