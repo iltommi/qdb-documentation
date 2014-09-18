@@ -122,10 +122,6 @@ dt, .note {
     text-align:left;
 }
 
-th {
-    background-color: #fff;
-}
-
 .b14-logo {
     position:relative;
     top:-20px;
@@ -212,6 +208,7 @@ dl.describe {
 
 /* second-level */
 dl.option > dd > div.note,
-dl.describe > dd > div.note {
+dl.describe > dd > div.note,
+dl.docutils > dd > div.note {
 		background-color: #DEDEDE;
 }
