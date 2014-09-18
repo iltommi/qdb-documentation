@@ -198,8 +198,8 @@ Instance specific
 
             qdbd --gen-config > qdbd_default_config.json
 
-.. note::
-     The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
+    .. note::
+        The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
 
 
 
@@ -219,8 +219,8 @@ Instance specific
 
             qdbd --config-file=qdbd_default_config.json
 
-.. note::
-     The --config-file argument is only available with QuasarDB 1.1.3 or higher.
+    .. note::
+        The --config-file argument is only available with QuasarDB 1.1.3 or higher.
 
 
 
@@ -248,8 +248,8 @@ Instance specific
 
             qdbd -d
 
-.. note::
-    Logging to the console is not allowed when running as a daemon.
+    .. note::
+        Logging to the console is not allowed when running as a daemon.
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
@@ -266,8 +266,8 @@ Instance specific
 
             qdbd --address=localhost:5910
 
-.. note::
-    The unspecified address (0.0.0.0 for IPv4, :: for IPv6) is not allowed.
+    .. note::
+        The unspecified address (0.0.0.0 for IPv4, :: for IPv6) is not allowed.
 
 .. option:: -s <count>, --sessions=<count>
 
@@ -284,9 +284,9 @@ Instance specific
 
             qdbd --sessions=10000
 
-.. note::
-    The sessions count determines the number of simultaneous clients the server may handle at any given time.
-    Increasing the value increases the memory load. This value may be limited by your license.
+    .. note::
+        The sessions count determines the number of simultaneous clients the server may handle at any given time.
+        Increasing the value increases the memory load. This value may be limited by your license.
 
 .. option:: --partitions=<count>
 
@@ -303,8 +303,8 @@ Instance specific
 
             qdbd --partitions=10
 
-.. note::
-    This value should be changed only in case of performance problems.
+    .. note::
+        This value should be changed only in case of performance problems.
 
 .. option:: --idle-duration=<duration>
 
@@ -352,10 +352,10 @@ Instance specific
 
             qdbd --id=1-a-2-b
 
-.. note::
-    Having two nodes with the same ID on the ring leads to undefined behaviour. By default the daemon generates
-    an ID that is guaranteed to be unique on any given ring. This function's purpose is to modify the topology of
-    the ring, should the topology be unsatisfactory.
+    .. note::
+        Having two nodes with the same ID on the ring leads to undefined behaviour. By default the daemon generates
+        an ID that is guaranteed to be unique on any given ring. This function's purpose is to modify the topology of
+        the ring, should the topology be unsatisfactory.
 
 .. option:: --peer=<address>:<port>
 
@@ -484,15 +484,15 @@ Global
 
             qdbd --root=/var/quasardb/db
 
-.. note::
-    Although this parameter is global, the directory refers to the local node of each instance.
+    .. note::
+        Although this parameter is global, the directory refers to the local node of each instance.
 
 .. option:: --sync
 
     Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. (global parameter)
 
-.. note::
-    This option increases reliability at the cost of performances.
+    .. note::
+        This option increases reliability at the cost of performances.
 
 
 .. option:: --limiter-max-bytes=<value>
@@ -515,8 +515,8 @@ Global
 
             qdbd --limiter-max-bytes=8589934592
 
-.. note::
-    Setting this value too high may lead to `thrashing <http://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
+    .. note::
+        Setting this value too high may lead to `thrashing <http://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
 
 
 .. option:: --limiter-max-entries-count=<count>
@@ -534,8 +534,8 @@ Global
 
             qdbd --limiter-max-entries=100
 
-.. note::
-    Setting this value too low may cause the :term:`server` to spend more time evicting entries than processing requests.
+    .. note::
+        Setting this value too low may cause the :term:`server` to spend more time evicting entries than processing requests.
 
 
 
@@ -580,11 +580,11 @@ Global
         
         This database should not exceed 1 Terabyte.
     
-.. note::
-     The --max-depot-size argument is only available with QuasarDB 1.1.2 or higher.
+    .. note::
+        The --max-depot-size argument is only available with QuasarDB 1.1.2 or higher.
 
-.. note::
-     Using a max depot size may cause a slight performance penalty on writes.
+    .. note::
+        Using a max depot size may cause a slight performance penalty on writes.
 
 
 .. _qdbd-config-file-reference:

@@ -220,8 +220,9 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To create a new config file with the name "qdb_httpd_default_config.json", type: ::
 
             qdb_httpd --gen-config > qdb_httpd_default_config.json
-.. note::
-     The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
+    
+    .. note::
+        The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
 
 .. option:: -c, --config-file
 
@@ -239,8 +240,8 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --config-file=qdb_httpd_default_config.json
         
-.. note::
-     The --config-file argument is only available with QuasarDB 1.1.3 or higher.
+    .. note::
+        The --config-file argument is only available with QuasarDB 1.1.3 or higher.
 
 .. option:: -d, --daemonize
 
