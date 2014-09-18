@@ -150,7 +150,8 @@ dl.type,
 dl.method,
 dl.class,
 dl.constructor,
-dl.exception {
+dl.exception,
+dl.option {
 		border: 1px solid #CCCCCC;
 		background-color: #EEEEEE;
 		padding: 5px;
@@ -176,7 +177,9 @@ dl.type > dd > table th,
 dl.method > dd > table th,
 dl.class > dd > table th,
 dl.constructor > dd > table th,
-dl.exception > dd > table th {
+dl.exception > dd > table th,
+dl.option > dd > table th,
+dl.describe > dd > table th {
     background-color: #EEEEEE;
 }
 
@@ -197,4 +200,18 @@ dl.class dl.constructor table.field-list th.field-name,
 dl.class dl.exception table.field-list th.field-name
 {
     background-color: #DEDEDE;
+}
+
+/* Reference pages */
+dl.option,
+dl.describe {
+		border: 1px solid #CCCCCC;
+		background-color: #EEEEEE;
+		padding: 5px;
+}
+
+/* second-level */
+dl.option > dd > div.note,
+dl.describe > dd > div.note {
+		background-color: #DEDEDE;
 }
