@@ -3,6 +3,23 @@ quasardb benchmarking tool
 
 .. highlight:: js
 
+
+Quick Reference
+===============
+
+ ===================================== ============================ ================
+                Option                             Usage                Default
+ ===================================== ============================ ================
+ :option:`-h`, `--help`                display help                  
+ :option:`--daemon`                    address:port of server        127.0.0.1:2836
+ :option:`--protocol`                  test protocol to use          quasardb
+ :option:`--threads`                   number of threads to use      1
+ :option:`-f`, `--test-file`           test script to run            test.cfg
+ :option:`-o`, `--output-file`         path for CSV output           report_<date>
+ ===================================== ============================ ================
+
+
+
 Introduction
 ============
 

@@ -1,6 +1,21 @@
 quasardb database tool
 ******************************
 
+Quick Reference
+===============
+
+ ===================================== ============================ ==============
+                Option                             Usage                Default
+ ===================================== ============================ ==============
+ :option:`-h`, `--help`                display help                  
+ :option:`--database`                  path to the database          
+ :option:`-a`, `--analyze`             analyzes the database         
+ :option:`-d`, `--dump`                dumps database to stdout      
+ :option:`-b`, `--backup`              performs backup to new db     
+ :option:`-r`, `--repair`              repairs the database          
+ ===================================== ============================ ==============
+
+
 Introduction
 ============
 
