@@ -74,7 +74,7 @@ The C API package is qdb-capi-<version>, and can be downloaded from the Bureau 1
     
     \qdb-capi-1.1.4
           \doc        // This documentation
-          \example    // C API examples
+          \example    // C and C++ API examples
           \include    // C and C++ header files
           \lib        // QDB API shared libraries
 
@@ -411,7 +411,7 @@ Once you are finished with a series of batch operations, you must release the me
 Iteration
 -----------
 
-Iteration on the cluster's entries can be done forward and backward. One initializes the iterator with :c:func:`qdb_iterator_begin` or :c:func:`qdb_iterator_rbegin` depending on whether one would want to start from the first entry or the last entry.
+Iteration on the cluster's entries can be done forward and backward. You initialize the iterator with :c:func:`qdb_iterator_begin` or :c:func:`qdb_iterator_rbegin` depending on whether you want to start from the first entry or the last entry.
 
 Actual iteration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_iterator_previous`. Once completed, the iterator should be freed with :c:func:`qdb_iterator_close`::
 
