@@ -27,16 +27,14 @@ One of the following Java Development Kits:
 Installation
 ------------
 
-The Java API package is downloadable from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail.
+The Java API package is qdb-java-api-<version>, and can be downloaded from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the Java API package are::
+    
+    \qdb-java-api-<version>
+          \doc                         // This documentation
+          \example                     // Low-level and high-level Java API examples
+          \qdb-java-api-<version>.jar  // QDB API package and binaries
 
-The archive contains a JAR named ``quasardb-java-api-master.jar`` that contains all the dependencies including the required binaries for FreeBSD, Linux and Windows. It is not necessary to download another archive to use the Java API.
-
-You will also find two examples in the ``examples`` directory, one for the high-level API, one for the low-level API.
-
-Package
--------
-
-The API resides in the ``com.b14.quasardb`` package.
+``quasardb-java-api-master.jar`` contains all the dependencies including the required binaries for FreeBSD, Linux and Windows. It is not necessary to download another archive to use the Java API. The API resides in the ``com.b14.quasardb`` package.
 
 Running the examples
 -----------------------
@@ -105,14 +103,12 @@ A majority of entries type can be stored in quasardb without any further work (f
 
 You can use almost any java objects you want (for example a `POJO <http://en.wikipedia.org/wiki/Plain_Old_Java_Object>`_).
 
-But there are some limitations. 
-As Kryo is the underlying framework used to serialize objects in quasardb, you can find all limitations by consulting `Kryo's documentation <https://github.com/EsotericSoftware/kryo#compatibility>`_.
+But there are some limitations. As Kryo is the underlying framework used to serialize objects in quasardb, you can find all limitations by consulting `Kryo's documentation <https://github.com/EsotericSoftware/kryo#compatibility>`_.
 	
 Using the low-level API
 -----------------------
 
-The low-level API provides direct access to the C API via JNI. 
-Usage of the low-level API is discouraged.
+The low-level API provides direct access to the C API via JNI. **Usage of the low-level API is discouraged.**
 
 Loading the JNI
 ^^^^^^^^^^^^^^^^^^
@@ -131,7 +127,7 @@ Connecting to a quasardb cluster
 
 The connection is a two step process.
 
-    #. *Initialize* the quasardb client session: ::
+    #. Initialize the quasardb client session: ::
 
         SWIGTYPE_p_qdb_session session = quasardb.open();
 

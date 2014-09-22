@@ -45,24 +45,19 @@ Quick Reference
 Introduction
 --------------
 
-The quasardb .NET API builds on the C++ API and delivers convenience and flexibility with great performance. The logic is similar to that of the C++ API (see :doc:`cpp`).
+The quasardb .NET API builds on the C++ API and delivers convenience and flexibility with great performance. Because the behavior is similar to that of the C++ API, you may wish to familiarize yourself with the C++ API before working with the .NET API (see :doc:`cpp`).
 
 DLL
 ---
 
 All object definitions and functions are made available in the ``QdbNetApi.dll`` file. All classes and methods reside in the ``qdb`` namespace.
 
-The library requires the Visual Studio 2012 Update 4 redist to function properly.
-
-Exceptions
-------------
-
-The quasardb .NET API will collect and throw Exceptions when the :ref:`Handle.Close() <csharp_handle_close>` method is called, or the :ref:`Handle <csharp_handle>` object goes out of scope.
+The library requires the Visual Studio 2012 Update 4 Redist to function properly.
 
 The handle object
 -------------------
 
-Use the Handle object to interact with the cluster. Note that simply having a Handle object does not connect you to a cluster; you need to call :ref:`Handle.Connect() <csharp_handle_connect>`. The following example shows creating a handle, connecting to a cluster, removing an entry, then handling errors::
+Use the Handle object to interact with the cluster. Simply having a Handle object does not connect you to a cluster; you need to call :ref:`Handle.Connect() <csharp_handle_connect>`. The following example shows creating a handle, connecting to a cluster, removing an entry, then handling errors::
 
     try
     {
@@ -198,7 +193,13 @@ For example, if you want to find all entries whose aliases start with "record"::
 Batch operations
 -------------------
 
-Batch operations are used similarly as in C, except a method :ref:`Handle.RunBatch() <csharp_handle_run_batch>` is provided for convenience.
+Batch operations are used similarly as in C, except the :ref:`Handle.RunBatch() <csharp_handle_run_batch>` method is provided for convenience.
+
+Exceptions
+------------
+
+The quasardb .NET API will collect and throw Exceptions when the :ref:`Handle.Close() <csharp_handle_close>` method is called, or the :ref:`Handle <csharp_handle>` object goes out of scope.
+
 
 Reference
 ----------------
