@@ -70,26 +70,23 @@ The quasardb C API is the lowest-level API offered but also the fastest and the 
 Installing
 --------------
 
-The C API package is downloadable from the Bureau 14 download site. All information regarding the Bureau 14 download site are in your welcome e-mail.
+The C API package is qdb-capi-<version>, and can be downloaded from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the C API package are::
+    
+    \qdb-capi-1.1.4
+          \doc        // This documentation
+          \example    // C API examples
+          \include    // C and C++ header files
+          \lib        // QDB API shared libraries
 
-All needed libraries are included in the package.
 
-Header file
---------------
+All C functions, typedefs and enums are available in the ``include/qdb/client.h`` header file.
 
-All functions, typedefs and enums are made available in the ``include/qdb/client.h`` header file.
-
-Examples
---------------
-
-A couple of examples are available in the ``examples/c`` directory.
 
 Connecting to a cluster
 --------------------------
 
-The first thing to do is to initialize a handle.
-A handle is an opaque structure that represents a client side instance.
-It is initialized by the function :c:func:`qdb_open`: ::
+The first thing to do is to initialize a handle. A handle is an opaque structure that represents a client side instance.
+It is initialized using the function :c:func:`qdb_open`: ::
 
     qdb_handle_t handle = 0;
     qdb_error_t r = qdb_open(&handle, qdb_proto_tcp);
@@ -98,7 +95,7 @@ It is initialized by the function :c:func:`qdb_open`: ::
         // error management
     }
 
-We can also use the convenience fonction :c:func:`qdb_open_tcp`: ::
+We can also use the convenience function :c:func:`qdb_open_tcp`: ::
 
     qdb_handle_t handle = qdb_open_tcp();
     if (!handle)
@@ -106,7 +103,7 @@ We can also use the convenience fonction :c:func:`qdb_open_tcp`: ::
         // error management
     }
 
-Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are established and closed as needed. This code will establish a connection to a quasardb server listening on the localhost with the :c:func:`qdb_connect` function: ::
+Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are opened and closed as needed. This code will establish a connection to a single quasardb node listening on the localhost with the :c:func:`qdb_connect` function: ::
 
     r = qdb_connect(handle, "localhost", 2836);
     if (r != qdb_error_ok)
@@ -123,9 +120,9 @@ Note that we could have used the IP address instead: ::
     }
 
 .. caution::
-    Concurrent calls to :c:func:`qdb_connect` to the same handle results in undefined behaviour.
+    Concurrent calls to :c:func:`qdb_connect` using the same handle results in undefined behaviour.
 
-`IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported: ::
+`IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address: ::
 
     r = qdb_connect(handle, "::1", 2836);
     if (r != qdb_error_ok)
@@ -133,10 +130,8 @@ Note that we could have used the IP address instead: ::
         // error management
     }
 
-Of course for the above to work the server needs to listen on an IPv6 address.
-
 .. note::
-    When you call :c:func:`qdb_open` and :c:func:`qdb_connect` a lot of initialization and system calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the same handle alive for the lifetime of the program.
+    When you call :c:func:`qdb_open` and :c:func:`qdb_connect`, a lot of initialization and system calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the same handle alive for the lifetime of the program.
 
 Connecting to multiple nodes within the same cluster
 ------------------------------------------------------
@@ -168,8 +163,7 @@ If the same address/port pair is present multiple times within the array, only t
 Adding entries
 -----------------
 
-Each entry is identified by an unique :term:`alias`. You pass the alias as a null-terminated string.
-The alias may contain arbitrary characters but it's probably more convenient to use printable characters only.
+Each entry is identified by an unique :term:`alias`. You pass the alias as a null-terminated string. The alias may contain arbitrary characters but it's probably more convenient to use printable characters only.
 
 The :term:`content` is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
@@ -341,7 +335,7 @@ The qdb_prefix_get function automatically allocates all required memory. This me
 Batch operations
 -----------------
 
-Batch operations can greatly increase performance when it is necessary to run many small operations. Using properly the batch operations requires initializing, running and freeing and array of operations.
+Batch operations can greatly increase performance when it is necessary to run many small operations. Using batch operations requires initializing, running and freeing an array of operations.
 
 The :c:func:`qdb_init_operations` ensures that the operations are properly reset before setting any value::
 
@@ -383,7 +377,7 @@ Note that the order in which operations run is undefined. Error management with 
 
 The error field of each operation is updated to reflect its status. If it is not qdb_e_ok, an error occured.
 
-Let's imagine in our case we have an error, here is a possible error lookup code::
+Let's imagine the previous example returned an error. Here is some simple code for error detection::
 
     if (success_count != 3)
     {
@@ -400,13 +394,13 @@ What you must do when an error occurs is entirely dependent on your application.
 
 In our case, there have been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
 
-    const char * entry1_content = op[0].result;
-    size_t entry1_size = op[0].result_size;
+    const char * entry1_content = ops[0].result;
+    size_t entry1_size = ops[0].result_size;
 
-    const char * entry2_content = op[1].result;
-    size_t entry2_size = op[1].result_size;
+    const char * entry2_content = ops[1].result;
+    size_t entry2_size = ops[1].result_size;
 
-The memory is API allocated and the caller must release it with a call to :c:func:`qdb_free_operations`. The call releases all buffers at once::
+Once you are finished with a series of batch operations, you must release the memory that the API allocated using :c:func:`qdb_free_operations`. The call releases all buffers at once::
 
     r = qdb_free_operations(ops, 3);
     if (r != qdb_error_ok)
@@ -448,7 +442,7 @@ Actual iteration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_itera
 Logging
 ----------
 
-It can be useful, for debugging and information purposes, to obtain all logs. The C API provides access to the internal log system through a callback which is called each time the API has to log something.
+It can be useful for debugging and information purposes to obtain all logs. The C API provides access to the internal log system through a callback which is called each time the API has to log something.
 
 .. warning::
     Improper usage of the logging API can seriously affect the performance and the reliability of the quasardb API. Make sure your logging callback is as simple as possible.
@@ -459,12 +453,12 @@ Logging is asynchronous, however buffers are flushed when :c:func:`qdb_close` is
 
 The callback profile is the following::
 
-     void qdb_log_callback(const char * log_level,
-                           const unsigned long * date,  // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
-                           unsigned long pid,           // process id
-                           unsigned long tid,           // thread id
+     void qdb_log_callback(const char * log_level,       // qdb log level
+                           const unsigned long * date,   // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
+                           unsigned long pid,            // process id
+                           unsigned long tid,            // thread id
                            const char * message_buffer,  // message buffer (valid only in the context of the callback)
-                           size_t message_size);        // message buffer size
+                           size_t message_size);         // message buffer size
 
 
 The parameters passed to the callback are:
@@ -478,12 +472,12 @@ The parameters passed to the callback are:
 
 Here is a callback example::
 
-     void my_log_callback(const char * log_level,
-                          const unsigned long * date,  // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
-                          unsigned long pid,           // process id
-                          unsigned long tid,           // thread id
+     void my_log_callback(const char * log_level,       // qdb log level
+                          const unsigned long * date,   // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
+                          unsigned long pid,            // process id
+                          unsigned long tid,            // thread id
                           const char * message_buffer,  // message buffer (valid only in the context of the callback)
-                          size_t message_size)
+                          size_t message_size)          // message buffer size
     {
         // will print to the console the log message, e.g.
         // 12/31/2013-23:12:01 debug: here is the message
@@ -496,7 +490,7 @@ Setting the callback is done with :c:func:`qdb_set_option`::
     qdb_set_option(handle, qdb_o_log_callback, my_log_callback);
 
 .. warning::
-    It is not possible to unregister a log callback. Multiple calls to :c:func:`qdb_set_option` will result in several callbacks being registered. Registering the same callback multiple times results in undefined behaviour. 
+    It is not possible to unregister a log callback. Multiple calls to :c:func:`qdb_set_option` will result in several callbacks being registered. Registering the same callback multiple times results in undefined behaviour.
 
 
 Reference
@@ -1057,7 +1051,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_next(qdb_const_iterator_t * iterator)
 
-    Updates the iterator to point to the next available entry in the cluster. Iteration is unordered. If no other entry is available, the function will return qdb_e_alias_not_found.
+    Updates the iterator to point to the next available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no following entry or it is otherwise unavailable, the function will return qdb_e_alias_not_found.
 
     The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
 
@@ -1067,10 +1061,10 @@ Reference
 
 .. c:function:: qdb_error_t qdb_iterator_previous(qdb_const_iterator_t * iterator)
 
-    Updates the iterator to point to the previous available entry in the cluster. Iteration is unordered. If no other entry is available, the function will return qdb_e_alias_not_found.
+    Updates the iterator to point to the previous available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no previous entry or it is otherwise unavailable, the function will return qdb_e_alias_not_found.
 
-    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
-
+    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`).
+    
     :param iterator: A pointer to a qdb_const_iterator structure that has been previously been initialized.
     :type iterator: qdb_const_iterator *
     :returns: An error code of type :c:type:`qdb_error_t`
