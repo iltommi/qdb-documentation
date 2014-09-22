@@ -62,22 +62,22 @@ Quick Reference
 Introduction
 --------------
 
-The quasardb C++ API is a wrapper around the C API that brings convenience and flexibility without sacrificing performance. Behaviour is similar to that of the C API (see :doc:`c`).
+The quasardb C++ API is a wrapper around the C API that brings convenience and flexibility without sacrificing performance. Because the behaviour is similar to the C API, you may wish to familiarize yourself with the C API before working with the C++ API (see :doc:`c`).
 
 Installing
 --------------
 
-The C++ API package consists of one header and is included in the C API package (see :doc:`c`). Both the C and C++ header files must be linked into the client executable, but no additional linking is required.
-
-Header file
---------------
+The C++ API package is qdb-capi-<version>, and can be downloaded from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the C++ API package are::
+    
+    \qdb-capi-1.1.4
+          \doc        // This documentation
+          \example    // C and C++ API examples
+          \include    // C and C++ header files
+          \lib        // QDB API shared libraries
 
 All functions, typedefs and enums are made available in the ``include/qdb/client.hpp`` header file. All classes and methods reside in the ``qdb`` namespace.
 
-Exceptions
-------------
-
-The quasardb C++ API does not throw any exception on its behalf, however situations such as low memory conditions may cause exceptions to be thrown.
+Both the C and C++ header files must be linked into the client executable. No other linking is required.
 
 The handle object
 -------------------
@@ -111,6 +111,11 @@ Handle objects can be used directly with the C API thanks to the overload of the
 
 Handle objects can also be encapsulated in smart pointers. A definition as :cpp:type:`handle_ptr` is available. This requires a compiler with std::shared_ptr support.
 
+The api_buffer object
+-----------------------
+
+The :cpp:class:`api_buffer` object is designed to be used via a smart pointer - whose definition is provided - and is returned by methods from the :cpp:class:`handle` object. It is possible to access the managed buffer directly (read-only) and query its size (see :cpp:func:`api_buffer::data` and :cpp:func:`api_buffer::size`).
+
 Connecting to a cluster
 --------------------------
 
@@ -119,7 +124,7 @@ The connection requires a :cpp:class:`handle` object and is done with the :cpp:f
     qdb::handle h;
     qdb_error_t r = h.connect("127.0.0.1", 2836);
 
-Connect will both initialize the handle and connect to the cluster. If the connection failed, the handle will be reset.  Note that when the handle object goes out of scope, the connection will be terminated and the handle will be released.
+Handle::connect will both initialize the handle and connect to the cluster. If the connection fails, the handle will be reset.  Note that when the handle object goes out of scope, the connection will be terminated and the handle will be released.
 
 .. caution::
     Concurrent calls to connect on the same handle object leads to undefined behaviour.
@@ -127,7 +132,7 @@ Connect will both initialize the handle and connect to the cluster. If the conne
 Adding and getting data to and from a cluster
 ---------------------------------------------
 
-Although one may use the handle object with the C API, using the handle object's methods is recommended. For example, to put and get an entry, the C++ way::
+Although you may use the handle object with the C API, using the handle object's methods is recommended. For example, to put and get an entry, the C++ way::
 
     const char in_data[10];
 
@@ -140,7 +145,7 @@ Although one may use the handle object with the C API, using the handle object's
     // ...
 
     char out_data[10];
-    qdb_error_t = r = h.get("entry", out_data, 10);
+    qdb_error_t r = h.get("entry", out_data, 10);
     if (r != qdb_e_ok)
     {
         // error management
@@ -148,7 +153,7 @@ Although one may use the handle object with the C API, using the handle object's
 
 The largest difference between the C and C++ get calls are their memory allocation lifetimes. The C call :c:func:`qdb_get_buffer` allocates a buffer of the needed size and must be explicitly freed. The C++ handle.get() method uses uses smart pointers to manage allocations lifetime.
 
-In C, one would write::
+In C, you would write::
 
     char * allocated_content = 0;
     size_t allocated_content_length = 0;
@@ -164,7 +169,7 @@ In C, one would write::
 
     qdb_free_buffer(allocated_content);
 
-In C++, one writes::
+In C++, you allocate an api_buffer_ptr and it is released when its reference count reaches zero, like a smart pointer::
 
     qdb_error_t r = qdb_e_ok;
     qdb::api_buffer_ptr allocated_content = h.get("entry", r);
@@ -172,13 +177,6 @@ In C++, one writes::
     {
         // error management
     }
-
-    // allocated_content will be released when its usage count reaches zero
-
-The api_buffer object
------------------------
-
-The :cpp:class:`api_buffer` object is designed to be used via a smart pointer - whose definition is provided - and is returned by methods from the :cpp:class:`handle` object. It is possible to access the managed buffer directly (read-only) and query its size (see :cpp:func:`api_buffer::data` and :cpp:func:`api_buffer::size`).
 
 Closing a connection
 -----------------------
@@ -287,6 +285,12 @@ The iterator api may throw the std::bad_alloc exception should a memory allocati
 
 .. note::
     Although each entry is returned only once, the order in which entries are returned is undefined.
+
+Exceptions
+------------
+
+The quasardb C++ API does not throw any exception on its behalf, however situations such as low memory conditions may cause exceptions to be thrown.
+
 
 Reference
 ----------------
