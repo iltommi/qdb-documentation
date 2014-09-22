@@ -1,23 +1,10 @@
 quasardb daemon
 ***************
 
-The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`cluster`.
-
-The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
-The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
-
-The quasardb daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
-
-.. important::
-    A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the :option:`--license-file` option.
-
-Configuration
-=============
-
 .. program:: qdbd
 
-Cheat sheet
------------
+Quick Reference
+===============
 
  ===================================== ============================ =================== ============ ==============
                 Option                               Usage               Default           Global     Req. Version
@@ -46,6 +33,24 @@ Cheat sheet
  :option:`--log-level`                 change log level             info                    No       
  :option:`--log-flush-interval`        change log flush             3                       No       
  ===================================== ============================ =================== ============ ==============
+
+Introduction
+============
+
+The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`cluster`.
+
+The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
+The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
+
+The quasardb daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
+
+.. important::
+    A valid license is required to run the daemon (see :doc:`../license`). The path to the license file is specified by the :option:`--license-file` option.
+
+
+
+Configuration
+=============
 
 Global and local options
 ------------------------
@@ -128,6 +133,7 @@ The ideal number of partitions is close to the number of physical cores your ser
     Unless a performance issue is identified, it is best to let the daemon compute the partition count.
 
 Use :option:`--limiter-max-entries-count` (defaults to 1,000,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+
 Operating limits
 ================
 
@@ -169,7 +175,7 @@ Practical limits
 
 .. _qdbd-parameters-reference:
 
-Parameters reference
+Parameters Reference
 ====================
 
 Parameters can be supplied in any order and are prefixed with ``--``.
