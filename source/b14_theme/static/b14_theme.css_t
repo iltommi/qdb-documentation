@@ -148,9 +148,9 @@ dl.class,
 dl.constructor,
 dl.exception,
 dl.option {
-		border: 1px solid #CCCCCC;
-		background-color: #EEEEEE;
-		padding: 5px;
+    border: 1px solid #CCCCCC;
+    background-color: #EEEEEE;
+    padding: 5px;
 }
 
 /* Second-level API blocks. */
@@ -159,13 +159,13 @@ dl.class dl.type,
 dl.class dl.method,
 dl.class dl.constructor,
 dl.class dl.exception {
-		background-color: #DEDEDE;
+    background-color: #DEDEDE;
 }
 
 
 
 dl > dt {
-		padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 dl.function > dd > table th,
@@ -201,14 +201,26 @@ dl.class dl.exception table.field-list th.field-name
 /* Reference pages */
 dl.option,
 dl.describe {
-		border: 1px solid #CCCCCC;
-		background-color: #EEEEEE;
-		padding: 5px;
+    border: 1px solid #CCCCCC;
+    background-color: #EEEEEE;
+    padding: 5px;
 }
 
 /* second-level */
 dl.option > dd > div.note,
 dl.describe > dd > div.note,
-dl.docutils > dd > div.note {
-		background-color: #DEDEDE;
+dl.docutils > dd > div.note,
+dl.function > dd > div.note,
+dl.type > dd > div.note,
+dl.method > dd > div.note,
+dl.class > dd > div.note,
+dl.constructor > dd > div.note,
+dl.exception > dd > div.note
+{
+    background-color: #DEDEDE;
+}
+
+div.caution {
+    background-color: #EEE;
+    border: 1px solid #CCC;
 }
