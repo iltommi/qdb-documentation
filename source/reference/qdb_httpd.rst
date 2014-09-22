@@ -2,6 +2,30 @@ quasardb web server
 *******************
 
 .. highlight:: js
+.. program:: qdb_httpd
+
+Quick Reference
+===============
+
+ ===================================== ============================ =================== ==============
+                Option                               Usage               Default         Req. Version
+ ===================================== ============================ =================== ==============
+ :option:`-h`                          display help                                     
+ :option:`--gen-config`                generate default config file                      >=1.1.3
+ :option:`-c`, `--config-file`         specify config file                               >=1.1.3
+ :option:`-d`, `--daemonize`           daemonize                                        
+ :option:`-r`, `--root`                html files directory         ./html              
+ :option:`-a`, `--address`             address to listen on         127.0.0.1:8080      
+ :option:`--log-dump`                  dump file location           qdb_error_dump.txt  
+ :option:`--log-flush-interval`        change log flush             3                   
+ :option:`-l`, `--log-file`            log on given file                                
+ :option:`--log-level`                 change log level             info                
+ :option:`-o`, `--log-console`         log on console                                   
+ :option:`--log-syslog`                log on syslog                                    
+ :option:`-t`, `--threads`             number of threads to use     1                  
+ :option:`--node`                      address:port of server       127.0.0.1:2836      
+ ===================================== ============================ =================== ==============
+
 
 Introduction
 ============
@@ -11,12 +35,12 @@ The quasardb web server, qdb_httpd, provides two services:
  * A RESTful API that can translate entries from the cluster into JSON or JSONP.
 
 
-The web bridge is extremely flexible:
+The web server is extremely flexible:
  * There is no launch order. The cluster can be started after the web server or vice versa.
  * The web server can be stopped and started at any time without any information loss.
  * All content provided by the web server, whether HTML or JSON, is *real time*.
 
-Multiple web bridges can be installed and run simultaneously for redundancy, but only one web bridge is needed to monitor the entire cluster.
+Multiple web servers can be installed and run simultaneously for redundancy, but only one is needed to monitor the entire cluster.
 
 
 Launching the qdb_httpd daemon
@@ -26,11 +50,11 @@ The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it lis
 
 In FreeBSD or Linux you can run the http daemon with::
 
-    ./qdb_httpd -c qdb_httpd_config_file.json
+    qdb_httpd -c qdb_httpd_config_file.json
 
 or on Windows::
 
-    .\qdb_httpd.exe -c qdb_httpd_config_file.json
+    qdb_httpd.exe -c qdb_httpd_config_file.json
 
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
@@ -196,12 +220,10 @@ A comprehensive list of urls and parameters is listed below at :ref:`qdb_httpd-u
 
 .. _qdb_httpd-parameters-reference:
 
-qdb_httpd Command-line Parameters Reference
-===========================================
+Parameters Reference
+====================
 
 Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
-
-.. program:: qdb_httpd
 
 .. option:: -h, --help
 
@@ -391,8 +413,8 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. _qdb_httpd-config-file-reference:
 
-qdb_httpd Config File Reference
-===============================
+Config File Reference
+=====================
 
 As of QuasarDB version 1.1.3, the qdb_httpd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
 
