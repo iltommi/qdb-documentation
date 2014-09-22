@@ -69,7 +69,7 @@ Installing
 
 The C++ API package is qdb-capi-<version>, and can be downloaded from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the C++ API package are::
     
-    \qdb-capi-1.1.4
+    \qdb-capi-<version>
           \doc        // This documentation
           \example    // C and C++ API examples
           \include    // C and C++ header files
