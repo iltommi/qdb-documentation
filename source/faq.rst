@@ -83,7 +83,7 @@ Can I embed the quasardb technology in my hardware/software?
 
 Yes, we have a special license for this case. Contact us for more information, see :doc:`contact`
 
-Do I need a licence to write a client?
+Do I need a license to write a client?
 ======================================
 
 No license is required to write a quasardb client, but the software's documentation and credits must state the following: "This software features quasardb, a Bureau 14 technology. All rights reserved."

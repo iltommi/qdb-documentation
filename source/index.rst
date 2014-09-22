@@ -20,7 +20,7 @@ For specific information regarding the usage or the administration of a **quasar
 
 Is this documentation helpful? Let us know! (see :doc:`contact`).
 
-Table of contents
+Table of Contents
 -----------------
 
 .. toctree::
