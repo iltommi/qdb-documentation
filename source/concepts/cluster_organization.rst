@@ -30,18 +30,12 @@ However, the real power of a quasardb installation comes when multiple nodes are
 Stabilization
 -------------
 
-Stabilization happens when bootstrapping a cluster, in case of failure, or when adding nodes. It is transparent and does not require any intervention.
+Stabilization is the process during which nodes agree on their position in the cluster. Stabilization happens when bootstrapping a cluster, in case of failure, or when adding nodes. It is transparent and does not require any intervention. A cluster is considered stable when all nodes are ordered in the ring by their respective ids.
 
-As nodes are added to a cluster, the cluster automatically *stabilizes* itself. :term:`Stabilization` is the process during which nodes agree on how and where the data should be distributed. The time it takes to stabilize varies depending on the number of nodes and the amount of data to migrate. A cluster is considered stable when all nodes are ordered in the ring by their respective ids.
+In most clusters, the time required to stabilize is extremely short and does not result in any modification of order of nodes in the ring. However, if one or several nodes fail or if new nodes join the cluster, stabilization also redistributes the data between the nodes (see :ref:`data-migration`). Thus the stabilization duration can vary depending on the amount of data to migrate, if any.
 
+Nodes periodically verify their location in the cluster to determine if the cluster is stable. This interval can vary anywhere from 1 second up to 2 minutes. When a node determines the cluster is stable, it will increase the duration between each stabilization check. On the contrary, when the cluster is determined to be unstable, the duration between stabilization checks is reduced.
 
-.. Periodic Stabilization
-
-In most clusters, the time required to stabilize is extremely short and does not result in any modification of order of nodes in the ring. However, if one or several nodes fail or if new nodes join the cluster, stabilization will migrate data and change the neighbors (see :ref:`data-migration`). Thus the stabilization duration depends on the amount of data to migrate, if any.
-
-The interval length between each stabilization can be anywhere between 1 second and 2 minutes.
-
-When the node evaluates its neighbors in the cluster are stable, it will increase the duration between each stabilization check. On the contrary, when its neighbors are deemed *unstable*, the duration between stabilization checks will be reduced.
 
 Adding a Node to a Cluster
 --------------------------
@@ -100,7 +94,7 @@ When a node recovers from failure, it needs to reference a node within the ring 
 
 If following a major network failure, a cluster forms two disjointed rings, the two rings will be able to unite again once the underlying failure is resolved. This is because each node "remembers" past topologies.
 
-The detection and re-stabilization process surrounding node failures can add a lot of extra work to the affected nodes. Frequent failures will severely impact performances.
+The detection and re-stabilization process surrounding node failures can add a lot of extra work to the affected nodes. Frequent failures will severely impact node performance.
 
 .. tip::
     A cluster operates best when more than 90% of the nodes are fully functional. Anticipate traffic growth and add nodes before the cluster is saturated.
@@ -109,7 +103,7 @@ The detection and re-stabilization process surrounding node failures can add a l
 What is a Client?
 -----------------
 
-A client is any piece of software using the quasardb API to create, read, update, or delete data on a quasardb cluster. Clients that are bundled with the quasardb daemon include qdbsh, qdb_httpd, qdb_dbtool, and qdb_comparison. You can also create your own custom clients using the C, Java, or Python API documentation.
+A client is any piece of software using the quasardb API to create, read, update, or delete data on a quasardb cluster. Clients that are bundled with the quasardb daemon include qdbsh, qdb_httpd, qdb_dbtool, and qdb_comparison. You can also create your own custom clients using the C, C++, Java, Python, or .NET APIs.
 
 .. Expand this section using the definitions of clients from a Chord perspective
 
