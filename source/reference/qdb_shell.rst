@@ -3,6 +3,20 @@
 
 .. program:: qdbsh
 
+Introduction
+============
+
+The quasardb shell is a command line tool that enables you to add, update, delete and retrieve entries from a quasardb :term:`server` or :term:`cluster`.
+The shell can be used interactively and non-interactively.
+In :ref:`interactive mode <qdbsh-interactive-mode>`, the user enters commands to be executed on the server. Feedback is provided to indicate failure.
+In :ref:`non-interactive mode <qdbsh-noninteractive-mode>`, a single command - supplied as a parameter - is executed and the program exits.
+
+By default qdbsh will attempt to connect to a qdbd running on the same machine, listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will need to set the --daemon parameter as shown below::
+
+    qdbsh --daemon=192.168.1.1:303
+
+When connecting to a cluster, any server within the cluster is capable of servicing requests. There is no "master" or "preferred" server. There is no performance impact of choosing one server instead of the other, except, perhaps, the physical capabilities of the server.
+
 
 Quick Reference
 ===============
@@ -47,19 +61,7 @@ Commands
  ========================================================== ==========================================================
 
 
-Introduction
-============
 
-The quasardb shell is a command line tool that enables you to add, update, delete and retrieve entries from a quasardb :term:`server` or :term:`cluster`.
-The shell can be used interactively and non-interactively.
-In :ref:`interactive mode <qdbsh-interactive-mode>`, the user enters commands to be executed on the server. Feedback is provided to indicate failure.
-In :ref:`non-interactive mode <qdbsh-noninteractive-mode>`, a single command - supplied as a parameter - is executed and the program exits.
-
-By default qdbsh will attempt to connect to a qdbd running on the same machine, listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will need to set the --daemon parameter as shown below::
-
-    qdbsh --daemon=192.168.1.1:303
-
-When connecting to a cluster, any server within the cluster is capable of servicing requests. There is no "master" or "preferred" server. There is no performance impact of choosing one server instead of the other, except, perhaps, the physical capabilities of the server.
 
 
 .. _qdbsh-interactive-mode:

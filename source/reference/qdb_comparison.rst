@@ -4,6 +4,12 @@ quasardb benchmarking tool
 .. highlight:: js
 
 
+Introduction
+============
+
+The quasardb benchmarking tool (qdb_comparison) enables you to evaluate the performance of your quasardb cluster. To do so, it runs a script on the specified cluster and measures the time taken to process the commands as accurately as the operating systems allows it.
+
+
 Quick Reference
 ===============
 
@@ -18,12 +24,6 @@ Quick Reference
  :option:`-o`, `--output-file`         path for CSV output           report_<date>
  ===================================== ============================ ================
 
-
-
-Introduction
-============
-
-The quasardb benchmarking tool (qdb_comparison) enables you to evaluate the performance of your quasardb cluster. To do so, it runs a script on the specified cluster and measures the time taken to process the commands as accurately as the operating systems allows it.
 
 Usage scenarii
 ===============

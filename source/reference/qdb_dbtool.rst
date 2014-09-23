@@ -1,6 +1,12 @@
 quasardb database tool
 ******************************
 
+Introduction
+============
+
+The quasardb database tool enables you to analyze, dump, repair and backup the persisted data of a quasardb instance.
+
+
 Quick Reference
 ===============
 
@@ -16,10 +22,6 @@ Quick Reference
  ===================================== ============================ ==============
 
 
-Introduction
-============
-
-The quasardb database tool enables you to analyze, dump, repair and backup the persisted data of a quasardb instance.
 
 Parameters reference
 ====================

@@ -4,6 +4,22 @@ quasardb web server
 .. highlight:: js
 .. program:: qdb_httpd
 
+Introduction
+============
+
+The quasardb web server, qdb_httpd, provides two services:
+ * An HTML5 GUI that shows an overview of cluster and node activity
+ * A RESTful API that can translate entries from the cluster into JSON or JSONP.
+
+
+The web server is extremely flexible:
+ * There is no launch order. The cluster can be started after the web server or vice versa.
+ * The web server can be stopped and started at any time without any information loss.
+ * All content provided by the web server, whether HTML or JSON, is *real time*.
+
+Multiple web servers can be installed and run simultaneously for redundancy, but only one is needed to monitor the entire cluster.
+
+
 Quick Reference
 ===============
 
@@ -27,20 +43,7 @@ Quick Reference
  ===================================== ============================ =================== ==============
 
 
-Introduction
-============
 
-The quasardb web server, qdb_httpd, provides two services:
- * An HTML5 GUI that shows an overview of cluster and node activity
- * A RESTful API that can translate entries from the cluster into JSON or JSONP.
-
-
-The web server is extremely flexible:
- * There is no launch order. The cluster can be started after the web server or vice versa.
- * The web server can be stopped and started at any time without any information loss.
- * All content provided by the web server, whether HTML or JSON, is *real time*.
-
-Multiple web servers can be installed and run simultaneously for redundancy, but only one is needed to monitor the entire cluster.
 
 
 Launching the qdb_httpd daemon
