@@ -163,9 +163,9 @@ If the same address/port pair is present multiple times within the array, only t
 Adding entries
 -----------------
 
-Each entry is identified by an unique :term:`alias`. You pass the alias as a null-terminated string. The alias may contain arbitrary characters but it's probably more convenient to use printable characters only.
+Each entry is identified by an unique alias. You pass the alias as a null-terminated string. The alias may contain arbitrary characters but it's probably more convenient to use printable characters only.
 
-The :term:`content` is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
+The content is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
 There are two ways to add entries into the repository. You can use :c:func:`qdb_put`: ::
 
@@ -573,7 +573,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_connect(qdb_handle_t handle, const char * host, unsigned short port)
 
-    Bind the client instance to a quasardb :term:`cluster` and connect to one node within.
+    Bind the client instance to a quasardb cluster and connect to one node within.
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
@@ -586,7 +586,7 @@ Reference
 
 .. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, qdb_remote_node_t * servers, size_t count)
 
-    Bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within the cluster. The function returns the number of successful
+    Bind the client instance to a quasardb cluster and connect to multiple nodes within the cluster. The function returns the number of successful
     unique connections. If the same node (address and port) is present several times in the input array, it will count as only one successful 
     connection.
 
@@ -633,7 +633,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_get(qdb_handle_t handle, const char * alias, char * content, size_t * content_length)
 
-    Retrieves an :term:`entry`'s content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
+    Retrieves an entry's content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
 
     If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
@@ -654,7 +654,7 @@ Reference
 
 .. c:function::  qdb_error_t qdb_get_buffer(qdb_handle_t handle, const char * alias, char ** content, size_t * content_length)
 
-    Retrieves an :term:`entry`'s content from the quasardb server.
+    Retrieves an entry's content from the quasardb server.
 
     If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
@@ -675,7 +675,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_get_remove(qdb_handle_t handle, const char * alias, const char ** content, size_t * content_length)
 
-    Atomically gets an :term:`entry` from the quasardb server and removes it. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+    Atomically gets an entry from the quasardb server and removes it. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
     The function will allocate a buffer large enough to hold the entry's content. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
 
@@ -772,7 +772,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_put(qdb_handle_t handle, const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time, qdb_time_t expiry_time)
 
-    Adds an :term:`entry` to the quasardb server. If the entry already exists the function will fail and will return ``qdb_e_alias_already_exists``. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
+    Adds an entry to the quasardb server. If the entry already exists the function will fail and will return ``qdb_e_alias_already_exists``. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -791,7 +791,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_update(qdb_handle_t handle, const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
-    Updates an :term:`entry` on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
+    Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -810,7 +810,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_get_buffer_update(qdb_handle_t handle, const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, char ** get_content, size_t * get_content_length)
 
-    Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exist.
+    Atomically gets and updates (in this order) the entry on the quasardb server. The entry must already exist.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -833,7 +833,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_compare_and_swap(qdb_handle_t handle, const char * alias, const char * new_value, size_t new_value_length, const char * comparand, qdb_time_t expiry_time, size_t comparand_length, char ** original_value, size_t * original_value_length)
 
-    Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always returns the original value of the entry.
+    Atomically compares the entry with comparand and updates it to new_value if, and only if, they match. Always returns the original value of the entry.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -860,7 +860,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_remove(qdb_handle_t handle, const char * alias)
 
-    Removes an :term:`entry` from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+    Removes an entry from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -873,7 +873,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_remove_if(qdb_handle_t handle, const char * alias, const char * comparand, size_t comparand_length)
 
-    Removes an :term:`entry` from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+    Removes an entry from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -890,7 +890,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_expires_at(qdb_handle_t handle, const char * alias, qdb_time_t expiry_time)
 
-    Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry never expires.
+    Sets the expiry time of an existing entry from the quasardb cluster. A value of zero means the entry never expires.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -905,7 +905,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_expires_from_now(qdb_handle_t handle, const char * alias, qdb_time_t expiry_delta)
 
-    Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry expires as soon as possible.
+    Sets the expiry time of an existing entry from the quasardb cluster. A value of zero means the entry expires as soon as possible.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -920,7 +920,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_get_expiry_time(qdb_handle_t handle, const char * alias, qdb_time_t * expiry_time)
 
-    Retrieves the expiry time of an existing :term:`entry`. A value of zero means the entry never expires.
+    Retrieves the expiry time of an existing entry. A value of zero means the entry never expires.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 

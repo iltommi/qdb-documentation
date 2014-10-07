@@ -509,11 +509,11 @@ qdb_httpd JSON/JSONP URL reference
 
 .. describe:: get
 
-    Obtain an :term:`entry` from the cluster.
+    Obtain an entry from the cluster.
 
-    :param alias: specifies the :term:`alias` of the entry to obtain.
+    :param alias: specifies the alias of the entry to obtain.
     :param callback: *(optional)* specifies a callback in order to obtain JSONP output instead of JSON (required for cross site scripting).
-    :returns: A JSON or JSONP structure containing the alias and :term:`content` (in Base64) of the entry. If the entry cannot be found, the content string will be empty.
+    :returns: A JSON or JSONP structure containing the alias and content (in Base64) of the entry. If the entry cannot be found, the content string will be empty.
 
     *Schema*::
 

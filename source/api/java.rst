@@ -47,7 +47,7 @@ Then you run the example::
 
     java -classpath /tmp/quasardb-java-api-master.jar:. QuasardbExample
 
-The example requires a quasardb server listening on ``127.0.0.1`` (IPV4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb :term:`cluster`.
+The example requires a quasardb server listening on ``127.0.0.1`` (IPV4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb cluster.
 
 Using the high-level API
 ------------------------
@@ -131,7 +131,7 @@ The connection is a two step process.
 
         SWIGTYPE_p_qdb_session session = quasardb.open();
 
-    #. Connect to a :term:`server` within a :term:`cluster`: ::
+    #. Connect to a server within a cluster: ::
 
         qdb_error_t r = quasardb.connect(session, "192.168.1.1", 2836);
 
@@ -144,7 +144,7 @@ Each connection to a server must be terminated manually: ::
 Adding an entry to the cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add an entry to the cluster you need to specify it's :term:`alias` and wrap the :term:`content` in a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_, see :ref:`java-memory-management`: ::
+To add an entry to the cluster you need to specify it's alias and wrap the content in a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_, see :ref:`java-memory-management`: ::
 
             String alias = "myAlias";
             String myData = "this is my data";
@@ -166,7 +166,7 @@ Keys beginning with the string "qdb" are reserved and cannot be added to the clu
 Getting an entry from the cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Retrieving an entry requires knowing the alias and allocating a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ large enough to hold all the :term:`content`, see :ref:`java-memory-management`: ::
+Retrieving an entry requires knowing the alias and allocating a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ large enough to hold all the content, see :ref:`java-memory-management`: ::
 
     String alias = "myAlias";
     java.nio.ByteBuffer content = java.nio.ByteBuffer.allocateDirect(1024);
@@ -194,7 +194,7 @@ Memory management
 
 The API uses a logic very close to the QuasarDB C API (Feel free to review the C API documentation for useful background information, see :doc:`c`).
 
-In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' :term:`content` are wrapped in `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ objects instead of byte arrays or `String <http://download.oracle.com/javase/1.4.2/docs/api/java/lang/String.html>`_ objects.
+In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ objects instead of byte arrays or `String <http://download.oracle.com/javase/1.4.2/docs/api/java/lang/String.html>`_ objects.
 
 Aliases - on the other hand - use regular String objects for convenience.
 

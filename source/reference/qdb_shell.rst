@@ -6,7 +6,7 @@
 Introduction
 ============
 
-The quasardb shell is a command line tool that enables you to add, update, delete and retrieve entries from a quasardb :term:`server` or :term:`cluster`.
+The quasardb shell is a command line tool that enables you to add, update, delete and retrieve entries from a quasardb server or cluster.
 The shell can be used interactively and non-interactively.
 In :ref:`interactive mode <qdbsh-interactive-mode>`, the user enters commands to be executed on the server. Feedback is provided to indicate failure.
 In :ref:`non-interactive mode <qdbsh-noninteractive-mode>`, a single command - supplied as a parameter - is executed and the program exits.
@@ -96,7 +96,7 @@ In case of error, the prompt turns into::
 Examples
 --------
 
-Add a new :term:`entry` named "alias" whose content is "content" and print it::
+Add a new entry named "alias" whose content is "content" and print it::
 
     qdbsh:ok > put alias content
     qdbsh:ok > get alias
@@ -186,7 +186,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     Atomically compares the value of an existing entry with comparand and replaces it with content in case of match. The entry must already exist.
 
-    :param alias: *(string)* the :term:`alias` of the entry to get and update.
+    :param alias: *(string)* the alias of the entry to get and update.
     :param content: *(string)* the new content of the entry.
     :param comparand: *(string)* the value to compare the content to
     :return: *(string)* the entry's original content or an error message
@@ -228,7 +228,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     Retrieves an existing entry from the server and print it to standard output.
 
-    :param alias: *(string)* the :term:`alias` of the entry to be retrieved.
+    :param alias: *(string)* the alias of the entry to be retrieved.
     :return: *(string)* the entry's content or an error message
 
     *Example*
@@ -248,7 +248,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     Retrieves the expiry time of an existing entry.
 
-    :param alias: *(string)* the :term:`alias` of the entry
+    :param alias: *(string)* the alias of the entry
     :return: *(string)* the expiry time of the alias
 
 
@@ -258,7 +258,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     Atomically gets the previous value of an existing entry and replace it with the specified content. The entry must already exist.
 
-    :param alias: *(string)* the :term:`alias` of the entry to get and update.
+    :param alias: *(string)* the alias of the entry to get and update.
     :param content: *(string)* the new content of the entry.
     :return: *(string)* the entry's content or an error message
 
@@ -321,7 +321,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     Adds a new entry to the server. The entry must not already exist. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
 
-    :param alias: *(string)* the :term:`alias` of the entry to create
+    :param alias: *(string)* the alias of the entry to create
     :param content: *(string)* the content of the entry
     :return: nothing if successful, an error message otherwise
 
@@ -342,7 +342,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     Removes an existing entry on the server. It is an error to delete a non-existing entry.
 
-    :param alias: *(string)* the :term:`alias` of the entry to delete
+    :param alias: *(string)* the alias of the entry to delete
     :return: Nothing if successful, an error message otherwise
 
     *Example*
@@ -384,7 +384,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     Adds or updates an entry to the server. If the entry doesn't exist it will be created, otherwise it will be changed to the new specified value.
 
-    :param alias: *(string)* the :term:`alias` of the entry to create or update.
+    :param alias: *(string)* the alias of the entry to create or update.
     :param content: *(string)* the content of the entry.
     :return: Nothing if successful, an error message otherwise.
 

@@ -228,8 +228,8 @@ Unstable state
 
 When a node fails, a segment of the ring will become unstable. When a ring's segment is unstable, requests might fail. This happens when:
 
-    1. The requested node's :term:`predecessor` or :term:`successor` is unavailable **and**
-    2. The requested node is currently looking for a valid :term:`predecessor` or :term:`successor`
+    1. The requested node's predecessor or successor is unavailable **and**
+    2. The requested node is currently looking for a valid predecessor or successor
 
 In this context the node choses to answer to the client with an "unstable" error status. The client will then look for another node on the ring able to answer its query. If it fails to do so, the client will return an error to the user.
 

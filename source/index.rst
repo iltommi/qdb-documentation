@@ -37,4 +37,3 @@ Table of Contents
    changes
    license
    contact
-   glossary

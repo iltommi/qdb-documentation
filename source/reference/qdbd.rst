@@ -6,7 +6,7 @@ quasardb daemon
 Introduction
 ============
 
-The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`cluster`.
+The quasardb daemon is a highly scalable data repository that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a cluster.
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
 The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
@@ -73,16 +73,16 @@ Network distribution
 
 qdbd distribution is peer-to-peer. This means:
 
-    * The unavailability of one :term:`server` does not compromise the whole :term:`cluster`
-    * The memory load is automatically distributed amongst all instances within a :term:`cluster`
+    * The unavailability of one server does not compromise the whole cluster
+    * The memory load is automatically distributed amongst all instances within a cluster
 
 Each server within one cluster needs:
 
     * An unique address on which to listen (you cannot use the *any* address) (:option:`-a`)
-    * At least one :term:`node` within the cluster to contact (:option:`--peer`)
+    * At least one node within the cluster to contact (:option:`--peer`)
 
 .. note::
-    It's counter-productive to run several instances on the same :term:`node`.
+    It's counter-productive to run several instances on the same node.
     qdbd is hyper-scalar and will be able to use all the memory and processors of your server.
     The same remark applies for virtual machines: running quasardb multiple times in multiple virtual machines on a single physical server will not increase the performances.
 
@@ -115,7 +115,7 @@ Data persistence on disk is buffered: when an user requests ends, the data may o
 
 Should you need every write to be synced to disk, you can do so with the :option:`--sync` option. Syncing every write do disk negatively impacts performances while slightly increasing reliability.
 
-You can also disable the persistence altogether (:option:`--transient`), making quasardb a pure in-memory :term:`repository`.
+You can also disable the persistence altogether (:option:`--transient`), making quasardb a pure in-memory repository.
 
 .. caution::
     If you disable the persistence, evicted entries are lost.
@@ -142,10 +142,10 @@ Theoretical limits
 ------------------
 
 **Entry size**
-    An :term:`entry` cannot be larger than the amount of virtual memory available on a single :term:`node`. This ranges from several megabytes to several gigabytes depending on the amount of physical memory available on the system. It is recommended to keep entries size well below the amount of available physical memory.
+    An entry cannot be larger than the amount of virtual memory available on a single node. This ranges from several megabytes to several gigabytes depending on the amount of physical memory available on the system. It is recommended to keep entries size well below the amount of available physical memory.
 
 **Key size**
-    As it is the case for entries, a key cannot be larger than the amount of virtual memory available on a single :term:`node`.
+    As it is the case for entries, a key cannot be larger than the amount of virtual memory available on a single node.
 
 **Number of nodes in a grid**
     The maximum number of nodes is :math:`2^{63}` (9,223,372,036,854,775,808)
@@ -157,21 +157,21 @@ Theoretical limits
     The node capacity depends on the available disk space on a given node.
 
 **Total amount of data**
-    The total amount of data a single :term:`grid` may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes)
+    The total amount of data a single grid may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes)
 
 Practical limits
 ----------------
 
 **Entry size**
     Very small entries (below a hundred bytes) do not offer a very good throughput because the network overhead is larger than the payload. This is a limitation of TCP.
-    Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a quasardb :term:`cluster` "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
-    If you have a lot of RAM (several gigabytes per :term:`node`) do not be afraid to add large entries to a quasardb :term:`cluster`.
+    Very large entries (larger than 10% of the node RAM) impact performance negatively and are probably not optimal to store on a quasardb cluster "as is". It is generally recommended to slice very large entries in smaller entries and handle reassembly in the client program.
+    If you have a lot of RAM (several gigabytes per node) do not be afraid to add large entries to a quasardb cluster.
     For optimal performance, it's better if the "hot data" - the data that is frequently acceded - can fit in RAM.
 
 **Simultaneous clients**
     A single instance can serve thousands of clients simultaneously.
     The actual limit is the network bandwidth, not the server.
-    You can set the :option:`-s` to a higher number to handle more simultaneous clients per :term:`node`.
+    You can set the :option:`-s` to a higher number to handle more simultaneous clients per node.
     Also you should make sure the clients connects to the nodes of the cluster in a load-balanced fashion.
 
 .. _qdbd-parameters-reference:
@@ -260,10 +260,10 @@ Instance specific
 
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
-    Specifies the address and port on which the :term:`server` will listen.
+    Specifies the address and port on which the server will listen.
 
     Argument
-        A string representing one address the :term:`server` listens on and a port. The address string can be a host name or an IP address.
+        A string representing one address the server listens on and a port. The address string can be a host name or an IP address.
 
     Default value
         127.0.0.1:2836, the IPv4 localhost and the port 2836
@@ -366,7 +366,7 @@ Instance specific
 
 .. option:: --peer=<address>:<port>
 
-    The address and port of a peer to which to connect within the :term:`cluster`. It can be any :term:`server` belonging to the :term:`cluster`.
+    The address and port of a peer to which to connect within the cluster. It can be any server belonging to the cluster.
 
     Argument
         The address and port of a machines where a quasardb daemon is running. The address string can be a host name or an IP address.
@@ -375,7 +375,7 @@ Instance specific
         None
 
     Example
-        Join a :term:`cluster` where the machine 192.168.1.1 listening on the port 2836 is already connected::
+        Join a cluster where the machine 192.168.1.1 listening on the port 2836 is already connected::
 
             qdbd --peer=192.168.1.1:2836
 
@@ -474,7 +474,7 @@ Global
 
 .. option:: --transient
 
-    Disable persistence. Evicted data is lost when qdbd is :term:`transient`.
+    Disable persistence. Evicted data is lost when qdbd is transient.
 
 .. option:: -r <path>, --root=<path>
 
@@ -542,7 +542,7 @@ Global
             qdbd --limiter-max-entries=100
 
     .. note::
-        Setting this value too low may cause the :term:`server` to spend more time evicting entries than processing requests.
+        Setting this value too low may cause the server to spend more time evicting entries than processing requests.
 
 
 

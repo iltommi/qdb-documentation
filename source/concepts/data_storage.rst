@@ -15,7 +15,7 @@ Entries
 
 Each entry is assigned an unique ID. This unique ID is a `SHA-3 <http://en.wikipedia.org/wiki/SHA-3>`_ of the alias. 
 
-The entry is then placed on the node whose ID is the :term:`successor` of the entry's ID. If replication is in place, the entry will also be placed on the successor's successor.
+The entry is then placed on the node whose ID is the successor of the entry's ID. If replication is in place, the entry will also be placed on the successor's successor.
 
 When a client queries the cluster, it locates the node who is the successor of the entry and queries that node.
 

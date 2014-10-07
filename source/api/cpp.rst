@@ -394,7 +394,7 @@ Reference
 
     .. cpp:function:: size_t multi_connect(qdb_remote_node_t * servers, size_t count)
 
-        Initialize all required resources, bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within. The function returns the number of successful connections. If the same node (address and port) is present several times in the input array, it will count as only one successful connection.
+        Initialize all required resources, bind the client instance to a quasardb cluster and connect to multiple nodes within. The function returns the number of successful connections. If the same node (address and port) is present several times in the input array, it will count as only one successful connection.
 
         The user supplies an array of qdb_remote_node_t and the function updates the error member of each entry according to the result of the operation.
 
@@ -407,7 +407,7 @@ Reference
 
     .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
-        Adds an :term:`entry` to the quasardb server. If the entry already exists the method will fail and will return ``qdb_e_alias_already_exists``. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
+        Adds an entry to the quasardb server. If the entry already exists the method will fail and will return ``qdb_e_alias_already_exists``. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -420,7 +420,7 @@ Reference
 
     .. cpp:function:: qdb_error_t update(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
-        Updates an :term:`entry` on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
+        Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -433,7 +433,7 @@ Reference
 
     .. cpp:function:: qdb_error_t get(const char * alias, char * content, size_t * content_length)
 
-        Retrieves an :term:`entry`'s content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
+        Retrieves an entry's content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
 
         If the entry does not exist, the method will fail and return ``qdb_e_alias_not_found``.
 
@@ -449,7 +449,7 @@ Reference
 
     .. cpp:function:: api_buffer_ptr get(const char * alias, qdb_error_t & error)
 
-        Retrieves an :term:`entry`'s content from the quasardb server.
+        Retrieves an entry's content from the quasardb server.
 
         If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
 
@@ -464,7 +464,7 @@ Reference
 
     .. cpp:function:: api_buffer_ptr get_remove(const char * alias, qdb_error_t & error)
 
-        Atomically gets an :term:`entry` from the quasardb server and removes it.
+        Atomically gets an entry from the quasardb server and removes it.
 
         If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
 
@@ -479,7 +479,7 @@ Reference
 
     .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
 
-        Atomically gets and updates (in this order) the :term:`entry` on the quasardb server. The entry must already exist.
+        Atomically gets and updates (in this order) the entry on the quasardb server. The entry must already exist.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -493,7 +493,7 @@ Reference
 
     .. cpp:function:: api_buffer_ptr compare_and_swap(const char * alias, const char * new_value, size_t new_value_length, const char * comparand, size_t comparand_length, qdb_time_t expiry_time, qdb_error_t & error)
 
-        Atomically compares the :term:`entry` with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
+        Atomically compares the entry with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -509,7 +509,7 @@ Reference
 
     .. cpp:function:: qdb_error_t remove(const char * alias)
 
-        Removes an :term:`entry` from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+        Removes an entry from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -519,7 +519,7 @@ Reference
 
     .. cpp:function:: qdb_error_t remove_if(const char * alias, const char * comparand, size_t comparand_length)
 
-        Removes an :term:`entry` from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+        Removes an entry from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -565,7 +565,7 @@ Reference
 
     .. cpp:function:: qdb_error_t expires_at(const char * alias, qdb_time_t expiry_time)
 
-        Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry never expires.
+        Sets the expiry time of an existing entry from the quasardb cluster. A value of zero means the entry never expires.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -576,7 +576,7 @@ Reference
 
     .. cpp:function:: qdb_error_t expires_from_now(const char * alias, qdb_time_t expiry_delta)
 
-        Sets the expiry time of an existing :term:`entry` from the quasardb cluster. A value of zero means the entry expires as soon as possible.
+        Sets the expiry time of an existing entry from the quasardb cluster. A value of zero means the entry expires as soon as possible.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
@@ -588,7 +588,7 @@ Reference
 
     .. cpp:function:: qdb_error_t get_expiry_time(const char * alias, qdb_time_t & expiry_time)
 
-        Retrieves the expiry time of an existing :term:`entry`. A value of zero means the entry never expires.
+        Retrieves the expiry time of an existing entry. A value of zero means the entry never expires.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 

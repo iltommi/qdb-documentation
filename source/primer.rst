@@ -18,7 +18,7 @@ Where would you want to use quasardb? Here are a couple of use cases:
 Shall we dance?
 ---------------
 
-Before you start the quasardb :term:`server`, generate a default configuration file::
+Before you start the quasardb server, generate a default configuration file::
 
     qdbd --gen-config > qdbd_config.conf
 
