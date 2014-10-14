@@ -40,7 +40,7 @@ Log and Dump files are often very large and should be rotated, archived, or dele
 Database Storage
 ----------------
 
-In a production environment, the database should always be stored on its own, dedicated partition. The quasardb daemon should be provided the path to the database partition with the --root= command-line argument (see :doc:`../reference/qdbd`).
+In a production environment, the database should always be stored on its own, dedicated partition. The quasardb daemon should be provided the path to the database partition with the "root" option in its configuration file (see :doc:`../reference/qdbd`).
 
 Enabling data replication of 2 or higher is sufficient to protect against disk failure and subsequent data loss. Production environments should always use data replication if possible. RAID 1 and RAID 5 disk configurations are recommended but not required, as they may minimize the amount of downtime for your administration team.
 
