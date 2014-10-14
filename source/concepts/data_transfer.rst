@@ -8,6 +8,19 @@ Data Transfer
 	- An visual example of "set" - How the cluster determines where data gets stored
 	- Data Conflicts (reference Troubleshooting article)
 
+.. ## TODO ##
+.. ## Find a home for this. ##
+.. ## Remove from data_storage.rst at that time. ##
+   
+   When are entries actually synced to disk?
+   ------------------------------------------
+   Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaenous requests. When a user adds or updates an entry on the cluster the entry's value may not be synced to the disk immediately. However, quasardb guarantees the data is consistent at all times, even in case of hardware or software failure.
+   
+   If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true. Disabling the write cache may have an impact on performance.
+
+
+
+
 
 Principles
 ----------
@@ -45,10 +58,6 @@ Guarantees
      * All requests, unless otherwise noted, are durable (see :ref:`fault-tolerance`)
      * Once the server replies, it means the request has been fully carried on
      * Synchronous requests emanating from the same client are executed in order. However multiple requests coming from multiple clients are executed in an arbitrary order (see :ref:`conflicts-resolution`)
-
-A notable exception to the ACID guarantees is streaming.
-
-.. # DEAD LINK: (see :doc:`streaming`).
 
 .. _conflicts-resolution:
 

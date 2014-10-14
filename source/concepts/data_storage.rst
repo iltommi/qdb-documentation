@@ -10,33 +10,73 @@ Data Storage
 	- Data storage performance
 	- Any other relevant information from current Persistence page
 
-Entries
----------
+.. _data-storage-in-cluster:
 
-Each entry is assigned an unique ID. This unique ID is a `SHA-3 <http://en.wikipedia.org/wiki/SHA-3>`_ of the alias. 
+Where are Entries Stored in the Cluster?
+----------------------------------------
 
-The entry is then placed on the node whose ID is the successor of the entry's ID. If replication is in place, the entry will also be placed on the successor's successor.
+When an entry is added to the cluster, it is assigned a unique ID. This ID is a `SHA-3 <http://en.wikipedia.org/wiki/SHA-3>`_ of the alias. The entry is then placed on the node whose ID is the successor of the entry's ID. If replication is in place, the entry will be copied to other nodes for redundancy.
 
-When a client queries the cluster, it locates the node who is the successor of the entry and queries that node.
+.. figure:: qdb_entry_storage/01_three_node_qdb_cluster.png
+   :scale: 50%
+
+For example, here is a three node cluster. The nodes have UUID identifiers beginning with 3c1eed, 539fc6, b4b80e, respectively.
+
+.. figure:: qdb_entry_storage/02_data_added_to_b4_node.png
+   :scale: 50%
+
+A client (qdbsh) puts a file on the b4b80e node. Quasardb computes the file's UUID as "4c6019...".
+
+.. figure:: qdb_entry_storage/03_data_moved_to_appropriate_successor.png
+   :scale: 50%
+
+Quasardb compares the UUIDs of each node to the UUID for the new entity. Because the new entity's UUID begins with 4, its successor is 539fc6. The file is stored on the 539fc6 node.
+
+.. figure:: qdb_entry_storage/04_data_replicated.png
+   :scale: 50%
+
+If the cluster is configured with a :ref:`data-replication` value of 2, a copy of the file is also stored on the b4b80e node. If the cluster is configured with a data replication value of 3, a copy of the file is stored on each node.
+
+When nodes are added to the cluster, this adds new node UUIDs. Data is automatically migrated to the new successor during stabilization. For more information, see :ref:`data-migration` and :ref:`stabilization`.
+
+Since the location of the entry depends on the order of nodes in the ring, exact control of the entry's location can be done by setting each node's ID in its configuration file. However, it is recommended to let quasardb set the node ID in order to prevent collisions.
 
 
-Persistence
------------
+.. _data-storage-in-node:
 
-Persistence is done using `LevelDB <http://code.google.com/p/leveldb/>`_. All software that is LevelDB compatible can process the quasardb persistence layer.
+Where are Entries Stored in a Node?
+-----------------------------------
 
-Entries are stored "as is", unmodified. The quasardb ensures that the most frequently access entries stay in memory so it can rapidly serve a large amount of simultaneous requests.
+Each node saves its data in its "root" directory, determined by its configuration file or the global parameter received from the cluster. By default this is the /db directory under the qusardb daemon's working directory. In production environments, the root folder should be on its own partition. See :doc:`../administration/system_requirements`.
 
-.. # DEAD LINK: (see :doc:`concurrency`).
+.. caution::
+    Never operate directly on the files in the root directory. To backup, dump, analyze, or repair the database, use :doc:`../reference/qdb_dbtool`.
 
-All entries are persisted to disk as they are added and updated. When a put or add request has been processed, it is guaranteed that the persistence layer has fully acknowledged the modification. 
+.. caution::
+    Never save other files in this directory; they might be deleted or modified by the daemon.
 
-The persistence layer may compress data for efficiency purposes. This is transparent to the client and never done to the detriment of performance.
+Quasardb's persistence layer is built using `LevelDB <https://github.com/google/leveldb>`_. All software that is LevelDB compatible can process the quasardb database file.
 
-By default, the persistence layer uses a write cache to increase performance, but this can be disabled (see :doc:`../reference/qdbd`). When the write cache is disabled, the server will not return from a put or update request until the entry is acknowledged by the file system.
+Entries are usually stored "as is", unmodified within the database. Data may be compressed for efficiency purposes, but this is transparent to the client and is never done to the detriment of performance.
+
+Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaenous requests. When a user adds or updates an entry on the cluster the entry's value may not be synced to the disk immediately. However, quasardb guarantees the data is consistent at all times, even in case of hardware or software failure.
+
+If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true. Disabling the write cache may have an impact on performance.
 
 
+Transient mode
+^^^^^^^^^^^^^^
 
+Transient mode disables data storage altogether, transforming quasardb into a pure in-memory database. In transient mode:
+
+    * Performance may increase 
+    * Memory usage may be reduced
+    * Disk usage will be significantly lowered
+
+But:
+
+    * Entries evicted from memory due to the --limiter-max-bytes, --limiter-max-entries-count, or other memory limits will be lost.
+    * Node failure may imply irrecoverable data loss
 
 
 .. _data-migration:
@@ -62,31 +102,31 @@ If the new node is the successor of keys already bound to another node, data mig
 
 Migration Process
 ^^^^^^^^^^^^^^^^^
-At the end of each stabilization cycle, a node will request its successor and its predecessor for entries within its range.
+At the end of each :ref:`stabilization` cycle, a node will request its successor and its predecessor for entries within its range.
 
 More precisely:
 
-    1. N joins the ring by looking for its successor S
-    2. N stabilizes itself, informing its successor and predecessor of its existence
+    1. Node N joins the ring by looking for its successor, Node S.
+    2. N stabilizes itself, informing its successor and predecessor of its existence.
     3. When N has both predecessor P and successor S, N request both of them for the [P; N] range of keys
     4. P and S send the requested keys, if any, one by one.
 
 .. note::
     Migration speed depends on the available network bandwidth, the speed of the underlying hardware, and the amount of data to migrate. Therefore, a large amount of data (several gigabytes) on older hardware may negatively impact client performance.
 
-During migration, nodes remain available and will answer to requests, however since migration occurs *after* the node is registered there is a time interval during which entries in migration may be temporarly unvailable (between steps #3 and #4).
+During migration, nodes remain available and will answer to requests. However, since migration occurs *after* the node is registered, there is a time interval during which some entries are being moved to their nodes. These entries may be temporarly unvailable.
 
 Failure scenario:
 
-    1. A new node *N* joins the ring, its predecessor is *P* and its successor is *S*
-    2. A client looks for the entry *e*, it is currently bound to *S* but ought to be on *N*
-    3. As *N* has joined the ring, the client correctly requests *N* for *e*
-    4. N answers "not found" as *S* has not migrated *e* yet
+    1. Node N joins the ring and connects itself with its predecessor, Node P, and its successor Node S.
+    2. Meanwhile, a client looks for the entry E. Entry E is currently stored on Node S, but the organization of the cluster now says the successor is Node N.
+    3. Because Node N can be found in the ring, the client correctly requests Entry E from Node N.
+    4. N answers "not found" because Node S has not migrated E yet.
 
-Entry *e* will only be unavailable for the duration of the migration and does not result in a data loss. A node will not remove an entry until the peer has fully acknowledged the migration.
+Entry E will only be unavailable for the duration of the migration and does not result in a data loss. A node will not remove an entry until the peer has fully acknowledged the migration.
 
 .. tip::
-    Add nodes when the traffic is at its lowest point.
+    To reduce the chance of unavailable data due to data migration, add nodes when cluster traffic is at its lowest point.
 
 
 
@@ -97,58 +137,33 @@ Entry *e* will only be unavailable for the duration of the migration and does no
 Data replication
 -----------------
 
-Data replication is the process of duplicating entries across multiple nodes for the purpose of fault tolerance. Data replication greatly reduces the odds of functional failures at the cost of increased memory usage and reduced performance when adding or updating entries. Not to be confused with :ref:`data-migration`.
+Data replication is the process of duplicating entries across multiple nodes for the purpose of fault tolerance. Data replication greatly reduces the odds of functional failures at the cost of increased disk and memory usage, as well as reduced performance when adding or updating entries. Not to be confused with :ref:`data-migration`.
 
 .. note::
-    Replication is optional and disabled by default (see :doc:`../reference/qdbd`).
+    Replication is optional and disabled by default, but is highly recommended for production environments (see :doc:`../reference/qdbd`).
 
 Principle
 ^^^^^^^^^^
 
-Data is replicated on a node's successors. For example, with a factor two replication, an entry will be maintained by a node and by its successor. With a factor three replication, an entry will be maintained by a node and and by its two successors. Thus, replication linearly increases memory usage.
+Data is replicated on a node's successors. For example, with a factor two replication, an entry will be stored on its primary node and on that node's successor. With a factor three replication, an entry will be stored on its primary node and on its two following successors. Thus, replication linearly increases disk and memory usage.
 
-.. note::
-    The replication factor is identical for all nodes of a cluster and is configurable (see :doc:`../reference/qdbd`). By default it is set to one (replication disabled).
+Replication is done synchronously as data is added or updated. The call will not successfully return until the data has been stored and fully replicated across the appropriate nodes.
 
-The limit to this rule is for clusters with fewer nodes than the replication factor. For example, a two nodes cluster cannot have a factor three replication.
-
-Replication is done synchronously as data is added or updated. The call will not successfully return until the data has been stored and fully replicated.
-
-When a node fails and leaves the ring, data will be replicated on the new successor after stabilization completes. This means that simultaneous failures between two stabilizations may result in inaccessible entries (see :ref:`data-replication-reliability-impact`)
-
-.. note::
-    Since the location of the replication depends on the order of nodes, control of the physical location can be done through control of the nodes's id.
-
-Benefits
-^^^^^^^^^^
-
-Replication main benefits are in the fields of reliability and resilience:
-
-    * When adding a new node, data remains accessible during migration. The client will look up replicas should it fail to access the original entry (see :ref:`data-migration`)
-    * When a node becomes unreachable, replicas will take over and service requests
-
-How replication minimizes unavailability
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-When a node becomes unavailable, the entries it was holding are no longer accessible for reading or writing. With replication, because the successor holds a complete copy of all its predecessor entries, all entries will be instantly accessible as soon as the ring is stabilized.
+When a node fails or when entries are otherwise unavailable, client requests will be served by the successor nodes containing the duplicate data. In order for an entry to become unavailable, all nodes containing the duplicate data need to fail simultaneously. For more information, see :ref:`data-replication-reliability-impact`.
 
 How replication works with migration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When a new node joins a ring, data is migrated (see :ref:`data-migration`). When replication is in place, the migration phase also includes a replication phase that consists in copying all the entries to the successor. Thus, replication increases the migration duration.
+When a new node joins a ring, data is migrated (see :ref:`data-migration`) to its new host node. When replication is in place, the migration phase also includes a replication phase that consists in copying entries to the new successors. Thus, replication increases the migration duration. However, during this period, if the original entry is unavailable, the successor node will respond to client requests with the duplicate data.
 
 Conflict resolution
 ^^^^^^^^^^^^^^^^^^^^^
 
-Because of the way replication works, an original and a replica entry cannot be simultenously edited. The client will always access the version considered the *original* entry and replicas are always overwritten in favor of the *original*.
+Because of the way replication works, an original and a replica entry cannot be simultenously edited. The client will always access the version considered the *original* entry and replicas are always overwritten in favor of the *original*. Replication is completely transparent to the client.
 
-A version is original if it belongs to the node range, if not, it is a replica. A replica becomes original when the range of the node changes. 
+When the original is unavailable due to data migration and the client sends a read-only request, the client will be provided with the replica entry. When the original is unavailable due to data migration and the client sends a write request, the cluster will respond with "unavailable" until the migration is complete.
 
-In other words, the client accesses the replica **after** ring stabilization. It does not attempt to directly read the entry of the successor. Therefore, replication is totally transparent to the client.
-
-This comes at the cost of some unavailability. An when the ring is unstable and replicating entries.
-
-Formally put, this means that quasardb may chose to sacrifice *Availability* for *Consistency* and *Partitionability* during short periods of time.
+Formally put, this means that quasardb may choose to sacrifice *Availability* for *Consistency* and *Partitionability* during short periods of time.
 
 .. _data-replication-reliability-impact:
 
@@ -162,7 +177,7 @@ More formally, given a :math:`\lambda(N)` failure rate of a node N, the mean tim
 .. math::
     \tau:x \to \frac{1}{{\lambda(N)}^{x}}
 
-This formula assumes that failures are unrelated, which is never completly the case. For example, the failure rates of blades in the same enclosure is correlated. However, the formula is a good enough approximation to exhibit the exponential relation between replication and reliability.
+This formula assumes that failures are unrelated, which is never completely the case. For example, the failure rates of blades in the same enclosure is correlated. However, the formula is a good enough approximation to exhibit the exponential relation between replication and reliability.
 
 .. tip::
     A replication factor of two is a good compromise between reliability and memory usage as it gives a quadratic increase on reliablity while increasing memory usage by a factor two.
@@ -176,27 +191,6 @@ Replication also increases the time needed to add a new node to the ring by a fa
 
 .. tip::
     Clusters that mostly perform read operations greatly benefit from replication without any noticeable performance penalty.
-
-
-
-
-.. # Stolen from reference/qdbd.rst
-   # Merge into Replication above.
-
-Replication
------------
-
-The replication factor (:option:`--replication`) is the number of copies for any given entry within the cluster. Each copy is made on a different node, this implies that a replication factor greater than the number of nodes will be lowered to the actual number of nodes.
-
-The purpose of replication is to increase fault tolerance at the cost of decreased write performance.
-
-For example a cluster of three nodes with a replication factor of four (4) will have an effective replication factor of three (3). If a fourth node is added, effective replication will be increased to four automatically.
-
-By default the replication factor is one (1) which is equivalent to no replication. A replication factor of two (2) means that each entry has got a backup copy. A replication factor of three (3) means that each entry has got two (2) backup copies. The maximum replication factor is four (4).
-
-When adding an entry to a node, the call returns only when the add and all replications have been successful. If a node part or joins the ring, replication and migration occurs automatically as soon as possible.
-
-Replication is a cluster-wide parameter.
 
 
 
@@ -221,27 +215,6 @@ However, there is one case where data may be lost:
 The persistence layer is able to recover from write failures, which means that one write error will not compromise everything. It is also possible to make sure writes are synced to disks (see :doc:`../reference/qdbd`) to increase reliability further. 
 
 Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is negligible for clusters that mostly perform read operations.
-
-
-Transient mode
-^^^^^^^^^^^^^^
-
-It is possible to disable persistence altogether (see :doc:`../reference/qdbd`). This is called the *transient* mode.
-
-In this mode:
-
-    * Performance may increase 
-    * Memory usage may be reduced
-    * Disk usage will be significantly lowered
-
-But:
-
-    * Evicted entries will be lost
-    * Node failure may imply irrecoverable data loss
-
-Transient mode is a clever way to transform a quasardb cluster into a powerful cache.
-
-
 
 
 .. ### This is really more of a concurrency / sysadmin-wants-more-RAM thing than a disk thing. No data is changed here.

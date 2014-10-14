@@ -100,25 +100,20 @@ There are six different log levels: `detailed`, `debug`, `info`, `warning`, `err
 
 You can also change the log flush interval (:option:`--log-flush-interval`), which defaults to three (3) seconds.
 
-Persistence
------------
+Data Storage
+------------
 
 .. note::
-    Persistence options are global for any given ring.
+    Data storage options are global for any given ring.
 
-Data is persisted on disk, by default in a `db` directory under the current working directory. You can change this to any directory you want using the :option:`-r` option. All nodes will use the same directory as this is a global parameter.
+Each node saves its data in its "root" directory, determined by its configuration file or the global parameter received from the cluster. By default this is the /db directory under the qusardb daemon's working directory.
 
-.. caution::
-    Never operate directly on files in the persistence directory, use the provided tools (see :doc:`qdb_dbtool`). Never save any other file in this directory, it might be deleted or modified by the daemon.
+Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaenous requests. Data may not be synced to the disk at all times. If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true.
 
-Data persistence on disk is buffered: when an user requests ends, the data may or may not be persisted on the disk yet. Still, the persistence layer guarantees the data is consistent at all time, even in case of hardware or software failure.
+You can also disable data storage altogether, making quasardb a pure in-memory repository. See :option:`--transient`.
 
-Should you need every write to be synced to disk, you can do so with the :option:`--sync` option. Syncing every write do disk negatively impacts performances while slightly increasing reliability.
+For more information, see :doc:`../concepts/data_storage` and :doc:`../concepts/data_transfer`.
 
-You can also disable the persistence altogether (:option:`--transient`), making quasardb a pure in-memory repository.
-
-.. caution::
-    If you disable the persistence, evicted entries are lost.
 
 Partitions
 ----------
@@ -459,10 +454,10 @@ Global
 
 .. option:: --replication=<factor>
 
-    Specifies the replication factor (global parameter).
+    Specifies the replication factor (global parameter). For more information, see :ref:`data-replication`.
 
     Argument
-        A positive integer between 1 and 4 (inclusive) specifying the replication factor
+        A positive integer between 1 and 4 (inclusive) specifying the replication factor. If the integer is higher than the number of nodes in the cluster, it will be automatically reduced to the cluster size.
 
     Default value
         1 (replication disabled)
