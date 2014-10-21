@@ -19,134 +19,124 @@ Data Transfer
    If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true. Disabling the write cache may have an impact on performance.
 
 
-
-
-
-Principles
-----------
+Designed for Concurrency
+------------------------
 
 Server
 ^^^^^^
 
-At the heart of many quasardb design and technology decisions lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, quasardb uses a combination of asynchronous I/O, lock-free containers and parallel processing.
+At the heart of quasardb design and technology decisions lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, quasardb uses a combination of asynchronous I/O, lock-free containers and parallel processing.
 
-As of now, the server can serve as many concurrent requests as the operating system and the underlying hardware permit. 
+quasardb is developed in C++11 and assembly with performance in mind. The qdbd daemon is organized in a network of mini-daemons that exchange messages. This allows it to ensure low latency while scaling with server resources. qdbd can serve as many concurrent requests as the operating system and underlying hardware permit.
 
-The server will make sure that requests do not conflict with each other. It will spread the load across the entire processing power available, if need be.
+The concept of multithreading often implies locking access to a resource. Quasardb reduces locking to a minimum with the use of lock-free structures and transactional memory. Whenever possible, quasardb allocates memory on the stack rather than on the heap. If a heap allocation cannot be avoided, quasardb's zero-copy architecture makes sure no cycle is wasted duplicating data, unless it causes data contention.
 
-The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
+The cluster will make sure that requests do not conflict with each other.
+ * Only one client can write to a specific entry at a time.
+ * Multiple clients can simultaenously read the same entry.
+ * Multiple clients can simultaneously read and write to multiple, unique entries.
 
-Multiple clients can simultaneously access the same entry for reading. The server will ensure that only one client accesses an entry for writing at any time.
+quasardb automatically scales its multithreading engine to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
 
-Multiple clients can simultaneously access different entries for reading and writing.
 
 Client
 ^^^^^^
 
-All API are thread safe and synchronous unless otherwise noted.
+Clients are any piece of software using the quasardb API to create, read, update, or delete data on a quasardb cluster. Clients that are bundled with the quasardb daemon include qdbsh, qdb_httpd, qdb_dbtool, and qdb_comparison. You can also create your own custom clients using the C, C++, Java, Python, or .NET APIs.
 
-When the client receives a reply from the server, the request is guaranteed to have been carried out by the server, as specified by the answer.
+All API calls are thread safe and synchronous unless otherwise noted in :doc:`the API documentation <../api/index>`_. When a client receives a reply from the server, the request is guaranteed to have been carried out by the server and replicated to all appropriate nodes.
 
 The client takes care of locating the proper node for the request. The client will either find the proper node or fail (this may happen if the ring is unstable, see :ref:`fault-tolerance`).
+
 
 Guarantees
 ----------
 
-     * All requests, unless otherwise noted, are atomic
-     * All requests, unless otherwise noted, are consistent
-     * All requests, unless otherwise noted, are isolated
-     * All requests, unless otherwise noted, are durable (see :ref:`fault-tolerance`)
-     * Once the server replies, it means the request has been fully carried on
-     * Synchronous requests emanating from the same client are executed in order. However multiple requests coming from multiple clients are executed in an arbitrary order (see :ref:`conflicts-resolution`)
+     * All requests, unless otherwise noted, are Atomic.
+     * All requests, unless otherwise noted, are Consistent.
+     * All requests, unless otherwise noted, are Isolated.
+     * All requests, unless otherwise noted, are Durable.
+     * Once the server replies, the request has been fully carried out.
+     * Synchronous requests from the same client are executed in order.
+     * Multiple requests from multiple clients are executed in an arbitrary order but can be mitigated through careful client design (see :ref:`conflicts-resolution`).
+
+
 
 .. _conflicts-resolution:
 
-Conflicts resolution
---------------------
+Data Conflicts
+--------------
 
-When may a conflict occur?
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+A simple data conflict
+^^^^^^^^^^^^^^^^^^^^^^
 
-When executing a series of requests, each request is atomic, consistent, isolated and durable (ACID) and the requests will be executed in the given order.
+Conflicts usually occur when a client program is not designed for or used in a manner that scales with multiple, simultaneous clients.
 
-For example, if a client adds an entry and later gets it, the get is guaranteed to succeed if the add was successful (unless an external error occurs, such as a low memory condition, a hardware or power failure, an operating system fault, etc.).
+For example, if a client adds an entry and later gets it, the get is guaranteed to succeed if the add was successful (barring an external error such as low memory, a hardware or power failure, an operating system fault, etc.).
 
-For example:
-
-    * **Client A** *adds* an entry "car" and sets it to "roadster"
+    * **Client A** *puts* an entry "car" with the value "roadster"
     * **Client A** *gets* the entry "car" and obtains the value "roadster"
 
-However, in a multiclient context, conflicts may arise. What happens if a Client B updates the entry before Client A is finished?
+However, in a multiclient context, a simple set and get operation may cause a data conflict. What happens if a Client B updates the entry before Client A is finished?
 
-    * **Client A** *adds* an entry "car" and sets it to "roadster"
-    * **Client B** *updates* the entry "car" to "sedan"
+    * **Client A** *puts* an entry "car" with the value "roadster"
+    * **Client B** *updates* the entry "car" with the value "sedan"
     * **Client A** *gets* the entry "car" and obtains the value "sedan"
 
-From the point of view of quasardb, everything is perfectly valid and coherent, but from the point of view of Client A, something is wrong!
+From the point of view of the quasardb server, the data is perfectly valid and coherent, but from the point of view of Client A, something is wrong!
 
-How to use the API to avoid conflicts
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Resolving the simple conflict
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Conflicts arise when **client usage is not carefully thought out**. Conflicts are a client's design problem, not a server problem.
+One way we could avoid the problem above is to change client B to use the "put" command. The "put" command fails if the entry already exists. Client A receives the data it expects, Client B receives an exception, and both can act on that data appropriately:
 
-On one hand it does not make sense to have clients simultaneously update the same entry and expect the value to be coherent. quasardb could leave it as is and require the client to have a coherent usage scenario.
-
-On the other hand it's a shame the clients cannot rely on the power of quasardb to *at the very least detect* something is wrong.
-
-That's why our API can help clients detect and even avoid conflicts (see :doc:`../api/index`).
-
-The above can be avoided thanks to the way put works. Put fails if the entry already exist, therefore, our example becomes:
-
-    * **Client A** *adds* an entry "car" and sets it to "roadster"
+    * **Client A** *puts* an entry "car" and sets it to "roadster"
     * **Client B** *puts* the entry "car" and fails because the entry already exists
     * **Client A** *gets* the entry "car" and obtains the value "roadster"
 
-Since updates always succeed, it is however possible to share a single value amongst different clients with the usage of the update command:
+Alternately, if the entry is intended to change regularly, like a value in a stock market ticker, client A could be rewritten so it does not error when the data is not what it expects:
 
     * **Client A** *updates* the entry "stock3" to "503.5"
-    * **Client B** *updates* the entry "stock3" to "504.5"
-    * **Client A** *gets* the entry "stock3" and obtains the newest value "504.5"
+    * **Client B** *updates* the entry "stock3" to "504.0"
+    * **Client A** *gets* the entry "stock3" and obtains the newest value "504.0"
 
-As you can see what was previously considered a conflict is now the expected behaviour.
+In either case, what was previously considered a conflict is now the expected behaviour.
 
-It is possible to create more complex scenarii thanks to the get_update and compare_and_swap commands. get_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and returns the old/unchanged value.
+While this was a simple two-client example, the API also provides options for more complex scenarios, thanks to the get_update and compare_and_swap commands. get_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and returns the old/unchanged value.  For more information, see the :doc:`../api/index`.
 
-.. tip:: Remember Ghostbusters: don't cross the streams.
 
-Updating multiple entries at a time
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+A more complex data conflict
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-We've seen a trivial conflict case, but what about this one:
+We've seen a trivial example, but what about this one:
 
     * **Client A** *updates* an entry "car" and sets it to "roadster"
     * **Client A** *updates* an entry "motorbike" and sets it to "roadster"
     * **Client B** *gets* "car" and "motorbike" and checks that they match
 
-As you can see, if Client B makes the query too early, it does not match. There are things you can do with get_update and compare_and_swap, but it can quickly become intricate and unmaintainable.
+If Client B makes the query too early, the two entries do not match. While it's possible to resolve this using get_update and compare_and_swap, that can quickly become intricate and unmaintainable.
 
-The one thing to understand is that it's a design usage problem on the client side.
+Like above, this is a design usage problem on the client side.
 
-    * Is it a problem for Client B to have a mismatch? Client B may try again later.
-    * If you always need to update several entries and have those consistent, why have several entries?
-    * Shouldn't be Client A and B be synchronized? That is, shouldn't Client B query the entry only once it knows they have been updated?
+    * Should Client B fail if it receives a mistmatch?
+    * Can Client B timeout and try again later?
+    * If several entries must be consistent, can those entries be with a single entry?
+    * Can Client A and B be synchronized? That is, can Client B query the entries once it knows Client A has completed updating them?
 
 As you can see, a conflict is a question of context and usage.
 
-The best way to avoid conflicts: plan out
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Best Practice: Plan for Concurrency
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-quasardb provides several mechanisms to allow clients to synchronize themselves and avoid conflicts. However, the most important step to ensure proper operation is to plan out. What is a conflict? Is it a problem? Only a thorough plan can tell.
+The quasardb client API provides several mechanisms to allow clients to synchronize themselves and avoid conflicts. However, the most important step to ensure proper operation is to plan. What is the potential conflict? Is it a problem? Can it be mitigated or worked around?
 
 Things to consider:
 
     * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing a *one size fits all* client.
-    * There is always an update delay, whatever system you're using. The question is, what delay can your business case tolerate? For example a high frequency trading automaton and a reservation system have different requirements.
-    * The problem is never the conflict in itself. The problem is operating without realizing that there was a conflict in the first place.
-    * quasardb provides ways to synchronize clients. For example, put fails if the entry already exists and update always succeed.
-    * Last but not least, if you are trying to squeeze a schema into a non-relational database, disaster will ensue. A system such as quasardb generaly implies to rethink your modelization.
-
-
-
+    * There is always an update delay, no matter how powerful your nodes are or how big your cluster is. The question is, what delay can your business case tolerate? A high frequency trading automaton and a reservation system will have different latency requirements.
+    * The problem is never the conflict in itself. The problem is clients operating without realizing that there was a conflict in the first place.
+    * The quasardb API provides ways to synchronize clients or detect concurrency issues. For example, "put" fails if the entry already exists, "update" always succeds, and "compare_and_swap" can provide a conditional "put".
+    * Last but not least, trying to squeeze a schema into a non-relational database will result in disaster. A non-relational system such as quasardb will likely require you to rethink your data model.
 
 
 Networking
@@ -250,3 +240,16 @@ In a production environment, cluster segments may become unstable for a short pe
 
 .. tip::
     When a cluster's segment is unstable requests *might* temporarily fail. The probability for failure is exponentially correlated with the number of simultaneous failures.
+
+
+Eviction
+--------
+
+In order to achieve high performance, quasardb keeps as much data as possible in memory. However, a node may not have enough physical memory available to hold all of its entries. Therefore, you may enable an eviction limit, which will remove entries from memory when the cache reaches a maximum number of entries or a given size in bytes. Use :option:`--limiter-max-entries-count` (defaults to 100,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+
+.. note::
+    The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
+
+The quasardb daemon chooses which entries to evict using a proprietary, *fast monte-carlo* heuristic. Evicted entries stay on disk until requested, at which point they are paged into the cache.
+
+

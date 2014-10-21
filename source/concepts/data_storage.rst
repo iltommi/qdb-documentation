@@ -204,7 +204,7 @@ Replication also increases the time needed to add a new node to the ring by a fa
 Fault tolerance
 ---------------
 
-quasardb is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). In most cases, simply repairing the cause of the failure then reconnecting the node to the cluster will resolve
+quasardb is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). In most cases, simply repairing the cause of the failure then reconnecting the node to the cluster will resolve the issue.
 
 However, there is one case where data may be lost:
 
@@ -215,20 +215,5 @@ However, there is one case where data may be lost:
 The persistence layer is able to recover from write failures, which means that one write error will not compromise everything. It is also possible to make sure writes are synced to disks (see :doc:`../reference/qdbd`) to increase reliability further. 
 
 Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is negligible for clusters that mostly perform read operations.
-
-
-.. ### This is really more of a concurrency / sysadmin-wants-more-RAM thing than a disk thing. No data is changed here.
-.. ### Consider moving elsewhere.
-
-
-Eviction
---------
-
-In order to achieve high performance, quasardb keeps as much data as possible in memory. However, a node may not have enough physical memory available to hold all of its entries. Therefore, you may enable an eviction limit, which will remove entries from memory when the cache reaches a maximum number of entries or a given size in bytes. Use :option:`--limiter-max-entries-count` (defaults to 100,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
-
-.. note::
-    The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
-
-The quasardb daemon chooses which entries to evict using a proprietary, *fast monte-carlo* heuristic. Evicted entries stay on disk until requested, at which point they are paged into the cache.
 
 

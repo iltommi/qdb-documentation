@@ -98,32 +98,3 @@ The detection and re-stabilization process surrounding node failures can add a l
 
 .. tip::
     A cluster operates best when more than 90% of the nodes are fully functional. Anticipate traffic growth and add nodes before the cluster is saturated.
-
-
-What is a Client?
------------------
-
-A client is any piece of software using the quasardb API to create, read, update, or delete data on a quasardb cluster. Clients that are bundled with the quasardb daemon include qdbsh, qdb_httpd, qdb_dbtool, and qdb_comparison. You can also create your own custom clients using the C, C++, Java, Python, or .NET APIs.
-
-.. Expand this section using the definitions of clients from a Chord perspective
-
-.. Probably need to refer to data_transfer.rst, as a good chunk of being a client is data transfer.
-
-
-
-
-.. Move these two subsections to Primer? QDBD?
-
-Multithreading
---------------
-
-The server is actually organized in a network of mini-daemons that exchange messages. This is done in such a way that it preserves low-latency while increasing parallelism.
-
-Multithreading generally implies locking. Locking has been reduced to the minimum with the use of lock-free structures and transactional memory.
-
-Resource management
--------------------
-
-quasardb is developed in C++11 and assembly with performance in mind.
-
-quasardb uses custom memory allocators that are multithread-friendly. Whenever possible, quasardb allocates memory on the stack rather than on the heap. If a heap allocation cannot be avoided, quasardb's zero-copy architecture makes sure no cycle is wasted duplicating data, unless it causes data contention.
