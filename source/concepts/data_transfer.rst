@@ -44,7 +44,7 @@ Client
 
 Clients are any piece of software using the quasardb API to create, read, update, or delete data on a quasardb cluster. Clients that are bundled with the quasardb daemon include qdbsh, qdb_httpd, qdb_dbtool, and qdb_comparison. You can also create your own custom clients using the C, C++, Java, Python, or .NET APIs.
 
-All API calls are thread safe and synchronous unless otherwise noted in :doc:`the API documentation <../api/index>`_. When a client receives a reply from the server, the request is guaranteed to have been carried out by the server and replicated to all appropriate nodes.
+All API calls are thread safe and synchronous unless otherwise noted in `the API documentation <../api/index>`_. When a client receives a reply from the server, the request is guaranteed to have been carried out by the server and replicated to all appropriate nodes.
 
 The client takes care of locating the proper node for the request. The client will either find the proper node or fail (this may happen if the ring is unstable, see :ref:`fault-tolerance`).
 
