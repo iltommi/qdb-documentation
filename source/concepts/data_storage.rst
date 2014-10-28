@@ -194,6 +194,15 @@ Replication also increases the time needed to add a new node to the ring by a fa
 
 
 
+Memory Cache and Eviction
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+In order to achieve high performance, quasardb keeps as much data as possible in memory. However, a node may not have enough physical memory available to hold all of its entries in RAM. You may enable an eviction limit, which will remove entries from memory when the cache reaches a maximum number of entries or a given size in bytes. See :doc:`qdbd` for more information.
+
+.. note::
+    The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
+
+The quasardb daemon chooses which entries to evict using a proprietary, *fast monte-carlo* heuristic. Evicted entries stay on disk until requested, at which point they are paged into the cache.
 
 
 
