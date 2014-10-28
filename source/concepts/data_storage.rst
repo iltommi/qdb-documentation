@@ -80,24 +80,19 @@ Data migration is the process of transferring entries from one node to another f
 .. note::
     Data migration is always enabled.
 
-Data migration only occurs when a new node joins the ring. Nodes may join a ring when:
+Data migration only occurs when a new node joins the cluster. Nodes may join a cluster when:
 
     1. The administrator expands the cluster by adding new nodes
-    2. A node recovers from failure and rejoins the ring
-
-If the new node is the successor of keys already bound to another node, data migration will take place. Data migration occurs regardless of data replication, as it makes sure entries are always bound to the correct node.
-
-.. ### EXAMPLE
-   ### Consider a cluster of 3 nodes with IDs 3, 5, and 10. A fourth node is added with the ID of 8.
+    2. A node recovers from failure and rejoins the cluster
 
 
 Migration Process
 ^^^^^^^^^^^^^^^^^
-At the end of each :ref:`stabilization` cycle, a node will request its successor and its predecessor for entries within its range.
+At the end of each :ref:`stabilization` cycle, each node requests entries that belong to it from its successor and its predecessor.
 
-More precisely:
+For example:
 
-    1. Node N joins the ring by looking for its successor, Node S.
+    1. Node N joins the cluster by looking for its successor, Node S.
     2. N stabilizes itself, informing its successor and predecessor of its existence.
     3. When N has both predecessor P and successor S, N request both of them for the [P; N] range of keys
     4. P and S send the requested keys, if any, one by one.
