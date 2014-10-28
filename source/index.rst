@@ -12,7 +12,7 @@ quasardb
 
 **quasardb** - a creation of  `Bureau 14 <http://www.bureau14.fr>`_  - is a high-performance, non-relational database designed from the ground up for the most demanding environments.
 
-If you are new to **quasardb** the :doc:`primer` is a good introduction. The :doc:`faq` may also have the information you are looking for.
+If you are new to **quasardb** the :doc:`primer` and :doc:`concepts/index` are a good introduction. The :doc:`faq` may also have the information you are looking for.
 
 Should you need a step by step guide to install and use your first cluster, we have two detailed tutorials in the :doc:`tutorials/index` chapter.
 
