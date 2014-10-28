@@ -1,24 +1,6 @@
 Data Transfer
 =============
 
-.. ### "Data Transfer" Content Plan
-	- Connections between a client and the cluster
-	- Network protocol and performance
-	- An visual example of "get" - How the cluster determines where data is located
-	- An visual example of "set" - How the cluster determines where data gets stored
-	- Data Conflicts (reference Troubleshooting article)
-
-.. ## TODO ##
-.. ## Find a home for this. ##
-.. ## Remove from data_storage.rst at that time. ##
-   
-   When are entries actually synced to disk?
-   ------------------------------------------
-   Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaenous requests. When a user adds or updates an entry on the cluster the entry's value may not be synced to the disk immediately. However, quasardb guarantees the data is consistent at all times, even in case of hardware or software failure.
-   
-   If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true. Disabling the write cache may have an impact on performance.
-
-
 Designed for Concurrency
 ------------------------
 
@@ -176,45 +158,4 @@ Things to consider:
     * The quasardb API provides ways to synchronize clients or detect concurrency issues. For example, "put" fails if the entry already exists, "update" always succeds, and "compare_and_swap" can provide a conditional "put".
     * Last but not least, trying to squeeze a schema into a non-relational database will result in disaster. A non-relational system such as quasardb will likely require you to rethink your data model.
 
-
-
-Streaming
----------
-
-Motivation
-^^^^^^^^^^
-
-quasardb can store entries of arbitrary size, limited only by the hardware capabilities of the cluster's node. However, the server capability often exceeds the client's capability, especially in terms of memory.
-
-Additionally, the client may wish to consume the content as soon as possible. 
-
-For example, if you use a quasardb cluster to store digital videos and clients are video players, it is expected to be able to display the video as you download it.
-
-Usage
-^^^^^
-
-.. note:: The streaming API is currently only available in C (see :doc:`../api/c`), support for other languages will be added in future releases. One can currently stream entry *from* the server, but not *to* the server.
-
-The typical usage scenario is the following:
-
-    #. A client opens a streaming handle for a given entry. The default buffer size is 1 MiB. If it is inappropriate, it needs to be set *before* opening the streaming handle via the appropriate API call.
-    #. The client reads content for the entry. The API automatically reads the next chunk of available data. The result of the read is placed in the API allocated buffer.
-    #. The client processes the buffer. For example, it may send the buffer to a video decoder.
-    #. The client may manually set the offset if need be. Positioning the offset beyond the end results in an error.
-    #. The client stops reading when the offset reaches the end. Reading beyond the end will result in an error.
-    #. The client closes the handle. This frees all resources.
-
-.. important::
-    The streaming buffer is allocated by the API. The client should only read from the buffer and never attempt to free it manually. All resources are freed when the streaming handle is closed.
-
-Streaming Conflicts
-^^^^^^^^^^^^^^^^^^^
-
-By design, streaming an entry does not "lock" access to this entry. This is to prevent a client that does not properly close its streaming handle to "lock out" an entry.
-
-Therefore, streaming is one of the rare operations that is not ACID. When you stream an entry from the server, if this entry is updated by another client, the next call will result in a "conflicting operation" error and streaming will no longer be possible.
-
-The client must therefore close its streaming handle and reopen a new one to resume streaming. It may set the offset to the previous position if need be (and if the updated entry is large enough to support the operation).
-
-If another client removes the entry as you stream it, the next call will result in a "not found" error and streaming will no longer be possible.
 
