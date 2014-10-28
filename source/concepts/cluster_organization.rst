@@ -1,18 +1,5 @@
 Cluster Organization
 ====================
-
-.. The design and topology of a cluster.
-.. NOT about its data.
-.. NOT about its network protocols
-.. NOT about its ACID guarantees
-
-.. ### "Cluster Organization" Content Plan
-   - Definition of the Cluster (show web bridge?)
-   - Definition of a node (show node details from web bridge?)
-   - Links between nodes, concepts of predecessor and successor
-   - Stabilization, reorganization into a ring (explain what happens for both adding and removing a node)
-   - Talk about cluster efficiency and performance
-   - The Client(s) - quick overview of what a client is, then refer to Data Transfer
    
 What is a Cluster?
 ------------------
@@ -20,10 +7,6 @@ What is a Cluster?
 Each server running a :doc:`../reference/qdbd` is called a node. By itself, a node can provide fast key-value storage for a project where a SQL database might be too slow or impose unwanted design limitations.
 
 However, the real power of a quasardb installation comes when multiple nodes are linked together into a cluster. A cluster is a peer-to-peer distributed hash table based on `Chord <http://pdos.csail.mit.edu/chord/>`_. In a cluster, quasardb nodes self-organize to share data and handle client requests, providing a scalable, concurrent, and fault tolerant database.
-
-
-.. Expand this section using the definitions of nodes, clusters, and links from a Chord perspective
-
 
 .. _stabilization:
 
