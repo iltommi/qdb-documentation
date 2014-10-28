@@ -139,6 +139,13 @@ div.body h4 { font-size: 120%; }
 div.body h5 { font-size: 110%; }
 div.body h6 { font-size: 100%; }
 
+/* Default look and feel for notes, tips, etc. */
+div.note,
+div.tip,
+div.important {
+    background-color: #eee;
+    border: 1px solid #ccc;
+}
 
 /* Rules for all API blocks. */
 dl.function,
