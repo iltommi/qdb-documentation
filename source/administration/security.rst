@@ -26,5 +26,5 @@ Should public write access be necessary, a better approach is to design a proxy 
 Design
 -------
 
-The quasardb protocol, especially the serialization part, has been designed to resist buffer overflows and most of current denial of service (DOS) attacks. Keep in mind, however, that quasardb is *designed* to accept large amounts of requests or arbitraty sizes and will therefore not limit incoming or outgoing requests in any way.
+The quasardb protocol, especially the serialization layer, has been designed to resist buffer overflows and most of current denial of service (DoS) attacks. Keep in mind, however, that quasardb is *designed* to accept large amounts of requests or arbitraty sizes and will therefore not limit incoming or outgoing requests in any way.
 

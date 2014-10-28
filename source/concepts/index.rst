@@ -7,4 +7,3 @@ Concepts
    cluster_organization
    data_storage
    data_transfer
-   security
