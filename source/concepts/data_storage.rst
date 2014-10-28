@@ -1,15 +1,6 @@
 Data Storage
 ============
 
-.. ### "Data Storage" Content Plan
-	- Where is the data stored on the filesystem?
-	- How is the data stored on the filesystem?
-	- Where is the data stored within the cluster? (refer where appropriate to Data Transfer)
-	- ACID guarantees
-	- Data replication
-	- Data storage performance
-	- Any other relevant information from current Persistence page
-
 .. _data-storage-in-cluster:
 
 Where are Entries Stored in the Cluster?
@@ -75,7 +66,7 @@ Transient mode disables data storage altogether, transforming quasardb into a pu
 
 But:
 
-    * Entries evicted from memory due to the --limiter-max-bytes, --limiter-max-entries-count, or other memory limits will be lost.
+    * Entries evicted from memory will be lost (see :ref:`eviction`)
     * Node failure may imply irrecoverable data loss
 
 
@@ -193,36 +184,33 @@ Replication also increases the time needed to add a new node to the ring by a fa
     Clusters that mostly perform read operations greatly benefit from replication without any noticeable performance penalty.
 
 
+.. _fault-tolerance:
+
+Fault tolerance
+^^^^^^^^^^^^^^^
+
+All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). In most cases, simply repairing the underlying cause of the failure then reconnecting the node to the cluster will resolve the issue.
+
+The persistence layer is able to recover from write failures, which means that one write error will not compromise everything. Disabling the write cache with the "sync" option will further increase reliability.
+
+However, there is one case where data may be lost:
+
+    1. A node fails **and**
+    2. Data is not replicated on another node **and**
+    3. The data was not persisted to disk **or** storage failed
+
+Note that this can be mitigated using data replication. Replication ensures a node can fully recover from any failure and should be considered for production environments.
+
+
+.. _eviction:
 
 Memory Cache and Eviction
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-In order to achieve high performance, quasardb keeps as much data as possible in memory. However, a node may not have enough physical memory available to hold all of its entries in RAM. You may enable an eviction limit, which will remove entries from memory when the cache reaches a maximum number of entries or a given size in bytes. See :doc:`qdbd` for more information.
+In order to achieve high performance, quasardb keeps as much data as possible in memory. However, a node may not have enough physical memory available to hold all of its entries in RAM. You may enable an eviction limit, which will remove entries from memory when the cache reaches a maximum number of entries or a given size in bytes. See :doc:`../reference/qdbd` for more information.
 
 .. note::
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
 
 The quasardb daemon chooses which entries to evict using a proprietary, *fast monte-carlo* heuristic. Evicted entries stay on disk until requested, at which point they are paged into the cache.
-
-
-
-.. MOST of this belongs in cluster_organization; cherry-pick out the data sections.
-
-.. _fault-tolerance:
-
-Fault tolerance
----------------
-
-quasardb is designed to be extremely resilient. All failures are temporary, assuming the underlying cause of failure can be fixed (power failure, hardware fault, driver bug, operating system fault, etc.). In most cases, simply repairing the cause of the failure then reconnecting the node to the cluster will resolve the issue.
-
-However, there is one case where data may be lost:
-
-    1. A node fails **and**
-    2. Data is not replicated **and**
-    3. The data was not persisted to disk **or** storage failed
-
-The persistence layer is able to recover from write failures, which means that one write error will not compromise everything. It is also possible to make sure writes are synced to disks (see :doc:`../reference/qdbd`) to increase reliability further. 
-
-Data persistence enables a node to fully recover from a failure and should be considered for production environments. Its impact on performance is negligible for clusters that mostly perform read operations.
-
 
