@@ -14,3 +14,4 @@ Application Reference
    qdb_httpd
    qdb_dbtool
    qdb_comparison
+   confgen

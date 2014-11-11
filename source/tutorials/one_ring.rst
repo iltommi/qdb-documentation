@@ -16,9 +16,7 @@ In this tutorial we will set up a cluster of three machines with static IP addre
 Configure the First Node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Generate a default configuration file. ::
-    
-    qdbd --gen-config > qdbd_config.conf
+#. Generate configuration files for your cluster using the :doc:`../reference/confgen`.
 
 #. Edit the configuration file.
 
@@ -85,7 +83,7 @@ Configure the First Node
 Configure the Second and Third Nodes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Generate a default configuration file.
+#. Generate configuration files for your cluster using the :doc:`../reference/confgen`.
 
 #. Leave the global cluster parameters at default. These will be overwritten by the global settings from our first node.
 
