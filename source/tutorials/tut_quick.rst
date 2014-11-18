@@ -24,7 +24,7 @@ Installing a quasardb daemon in three steps
 
        qdbd --gen-config > qdbd_default_config.conf
    
-   The daemon will by default listen on the IPv4 localhost, on the port 2836, persist its content to the disk asynchronously, limit itself to 100,000 entries, and will not log at all. See :doc:`../reference/qdbd` for more configuration options.
+   The daemon will by default listen on the IPv4 localhost, on the port 2836, persist its content to the disk asynchronously, limit itself to 1,000,000 entries, and will not log at all. See :doc:`../reference/qdbd` for more configuration options.
    
 #. Run the daemon from the command line.
 
