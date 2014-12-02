@@ -4,36 +4,34 @@ License
 Usage
 -----
 
-The software requires a license to be operated successfully. Some details of the license are reminded here, but the terms that apply to you are those you signed.
+The software requires a valid, up to date license in order to operate properly. Some details of the license are reminded here, but the terms that apply to you are those you signed.
 
 Do not hesitate to contact us to request an evaluation license (see :doc:`contact`)!
 
 License file
 ------------
 
-The license file comes in the form of a text file containing printable characters. This file contains all the required information
-for quasardb to check the validity of your license.
+The license file is a text file containing printable characters. It contains all the information :doc:`reference/qdbd` requires to verify the validity of your license.
 
-The file must be accessible by each daemon instance as a valid license file is required at startup. Other executables do not require a license file.
+The file must be accessible by each :doc:`reference/qdbd` instance on each node in the cluster. Other executables do not require a license file.
 
 The license file is for your exclusive usage and may not be be given to a third party.
+
+.. _license_expiration:
 
 Expiration
 ----------
 
-The daemon will remind you the expiration date, if any. When the license expires, the daemon will refuse to start.
+The :doc:`reference/qdbd` will remind you of your license expiration date, if any.
+
+When your quasardb license expires:
+ #. You may continue to use quasardb.
+ #. Any running qdbd daemons will function normally.
+ #. Any new qdbd daemons you start will fail to boot.
+ #. You are not eligible for upgrades or dedicated assistance.
+ #. You may report bugs at `bug@quasardb.net <bug@quasardb.net>`_,
 
 Please contact your Bureau 14 representative to renew your license (see :doc:`contact`).
-
-.. note::
-    The daemon will **not** exit if the license expires during uptime.
-
-Support
---------
-
-The daemon will remind you the support expiration date, if any. You may continue to use quasardb after the support expires.
-
-When your support expires, you are no longer elligible for upgrades and dedicated assistance. 
 
 Scope of the licensed rights
 ----------------------------
