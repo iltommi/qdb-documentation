@@ -72,11 +72,11 @@ See :doc:`../reference/qdb_httpd` for more information.
 Is quasardb free of charge?
 ===========================
 
-quasardb requires a license.
+quasardb requires a :doc:`license`.
 
-Non-profit organizations and non-commercial usage are elligible for free licenses.
+Non-profit organizations and non-commercial usage are eligible for free licenses.
 
-Contact us for more information, see :doc:`contact`
+Contact us for more information, see :doc:`contact` and :doc:`license`.
 
 Can I embed the quasardb technology in my hardware/software?
 ============================================================
@@ -89,6 +89,11 @@ Do I need a license to write a client?
 No license is required to write a quasardb client, but the software's documentation and credits must state the following: "This software features quasardb, a Bureau 14 technology. All rights reserved."
 
 A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
+
+What happens when my license expires?
+=====================================
+
+See :ref:`license_expiration`.
 
 In what language is quasardb written?
 =====================================
