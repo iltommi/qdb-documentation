@@ -98,11 +98,11 @@ See :ref:`license_expiration`.
 How long are versions compatible?
 =================================
 
-Quasardb is versioned using a MAJOR.MINOR.PATCH system. All patch notes can be found at :doc:`changes`.
+Quasardb is versioned using a 1.MAJOR.MINOR system. All patch notes can be found at :doc:`changes`.
 
-Changes in patch level, such as 1.1.0 to 1.1.1, are maintenance releases or add small features to quasardb. The database and client API are backwards compatible with previous versions.
+Changes in minor level, such as 1.1.0 to 1.1.1, are maintenance releases or add small features to quasardb. The database and client API are backwards compatible with previous versions.
 
-Changes in minor or major level, such as 1.1.0 to either 1.2.0 or 2.0.0, add significant features to quasardb. The database and client API may not be backwards compatible. Please read the :doc:`changes` or `contact us <contact.html>`_ for more information.
+Changes in major level, such as 1.1.0 to either 1.2.0 or 2.0.0, add significant features to quasardb. The database and client API may not be backwards compatible. Please read the :doc:`changes` or `contact us <contact.html>`_ for more information.
 
 In what language is quasardb written?
 =====================================
