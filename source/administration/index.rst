@@ -8,3 +8,4 @@ Administration
    operations
    tuning
    troubleshooting
+   upgrade

@@ -16,6 +16,8 @@ The important things to monitor are:
     * Disk usage
     * Node failures
 
+.. _shutdown:
+
 Graceful shutdown
 ------------------
 
