@@ -9,4 +9,5 @@ Server Administration
    operations
    tuning
    troubleshooting
+   upgrade
    security

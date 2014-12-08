@@ -18,6 +18,7 @@ If using the JSON/JSONP output from qdb_httpd or writing your own monitoring pro
     * Disk usage
     * Node failures
 
+.. _shutdown:
 
 Graceful shutdown
 ------------------
