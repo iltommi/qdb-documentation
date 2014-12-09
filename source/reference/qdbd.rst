@@ -535,7 +535,7 @@ Global
         0 (automatic, half the available physical memory).
 
    Example
-       To allow only 100 kiB of entries::
+       To allow only 100 KiB of entries::
 
             qdbd --limiter-max-bytes=102400
 
@@ -636,9 +636,14 @@ The default configuration file is shown below::
         {
             "depot":
             {
-                "max_bytes": 0,
+                "history": false,
+                "max_bytes": 0, 
+                "max_transaction_duration": 300,
+                "max_versions": 7,
                 "replication_factor": 1,
                 "root": "db",
+                "storage_warning_interval": 3600,
+                "storage_warning_level": 90,
                 "sync": false,
                 "transient": false
             },
@@ -670,7 +675,7 @@ The default configuration file is shown below::
                 "client_timeout": 60,
                 "idle_timeout": 600,
                 "listen_on": "127.0.0.1:2836",
-                "partitions_count": 3,
+                "partitions_count": 13,
                 "server_sessions": 2000
             },
             "user":
@@ -689,6 +694,10 @@ The default configuration file is shown below::
     
     See :option:`--max-depot-size` for more details and examples to calculate the max_bytes value.
 
+.. describe:: global::depot::max_transaction_duration
+
+    An integer representing the maximum guaranteed duration of a transaction, in seconds.
+
 .. describe:: global::depot::replication_factor
 
     An integer between 1 and 4 (inclusive) specifying the replication factor for the cluster. A higher value indicates more copies of data on each node.
@@ -696,6 +705,20 @@ The default configuration file is shown below::
 .. describe:: global::depot::root
 
     A string representing the relative or absolute path to the directory where data will be stored.
+
+.. |global__depot__storage_warning_interval| replace:: ``global::depot::storage_warning_interval``
+.. _global__depot__storage_warning_interval:
+.. describe:: global::depot::storage_warning_interval
+
+    An integer representing how often quasardb will emit a warning about depleting disk space, in seconds.
+    See also |global__depot__storage_warning_level|_.
+
+.. |global__depot__storage_warning_level| replace:: ``global::depot::storage_warning_level``
+.. _global__depot__storage_warning_level:
+.. describe:: global::depot::storage_warning_level
+
+    An integer between 50 and 100 (inclusive) specifying the percentage of disk usage at which a warning about depleting disk space will be emitted.
+    See also |global__depot__storage_warning_interval|_.
 
 .. describe:: global::depot::sync
 

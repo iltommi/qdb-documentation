@@ -173,7 +173,7 @@ Changes in this version
     * API: The reported persisted size is now much more accurate
     * Daemon: Greatly improved performance for all status APIs
     * Daemon: Reworded some network error messages for clarity
-    * Daemon: Minor performance improvement (less than 5%) for requests smaller than 1 kiB
+    * Daemon: Minor performance improvement (less than 5%) for requests smaller than 1 KiB
     * Upgraded to Visual Studio 2012 Update 3
     * Upgraded to TBB 4.1 update 4
     * Upgraded to LevelDB 1.12
@@ -305,7 +305,7 @@ Changes in this version
 Changes in this version
 -----------------------
 
-    * Client API: Major performance increase (up to 100%) for small entries (below 1 kiB)
+    * Client API: Major performance increase (up to 100%) for small entries (below 1 KiB)
     * Client API: Added more error codes
     * Client API: Added status query function
     * Client API: Added new, atomic, "get and update" function

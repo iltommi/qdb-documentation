@@ -137,7 +137,7 @@ Batch operations
 Introduction
 ^^^^^^^^^^^^^^
 
-If you have used quasardb to manage small entries (that is entries smaller than 1 kiB) you certainly have noticed that performance isn't as good as with larger entries. The reason for this is that whatever optimizations we might put into quasardb, every time you request the cluster, the request has to go through the network back and forth.
+If you have used quasardb to manage small entries (that is entries smaller than 1 KiB) you certainly have noticed that performance isn't as good as with larger entries. The reason for this is that whatever optimizations we might put into quasardb, every time you request the cluster, the request has to go through the network back and forth.
 
 Assuming that you have a 1 ms latency between the client and the server, if you want to query 1,000 entries sequentially it will take you at least 2 seconds, however small the entry might be, however large the bandwidth might be.
 
