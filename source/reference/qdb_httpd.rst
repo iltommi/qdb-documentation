@@ -120,7 +120,7 @@ The graphs show:
  * Input network traffic percentage for all nodes over time
  * Output network traffic percentage for all nodes over time
 
-Each graph displays up to 7 hours of historical data. You can adjust the time scale by resizing and moving the window at the bottom of each graph.
+Each graph displays historical cluster data for the past hour, day, week, month, or year, depending on the selected tab. You can filter the graph data even further by resizing and moving the window at the bottom of the graph.
 
 Hover over the black line on the graph to display detailed information about the selected data point.
 
@@ -133,7 +133,7 @@ The "Node Data" tab begins with a list of statistics about the selected node.
     :align: center
     :alt: Node statistics at the top of the Node Data tab.
 
-The node stability is shown at the top left. The hexagon in the center corresponds to the current node. When you click the left or right arrows, you can switch between each node in the ring.
+The node stability is shown at the top left. The hexagon in the center corresponds to the current node. When you click the left or right arrows, you can switch between each node in the ring. The quasardb build and version information is shown beneath the ring.
 
 The table on the right shows live statistics from the selected node.
 
@@ -206,7 +206,7 @@ The graphs show:
  * Input network traffic percentage for all processes on the node over time
  * Output network traffic percentage for all processes on the node over time
 
-Each graph displays up to 7 hours of historical data. You can adjust the time scale by resizing and moving the window at the bottom of each graph.
+Each graph displays historical cluster data for the past hour, day, week, month, or year, depending on the selected tab. You can filter the graph data even further by resizing and moving the window at the bottom of the graph.
 
 Hover over the black line on the graph to display detailed information about the selected data point.
 
