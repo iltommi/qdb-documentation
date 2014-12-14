@@ -52,7 +52,7 @@ DLL
 
 All object definitions and functions are made available in the ``QdbNetApi.dll`` file. All classes and methods reside in the ``qdb`` namespace.
 
-The library requires the Visual Studio 2012 Update 4 redist to function properly.
+The library requires `Visual Studio 2013 Update 4 <http://www.visualstudio.com/en-us/news/vs2013-update4-rtm-vs>`_ redist to function properly.
 
 Exceptions
 ------------
