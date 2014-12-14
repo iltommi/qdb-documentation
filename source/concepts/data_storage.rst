@@ -209,3 +209,9 @@ In order to achieve high performance, quasardb keeps as much data as possible in
 
 The quasardb daemon chooses which entries to evict using a proprietary, *fast monte-carlo* heuristic. Evicted entries stay on disk until requested, at which point they are paged into the cache.
 
+.. _cluster-statistics:
+
+Statistics
+----------
+
+As of quasardb 1.1.5, statistics such as CPU, RAM, and disk usage and network traffic are permanently recorded in the database. These can be displayed using the :doc:`../reference/qdb_httpd.rst`. The statistics accrue at a rate of approximately 50 MiB per year. Statistics cannot be disabled.
