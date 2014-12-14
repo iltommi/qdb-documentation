@@ -11,7 +11,7 @@ There are two methods to upgrade a cluster, :ref:`online-upgrade` and :ref:`offl
 Online Upgrade
 --------------
 
-An online upgrade allows you to upgrade each node individually, without downtime for the cluster. During the online upgrade period, client requests may receive “error try again” or “connection refused” errors. The :doc:`../reference/qdb_shell` may show incorrect information until the cluster is fully upgraded. No data will be lost in the upgrade.
+An online upgrade allows you to upgrade each node individually, without downtime for the cluster. During the online upgrade period, client requests may receive “error try again” or “connection refused” errors. The administration console may show incorrect information until the cluster is fully upgraded. No data will be lost in the upgrade.
 
 .. note::
     Upgrades to major versions, such as 1.1.0 to 1.2.0, cannot be performed using an online upgrade.
@@ -44,6 +44,7 @@ For each node in the cluster:
 Once all nodes are upgraded:
 
  #. Test your ring with :doc:`../reference/qdb_shell` to verify it is responding to requests properly.
+ #. Force refresh any browsers viewing the :doc:`../reference/qdb_httpd`.
 
 
 .. _offline-upgrade:
@@ -87,3 +88,4 @@ To bring the cluster online:
 Once all nodes are upgraded:
 
  #. Test your ring with :doc:`../reference/qdb_shell` to verify it is responding to requests properly.
+ #. Force refresh any browsers viewing the :doc:`../reference/qdb_httpd`.
