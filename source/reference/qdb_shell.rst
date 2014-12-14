@@ -44,7 +44,7 @@ Commands
  :ref:`expires_from_now alias delta <qdbsh_expiresfromnow>`  sets the entry expiry time to seconds relative to now.
  :ref:`get <qdbsh_get>`                                      returns the entry content
  :ref:`get_expiry <qdbsh_getexpiry>`                         returns the entry's aboslute expiry time
- :ref:`get_update alias [expiry] <qdbsh_getupdate>`          atomically get and update the entry
+ :ref:`get_update alias <qdbsh_getupdate>`                   atomically get and update the entry
  :ref:`help <qdbsh_help>`                                    display help
  :ref:`node_config host <qdbsh_nodeconfig>`                  returns the node configuration as a JSON string
  :ref:`node_status host <qdbsh_nodestatus>`                  returns the node status as a JSON string
@@ -55,7 +55,7 @@ Commands
  :ref:`remove_all <qdbsh_removeall>`                         removes ALL entries on the WHOLE cluster (Dangerous!)
  :ref:`remove_if alias data <qdbsh_removeif>`                removes the entry in case of match
  :ref:`stop_node host reason <qdbsh_stopnode>`               stops the node
- :ref:`update alias [expiry] data <qdbsh_update>`            updates the entry. The entry will be created if it doesn't exist
+ :ref:`update alias data <qdbsh_update>`                     updates the entry. The entry will be created if it doesn't exist
  :ref:`version <qdbsh_version>`                              display quasardb version
  
  ========================================================== ==========================================================
@@ -395,7 +395,7 @@ A command generally requires one or several arguments. Each argument is separate
 
         Change the value of the entry "myentry" to the content "MagicValue2"::
 
-            update myentry Magicvalue2
+            update myentry MagicValue2
 
     .. note::
         The alias cannot contain the space character and its length must be below 1024.
