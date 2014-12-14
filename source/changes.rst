@@ -17,10 +17,11 @@ Changes in this version
     * Fixed a retro-compatibility  issue where 1.1.3 clients requests could be misunderstood by 1.1.4+ servers
     * Fixed a reconciliation issue where a partitioned node rejoining a cluster could not correctly propagate an update
     * The shell now displays a meaningful error message when no remote daemon is available
-    * All binaries and all platforms are now fully statically linked for more convenience
+    * All binaries and all platforms except FreeBSD now statically link against the libc++1 library for convenience
     * A warning is now emitted when a node reaches 90% of its quota
     * Java API : the multi-connect feature is now supported
-    * Upgraded to Visual Studio 2013 Update 4
+    * FreeBSD installations now require FreeBSD 10 and Clang 3.5.
+    * Windows clients now require Visual Studio 2013 Update 4.
     * Upgraded to Intel TBB
     * Upgraded to Boost 1.57.0
     * Upgraded to LevelDB 1.18
