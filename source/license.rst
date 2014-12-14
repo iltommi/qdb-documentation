@@ -31,7 +31,7 @@ When your quasardb license expires:
  #. You are not eligible for upgrades or dedicated assistance.
  #. You may report bugs at `bug@quasardb.net <bug@quasardb.net>`_,
 
-Please contact your Bureau 14 representative to renew your license (see :doc:`contact`).
+Please contact your Quasardb representative to renew your license (see :doc:`contact`).
 
 Scope of the licensed rights
 ----------------------------
@@ -39,7 +39,7 @@ Scope of the licensed rights
 Software Use
 ++++++++++++
 
-Provided the Client has paid the applicable license fees, BUREAU 14 grants the
+Provided the Client has paid the applicable license fees, Quasardb grants the
 Client a non-exclusive, non-transferable right to load, store, execute and
 modify (only as described in the Documentation) (“Use”) the object code
 version of the Software specifically limited to the Licensed Configuration as
@@ -55,7 +55,7 @@ Updates and Upgrades
 ++++++++++++++++++++
 
 Provided the Client has ordered and paid for Product Support, his Use of the
-Software includes Updates and Upgrades BUREAU 14 provides to the Client.
+Software includes Updates and Upgrades Quasardb provides to the Client.
 
 Runtime programs
 ++++++++++++++++
@@ -92,7 +92,7 @@ others to attempt any of the foregoing.
 The Client may not loan, rent, lease, provide a service for which the Client
 charges a fee, license or otherwise transfer the Software or any copy thereof,
 to or for the benefit of a third party.  The Client may not delete or change
-any of the proprietary rights notices of BUREAU 14 and its suppliers appearing
+any of the proprietary rights notices of Quasardb and its suppliers appearing
 on the Software or Documentation and the Client agrees to reproduce all such
 notices on each copy he is permitted to make under this Agreement.
 
@@ -102,7 +102,7 @@ Interoperability
 ++++++++++++++++
 
 In the event the Client needs to provide for interoperability with his own
-software or hardware, the Client must first contact BUREAU 14 to receive such
+software or hardware, the Client must first contact Quasardb to receive such
 interoperability assistance and the Client will not reverse engineer the
 Software on his own.  
 
@@ -111,7 +111,7 @@ Third party software
 
 Run-time licenses to certain Software owned or licensed by third parties
 (“Third Party Software”) are necessary for the proper operation of the
-Software. A list of Third Party Software is available from Bureau 14. The
+Software. A list of Third Party Software is available from Quasardb. The
 Client is solely responsible for obtaining the required licenses, sublicenses
 or technical support for any Third Party Software, as well as any licenses or
 sublicenses for the operating system or other Software necessary to operate
@@ -122,48 +122,48 @@ Limitation of liability
 
 The Software is inherently complex and may not be completely free from errors.
 It is the Client’s responsibility to verify the Client’s work and make backup
-copies. Bureau 14 will not be responsible for the Client’s failure to do so.
+copies. Quasardb will not be responsible for the Client’s failure to do so.
 
-In no event will Bureau 14 or Bureau 14’s suppliers will be liable for
+In no event will Quasardb or Quasardb’s suppliers will be liable for
 special, incidental, consequential or exemplary damages, suffered by any
 person including the Client or the Client’s clients, arising out of this
-agreement or out of the use of the Software or for services provided by Bureau
-14, including, without limitation, damages or costs relating to the loss of
+agreement or out of the use of the Software or for services provided by Quasardb,
+including, without limitation, damages or costs relating to the loss of
 profits, business, goodwill, data or computer programs, even if advised of the
 possibility of such damages, or for any similar claim against the Client by
-another party. The parties agree that Bureau 14’s third party suppliers will
+another party. The parties agree that Quasardb’s third party suppliers will
 be a third party beneficiary of this Agreement.
 
 The above exclusion of incidental and consequential damages may not be
 enforceable under some applicable laws, so such exclusion may not apply to the
-Client. Neither Bureau 14 nor its suppliers will be liable for direct or other
+Client. Neither Quasardb nor its suppliers will be liable for direct or other
 damages hereunder. The Client agrees to the allocation between the Client and
-Bureau 14 of liability risk which is set forth in this section and which is
+Quasardb of liability risk which is set forth in this section and which is
 not otherwise allocated or disclaimed by any other section of this agreement.
-In no case shall Bureau 14’s liability for money damages exceed the license
+In no case shall Quasardb’s liability for money damages exceed the license
 fees paid by the Client for the Software.
 
 Indemnifications
 ----------------
 
-Bureau 14 will defend, indemnify and hold the Client harmless from liability
+Quasardb will defend, indemnify and hold the Client harmless from liability
 resulting from misappropriation of any trade secret or infringement of any
-copyright or French patent by the Software if the Client (i) notifies Bureau
-14 within twenty (20) days of the assertion of any such claim and (ii)
-cooperates with Bureau 14 in the resolution of any such claim including
-permitting Bureau 14 to control the defense and settlement of such claims.
-Bureau 14 shall not be liable for any infringement or misappropriation claims
+copyright or French patent by the Software if the Client (i) notifies Quasardb
+within twenty (20) days of the assertion of any such claim and (ii)
+cooperates with Quasardb in the resolution of any such claim including
+permitting Quasardb to control the defense and settlement of such claims.
+Quasardb shall not be liable for any infringement or misappropriation claims
 related to (i) modification of the Software; (ii) combination of the Software
-with hardware or Software not supplied by Bureau 14; or (iii) use of other
+with hardware or Software not supplied by Quasardb; or (iii) use of other
 than the most current version of the Software if the claim could have been
-avoided by use of such current version. Bureau 14 may, at its option, (i)
-obtain for the Client at Bureau 14’s cost the continued right to Use the
+avoided by use of such current version. Quasardb may, at its option, (i)
+obtain for the Client at Quasardb’s cost the continued right to Use the
 Software; (ii) replace or modify the Software so that it is no longer
 infringing but remains functionally equivalent; or (iii) terminate this
 Agreement, accept return of the Software and Documentation and refund to the
 Client the license fee paid less a reasonable amount for depreciation.
 
-The foregoing states the Client’s sole and exclusive remedy and Bureau 14’s
+The foregoing states the Client’s sole and exclusive remedy and Quasardb’s
 sole and exclusive liability for any alleged infringement of any third party
 property rights.
 
@@ -171,12 +171,12 @@ Intelectual property and ownership
 ----------------------------------
 
 All ownership of and title to any intellectual property rights, including but
-not limited to copyrights and trade secrets, in the Software belong to Bureau
-14 and its suppliers and are protected by French and international copyright
+not limited to copyrights and trade secrets, in the Software belong to Quasardb
+and its suppliers and are protected by French and international copyright
 laws, other applicable intellectual property laws, and international treaty
-provisions. Bureau 14 owns all rights not expressly granted herein.
+provisions. Quasardb owns all rights not expressly granted herein.
 
-Bureau 14 does not wish to receive confidential or proprietary ideas,
+Quasardb does not wish to receive confidential or proprietary ideas,
 suggestions, materials or other information. The Client acknowledges that the
 contents of the Support Site, including without limitation, any text,
 Software, music, sound, graphics, photographs, video or other material
@@ -186,7 +186,7 @@ information and trade secrets; therefore, the Client acknowledges that the
 Client is entitled only to use this Support Site as set forth in this
 Agreement, and may not copy, reproduce, distribute, publicly perform, publicly
 display, or otherwise create derivative works from the Content without the
-advance written approval of Bureau 14 to do so.
+advance written approval of Quasardb to do so.
 
 
 
