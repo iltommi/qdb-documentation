@@ -10,7 +10,6 @@ The quasardb configuration generator, confgen, can provide configuration files f
 
 It is available from the following locations:
   * On the quasardb website at https://www.quasardb.net/confgen/
-  * In your quasardb installation, at /confgen
 
 If a single hostname or IP address is given, the configuration generator produces a single configuration file. If multiple hostnames or IP addresses are given, the configuration generator produces multiple configuration files in a .zip archive.
 
