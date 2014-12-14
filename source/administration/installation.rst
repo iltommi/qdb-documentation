@@ -18,7 +18,7 @@ Platform specific instructions
 FreeBSD
 ^^^^^^^^^^^^^^^^
 
-The server comes as a gzipped tar archive. All needed libraries are included. FreeBSD 9 and libc++ v1 are required as quasardb.
+The server comes as a gzipped tar archive. All needed libraries are included. FreeBSD 10 and libc++ v1 are required as of quasardb 1.1.5.
 
 To install libc++ v1, the most straightforward is to install the sources and clang 3.2 (from the ports for example), and then do the following::
 
