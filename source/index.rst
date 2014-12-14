@@ -10,7 +10,7 @@ quasardb
     :align: right
     :class: b14-logo
 
-**quasardb** - a creation of  `Bureau 14 <http://www.bureau14.fr>`_  - is a high-performance, non-relational database designed from the ground up for the most demanding environments.
+**quasardb** - a creation of  `Quasardb SAS <http://www.quasardb.net>`_  - is a high-performance, non-relational database designed from the ground up for the most demanding environments.
 
 If you are new to **quasardb** the :doc:`primer` and :doc:`concepts/index` are a good introduction. The :doc:`faq` may also have the information you are looking for.
 
