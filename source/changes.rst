@@ -1,7 +1,7 @@
 Change log
 **********
 
-1.1.5 - "Pythagoras" - 12/15/2014
+1.1.5 - "Pythagoras" - 12/17/2014
 =================================
 
 The release features significant improvements to the administration console and now persists the statistics.
@@ -12,17 +12,18 @@ Changes in this version
 -----------------------
 
     * Protocol version: 14
-    * Major improvements to the administration console
+    * Major improvements to the administration console: more graphs, history search, more information...
     * Statistics are now persisted within quasardb
-    * Fixed a retro-compatibility  issue where 1.1.3 clients requests could be misunderstood by 1.1.4+ servers
+    * Fixed a retro-compatibility issue where 1.1.3 clients requests could be misunderstood by 1.1.4+ servers
     * Fixed a reconciliation issue where a partitioned node rejoining a cluster could not correctly propagate an update
     * The shell now displays a meaningful error message when no remote daemon is available
-    * All binaries and all platforms except FreeBSD now statically link against the libc++1 library for convenience
+    * All binaries and all platforms except FreeBSD now statically link against the libc++ library for convenience
     * A warning is now emitted when a node reaches 90% of its quota
-    * Java API : the multi-connect feature is now supported
-    * FreeBSD installations now require FreeBSD 10 and Clang 3.5.
-    * Windows clients now require Visual Studio 2013 Update 4.
-    * Upgraded to Intel TBB
+    * Java API: the multi-connect feature is now supported
+    * FreeBSD installations now require FreeBSD 10
+    * Windows: upgraded to Visual Studio 2013 Update 4.
+    * FreeBSD: upgraded to clang 3.5
+    * Upgraded to Intel TBB 4.2 Update 5
     * Upgraded to Boost 1.57.0
     * Upgraded to LevelDB 1.18
 
