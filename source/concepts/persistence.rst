@@ -42,6 +42,7 @@ But:
 
     * Evicted entries will be lost
     * Node failure may imply irrecoverable data loss
+    * Node and cluster statistics will not be recorded
 
 Transient mode is a clever way to transform a quasardb cluster into a powerful cache.
 
@@ -50,6 +51,6 @@ Transient mode is a clever way to transform a quasardb cluster into a powerful c
 Statistics
 ==========
 
-As of quasardb 1.1.5, statistics such as CPU, RAM, and disk usage and network traffic are permanently recorded in the database. These can be displayed using the :doc:`../reference/qdb_httpd`. The statistics accrue at a rate of approximately 50 MiB per year. Statistics cannot be disabled.
+As of quasardb 1.1.5, statistics such as CPU, RAM, and disk usage and network traffic are permanently recorded in the database. These can be displayed using the :doc:`../reference/qdb_httpd`. The statistics accrue at a rate of approximately 50 MiB per year. Statistics cannot be disabled unless the cluster is transient.
 
 
