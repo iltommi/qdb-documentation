@@ -1,14 +1,7 @@
-.. quasardb documentation master file, created by
-   sphinx-quickstart on Fri Apr 22 17:52:41 2011.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. quasardb documentation master file
 
 quasardb
 ********
-
-.. image:: /_static/b14-logo.png
-    :align: right
-    :class: b14-logo
 
 **quasardb** - a creation of  `Quasardb SAS <http://www.quasardb.net>`_  - is a high-performance, non-relational database designed from the ground up for the most demanding environments.
 
