@@ -4,17 +4,14 @@ Upgrade a Cluster
 There are two methods to upgrade a cluster, :ref:`online-upgrade` and :ref:`offline-upgrade`.
 
 .. warning::
-    Only upgrade your cluster if you are confident in the upgrade process. Quasardb support is happy to upgrade your cluster for you.
+    Do not upgrade your cluster to a new major version, such as 1.0.0 to 2.0.0, without `contacting Quasardb <contact.html>`_ for assistance.
 
 .. _online-upgrade:
 
 Online Upgrade
 --------------
 
-An online upgrade allows you to upgrade each node individually, without downtime for the cluster. During the online upgrade period, client requests may receive “error try again” or “connection refused” errors. The administration console may show incorrect information until the cluster is fully upgraded. No data will be lost in the upgrade.
-
-.. note::
-    Upgrades to major versions, such as 1.1.0 to 1.2.0, cannot be performed using an online upgrade.
+An online upgrade allows you to upgrade to a new patch version, such as 1.1.4 to 1.1.5. You can upgrade each node individually, without downtime for the cluster. During the online upgrade period, client requests may receive “error try again” or “connection refused” errors. The administration console may show incorrect information until the cluster is fully upgraded.
 
 Before You Begin
 ^^^^^^^^^^^^^^^^
@@ -52,7 +49,7 @@ Once all nodes are upgraded:
 Offline Upgrade
 ---------------
 
-An offline upgrade allows you to upgrade to a new major version of quasardb, but requires that the entire cluster be taken offline.
+An offline upgrade allows you to upgrade to a new patch or minor version of quasardb, such as 1.0.0 to 1.0.1 or 1.1.0. However, you must take the entire cluster offline during the upgrade.
 
 Before You Begin
 ^^^^^^^^^^^^^^^^
