@@ -11,7 +11,9 @@ There are two methods to upgrade a cluster, :ref:`online-upgrade` and :ref:`offl
 Online Upgrade
 --------------
 
-An online upgrade allows you to upgrade to a new patch version, such as 1.1.4 to 1.1.5. You can upgrade each node individually, without downtime for the cluster. During the online upgrade period, client requests may receive “error try again” or “connection refused” errors. The administration console may show incorrect information until the cluster is fully upgraded.
+An online upgrade allows you to upgrade each node individually without downtime for the cluster. During the online upgrade period, client requests may receive “error try again” or “connection refused” errors. The administration console may show incorrect information until the cluster is fully upgraded.
+
+You can use online upgrade to install a new patch version, such as 1.1.0 to 1.1.1. When upgrading versions 1.1.5 or later, you can also use online upgrade to install a new minor version, such as 1.1.5 to 1.2.x.
 
 Before You Begin
 ^^^^^^^^^^^^^^^^
