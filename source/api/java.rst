@@ -23,6 +23,7 @@ One of the following Java Development Kits:
     * OpenJDK 6
     * OpenJDK 7u
 
+The Java API package is downloadable from the quasardb download site. All information regarding the quasardb download site is in your welcome e-mail.
 
 Installation
 ------------

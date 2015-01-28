@@ -720,7 +720,7 @@ The default configuration file is shown below::
 
 .. describe:: local::chord::node_id
 
-    A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing the 256-bit ID to use. If left at the default of 0-0-0-0, the daemon will assign a random node ID at startup. **Contact a Bureau14 representative before changing this from the default value.**
+    A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing the 256-bit ID to use. If left at the default of 0-0-0-0, the daemon will assign a random node ID at startup. **Contact a quasardb representative before changing this from the default value.**
 
 .. describe:: local::logger::dump_file
 
