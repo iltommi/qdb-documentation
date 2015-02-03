@@ -28,7 +28,7 @@ The Java API package is downloadable from the quasardb download site. All inform
 Installation
 ------------
 
-The Java API package is qdb-java-api-<version>, and can be downloaded from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the Java API package are::
+The Java API package is qdb-java-api-<version>, and can be downloaded from the quasardb download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the Java API package are::
     
     \qdb-java-api-<version>
           \doc                         // This documentation
