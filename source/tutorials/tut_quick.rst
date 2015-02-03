@@ -10,7 +10,7 @@ A minimal quasardb setup requires deploying the quasardb daemon on a single serv
 Installing a quasardb daemon in three steps
 ===========================================
 
-#. Download the appropriate **server** for your platform (FreeBSD, Linux or Windows) from Bureau 14 download site. All download information is in your welcome e-mail.
+#. Download the appropriate **server** for your platform (FreeBSD, Linux or Windows) from quasardb download site. All download information is in your welcome e-mail.
    
 #. Install the server
    

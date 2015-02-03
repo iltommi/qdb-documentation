@@ -19,7 +19,7 @@ Java 1.6 or later is required.
 Installation
 ------------
 
-The Java API package is downloadable from the Bureau 14 download site. All information regarding the Bureau 14 download site is in your welcome e-mail.
+The Java API package is downloadable from the quasardb download site. All information regarding the quasardb download site is in your welcome e-mail.
 
 The archive contains a JAR named ``quasardb-java-api-master.jar`` that contains all the dependencies including the required binaries for FreeBSD, Linux and Windows. It is not necessary to download another archive to use the Java API.
 
