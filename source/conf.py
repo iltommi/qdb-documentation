@@ -48,7 +48,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'quasardb'
-copyright = u'2014, Quasardb SAS'
+copyright = u'2015, Quasardb SAS'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -236,7 +236,7 @@ man_pages = [
 epub_title = u'quasardb'
 epub_author = u'Quasardb SAS'
 epub_publisher = u'Quasardb SAS'
-epub_copyright = u'2014, Quasardb SAS'
+epub_copyright = u'2015, Quasardb SAS'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
