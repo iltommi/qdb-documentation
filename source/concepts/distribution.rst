@@ -8,6 +8,9 @@ A quasardb cluster is a peer-to-peer distributed hash table based on `Chord <htt
 
     Distributed load
         The load is fairly and automatically distributed amongst the nodes of the cluster
+
+    Optimized replica usage
+        For reads, the nearest replica is used 
  
     Automatic configuration
         Nodes organize themselves and exchange data as needed
