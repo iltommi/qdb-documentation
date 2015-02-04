@@ -342,10 +342,10 @@ Instance specific
 
             qdbd --id=1-a-2-b
 
-.. note::
+.. warning::
     Having two nodes with the same ID on the ring leads to undefined behaviour. By default the daemon generates
-    an ID that is guaranteed to be unique on any given ring. This function's purpose is to modify the topology of
-    the ring, should the topology be unsatisfactory.
+    an ID that is guaranteed to be unique on any given ring. Only modify the node ID if the topology of
+    the ring is unsatisfactory and you are certain no two node IDs are the same.
 
 .. option:: --peer=<address>:<port>
 
