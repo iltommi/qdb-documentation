@@ -19,7 +19,9 @@ The cluster will make sure that requests do not conflict with each other.
  * Only one client can write to a specific entry at a time.
  * Multiple clients can simultaenously read the same entry.
  * Multiple clients can simultaneously read and write to multiple, unique entries.
- 
+
+As of quasardb 1.2.0, if the cluster uses :ref:`data-replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup times.
+
 quasardb automatically scales its multithreading engine to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
 
 

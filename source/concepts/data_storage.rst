@@ -172,12 +172,9 @@ This formula assumes that failures are unrelated, which is never completely the 
 Impact on performance
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-All add and update ("write") operations are :math:`\tau` slower when replication is active. Read-only operations are not impacted. 
+All add and update ("write") operations are :math:`\tau` slower when replication is active. Read-only queries are automatically load-balanced across nodes containing replicated entries. Depending on cluster load and network topology, read operations may be faster using data replication.
 
 Replication also increases the time needed to add a new node to the ring by a factor of at most :math:`\tau`.
-
-.. tip::
-    Clusters that mostly perform read operations greatly benefit from replication without any noticeable performance penalty.
 
 
 .. _fault-tolerance:
