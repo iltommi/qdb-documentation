@@ -36,6 +36,11 @@ Memory management
 
 A lot of calls allocate memory on the client side. For example, when you get an entry, the calls allocate a buffer large enough to hold the entry for you. In C, the memory needs to be explicitly released. In C++, Java and Python, this is not necessary as a memory management mechanism is included with the API.
 
+Automatic Load Balancing
+------------------------
+
+As of quasardb 1.2.0, if the cluster uses :ref:`data-replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup speed.
+
 Expiry
 ------
 
