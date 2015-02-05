@@ -15,9 +15,10 @@ The server will make sure that requests do not conflict with each other. It will
 
 The server automatically adjusts its multithreading configuration to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
 
-Multiple clients can simultaneously access the same entry for reading. The server will ensure that only one client accesses an entry for writing at any time.
+Multiple clients can simultaneously access the same entry for reading. Multiple clients can simultaneously access different entries for reading and writing. The server will ensure that only one client accesses an entry for writing at any time.
 
-Multiple clients can simultaneously access different entries for reading and writing.
+As of quasardb 1.2.0, if the cluster uses :ref:`data-replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup times.
+
 
 Client
 -------
