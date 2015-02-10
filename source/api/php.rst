@@ -88,14 +88,14 @@ Windows
 
 The example below assumes the following:
  #. Visual Studio is installed
- #. `PHP source code <http://windows.php.net/download/>`_ is decompressed in 'C:\php-src\'
- #. 'qdb-capi' is installed in 'C:\qdb-capi'
- #. 'qdb-php-api.tar.gz' has been decompressed in 'C:\php-src\ext\qdb'
+ #. `PHP source code <http://windows.php.net/download/>`_ is decompressed in 'C:\\php-src\\'
+ #. 'qdb-capi' is installed in 'C:\\qdb-capi\\'
+ #. 'qdb-php-api.tar.gz' has been decompressed in 'C:\\php-src\\ext\\qdb\\'
 
 Please adapt to your configuration.
 
 **Instructions**
- #. If 'qdb_api.dll' is not available on the 'PATH', copy it to 'C:\php\'. 
+ #. If 'qdb_api.dll' is not available on the 'PATH', copy it to 'C:\\php\\'. 
  #. Open a *Visual Studio Developer Command Prompt* (either x86 or x64).
  #. Type::
     
