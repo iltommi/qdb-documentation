@@ -44,7 +44,7 @@ Commands
  :ref:`update <qdbsh_update>`          put data, replace existing entry if any
  :ref:`get_update <qdbsh_getupdate>`   atomically get and udpdate an existing entry if any
  :ref:`cas <qdbsh_cas>` atomically     compare and swap an entry in case of match
- :ref:`remove <qdbsh_del>`             remove given entry
+ :ref:`remove <qdbsh_remove>`          remove given entry
  :ref:`remove_all <qdbsh_removeall>`   remove all entries
  :ref:`exit <qdbsh_exit>`              exit the shell (interactive mode only)
  ===================================== ==========================================================
@@ -89,7 +89,7 @@ Add a new :term:`entry` named "alias" whose content is "content" and print it::
 
 Remove an entry named "alias"::
 
-    qdbsh:ok >delete alias
+    qdbsh:ok >remove alias
     qdbsh:ok >
 
 .. _qdbsh-noninteractive-mode:
@@ -268,7 +268,7 @@ A command generally requires one or several arguments. Each argument is separate
         The new content can only be printable characters. This is a qdbsh restriction only.
         There must be one space and only one space between the comparand and the content. There is no practical limit to the comparand length and all characters until the end of the input will be used for the comparand, including space characters.
 
-.. _qdbsh_del:
+.. _qdbsh_remove:
 .. option:: remove <alias>
 
     Removes an existing entry on the server. It is an error to delete a non-existing entry.
@@ -279,7 +279,7 @@ A command generally requires one or several arguments. Each argument is separate
     *Example*
         Removes an entry named "obsolete"::
 
-            del obsolete
+            remove obsolete
 
 .. _qdbsh_removeall:
 .. option:: remove_all
