@@ -65,7 +65,7 @@ Here is a short Python code snippet::
     # getting and printing the content
     print c.get("entry")
     # closing connection
-    remove c
+    del c
 
 
 But, wait, there's more!
