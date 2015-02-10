@@ -51,7 +51,7 @@ Commands
  :ref:`node_topology host <qdbsh_nodetopology>`              returns the node topology as a JSON string
  :ref:`prefix_get prefix <qdbsh_prefixget>`                  returns the list of aliases matching the given prefix
  :ref:`put <qdbsh_put>`                                      put data, fails if entry already exists
- :ref:`remove alias <qdbsh_del>`                             removes the entry
+ :ref:`remove alias <qdbsh_remove>`                             removes the entry
  :ref:`remove_all <qdbsh_removeall>`                         removes ALL entries on the WHOLE cluster (Dangerous!)
  :ref:`remove_if alias data <qdbsh_removeif>`                removes the entry in case of match
  :ref:`stop_node host reason <qdbsh_stopnode>`               stops the node
@@ -101,7 +101,7 @@ Add a new :term:`entry` named "alias" whose content is "content" and print it::
 
 Remove an entry named "alias"::
 
-    qdbsh:ok >delete alias
+    qdbsh:ok >remove alias
     qdbsh:ok >
 
 .. _qdbsh-noninteractive-mode:
@@ -333,7 +333,7 @@ A command generally requires one or several arguments. Each argument is separate
 
 
 
-.. _qdbsh_del:
+.. _qdbsh_remove:
 .. option:: remove <alias>
 
     Removes an existing entry on the server. It is an error to delete a non-existing entry.
