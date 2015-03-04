@@ -76,8 +76,46 @@ Example Transactions
 Success: Transfer Money
 ~~~~~~~~~~~~~~~~~~~~~~~
 
+In this pseudocode example, $1000 is transferred from account_1 to account_2. Because the operations are wrapped in a transaction, if the deposit of funds fails, the withdrawl from account 1 is rolled back. ::
+
+	// Transfers $1000 from account_1 to account_2.
+	//
+	xfer_transaction = qdb_transaction() {
+		// Balance 1 decreases from $10000 to $9000.
+		// Balance 2 increases from $5000 to $6000.
+		//
+		balance_1 = get(account_1);
+		update(account_1, balance_1 - 1000);
+		
+		balance_2 = get(account_2);
+		update(account_2, balance_2 + 1000);
+	};
+
 Failure: Entry Inflight
 ~~~~~~~~~~~~~~~~~~~~~~~
+
+In this pseudocode example, $1000 is transferred from account_1 to account_2. If the client_1_xfer_transaction is still in process when client_2_get_transaction is called, client 2 will receive a "inflight" error. ::
+
+	// Transfers $1000 from account_1 to account_2.
+	//
+	client_1_xfer_transaction = qdb_transaction() {
+		// Balance 1 decreases from $5000 to $6000.
+		// Balance 2 increases from $5000 to $6000.
+		//
+		balance_1 = get(account_1);
+		update(account_1, balance_1 - 1000);
+		
+		balance_2 = get(account_2);
+		update(account_2, balance_2 + 1000);
+	};
+	
+	// If run during client_1_xfer_transaction, returns "inflight" error.
+	//
+	client_2_get_transaction = qdb_transaction() {
+		balance_1 = get(account_1);
+		balance_2 = get(account_2);
+	};
+
 
 Failure: qdb_get() Outside a Transaction
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -85,6 +123,29 @@ Failure: qdb_get() Outside a Transaction
 Once a transaction has completed all of its operations, it goes through each operation in order and sets the status from inflight to committed. This means there is a brief period where some entries are inflight and some entries are committed.
 
 When used outside of a transaction, the qdb_get() function returns the latest version of the entry with a committed status. This means a qdb_get() used outside of a transaction may return values from multiple, incongruous database states.
+
+In this pseudocode example, $1000 is transferred from account_1 to account_2. The second client requests the account balances outside a transaction, when account_1 has been set to committed, but account_2 is inflight. ::
+
+	// Transfers $1000 from account_1 to account_2.
+	// 
+	client_1_xfer_transaction = qdb_transaction() {
+		
+		// Balance 1 decreases from $10000 to $9000.
+		// Balance 2 increases from $5000 to $6000.
+		//
+		balance_1 = get(account_1);
+		update(account_1, balance_1 - 1000);
+		
+		balance_2 = get(account_2);
+		update(account_2, balance_2 + 1000);
+	};
+	
+	// Called from client 2.
+	// If run after the withdrawl is committed
+	// but before the deposit is committed, returns invalid account balances.
+	//
+	balance_1 = get(account_1);  // $9000
+	balance_2 = get(account_2);  // $5000
 
 
 Failure: Client Crash Mid-Transaction
