@@ -22,15 +22,26 @@ Installing a quasardb daemon in three steps
    
    The command is::
 
-       qdbd --gen-config > qdbd_default_config.conf
+       qdbd --gen-config > qdbd_config.conf
    
    The daemon will by default listen on the IPv4 localhost, on the port 2836, persist its content to the disk asynchronously, limit itself to 1,000,000 entries, and will not log at all. See :doc:`../reference/qdbd` for more configuration options.
    
+#. Edit the configuration file so it points to your license_file. ::
+        
+        "user": 
+        {
+            "daemon": false,
+            "license_file": "qdb_license.txt"
+        }
+   
+   Providing an empty string "" runs qdbd in evaluation mode.
+
+ 
 #. Run the daemon from the command line.
 
    The command is::
 
-       qdbd -c qdbd_default_config.conf
+       qdbd -c qdbd_config.conf
 
 
 Using the quasardb shell to test your quasardb installation
