@@ -805,4 +805,4 @@ The default configuration file is shown below::
 
 .. describe:: local::user::license_file
 
-    A string representing the relative or absolute path to the license file.
+    A string representing the relative or absolute path to the license file. Providing an empty string runs quasardb in evaluation mode.
