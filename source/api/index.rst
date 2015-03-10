@@ -11,3 +11,4 @@ API Reference
    net
    java
    php
+   hadoop
