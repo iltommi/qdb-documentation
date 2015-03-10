@@ -79,10 +79,4 @@ Expanding the cluster
 
 Expanding the cluster can be done at any time by adding a node with another node within the system as peer (see :doc:`../reference/qdbd`). For safety reasons, however, it is best to do so when cluster traffic is low.
 
-Upgrade
--------
-
-We strongly recommend to have your quasardb cluster upgraded by a Bureau 14 consultant.
-
-
 
