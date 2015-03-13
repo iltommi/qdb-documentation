@@ -15,11 +15,13 @@ if(CMAKE_BUILD_TYPE STREQUAL "Release")
         VERBATIM)
     
     install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/build/html/
-        DESTINATION doc/html)
+        DESTINATION html
+        COMPONENT doc)
 
 endif()
 
 install(FILES 
     license.txt
     README.txt
-    DESTINATION doc)
+    DESTINATION .
+    COMPONENT doc)
