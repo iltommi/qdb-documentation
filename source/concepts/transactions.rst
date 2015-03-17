@@ -76,45 +76,97 @@ Example Transactions
 Success: Transfer Money
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In this pseudocode example, $1000 is transferred from account_1 to account_2. Because the operations are wrapped in a transaction, if the deposit of funds fails, the withdrawl from account 1 is rolled back. ::
+In this example, account_1 has $10,000 and account_2 has $5,000. This client will transfer $1000 from account_1 to account_2. Because the operations are wrapped in transactions, if the deposit of funds fails, the withdrawl from account 1 is rolled back. ::
 
-	// Transfers $1000 from account_1 to account_2.
+	// Get the balances of accounts 1 and 2.
+	// 
+	qdb_operations_t bal_trans[2];
+	r = qdb_init_operations(bal_trans, 2);
+	if (r != qdb_error_ok)
+	{
+		// error management
+	}
+	
+	bal_trans[0].type = qdb_op_get_alloc;
+	bal_trans[0].alias = "account_1";
+	
+	bal_trans[1].type = qdb_op_get_alloc;
+	bal_trans[1].alias = "account_2";
+	
+	// runs the three operations on the cluster
+	size_t failure_index = 0;
+	qdb_run_transaction(handle, bal_trans, 2, failure_index);
+	if (failure_index != 0)
+	{
+		// error management
+	}
+	
+	const double acct_1_bal = bal_trans[0].result;
+	const double acct_2_bal = bal_trans[1].result;
+	
+	
+	// Update the balances of accounts 1 and 2,
+	// transferring 1000 from account 1 to account 2.
 	//
-	xfer_transaction = qdb_transaction() {
-		// Balance 1 decreases from $10000 to $9000.
-		// Balance 2 increases from $5000 to $6000.
-		//
-		balance_1 = get(account_1);
-		update(account_1, balance_1 - 1000);
-		
-		balance_2 = get(account_2);
-		update(account_2, balance_2 + 1000);
-	};
+	
+	qdb_operations_t upd_trans[2];
+	r = qdb_init_operations(upd_trans, 2);
+	if (r != qdb_error_ok)
+	{
+		// error management
+	}
+	
+	const double new_acct_1_bal = acct_1_bal - 1000;
+	const double new_acct_2_bal = acct_2_bal + 1000;
+	
+	upd_trans[0].type = qdb_op_update;
+	upd_trans[0].alias = "account_1";
+	upd_trans[0].content = new_acct_1_bal;
+	upd_trans[0].content_size = sizeof(new_acct_1_bal);
+	
+	upd_trans[1].type = qdb_op_update;
+	upd_trans[1].alias = "account_2";
+	upd_trans[1].content = new_acct_2_bal;
+	upd_trans[1].content_size = sizeof(new_acct_2_bal);
+	
+	
+	// runs the three operations on the cluster
+	size_t failure_index = 0;
+	qdb_run_transaction(handle, upd_trans, 2, failure_index);
+	if (failure_index != 0)
+	{
+		// error management
+	}
 
 Failure: Entry Inflight
 ~~~~~~~~~~~~~~~~~~~~~~~
 
-In this pseudocode example, $1000 is transferred from account_1 to account_2. If the client_1_xfer_transaction is still in process when client_2_get_transaction is called, client 2 will receive a "inflight" error. ::
+Once a transaction has completed all of its operations, it goes through each operation in order and sets the status from inflight to committed. This means there is a brief period where some entries are inflight and some entries are committed.
 
-	// Transfers $1000 from account_1 to account_2.
+Using the successful example above, if the upd_trans is still in process when the following request is called from a second client, the second client will receive a "inflight" error. ::
+
+	// If run during client 1's upd_trans, returns "inflight" error.
 	//
-	client_1_xfer_transaction = qdb_transaction() {
-		// Balance 1 decreases from $5000 to $6000.
-		// Balance 2 increases from $5000 to $6000.
-		//
-		balance_1 = get(account_1);
-		update(account_1, balance_1 - 1000);
-		
-		balance_2 = get(account_2);
-		update(account_2, balance_2 + 1000);
-	};
+	qdb_operations_t client_2_bal_trans[2];
+	r = qdb_init_operations(client_2_bal_trans, 2);
+	if (r != qdb_error_ok)
+	{
+		// error management
+	}
 	
-	// If run during client_1_xfer_transaction, returns "inflight" error.
-	//
-	client_2_get_transaction = qdb_transaction() {
-		balance_1 = get(account_1);
-		balance_2 = get(account_2);
-	};
+	client_2_bal_trans[0].type = qdb_op_get_alloc;
+	client_2_bal_trans[0].alias = "account_1";
+	
+	client_2_bal_trans[1].type = qdb_op_get_alloc;
+	client_2_bal_trans[1].alias = "account_2";
+	
+	// runs the two operations on the cluster
+	size_t failure_index = 0;
+	qdb_run_transaction(handle, client_2_bal_trans, 2, failure_index);
+	if (failure_index != 0)
+	{
+		// Inflight Error
+	}
 
 
 Failure: qdb_get() Outside a Transaction
@@ -124,28 +176,16 @@ Once a transaction has completed all of its operations, it goes through each ope
 
 When used outside of a transaction, the qdb_get() function returns the latest version of the entry with a committed status. This means a qdb_get() used outside of a transaction may return values from multiple, incongruous database states.
 
-In this pseudocode example, $1000 is transferred from account_1 to account_2. The second client requests the account balances outside a transaction, when account_1 has been set to committed, but account_2 is inflight. ::
+Using the successful example above, client 1 transfers $1000 from account_1 to account_2. The second client (below) requests the account balances outside a transaction, when account_1 has been set to committed, but account_2 is inflight. ::
 
-	// Transfers $1000 from account_1 to account_2.
-	// 
-	client_1_xfer_transaction = qdb_transaction() {
-		
-		// Balance 1 decreases from $10000 to $9000.
-		// Balance 2 increases from $5000 to $6000.
-		//
-		balance_1 = get(account_1);
-		update(account_1, balance_1 - 1000);
-		
-		balance_2 = get(account_2);
-		update(account_2, balance_2 + 1000);
-	};
-	
-	// Called from client 2.
 	// If run after the withdrawl is committed
 	// but before the deposit is committed, returns invalid account balances.
 	//
-	balance_1 = get(account_1);  // $9000
-	balance_2 = get(account_2);  // $5000
+	const float balance_1;
+	const float balance_1;
+	
+	balance_1 = qdb_get(handle, "account_1", balance_1, sizeof(balance_1));  // $9000  (10,000 - 1000)
+	balance_2 = qdb_get(handle, "account_2", balance_2, sizeof(balance_2));  // $5000  (initial value)
 
 
 Failure: Client Crash Mid-Transaction
