@@ -1,14 +1,6 @@
-source/api/*.pyc
+*.pyc
 /build/
 
 # Javasphinx auto-built directories.
 source/api/com/
 source/api/packages.rst
-
-# CMake
-/CMakeFiles/
-/cmake_install.cmake
-
-# Visual Studio
-*.vcxproj
-*.vcxproj.filters
