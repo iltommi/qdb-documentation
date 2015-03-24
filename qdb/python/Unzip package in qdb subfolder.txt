@@ -1,0 +1,5 @@
+You should have the following files:
+- qdb/__init__.py
+- qdb/_qdb.pyd
+- qdb/impl.py
+- qdb/qdb_api.dll
