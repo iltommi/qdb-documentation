@@ -1,4 +1,4 @@
-source/api/*.pyc
+*.pyc
 /build/
 
 # Javasphinx auto-built directories.
