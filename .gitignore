@@ -1,2 +1,2 @@
-source/api/*.pyc
+*.pyc
 /build/
