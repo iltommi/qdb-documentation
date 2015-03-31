@@ -23,7 +23,7 @@ Interested in acquiring a quasardb licence? Not sure if quasardb the right tool 
 Reporting a bug or requesting a feature
 ---------------------------------------
 
-Found a bug? Have a feature request? Send an email as descriptive as possible to `bug@quasardb.net <bug@quasardb.net>`_ and it will automatically be submitted to the quality assurance team.
+Found a bug? Have a feature request? Send an email as descriptive as possible to `support@quasardb.net <support@quasardb.net>`_ and it will automatically be submitted to the quality assurance team.
 
 If additional information is required to work on your issue, the team will get back at you.
 
