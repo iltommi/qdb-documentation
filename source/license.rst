@@ -29,7 +29,7 @@ When your quasardb license expires:
  #. Any running qdbd daemons will function normally.
  #. Any new qdbd daemons you start will fail to boot.
  #. You are not eligible for upgrades or dedicated assistance.
- #. You may report bugs at `bug@quasardb.net <bug@quasardb.net>`_,
+ #. You may report bugs at `support@quasardb.net <support@quasardb.net>`_,
 
 Please contact your Quasardb representative to renew your license (see :doc:`contact`).
 
