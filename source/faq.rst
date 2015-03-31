@@ -136,7 +136,7 @@ Yes it does! Here is the list:
 * `memcachepp <https://github.com/mikhailberis/memcachepp>`_
 * `Snappy <http://code.google.com/p/snappy/>`_
 
-If you find the list to be inaccurate or suspect a license violation, mail to `bug@quasardb.net <bug@quasardb.net>`_.
+If you find the list to be inaccurate or suspect a license violation, mail to `support@quasardb.net <support@quasardb.net>`_.
 
 Where are you located?
 ======================
