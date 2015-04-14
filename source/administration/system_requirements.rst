@@ -6,7 +6,7 @@ System Requirements
 Hardware Requirements
 ---------------------
 
-    * An IA32 or AMD64 platform
+    * An x86 or x86_64 platform
     * End-to-end ECC memory (motherboard, CPU and memory)
     * At least 1 GiB of RAM (the exact amount depends on your use case)
     * At least 10 GiB of disk (the exact amount depends on your use case, see :ref:`operations-db-storage`)
@@ -23,7 +23,8 @@ Software Requirements
 FreeBSD Requirements
 ^^^^^^^^^^^^^^^^^^^^
 
-    * FreeBSD 8 or 9, amd64 only
+    * FreeBSD 8 or 9, x86_64 (for quasardb < 1.1.5)
+    * FreeBSD 10, x86_64 (for quasardb >= 1.1.5)
     * libc++ v1
     * Python 2.7.x (optional)
     * Java JDK (optional)
@@ -43,7 +44,7 @@ All other required libraries are included in the quasardb package.
 Linux Requirements
 ^^^^^^^^^^^^^^^^^^
 
-    * An amd64 native distribution
+    * An x86_64 native distribution
     * Kernel 2.6 or higher
     * libc 2.5 or higher
     * Python 2.7.x (optional)

@@ -10,9 +10,12 @@ Ensure your system meets the :doc:`system_requirements`
 FreeBSD
 -------
 
-The server comes as a gzipped tar archive. All needed libraries are included. FreeBSD 10 and libc++ v1 are required as of quasardb 1.1.5.
+ #. Verify your system meets the :ref:`sysreq-freebsd`.
+ #. Log in to https://download.quasardb.net/ with your credentials.
+ #. Download the file named qdb-server-<ver>-freebsd-64bit.tgz, where <ver> is the version of quasardb you wish to install.
+ #. Extract the tarball.
 
-To install libc++ v1, the most straightforward is to install the sources and clang 3.2 (from the ports for example), and then do the following::
+If your system does not have libc++ v1, the most straightforward is to install the sources and clang 3.2 (from the ports for example), and then do the following::
 
     cd /usr/src/lib/libcxxrt
     make
@@ -21,26 +24,31 @@ To install libc++ v1, the most straightforward is to install the sources and cla
     make CXX=clang++
     make install
 
-Once you have this setup, quasardb runs out of the box.
 
 Linux
 -----
 
-All required libraries are included in gzipped tar archive. You will need the libc version 2.5 or later to run quasardb.
+ #. Verify your system meets the :ref:`sysreq-linux`.
+ #. Log in to https://download.quasardb.net/ with your credentials.
+ #. Download the file named qdb-server-<ver>-linux-64bit.tgz, where <ver> is the version of quasardb you wish to install.
+ #. Extract the tarball.
 
 Windows
 -------
 
-Windows XP SP3 or later is required to run quasardb. The setup program ensures all required libraries are installed. There is one setup program for Windows x86 and Windows x64, the setup will install the appropriate version.
+ #. Verify your system meets the :ref:`sysreq-windows`.
+ #. Log in to https://download.quasardb.net/ with your credentials.
+ #. Download the file named `setup-qdb-server-<ver>.exe`, where <ver> is the version of quasardb you wish to install.
+ #. Run the setup executable.
 
-By default, quasardb listens to the localhost on the 2836 port. On Windows this may be the IPv6 localhost if IPv6 is installed. This can be confusing during tests. Specifying an explicit address, such as "127.0.0.1:2836", is recommended.
+The setup program ensures all required libraries are installed. There is one setup program for Windows x86 and Windows x64; the setup will install the appropriate version.
 
 Important defaults to know
 ---------------------------
 
     * By default, replication is disabled.
     * By default, the quasardb daemon does not log anything.
-    * By default, the quasardb daemon listens on the port 2836 on the local address.
+    * By default, the quasardb daemon listens on the port 2836 on the local address. On Windows this may be the IPv6 localhost if IPv6 is installed. This can be confusing during tests. Specifying an explicit address, such as "127.0.0.1:2836", is recommended.
     * By default, the quasardb web bridge does not log anything.
     * By default, the quasardb web bridge listens on the port 8080 on the local address.
 
