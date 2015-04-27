@@ -124,7 +124,7 @@ Alternately, if the entry is intended to change regularly, like a value in a sto
 
 In either case, what was previously considered a conflict is now the expected behaviour.
 
-While this was a simple two-client example, the API also provides options for more complex scenarios, thanks to the get_update and compare_and_swap commands. get_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and returns the old/unchanged value.  For more information, see the :doc:`../api/index`.
+While this was a simple two-client example, the API also provides options for more complex scenarios, thanks to the get_and_update and compare_and_swap commands. get_and_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and returns the old/unchanged value.  For more information, see the :doc:`../api/index`.
 
 
 A more complex data conflict
@@ -136,7 +136,7 @@ We've seen a trivial example, but what about this one:
     * **Client A** *updates* an entry "motorbike" and sets it to "roadster"
     * **Client B** *gets* "car" and "motorbike" and checks that they match
 
-If Client B makes the query too early, the two entries do not match. While it's possible to resolve this using get_update and compare_and_swap, that can quickly become intricate and unmaintainable.
+If Client B makes the query too early, the two entries do not match. While it's possible to resolve this using get_and_update and compare_and_swap, that can quickly become intricate and unmaintainable.
 
 Like above, this is a design usage problem on the client side.
 

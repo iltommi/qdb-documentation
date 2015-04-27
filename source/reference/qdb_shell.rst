@@ -44,7 +44,7 @@ Commands
  :ref:`expires_from_now alias delta <qdbsh_expiresfromnow>`  sets the entry expiry time to seconds relative to now.
  :ref:`get <qdbsh_get>`                                      returns the entry content
  :ref:`get_expiry <qdbsh_getexpiry>`                         returns the entry's aboslute expiry time
- :ref:`get_update alias <qdbsh_getupdate>`                   atomically get and update the entry
+ :ref:`get_and_update alias <qdbsh_getupdate>`               atomically get and update the entry
  :ref:`help <qdbsh_help>`                                    display help
  :ref:`node_config host <qdbsh_nodeconfig>`                  returns the node configuration as a JSON string
  :ref:`node_status host <qdbsh_nodestatus>`                  returns the node status as a JSON string
@@ -254,7 +254,7 @@ A command generally requires one or several arguments. Each argument is separate
 
 
 .. _qdbsh_getupdate:
-.. option:: get_update <alias> <content>
+.. option:: get_and_update <alias> <content>
 
     Atomically gets the previous value of an existing entry and replace it with the specified content. The entry must already exist.
 
@@ -269,7 +269,7 @@ A command generally requires one or several arguments. Each argument is separate
 
         Update the content to "VeryMagicValue" and gets the previous content::
 
-            get_update myentry MagicValue
+            get_and_update myentry MagicValue
             VeryMagicValue
 
     .. note::

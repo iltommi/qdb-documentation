@@ -165,7 +165,7 @@ The run_batch method returns a couple. The left member is the number of successf
 
 The error member of each :py:class:`qdb.BatchResult` is updated to reflect the success of the operation. If the success count returned by run_batch isn't equal to the number of requests, the error field of each entry can be inspected to isolate the faulty requests.
 
-All batchable operations are supported in Python, namely:  get (get_alloc), put, update, remove, compare and swap (cas), get and update (get_update), get and remove (get_remove) and conditional remove (remove_if).
+All batchable operations are supported in Python, namely:  get, put, update, remove, compare and swap (cas), get and update, get and remove and conditional remove (remove_if).
 
 Examples
 --------

@@ -34,8 +34,8 @@ Quick Reference
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::update`                         (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`size_t` content_length, :cpp:type:`qdb_time_t` expiry_time);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::get`                            (:cpp:type:`const char *` alias, :cpp:type:`char *` content, :cpp:type:`size_t *` content_length);
   :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get`                            (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_remove`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_update`                     (:cpp:type:`const char *` alias, :cpp:type:`const char *` update_content, :cpp:type:`size_t` update_content_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_and_remove`                 (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_and_update`                 (:cpp:type:`const char *` alias, :cpp:type:`const char *` update_content, :cpp:type:`size_t` update_content_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::compare_and_swap`               (:cpp:type:`const char *` alias, :cpp:type:`const char *` new_value, :cpp:type:`size_t` new_value_length, :cpp:type:`const char *` comparand, :cpp:type:`size_t` comparand_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove`                         (:cpp:type:`const char *` alias);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_if`                      (:cpp:type:`const char *` alias, :cpp:type:`const char *` comparand, :cpp:type:`size_t` comparand_length);
@@ -151,13 +151,13 @@ Although you may use the handle object with the C API, using the handle object's
         // error management
     }
 
-The largest difference between the C and C++ get calls are their memory allocation lifetimes. The C call :c:func:`qdb_get_buffer` allocates a buffer of the needed size and must be explicitly freed. The C++ handle.get() method uses uses smart pointers to manage allocations lifetime.
+The largest difference between the C and C++ get calls are their memory allocation lifetimes. The C call :c:func:`qdb_get` allocates a buffer of the needed size and must be explicitly freed. The C++ handle.get() method uses uses smart pointers to manage allocations lifetime.
 
 In C, you would write::
 
     char * allocated_content = 0;
     size_t allocated_content_length = 0;
-    r = qdb_get_buffer(handle, "entry", &allocated_content, &allocated_content_length);
+    r = qdb_get(handle, "entry", &allocated_content, &allocated_content_length);
     if (r != qdb_e_ok)
     {
         // error management
@@ -462,7 +462,7 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: api_buffer_ptr get_remove(const char * alias, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr get_and_remove(const char * alias, qdb_error_t & error)
 
         Atomically gets an entry from the quasardb server and removes it.
 
@@ -477,7 +477,7 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: api_buffer_ptr get_update(const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr get_and_update(const char * alias, const char * update_content, size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
 
         Atomically gets and updates (in this order) the entry on the quasardb server. The entry must already exist.
 

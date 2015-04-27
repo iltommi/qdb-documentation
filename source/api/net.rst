@@ -21,9 +21,9 @@ Quick Reference
   void                 :ref:`Update <csharp_handle_update_noexpiry>`                      (System.String alias, System.Byte[] buffer)
   void                 :ref:`Update <csharp_handle_update>`                               (System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
   System.Byte[]        :ref:`Get <csharp_handle_get>`                                     (System.String alias)
-  System.Byte[]        :ref:`GetRemove <csharp_handle_get_remove>`                        (System.String alias)
-  System.Byte[]        :ref:`GetUpdate <csharp_handle_get_update_noexpiry>`               (System.String alias, System.Byte[] buffer)
-  System.Byte[]        :ref:`GetUpdate <csharp_handle_get_update>`                        (System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
+  System.Byte[]        :ref:`GetAndRemove <csharp_handle_get_and_remove>`                 (System.String alias)
+  System.Byte[]        :ref:`GetAndUpdate <csharp_handle_get_and_update_noexpiry>`        (System.String alias, System.Byte[] buffer)
+  System.Byte[]        :ref:`GetAndUpdate <csharp_handle_get_and_update>`                 (System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
   System.Byte[]        :ref:`CompareAndSwap <csharp_handle_compare_and_swap_noexpiry>`    (System.String alias, System.Byte[] newValue, System.Byte[] comparand)
   System.Byte[]        :ref:`CompareAndSwap <csharp_handle_compare_and_swap>`             (System.String alias, System.Byte[] newValue, System.Byte[] comparand, System.DateTime expiryTime)
   void                 :ref:`Remove <csharp_handle_remove>`                               (System.String alias)
@@ -304,7 +304,7 @@ All classes and instance methods reside in the 'qdb' namespace.
         :returns: The requested entry's content.
 
 
-    .. _csharp_handle_get_remove:
+    .. _csharp_handle_get_and_remove:
     .. function:: System.Byte[] GetRemove(System.String alias)
 
         Atomically gets an entry from the quasardb server and removes it. If the entry does not exist, the function will fail.
@@ -313,7 +313,7 @@ All classes and instance methods reside in the 'qdb' namespace.
         :returns: The requested entry's content.
 
 
-    .. _csharp_handle_get_update_noexpiry:
+    .. _csharp_handle_get_and_update_noexpiry:
     .. function:: System.Byte[] GetUpdate(System.String alias, System.Byte[] buffer)
 
         Atomically gets and updates (in this order) the entry on the quasardb server. If the entry does not exist, the function will fail.
@@ -323,7 +323,7 @@ All classes and instance methods reside in the 'qdb' namespace.
         :returns: The requested entry's content, before the update.
 
 
-    .. _csharp_handle_get_update:
+    .. _csharp_handle_get_and_update:
     .. function:: System.Byte[] GetUpdate(System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
 
         Atomically gets and updates (in this order) the entry on the quasardb server. If the entry does not exist, the function will fail.
