@@ -184,8 +184,8 @@ Using the successful example above, client 1 transfers $1000 from account_1 to a
 	const float balance_1;
 	const float balance_1;
 	
-	balance_1 = qdb_get(handle, "account_1", balance_1, sizeof(balance_1));  // $9000  (10,000 - 1000)
-	balance_2 = qdb_get(handle, "account_2", balance_2, sizeof(balance_2));  // $5000  (initial value)
+	balance_1 = qdb_get_noalloc(handle, "account_1", balance_1, sizeof(balance_1));  // $9000  (10,000 - 1000)
+	balance_2 = qdb_get_noalloc(handle, "account_2", balance_2, sizeof(balance_2));  // $5000  (initial value)
 
 
 Failure: Client Crash Mid-Transaction
