@@ -1,6 +1,23 @@
 Change log
 **********
 
+1.2.1 - "Anaximander" - 05/05/2015
+==================================
+
+This release is our most scalable release ever and has been tested with up to 25,000 concurrent connections on a single node running on an entry-level dedicated server.
+
+This release is fully compatible with 1.2.0 and the whole 1.1.x "Pythagoras" line.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+    * Increased default TCP listen queue to 16,384 on all platforms
+    * Stabilization is now less agressive in case of node failures, delivering an even better availability
+    * Multi-connect is now done in a random order
+    * Removed network usage graphs from the administration console
+    * Fixed minor bugs in the configuration generation tool (https://www.quasardb.net/confgen)
+
 1.2.0 - "Anaximander" - 02/09/2015
 ==================================
 

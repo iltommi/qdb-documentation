@@ -55,7 +55,7 @@ copyright = u'2015, Quasardb SAS'
 # "source/version_switch.js" in the qdb-doc repo so your new version appears in the drop down!
 #
 # The short X.Y version.
-version = '1.1'
+version = '1.2'
 # The full version, including alpha/beta/rc tags.
 release = '1.2.1'
 
