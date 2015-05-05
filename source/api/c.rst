@@ -568,7 +568,7 @@ Reference
     :param uri: A pointer to a null terminated string in the format "qdb://host:port[,host:port]".
     :type uri: const char *
 
-    :returns: 0 if all connections failed, 1 if any connection succeeded.
+    :returns: The number of successful connections.
 
 .. c:function:: qdb_error_t qdb_close(qdb_handle_t handle)
 

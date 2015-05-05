@@ -388,7 +388,7 @@ Reference
 
         :param host: A pointer to a null terminated string in the format "qdb://host:port[,host:port]".
 
-        :returns: 0 if all connections failed, 1 if any connection succeeded.
+        :returns: The number of successful connections.
 
     .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
