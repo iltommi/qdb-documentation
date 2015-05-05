@@ -134,7 +134,7 @@ The connection is a two step process.
 
     #. Connect to a server within a cluster: ::
 
-        qdb_error_t r = quasardb.connect(session, "192.168.1.1", 2836);
+        qdb_error_t r = quasardb.connect(session, "qdb://192.168.1.1:2836");
 
 In this case we're connecting to the server ``192.168.1.1`` but we could have specified a domain name or an IPv6 address.
 

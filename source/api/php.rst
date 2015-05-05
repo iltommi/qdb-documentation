@@ -16,7 +16,7 @@ Quick Reference
   ..               :php:meth:`QdbBatch::remove`                 (string $alias)
   ..               :php:meth:`QdbBatch::removeIf`               (string $alias, string $comparand)
   ..               :php:meth:`QdbBatch::update`                 (string $alias, string $content [, int $expiry_time = 0 ])
-  QdbCluster       :php:meth:`QdbCluster::__construct`          (array $nodes)
+  QdbCluster       :php:meth:`QdbCluster::__construct`          (string $uri)
   string           :php:meth:`QdbCluster::compareAndSwap`       (string $alias, string $new_content, string $comparand [, int $expiry_time = 0 ] )
   ..               :php:meth:`QdbCluster::expiresAt`            (string $alias, int $expiry_time)
   ..               :php:meth:`QdbCluster::expiresFromNow`       (string $alias, int $time_delta)
@@ -37,10 +37,8 @@ Introduction
 --------------
 
 Using *quasardb* cluster from a PHP program is extremely straightforward, just create a `QdbCluster` and perform the operations. ::
-
-    $nodes = array(array('address' => '127.0.0.1', 'port' => 2836));
     
-    $cluster = new QdbCluster($nodes);
+    $cluster = new QdbCluster('qdb://192.168.0.100:2836,192.168.0.101:2836');
     $cluster->put('key 0', 'value 0');
     $cluster->put('key 1', 'value 1');
     $value2 = $cluster->get('key 2');
@@ -241,9 +239,7 @@ Represents a connection to a *quasardb* cluster.
 
 Example::
 
-    $nodes = array(array('address' => '127.0.0.1', 'port' => 2836));
-
-    $cluster = new QdbCluster($nodes);
+    $cluster = new QdbCluster('qdb://192.168.0.100:2836');
     $cluster->put('key 0', 'value 0');
     $cluster->put('key 1', 'value 1');
     $value2 = $cluster->get('key 2');
@@ -252,18 +248,15 @@ Example::
 
 .. php:class:: QdbCluster
 
-  .. php:method:: __construct (array $nodes)
+  .. php:method:: __construct (string $uri)
       
-      Connects to a *quasardb* cluster through an array of arrays. ::
+      Connects to a *quasardb* cluster using a string. ::
           
-          $nodes = array(
-              array('address'=>'192.168.0.1','port'=>'2836'),
-              array('address'=>'192.168.0.2','port'=>'2836')
-          );
+          $cluster = new QdbCluster('qdb://192.168.0.100:2836,192.168.0.101:2836,');
           
       Throws a `QdbClusterConnectionFailedException` if the connection **to every node** fails.
-       
-      :param array $nodes: An array of arrays.
+      
+      :param array $uri: A string in the format "qdb://host:port[,host:port]".
       :returns: a QdbCluster object.
       
       
