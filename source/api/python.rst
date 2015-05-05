@@ -89,7 +89,7 @@ Once the installation is complete, you must be able to import quasardb without a
 
 If you have a server up and running, you must be able to add and access entries::
 
-    >>> c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    >>> c = qdb.Client("qdb://127.0.0.1:2836"))
     >>> c.put("entry", "content")
     >>> print c.get("entry")
     content
@@ -105,7 +105,7 @@ Expiry is either set at creation or through the :py:func:`qdb.Client.expires_at`
 
 To set the expiry time of an entry to 1 minute, relative to the call time::
 
-    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    c = qdb.Client("qdb://127.0.0.1:2836")
     c.put("entry", "content")
     c.expires_from_now("entry", 60)
 
@@ -133,7 +133,7 @@ Prefix based search is a powerful tool that helps you lookup entries efficiently
 
 For example, if you want to find all entries whose aliases start with "record"::
 
-    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    c = qdb.Client("qdb://127.0.0.1:2836")
     res = c.prefix_get("record")
 
 The method returns an array of strings matching the provided prefix.
@@ -143,7 +143,7 @@ Iteration
 
 Iteration is supported in a pythonesque way::
 
-    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    c = qdb.Client("qdb://127.0.0.1:2836")
     for e in c:
         print e
 
@@ -156,7 +156,7 @@ A batch is run by providing the run_batch method with an array of :py:class:`qdb
 
     requests = [ qdb.BatchRequest(qdb.Operations.get_alloc, "my_entry1"), qdb.BatchRequest(qdb.Operations.get_alloc, "my_entry2") ]
 
-    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    c = qdb.Client("qdb://127.0.0.1:2836")
     successes, results = c.run_batch(requests)
 
 The run_batch method returns a couple. The left member is the number of successful operations and the right member is an array of :py:class:`qdb.BatchResult`. For example to get the content for the first entry::

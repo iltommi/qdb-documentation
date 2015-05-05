@@ -6,7 +6,7 @@ SIZE_LIMIT = 10 * 1024 * 1024
 
 # Note given what we are doing here, the server should be configure with
 # a limiter-max-bytes of 1 GiB at least for proper caching
-cl = qdb.RawClient(qdb.RemoteNode('docserver.mydomain', 3002))
+cl = qdb.RawClient("qdb://docserver.mydomain:3002")
 
 # We expect a readable file-like object
 def upload(f):
