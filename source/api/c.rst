@@ -25,8 +25,7 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_open`                 (:c:type:`qdb_handle_t` handle, :c:type:`qdb_protocol_t` proto);
   :c:type:`qdb_handle_t`      :c:type:`qdb_open_tcp`             (void);
   :c:type:`qdb_error_t`       :c:type:`qdb_set_option`           (:c:type:`qdb_handle_t` handle, :c:type:`qdb_option_t` option, ...);
-  :c:type:`qdb_error_t`       :c:type:`qdb_connect`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` host, :c:type:`unsigned short` port);
-  :c:type:`size_t`            :c:type:`qdb_multi_connect`        (:c:type:`qdb_handle_t` handle, :c:type:`qdb_remote_node_t *` servers, :c:type:`size_t` count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_connect`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri);
   :c:type:`qdb_error_t`       :c:type:`qdb_close`                (:c:type:`qdb_handle_t` handle);
   :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t` results_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_noalloc`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char *` content, :c:type:`size_t *` content_length);
@@ -48,10 +47,10 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_expires_from_now`     (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_delta);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_expiry_time`      (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_time);
   :c:type:`qdb_error_t`       :c:type:`qdb_remove_all`           (:c:type:`qdb_handle_t` handle);
-  :c:type:`qdb_error_t`       :c:type:`qdb_node_status`          (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_node_config`          (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_node_topology`        (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_stop_node`            (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char *` reason);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_status`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_config`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_topology`        (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stop_node`            (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char *` reason);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_begin`       (:c:type:`qdb_handle_t` handle, :c:type:`qdb_const_iterator_t *` iterator);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_rbegin`      (:c:type:`qdb_handle_t` handle, :c:type:`qdb_const_iterator_t *` iterator);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_next`        (:c:type:`qdb_const_iterator_t *` iterator);
@@ -105,16 +104,16 @@ We can also use the convenience function :c:func:`qdb_open_tcp`: ::
 
 Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are opened and closed as needed. This code will establish a connection to a single quasardb node listening on the localhost with the :c:func:`qdb_connect` function: ::
 
-    r = qdb_connect(handle, "localhost", 2836);
-    if (r != qdb_error_ok)
+    size_t connections = qdb_connect(handle, "qdb://localhost:2836");
+    if (!connections)
     {
         // error management
     }
 
 Note that we could have used the IP address instead: ::
 
-    r = qdb_connect(handle, "127.0.0.1", 2836);
-    if (r != qdb_error_ok)
+    size_t connections = qdb_connect(handle, "qdb://127.0.0.1:2836");
+    if (!connections)
     {
         // error management
     }
@@ -124,8 +123,8 @@ Note that we could have used the IP address instead: ::
 
 `IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address: ::
 
-    r = qdb_connect(handle, "::1", 2836);
-    if (r != qdb_error_ok)
+    size_t connections = qdb_connect(handle, "qdb://::1:2836");
+    if (!connections)
     {
         // error management
     }
@@ -136,29 +135,18 @@ Note that we could have used the IP address instead: ::
 Connecting to multiple nodes within the same cluster
 ------------------------------------------------------
 
-Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to use :c:func:`qdb_multi_connect` which takes an array of qdb_remote_node_t as input and output. Each entry of the array with be updated with an error status reflecting the success or failure of the operation for this specific entry. The call, as a whole, will succeed as long as one connection within the list was successful established::
+Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a uri string to qdb_connect with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed.::
 
-    qdb_remote_node_t remote_nodes[3];
+    const char * remote_nodes = "qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836";
 
-    // there is no need to update the error member as it will be ignored by the function
-    remote_nodes[0].address = "192.168.1.1";
-    remote_nodes[0].port = 2836;
-    remote_nodes[1].address = "192.168.1.2";
-    remote_nodes[1].port = 2836;
-    remote_nodes[2].address = "192.168.1.3";
-    remote_nodes[2].port = 2836;
-
-    // will connect to 192.168.1.1:2836, 192.168.1.2:2836 and 192.168.1.3:2836
-    // the error member of each entry will be updated accordingly to the success
-    // of each operation
-    // the function will return the number of successful connections
-    size_t connections = qdb_multi_connect(handle, remote_nodes, 3);
+    // the function will return 1 if any of the connections succeed.
+    size_t connections = qdb_connect(handle, remote_nodes);
     if (!connections)
     {
         // error management...
     }
 
-If the same address/port pair is present multiple times within the array, only the first occurrence can be successful.
+If the same address/port pair is present multiple times within the array, only the first occurrence is used.
 
 Adding entries
 -----------------
@@ -571,37 +559,16 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_connect(qdb_handle_t handle, const char * host, unsigned short port)
+.. c:function:: qdb_size_t qdb_connect(qdb_handle_t handle, const char * uri)
 
     Bind the client instance to a quasardb cluster and connect to one node within.
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param host: A pointer to a null terminated string representing the IP address or the name of the server to which to connect
-    :type host: const char *
-    :param port: The port number used by the server. The default quasardb port is 2836.
-    :type port: unsigned short
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port[,host:port]".
+    :type uri: const char *
 
-    :returns: An error code of type :c:type:`qdb_error_t`
-
-.. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, qdb_remote_node_t * servers, size_t count)
-
-    Bind the client instance to a quasardb cluster and connect to multiple nodes within the cluster. The function returns the number of successful
-    unique connections. If the same node (address and port) is present several times in the input array, it will count as only one successful 
-    connection.
-
-    The user supplies an array of qdb_remote_node_t and the function updates the error member of each entry according to the result of the operation.
-
-    Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
-
-    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
-    :type handle: qdb_handle_t
-    :param servers: An array of qdb_remote_node_t designating the nodes to connect to. The error member will be updated depending on the result of the operation.
-    :type servers: qdb_remote_node_t *
-    :param count: The size of the input array.
-    :type count: size_t
-
-    :returns: The number of unique successful connections.
+    :returns: 0 if all connections failed, 1 if any connection succeeded.
 
 .. c:function:: qdb_error_t qdb_close(qdb_handle_t handle)
 
@@ -948,7 +915,7 @@ Reference
 
     .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
-.. c:function:: qdb_error_t qdb_node_status(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+.. c:function:: qdb_error_t qdb_node_status(qdb_handle_t handle, const char * uri, const char ** content, size_t * content_length)
 
     Obtains a node status as a JSON string. 
 
@@ -958,8 +925,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the status from
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the status string.
     :type content: const char **
     :param content_length: A pointer to a size_t that will be set to the status string length, in bytes.
@@ -967,7 +934,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_node_config(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+.. c:function:: qdb_error_t qdb_node_config(qdb_handle_t handle, const char * uri, const char ** content, size_t * content_length)
 
     Obtains a node configuration as a JSON string. 
 
@@ -977,8 +944,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the configuration from
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the configuration string.
     :type content: const char **
     :param content_length: A pointer to a size_t that will be set to the configuration string length, in bytes.
@@ -986,7 +953,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_node_topology(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+.. c:function:: qdb_error_t qdb_node_topology(qdb_handle_t handle, const char * uri, const char ** content, size_t * content_length)
 
     Obtains a node topology as a JSON string. 
 
@@ -996,8 +963,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the topology from
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the topology string.
     :type content: const char **
     :param content_length: A pointer to a size_t that will be set to the topology string length, in bytes.
@@ -1005,7 +972,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_stop_node(qdb_handle_t handle, const qdb_remote_node_t * node, const char * reason)
+.. c:function:: qdb_error_t qdb_stop_node(qdb_handle_t handle, const char * uri, const char * reason)
 
     Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued, enabling inflight calls to complete successfully.
 
@@ -1013,8 +980,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to stop
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param reason: A pointer to a null terminated string detailing the reason for the stop that will appear in the remote node's log.
     :type reason: const char *
     :returns: An error code of type :c:type:`qdb_error_t`
