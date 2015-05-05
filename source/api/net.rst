@@ -14,8 +14,7 @@ Quick Reference
   void                 :ref:`Close <csharp_handle_close>`                                 ()
   bool                 :ref:`Connected <csharp_handle_connected>`                         ()
   void                 :ref:`SetTimeout <csharp_handle_set_timeout>`                      (System.TimeSpan timeout)
-  void                 :ref:`Connect <csharp_handle_connect>`                             (System.Net.IPEndPoint host)
-  Exception[]          :ref:`Multiconnect <csharp_handle_multiconnect>`                   (System.Net.IPEndPoint[] hosts)
+  void                 :ref:`Connect <csharp_handle_connect>`                             (System.String uri)
   void                 :ref:`Put <csharp_handle_put_noexpiry>`                            (System.String alias, System.Byte[] buffer)
   void                 :ref:`Put <csharp_handle_put>`                                     (System.String alias, System.Byte[] buffer, System.DateTime expiryTime)
   void                 :ref:`Update <csharp_handle_update_noexpiry>`                      (System.String alias, System.Byte[] buffer)
@@ -34,10 +33,10 @@ Quick Reference
   void                 :ref:`ExpiresAt <csharp_handle_expires_at>`                        (System.String alias, System.DateTime expiryTime)
   void                 :ref:`ExpiresFromNow <csharp_handle_expires_from_now>`             (System.String alias, System.TimeSpan expiryDelta)
   bool                 :ref:`GetExpiryTime <csharp_handle_get_expiry_time>`               (System.String alias, out System.DateTime expiryTime)
-  System.String        :ref:`NodeStatus <csharp_handle_node_status>`                      (System.Net.IPEndPoint host)
-  System.String        :ref:`NodeConfig <csharp_handle_node_config>`                      (System.Net.IPEndPoint host)
-  System.String        :ref:`NodeTopology <csharp_handle_node_topology>`                  (System.Net.IPEndPoint host)
-  void                 :ref:`StopNode <csharp_handle_stop_node>`                          (System.Net.IPEndPoint host, System.String reason)
+  System.String        :ref:`NodeStatus <csharp_handle_node_status>`                      (System.String uri)
+  System.String        :ref:`NodeConfig <csharp_handle_node_config>`                      (System.String uri)
+  System.String        :ref:`NodeTopology <csharp_handle_node_topology>`                  (System.String uri)
+  void                 :ref:`StopNode <csharp_handle_stop_node>`                          (System.String uri, System.String reason)
   
  ==================== ================================================================== ===================
 
@@ -65,7 +64,7 @@ Use the Handle object to interact with the cluster. Simply having a Handle objec
         qdb.Handle h = new qdb.Handle();
         
         // Connect to the cluster.
-        h.Connect(new System.Net.IPEndPoint(System.Net.IPAddress.Loopback, 2836));
+        h.Connect("qdb://127.0.0.1:2836");
         
         // Removes the entry "myalias" if it exists, errors otherwise
         h.Remove("myalias");
@@ -241,20 +240,11 @@ All classes and instance methods reside in the 'qdb' namespace.
 
 
     .. _csharp_handle_connect:
-    .. function:: void Connect(System.Net.IPEndPoint host)
+    .. function:: void Connect(System.String uri)
 
         Bind the client instance to a quasardb cluster and connect to the given node within the cluster.
 
-        :param host: The remote host to connect to.
-
-
-    .. _csharp_handle_multiconnect:
-    .. function:: Exception[] Multiconnect(System.Net.IPEndPoint[] hosts)
-
-        Bind the client instance to a quasardb cluster and connect to multiple nodes within the cluster. If the same node (address and port) is present several times in the input array, it will count as only one successful connection. All hosts must belong to the same quasardb cluster. Only one connection to a listed node has to succeed for the connection to the cluster to be successful.
-
-        :param hosts: an array of remote hosts to connect to.
-        :returns: an array, matching each provided endpoint, with an exception in case of error or null if no error occurred.
+        :param host: A string containing hosts to connect to in the format "qdb://host:port[,host:port]".
 
 
     .. _csharp_handle_put_noexpiry:
@@ -428,37 +418,37 @@ All classes and instance methods reside in the 'qdb' namespace.
 
 
     .. _csharp_handle_node_status:
-    .. function:: System.String NodeStatus(System.Net.IPEndPoint host)
+    .. function:: System.String NodeStatus(System.String uri)
 
         Obtains a node status as a JSON string.
 
-        :param host: The remote node to get the status from.
+        :param host: The remote node to get the status from in the format "qdb://host:port".
         :returns: The status of the node as a JSON string.
 
 
     .. _csharp_handle_node_config:
-    .. function:: System.String NodeConfig(System.Net.IPEndPoint host)
+    .. function:: System.String NodeConfig(System.String uri)
 
         Obtains a node configuration as a JSON string.
 
-        :param host: The remote node to get the configuration from.
+        :param host: The remote node to get the configuration from in the format "qdb://host:port".
         :returns: The configuration of the node as a JSON string.
 
 
     .. _csharp_handle_node_topology:
-    .. function:: System.String NodeTopology(System.Net.IPEndPoint host)
+    .. function:: System.String NodeTopology(System.String uri)
 
         Obtains a node topology as a JSON string.
 
-        :param host: The remote node to get the configuration from.
+        :param host: The remote node to get the configuration from in the format "qdb://host:port".
         :returns: The topology of the node as a JSON string.
 
 
     .. _csharp_handle_stop_node:
-    .. function:: void StopNode(System.Net.IPEndPoint host, System.String reason)
+    .. function:: void StopNode(System.String uri, System.String reason)
 
         Stops the node designated by its host and port number. This stop is generally effective within a few seconds of being issued, enabling inflight calls to complete successfully.
 
-        :param host: The remote node to stop.
+        :param host: The remote node to stop in the format "qdb://host:port".
         :param reason: A string detailing the reason for the stop that will appear in the remote node's log.
 
