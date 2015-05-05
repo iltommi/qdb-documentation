@@ -47,10 +47,10 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_expires_from_now`     (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_delta);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_expiry_time`      (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_time);
   :c:type:`qdb_error_t`       :c:type:`qdb_remove_all`           (:c:type:`qdb_handle_t` handle);
-  :c:type:`qdb_error_t`       :c:type:`qdb_node_status`          (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_node_config`          (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_node_topology`        (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char **` content, :c:type:`size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_stop_node`            (:c:type:`qdb_handle_t` handle, :c:type:`const qdb_remote_node_t *` node, :c:type:`const char *` reason);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_status`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_config`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_node_topology`        (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char **` content, :c:type:`size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stop_node`            (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri, :c:type:`const char *` reason);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_begin`       (:c:type:`qdb_handle_t` handle, :c:type:`qdb_const_iterator_t *` iterator);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_rbegin`      (:c:type:`qdb_handle_t` handle, :c:type:`qdb_const_iterator_t *` iterator);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_next`        (:c:type:`qdb_const_iterator_t *` iterator);
@@ -915,7 +915,7 @@ Reference
 
     .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
-.. c:function:: qdb_error_t qdb_node_status(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+.. c:function:: qdb_error_t qdb_node_status(qdb_handle_t handle, const char * uri, const char ** content, size_t * content_length)
 
     Obtains a node status as a JSON string. 
 
@@ -925,8 +925,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the status from
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the status string.
     :type content: const char **
     :param content_length: A pointer to a size_t that will be set to the status string length, in bytes.
@@ -934,7 +934,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_node_config(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+.. c:function:: qdb_error_t qdb_node_config(qdb_handle_t handle, const char * uri, const char ** content, size_t * content_length)
 
     Obtains a node configuration as a JSON string. 
 
@@ -944,8 +944,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the configuration from
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the configuration string.
     :type content: const char **
     :param content_length: A pointer to a size_t that will be set to the configuration string length, in bytes.
@@ -953,7 +953,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_node_topology(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
+.. c:function:: qdb_error_t qdb_node_topology(qdb_handle_t handle, const char * uri, const char ** content, size_t * content_length)
 
     Obtains a node topology as a JSON string. 
 
@@ -963,8 +963,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to get the topology from
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the topology string.
     :type content: const char **
     :param content_length: A pointer to a size_t that will be set to the topology string length, in bytes.
@@ -972,7 +972,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_stop_node(qdb_handle_t handle, const qdb_remote_node_t * node, const char * reason)
+.. c:function:: qdb_error_t qdb_stop_node(qdb_handle_t handle, const char * uri, const char * reason)
 
     Stops the node designated by its host and port number. This stop is generally effective a couple of seconds after it has been issued, enabling inflight calls to complete successfully.
 
@@ -980,8 +980,8 @@ Reference
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param node: A pointer to a qdb_remote_node_t structure designating the node to stop
-    :type node: const qdb_remote_node_t *
+    :param uri: A pointer to a null terminated string in the format "qdb://host:port".
+    :type uri: const char *
     :param reason: A pointer to a null terminated string detailing the reason for the stop that will appear in the remote node's log.
     :type reason: const char *
     :returns: An error code of type :c:type:`qdb_error_t`
