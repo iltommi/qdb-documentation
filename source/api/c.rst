@@ -146,7 +146,7 @@ Although quasardb is fault tolerant, if the client tries to connect to the clust
         // error management...
     }
 
-If the same address/port pair is present multiple times within the array, only the first occurrence is used.
+If the same address/port pair is present multiple times within the string, only the first occurrence is used.
 
 Adding entries
 -----------------

@@ -63,7 +63,7 @@ Here is a short Python code snippet::
     import qdb
 
     # connecting, default port is 2836
-    c = qdb.Client(qdb.RemoteNode("127.0.0.1"))
+    c = qdb.Client("qdb://127.0.0.1:2836"))
     # adding an entry
     c.put("entry", "really amazing...")
     # getting and printing the content
