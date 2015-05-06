@@ -440,7 +440,7 @@ All classes and instance methods reside in the 'qdb' namespace.
 
         Obtains a node topology as a JSON string.
 
-        :param host: The remote node to get the configuration from in the format "qdb://host:port".
+        :param host: The remote node to get the topology from in the format "qdb://host:port".
         :returns: The topology of the node as a JSON string.
 
 
