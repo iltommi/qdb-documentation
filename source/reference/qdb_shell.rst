@@ -93,6 +93,8 @@ In case of error, the prompt turns into::
 
     qdbsh:ko >
 
+As of quasardb 2.0.0, qdb_shell's interactive mode supports tab completion and command history (using the up/down and pgup/pgdn keys).
+
 Examples
 --------
 

@@ -104,16 +104,16 @@ We can also use the convenience function :c:func:`qdb_open_tcp`: ::
 
 Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are opened and closed as needed. This code will establish a connection to a single quasardb node listening on the localhost with the :c:func:`qdb_connect` function: ::
 
-    size_t connections = qdb_connect(handle, "qdb://localhost:2836");
-    if (!connections)
+    qdb_error_t connection = qdb_connect(handle, "qdb://localhost:2836");
+    if (connection != qdb_error_ok)
     {
         // error management
     }
 
 Note that we could have used the IP address instead: ::
 
-    size_t connections = qdb_connect(handle, "qdb://127.0.0.1:2836");
-    if (!connections)
+    qdb_error_t connection = qdb_connect(handle, "qdb://127.0.0.1:2836");
+    if (connection != qdb_error_ok)
     {
         // error management
     }
@@ -123,8 +123,8 @@ Note that we could have used the IP address instead: ::
 
 `IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address: ::
 
-    size_t connections = qdb_connect(handle, "qdb://::1:2836");
-    if (!connections)
+    qdb_error_t connection = qdb_connect(handle, "qdb://::1:2836");
+    if (connection != qdb_error_ok)
     {
         // error management
     }
@@ -140,8 +140,8 @@ Although quasardb is fault tolerant, if the client tries to connect to the clust
     const char * remote_nodes = "qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836";
 
     // the function will return 1 if any of the connections succeed.
-    size_t connections = qdb_connect(handle, remote_nodes);
-    if (!connections)
+    qdb_error_t connections = qdb_connect(handle, remote_nodes);
+    if (connections != qdb_error_ok)
     {
         // error management...
     }
@@ -559,7 +559,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_size_t qdb_connect(qdb_handle_t handle, const char * uri)
+.. c:function:: qdb_error_t qdb_connect(qdb_handle_t handle, const char * uri)
 
     Bind the client instance to a quasardb cluster and connect to one node within.
 
@@ -568,7 +568,7 @@ Reference
     :param uri: A pointer to a null terminated string in the format "qdb://host:port[,host:port]".
     :type uri: const char *
 
-    :returns: The number of successful connections.
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_close(qdb_handle_t handle)
 

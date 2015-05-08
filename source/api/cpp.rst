@@ -382,13 +382,13 @@ Reference
         :param timeout: The timeout, in milliseconds.
         :type timeout: int
 
-    .. cpp:function:: qdb_size_t connect(const char * uri)
+    .. cpp:function:: qdb_error_t connect(const char * uri)
 
         Initialize all required resources and connect to a remote host.
 
         :param host: A pointer to a null terminated string in the format "qdb://host:port[,host:port]".
 
-        :returns: The number of successful connections.
+        :returns: An error code of type :c:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
