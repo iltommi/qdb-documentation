@@ -37,7 +37,6 @@ Supported protocols
 
 The tool can be used to benchmark on servers supporting the following protocols (in alphabetical order):
 
- * aerospike (only on Linux)
  * local
  * memcached
  * quasardb
@@ -122,7 +121,7 @@ Parameters reference
     Specifies the protocol to use.
 
     Argument
-        A string representing the name of the protocol to use. Supported values are aerospike, local, memcached, quasardb and redis.
+        A string representing the name of the protocol to use. Supported values are local, memcached, quasardb and redis.
 
     Default value
         quasardb
