@@ -57,7 +57,7 @@ The quasardb shell offers an interactive mode from which the user can enter comm
    
    By default qdbsh will connect to a quasardb daemon using the default settings of localhost, port 2836. If you have edited the qdbd configuration file already, for example to make the qdbd daemon run on 192.168.1.1 and listen on port 303 - you will run qdbsh as such::
 
-       qdbsh --daemon=192.168.1.1:303
+       qdbsh qdb://192.168.1.1:303
    
    See :doc:`../reference/qdb_shell` for detailed configuration options.
 

@@ -65,7 +65,7 @@ If you add a node to the cluster, you do not have to make *any* change on the cl
 
 #. Run qdbsh::
 
-    qdbsh --daemon=192.168.1.2:2836
+    qdbsh qdb://192.168.1.2:2836
 
 #. Test a couple of commands::
 
@@ -76,7 +76,7 @@ If you add a node to the cluster, you do not have to make *any* change on the cl
 
 #. Test that a different node acknowledges the entry::
 
-    qdbsh --daemon=192.168.1.3:2836
+    qdbsh qdb://192.168.1.3:2836
     
     ok:qdbsh> get entry
     thisismyentry

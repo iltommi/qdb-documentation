@@ -11,9 +11,9 @@ The shell can be used interactively and non-interactively.
 In :ref:`interactive mode <qdbsh-interactive-mode>`, the user enters commands to be executed on the server. Feedback is provided to indicate failure.
 In :ref:`non-interactive mode <qdbsh-noninteractive-mode>`, a single command - supplied as a parameter - is executed and the program exits.
 
-By default qdbsh will attempt to connect to a qdbd running on the same machine, listening on the port 2836. If this is not the case - for example if your daemon runs on 192.168.1.1 and listens on the port 303 - you will need to set the --daemon parameter as shown below::
+By default qdbsh will attempt to connect in interactive mode to a qdbd server running on 127.0.0.1:2836. If this is not the case - for example if your qdbd server runs on 192.168.1.1 and listens on the port 303 - you will need to pass the address and port as a qdb:// string, shown below::
 
-    qdbsh --daemon=192.168.1.1:303
+    qdbsh qdb://192.168.1.1:303
 
 When connecting to a cluster, any server within the cluster is capable of servicing requests. There is no "master" or "preferred" server. There is no performance impact of choosing one server instead of the other, except, perhaps, the physical capabilities of the server.
 
@@ -24,13 +24,13 @@ Quick Reference
 Command line options
 ---------------------
 
- ===================================== ============================ ==============
-                Option                             Usage                Default
- ===================================== ============================ ==============
+ ===================================== ============================ ====================
+                Option                             Usage                  Default
+ ===================================== ============================ ====================
  :option:`-h`                          display help                  
  :option:`-v`                          display quasardb version      
- :option:`--daemon`                    the daemon to connect to     127.0.0.1:2836
- ===================================== ============================ ==============
+ :option:`-c`                          run a qdb command
+ ===================================== ============================ ====================
 
 Commands
 --------
@@ -51,10 +51,11 @@ Commands
  :ref:`node_topology host <qdbsh_nodetopology>`              returns the node topology as a JSON string
  :ref:`prefix_get prefix <qdbsh_prefixget>`                  returns the list of aliases matching the given prefix
  :ref:`put <qdbsh_put>`                                      put data, fails if entry already exists
+ :ref:`purge_all <qdbsh_purgeall>`                           removes ALL entries on the WHOLE cluster (Dangerous!)
  :ref:`remove alias <qdbsh_remove>`                          removes the entry
- :ref:`remove_all <qdbsh_removeall>`                         removes ALL entries on the WHOLE cluster (Dangerous!)
  :ref:`remove_if alias data <qdbsh_removeif>`                removes the entry in case of match
  :ref:`stop_node host reason <qdbsh_stopnode>`               stops the node
+ :ref:`trim_all <qdbsh_trimall>`                             removes unused versions of entries from the cluster
  :ref:`update alias data <qdbsh_update>`                     updates the entry. The entry will be created if it doesn't exist
  :ref:`version <qdbsh_version>`                              display quasardb version
  
@@ -119,9 +120,7 @@ Non-interactive mode enables the user to run one command without waiting for any
 Non-interactive mode supports standard input and output and can be integrated in a tool chain à la Unix.
 Performance-wise, non-interactive mode implies establishing and closing a connection to the quasardb server every time the shell is run.
 
-The command to be executed is supplied as a parameter to the shell. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
-
-As it is in interactive mode, the server and port is specified with the :option:`--daemon` parameter. Only one command may be specified per run.
+The command to be executed is supplied as an argument to the -c parameter. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
 
 When successful, the result of the command will be printed on the standard output stream and the shell will exit with the code 0. Most commands produce no output when successful (silent success).
 
@@ -134,12 +133,12 @@ Unless otherwise specified, qdbsh assumes the server is running on localhost and
 
 Save the content of an entry named "biography" in a text file named "biography.txt"::
 
-    qdbsh get biography > biography.txt
+    qdbsh -c get biography > biography.txt
 
 
 Compress a file named "myfile", then add its content to an entry named "myfile" on the quasardb server at 192.168.1.1: ::
 
-    bzip2 -c myfile | qdbsh --server=192.168.1.1 put myfile
+    bzip2 -c myfile | qdbsh qdb://192.168.1.1:2836 -c put myfile
 
 .. _qdbsh-parameters-reference:
 
@@ -149,32 +148,27 @@ Reference
 Options
 -------
 
-Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent. Any parameter not in this list will be parsed by qdbsh as a quasardb command. See :ref:`qdbsh-interactive-mode` for more information.
+Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent. See :ref:`qdbsh-interactive-mode` for more information.
 
 .. option:: -h, --help
 
     Displays basic usage information.
 
-    Example
-        To display the online help, type: ::
+.. option:: -v, --version
 
-            qdbsh --help
+    Displays the version information for the quasardb shell.
 
-.. option:: --daemon <address>:<port>
+.. option:: -c <command>
 
-   Specifies the address and port of the quasardb daemon on which the shell will connect.
-   Either a DNS name, an IPv4 or an IPv6 address.
-
+   Specifies a command to run in non-interactive mode. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
+   
    Argument
-        The address and port of a machines where a quasardb daemon is running.
-
-   Default value
-        127.0.0.0:2836, the IPv4 localhost address and the port 2836
+        The command and required parameters for the command.
 
    Example
-        If the daemon is on localhost and listens on port 3001::
+        If the qdbd server is on localhost and listens on port 3001 and we want to add an entry::
 
-            qdbsh --daemon=localhost:3001
+            qdbsh qdb://127.0.0.1:3001 -c put title "There and Back Again: A Hobbit's Tale"
 
 .. _qdbsh-commands-reference:
 
@@ -318,6 +312,17 @@ A command generally requires one or several arguments. Each argument is separate
     :return: *(string)* The list of matching aliases.
 
 
+.. _qdbsh_purgeall:
+.. option:: purge_all
+    
+    Removes all entries from the cluster. This command is not atomic.
+
+    :return: Nothing if successful, an error message otherwise
+
+    .. caution::
+        All entries will be deleted and will not be recoverable. If the cluster is unstable, the command may not be executed by all nodes. The command will nevertheless return success.
+
+
 .. _qdbsh_put:
 .. option:: put <alias> <content>
 
@@ -352,18 +357,6 @@ A command generally requires one or several arguments. Each argument is separate
 
             remove obsolete
 
-
-.. _qdbsh_removeall:
-.. option:: remove_all
-
-    Removes all entries from the server. This command is not atomic.
-
-    :return: Nothing if successful, an error message otherwise
-
-    .. caution::
-        All entries will be deleted and will not be recoverable. If the cluster is unstable, the command may not be executed by all nodes. The command will nevertheless return success.
-
-
 .. _qdbsh_removeif:
 .. option:: remove_if <alias> <comparand>
 
@@ -379,6 +372,14 @@ A command generally requires one or several arguments. Each argument is separate
     Stops the node designated by its host and port number. This stop is generally effective within a few seconds of being issued, enabling inflight calls to complete successfully.
     
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
+
+
+.. _qdbsh_trimall:
+.. option:: trim_all
+
+    Removes unused versions of entries from the cluster, freeing up disk space.
+    
+    :return: Nothing if successful, an error message otherwise
 
 
 .. _qdbsh_update:
@@ -407,4 +408,4 @@ A command generally requires one or several arguments. Each argument is separate
 .. _qdbsh_version:
 .. option:: version
 
-    Displays version information.
+    Displays the version information for the quasardb shell.
