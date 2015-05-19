@@ -28,7 +28,7 @@ On UNIX, a node can be gracefully stopped in sending the QUIT signal to the daem
 Log and Dump Files
 ------------------
 
-Log files are created only when a quasardb daemon has been run with the -o (log to console), -l (log to file), or --log-syslog (log to syslog) arguments. If logging is enabled, it is performed asynchronously based on the --log-flush-interval argument, which defaults to 3 seconds.
+Log files are created only when qdbd is run in non-daemonized mode, or is daemonized with the -l (log to file) or --log-syslog (log to syslog) arguments. If logging is enabled, it is performed asynchronously based on the --log-flush-interval argument, which defaults to 3 seconds.
 
 In a production environment, it is recommended to log to a file at least with an "information" log level. For more detailed information on quasardb logging options, see :doc:`../reference/qdbd`.
 

@@ -36,7 +36,6 @@ Quick Reference
  :option:`--log-flush-interval`        change log flush             3                   
  :option:`-l`, `--log-file`            log on given file                                
  :option:`--log-level`                 change log level             info                
- :option:`-o`, `--log-console`         log on console                                   
  :option:`--log-syslog`                log on syslog                                    
  :option:`-t`, `--threads`             number of threads to use     1                  
  :option:`--node`                      address:port of server       127.0.0.1:2836      
@@ -366,11 +365,6 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         Request a debug level logging: ::
 
             qdb_httpd --log-level=debug
-
-
-.. option:: -o, --log-console
-
-    Activates logging to the console.
 
 
 .. option:: --log-syslog

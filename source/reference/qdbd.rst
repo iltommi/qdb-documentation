@@ -40,7 +40,6 @@ Quick Reference
  :option:`--limiter-max-entries-count` max entries in cache         1000000                 Yes      
  :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes      
  :option:`--max-depot-size`            max db size on node          0 (disabled)            Yes       >=1.1.3
- :option:`-o`                          log on console                                       No       
  :option:`-l`                          log on given file                                    No       
  :option:`--log-dump`                  dump file location           qdb_error_dump.txt      No       
  :option:`--log-syslog`                log on syslog                                        No       
@@ -92,9 +91,7 @@ depending on the actual hardware configuration of your server.
 Logging
 -------
 
-By default, all logging is disabled.
-
-The daemon can log to the console (:option:`-o`), to a file (:option:`-l`) or to the syslog (:option:`--log-syslog`) on Unix.
+By default, a non-daemonized qdbd will log to the console. If daemonized, logging is disabled unless configured to log to a file (:option:`-l`) or to the syslog (:option:`--log-syslog`) on Unix.
 
 There are six different log levels: `detailed`, `debug`, `info`, `warning`, `error` and `panic`. You can change the log level (:option:`--log-level`), it defaults to `info`.
 
@@ -388,10 +385,6 @@ Instance specific
         Dump to /var/log/qdb_error_dump.log::
 
             qdb --log-dump=/var/log/qdb_error_dump.log
-
-.. option:: -o, --log-console
-
-    Activates logging on the console.
 
 .. option:: -l <path>, --log-file=<path>
 
