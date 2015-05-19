@@ -14,6 +14,8 @@ If you want to manipulate your data directly using strings or binary buffers, yo
 
 The API is BSD licensed.
 
+You may download the Python API from the quasardb site or from GitHub at `https://github.com/bureau14/qdb-api-python <https://github.com/bureau14/qdb-api-python>`_.
+
 Requirements
 ------------------------
 

@@ -11,6 +11,8 @@ The quasardb Java API uses JNI to bring the power and speed of quasardb to the J
 
 It fully integrates itself into the Java environment thanks to a wrapper (also called 'high-level API'). The wrapper itself comes with a BSD license and can be freely used in your clients. The wrapper uses a low-level API that is also directly useable although with severe restrictions.
 
+You may download the Java API from the quasardb site or from GitHub at `https://github.com/bureau14/qdb-api-java <https://github.com/bureau14/qdb-api-java>`_.
+
 Requirements
 ------------
 

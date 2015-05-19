@@ -56,7 +56,7 @@ Not fast enough? Try the `QdbBatch` class::
 
 This will reduce the number of network request and it will be faster by orders of magnitudes.
 
-
+You may download the PHP API from the quasardb site or from GitHub at `https://github.com/bureau14/qdb-api-php <https://github.com/bureau14/qdb-api-php>`_.
 
 Requirements and Installation
 -----------------------------
