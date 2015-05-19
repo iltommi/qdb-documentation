@@ -14,10 +14,9 @@ Quick Reference
                 Option                             Usage                Default
  ===================================== ============================ ==============
  :option:`-h`, `--help`                display help                  
+ :option:`-v`, `--version`             display qdb_dbtool version
  :option:`--database`                  path to the database          
  :option:`-a`, `--analyze`             analyzes the database         
- :option:`-d`, `--dump`                dumps database to stdout      
- :option:`-b`, `--backup`              performs backup to new db     
  :option:`-r`, `--repair`              repairs the database          
  ===================================== ============================ ==============
 
@@ -34,10 +33,9 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
     Displays basic usage information.
 
-    Example
-        To display the online help, type: ::
+.. option:: -v, --version
 
-            qdb_dbtool --help
+    Displays the version of the quasardb database tool.
 
 .. option:: --database=<path>
 
@@ -66,31 +64,6 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         Analyze the database in the current directory::
 
             qdb_dbtool --database=. --analyze
-
-.. option:: --dump, -d
-
-    Dumps the content of the database to the standard output.
-
-    Example
-        Dump the database in the current directory::
-
-            qdb_dbtool --database=. --dump
-
-.. option:: --backup=<path>, -b <path>
-
-    Copies all the content of the database to a new database in the specified directory. If the directory does not exist it will be created.
-    If a database exists in the destination directory, its content may be overwritten by the new content.
-
-    Arguments
-        A string representing the path where a copy of the database will be created.
-
-    Default value
-        None
-
-    Example
-        Backup the database in /var/quasardb/db to /var/backup/quasardb/db ::
-
-            qdb_dbtool --database=/var/quasardb/db --backup=/var/backup/quasardb/db
 
 .. option:: --repair, -r
 
