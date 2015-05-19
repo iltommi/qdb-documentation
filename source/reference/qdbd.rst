@@ -612,7 +612,9 @@ The default configuration file is shown below::
                 "storage_warning_interval": 3600,
                 "storage_warning_level": 90,
                 "sync": false,
-                "transient": false
+                "transient": false,
+                "data_cache": 100000000,
+                "meta_data_cache": 10000000
             },
             "limiter":
             {
@@ -695,6 +697,14 @@ The default configuration file is shown below::
 
     A boolean representing whether or not to persist data on the hard drive. If true, all data will be stored in memory.
 
+.. describe:: global::depot::data_cache
+
+    An integer representing the maximum size for the data cache. The default value is 100 megabytes. Values below 4 megabytes are invalid and will be set to 4 megabytes.
+
+.. describe:: global::depot::meta_data_cache
+
+    An integer representing the maximum size for the metadata cache. The default value is 10 megabytes. Values below 4 megabytes are invalid and will be set to 4 megabytes.
+
 .. describe:: global::limiter::max_bytes
 
     An integer representing the maximum amount of memory usage in bytes for each node's cache. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the byte limit.
@@ -740,7 +750,7 @@ The default configuration file is shown below::
     
 .. describe:: local::logger::log_to_console
 
-    A boolean value representing whether or not the quasardb daemon should log to the console it was spawned from.
+    A boolean value representing whether or not the quasardb daemon should log to the console it was spawned from. This value is ignored if local::user::daemon is true.
 
 .. describe:: local::logger::log_to_syslog
 

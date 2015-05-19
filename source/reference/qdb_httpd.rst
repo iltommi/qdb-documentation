@@ -478,7 +478,7 @@ The default configuration file is shown below::
 
 .. describe:: log_config::log_to_console
 
-    A boolean value representing whether or not the qdb_httpd daemon should log to the console it was spawned from.
+    A boolean value representing whether or not the qdb_httpd daemon should log to the console it was spawned from.  This value is ignored if local::user::daemon is true.
 
 .. describe:: log_config::log_to_syslog
 
