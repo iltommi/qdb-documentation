@@ -642,13 +642,13 @@ The default configuration file is shown below::
                 "client_timeout": 60,
                 "idle_timeout": 600,
                 "listen_on": "127.0.0.1:2836",
-                "partitions_count": 13,
-                "server_sessions": 2000
+                "partitions_count": 1,
+                "server_sessions": 20000
             },
             "user":
             {
                 "daemon": false,
-                "license_file": "qdb_license.txt"
+                "license_file": ""
             }
         }
     }
@@ -760,7 +760,7 @@ The default configuration file is shown below::
 
 .. describe:: local::network::partitions_count
 
-    An integer representing the number of partitions, or worker threads, quasardb can spawn to perform operations. The ideal number of partitions is close to the number of physical cores your server has. If left to its default value of 0, the daemon will choose the best compromise it can.
+    An integer representing the number of partitions, or worker threads, quasardb can spawn to perform operations. The ideal number of partitions is close to the number of physical cores your server has. If set to 0, the daemon will choose the best compromise it can.
 
 .. describe:: local::network::server_sessions
 
