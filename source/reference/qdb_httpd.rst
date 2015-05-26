@@ -27,18 +27,19 @@ Quick Reference
                 Option                               Usage               Default         Req. Version
  ===================================== ============================ =================== ==============
  :option:`-h`                          display help                                     
+ :option:`-v`                          display version information                       
  :option:`--gen-config`                generate default config file                      >=1.1.3
  :option:`-c`, `--config-file`         specify config file                               >=1.1.3
  :option:`-d`, `--daemonize`           daemonize                                        
- :option:`-r`, `--root`                html files directory         ./html              
  :option:`-a`, `--address`             address to listen on         127.0.0.1:8080      
+ :option:`-r`, `--root`                html files directory         ./html              
+ :option:`--node`                      address:port of server       127.0.0.1:2836      
+ :option:`-l`, `--log-file`            log on given file                                
  :option:`--log-dump`                  dump file location           qdb_error_dump.txt  
  :option:`--log-flush-interval`        change log flush             3                   
- :option:`-l`, `--log-file`            log on given file                                
  :option:`--log-level`                 change log level             info                
  :option:`--log-syslog`                log on syslog                                    
  :option:`-t`, `--threads`             number of threads to use     1                  
- :option:`--node`                      address:port of server       127.0.0.1:2836      
  ===================================== ============================ =================== ==============
 
 
@@ -236,6 +237,10 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --help
 
+.. option:: -v
+
+    Displays qdb_httpd version information.
+
 .. option:: --gen-config
 
     Generates a JSON configuration file with default values and prints it to STDOUT.
@@ -276,16 +281,6 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd -d
 
-.. option:: -r <path>, --root <path>
-
-    Specifies the root directory where the administration HTML files lie.
-
-    Argument
-        A string representing the path (relative or absolute) to the administration HTML files.
-
-    Default value
-        html
-
 .. option:: -a <address>:<port>, --address=<address>:<port>
 
     Specifies the address and port on which the server will listen.
@@ -302,33 +297,31 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
             qdbd --address=0.0.0.0:80
 
 
-.. option:: --log-dump=<path>
+.. option:: -r <path>, --root <path>
 
-    Activates logging to a system error dump file in case of a crash.
-
-    Argument
-        A string representing a relative or absolute path to the dump file.
-
-    Example
-        Dump to qdb_error_dump.txt: ::
-
-            qdb_httpd --log-dump=qdb_error_dump.txt
-
-
-.. option:: --log-flush-interval=<delay>
-
-    How frequently log messages are flushed to output, in seconds.
+    Specifies the root directory where the administration HTML files lie.
 
     Argument
-        An integer representing the number of seconds between each flush.
+        A string representing the path (relative or absolute) to the administration HTML files.
 
     Default value
-        3
+        html
 
-    Example
-        Flush the log every minute: ::
 
-            qdb_httpd --log-flush-interval=60
+.. option:: --node <address>:<port>
+
+   Specifies the address and port of the node to which the http server will connect.
+
+   Argument
+        The address and port of a machine where a quasardb node is running. The string can be a host name or an IP address.
+
+   Default value
+        127.0.0.0:2836, the IPv4 localhost address and the port 2836
+
+   Example
+        If the node listens on localhost and the port 5009::
+
+            qdb_httpd --node=localhost:5009
 
 
 .. option:: -l <path>, --log-file=<path>
@@ -342,6 +335,24 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         Log in /var/log/qdbd.log: ::
 
             qdb_httpd --log-file=/var/log/qdbd.log
+
+
+.. option:: --log-dump=<path>
+
+    Activates logging to a system error dump file in case of a crash.
+
+    Argument
+        A string representing a relative or absolute path to the dump file.
+
+    Example
+        Dump to qdb_error_dump.txt: ::
+
+            qdb_httpd --log-dump=qdb_error_dump.txt
+
+
+.. option:: --log-syslog
+
+    Activates logging to the system log.
 
 
 .. option:: --log-level=<value>
@@ -367,9 +378,20 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
             qdb_httpd --log-level=debug
 
 
-.. option:: --log-syslog
+.. option:: --log-flush-interval=<delay>
 
-    Activates logging to the system log.
+    How frequently log messages are flushed to output, in seconds.
+
+    Argument
+        An integer representing the number of seconds between each flush.
+
+    Default value
+        3
+
+    Example
+        Flush the log every minute: ::
+
+            qdb_httpd --log-flush-interval=60
 
 
 .. option:: -t <count>, --threads=<count>
@@ -386,22 +408,6 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To use two listening threads::
 
             qdb_httpd --threads=2
-
-.. option:: --node <address>:<port>
-
-   Specifies the address and port of the node to which the http server will connect.
-
-   Argument
-        The address and port of a machine where a quasardb node is running. The string can be a host name or an IP address.
-
-   Default value
-        127.0.0.0:2836, the IPv4 localhost address and the port 2836
-
-   Example
-        If the node listens on localhost and the port 5009::
-
-            qdb_httpd --node=localhost:5009
-
 
 
 
