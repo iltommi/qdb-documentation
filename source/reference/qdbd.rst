@@ -590,18 +590,18 @@ The default configuration file is shown below::
         {
             "depot":
             {
+                "data_cache": 104857600,
                 "history": false,
                 "max_bytes": 0, 
                 "max_transaction_duration": 300,
                 "max_versions": 7,
+                "meta_data_cache": 10485760,
                 "replication_factor": 1,
                 "root": "db",
                 "storage_warning_interval": 3600,
                 "storage_warning_level": 90,
                 "sync": false,
-                "transient": false,
-                "data_cache": 100000000,
-                "meta_data_cache": 10000000
+                "transient": false
             },
             "limiter":
             {
