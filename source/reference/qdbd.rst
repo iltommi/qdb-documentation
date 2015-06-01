@@ -24,7 +24,7 @@ Quick Reference
                 Option                               Usage                  Default             Global     Req. Version
  ===================================== =============================== ===================== ============ ==============
  :option:`-h`                          display help                                              No       
- :option:`-v`                          display version information                               No       
+ :option:`-v`                          display version information                               No        
  :option:`--gen-config`                generate default config file                              No        >=1.1.3
  :option:`-c`, `--config-file`         specify config file                                       No        >=1.1.3
  :option:`-d`                          daemonize                                                 No       
@@ -47,7 +47,7 @@ Quick Reference
  :option:`--log-syslog`                log on syslog                                             No       
  :option:`--log-level`                 change log level                info                      No       
  :option:`--log-flush-interval`        change log flush                3                         No       
- ===================================== =============================== =================== ============== ==============
+ ===================================== =============================== ===================== ============ ==============
 
 
 
