@@ -63,6 +63,10 @@ If it is impossible to recover from an error during the iteration, the iteration
 
 The "current" state of the cluster is what is iterated upon. No "snapshot" is made. If an entry is added during iteration it may, or may not, be included in the iteration, depending on its placement respective to the iteration cursor. It is planned to change this behaviour to allow "consistent" iteration in a future release.
 
+.. note::
+	Entries cannot be iterated if the cluster is in transient mode.
+
+
 Prefix based search
 -------------------
 

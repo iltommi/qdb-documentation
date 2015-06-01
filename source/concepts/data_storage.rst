@@ -54,6 +54,7 @@ Entries are often kept resident in a write cache so the daemon can rapidly serve
 
 If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true. Disabling the write cache may have an impact on performance.
 
+.. _transient-mode:
 
 Transient mode
 ^^^^^^^^^^^^^^
@@ -69,6 +70,7 @@ But:
     * Entries evicted from memory will be lost (see :ref:`eviction`)
     * Node failure may imply irrecoverable data loss
     * Node and cluster statistics will not be recorded
+    * Entries cannot be iterated upon
 
 
 .. _data-migration:

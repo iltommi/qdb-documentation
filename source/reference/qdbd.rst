@@ -109,7 +109,7 @@ Each node saves its data in its "root" directory, determined by its configuratio
 
 Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaenous requests. Data may not be synced to the disk at all times. If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true.
 
-You can also disable data storage altogether, making quasardb a pure in-memory repository. See :option:`--transient`.
+You can also disable data storage altogether, making quasardb a pure in-memory repository. In transient mode, entries will be lost on eviction or node shutdown and entries cannot be interated upon. See :option:`--transient` and `transient-mode`.
 
 For more information, see :doc:`../concepts/data_storage` and :doc:`../concepts/data_transfer`.
 
@@ -523,7 +523,7 @@ Global
 
 .. option:: --transient
 
-    Disable persistence. Evicted data is lost when qdbd is transient.
+    Disable persistence. Evicted data is lost when qdbd is transient. For more information, see `transient-mode`.
 
 
 .. option:: --limiter-max-bytes=<value>
@@ -682,7 +682,7 @@ The default configuration file is shown below::
 
 .. describe:: global::depot::transient
 
-    A boolean representing whether or not to persist data on the hard drive. If true, all data will be stored in memory.
+    A boolean representing whether or not to persist data on the hard drive. If true, all data will be stored in memory. Entries cannot be interated in transient mode. For more information, see `transient-mode`.
 
 .. describe:: global::depot::data_cache
 
