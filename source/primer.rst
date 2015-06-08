@@ -5,6 +5,7 @@ What is quasardb?
 -----------------
 
 quasardb is a key / value store. It is fast and scalable, handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a `NoSQL database <http://en.wikipedia.org/wiki/NoSQL>`_.
+
 quasardb is *limitless*. If your computer has enough memory and enough disk space to store it, quasardb can handle it.
 
 Where would you want to use quasardb? Here are a couple of use cases:
@@ -56,7 +57,9 @@ But, wait, there's more!
 
 The shell tool is not always the right tool for the job.
 If you have your own application (web or not), you may find it cumbersome to run a third-party program every time you want to access the database.
-That's why we have an API! We currently support :doc:`api/c`, :doc:`api/java` and :doc:`api/python`.
+That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/java`, :doc:`api/php`, :doc:`api/net` and :doc:`api/python`.
+
+You can find our APIs on `github <http://github.com/bureau14>`_.
 
 Here is a short Python code snippet::
 
@@ -65,49 +68,42 @@ Here is a short Python code snippet::
     # connecting, default port is 2836
     c = qdb.Client("qdb://127.0.0.1:2836"))
     # adding an entry
-    c.put("entry", "really amazing...")
+    c.blob("entry").put("really amazing...")
     # getting and printing the content
-    print c.get("entry")
+    print c.blob("entry").get()
     # closing connection
     del c
 
 
-But, wait, there's more!
-------------------------
+Automatic object lifetime
+-------------------------
 
 You might want an entry added in quasardb to be automatically removed after a certain amount of time. 
 
 Here's one way to do it::
 
     # entry will expire and be removed in 10s
-    c.expires_from_now("entry", 10)
+    c.blob("entry").expires_from_now(10)
 
-But, wait, there's more!
-------------------------
+Blobs are nice but what about something more beefy?
+---------------------------------------------------
 
-That's all well and good, but what if you have no idea what the exact name of the key is?
+quasardb supports integers and queues, out of the box. 
 
-No problem, just tell quasardb the starting characters and it will return a match list::
+Queues support efficient and concurrent insertion at the beginning and the end::
 
-    # looking for entries starting with "ent"
-    print c.prefix_get("ent")
+    c.queue("my_queue").push_back("data")
+    print c.queue("my_queue").back()
+    c.queue("my_queue").push_front("front_data")
+    print c.queue("my_queue").front()
 
-But, wait, there's more!
-------------------------
+Integers are native signed 64-bit integers and support atomic additions::
 
-Working on web-oriented technologies? We've thought about you as well and built a web bridge, :doc:`reference/qdb_httpd`.
+    c.integer("value").put(20)
+    c.integer("value").add(-10)
+    print c.integer("value").get()
 
-Like the qdb daemon, start by generating a default configuration file::
-
-    qdb_httpd --gen-config > qdb_httpd_default_config.conf
-
-Then, start the web bridge with::
-
-    qdb_httpd -c qdb_httpd_default_config.conf
-
-The web bridge can help you monitor the node and get entries in JSON or JSONP format, for example, with wget::
-
-    wget "localhost:8080/get?alias=entry"
+Because everything is done server-side these powerful features will enable you to have many clients safely operate on the same entries. For example, integers make it easy to implement reliable counters.
 
 Wrap up
 -------
@@ -116,7 +112,10 @@ Things to remember about quasardb:
 
     * Fast and scalable key/value store
     * High-performance binary protocol
-    * Multi-platform: FreeBSD 8-9, Linux 2.6+ and Windows NT (32-bit and 64-bit)
+    * Multi-platform: FreeBSD, Linux 2.6+, OS X and Windows NT (32-bit and 64-bit)
     * Peer-to-peer network distribution
     * Transparent persistence
+    * Distributed transactions
+    * Rich typing
+    * Tag-based search
     * Fire and forget: deploy, run and return to your core business.
