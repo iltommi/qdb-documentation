@@ -46,6 +46,8 @@ Introduction
 
 The quasardb .NET API builds on the C++ API and delivers convenience and flexibility with great performance. Because the behavior is similar to that of the C++ API, you may wish to familiarize yourself with the C++ API before working with the .NET API (see :doc:`cpp`).
 
+You may download the .NET API from the quasardb site or Github at `https://github.com/bureau14/qdb-api-dotnet <https://github.com/bureau14/qdb-api-dotnet>`_.
+
 DLL
 ---
 
