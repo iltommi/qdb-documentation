@@ -391,12 +391,12 @@ Example::
       
       Connects to a quasardb cluster through the specified URI. The URI contains the addresses of the bootstraping nodes, other nodes are discovered during the first connection. Having more than one node in the URI allows to connect to the cluster even if the first node is down. ::
           
-          $cluster = new QdbCluster('qdb://192.168.0.100:2836,192.168.0.101:2836,');
+          $cluster = new QdbCluster('qdb://192.168.0.100:2836,192.168.0.101:2836');
           
       Throws a `QdbConnectionRefusedException` if the connection **to every node** fails.
       Throws a `QdbTimeoutException` if the connection **to every node** times out.
       
-      :param array $uri: A string in the format "qdb://host:port[,host:port]".
+      :param string $uri: A string in the format "qdb://host:port[,host:port]".
   
   .. php:method:: blob (string $alias)
       
