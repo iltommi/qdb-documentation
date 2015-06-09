@@ -12,3 +12,4 @@ API Reference
    java
    php
    hadoop
+   nodejs
