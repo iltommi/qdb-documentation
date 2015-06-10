@@ -208,11 +208,4 @@ When adding entries, this is generally not an issue as the caller knows the size
 Reference
 ---------
 
-.. toctree::
-    :maxdepth: 3
-    
-    packages
-
-The reference guide is also available in the following locations:
-  * `Single-page Javadoc format <javadoc/index.html>`_
-  * HTML pages in the Java API archive, in the ``doc`` directory.
+* `Javadoc website <https://doc.quasardb.net/java/>`_

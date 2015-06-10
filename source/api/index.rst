@@ -2,14 +2,14 @@ API Reference
 =================================
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    common
    c
    cpp
    python
-   net
    java
    php
    hadoop
    nodejs
+   6.9. .NET (C#, VisualBasic...) <https://doc.quasardb.net/dotnet/>
