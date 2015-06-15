@@ -11,8 +11,6 @@ if NOT "%PAPER%" == "" (
 	set ALLSPHINXOPTS=-D latex_paper_size=%PAPER% %ALLSPHINXOPTS%
 )
 set QDB_JAVA_SRC=qdb\java
-set RST_API_DIR=source\api
-set JAVASPHINX=javasphinx-apidoc
 
 if "%1" == "" goto help
 
@@ -40,13 +38,10 @@ if "%1" == "help" (
 if "%1" == "clean" (
 	for /d %%i in (%BUILDDIR%\*) do rmdir /q /s %%i
 	del /q /s %BUILDDIR%\*
-	rmdir /q /s %RST_API_DIR%\com
-	del /q /s %RST_API_DIR%\packages.rst
 	goto end
 )
 
 if "%1" == "html" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b html %ALLSPHINXOPTS% %BUILDDIR%/html
 	if errorlevel 1 exit /b 1
 	echo.
@@ -55,7 +50,6 @@ if "%1" == "html" (
 )
 
 if "%1" == "dirhtml" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b dirhtml %ALLSPHINXOPTS% %BUILDDIR%/dirhtml
 	if errorlevel 1 exit /b 1
 	echo.
@@ -64,7 +58,6 @@ if "%1" == "dirhtml" (
 )
 
 if "%1" == "singlehtml" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b singlehtml %ALLSPHINXOPTS% %BUILDDIR%/singlehtml
 	if errorlevel 1 exit /b 1
 	echo.
@@ -73,7 +66,6 @@ if "%1" == "singlehtml" (
 )
 
 if "%1" == "pickle" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b pickle %ALLSPHINXOPTS% %BUILDDIR%/pickle
 	if errorlevel 1 exit /b 1
 	echo.
@@ -82,7 +74,6 @@ if "%1" == "pickle" (
 )
 
 if "%1" == "json" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b json %ALLSPHINXOPTS% %BUILDDIR%/json
 	if errorlevel 1 exit /b 1
 	echo.
@@ -91,7 +82,6 @@ if "%1" == "json" (
 )
 
 if "%1" == "htmlhelp" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b htmlhelp %ALLSPHINXOPTS% %BUILDDIR%/htmlhelp
 	if errorlevel 1 exit /b 1
 	echo.
@@ -101,7 +91,6 @@ if "%1" == "htmlhelp" (
 )
 
 if "%1" == "qthelp" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b qthelp %ALLSPHINXOPTS% %BUILDDIR%/qthelp
 	if errorlevel 1 exit /b 1
 	echo.
@@ -114,7 +103,6 @@ if "%1" == "qthelp" (
 )
 
 if "%1" == "devhelp" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b devhelp %ALLSPHINXOPTS% %BUILDDIR%/devhelp
 	if errorlevel 1 exit /b 1
 	echo.
@@ -123,7 +111,6 @@ if "%1" == "devhelp" (
 )
 
 if "%1" == "epub" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b epub %ALLSPHINXOPTS% %BUILDDIR%/epub
 	if errorlevel 1 exit /b 1
 	echo.
@@ -132,7 +119,6 @@ if "%1" == "epub" (
 )
 
 if "%1" == "latex" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b latex %ALLSPHINXOPTS% %BUILDDIR%/latex
 	if errorlevel 1 exit /b 1
 	echo.
@@ -141,7 +127,6 @@ if "%1" == "latex" (
 )
 
 if "%1" == "text" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b text %ALLSPHINXOPTS% %BUILDDIR%/text
 	if errorlevel 1 exit /b 1
 	echo.
@@ -150,7 +135,6 @@ if "%1" == "text" (
 )
 
 if "%1" == "man" (
-	%JAVASPHINX% -u -o %RST_API_DIR% %QDB_JAVA_SRC%
 	%SPHINXBUILD% -b man %ALLSPHINXOPTS% %BUILDDIR%/man
 	if errorlevel 1 exit /b 1
 	echo.
