@@ -8,4 +8,5 @@ Concepts
    data_storage
    data_transfer
    data_types
+   tags
    transactions
