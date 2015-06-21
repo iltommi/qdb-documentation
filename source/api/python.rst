@@ -128,18 +128,6 @@ By default, entries never expire. To obtain the expiry time of an existing entry
 
     expiry = c.get_expiry_time("entry")
 
-Prefix based search
----------------------
-
-Prefix based search is a powerful tool that helps you lookup entries efficiently.
-
-For example, if you want to find all entries whose aliases start with "record"::
-
-    c = qdb.Client("qdb://127.0.0.1:2836")
-    res = c.prefix_get("record")
-
-The method returns an array of strings matching the provided prefix.
-
 Iteration
 ---------
 

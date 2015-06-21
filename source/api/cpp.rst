@@ -40,7 +40,6 @@ Quick Reference
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_if`                      (:cpp:type:`const char *` alias, :cpp:type:`const char *` comparand, :cpp:type:`size_t` comparand_length);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_all`                     (:cpp:type:`void`);
   :cpp:type:`size_t`                     :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` operations, :cpp:type:`size_t` operations_count);
-  :cpp:type:`std::vector<std::string>`   :cpp:func:`handle::prefix_get`                     (:cpp:type:`const char *` prefix, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_at`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_time);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_from_now`               (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_delta);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::get_expiry_time`                (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t &` expiry_time);
@@ -232,24 +231,6 @@ By default, entries do not expire. To obtain the expiry time of an existing entr
         // error management
     }
 
-
-Prefix based search
----------------------
-
-Prefix based search is a powerful tool that helps you lookup entries efficiently.
-
-For example, if you want to find all entries whose aliases start with "record"::
-
-    qdb_error_t err = qdb_e_uninitialized;
-    std::vector<std::string> results = h.prefix_get("record", err);
-    if (err != qdb_e_ok)
-    {
-        // error management
-    }
-
-    // you now have in results an array string representing the matching entries
-
-The method takes care of allocating all necessary intermediate buffers. The caller does not need to do any explicit memory release.
 
 Batch operations
 -------------------
@@ -536,17 +517,6 @@ Reference
         :param operations_count: Size of the array, in entry count
 
         :returns: The number of successful operations
-
-    .. cpp:function:: std::vector<std::string> prefix_get(const char * prefix, qdb_error_t & error)
-
-        Searches the cluster for all entries whose aliases start with "prefix". The method will return a std::vector of std::string containing the aliases of matching entries.
-
-        The handle must be initialized and connected (see :cpp:func`connect).
-
-        :param prefix: A pointer to a null terminated string representing the search prefix
-        :param error: A reference to an error that will receive the result of the operation.
-
-        :returns: A std::vector of std::string containing the aliases of matching entries.
 
     .. cpp:function:: qdb_error_t expires_at(const char * alias, qdb_time_t expiry_time)
 

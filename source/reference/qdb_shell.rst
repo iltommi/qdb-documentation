@@ -49,7 +49,6 @@ Commands
  :ref:`node_config host <qdbsh_nodeconfig>`                  returns the node configuration as a JSON string
  :ref:`node_status host <qdbsh_nodestatus>`                  returns the node status as a JSON string
  :ref:`node_topology host <qdbsh_nodetopology>`              returns the node topology as a JSON string
- :ref:`prefix_get prefix <qdbsh_prefixget>`                  returns the list of aliases matching the given prefix
  :ref:`put <qdbsh_put>`                                      put data, fails if entry already exists
  :ref:`purge_all <qdbsh_purgeall>`                           removes ALL entries on the WHOLE cluster (Dangerous!)
  :ref:`remove alias <qdbsh_remove>`                          removes the entry
@@ -301,16 +300,6 @@ A command generally requires one or several arguments. Each argument is separate
     
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
     :return: *(string)* The node topology.
-
-
-.. _qdbsh_prefixget:
-.. option:: prefix_get <prefix>
-    
-    Returns the list of aliases matching the given prefix.
-    
-    :param prefix: *(string)* A prefix to search for.
-    :return: *(string)* The list of matching aliases.
-
 
 .. _qdbsh_purgeall:
 .. option:: purge_all

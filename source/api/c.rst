@@ -27,13 +27,10 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_set_option`           (:c:type:`qdb_handle_t` handle, :c:type:`qdb_option_t` option, ...);
   :c:type:`qdb_error_t`       :c:type:`qdb_connect`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri);
   :c:type:`qdb_error_t`       :c:type:`qdb_close`                (:c:type:`qdb_handle_t` handle);
-  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t` results_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_noalloc`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char *` content, :c:type:`size_t *` content_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_get`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`size_t *` content_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_and_remove`       (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`size_t *` content_length);
   :c:type:`void`              :c:type:`qdb_free_buffer`          (:c:type:`qdb_handle_t` handle, :c:type:`char *` buffer);
-  :c:type:`void`              :c:type:`qdb_free_results`         (:c:type:`qdb_handle_t` handle, :c:type:`const char **` results, :c:type:`size_t` results_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t *` results_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_init_operations`      (:c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_run_batch`            (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_free_operations`      (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
@@ -297,29 +294,6 @@ By default, entries never expire. To obtain the expiry time of an existing entry
         // error management
     }
 
-Prefix based search
---------------------
-
-Prefix based search is a powerful tool that helps you lookup entries efficiently. 
-
-For example, if you want to find all entries whose aliases start with "record"::
-
-    const char ** results = 0;
-    size_t results_count = 0;
-
-    r = qdb_prefix_get(handle, "record", &results, &results_count);
-    if (r != qdb_error_ok)
-    {
-        // error management
-    }
-
-    // results now contains an array of null terminated strings
-    // representing the matching entries
-
-The qdb_prefix_get function automatically allocates all required memory. This memory must be released by the caller at a later time::
-
-    qdb_free_results(handle, &results, &results_count);
-
 Batch operations
 -----------------
 
@@ -579,25 +553,6 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * results_count)
-
-    Search the cluster for entries with the provided prefix. The function will return the list of matching aliases, but not the associated content.
-
-    The returned results must be freed with :c:func:`qdb_free_results`
-
-    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
-
-    :param handle: An initialized handle
-    :type handle: qdb_handle_t
-    :param alias: A pointer to a null terminated string representing the prefix to use for the search
-    :type alias: const char ``*``
-    :param results: A pointer to a const char ** that will receive an API allocated array of NULL terminated strings representing the list of matching aliases
-    :type results: const char ``*````*````*``
-    :param results_count: A pointer to a size_t that will receive the number of results
-    :type  results_count: size_t ``*``
-
-    :returns: An error code of type :c:type:`qdb_error_t`
-
 .. c:function:: qdb_error_t qdb_get_noalloc(qdb_handle_t handle, const char * alias, char * content, size_t * content_length)
 
     Retrieves an entry's content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
@@ -669,34 +624,6 @@ Reference
     :type buffer: char *
 
     :returns: This function does not return a value.
-
-.. c:function:: void qdb_free_results(qdb_handle_t handle, const char ** results, size_t results_count)
-
-    Frees a buffer allocated by :c:func:`qdb_prefix_get`.
-
-    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
-    :type handle: qdb_handle_t
-    :param results: A pointer to a buffer to release allocated by :c:func:`qdb_prefix_get`
-    :type results: const char **
-    :param results_count: The number of entries in results
-    :type results_count: size_t
-
-.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * results_count)
-
-    Searches the cluster for all entries whose aliases start with "prefix". The function will allocate an array of strings containing the aliases of matching entries. This array must be freed later with :c:func:`qdb_free_results`.
-
-    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
-
-    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
-    :type handle: qdb_handle_t
-    :param prefix: A pointer to a null terminated string representing the search prefix
-    :type prefix: const char *
-    :param results: A pointer to an array of results to be freed with :c:func:`qdb_free_results`
-    :type results: const char **
-    :param results_count: A pointer to a size_t that will receive the number of results
-    :type results_count: size_t *
-
-    :returns: An error code of type :c:type:`qdb_error_t` 
 
 .. c:function:: qdb_error_t qdb_init_operations(qdb_operations_t * operations, size_t operations_count)
 
