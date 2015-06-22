@@ -476,7 +476,7 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
 The `Tag` class
 ^^^^^^^^^^^^^^^
 
-Represents a tag in a quasardb database. Any entry can be tagged, including tags. Most tag functions are performed on the object itself::
+Represents a tag in a quasardb database. Any entry can be tagged, including other tags. Most tag functions are performed on the object itself::
     
     var b = c.blob('myBlob');
     
