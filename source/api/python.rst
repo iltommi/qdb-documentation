@@ -99,7 +99,7 @@ Expiry is either set at creation or through the `expires_at` and `expires_from_n
 
 To set the expiry time of an entry to 1 minute, relative to the call time::
 
-    c = qdb.Client("qdb://127.0.0.1:2836")
+    c = qdb.Cluster("qdb://127.0.0.1:2836")
     b = c.blob("entry")
     b.put("content")
     b.expires_from_now(60)
