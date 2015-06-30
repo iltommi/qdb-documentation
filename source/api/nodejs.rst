@@ -8,14 +8,17 @@ Quick Reference
    Return Type     Name                                         Arguments                                                                       
  ================ ============================================ =====================================================================================
   string           :js:attr:`Blob::alias`                       ()
-  ..               :js:func:`Blob::put`                         (Buffer content, callback(err))
-  ..               :js:func:`Blob::update`                      (Buffer content, callback(err))
+  ..               :js:func:`Blob::put`                         (Buffer content, [Date expiry_time], callback(err))
+  ..               :js:func:`Blob::update`                      (Buffer content, [Date expiry_time], callback(err))
   ..               :js:func:`Blob::get`                         (callback(err, data))
   ..               :js:func:`Blob::remove`                      (callback(err))
   ..               :js:func:`Blob::addTag`                      (string tagName, callback(err))
   ..               :js:func:`Blob::removeTag`                   (string tagName, callback(err))
   ..               :js:func:`Blob::hasTag`                      (string tagName, callback(err))
   ..               :js:func:`Blob::getTags`                     (callback(err, tags))
+  ..               :js:func:`Blob::expiresAt`                   (Date expiry_time)
+  ..               :js:func:`Blob::expiresFromNow`              (int seconds)
+  Date             :js:func:`Blob::getExpiry`                   ()
   Cluster          :js:func:`Cluster::new`                      (string uri)
   Blob             :js:func:`Cluster::blob`                     (string alias)
   Set              :js:func:`Cluster::hashSet`                  (string alias)
@@ -23,8 +26,8 @@ Quick Reference
   Queue            :js:func:`Cluster::queue`                    (string alias)
   Tag              :js:func:`Cluster::tag`                      (string tagName)
   string           :js:attr:`Integer::alias`                    ()
-  ..               :js:func:`Integer::put`                      (int value, callback(err))
-  ..               :js:func:`Integer::update`                   (int value, callback(err))
+  ..               :js:func:`Integer::put`                      (int value, [Date expiry_time], callback(err))
+  ..               :js:func:`Integer::update`                   (int value, [Date expiry_time], callback(err))
   ..               :js:func:`Integer::get`                      (callback(err, data))
   ..               :js:func:`Integer::remove`                   (callback(err))
   ..               :js:func:`Integer::add`                      (int value, callback(err, data))
@@ -32,6 +35,9 @@ Quick Reference
   ..               :js:func:`Integer::removeTag`                (string tagName, callback(err))
   ..               :js:func:`Integer::hasTag`                   (string tagName, callback(err))
   ..               :js:func:`Integer::getTags`                  (callback(err, tags))
+  ..               :js:func:`Integer::expiresAt`                (Date expiry_time)
+  ..               :js:func:`Integer::expiresFromNow`           (int seconds)
+  Date             :js:func:`Integer::getExpiry`                ()
   string           :js:attr:`Queue::alias`                      ()
   ..               :js:func:`Queue::pushFront`                  (Buffer content, callback(err))
   ..               :js:func:`Queue::pushBack`                   (Buffer content, callback(err))
@@ -115,22 +121,24 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
       
       :returns: A string representing the blob's key.  
   
-  .. js:function:: put (Buffer content, callback(err))
+  .. js:function:: put (Buffer content, [Date expiry_time], callback(err))
       
       Sets blob's content but fails if the blob already exists. See also update().
       
       Aliases beginning with "qdb" are reserved and cannot be used.
       
-      :param Buffer content: a string representing the blob's content to be set.
+      :param Buffer content: A string representing the blob's content to be set.
+      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
   
-  .. js:function:: update (Buffer content, callback(err))
+  .. js:function:: update (Buffer content, [Date expiry_time], callback(err))
       
       Updates the content of the blob.
       
       Aliases beginning with "qdb" are reserved and cannot be used. See also put().
       
-      :param Buffer content: a Buffer representing the blob’s content to be added.
+      :param Buffer content: A Buffer representing the blob’s content to be added.
+      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
 
   .. js:function:: get (callback(err, data))
@@ -171,6 +179,24 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
       Gets an array of tag objects associated with the Blob.
       
       :param function callback(err, tags): A callback or anonymous function with error and array of tags parameters.
+
+  .. js:function:: expiresAt (Date expiry_time)
+      
+      Sets the expiration time for the Blob at a given Date.
+      
+      :param Date expiry_time: A Date at which the Blob expires.
+
+  .. js:function:: expiresFromNow (int seconds)
+      
+      Sets the expiration time for the Blob as a number of seconds from call time.
+      
+      :param int seconds: A number of seconds from call time at which the Blob expires.
+
+  .. js:function:: getExpiry ()
+      
+      Gets the expiration time of the Blob. A return Date of Jan 1, 1970 means the Blob does not expire.
+      
+      :returns: A Date object with the expiration time.
 
 
 The `Cluster` class
@@ -253,18 +279,20 @@ You get a qdb.Integer instance by calling cluster.integer(). Then you can perfor
       
       :returns: A string with the alias of the integer.
   
-  .. js:function:: put (int value, callback(err))
+  .. js:function:: put (int value, [Date expiry_time], callback(err))
       
       Adds an entry. Aliases beginning with "qdb" are reserved and cannot be used.
 
       :param int value: The value of the integer.
+      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
   
-  .. js:function:: update (int value, callback(err))
+  .. js:function:: update (int value, [Date expiry_time], callback(err))
       
       Updates an entry. Aliases beginning with "qdb" are reserved and cannot be used.
       
       :param int value: The value of the integer.
+      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
 
   .. js:function:: get (callback(err, data))
@@ -312,6 +340,24 @@ You get a qdb.Integer instance by calling cluster.integer(). Then you can perfor
       Gets an array of tag objects associated with the Integer.
       
       :param function callback(err, tags): A callback or anonymous function with error and array of tags parameters.
+
+  .. js:function:: expiresAt (Date expiry_time)
+      
+      Sets the expiration time for the Integer at a given Date.
+      
+      :param Date expiry_time: A Date at which the Integer expires.
+
+  .. js:function:: expiresFromNow (int seconds)
+      
+      Sets the expiration time for the Integer as a number of seconds from call time.
+      
+      :param int seconds: A number of seconds from call time at which the Integer expires.
+
+  .. js:function:: getExpiry ()
+      
+      Gets the expiration time of the Integer. A return Date of Jan 1, 1970 means the Integer does not expire.
+      
+      :returns: A Date object with the expiration time.
 
 
 The `Queue` class
