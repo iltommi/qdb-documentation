@@ -12,8 +12,11 @@ FreeBSD
 
  #. Verify your system meets the :ref:`sysreq-freebsd`.
  #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named qdb-server-<ver>-freebsd-64bit.tgz, where <ver> is the version of quasardb you wish to install.
+ #. Download the file named ``qdb-server-<ver>-freebsd-64bit.tgz``, where <ver> is the version of quasardb you wish to install.
  #. Extract the tarball.
+ #. Enter the extracted directory.
+ #. Run ``./bin/qdbd``
+ #. Run ``./bin/qdb_httpd``
 
 If your system does not have libc++ v1, the most straightforward is to install the sources and clang 3.2 (from the ports for example), and then do the following::
 
@@ -28,17 +31,66 @@ If your system does not have libc++ v1, the most straightforward is to install t
 Linux
 -----
 
+Red Hat
+^^^^^^^
+
  #. Verify your system meets the :ref:`sysreq-linux`.
  #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named qdb-server-<ver>-linux-64bit.tgz, where <ver> is the version of quasardb you wish to install.
+ #. Download the file named ``qdb-server-<ver>.x86_64.rpm``
+ #. Run ``sudo rpm -i qdb-server-<ver>.x86_64.rpm``
+ #. Run ``sudo service qdbd start``
+ #. Run ``sudo service qdb_httpd start``
+ 
+ ================= =================
+  File Types        Path
+ ================= =================
+  Config            /etc/qdb
+  Logs              /var/log/qdb
+  Database          /var/lib/qdb/db
+  Libs / Other      /usr/share/qdb
+ ================= =================
+ 
+ Installs as user qdb, group qdb. Default configuration listens on 127.0.0.1:2836.
+
+Debian
+^^^^^^
+
+ #. Verify your system meets the :ref:`sysreq-linux`.
+ #. Log in to https://download.quasardb.net/ with your credentials.
+ #. Download the file named ``qdb-server_<ver>.deb``
+ #. Run ``sudo dpkg -i qdb-server_<ver>.deb``
+ #. Run ``sudo service qdbd start``
+ #. Run ``sudo service qdb_httpd start``
+ 
+ ================= =================
+  File Types        Path
+ ================= =================
+  Config            /etc/qdb
+  Logs              /var/log/qdb
+  Database          /var/db/qdb
+  Libs / Other      /usr/share/qdb
+ ================= =================
+ 
+ Installs as user qdb, group qdb. Default configuration listens on 127.0.0.1:2836.
+ 
+
+Other Distributions
+^^^^^^^^^^^^^^^^^^^
+
+ #. Verify your system meets the :ref:`sysreq-linux`.
+ #. Log in to https://download.quasardb.net/ with your credentials.
+ #. Download the file named ``qdb-server-<ver>-linux-64bit.tgz``, where <ver> is the version of quasardb you wish to install.
  #. Extract the tarball.
+ #. Enter the extracted directory.
+ #. Run ``./bin/qdbd``
+ #. Run ``./bin/qdb_httpd``
 
 Windows
 -------
 
  #. Verify your system meets the :ref:`sysreq-windows`.
  #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named `setup-qdb-server-<ver>.exe`, where <ver> is the version of quasardb you wish to install.
+ #. Download the file named ``setup-qdb-server-<ver>.exe``, where <ver> is the version of quasardb you wish to install.
  #. Run the setup executable.
 
 The setup program ensures all required libraries are installed. There is one setup program for Windows x86 and Windows x64; the setup will install the appropriate version.
