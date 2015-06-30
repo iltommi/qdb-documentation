@@ -134,5 +134,6 @@ Reference
 
 .. automodule:: qdb
     :members:
+    :inherited-members:
     :show-inheritance:
 
