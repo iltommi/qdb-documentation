@@ -27,20 +27,20 @@ Quick Reference
  :option:`-v`                          display version information                               No        
  :option:`--gen-config`                generate default config file                              No        >=1.1.3
  :option:`-c`, `--config-file`         specify config file                                       No        >=1.1.3
- :option:`-d`                          daemonize                                                 No       
+ :option:`-d`, `--daemonize`           daemonize                                                 No       
  :option:`--license-file`              specify license                 qdb_license.txt           No       
  :option:`-a`                          address to listen on            127.0.0.1:2836            No       
- :option:`-s`                          max client sessions             2000                      No       
+ :option:`-s`                          max client sessions             20000                     No       
  :option:`--idle-duration`             max seconds to idle timeout     600                       No
  :option:`--request-timeout`           max seconds to request timeout  60                        No
  :option:`--peer`                      one peer to form a cluster                                No       
  :option:`--id`                        set the node id                 generated                 No       
- :option:`-r`                          persistence directory           ./db                      Yes      
+ :option:`-r`, `--root`                persistence directory           ./db                      Yes      
  :option:`--sync`                      sync every disk write                                     Yes      
  :option:`--replication`               sets the replication factor     1                         Yes      
  :option:`--max-depot-size`            max db size on node             0 (disabled)              Yes       >=1.1.3
  :option:`--transient`                 disable persistence                                       Yes      
- :option:`--limiter-max-entries-count` max entries in cache            1000000                   Yes      
+ :option:`--limiter-max-entries-count` max entries in cache            100000                    Yes      
  :option:`--limiter-max-bytes`         max bytes in cache              Automatic                 Yes      
  :option:`-l`                          log on given file                                         No       
  :option:`--log-dump`                  dump file location              qdb_error_dump.txt        No       
@@ -127,7 +127,7 @@ The ideal number of partitions is close to the number of physical cores your ser
 .. note::
     Unless a performance issue is identified, it is best to let the daemon compute the partition count.
 
-Use :option:`--limiter-max-entries-count` (defaults to 1,000,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+Use :option:`--limiter-max-entries-count` (defaults to 100,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 
 Operating limits
 ================
@@ -558,7 +558,7 @@ Global
         An integer representing the maximum number of entries allowed in memory.
 
     Default value
-        1,000,000
+        100,000
 
     Example
         To keep the number of entries in memory below 101::
@@ -606,7 +606,7 @@ The default configuration file is shown below::
             "limiter":
             {
                 "max_bytes": 0,
-                "max_in_entries_count": 1000000
+                "max_in_entries_count": 100000
             }
         },
        "local":
