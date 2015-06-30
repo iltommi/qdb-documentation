@@ -29,7 +29,7 @@ Quick Reference
  :option:`-h`                          display help                                     
  :option:`-v`                          display version information                       
  :option:`--gen-config`                generate default config file                      >=1.1.3
- :option:`-c`, `--config-file`         specify config file                               >=1.1.3
+ :option:`-c`, `--config`              specify config file                               >=1.1.3
  :option:`-d`, `--daemonize`           daemonize                                        
  :option:`-a`, `--address`             address to listen on         127.0.0.1:8080      
  :option:`-r`, `--root`                html files directory         ./html              
