@@ -57,7 +57,7 @@ But, wait, there's more!
 
 The shell tool is not always the right tool for the job.
 If you have your own application (web or not), you may find it cumbersome to run a third-party program every time you want to access the database.
-That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/java`, :doc:`api/php`, `.NET <https://doc.quasardb.net/dotnet/>`_ and :doc:`api/python`.
+That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_ and :doc:`api/python`.
 
 You can find our APIs on `github <http://github.com/bureau14>`_.
 
