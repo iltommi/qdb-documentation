@@ -1067,7 +1067,7 @@ Reference
 
     .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
-.. c:function:: qdb_error_t qdb_iterator_begin(qdb_handle_t handle, qdb_const_iterator *iterator)
+.. c:function:: qdb_error_t qdb_iterator_begin(qdb_handle_t handle, qdb_const_iterator * iterator)
 
     Initializes an iterator and make it point to the first entry in the cluster. Iteration is unordered. If no entry is found, the function will return qdb_e_alias_not_found.
 
@@ -1081,7 +1081,7 @@ Reference
     :type iterator: qdb_const_iterator *
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_iterator_rbegin(qdb_handle_t handle, qdb_const_iterator *iterator)
+.. c:function:: qdb_error_t qdb_iterator_rbegin(qdb_handle_t handle, qdb_const_iterator * iterator)
 
     Initializes an iterator and make it point to the last entry in the cluster. Iteration is unordered. If no entry is found, the function will return qdb_e_alias_not_found.
 
@@ -1143,80 +1143,288 @@ Reference
     
     Inserts a value into a hset. Creates the hset if it does not already exist.
     
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to an user allocated buffer with the entry's content.
+    :type content: char *
+    :param content_length: The length of the target buffer, in bytes.
+    :type content_length: size_t *
+    :returns: An error code of type :c:type:`qdb_error_t`
+    
 .. c:function:: qdb_error_t qdb_hset_erase(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
     
     Removes a value from a hset. The hset must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to a buffer to search for and remove.
+    :type content: char *
+    :param content_length: A pointer to a size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
+    :type content_length: size_t *
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_hset_contains (qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
     
     Determines if a hset has a given value. The hset must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param content: A pointer to a buffer to search for and compare against.
+    :type content: char *
+    :param content_length: A pointer to a size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
+    :type content_length: size_t *    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_int_put(qdb_handle_t handle, const char * alias, qdb_int integer, qdb_time_t expiry_time)
     
     Creates a new integer. Errors if the integer already exists.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param integer: The value of the new qdb_int.
+    :type integer: A :c:type:`qdb_int`.
+    :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+    :type expiry_time: qdb_time_t
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_int_update(qdb_handle_t handle, const char * alias, qdb_int integer, qdb_time_t expiry_time)
     
     Updates an existing integer or creates one if it does not exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param integer: The value of the new qdb_int.
+    :type integer: A :c:type:`qdb_int`.
+    :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+    :type expiry_time: qdb_time_t
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_int_get(qdb_handle_t handle, const char * alias, qdb_int * integer)
     
     Retrieves the value of an integer. The integer must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param integer: The value of the retrieved qdb_int.
+    :type integer: A pointer to a :c:type:`qdb_int`.
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_int_add(qdb_handle_t handle, const char * alias, qdb_int addend, qdb_int * result)
     
     Atomically addes the value to the integer. The integer must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param addend: The value that will be added to the existing qdb_int.
+    :type addend: A :c:type:`qdb_int`.
+    :param result: A pointer that will be updated to point to the new qdb_int.
+    :type result: A pointer to a :c:type:`qdb_int`.
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_size(qdb_handle_t handle, const char * alias, size_t * size)
     
     Retrieves the size of the queue. The queue must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param size: A pointer that will be updated with the size of the queue.
+    :type size: A pointer to a :c:type:`size_t`.
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_at(qdb_handle_t handle, const char * alias, size_t index, const char ** content, size_t * content_length)
     
     Retrieves the value of the queue at the specified index. The queue must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param index: The index you wish to retrieve.
+    :type index: :c:type:`size_t`
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content.
+    :type content: char **
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_push_front(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
     
     Inserts the content at the front of the queue. Creates the queue if it does not exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to the content that will be added to the queue.
+    :type content: const char *
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+    
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_push_back(qdb_handle_t handle, const char * alias, const char * content, size_t content_length)
     
     Inserts the content at the back of the queue. Creates the queue if it does not exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to the content that will be added to the queue.
+    :type content: const char *
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_pop_front(qdb_handle_t handle, const char * alias, const char ** content, size_t content_length)
     
     Removes and retrieves the item at the front of the queue. The queue must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content.
+    :type content: char **
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_pop_back(qdb_handle_t handle, const char * alias, const char ** content, size_t content_length)
     
     Removes and retrieves the item at the back of the queue. The queue must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content.
+    :type content: char **
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_front(qdb_handle_t handle, const char * alias, const char ** content, size_t content_length)
     
     Retrieves the item at the front of the queue. The queue must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content.
+    :type content: char **
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_queue_back(qdb_handle_t handle, const char * alias, const char ** content, size_t content_length)
     
     Retrives the item at the back of the queue. The queue must already exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param content: A pointer to a pointer that will be set to a function-allocated buffer holding the entry's content.
+    :type content: char **
+    :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+    :type content_length: size_t *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_add_tag(qdb_handle_t handle, const char * alias, const char * tag)
     
     Assigns a tag to an entry. The tag is created if it does not exist.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param tag: A pointer to a null terminated string representing the tag.
+    :type tag: const char *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_has_tag(qdb_handle_t handle, const char * alias, const char * tag)
     
     Determines if a given tag has been assigned to an entry.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param tag: A pointer to a null terminated string representing the tag.
+    :type tag: const char *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_remove_tag(qdb_handle_t handle, const char * alias, const char * tag)
     
     Removes a tag assignment from an entry.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param tag: A pointer to a null terminated string representing the tag.
+    :type tag: const char *
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_get_tagged(qdb_handle_t handle, const char * tag, const char *** aliases, size_t aliases_count)
     
     Retrieves the aliases that have been tagged with the given tag.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param tag: A pointer to a null terminated string representing the tag.
+    :type tag: const char *
+    :param aliases: A pointer to a pointer of an array of alias pointers. This will be set to list each alias tagged with the given tag.
+    :type aliases: :c:type:`const char ***`
+    :param aliases_count: The number of aliases in the array.
+    :type aliases_count: size_t
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_get_tags(qdb_handle_t handle, const char * alias, const char *** tags, size_t tags_count)
     
     Retrieves the tags assigned to the given alias.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param tags: A pointer to a pointer of an array of tag pointers. This will be set to list each tag assigned to the alias.
+    :type tags: :c:type:`const char ***`
+    :param aliases_count: The number of tags in the array.
+    :type aliases_count: size_t
+    
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 
