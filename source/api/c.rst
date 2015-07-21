@@ -858,7 +858,7 @@ Reference
     :param operations_count: Size of the array, in entry count
     :type operations_count: size_t
 
-    :returns: The number of successful operations
+    :returns: An error code of type :c:type:`qdb_error_t` 
 
 .. c:function:: qdb_error_t qdb_run_transaction(qdb_handle_t handle, qdb_operations_t * operations, size_t operations_count, size_t * failed_index)
 
@@ -875,7 +875,7 @@ Reference
     :param failed_index: The index in the operations array for the operation that failed.
     :type failed_index: size_t
 
-    :returns: The number of successful operations
+    :returns: An error code of type :c:type:`qdb_error_t` 
 
 .. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, size_t operations_count)
 
@@ -1175,8 +1175,8 @@ Reference
     :type handle: qdb_handle_t
     :param content: A pointer to a buffer to search for and compare against.
     :type content: char *
-    :param content_length: A pointer to a size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
-    :type content_length: size_t *    
+    :param content_length: A size_t with the length of the target buffer, in bytes.
+    :type content_length: size_t
     :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_int_put(qdb_handle_t handle, const char * alias, qdb_int integer, qdb_time_t expiry_time)
