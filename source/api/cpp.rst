@@ -27,8 +27,6 @@ Quick Reference
   :cpp:type:`bool`                       :cpp:func:`const_iterator::operator--`             (:cpp:type:`void`);
   :cpp:type:`const value_type &`         :cpp:func:`const_iterator::operator*`              (:cpp:type:`void`) const;
   :cpp:type:`const value_type *`         :cpp:func:`const_iterator::operator->`             (:cpp:type:`void`) const;
-  :cpp:type:`const_iterator_base &`      :cpp:func:`const_iterator::next`                   (:cpp:type:`void`);
-  :cpp:type:`const_iterator_base &`      :cpp:func:`const_iterator::previous`               (:cpp:type:`void`);
   :cpp:type:`qdb_error_t`                :cpp:func:`const_iterator::last_error`             (:cpp:type:`void`) const;
   :cpp:type:`bool`                       :cpp:func:`const_iterator::valid`                  (:cpp:type:`void`) const;
   :cpp:type:`void`                       :cpp:func:`const_iterator::close`                  (:cpp:type:`void`);
@@ -39,8 +37,6 @@ Quick Reference
   :cpp:type:`bool`                       :cpp:func:`const_reverse_iterator::operator--`     (:cpp:type:`void`);
   :cpp:type:`const value_type &`         :cpp:func:`const_reverse_iterator::operator*`      (:cpp:type:`void`) const;
   :cpp:type:`const value_type *`         :cpp:func:`const_reverse_iterator::operator->`     (:cpp:type:`void`) const;
-  :cpp:type:`const_iterator_base &`      :cpp:func:`const_reverse_iterator::next`           (:cpp:type:`void`);
-  :cpp:type:`const_iterator_base &`      :cpp:func:`const_reverse_iterator::previous`       (:cpp:type:`void`);
   :cpp:type:`qdb_error_t`                :cpp:func:`const_reverse_iterator::last_error`     (:cpp:type:`void`) const;
   :cpp:type:`bool`                       :cpp:func:`const_reverse_iterator::valid`          (:cpp:type:`void`) const;
   :cpp:type:`void`                       :cpp:func:`const_reverse_iterator::close`          (:cpp:type:`void`);
@@ -96,9 +92,11 @@ Quick Reference
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_tag`                     (:cpp:type:`const char *` alias, :cpp:type:`const char *` tag);
   :cpp:type:`std::vector<std::string>`   :cpp:func:`handle::get_tagged`                     (:cpp:type:`const char *` tag, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`std::vector<std::string>`   :cpp:func:`handle::get_tags`                       (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::purge_all`                      (:cpp:type:`void`);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::trim_all`                       (:cpp:type:`void`);
   ..                                     :cpp:type:`handle_ptr`;                            ..
-  :cpp:type:`qdb_error_t`                :cpp:func:`purge_all`                              (:cpp:type:`void`);
-  :cpp:type:`qdb_error_t`                :cpp:func:`trim_all`                               (:cpp:type:`void`);
+  :cpp:type:`std::string`                :cpp:func:`make_error_string`                      (qdb_error_t err);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`make_api_buffer_ptr`                    (qdb_handle_t h, const char * data, size_t length);
   
  ====================================== ================================================== ===================
 
@@ -322,28 +320,86 @@ The quasardb C++ API does not throw any exception on its behalf, however situati
 Reference
 ----------------
 
-.. cpp:function: std::string make_error_string(qdb_error_t err)
+.. cpp:class:: api_buffer
 
-    Translate an error code into a meaningful English message. This function never fails.
+    An API allocated buffer returned by a method from the handle object. This object is meant to be used through the handle methods only.
 
-    :param err: The error code to translate
-    :type err: qdb_error_t
+    .. cpp:function:: bool operator == (const api_buffer & other) const
+        
+        Determine if two API buffers are identical.
+        
+        :param other: The api_buffer to compare against.
+        :returns: True if the buffers are identical, false otherwise.
+    
+    .. cpp:function:: bool operator != (const api_buffer & other) const
+        
+        Determine if two API buffers are not identical.
+        
+        :param other: The api_buffer to compare against.
+        :returns: True if the buffers are not identical, false otherwise.
+    
+    .. cpp:function:: const char * data(void) const
 
-    :returns: A STL string containing an English sentence describing the error.
+        Access the managed buffer, read-only.
+
+        :returns: A pointer to the managed buffer.
+
+    .. cpp:function:: size_t size(void) const
+
+        Gives the size of the managed buffer.
+
+        :returns: The size of the managed buffer.
+
+    .. cpp:function:: size_t size(void) const
+
+        Gives the size of the managed buffer.
+
+        :returns: The size of the managed buffer.
+
+.. cpp:type:: api_buffer_ptr
+
+    A smart pointer to an api_buffer used by the handle object.
+
 
 .. cpp:class:: const_iterator
 
     A forward iterator.
 
-    .. cpp:function: const_iterator & operator ++ (void)
+    .. cpp:function:: bool operator == (const const_iterator & other) const
+        
+        Determine if two const_iterators are identical.
+        
+        :param other: The const_iterator to compare against.
+        :returns: True if the iterators are identical, false otherwise.
+    
+    .. cpp:function:: bool operator != (const const_iterator & other) const
+        
+        Determine if two const_iterators are not identical.
+        
+        :param other: The const_iterator to compare against.
+        :returns: True if the const_iterators are not identical, false otherwise.
+    
+    .. cpp:function:: const_iterator & operator ++ (void)
 
         Moves the iterator one entry forward. If no entry is available, error code will be set to qdb_e_alias_not_found.
 
         :returns: The updated iterator
 
-    .. cpp:function: const_iterator & operator -- (void)
+    .. cpp:function:: const_iterator & operator -- (void)
 
         Moves the iterator one entry backward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+
+    .. cpp:function:: const value_type & operator * (void) const
+    
+        Gets the value of the object at the iterator.
+
+        :returns: A key/value pair.
+
+    .. cpp:function:: const value_type & operator -> (void) const
+    
+        Gets a pointer to the object at the iterator.
+
+        :returns: A pointer to a key/value pair.
 
     .. cpp:function:: qdb_error_t last_error(void) const
 
@@ -352,20 +408,51 @@ Reference
     .. cpp:function:: bool valid(void) const
 
         :returns: true if the iterator is valid and points to an entry
+
+    .. cpp:function:: void close(void)
+    
+        Closes the connection to the iterator.
+
 
 .. cpp:class:: const_reverse_iterator
 
     A reverse iterator.
 
-    .. cpp:function: const_iterator & operator ++ (void)
+    .. cpp:function:: bool operator == (const const_reverse_iterator & other) const
+        
+        Determine if two const_reverse_iterators are identical.
+        
+        :param other: The const_reverse_iterator to compare against.
+        :returns: True if the iterators are identical, false otherwise.
+    
+    .. cpp:function:: bool operator != (const const_reverse_iterator & other) const
+        
+        Determine if two const_reverse_iterators are not identical.
+        
+        :param other: The const_reverse_iterator to compare against.
+        :returns: True if the const_reverse_iterators are not identical, false otherwise.
+    
+    .. cpp:function:: const_reverse_iterator & operator ++ (void)
 
         Moves the iterator one entry backward. If no entry is available, error code will be set to qdb_e_alias_not_found.
 
         :returns: The updated iterator
 
-    .. cpp:function: const_iterator & operator -- (void)
+    .. cpp:function:: const_reverse_iterator & operator -- (void)
 
         Moves the iterator one entry forward. If no entry is available, error code will be set to qdb_e_alias_not_found.
+
+    .. cpp:function:: const value_type & operator * (void) const
+    
+        Gets the value of the object at the iterator.
+
+        :returns: A key/value pair.
+
+    .. cpp:function:: const value_type & operator -> (void) const
+    
+        Gets a pointer to the object at the iterator.
+
+        :returns: A pointer to a key/value pair.
 
     .. cpp:function:: qdb_error_t last_error(void) const
 
@@ -375,8 +462,24 @@ Reference
 
         :returns: true if the iterator is valid and points to an entry
 
+    .. cpp:function:: qdb_error_t last_error(void) const
+
+        :returns: The error code of the last iterator operation
+
+    .. cpp:function:: void close(void)
+    
+        Closes the connection to the iterator.
+
+
 .. cpp:class:: handle
 
+    .. cpp:function:: handle & operator = (handle && h) const
+        
+        Move constructor for handle. Requires ```#define QDBAPI_RVALUE_SUPPORT 1```.
+        
+        :param h: The original handle pointer.
+        :returns: The new handle pointer.
+    
     .. cpp:function:: const_iterator begin(void)
 
        :returns: A forward iterator pointing to the first entry in the cluster.
@@ -408,7 +511,12 @@ Reference
         Set the timeout, in milliseconds, for all operations.
 
         :param timeout: The timeout, in milliseconds.
-        :type timeout: int
+
+    .. cpp:function:: void set_compression(qdb_compression_t comp_level)
+
+        Sets the compression level for all network calls.
+
+        :param comp_level: The compression level.
 
     .. cpp:function:: qdb_error_t connect(const char * uri)
 
@@ -416,7 +524,7 @@ Reference
 
         :param host: A pointer to a null terminated string in the format "qdb://host:port[,host:port]".
 
-        :returns: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :cpp:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t put(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
@@ -429,8 +537,152 @@ Reference
         :param content_length: The length of the entry's content, in bytes.
         :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
 
-        :returns: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :cpp:type:`qdb_error_t`
 
+    .. cpp:function:: qdb_error_t int_get(const char * alias, qdb_int * number)
+    
+        Retrieves the value of an integer. The integer must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param number: The value of the retrieved qdb_int.
+        
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+    
+    .. cpp:function:: qdb_error_t int_put(const char * alias, qdb_int number, qdb_time_t expiry_time)
+    
+        Creates a new integer. Errors if the integer already exists.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param number: The value of the retrieved qdb_int.
+        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+        
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+
+    .. cpp:function:: qdb_error_t int_update(const char * alias, qdb_int number, qdb_time_t expiry_time)
+    
+        Updates an existing integer or creates one if it does not exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param number: The value of the retrieved qdb_int.
+        :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
+        
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+        
+    .. cpp:function:: qdb_error_t int_add(const char * alias, qdb_int addend, qdb_int * result = NULL)
+    
+        Atomically addes the value to the integer. The integer must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param addend: The value that will be added to the existing qdb_int.
+        :param result: A pointer that will be updated to point to the new qdb_int.
+        
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+        
+    .. cpp:function:: qdb_error_t queue_size(const char * alias, size_t * size)
+    
+        Retrieves the size of the queue. The queue must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param size: A pointer to a size_t that will be set to the content's size, in bytes.
+        
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+    
+    .. cpp:function:: api_buffer_ptr queue_at(const char * alias, size_t index, qdb_error_t & error)
+        
+        Retrieves the value of the queue at the specified index. The queue must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param index: The index you wish to retrieve.
+        :param error: A reference to an error that will receive the result of the operation.
+        
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+        
+    .. cpp:function:: qdb_error_t queue_push_front(const char * alias, const char * content, size_t content_length)
+        
+        Inserts the content at the front of the queue. Creates the queue if it does not exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param content: A pointer to the content that will be added to the queue.
+        :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+        
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+        
+    .. cpp:function:: qdb_error_t queue_push_back(const char * alias, const char * content, size_t content_length)
+        
+        Inserts the content at the back of the queue. Creates the queue if it does not exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param content: A pointer to the content that will be added to the queue.
+        :param content_length: A pointer to a size_t that will be set to the content's size, in bytes.
+        
+        :returns: An error code of type :c:type:`qdb_error_t`
+    
+    .. cpp:function:: api_buffer_ptr queue_pop_front(const char * alias, qdb_error_t & error)
+        
+        Removes and retrieves the item at the front of the queue. The queue must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param error: A reference to an error that will receive the result of the operation.
+        
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+    
+    .. cpp:function:: api_buffer_ptr queue_pop_back(const char * alias, qdb_error_t & error)
+        
+        Removes and retrieves the item at the back of the queue. The queue must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param error: A reference to an error that will receive the result of the operation.
+        
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+    
+    .. cpp:function:: api_buffer_ptr queue_front(const char * alias, qdb_error_t & error)
+        
+        Retrieves the item at the front of the queue. The queue must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param error: A reference to an error that will receive the result of the operation.
+        
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+    
+    .. cpp:function:: api_buffer_ptr queue_back(const char * alias, qdb_error_t & error)
+        
+        Retrieves the item at the back of the queue. The queue must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param error: A reference to an error that will receive the result of the operation.
+        
+        :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
+    
+    .. cpp:function:: qdb_error_t hset_insert(const char * alias, const char * content, size_t content_length)
+        
+        Inserts a value into a hset. Creates the hset if it does not already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param content: A pointer to the content that will be added to the hset.
+        :param content_length: A size_t with the length of the target buffer, in bytes.
+        
+        :returns: An error code of type :c:type:`qdb_error_t`
+    
+    .. cpp:function:: qdb_error_t hset_erase(const char * alias, const char * content, size_t content_length)
+        
+        Removes a value from a hset. The hset must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param content: A pointer to the content that will be removed from the hset.
+        :param content_length: A size_t with the length of the target buffer, in bytes.
+        
+        :returns: An error code of type :c:type:`qdb_error_t`
+    
+    .. cpp:function:: qdb_error_t hset_contains(const char * alias, const char * content, size_t content_length)
+    
+        Determines if a hset has a given value. The hset must already exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param content: A pointer to a buffer to search for and compare against.
+        :param content_length: A size_t with the length of the target buffer, in bytes.
+        
+        :returns: An error code of type :c:type:`qdb_error_t`
+    
     .. cpp:function:: qdb_error_t update(const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time)
 
         Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
@@ -442,9 +694,9 @@ Reference
         :param content_length: The length of the entry's content, in bytes.
         :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
 
-        :returns: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :cpp:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_error_t get(const char * alias, char * content, size_t * content_length)
+    .. cpp:function:: qdb_error_t get_noalloc(const char * alias, char * content, size_t * content_length)
 
         Retrieves an entry's content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
 
@@ -452,13 +704,43 @@ Reference
 
         If the buffer is not large enough to hold the data, the function will fail and return ``qdb_e_buffer_too_small``. content_length will nevertheless be updated with entry size so that the caller may resize its buffer and try again.
 
-        The handle must be initialized and connected (see :cpp:func`connect).
+        The handle must be initialized and connected (see :cpp:func`connect`).
 
         :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
         :param content: A pointer to an user allocated buffer that will receive the entry's content.
         :param content_length: A pointer to a size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
 
-        :returns: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+        
+    .. cpp:function:: size_t run_batch(qdb_operation_t * operations, size_t operations_count)
+
+        Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
+
+        It is preferred to use the std::vector version of run_batch where possible.
+
+        :param operations: Pointer to an array of qdb_operations_t
+        :param operations_count: Size of the array, in entry count
+
+        :returns: The number of successful operations
+        
+    .. cpp:function:: std::vector run_batch(const std::vector<batch_request> & requests, size_t & successes_count)
+        
+        Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
+        
+        :param requests: A vector containing the batch requests to run on the cluster.
+        :param operations_count: A reference that will be set to the number of successful operations.
+
+        :returns: A vector containing the batch results.
+        
+    .. cpp:function:: qdb_error_t run_transaction(qdb_operation_t * operations, size_t operations_count, size_t & fail_index)
+    
+        Runs the provided operations as a transaction on the cluster. The operations are run in the provided order. If any operation fails, all previously run operations are rolled back.
+
+        :param operations: Pointer to an array of qdb_operations_t
+        :param operations_count: Size of the array, in entry count
+        :param fail_index: The index in the operations array for the operation that failed.
+
+        :returns: An error code of type :c:type:`qdb_error_t` 
 
     .. cpp:function:: api_buffer_ptr get(const char * alias, qdb_error_t & error)
 
@@ -477,9 +759,7 @@ Reference
 
     .. cpp:function:: api_buffer_ptr get_and_remove(const char * alias, qdb_error_t & error)
 
-        Atomically gets an entry from the quasardb server and removes it.
-
-        If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
+        Atomically gets an entry from the quasardb server and removes it. If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
 
         The function will allocate a buffer large enough to hold the entry's content.
 
@@ -520,51 +800,6 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: qdb_error_t remove(const char * alias)
-
-        Removes an entry from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
-
-        The handle must be initialized and connected (see :cpp:func`connect).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t remove_if(const char * alias, const char * comparand, size_t comparand_length)
-
-        Removes an entry from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
-
-        The handle must be initialized and connected (see :cpp:func`connect).
-
-        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
-        :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
-        :param comparand_length: The length of the buffer, in bytes.
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-    .. cpp:function:: qdb_error_t remove_all(void)
-
-        Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
-
-        This call is *not* atomic; if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code.
-
-        The handle must be initialized and connected (see :cpp:func`connect).
-
-        :returns: An error code of type :c:type:`qdb_error_t`
-
-        .. caution:: This function is meant for very specific use cases and its usage is discouraged.
-
-    .. cpp:function:: size_t run_batch(qdb_operation_t * operations, size_t operations_count)
-
-        Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
-
-        The handle must be initialized and connected (see :cpp:func`connect).
-
-        :param operations: Pointer to an array of qdb_operations_t
-        :param operations_count: Size of the array, in entry count
-
-        :returns: The number of successful operations
-
     .. cpp:function:: qdb_error_t expires_at(const char * alias, qdb_time_t expiry_time)
 
         Sets the expiry time of an existing entry from the quasardb cluster. A value of zero means the entry never expires.
@@ -574,7 +809,7 @@ Reference
         :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
         :param expiry_time: Absolute time after which the entry expires
 
-        :returns: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :cpp:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t expires_from_now(const char * alias, qdb_time_t expiry_delta)
 
@@ -584,9 +819,8 @@ Reference
 
         :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
         :param expiry_time: Time in seconds, relative to the call time, after which the entry expires
-        :type expiry_time: :c:type:`qdb_time_t`
 
-        :returns: An error code of type :c:type:`qdb_error_t`
+        :returns: An error code of type :cpp:type:`qdb_error_t`
 
     .. cpp:function:: qdb_error_t get_expiry_time(const char * alias, qdb_time_t & expiry_time)
 
@@ -597,8 +831,30 @@ Reference
         :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be get.
         :param expiry_time: A pointer to a qdb_time_t that will receive the absolute expiry time.
 
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+    
+    .. cpp:function:: qdb_error_t get_location(const char * alias, remote_node & location)
+        
+        Retrieves an array of locations where the entry is stored in the cluster.
+
+        The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param location: A pointer to a qdb_remote_node_t that will receive the entry locations.
+
         :returns: An error code of type :c:type:`qdb_error_t`
 
+    .. cpp:function:: qdb_error_t get_type(const char * alias, qdb_entry_type_t * entry_type)
+        
+        Retrieves the type of the entry.
+
+        The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param location: A pointer to a qdb_entry_type_t that will receive the entry locations.
+
+        :returns: An error code of type :c:type:`qdb_error_t`
+    
     .. cpp:function:: qdb_error_t node_status(const char * uri, qdb_error_t & error)
 
         Obtains a node status as a JSON string.
@@ -642,30 +898,118 @@ Reference
         :param node: A pointer to a null terminated string in the format "qdb://host:port".
         :param reason: A pointer to a null terminated string detailling the reason for the stop that will appear in the remote node's log.
 
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+
+        .. caution:: This function is meant for very specific use cases and its usage is discouraged.
+    
+    .. cpp:function:: qdb_error_t remove(const char * alias)
+
+        Removes an entry from the quasardb server. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+
+        The handle must be initialized and connected (see :cpp:func`connect).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+
+    .. cpp:function:: qdb_error_t remove_if(const char * alias, const char * comparand, size_t comparand_length)
+
+        Removes an entry from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
+
+        The handle must be initialized and connected (see :cpp:func`connect).
+
+        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+        :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
+        :param comparand_length: The length of the buffer, in bytes.
+
+        :returns: An error code of type :cpp:type:`qdb_error_t`
+
+    .. cpp:function:: qdb_error_t add_tag(const char * alias, const char * tag)
+    
+        Assigns a tag to an entry. The tag is created if it does not exist.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param tag: A pointer to a null terminated string representing the tag.
+        
         :returns: An error code of type :c:type:`qdb_error_t`
+    
+    .. cpp:function:: qdb_error_t has_tag(const char * alias, const char * tag)
+
+    Determines if a given tag has been assigned to an entry.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param tag: A pointer to a null terminated string representing the tag.
+        
+        :returns: An error code of type :c:type:`qdb_error_t`
+
+    .. cpp:function:: qdb_error_t remove_tag(const char * alias, const char * tag)
+        
+        Removes a tag assignment from an entry.
+        
+        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param tag: A pointer to a null terminated string representing the tag.
+        
+        :returns: An error code of type :c:type:`qdb_error_t`
+
+    .. cpp:function:: std::vector<std::string> get_tagged(const char * tag, qdb_error_t & error)
+    
+        Retrieves the aliases that have been tagged with the given tag.
+        
+        :param tag: A pointer to a null terminated string representing the tag.
+        :param error: A qdb_error_t reference that will be set to the error code, if any.
+        
+        :returns: A std::vector containing the aliases tagged with the tag.
+    
+    .. cpp:function:: std::vector<std::string> get_tags(const char * alias, qdb_error_t & error)
+    
+        Retrieves the tags assigned to the given alias.
+        
+        :param alias: A pointer to a null terminated string representing the alias.
+        :param error: A qdb_error_t reference that will be set to the error code, if any.
+        
+        :returns: A std::vector containing the tags assigned to the alias.
+
+    .. cpp:function:: qdb_error_t purge_all(void)
+
+        Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
+
+        This call is *not* atomic; if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code.
+
+        The handle must be initialized and connected (see :cpp:func`connect).
+
+        :returns: An error code of type :cpp:type:`qdb_error_t`
 
         .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
+    .. cpp:function:: qdb_error_t trim_all(void)
+        
+        Manually runs the garbage collector, removing stale versions of entries from the cluster. This may free a small portion of disk space or memory.
+        
+        This call is **not** atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code. 
+
+        The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
+
+        :returns: An error code of type :c:type:`qdb_error_t`
+    
+    
+    
+    
 .. cpp:type:: handle_ptr
 
     A smart pointer to a handle object.
 
-.. cpp:class:: api_buffer
+.. cpp:function:: std::string make_error_string(qdb_error_t err)
 
-    An API allocated buffer returned by a method from the handle object. This object is meant to be used through the handle methods only.
+    Translate an error code into a meaningful English message. This function never fails.
 
-    .. cpp:function:: const char * data(void) const
+    :param err: The error code to translate
 
-        Access the managed buffer, read-only.
+    :returns: A STL string containing an English sentence describing the error.
 
-        :returns: A pointer to the managed buffer.
-
-    .. cpp:function:: size_t size(void) const
-
-        Gives the size of the managed buffer.
-
-        :returns: The size of the managed buffer.
-
-.. cpp:type:: api_buffer_ptr
-
-    A smart pointer definition used by the handle object.
+.. cpp:function:: api_buffer_ptr make_api_buffer_ptr(qdb_handle_t h, const char * data, size_t length)
+    
+    Allocates an api_buffer_ptr.
+    
+    :param h: A qdb handle.
+    :param data: A pointer to a buffer that represents the entry's content.
+    :param length: The length of the buffer, in bytes.
