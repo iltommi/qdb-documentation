@@ -1,6 +1,47 @@
 Change log
 **********
 
+1.2.1 - "Anaximander" - 05/05/2015
+==================================
+
+This release is our most scalable release ever and has been tested with up to 25,000 concurrent connections on a single node running on an entry-level dedicated server.
+
+This release is fully compatible with 1.2.0 and the whole 1.1.x "Pythagoras" line.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+    * Increased default TCP listen queue to 16,384 on all platforms
+    * Stabilization is now less agressive in case of node failures, delivering an even better availability
+    * Multi-connect is now done in a random order
+    * Removed network usage graphs from the administration console
+    * Fixed minor bugs in the configuration generation tool (https://www.quasardb.net/confgen)
+
+1.2.0 - "Anaximander" - 02/09/2015
+==================================
+
+From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+   `Anaximander <http://en.wikipedia.org/wiki/Anaximander>`_ was a pre-Socratic Greek philosopher who lived in Miletus,[3] a city of Ionia (in modern-day Turkey). [...] He was an early proponent of science and tried to observe and explain different aspects of the universe, with a particular interest in its origins, claiming that nature is ruled by laws, just like human societies, and anything that disturbs the balance of nature does not last long.
+
+This release unlocks even more performance with a brand new load-balancing algorithm. Without any configuration, reads will be done on the nearest, most available replica, resulting is better network usage and reduced latency.
+
+We are also pleased to announce a brand new PHP API. Millions of websites accross the world can now benefit from quasardb unrivaled performance.
+
+This release is fully compatible with the 1.1.x "Pythagoras" line.
+
+Changes in this version
+-----------------------
+
+    * Protocol version: 14
+    * New API: PHP
+    * Reads are now automatically balanced, taking distance and load into account
+    * When no licence is available, quasardb now runs in "free" mode for evaluation purposes
+    * Fixed several glitches in the administration console and improved overall responsiveness
+    * Fixed a condition where an invalid time stamp could be displayed in the log file
+    * Web bridge: added an error message when the listening port isn't available
+
 1.1.5 - "Pythagoras" - 12/15/2014
 =================================
 
