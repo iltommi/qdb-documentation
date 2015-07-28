@@ -229,7 +229,7 @@ Example::
   
   .. js:function:: connect (callback(), callback_on_failure(err))
       
-      Connects to a quasardb cluster. The callback functions are called on either success or failure of the connection.
+      Connects to a quasardb cluster. The successful function is run when the ocnnection is made. The failure callback is called for major errors such as disconnections from the cluster after the connection is successful.
           
           c.connect(on_connect_success(), on_connect_failure(err));
           
@@ -432,7 +432,7 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
   
   .. js:function:: at (index, callback(err, data))
       
-      Retrieves the value at the index in the queue.
+      Retrieves the value at the index in the queue. The item at the index must exist or it will throw an error.
       
       :param index: The index of the object in the Queue.
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
