@@ -20,6 +20,7 @@ Quick Reference
   ..               :js:func:`Blob::expiresFromNow`              (int seconds)
   Date             :js:func:`Blob::getExpiry`                   ()
   Cluster          :js:func:`Cluster::new`                      (string uri)
+  Cluster          :js:func:`Cluster::connect`                  (callback(), callback(err))
   Blob             :js:func:`Cluster::blob`                     (string alias)
   Set              :js:func:`Cluster::hashSet`                  (string alias)
   Integer          :js:func:`Cluster::integer`                  (string alias)
@@ -45,6 +46,8 @@ Quick Reference
   ..               :js:func:`Queue::popBack`                    (callback(err, data))
   ..               :js:func:`Queue::front`                      (callback(err, data))
   ..               :js:func:`Queue::back`                       (callback(err, data))
+  ..               :js:func:`Queue::at`                         (index, callback(err, data))
+  ..               :js:func:`Queue::size`                       (callback(err, size))
   ..               :js:func:`Queue::remove`                     (callback(err))
   ..               :js:func:`Queue::addTag`                     (string tagName, callback(err))
   ..               :js:func:`Queue::removeTag`                  (string tagName, callback(err))
@@ -218,9 +221,17 @@ Example::
   
   .. js:function:: New (uri)
       
-      Connects to a quasardb cluster through the specified URI. The URI contains the addresses of the bootstraping nodes, other nodes are discovered during the first connection. Having more than one node in the URI allows to connect to the cluster even if the first node is down. ::
+      Creates a quasardb cluster object with the specified URI. The URI contains the addresses of the bootstraping nodes, other nodes are discovered during the first connection. Having more than one node in the URI allows to connect to the cluster even if the first node is down. ::
           
           var c = new qdb.Cluster('qdb://192.168.0.100:2836,192.168.0.101:2836');
+          
+      :param string uri: A string in the format "qdb://host:port[,host:port]".
+  
+  .. js:function:: connect (callback(), callback_on_failure(err))
+      
+      Connects to a quasardb cluster. The callback functions are called on either success or failure of the connection.
+          
+          c.connect(on_connect_success(), on_connect_failure(err));
           
       :param string uri: A string in the format "qdb://host:port[,host:port]".
   
@@ -258,7 +269,6 @@ Example::
       
       :param string tagName: the name of the tag in the database.
       :returns: the Tag
-
 
 The `Integer` class
 ^^^^^^^^^^^^^^^^^^^
@@ -420,6 +430,19 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
       
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
   
+  .. js:function:: at (index, callback(err, data))
+      
+      Retrieves the value at the index in the queue.
+      
+      :param index: The index of the object in the Queue.
+      :param function callback(err, data): A callback or anonymous function with error and data parameters.
+
+  .. js:function:: size (callback(err, size))
+      
+      Returns the size of the Queue.
+      
+      :param function callback(err, size): A callback or anonymous function with error and size parameters.
+
   .. js:function:: addTag (string tagName, callback(err))
       
       Assigns the Queue to the specified tag.
