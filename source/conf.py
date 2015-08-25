@@ -176,7 +176,7 @@ html_use_modindex = False
 html_show_sourcelink = False
 
 # Force MathJax to use https.
-mathjax_path = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # -- Options for LaTeX output --------------------------------------------------
 
