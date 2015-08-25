@@ -4,7 +4,7 @@ Contacting us
 About Quasardb
 ---------------
 
-quasardb is the work of `Quasardb SAS <http://www.quasardb.net/>`_ a startup located in Paris, France.
+quasardb is the work of `Quasardb SAS <http://www.quasardb.net/>`_ a company located in Paris, France.
 
 Address
     Quasardb SAS - 24, rue Feydeau - 75002 Paris - France
