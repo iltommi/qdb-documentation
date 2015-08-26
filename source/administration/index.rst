@@ -5,7 +5,11 @@ Server Administration
    :maxdepth: 2
    
    system_requirements
-   installation
+   installation_windows
+   installation_red_hat
+   installation_debian
+   installation_other_linux
+   installation_freebsd
    operations
    tuning
    troubleshooting
