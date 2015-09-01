@@ -10,6 +10,7 @@ Server Administration
    installation_debian
    installation_other_linux
    installation_freebsd
+   installation_docker
    operations
    tuning
    troubleshooting
