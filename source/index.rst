@@ -10,13 +10,13 @@ quasardb
 
 A wealth of languages are officialy supported with open source APIs available on `github <http://github.com/bureau14>`_.
 
-If you are new to **quasardb** the :doc:`primer` and :doc:`concepts/index` are a good introduction. The :doc:`faq` may also have the information you are looking for.
+If you are new to quasardb the :doc:`primer` and :doc:`concepts/index` are a good introduction. The :doc:`faq` may also have the information you are looking for.
 
-Should you need a step by step guide to install and use your first cluster, we have two detailed tutorials in the :doc:`tutorials/index` chapter.
+Should you need a step by step guide to install and use your first cluster, we have OS specific installation guides in :doc:`administration/index` and detailed :doc:`tutorials/index`.
 
-For specific information regarding the usage or the administration of a **quasardb** component, please read the :doc:`reference/index`. All the information related to development is in the :doc:`api/index` chapter.
+For specific information regarding the usage or the administration of a quasardb component, please read the :doc:`reference/index`. All the information related to development is in the :doc:`api/index` section.
 
-Is this documentation helpful? Let us know! (see :doc:`contact`).
+**Need help?** See :doc:`contacting_support`.
 
 Table of Contents
 -----------------
@@ -35,3 +35,4 @@ Table of Contents
    changes
    license
    contact
+   contacting_support
