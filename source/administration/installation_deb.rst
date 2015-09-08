@@ -1,6 +1,6 @@
 
-Debian Installation
-====================
+Debian \ Ubuntu Installation
+============================
 
 Software Installation
 ---------------------

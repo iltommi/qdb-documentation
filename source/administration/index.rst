@@ -6,8 +6,8 @@ Server Administration
    
    system_requirements
    installation_windows
-   installation_red_hat
-   installation_debian
+   installation_rpm
+   installation_deb
    installation_other_linux
    installation_freebsd
    installation_docker
