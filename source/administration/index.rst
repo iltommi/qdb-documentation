@@ -11,6 +11,7 @@ Server Administration
    installation_other_linux
    installation_freebsd
    installation_docker
+   installation_aws
    operations
    tuning
    troubleshooting
