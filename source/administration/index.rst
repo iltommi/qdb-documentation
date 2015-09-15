@@ -12,6 +12,7 @@ Server Administration
    installation_freebsd
    installation_docker
    installation_aws
+   installation_azure
    operations
    tuning
    troubleshooting
