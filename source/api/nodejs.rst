@@ -24,8 +24,22 @@ Quick Reference
   Blob             :js:func:`Cluster::blob`                     (string alias)
   Set              :js:func:`Cluster::hashSet`                  (string alias)
   Integer          :js:func:`Cluster::integer`                  (string alias)
-  Queue            :js:func:`Cluster::queue`                    (string alias)
+  Deque            :js:func:`Cluster::deque`                    (string alias)
   Tag              :js:func:`Cluster::tag`                      (string tagName)
+  string           :js:attr:`Deque::alias`                      ()
+  ..               :js:func:`Deque::pushFront`                  (Buffer content, callback(err))
+  ..               :js:func:`Deque::pushBack`                   (Buffer content, callback(err))
+  ..               :js:func:`Deque::popFront`                   (callback(err, data))
+  ..               :js:func:`Deque::popBack`                    (callback(err, data))
+  ..               :js:func:`Deque::front`                      (callback(err, data))
+  ..               :js:func:`Deque::back`                       (callback(err, data))
+  ..               :js:func:`Deque::at`                         (index, callback(err, data))
+  ..               :js:func:`Deque::size`                       (callback(err, size))
+  ..               :js:func:`Deque::remove`                     (callback(err))
+  ..               :js:func:`Deque::addTag`                     (string tagName, callback(err))
+  ..               :js:func:`Deque::removeTag`                  (string tagName, callback(err))
+  ..               :js:func:`Deque::hasTag`                     (string tagName, callback(err))
+  ..               :js:func:`Deque::getTags`                    (callback(err, tags))
   string           :js:attr:`Integer::alias`                    ()
   ..               :js:func:`Integer::put`                      (int value, [Date expiry_time], callback(err))
   ..               :js:func:`Integer::update`                   (int value, [Date expiry_time], callback(err))
@@ -39,20 +53,6 @@ Quick Reference
   ..               :js:func:`Integer::expiresAt`                (Date expiry_time)
   ..               :js:func:`Integer::expiresFromNow`           (int seconds)
   Date             :js:func:`Integer::getExpiry`                ()
-  string           :js:attr:`Queue::alias`                      ()
-  ..               :js:func:`Queue::pushFront`                  (Buffer content, callback(err))
-  ..               :js:func:`Queue::pushBack`                   (Buffer content, callback(err))
-  ..               :js:func:`Queue::popFront`                   (callback(err, data))
-  ..               :js:func:`Queue::popBack`                    (callback(err, data))
-  ..               :js:func:`Queue::front`                      (callback(err, data))
-  ..               :js:func:`Queue::back`                       (callback(err, data))
-  ..               :js:func:`Queue::at`                         (index, callback(err, data))
-  ..               :js:func:`Queue::size`                       (callback(err, size))
-  ..               :js:func:`Queue::remove`                     (callback(err))
-  ..               :js:func:`Queue::addTag`                     (string tagName, callback(err))
-  ..               :js:func:`Queue::removeTag`                  (string tagName, callback(err))
-  ..               :js:func:`Queue::hasTag`                     (string tagName, callback(err))
-  ..               :js:func:`Queue::getTags`                    (callback(err, tags))
   string           :js:attr:`Set::alias`                        ()
   ..               :js:func:`Set::insert`                       (Buffer value, callback(err, data))
   ..               :js:func:`Set::erase`                        (Buffer value, callback(err, data))
@@ -213,7 +213,7 @@ Example::
 
     var c = new qdb.Cluster('qdb://127.0.0.1:2836');
     c.blob('key 0');
-    c.queue('key 1');
+    c.deque('key 1');
     c.integer('key 2');
     c.integer('key 3');
 
@@ -249,12 +249,12 @@ Example::
       :param string alias: the alias of the integer in the database.
       :returns: the Integer
   
-  .. js:function:: queue (string alias)
+  .. js:function:: deque (string alias)
       
-      Creates a Queue associated with the specified alias. No query is performed at this point.
+      Creates a Deque associated with the specified alias. No query is performed at this point.
       
-      :param string alias: the alias of the queue in the database.
-      :returns: the Queue
+      :param string alias: the alias of the deque in the database.
+      :returns: the Deque
 
   .. js:function:: set (string alias)
       
@@ -370,21 +370,21 @@ You get a qdb.Integer instance by calling cluster.integer(). Then you can perfor
       :returns: A Date object with the expiration time.
 
 
-The `Queue` class
+The `Deque` class
 ^^^^^^^^^^^^^^^^^
 
-Represents a queue of blob in the quasardb database. It's a double-ended queue, you can both enqueue and dequeue from the front and the back.
+Represents a double-ended queue of blob in the quasardb database. You can both enqueue and dequeue from the front and the back.
 
-You get a qdb.Queue instance by calling QdbCluster::queue(). Then you can perform atomic operations on the queue::
+You get a qdb.Deque instance by calling QdbCluster::deque(). Then you can perform atomic operations on the queue::
     
-    var q = c.queue('q2');
+    var q = c.deque('q2');
     q.pushBack(new Buffer("boom"), function(err) { /* */ });
     q.popFront(function(err, data) { /* */ });
     q.pushFront(new Buffer("bang"), function(err) { /* */ });
 
 Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/all.html#all_buffer>`_ is important, as Javascript does not play nice with binary data.
 
-.. js:class:: Queue
+.. js:class:: Deque
   
   .. js:attribute:: alias
       
@@ -434,39 +434,39 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
       
       Retrieves the value at the index in the queue. The item at the index must exist or it will throw an error.
       
-      :param index: The index of the object in the Queue.
+      :param index: The index of the object in the Deque.
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
   .. js:function:: size (callback(err, size))
       
-      Returns the size of the Queue.
+      Returns the size of the Deque.
       
       :param function callback(err, size): A callback or anonymous function with error and size parameters.
 
   .. js:function:: addTag (string tagName, callback(err))
       
-      Assigns the Queue to the specified tag.
+      Assigns the Deque to the specified tag.
       
       :param string tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
   .. js:function:: removeTag (string tagName, callback(err))
       
-      Removes the Queue from the specified tag. Errors if the tag is not assigned.
+      Removes the Deque from the specified tag. Errors if the tag is not assigned.
       
       :param string tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
   .. js:function:: hasTag (string tagName, callback(err))
       
-      Determines if the Queue has the specified tag.
+      Determines if the Deque has the specified tag.
       
       :param string tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
   .. js:function:: getTags (callback(err, tags))
       
-      Gets an array of tag objects associated with the Queue.
+      Gets an array of tag objects associated with the Deque.
       
       :param function callback(err, tags): A callback or anonymous function with error and array of tags parameters.
   

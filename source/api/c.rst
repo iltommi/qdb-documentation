@@ -35,17 +35,17 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_option_set_compression`   (:c:type:`qdb_handle_t` handle, qdb_compression_t comp_level);
   :c:type:`qdb_error_t`       :c:type:`qdb_connect`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` uri);
   :c:type:`qdb_error_t`       :c:type:`qdb_close`                    (:c:type:`qdb_handle_t` handle);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get_noalloc`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char *` content, :c:type:`qdb_size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get`                      (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`qdb_size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_get_noalloc`         (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char *` content, :c:type:`qdb_size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_get`                 (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`qdb_size_t *` content_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_copy_alloc_buffer`        (:c:type:`qdb_handle_t` handle, :c:type:`const char *` source_buffer, :c:type:`qdb_size_t` source_buffer_size, :c:type:`const char **` dest_buffer);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get_and_remove`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`qdb_size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_get_and_remove`      (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`qdb_size_t *` content_length);
   :c:type:`void`              :c:type:`qdb_free_buffer`              (:c:type:`qdb_handle_t` handle, :c:type:`char *` buffer);
-  :c:type:`qdb_error_t`       :c:type:`qdb_put`                      (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length, :c:type:`qdb_time_t` expiry_time);
-  :c:type:`qdb_error_t`       :c:type:`qdb_update`                   (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length, :c:type:`qdb_time_t` expiry_time);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get_and_update`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` update_content, :c:type:`qdb_size_t` update_content_length, :c:type:`qdb_time_t` expiry_time, :c:type:`char **` get_content, :c:type:`qdb_size_t *` get_content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_compare_and_swap`         (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` new_value, :c:type:`qdb_size_t` new_value_length, :c:type:`const char *` comparand, :c:type:`qdb_size_t` comparand_length, :c:type:`qdb_time_t` expiry_time, :c:type:`char **` original_value, :c:type:`qdb_size_t *` original_value_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_put`                 (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length, :c:type:`qdb_time_t` expiry_time);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_update`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length, :c:type:`qdb_time_t` expiry_time);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_get_and_update`      (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` update_content, :c:type:`qdb_size_t` update_content_length, :c:type:`qdb_time_t` expiry_time, :c:type:`char **` get_content, :c:type:`qdb_size_t *` get_content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_compare_and_swap`    (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` new_value, :c:type:`qdb_size_t` new_value_length, :c:type:`const char *` comparand, :c:type:`qdb_size_t` comparand_length, :c:type:`qdb_time_t` expiry_time, :c:type:`char **` original_value, :c:type:`qdb_size_t *` original_value_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_remove`                   (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias);
-  :c:type:`qdb_error_t`       :c:type:`qdb_remove_if`                (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` comparand, :c:type:`qdb_size_t` comparand_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_blob_remove_if`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` comparand, :c:type:`qdb_size_t` comparand_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_init_operations`          (:c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operations_count);
   :c:type:`qdb_size_t`        :c:type:`qdb_run_batch`                (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operations_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_run_transaction`          (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operations_count, :c:type:`qdb_size_t *` failed_index);
@@ -74,15 +74,15 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_int_update`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_int_t` integer, :c:type:`qdb_time_t` expiry_time);
   :c:type:`qdb_error_t`       :c:type:`qdb_int_get`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_int_t *` integer);
   :c:type:`qdb_error_t`       :c:type:`qdb_int_add`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_int_t` addend, :c:type:`qdb_int_t *` result);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_size`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_size_t *` size);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_get_at`             (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_size_t` index, :c:type:`const char **` content, :c:type:`qdb_size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_set_at`             (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_size_t` index, :c:type:`const char *` content, :c:type:`qdb_size_t *` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_push_front`         (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_push_back`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_pop_front`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_pop_back`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_front`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_queue_back`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_size`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_size_t *` size);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_get_at`             (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_size_t` index, :c:type:`const char **` content, :c:type:`qdb_size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_set_at`             (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_size_t` index, :c:type:`const char *` content, :c:type:`qdb_size_t *` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_push_front`         (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_push_back`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`qdb_size_t` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_pop_front`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_pop_back`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_front`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
+  :c:type:`qdb_error_t`       :c:type:`qdb_deque_back`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char **` content, :c:type:`qdb_size_t` content_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_add_tag`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
   :c:type:`qdb_error_t`       :c:type:`qdb_has_tag`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
   :c:type:`qdb_error_t`       :c:type:`qdb_remove_tag`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
@@ -109,7 +109,7 @@ The C API package is downloadable from the quasardb download site. All informati
           \lib        // QDB API shared libraries
 
 
-Most C functions, typedefs and enums are available in the ``include/qdb/client.h`` header file. The object specific functions for hsets, integers, queues, and tags are in their respective ``include/qdb/*.h`` files.
+Most C functions, typedefs and enums are available in the ``include/qdb/client.h`` header file. The object specific functions for hsets, integers, double-ended queues, and tags are in their respective ``include/qdb/*.h`` files.
 
 
 Connecting to a cluster
@@ -186,40 +186,40 @@ Each entry is identified by an unique alias. You pass the alias as a null-termin
 
 The content is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
-There are two ways to add entries into the repository. You can use :c:func:`qdb_put`: ::
+There are two ways to add entries into the repository. You can use :c:func:`qdb_blob_put`: ::
 
     char content[100];
 
     // ...
 
-    r = qdb_put(handle, "myalias", content, sizeof(content), 0);
+    r = qdb_blob_put(handle, "myalias", content, sizeof(content), 0);
     if (r != qdb_error_ok)
     {
         // error management
     }
 
-or you can use :c:func:`qdb_update`: ::
+or you can use :c:func:`qdb_blob_update`: ::
 
     char content[100];
 
     // ...
 
-    r = qdb_update(handle, "myalias", content, sizeof(content), 0);
+    r = qdb_blob_update(handle, "myalias", content, sizeof(content), 0);
     if (r != qdb_error_ok)
     {
         // error management
     }
 
-The difference is that :c:func:`qdb_put` fails when the entry already exists. :c:func:`qdb_update` will create the entry if it does not, or update its content if it does.
+The difference is that :c:func:`qdb_blob_put` fails when the entry already exists. :c:func:`qdb_blob_update` will create the entry if it does not, or update its content if it does.
 
 Getting entries
 --------------------
 
-The most convenient way to fetch an entry is :c:func:`qdb_get`::
+The most convenient way to fetch an entry is :c:func:`qdb_blob_get`::
 
     char * allocated_content = 0;
     qdb_size_t allocated_content_length = 0;
-    r = qdb_get(handle, "myalias", &allocated_content, &allocated_content_length);
+    r = qdb_blob_get(handle, "myalias", &allocated_content, &allocated_content_length);
     if (r != qdb_error_ok)
     {
         // error management
@@ -229,7 +229,7 @@ The function will allocate the buffer and update the length. You will need to re
 
     qdb_free_buffer(allocated_content);
 
-However, for maximum performance you might want to manage allocation yourself and reuse buffers (for example). In which case you will prefer to use :c:func:`qdb_get_noalloc`::
+However, for maximum performance you might want to manage allocation yourself and reuse buffers (for example). In which case you will prefer to use :c:func:`qdb_blob_get_noalloc`::
 
     char buffer[1024];
 
@@ -239,7 +239,7 @@ However, for maximum performance you might want to manage allocation yourself an
 
     // content_length must be initialized with the buffer's size
     // and will be update with the retrieved content's size
-    r = qdb_get_noalloc(handle, "myalias", buffer, &content_length);
+    r = qdb_blob_get_noalloc(handle, "myalias", buffer, &content_length);
     if (r != qdb_error_ok)
     {
         // error management
@@ -269,7 +269,7 @@ When you are done working with a quasardb repository, call :c:func:`qdb_close`::
 
     qdb_close(handle);
 
-:c:func:`qdb_close` **does not** release memory allocated by :c:func:`qdb_get`. You will need to make appropriate calls to :c:func:`qdb_free_buffer` for each call to :c:func:`qdb_get`.
+:c:func:`qdb_close` **does not** release memory allocated by :c:func:`qdb_blob_get`. You will need to make appropriate calls to :c:func:`qdb_free_buffer` for each call to :c:func:`qdb_blob_get`.
 
 .. note ::
 
@@ -299,7 +299,7 @@ To set the expiry time of an entry to 1 minute, relative to the call time::
 
     // ...
 
-    r = qdb_put(handle, "myalias", content, sizeof(content), 0);
+    r = qdb_blob_put(handle, "myalias", content, sizeof(content), 0);
     if (r != qdb_error_ok)
     {
         // error management
@@ -530,7 +530,7 @@ Reference
 
 .. c:type:: qdb_entry_type_t
 
-    A structure that represents a type of entry, such as a Blob, Queue, HashSet, or Integer.
+    A structure that represents a type of entry, such as a Blob, Deque, HashSet, or Integer.
 
 .. c:type:: qdb_operation_type_t
 
@@ -628,7 +628,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_noalloc(qdb_handle_t handle, const char * alias, char * content, qdb_size_t * content_length)
+.. c:function:: qdb_error_t qdb_blob_get_noalloc(qdb_handle_t handle, const char * alias, char * content, qdb_size_t * content_length)
 
     Retrieves an entry's content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
 
@@ -649,7 +649,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get(qdb_handle_t handle, const char * alias, char ** content, qdb_size_t * content_length)
+.. c:function:: qdb_error_t qdb_blob_get(qdb_handle_t handle, const char * alias, char ** content, qdb_size_t * content_length)
 
     Retrieves an entry's content from the quasardb server.
 
@@ -687,7 +687,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_and_remove(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t * content_length)
+.. c:function:: qdb_error_t qdb_blob_get_and_remove(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t * content_length)
 
     Atomically gets an entry from the quasardb server and removes it. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
@@ -708,16 +708,16 @@ Reference
 
 .. c:function:: void qdb_free_buffer(qdb_handle_t handle, char * buffer)
 
-    Frees a buffer allocated by :c:func:`qdb_get`.
+    Frees a buffer allocated by :c:func:`qdb_blob_get`.
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param buffer: A pointer to a buffer to release allocated by :c:func:`qdb_get`.
+    :param buffer: A pointer to a buffer to release allocated by :c:func:`qdb_blob_get`.
     :type buffer: char *
 
     :returns: This function does not return a value.
 
-.. c:function:: qdb_error_t qdb_put(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time, qdb_time_t expiry_time)
+.. c:function:: qdb_error_t qdb_blob_put(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time, qdb_time_t expiry_time)
 
     Adds an entry to the quasardb server. If the entry already exists the function will fail and will return ``qdb_e_alias_already_exists``. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
 
@@ -736,7 +736,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_update(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time)
+.. c:function:: qdb_error_t qdb_blob_update(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time)
 
     Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
@@ -755,7 +755,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_and_update(qdb_handle_t handle, const char * alias, const char * update_content, qdb_size_t update_content_length, qdb_time_t expiry_time, char ** get_content, qdb_size_t * get_content_length)
+.. c:function:: qdb_error_t qdb_blob_get_and_update(qdb_handle_t handle, const char * alias, const char * update_content, qdb_size_t update_content_length, qdb_time_t expiry_time, char ** get_content, qdb_size_t * get_content_length)
 
     Atomically gets and updates (in this order) the entry on the quasardb server. The entry must already exist.
 
@@ -778,7 +778,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_compare_and_swap(qdb_handle_t handle, const char * alias, const char * new_value, qdb_size_t new_value_length, const char * comparand, qdb_time_t expiry_time, qdb_size_t comparand_length, char ** original_value, qdb_size_t * original_value_length)
+.. c:function:: qdb_error_t qdb_blob_compare_and_swap(qdb_handle_t handle, const char * alias, const char * new_value, qdb_size_t new_value_length, const char * comparand, qdb_time_t expiry_time, qdb_size_t comparand_length, char ** original_value, qdb_size_t * original_value_length)
 
     Atomically compares the entry with comparand and updates it to new_value if, and only if, they match. Always returns the original value of the entry.
 
@@ -818,7 +818,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_remove_if(qdb_handle_t handle, const char * alias, const char * comparand, qdb_size_t comparand_length)
+.. c:function:: qdb_error_t qdb_blob_remove_if(qdb_handle_t handle, const char * alias, const char * comparand, qdb_size_t comparand_length)
 
     Removes an entry from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
@@ -1238,7 +1238,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_size(qdb_handle_t handle, const char * alias, qdb_size_t * size)
+.. c:function:: qdb_error_t qdb_deque_size(qdb_handle_t handle, const char * alias, qdb_size_t * size)
     
     Retrieves the size of the queue. The queue must already exist.
     
@@ -1251,7 +1251,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_get_at(qdb_handle_t handle, const char * alias, qdb_size_t index, const char ** content, qdb_size_t * content_length)
+.. c:function:: qdb_error_t qdb_deque_get_at(qdb_handle_t handle, const char * alias, qdb_size_t index, const char ** content, qdb_size_t * content_length)
     
     Retrieves the value of the queue at the specified index. The queue must already exist.
     
@@ -1268,7 +1268,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_set_at(qdb_handle_t handle, const char * alias, qdb_size_t index, const char ** content, qdb_size_t * content_length)
+.. c:function:: qdb_error_t qdb_deque_set_at(qdb_handle_t handle, const char * alias, qdb_size_t index, const char ** content, qdb_size_t * content_length)
     
     Retrieves the value of the queue at the specified index. The queue must already exist.
     
@@ -1285,7 +1285,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_push_front(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length)
+.. c:function:: qdb_error_t qdb_deque_push_front(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length)
     
     Inserts the content at the front of the queue. Creates the queue if it does not exist.
     
@@ -1301,7 +1301,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_push_back(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length)
+.. c:function:: qdb_error_t qdb_deque_push_back(qdb_handle_t handle, const char * alias, const char * content, qdb_size_t content_length)
     
     Inserts the content at the back of the queue. Creates the queue if it does not exist.
     
@@ -1316,7 +1316,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_pop_front(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
+.. c:function:: qdb_error_t qdb_deque_pop_front(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
     
     Removes and retrieves the item at the front of the queue. The queue must already exist.
     
@@ -1331,7 +1331,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_pop_back(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
+.. c:function:: qdb_error_t qdb_deque_pop_back(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
     
     Removes and retrieves the item at the back of the queue. The queue must already exist.
     
@@ -1346,7 +1346,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_front(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
+.. c:function:: qdb_error_t qdb_deque_front(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
     
     Retrieves the item at the front of the queue. The queue must already exist.
     
@@ -1361,7 +1361,7 @@ Reference
     
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_queue_back(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
+.. c:function:: qdb_error_t qdb_deque_back(qdb_handle_t handle, const char * alias, const char ** content, qdb_size_t content_length)
     
     Retrives the item at the back of the queue. The queue must already exist.
     

@@ -51,32 +51,32 @@ Quick Reference
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::set_timeout`                    (:cpp:type:`int` timeout);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::set_compression`                (:cpp:type:`qdb_compression_t` comp_level);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::connect`                        (:cpp:type:`const char *` uri);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::put`                            (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length, :cpp:type:`qdb_time_t` expiry_time);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::blob_put`                       (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length, :cpp:type:`qdb_time_t` expiry_time);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::int_get`                        (:cpp:type:`const char *` alias, :cpp:type:`qdb_int_t *` number);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::int_put`                        (:cpp:type:`const char *` alias, :cpp:type:`qdb_int_t` number, :cpp:type:`qdb_time_t` expiry_time);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::int_update`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_int_t` number, :cpp:type:`qdb_time_t` expiry_time);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::int_add`                        (:cpp:type:`const char *` alias, :cpp:type:`qdb_int_t` addend, :cpp:type:`qdb_int_t *` result = NULL);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::queue_size`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_size_t *` size);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::queue_get_at`                   (:cpp:type:`const char *` alias, :cpp:type:`qdb_size_t` index, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::queue_set_at`                   (:cpp:type:`const char *` alias, :cpp:type:`qdb_size_t` index, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::queue_push_front`               (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, qdb_size_t content_length);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::queue_push_back`                (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, qdb_size_t content_length);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::queue_pop_front`                (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::queue_pop_back`                 (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::queue_front`                    (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::queue_back`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::deque_size`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_size_t *` size);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_get_at`                   (:cpp:type:`const char *` alias, :cpp:type:`qdb_size_t` index, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::deque_set_at`                   (:cpp:type:`const char *` alias, :cpp:type:`qdb_size_t` index, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::deque_push_front`               (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, qdb_size_t content_length);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::deque_push_back`                (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, qdb_size_t content_length);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_pop_front`                (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_pop_back`                 (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_front`                    (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_back`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::hset_insert`                    (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::hset_erase`                     (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::hset_contains`                  (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::update`                         (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length, :cpp:type:`qdb_time_t` expiry_time);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::get_noalloc`                    (:cpp:type:`const char *` alias, :cpp:type:`char *` content, :cpp:type:`qdb_size_t *` content_length);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::blob_update`                    (:cpp:type:`const char *` alias, :cpp:type:`const char *` content, :cpp:type:`qdb_size_t` content_length, :cpp:type:`qdb_time_t` expiry_time);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::blob_get_noalloc`               (:cpp:type:`const char *` alias, :cpp:type:`char *` content, :cpp:type:`qdb_size_t *` content_length);
   :cpp:type:`qdb_size_t`                 :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` operations, :cpp:type:`qdb_size_t` operations_count);
   :cpp:type:`std::vector<batch_result>`  :cpp:func:`handle::run_batch`                      (:cpp:type:`const std::vector<batch_request> &` requests, :cpp:type:`qdb_size_t &` successes_count);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::run_transaction`                (:cpp:type:`qdb_operation_t *` operations, :cpp:type:`qdb_size_t` operations_count, :cpp:type:`qdb_size_t &` fail_index);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get`                            (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_and_remove`                 (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::get_and_update`                 (:cpp:type:`const char *` alias, :cpp:type:`const char *` update_content, :cpp:type:`qdb_size_t` update_content_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::compare_and_swap`               (:cpp:type:`const char *` alias, :cpp:type:`const char *` new_value, :cpp:type:`qdb_size_t` new_value_length, :cpp:type:`const char *` comparand, :cpp:type:`qdb_size_t` comparand_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get`                       (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get_and_remove`            (:cpp:type:`const char *` alias, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get_and_update`            (:cpp:type:`const char *` alias, :cpp:type:`const char *` update_content, :cpp:type:`qdb_size_t` update_content_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
+  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_compare_and_swap`          (:cpp:type:`const char *` alias, :cpp:type:`const char *` new_value, :cpp:type:`qdb_size_t` new_value_length, :cpp:type:`const char *` comparand, :cpp:type:`qdb_size_t` comparand_length, :cpp:type:`qdb_time_t` expiry_time, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_at`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_time);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_from_now`               (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_delta);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::get_expiry_time`                (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t &` expiry_time);
@@ -87,7 +87,7 @@ Quick Reference
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::node_topology`                  (:cpp:type:`const char *` uri, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::stop_node`                      (:cpp:type:`const char *` uri, :cpp:type:`const char *` reason);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove`                         (:cpp:type:`const char *` alias);
-  :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_if`                      (:cpp:type:`const char *` alias, :cpp:type:`const char *` comparand, :cpp:type:`qdb_size_t` comparand_length);
+  :cpp:type:`qdb_error_t`                :cpp:func:`handle::blob_remove_if`                 (:cpp:type:`const char *` alias, :cpp:type:`const char *` comparand, :cpp:type:`qdb_size_t` comparand_length);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::add_tag`                        (:cpp:type:`const char *` alias, :cpp:type:`const char *` tag);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::has_tag`                        (:cpp:type:`const char *` alias, :cpp:type:`const char *` tag);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_tag`                     (:cpp:type:`const char *` alias, :cpp:type:`const char *` tag);
@@ -527,7 +527,7 @@ Reference
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_error_t put(const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time)
+    .. cpp:function:: qdb_error_t blob_put(const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time)
 
         Adds an entry to the quasardb server. If the entry already exists the method will fail and will return ``qdb_e_alias_already_exists``. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
 
@@ -579,7 +579,7 @@ Reference
         
         :returns: An error code of type :cpp:type:`qdb_error_t`
         
-    .. cpp:function:: qdb_error_t queue_size(const char * alias, qdb_size_t * size)
+    .. cpp:function:: qdb_error_t deque_size(const char * alias, qdb_size_t * size)
     
         Retrieves the size of the queue. The queue must already exist.
         
@@ -588,7 +588,7 @@ Reference
         
         :returns: An error code of type :cpp:type:`qdb_error_t`
     
-    .. cpp:function:: api_buffer_ptr queue_get_at(const char * alias, qdb_size_t index, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr deque_get_at(const char * alias, qdb_size_t index, qdb_error_t & error)
         
         Retrieves the value of the queue at the specified index. The queue must already exist.
         
@@ -598,7 +598,7 @@ Reference
         
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
         
-    .. cpp:function:: qdb_error_t queue_set_at(const char * alias, qdb_size_t index, const char * content, qdb_size_t content_length)
+    .. cpp:function:: qdb_error_t deque_set_at(const char * alias, qdb_size_t index, const char * content, qdb_size_t content_length)
         
         Sets the value of the queue at the specified index. The queue must already exist.
         
@@ -609,7 +609,7 @@ Reference
         
         :returns: An error code of type :cpp:type:`qdb_error_t`
         
-    .. cpp:function:: qdb_error_t queue_push_front(const char * alias, const char * content, qdb_size_t content_length)
+    .. cpp:function:: qdb_error_t deque_push_front(const char * alias, const char * content, qdb_size_t content_length)
         
         Inserts the content at the front of the queue. Creates the queue if it does not exist.
         
@@ -619,7 +619,7 @@ Reference
         
         :returns: An error code of type :cpp:type:`qdb_error_t`
         
-    .. cpp:function:: qdb_error_t queue_push_back(const char * alias, const char * content, qdb_size_t content_length)
+    .. cpp:function:: qdb_error_t deque_push_back(const char * alias, const char * content, qdb_size_t content_length)
         
         Inserts the content at the back of the queue. Creates the queue if it does not exist.
         
@@ -629,7 +629,7 @@ Reference
         
         :returns: An error code of type :c:type:`qdb_error_t`
     
-    .. cpp:function:: api_buffer_ptr queue_pop_front(const char * alias, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr deque_pop_front(const char * alias, qdb_error_t & error)
         
         Removes and retrieves the item at the front of the queue. The queue must already exist.
         
@@ -638,7 +638,7 @@ Reference
         
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
     
-    .. cpp:function:: api_buffer_ptr queue_pop_back(const char * alias, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr deque_pop_back(const char * alias, qdb_error_t & error)
         
         Removes and retrieves the item at the back of the queue. The queue must already exist.
         
@@ -647,7 +647,7 @@ Reference
         
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
     
-    .. cpp:function:: api_buffer_ptr queue_front(const char * alias, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr deque_front(const char * alias, qdb_error_t & error)
         
         Retrieves the item at the front of the queue. The queue must already exist.
         
@@ -656,7 +656,7 @@ Reference
         
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
     
-    .. cpp:function:: api_buffer_ptr queue_back(const char * alias, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr deque_back(const char * alias, qdb_error_t & error)
         
         Retrieves the item at the back of the queue. The queue must already exist.
         
@@ -695,7 +695,7 @@ Reference
         
         :returns: An error code of type :c:type:`qdb_error_t`
     
-    .. cpp:function:: qdb_error_t update(const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time)
+    .. cpp:function:: qdb_error_t blob_update(const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time)
 
         Updates an entry on the quasardb server. If the entry already exists, the content will be updated. If the entry does not exist, it will be created.
 
@@ -708,7 +708,7 @@ Reference
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_error_t get_noalloc(const char * alias, char * content, qdb_size_t * content_length)
+    .. cpp:function:: qdb_error_t blob_get_noalloc(const char * alias, char * content, qdb_size_t * content_length)
 
         Retrieves an entry's content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer.
 
@@ -754,7 +754,7 @@ Reference
 
         :returns: An error code of type :c:type:`qdb_error_t` 
 
-    .. cpp:function:: api_buffer_ptr get(const char * alias, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr blob_get(const char * alias, qdb_error_t & error)
 
         Retrieves an entry's content from the quasardb server.
 
@@ -769,7 +769,7 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: api_buffer_ptr get_and_remove(const char * alias, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr blob_get_and_remove(const char * alias, qdb_error_t & error)
 
         Atomically gets an entry from the quasardb server and removes it. If the entry does not exist, the function will fail and update error to ``qdb_e_alias_not_found``.
 
@@ -782,7 +782,7 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: api_buffer_ptr get_and_update(const char * alias, const char * update_content, qdb_size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr blob_get_and_update(const char * alias, const char * update_content, qdb_size_t update_content_length, qdb_time_t expiry_time, qdb_error_t & error)
 
         Atomically gets and updates (in this order) the entry on the quasardb server. The entry must already exist.
 
@@ -796,7 +796,7 @@ Reference
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
 
-    .. cpp:function:: api_buffer_ptr compare_and_swap(const char * alias, const char * new_value, qdb_size_t new_value_length, const char * comparand, qdb_size_t comparand_length, qdb_time_t expiry_time, qdb_error_t & error)
+    .. cpp:function:: api_buffer_ptr blob_compare_and_swap(const char * alias, const char * new_value, qdb_size_t new_value_length, const char * comparand, qdb_size_t comparand_length, qdb_time_t expiry_time, qdb_error_t & error)
 
         Atomically compares the entry with comparand and updates it to new_value if, and only if, they match. Always return the original value of the entry.
 
@@ -924,7 +924,7 @@ Reference
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_error_t remove_if(const char * alias, const char * comparand, qdb_size_t comparand_length)
+    .. cpp:function:: qdb_error_t blob_remove_if(const char * alias, const char * comparand, qdb_size_t comparand_length)
 
         Removes an entry from the quasardb server if it matches comparand. The operation is atomic. If the entry does not exist, the function will fail and return ``qdb_e_alias_not_found``.
 
