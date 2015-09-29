@@ -4,7 +4,7 @@ Performance tuning
 Measuring performance
 ---------------------
 
-The best way to test the performance of your cluster is to use the :doc:`../reference/qdb_comparison`. It comes with a wide range of test scenarii and it understands quasardb, memchached, and redis protocols.
+The best way to test the performance of your cluster is to use the :doc:`../reference/qdb_bench`. It comes with a wide range of test scenarii and it understands quasardb, memchached, and redis protocols.
 
 
 Rules of thumb

@@ -7,22 +7,22 @@ quasardb benchmarking tool
 Introduction
 ============
 
-The quasardb benchmarking tool (qdb_comparison) enables you to evaluate the performance of your quasardb cluster. To do so, it runs a script on the specified cluster and measures the time taken to process the commands as accurately as the operating systems allows it.
+The quasardb benchmarking tool (qdb_bench) enables you to evaluate the performance of your quasardb cluster. To do so, it runs a script on the specified cluster and measures the time taken to process the commands as accurately as the operating systems allows it.
 
 
 Quick Reference
 ===============
 
- ===================================== ============================ ================
+ ===================================== ============================ ============================
                 Option                             Usage                Default
- ===================================== ============================ ================
- :option:`-h`, `--help`                display help                  
- :option:`--daemon`                    address:port of server        127.0.0.1:2836
+ ===================================== ============================ ============================
+ :option:`--help`                      display help                  
+ :option:`--cluster`                   address:port of node          127.0.0.1:2836
  :option:`--protocol`                  test protocol to use          quasardb
  :option:`--threads`                   number of threads to use      1
  :option:`-f`, `--test-file`           test script to run            test.cfg
- :option:`-o`, `--output-file`         path for CSV output           report_<date>
- ===================================== ============================ ================
+ :option:`-o`, `--output-file`         path for CSV output           report_<date>-<time>.csv
+ ===================================== ============================ ============================
 
 
 Usage scenarii
@@ -90,7 +90,7 @@ The accepted commands are:
 Parameters reference
 ====================
 
-.. program:: qdb_comparison
+.. program:: qdb_bench
 
 .. option:: -h, --help
 
@@ -99,11 +99,11 @@ Parameters reference
     Example
         To display the online help, type: ::
 
-            qdb_comparison --help
+            qdb_bench --help
 
 .. option:: --daemon <address>:<port>
 
-   Specifies the address and port of the quasardb daemon to which the comparison tool must connect. The daemon must conform to the protocol specified by the ``protocol`` parameter.
+   Specifies the address and port of the quasardb daemon to which the benchmark tool must connect. The daemon must conform to the protocol specified by the ``protocol`` parameter.
 
    Argument
         The address and port of a machine where a daemon is running.
@@ -129,11 +129,11 @@ Parameters reference
     Example
         Run the test on a memcached compatible server::
 
-            qdb_comparison --protocol=memcached
+            qdb_bench --protocol=memcached
 
 .. option:: --threads=<threads>
 
-    Specifies the number of threads qdb_comparison should use to run the test. Each thread will run the test script, duplicating its operations. This function is helpful to simulate multiple clients from a single test instance.
+    Specifies the number of threads qdb_bench should use to run the test. Each thread will run the test script, duplicating its operations. This function is helpful to simulate multiple clients from a single test instance.
 
     Argument
         An integer between 1 and 100 representing the number of threads to use.
@@ -144,7 +144,7 @@ Parameters reference
     Example
         Run the test two times in two separate threads::
 
-            qdb_comparison --threads=2
+            qdb_bench --threads=2
 
 .. option:: -f <path>, --test-file=<path>
 
@@ -159,7 +159,7 @@ Parameters reference
     Example
         Runs the tests written in ``stress.cfg``::
 
-            qdb_comparison -f stress.cfg
+            qdb_bench -f stress.cfg
 
 .. option:: -o <path>, --output-file=<path>
 
@@ -174,5 +174,5 @@ Parameters reference
     Example
         Output the results to ``results.csv``::
 
-            qdb_comparison --output-file=results.csv
+            qdb_bench --output-file=results.csv
 
