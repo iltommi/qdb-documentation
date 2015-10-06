@@ -13,6 +13,7 @@ Server Administration
    installation_docker
    installation_aws
    installation_azure
+   installation_juju
    operations
    tuning
    troubleshooting
