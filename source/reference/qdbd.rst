@@ -259,7 +259,7 @@ Instance specific
     Specifies the address and port on which the server will listen.
 
     Argument
-        A string representing one address the server listens on and a port. The address string can be a host name or an IP address.
+        A string representing one address the server listens on and a port. The address string can be a host name, IP address, or network interface.
 
     Default value
         127.0.0.1:2836, the IPv4 localhost and the port 2836
@@ -268,6 +268,10 @@ Instance specific
         Listen on localhost and the port 5910::
 
             qdbd --address=localhost:5910
+        
+        Listen on an interface::
+        
+            qdbd --address=eth0
 
     .. note::
         The unspecified address (0.0.0.0 for IPv4, :: for IPv6) is not allowed.
