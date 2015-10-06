@@ -35,15 +35,31 @@ By default, the quasardb daemon listens on the port 2836 on the local address. T
  #. (optional) Edit the qdb_httpd configuration file at ``/etc/qdb/qdb_httpd.conf``.
      * Set ``remote_node`` to the IP address of a node.
      * Set other values as needed. See :ref:`qdb_httpd-config-file-reference` for more information.
- #. Set system swappiness in ``/etc/sysctl.conf`` to 0:
-     * ``vm.swappiness = 0``
- #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values:
-     * ``net.core.somaxconn = 8192``
-     * ``net.ipv4.tcp_max_syn_backlog = 8192``
-     * ``net.core.rmem_max = 16777216``
-     * ``net.core.wmem_max = 16777216``
- #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``:
-     * ``qdb    soft    nofile    65536``
+ #. Disable system swappiness in ``/etc/sysctl.conf``::
+         
+         vm.swappiness = 0
+         
+ #. Disable Transparent Huge Pages by adding the following to ``/etc/rc.local``::
+         
+         if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+           echo never > /sys/kernel/mm/transparent_hugepage/enabled
+         fi
+         
+         if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
+            echo never > /sys/kernel/mm/transparent_hugepage/defrag
+         fi
+         
+ #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values::
+         
+         net.core.somaxconn = 8192
+         net.ipv4.tcp_max_syn_backlog = 8192
+         net.core.rmem_max = 16777216
+         net.core.wmem_max = 16777216
+         
+ #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``::
+         
+         qdb    soft    nofile    65536
+
 
 Test the Node
 -------------
