@@ -33,6 +33,8 @@ Configuration
  #. (optional) Edit the qdb_httpd configuration file at ``/etc/qdb/qdb_httpd.conf``.
      * Set ``remote_node`` to the IP address of a node.
      * Set other values as needed. See :ref:`qdb_httpd-config-file-reference` for more information.
+ #. Set system swappiness in ``/etc/sysctl.conf`` to 0:
+     * ``vm.swappiness = 0``
  #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values:
      * ``net.core.somaxconn = 8192``
      * ``net.ipv4.tcp_max_syn_backlog = 8192``
