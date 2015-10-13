@@ -68,6 +68,7 @@ Transient mode disables data storage altogether, transforming quasardb into a pu
 But:
 
     * Entries evicted from memory will be lost (see :ref:`eviction`)
+    * Double-ended queues may be undefined due to eviction if you reach the memory limit.
     * Node failure may imply irrecoverable data loss
     * Node and cluster statistics will not be recorded
     * Entries cannot be iterated upon

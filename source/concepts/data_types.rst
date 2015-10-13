@@ -26,6 +26,8 @@ Queue elements are blobs and can be of any size. Values smaller than 64 bytes be
 
 Double-ended queues are transparently distributed over several nodes and have no predefined length limit.
 
+If running in Transient Mode, double-ended queues may be undefined due to eviction if you reach the memory limit.
+
 Distributed Hash Sets
 ^^^^^^^^^^^^^^^^^^^^^
 
