@@ -26,7 +26,7 @@ Quick Reference
  :option:`-h`                          display help                                              No       
  :option:`-v`                          display version information                               No        
  :option:`--gen-config`                generate default config file                              No        >=1.1.3
- :option:`-c`, `--config-file`         specify config file                                       No        >=1.1.3
+ :option:`-c`, `--config`              specify config file                                       No        >=1.1.3
  :option:`-d`, `--daemonize`           daemonize                                                 No       
  :option:`--license-file`              specify license                 qdb_license.txt           No       
  :option:`-a`                          address to listen on            127.0.0.1:2836            No       
@@ -208,7 +208,7 @@ Instance specific
 
 
 
-.. option:: -c, --config-file
+.. option:: -c, --config
 
     Specifies a configuration file to use. See :ref:`qdbd-config-file-reference`.
     
@@ -222,10 +222,10 @@ Instance specific
     Example
         To use a configuration file named "qdbd_default_config.json", type: ::
 
-            qdbd --config-file=qdbd_default_config.json
+            qdbd --config=qdbd_default_config.json
 
     .. note::
-        The --config-file argument is only available with QuasarDB 1.1.3 or higher.
+        The --config argument is only available with QuasarDB 2.0.0 or higher.
 
 .. option:: -d, --daemonize
 

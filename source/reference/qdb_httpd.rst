@@ -253,7 +253,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     .. note::
         The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
 
-.. option:: -c, --config-file
+.. option:: -c, --config
 
     Specifies a configuration file to use. See :ref:`qdb_httpd-config-file-reference`.
     
@@ -267,10 +267,10 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Example
         To use a configuration file named "qdb_httpd_default_config.json", type: ::
 
-            qdb_httpd --config-file=qdb_httpd_default_config.json
+            qdb_httpd --config=qdb_httpd_default_config.json
         
     .. note::
-        The --config-file argument is only available with QuasarDB 1.1.3 or higher.
+        The --config argument is only available with QuasarDB 2.0.0 or higher.
 
 .. option:: -d, --daemonize
 
