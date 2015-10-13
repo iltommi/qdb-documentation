@@ -332,7 +332,12 @@ A command generally requires one or several arguments. Each argument is separate
 .. _qdbsh_cluster_purge:
 .. option:: cluster_purge
 
-    Remove all entries from the cluster. This command is not atomic.
+    Remove all entries from the cluster. This command is not atomic. When activated:
+    
+      #. Replication and migration is stopped.
+      #. The directories containing data and metadata are removed.
+      #. All entries are cleared from memory.
+      #. Replication and migration are restarted.
 
     :return: nothing if successful, an error message otherwise
 
