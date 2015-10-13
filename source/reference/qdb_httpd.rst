@@ -286,7 +286,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
     Specifies the address and port on which the server will listen.
 
     Argument
-        A string representing an address and port the server should listen on. The string can be a host name, IP address, or network interface.
+        A string representing an address and port the server should listen on. The string can be a host name or an IP address.
 
     Default value
         127.0.0.1:8080, the IPv4 localhost and the port 8080
@@ -295,10 +295,6 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         Listen on all addresses and the port 80::
 
             qdbd --address=0.0.0.0:80
-        
-        Listen on an interface::
-        
-            qdbd --address=eth0
 
 
 .. option:: -r <path>, --root <path>
