@@ -17,14 +17,14 @@ Quasardb provides native, signed 64-bit integers. Native signed integers allow y
 
 For example, your client can send the request "add 10 to this value, whatever its current value is". If several concurrent clients send the same request, all requests are guaranteed to be acknowledged and the result will be consistent.
 
-Distributed Queues
-^^^^^^^^^^^^^^^^^^
+Double-Ended Queues
+^^^^^^^^^^^^^^^^^^^
 
-A distributed queues is an ordered collection of blobs. They support concurrent and efficient insertion or removal, but only at the beginning and the end of the queue. You can query current size of the queue in constant time and access elements of the queue by index.
+Double-ended queues or "deques" are an ordered collection of blobs. They support concurrent and efficient insertion or removal, but only at the beginning and the end of the queue. You can query the current size of the queue in constant time and access elements of the queue by index.
 
 Queue elements are blobs and can be of any size. Values smaller than 64 bytes benefit from optimized storage.
 
-Queues are transparently distributed over several nodes and have no predefined length limit.
+Double-ended queues are transparently distributed over several nodes and have no predefined length limit.
 
 Distributed Hash Sets
 ^^^^^^^^^^^^^^^^^^^^^

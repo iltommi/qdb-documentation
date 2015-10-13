@@ -31,6 +31,11 @@ Data Types
 
 See :doc:`../concepts/data_types`.
 
+Tags
+----
+
+See :doc:`../concepts/tags`.
+
 Memory management
 -----------------
 
