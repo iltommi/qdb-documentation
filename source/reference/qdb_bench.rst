@@ -77,11 +77,15 @@ If you want to add another test, for example, if you want to put a one (1) byte 
         }
     }
 
+Script Commands
+===============
+
 Each command requires the count and size parameters.
 
 The accepted commands are:
 
     * ``single_put_multiple_get``: adds one entry of *size* bytes and retrives it *count* times
+    * ``single_put_multiple_update``: adds one entry of *size* bytes and updates it *count* times
     * ``multiple_put``: puts *count* entry of *size* bytes and then deletes them all
     * ``multiple_put_remain``: puts *count* entry of *size* bytes, but does not delete them
     * ``multiple_put_get_delete``: adds an entry of *size* bytes, retrieves it and deletes it *count* times
