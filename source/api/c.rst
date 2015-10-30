@@ -14,17 +14,20 @@ Quick Reference
         Return Type                       Name                           Arguments     
  =========================== ====================================== ===================
   ..                          :c:type:`qdb_limits_t`;                ..
+  ..                          :c:type:`qdb_error_t`;                 ..
   ..                          :c:type:`qdb_compression_t`;           ..
+  ..                          :c:type:`qdb_protocol_t`;              ..
   ..                          :c:type:`qdb_log_level_t`;             ..
   ..                          :c:type:`qdb_handle_t`;                ..
+  ..                          :c:type:`qdb_log_callback`;            ..
   ..                          :c:type:`qdb_const_iterator_t`;        ..
   ..                          :c:type:`qdb_remote_node_t`;           ..
   ..                          :c:type:`qdb_entry_type_t`;            ..
   ..                          :c:type:`qdb_operation_type_t`;        ..
   ..                          :c:type:`qdb_operation_t`;             ..
-  ..                          :c:type:`qdb_error_t`;                 ..
   ..                          :c:type:`qdb_option_t`;                ..
-  ..                          :c:type:`qdb_protocol_t`;              ..
+  ..                          :c:type:`qdb_stream_t`;                ..
+  ..                          :c:type:`qdb_stream_mode_t`            ..
   :c:type:`const char *`      :c:type:`qdb_error`                    (:c:type:`qdb_error_t` error);
   :c:type:`const char *`      :c:type:`qdb_version`                  (void);
   :c:type:`const char *`      :c:type:`qdb_build`                    (void);
@@ -88,6 +91,13 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_remove_tag`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_tagged`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` tag, :c:type:`const char ***` aliases, :c:type:`qdb_size_t` aliases_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_tags`                 (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char ***` tags, :c:type:`qdb_size_t` tags_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stream_open`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_stream_mode_t` mode, :c:type:`qdb_stream_t` * stream);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stream_close`             (:c:type:`qdb_stream_t` stream);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stream_read`              (:c:type:`qdb_stream_t` stream, :c:type:`void *` data, :c:type:`size_t *` size);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stream_write`             (:c:type:`qdb_stream_t` stream, :c:type:`const void *` data, :c:type:`size_t` size);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stream_size`              (:c:type:`qdb_stream_t` stream, :c:type:`qdb_stream_size_t *` size);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stream_getpos`            (:c:type:`qdb_stream_t` stream, :c:type:`qdb_stream_size_t *` position);
+  :c:type:`qdb_error_t`       :c:type:`qdb_stream_setpos`            (:c:type:`qdb_stream_t` stream, :c:type:`const qdb_stream_size_t *` position);
 
  =========================== ====================================== ===================
  
@@ -434,6 +444,23 @@ Actual iteration is done with :c:func:`qdb_iterator_next` and :c:func:`qdb_itera
 .. note::
     Although each entry is returned only once, the order in which entries are returned is undefined.
 
+Streaming
+----------
+
+Use the streaming API to read or write portions of large entries in linear packets. There is no limit to the size of entries that can be streamed to or from the client. ::
+
+    char * content = load_video("large_video_file.mp4"); // large amount of data
+    qdb_stream_t * stream;
+    qdb_stream_mode_t mode = qdb_stream_mode_write;
+    
+    qdb_stream_open(handle, alias, mode, stream)
+    
+    status = qdb_stream_write(stream, content, sizeof(content));
+    if (status != qdb_error_ok)
+    {
+        // error management
+    }
+
 
 Logging
 ----------
@@ -543,6 +570,14 @@ Reference
 .. c:type:: qdb_option_t
 
     An enum representing the available options.
+
+.. c:type:: qdb_stream_t
+
+    A structure that represents a stream for an entry.
+    
+.. c:type:: qdb_stream_mode_t
+
+    An enum that represents either qdb_stream_mode_read or qdb_stream_mode_write.
 
 .. c:function:: const char * qdb_error(qdb_error_t error)
 
@@ -1444,5 +1479,77 @@ Reference
     :type aliases_count: qdb_size_t
     
     :returns: An error code of type :c:type:`qdb_error_t`
+
+
+.. c:function:: qdb_error_t qdb_stream_open(qdb_handle_t handle, const char * alias, qdb_stream_mode_t mode, qdb_stream_t * stream)
+
+    Creates a new stream to or from the entry, depending on the qdb_stream_mode_t.
+    
+    :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
+    :type handle: qdb_handle_t
+    :param alias: A pointer to a null terminated string representing the entry's alias.
+    :type alias: const char *
+    :param mode: A mode for streaming, either qdb_stream_mode_read or qdb_stream_mode_write
+    :type mode: qdb_stream_mode_t
+    :param stream: A struct representing a streamed entry.
+    :type stream: qdb_stream_t
+    
+.. c:function:: qdb_error_t qdb_stream_close(qdb_stream_t stream)
+
+    Closes an open stream.
+    
+    :param stream: A struct representing a streamed entry.
+    :type stream: qdb_stream_t
+    
+.. c:function:: qdb_error_t qdb_stream_read(qdb_stream_t stream, void * data, size_t * size)
+
+    Reads data from an open stream.
+    
+    :param stream: A struct representing a streamed entry.
+    :type stream: qdb_stream_t
+    :param data: A pointer to the value of the streamed content.
+    :type data: void *
+    :param size: A pointer to a size_t that will be set to the size of the streamed content, in bytes.
+    :type size: size_t *
+    
+.. c:function:: qdb_error_t qdb_stream_write(qdb_stream_t stream, const void * data, size_t size)
+
+    Writes data to an open stream.
+    
+    :param stream: A struct representing a streamed entry.
+    :type stream: qdb_stream_t
+    :param data: A pointer to the value of the streamed content.
+    :type data: const void *
+    :param size: A pointer to a size_t that contains the size of the streamed content, in bytes.
+    :type size: size_t *
+    
+.. c:function:: qdb_error_t qdb_stream_size(qdb_stream_t stream, qdb_stream_size_t * size)
+
+    Retrieves the size of the content being written to or read from the stream.
+    
+    :param stream: A struct representing a streamed entry.
+    :type stream: qdb_stream_t
+    :param size: A pointer to a size_t that will be set to the size of the streamed content, in bytes.
+    :type size: size_t *
+    
+.. c:function:: qdb_error_t qdb_stream_getpos(qdb_stream_t stream, qdb_stream_size_t * position)
+
+    Retrieves the current position of the stream.
+    
+    :param stream: A struct representing a streamed entry.
+    :type stream: qdb_stream_t
+    :param size: A pointer to a qdb_stream_size_t that will be set to the position of the stream, in bytes.
+    :type size: qdb_stream_size_t *
+    
+.. c:function:: qdb_error_t qdb_stream_setpos(qdb_stream_t stream, const qdb_stream_size_t * position)
+
+    Sets the current position of the stream.
+    
+    :param stream: A struct representing a streamed entry.
+    :type stream: qdb_stream_t
+    :param position: A pointer to a const qdb_stream_size_t that contains the position of the stream, in bytes.
+    :type position: const qdb_stream_size_t *
+
+
 
 
