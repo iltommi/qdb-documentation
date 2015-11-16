@@ -9,7 +9,7 @@ Introduction
 
 The quasardb Java API uses JNI to bring the power and speed of quasardb to the Java world without compromising performance.
 
-You can access your cluster using either the high level Java classes or the low level JNI API. Where possible you should prefer to use the high level classes.
+You can access your cluster using either the high level Java classes or the low level JNI API. In almost all cases you should use the high level classes.
 
 You may download the Java package from the quasardb download site or build it from the sourcecode `https://github.com/bureau14/qdb-api-java <https://github.com/bureau14/qdb-api-java>`_.  All information regarding the quasardb download site is in your welcome e-mail.
 
@@ -84,81 +84,6 @@ To remove an entry::
     cluster.getBlob("obj1").remove();
 
 Quasardb also supports other object types than Blobs, including Double-Ended Queues, Hash Sets, and Integers. These have get/put/update methods on the cluster object as well as their own convenience methods.
-
-Using the low-level API
------------------------
-
-The low-level API provides direct access to the C API via JNI. **Usage of the low-level API is discouraged.**
-
-Loading the JNI
-^^^^^^^^^^^^^^^^^^
-
-Your Java program must load the native JNI library to use the quasardb API: ::
-
-    static
-    {
-        System.loadLibrary("qdb_java_api");
-    }
-
-All the dependencies must be resolved for the load to be successful. This should be the case if you copy all the libraries present in the ``bin`` directory (Windows) or ``lib`` directory (FreeBSD and Linux).
-
-Connecting to a quasardb cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-The connection is a two step process.
-
-    #. Initialize the quasardb client session: ::
-
-        SWIGTYPE_p_qdb_session session = quasardb.open();
-
-    #. Connect to a server within a cluster: ::
-
-        qdb_error_t r = quasardb.connect(session, "qdb://192.168.1.1:2836");
-
-In this case we're connecting to the server ``192.168.1.1`` but we could have specified a domain name or an IPv6 address.
-
-Each connection to a server must be terminated manually: ::
-
-    quasardb.close(session);
-
-Adding an entry to the cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-To add an entry to the cluster you need to specify it's alias and wrap the content in a `ByteBuffer <http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html>`_. See :ref:`java-memory-management`: ::
-
-    String alias = "myAlias";
-    String myData = "this is my data";
-
-    // it's *VERY* important for the byte buffer to be a direct buffer
-    // otherwise the JNI will not be able to access it
-    ByteBuffer bb = java.nio.ByteBuffer.allocateDirect(1024);
-    bb.put(myData.getBytes());
-    bb.flip();
-
-    r = quasardb.blob_put(session, alias, bb, bb.limit());
-    if (r != qdb_error_t.error_ok)
-    {
-        // error
-    }
-
-Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
-
-Getting an entry from the cluster
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-Retrieving an entry requires knowing the alias and allocating a `ByteBuffer <http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html>`_ large enough to hold all the content. See :ref:`java-memory-management`: ::
-
-    String alias = "myAlias";
-    ByteBuffer content = java.nio.ByteBuffer.allocateDirect(1024);
-    int [] contentLength = { 0 };
-
-    r = quasardb.blob_get(session, alias, content, contentLength);
-    if (r != qdb_error_t.error_ok)
-    {
-        // error
-    }
-
-We pass an int array to receive the actual size of the data we obtained from the repository, even if the buffer was not large enough to hold all the data.
 
 .. _java-memory-management:
 
