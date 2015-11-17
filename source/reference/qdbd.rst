@@ -711,7 +711,7 @@ The default configuration file is shown below::
 
     A boolean representing whether or not to persist data on the hard drive. If true, all data will be stored in memory. Entries cannot be interated in transient mode. For more information, see `transient-mode`.
 
-.. .. describe:: global::depot::history # TODO  Disables transactions and per-entry versions?
+.. .. describe:: global::depot::history # According to Edouard on 2015-11-17, this value is ignored and will be left undocumented.
 
 .. describe:: global::depot::sync
 
