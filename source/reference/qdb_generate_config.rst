@@ -6,7 +6,7 @@ quasardb configuration generator
 Introduction
 ============
 
-The quasardb configuration generator is a simple utility designed to create a qdbd.conf and qdb_httpd.conf configuration files from input arguments.
+The quasardb configuration generator is a simple utility designed to create qdbd.conf and qdb_httpd.conf configuration files from input arguments.
 
 Usage
 ===============
@@ -15,7 +15,7 @@ Usage
 
 .. option:: config_path
     
-    A folder path that will contain the new configuration file. If the folder does not exist it will be created.
+    A folder path for the configuration files. If the folder does not exist it will be created.
 
 .. option:: log_path
     
