@@ -14,4 +14,4 @@ Application Reference
    qdb_httpd
    qdb_dbtool
    qdb_bench
-   confgen
+   qdb_generate_config
