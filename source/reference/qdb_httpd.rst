@@ -36,9 +36,9 @@ Quick Reference
  :option:`--node`                      address:port of server       127.0.0.1:2836      
  :option:`-l`, `--log-file`            log on given file                                
  :option:`--log-dump`                  dump file location           qdb_error_dump.txt  
- :option:`--log-flush-interval`        change log flush             3                   
- :option:`--log-level`                 change log level             info                
  :option:`--log-syslog`                log on syslog                                    
+ :option:`--log-level`                 change log level             info                
+ :option:`--log-flush-interval`        change log flush             3                   
  :option:`-t`, `--threads`             number of threads to use     1                  
  ===================================== ============================ =================== ==============
 
@@ -431,47 +431,43 @@ Some things to note when working with a configuration file:
 The default configuration file is shown below::
 
     {
-        "daemonize": false,
         "doc_root": "html",
+        "daemonize": false,
         "listen_on": "127.0.0.1:8080",
-        "log_config":
+        "threads": 1,
+        "remote_node": "127.0.0.1:2836",
+        "logger":
         {
-            "dump_file": "qdb_error_dump.txt",
-            "flush_interval": 3,
-            "log_files": [  ],
             "log_level": 2,
+            "flush_interval": 3,
+            "log_files": [],
+            "dump_file": "qdb_error_dump.txt",
             "log_to_console": false,
             "log_to_syslog": false
-        },
-        "remote_node": "127.0.0.1:2836",
-        "threads": 1
+        }
     }
+
+.. describe:: doc_root
+
+    A string representing the relative or absolute path to the administration HTML files.
 
 .. describe:: daemonize
 
     A boolean value representing whether or not the qdb_httpd daemon should daemonize on launch.
     
-.. describe:: doc_root
-
-    A string representing the relative or absolute path to the administration HTML files.
-
 .. describe:: listen_on
 
     A string representing an address and port the web server should listen on. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
 
-.. describe:: log_config::dump_file
+.. describe:: threads
 
-    A string representing the relative or absolute path to the system error dump file.
+    An integer representing the number of listening threads qdb_httpd should use. Higher numbers of threads may increase qdb_httpd performance.
 
-.. describe:: log_config::flush_interval
+.. describe:: remote_node
 
-    An integer representing how frequently qdb_httpd log messages should be flushed to the log locations, in seconds.
+    A string representing an address and port where the server can find a QuasarDB daemon. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
 
-.. describe:: log_config::log_files
-
-    An array of strings representing the relative or absolute paths to the qdb_httpd log files.
-
-.. describe:: log_config::log_level
+.. describe:: logger::log_level
 
     An integer representing the verbosity of the log output. Acceptable values are::
     
@@ -482,21 +478,27 @@ The default configuration file is shown below::
         4 = error
         5 = panic (least output)
 
-.. describe:: log_config::log_to_console
+.. describe:: logger::flush_interval
+
+    An integer representing how frequently qdb_httpd log messages should be flushed to the log locations, in seconds.
+
+.. describe:: logger::log_files
+
+    An array of strings representing the relative or absolute paths to the qdb_httpd log files.
+
+.. describe:: logger::dump_file
+
+    A string representing the relative or absolute path to the system error dump file.
+
+.. describe:: logger::log_to_console
 
     A boolean value representing whether or not the qdb_httpd daemon should log to the console it was spawned from.  This value is ignored if local::user::daemon is true.
 
-.. describe:: log_config::log_to_syslog
+.. describe:: logger::log_to_syslog
 
     A boolean value representing whether or not the qdb_httpd daemon should log to the syslog.
 
-.. describe:: remote_node
 
-    A string representing an address and port where the server can find a QuasarDB daemon. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
-
-.. describe:: threads
-
-    An integer representing the number of listening threads qdb_httpd should use. Higher numbers of threads may increase qdb_httpd performance.
 
 
 
