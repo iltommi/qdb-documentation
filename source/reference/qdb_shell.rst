@@ -27,8 +27,8 @@ Command line options
  ===================================== ============================ ====================
                 Option                             Usage                  Default
  ===================================== ============================ ====================
- :option:`-h`                          display help                  
- :option:`-v`                          display quasardb version      
+ :option:`-h`,`--help`                 display help                  
+ :option:`-v`,`--version`              display quasardb version      
  :option:`-c`                          run a qdb command
  ===================================== ============================ ====================
 
@@ -39,7 +39,6 @@ Commands
                 Command                                                                                Usage
  =================================================================================== =================================================================
  :ref:`help <qdbsh_help>`                                                             display the help
- :ref:`version <qdbsh_version>`                                                       display the quasardb version
  :ref:`exit <qdbsh_exit>`                                                             exit the shell (interactive mode only)
  :ref:`blob_compare_and_swap alias content comparand <qdbsh_blob_compare_and_swap>`   atomically compare and swap the Blob with the comparand
  :ref:`blob_get alias <qdbsh_blob_get>`                                               return the content of the Blob
@@ -65,16 +64,17 @@ Commands
  :ref:`node_status host <qdbsh_node_status>`                                          return the node status as a JSON string
  :ref:`node_stop host reason <qdbsh_node_stop>`                                       shut down the quasardb daemon on a host
  :ref:`node_topology host reason <qdbsh_node_topology>`                               return the node topology as a JSON string
- :ref:`queue_back alias <qdbsh_queue_back>`                                           return the value at the back of the Queue
- :ref:`queue_front alias <qdbsh_queue_front>`                                         return the value at the front of the Queue
- :ref:`queue_pop_back alias <qdbsh_queue_pop_back>`                                   remove and return the value from the back of the Queue
- :ref:`queue_pop_front alias <qdbsh_queue_pop_front>`                                 remove and return the value from the front of the Queue
- :ref:`queue_push_back alias content <qdbsh_queue_push_back>`                         add a value to the back of the Queue
- :ref:`queue_push_front alias content <qdbsh_queue_push_front>`                       add a value to the front of the Queue
+ :ref:`deque_back alias <qdbsh_deque_back>`                                           return the value at the back of the Deque
+ :ref:`deque_front alias <qdbsh_deque_front>`                                         return the value at the front of the Deque
+ :ref:`deque_pop_back alias <qdbsh_deque_pop_back>`                                   remove and return the value from the back of the Deque
+ :ref:`deque_pop_front alias <qdbsh_deque_pop_front>`                                 remove and return the value from the front of the Deque
+ :ref:`deque_push_back alias content <qdbsh_deque_push_back>`                         add a value to the back of the Deque
+ :ref:`deque_push_front alias content <qdbsh_deque_push_front>`                       add a value to the front of the Deque
  :ref:`add_tag alias tag <qdbsh_add_tag>`                                             add a tag to an entry
  :ref:`get_tagged tag <qdbsh_get_tagged>`                                             get entries with the given tag
  :ref:`has_tag alias tag <qdbsh_has_tag>`                                             returns true if the entry has the tag
  :ref:`remove_tag alias tag <qdbsh_remove_tag>`                                       removes a tag from an entry
+ :ref:`version <qdbsh_version>`                                                       display the quasardb version
  
  =================================================================================== =================================================================
 
@@ -199,12 +199,6 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: help
 
     Display basic usage information and lists all available commands.
-
-
-.. _qdbsh_version:
-.. option:: version
-
-    Display the version information for the quasardb shell.
 
 
 .. _qdbsh_exit:
@@ -506,58 +500,58 @@ A command generally requires one or several arguments. Each argument is separate
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
 
 
-.. _qdbsh_queue_back:
-.. option:: queue_back <alias>
+.. _qdbsh_deque_back:
+.. option:: deque_back <alias>
 
-    Get the value at the end of the Queue.
+    Get the value at the end of the Deque.
     
-    :param alias: *(string)* the alias of the Queue
-    :return: *(string)* the value of the last item in the Queue.
+    :param alias: *(string)* the alias of the Deque
+    :return: *(string)* the value of the last item in the Deque.
 
 
-.. _qdbsh_queue_front:
-.. option:: queue_front <alias>
+.. _qdbsh_deque_front:
+.. option:: deque_front <alias>
 
-    Get the value at the start of the Queue.
+    Get the value at the start of the Deque.
     
-    :param alias: *(string)* the alias of the Queue
-    :return: *(string)* the value of the first item in the Queue.
+    :param alias: *(string)* the alias of the Deque
+    :return: *(string)* the value of the first item in the Deque.
 
 
-.. _qdbsh_queue_pop_back:
-.. option:: queue_pop_back <alias>
+.. _qdbsh_deque_pop_back:
+.. option:: deque_pop_back <alias>
 
-    Remove the value at the end of the Queue and return its value.
+    Remove the value at the end of the Deque and return its value.
     
-    :param alias: *(string)* the alias of the Queue
-    :return: *(string)* the value of the last item in the Queue.
+    :param alias: *(string)* the alias of the Deque
+    :return: *(string)* the value of the last item in the Deque.
 
-.. _qdbsh_queue_pop_front:
-.. option:: queue_pop_front <alias>
+.. _qdbsh_deque_pop_front:
+.. option:: deque_pop_front <alias>
 
-    Remove the value at the start of the Queue and return its value.
+    Remove the value at the start of the Deque and return its value.
     
-    :param alias: *(string)* the alias of the Queue
-    :return: *(string)* the value of the first item in the Queue.
+    :param alias: *(string)* the alias of the Deque
+    :return: *(string)* the value of the first item in the Deque.
 
 
-.. _qdbsh_queue_push_back:
-.. option:: queue_push_back <alias> <content>
+.. _qdbsh_deque_push_back:
+.. option:: deque_push_back <alias> <content>
 
-    Append the value to the Queue.
+    Append the value to the Deque.
     
-    :param alias: *(string)* the alias of the Queue
-    :param content: *(string)* the value to add to the end of the Queue.
+    :param alias: *(string)* the alias of the Deque
+    :param content: *(string)* the value to add to the end of the Deque.
     :return: nothing if successful, an error message otherwise.
 
 
-.. _qdbsh_queue_push_front:
-.. option:: queue_push_front <alias> <content>
+.. _qdbsh_deque_push_front:
+.. option:: deque_push_front <alias> <content>
 
-    Prepend the value to the Queue.
+    Prepend the value to the Deque.
     
-    :param alias: *(string)* the alias of the Queue
-    :param content: *(string)* the value to add to the start of the Queue.
+    :param alias: *(string)* the alias of the Deque
+    :param content: *(string)* the value to add to the start of the Deque.
     :return: nothing if successful, an error message otherwise.
 
 .. _qdbsh_add_tag:
@@ -592,4 +586,9 @@ A command generally requires one or several arguments. Each argument is separate
     
     :param alias: *(string)* the alias of the entry
     :param tag: *(string)* the tag to remove from the entry
+
+.. _qdbsh_version:
+.. option:: version
+
+    Display the version information for the quasardb shell.
 
