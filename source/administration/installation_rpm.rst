@@ -30,12 +30,10 @@ Configuration
      * Add node IP addresses to ``local::chord::bootstrapping_peers`` to connect the node to a cluster.
      * Set ``local::network::listen_on`` to change the IP address and port qdbd uses.
      * Set other values as needed. See :ref:`qdbd-config-file-reference` for more information.
+
  #. (optional) Edit the qdb_httpd configuration file at ``/etc/qdb/qdb_httpd.conf``.
      * Set ``remote_node`` to the IP address of a node.
      * Set other values as needed. See :ref:`qdb_httpd-config-file-reference` for more information.
- #. Disable system swappiness in ``/etc/sysctl.conf``::
-         
-         vm.swappiness = 0
          
  #. Disable Transparent Huge Pages by adding the following to ``/etc/rc.local``::
          
@@ -47,16 +45,25 @@ Configuration
             echo never > /sys/kernel/mm/transparent_hugepage/defrag
          fi
          
- #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values::
-         
-         net.core.somaxconn = 8192
-         net.ipv4.tcp_max_syn_backlog = 8192
-         net.core.rmem_max = 16777216
-         net.core.wmem_max = 16777216
-         
  #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``::
          
          qdb    soft    nofile    65536
+
+
+The .rpm package automatically sets the following values in `/etc/sysctl.d/30-quasardb.conf`::
+
+    # Max number of incoming connections
+    net.core.somaxconn = 8192
+    
+    # Max number of pending connections
+    net.ipv4.tcp_max_syn_backlog = 8192
+    
+    # Max socket memory (read & write)
+    net.core.rmem_max = 16777216
+    net.core.wmem_max = 16777216
+    
+    # Swap only when running out of memory 
+    vm.swappiness = 0
 
 
 Test the Node
