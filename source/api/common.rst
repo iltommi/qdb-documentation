@@ -44,7 +44,7 @@ A lot of calls allocate memory on the client side. For example, when you get an 
 Error management
 ----------------
 
-Most success and failure conditions are based on return values. When an operation is successful, a function returns with the status qdb_e_ok. Other error messages are returned as qdb_error_t enums, which can be examined using the QDB_SUCCESS(qdb_error_t), QDB_SEVERITY(qdb_error_t) and QDB_TRANSIENT(qdb_error_t) macros.
+Most success and failure conditions are based on return values. When an operation is successful, a function returns with the status qdb_e_ok. Other error types are returned as a value from the qdb_error_t enum, which can be examined using the QDB_SUCCESS(qdb_error_t), QDB_TRANSIENT(qdb_error_t) and QDB_SEVERITY(qdb_error_t) macros.
 
 If the language supports exceptions, like .NET, Python, and Java, errors are translated to exceptions.
 
