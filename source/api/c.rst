@@ -525,7 +525,7 @@ Reference
 
 .. c:type:: qdb_error_t
 
-    An enum that represents possible error codes returned by the API functions. "No error" evaluates to 0. When the error is qdb_e_system, either errno or GetLastError (depending on the platform) will be updated with the corresponding system error.
+    An enum that represents possible error codes returned by the API functions. You are encouraged to use the QDB_SUCCESS(qdb_error_t), QDB_SEVERITY(qdb_error_t) and QDB_TRANSIENT(qdb_error_t) macros to test for and get error types, as error handling may change in the future. When the error is qdb_e_system, either errno or GetLastError (depending on the platform) will be updated with the corresponding system error.
 
 .. c:type:: qdb_compression_t
 
