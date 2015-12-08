@@ -46,6 +46,10 @@ Error management
 
 Most success and failure conditions are based on return values. When an operation is successful, a function returns with the status qdb_e_ok. Other error types are returned as a value from the qdb_error_t enum, which can be examined using the QDB_SUCCESS(qdb_error_t), QDB_TRANSIENT(qdb_error_t) and QDB_SEVERITY(qdb_error_t) macros.
 
+Transient errors may resolve by themselves given time. Transient errors are commonly transaction conflicts, network timeouts, or an unstable cluster.
+
+An informational error means that the query has been succesfully processed by the server and your parameters were valid but the result is either empty or unavailable. Informational errors include non-existent entries, empty collections, indexes out of range, or integer overflow/underflows.
+
 If the language supports exceptions, like .NET, Python, and Java, errors are translated to exceptions.
 
 
