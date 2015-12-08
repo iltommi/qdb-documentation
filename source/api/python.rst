@@ -23,48 +23,26 @@ download the FreeBSD version and compile it on Linux.
 
 All required libraries and extensions are included in the Python package.
 
-Windows
-```````
 
-Installers for Python 2.7 on Windows 32-bit and 64-bit are available. You just need to download the installer and follow the on-screen instructions.
+Installing the Package
+``````````````````````
 
-You need to download the version matching your Python architecture, not the OS. For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit quasardb package.
+Windows users can download the installer from the download site. The installers work with Python 2.7 on Windows 32-bit and 64-bit. You need to download the version matching your Python architecture, not the OS. For example, you may have installed Python 2.7 32-bit on a Windows 64-bit platform, in which case you must get the Python 32-bit quasardb package.
 
-If you have a different Python version or if you want to recompile the extension, download the source package.
+Compiling From Source
+`````````````````````
 
-To compile it, you need the appropriate Visual Studio version (e.g. Visual Studio 2008 for Python 2.7). Unpack the archive and in the directory run::
-
-    python setup.py build
-    python setup.py install
-
-The install phase may require administrative privileges.
-
-Linux and FreeBSD
-`````````````````
-
-Download the source package for your operating system (Linux or FreeBSD) and make sure you have both a C compiler and the Python development headers installed.
+If you have a different Python version or you want to recompile the extension, download the source package. To compile the source package, you need the Quasardb C library, `CMake <http://www.cmake.org/>`_, `SWIG <http://www.swig.org/>`_, and the Python dist utils installed.
 
 Unpack the archive and in the directory run::
 
-    python setup.py build
-    sudo python setup.py install
+    mkdir build
+    cd build
+    cmake -G "<generator>" ..
+    make
 
-or::
+The generator options for your platform can be shown by running `cmake` with no options.
 
-    python setup.py build
-    sudo python setup.py install
-
-GCC 4.6.0 or later is required to build the extension. You can specify the compiler with the following command::
-
-    setenv CC gcc46
-    python setup.py build
-
-Provided that gcc46 is the name of your GCC 4.6 compiler.
-
-It is also possible - and even recommended on FreeBSD - to build the extension with clang::
-
-    setenv CC clang
-    python setup.py build
 
 Testing the installation
 ````````````````````````
