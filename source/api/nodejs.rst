@@ -21,11 +21,16 @@ Quick Reference
   Date             :js:func:`Blob::getExpiry`                   ()
   Cluster          :js:func:`Cluster::new`                      (string uri)
   Cluster          :js:func:`Cluster::connect`                  (callback(), callback(err))
+  ..               :js:func:`Cluster::setTimeout`               (int milliseconds)
   Blob             :js:func:`Cluster::blob`                     (string alias)
   Set              :js:func:`Cluster::hashSet`                  (string alias)
   Integer          :js:func:`Cluster::integer`                  (string alias)
   Deque            :js:func:`Cluster::deque`                    (string alias)
   Tag              :js:func:`Cluster::tag`                      (string tagName)
+  bool             :js:func:`Error::informational`              ()
+  bool             :js:func:`Error::transient`                  ()
+  string           :js:func:`Error::message`                    ()
+  integer          :js:func:`Error::code`                       ()
   string           :js:attr:`Deque::alias`                      ()
   ..               :js:func:`Deque::pushFront`                  (Buffer content, callback(err))
   ..               :js:func:`Deque::pushBack`                   (Buffer content, callback(err))
@@ -235,6 +240,12 @@ Example::
           
       :param string uri: A string in the format "qdb://host:port[,host:port]".
   
+  .. js:function:: setTimeout (int milliseconds)
+      
+      Sets the client-side timeout value for callbacks. The default is 60,000ms, or one minute. This should be run before the call to Cluster::connect.
+      
+      :param string milliseconds: the number of milliseconds to set.
+      
   .. js:function:: blob (string alias)
       
       Creates a Blob associated with the specified alias. No query is performed at this point.
@@ -269,105 +280,6 @@ Example::
       
       :param string tagName: the name of the tag in the database.
       :returns: the Tag
-
-The `Integer` class
-^^^^^^^^^^^^^^^^^^^
-
-Represents an signed 64-bit integer in a quasardb database.
-
-You get a qdb.Integer instance by calling cluster.integer(). Then you can perform atomic operations on the integer::
-    
-    var i = c.integer('will_be_ten');
-    i.put(3, function(err){ /* */});
-    i.add(7, function(err, data){ /* */});
-
-.. js:class:: Integer
-  
-  .. js:attribute:: alias
-      
-      Gets the alias (i.e. its "key") of the set in the database.
-      
-      :returns: A string with the alias of the integer.
-  
-  .. js:function:: put (int value, [Date expiry_time], callback(err))
-      
-      Adds an entry. Aliases beginning with "qdb" are reserved and cannot be used.
-
-      :param int value: The value of the integer.
-      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
-      :param function callback(err): A callback or anonymous function with error parameter.
-  
-  .. js:function:: update (int value, [Date expiry_time], callback(err))
-      
-      Updates an entry. Aliases beginning with "qdb" are reserved and cannot be used.
-      
-      :param int value: The value of the integer.
-      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
-      :param function callback(err): A callback or anonymous function with error parameter.
-
-  .. js:function:: get (callback(err, data))
-      
-      Retrieves an entry's value.
-      
-      :param function callback(err, data): A callback or anonymous function with error and data parameters.
-  
-  .. js:function:: remove (callback(err))
-      
-      Removes the integer from the database.
-      
-      :param function callback(err): A callback or anonymous function with error parameter.
-  
-  .. js:function:: add (int value, callback(err, data))
-      
-      Atomically increment the value in the database.
-      
-      :param int value: The value to add to the value in the database.
-      :param function callback(err, data): A callback or anonymous function with error and data parameters.
-  
-  .. js:function:: addTag (string tagName, callback(err))
-      
-      Assigns the Integer to the specified tag.
-      
-      :param string tagName: The name of the tag.
-      :param function callback(err): A callback or anonymous function with error parameter.
-
-  .. js:function:: removeTag (string tagName, callback(err))
-      
-      Removes the Integer from the specified tag. Errors if the tag is not assigned.
-      
-      :param string tagName: The name of the tag.
-      :param function callback(err): A callback or anonymous function with error parameter.
-
-  .. js:function:: hasTag (string tagName, callback(err))
-      
-      Determines if the Integer has the specified tag.
-      
-      :param string tagName: The name of the tag.
-      :param function callback(err): A callback or anonymous function with error parameter.
-
-  .. js:function:: getTags (callback(err, tags))
-      
-      Gets an array of tag objects associated with the Integer.
-      
-      :param function callback(err, tags): A callback or anonymous function with error and array of tags parameters.
-
-  .. js:function:: expiresAt (Date expiry_time)
-      
-      Sets the expiration time for the Integer at a given Date.
-      
-      :param Date expiry_time: A Date at which the Integer expires.
-
-  .. js:function:: expiresFromNow (int seconds)
-      
-      Sets the expiration time for the Integer as a number of seconds from call time.
-      
-      :param int seconds: A number of seconds from call time at which the Integer expires.
-
-  .. js:function:: getExpiry ()
-      
-      Gets the expiration time of the Integer. A return Date of Jan 1, 1970 means the Integer does not expire.
-      
-      :returns: A Date object with the expiration time.
 
 
 The `Deque` class
@@ -470,6 +382,158 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
       
       :param function callback(err, tags): A callback or anonymous function with error and array of tags parameters.
   
+
+
+The `Error` class
+^^^^^^^^^^^^^^^^^
+
+Quasardb callbacks return error messages. When the callback is successful, the error object is null. You may not want to throw at every error: some errors are transient and some are informational. You can check their types with the transient and informational methods.
+
+Transient errors may resolve by themselves given time. Transient errors are commonly transaction conflicts, network timeouts, or an unstable cluster.
+
+An informational error means that the query has been succesfully processed by the server and your parameters were valid but the result is either empty or unavailable. Informational errors include non-existent entries, empty collections, indexes out of range, or integer overflow/underflows.
+
+Example::
+
+    var b = c.blob('bam');
+
+    b.put(new Buffer("boom"), function(err)
+    {
+        if (err)
+        {
+            // error management
+            throw error.message;
+        }
+
+        // ...
+    });
+
+.. js:class:: Error
+
+  .. js:function:: informational ()
+      
+      Determines if the error is an informational error.
+      
+      :returns: True if the error is informational, false otherwise.
+  
+  .. js:function:: transient ()
+  
+        Determines if the error is a transient error.
+      
+      :returns: True if the error is transient, false otherwise.
+
+  .. js:function:: message ()
+
+      Gets a description of the error.
+      
+      :returns: A string containing the error message.
+
+  .. js:function:: code ()
+  
+      Gets the error code.
+      
+      :returns: An integer with the error code.
+
+
+The `Integer` class
+^^^^^^^^^^^^^^^^^^^
+
+Represents an signed 64-bit integer in a quasardb database.
+
+You get a qdb.Integer instance by calling cluster.integer(). Then you can perform atomic operations on the integer::
+    
+    var i = c.integer('will_be_ten');
+    i.put(3, function(err){ /* */});
+    i.add(7, function(err, data){ /* */});
+
+.. js:class:: Integer
+  
+  .. js:attribute:: alias
+      
+      Gets the alias (i.e. its "key") of the set in the database.
+      
+      :returns: A string with the alias of the integer.
+  
+  .. js:function:: put (int value, [Date expiry_time], callback(err))
+      
+      Adds an entry. Aliases beginning with "qdb" are reserved and cannot be used.
+
+      :param int value: The value of the integer.
+      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
+      :param function callback(err): A callback or anonymous function with error parameter.
+  
+  .. js:function:: update (int value, [Date expiry_time], callback(err))
+      
+      Updates an entry. Aliases beginning with "qdb" are reserved and cannot be used.
+      
+      :param int value: The value of the integer.
+      :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
+      :param function callback(err): A callback or anonymous function with error parameter.
+
+  .. js:function:: get (callback(err, data))
+      
+      Retrieves an entry's value.
+      
+      :param function callback(err, data): A callback or anonymous function with error and data parameters.
+  
+  .. js:function:: remove (callback(err))
+      
+      Removes the integer from the database.
+      
+      :param function callback(err): A callback or anonymous function with error parameter.
+  
+  .. js:function:: add (int value, callback(err, data))
+      
+      Atomically increment the value in the database.
+      
+      :param int value: The value to add to the value in the database.
+      :param function callback(err, data): A callback or anonymous function with error and data parameters.
+  
+  .. js:function:: addTag (string tagName, callback(err))
+      
+      Assigns the Integer to the specified tag.
+      
+      :param string tagName: The name of the tag.
+      :param function callback(err): A callback or anonymous function with error parameter.
+
+  .. js:function:: removeTag (string tagName, callback(err))
+      
+      Removes the Integer from the specified tag. Errors if the tag is not assigned.
+      
+      :param string tagName: The name of the tag.
+      :param function callback(err): A callback or anonymous function with error parameter.
+
+  .. js:function:: hasTag (string tagName, callback(err))
+      
+      Determines if the Integer has the specified tag.
+      
+      :param string tagName: The name of the tag.
+      :param function callback(err): A callback or anonymous function with error parameter.
+
+  .. js:function:: getTags (callback(err, tags))
+      
+      Gets an array of tag objects associated with the Integer.
+      
+      :param function callback(err, tags): A callback or anonymous function with error and array of tags parameters.
+
+  .. js:function:: expiresAt (Date expiry_time)
+      
+      Sets the expiration time for the Integer at a given Date.
+      
+      :param Date expiry_time: A Date at which the Integer expires.
+
+  .. js:function:: expiresFromNow (int seconds)
+      
+      Sets the expiration time for the Integer as a number of seconds from call time.
+      
+      :param int seconds: A number of seconds from call time at which the Integer expires.
+
+  .. js:function:: getExpiry ()
+      
+      Gets the expiration time of the Integer. A return Date of Jan 1, 1970 means the Integer does not expire.
+      
+      :returns: A Date object with the expiration time.
+
 
 The `Set` class
 ^^^^^^^^^^^^^^^
