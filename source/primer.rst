@@ -4,13 +4,16 @@ Primer
 What is quasardb?
 -----------------
 
-quasardb is a key / value store. It is fast and scalable, handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a `NoSQL database <http://en.wikipedia.org/wiki/NoSQL>`_.
+quasardb is an advanced data management system. At its heat, it is a transactional key/value store with indexing capabilities. It is fast and scalable
+(up and out), handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a
+`NoSQL database <http://en.wikipedia.org/wiki/NoSQL>`_.
 
-quasardb is *limitless*. If your computer has enough memory and enough disk space to store it, quasardb can handle it.
+quasardb is *limitless*. If the hardware can handle it, quasardb can handle it.
 
 Where would you want to use quasardb? Here are a couple of use cases:
 
-    * High-frequency trading market data store
+    * Trading market data store
+    * Apache Spark backend
     * Heavy traffic web site
     * Multiplayer game dynamic elements depot
     * Distributed computing common data store
@@ -19,47 +22,99 @@ Where would you want to use quasardb? Here are a couple of use cases:
 Shall we dance?
 ---------------
 
-Before you start the quasardb server, generate a default configuration file::
+To start a quasardb server, just run it! We provide packages for many platform, but you can always work in a local directory where you manually extracted your
+quasardb binaries. We also support docker and are available on Microsoft Azure and Amazon EC2.
 
-    qdbd --gen-config > qdbd_config.conf
+Let's assume we extracted the quasardb archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
 
-Then, simply run the :doc:`reference/qdbd` from a terminal, passing in the configuration file:: 
+    qdbdd
 
-    qdbd -c qdbd_config.conf
+You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests. You can store into quasardb anything,
+images, videos, XML, text... It will automatically optimize storage for you.
 
-Now that the server is running, you can begin storing anything that crosses your mind into the database. Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
+Let's fire up the shell and run a couple of commands::
 
-    qdbsh put entry amazing...
-    qdbsh get entry
+    qdbsh
+
+Will start the shell and the following prompt should be displayed. Keep in mind you must keep the daemon running::
+
+    qdbsh>
+
+Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
+
+    qdbsh> blob_put entry amazing...
+    qdbsh> blob_get entry
     amazing...
 
-Now let's store the number of files in a folder, based on the output of a shell command::
+Wait, what is a blob? A blob is a "binary large object" and should be your go-to type when unsure about how to stare data. Using blob for text is perfectly fine
+and actually optimal. A blobed is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
+blobs.
 
-    qdbsh put num_files $(ls -1 | wc -l)
-    qdbsh get num_files
-    7
+There are other types of data into quasardb, such as integers:
 
-Oh well, that was not very exciting. Let's stress the engine a bit more! We will zip up a whole directory and overwrite the entry key's value (previously "amazing..." using shell pipes::
+    qdbsh> int_put value 10
+    qdbsh> int_get value
+    10
 
-    tar czf - ./directory | ./qdbsh update entry
+Of course you can store the string "10" into a blob, but with integer you have cross-platform 64-bit signed integer available at your finger tip,
+which enables you to do things such as::
 
-And later, we can extract that directory::
+    qdbsh> int_add value 5
+    15
 
-    qdbsh get entry | tar -xz ./
-
-Or just export the tar.gz file::
-
-    qdbsh get entry > directory.tar.gz
-
+The power of arithmetic compels you! In quasaradb all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had
+thousands of shells doing "int_add" you are guaranteed that all operations are properly accounted.
 
 But, wait, there's more!
 ------------------------
 
-The shell tool is not always the right tool for the job.
-If you have your own application (web or not), you may find it cumbersome to run a third-party program every time you want to access the database.
-That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_ and :doc:`api/python`.
+Integers, blobs, what about "a list of stuff"? We have you covered. Lists in quasardb are named "deques" and stand for "double entry queues". They support concurrent
+and scalable insertion at the beginning and the end and O(1) random access to any element within the deque. Deques are automatically scaled accross all the nodes of your
+cluster and have absolutely no limit, because at quasardb, we don't like limits::
 
-You can find our APIs on `github <http://github.com/bureau14>`_.
+    qdbsh> deque_push_back my_list entry_one
+    qdbsh> deque_push_back my_list entry_two
+    qdbsh> deque_pop_front my_list
+    entry_one
+
+But, wait, there's more!
+------------------------
+
+We could spend more time covering all the features of the types we saw, but we'd like to show you one of the most exciting features of quasardb: tags. Since
+quasardb is a key/value store it provides you extremly fast access to any entry within the cluster, if you have a key.
+
+What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
+a different value than the key, you can use tags. There is no limit to the number of tags you can have for a key and no limit to the number of keys you can have
+for a tag.
+
+Let's see it in action::
+
+    qdbsh> int_put client1_views 1000
+    qdbsh> int_put client1_oders 500
+    qdbsh> add_tag client1_views client1
+    qdbsh> add_tag client1_orders client1
+    qdbsh> get_tagged client1
+    client1_views, client1_orders
+    qdbsh> get_tags client1_views
+    client1
+
+You can see tags as manual secondary indexes. You never pay for tags if you don't need them and tags are designed to be distributed and scalable. Tags are ideal
+when you have a lot of unstructured data or need a flexible model to work with. There is no background jobs that analyzes your data to create indexes so tags
+are very fast and inexpensive.
+
+
+But, wait, there is so much more!
+---------------------------------
+
+The shell tool is not always the right tool for the job and generally has a subset of all the features available in quasardb.
+
+If you have your own application, you may find it cumbersome to run a third-party program every time you want to access the database.
+
+That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_,
+:doc:`api/nodejs` and :doc:`api/python`.
+
+You can either fetch a binary package or build the API from source (BSD License). You will find them on `github <http://github.com/bureau14>`. Our APIs do their
+best to be simple and straightforward.
 
 Here is a short Python code snippet::
 
@@ -74,43 +129,41 @@ Here is a short Python code snippet::
     # closing connection
     del c
 
+That demo is nice, but what happens when I go to production?
+------------------------------------------------------------
 
-Automatic object lifetime
--------------------------
+A fair question which has a simple answer: the size and configuration of the cluster has no impact on the client code. The only thing that may change is
+the connection string. For example if you have a cluster of four machines, your connection string can be::
 
-You might want an entry added in quasardb to be automatically removed after a certain amount of time. 
+    c = qdb.Cluster("qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836,192.168.1.4:2836")
 
-Here's one way to do it::
+or::
 
-    # entry will expire and be removed in 10s
-    c.blob("entry").expires_from_now(10)
+    c = qdb.Cluster("qdb://192.168.1.1:2836,192.168.1.2:2836")
 
-Blobs are nice but what about something more beefy?
----------------------------------------------------
+and even::
 
-quasardb supports integers and queues, out of the box. 
+    c = qdb.Cluster("qdb://192.168.1.1:2836")
 
-Queues support efficient and concurrent insertion at the beginning and the end::
+That's because quasardb protocol has built-in discovery! Just give any node in the cluster and we take care of the rest. The more nodes the better as we can
+try another node if the one provided is down at the moment of the connection.
 
-    c.queue("my_queue").push_back("data")
-    print c.queue("my_queue").back()
-    c.queue("my_queue").push_front("front_data")
-    print c.queue("my_queue").front()
+Going further
+-------------
 
-Integers are native signed 64-bit integers and support atomic additions::
+We hope this quick tour left you wanting for more! quasardb is feature-rich yet simple to use and operate. If you want to go further, the best course of
+action is to start with the documentation of the API for the language of your choice (:doc:`api/index`).
 
-    c.integer("value").put(20)
-    c.integer("value").add(-10)
-    print c.integer("value").get()
+If you'd like to learn more about building a quasardb cluster, head over to the administrative section (:doc:`administration/index`).
 
-Because everything is done server-side these powerful features will enable you to have many clients safely operate on the same entries. For example, integers make it easy to implement reliable counters.
+Curious about the underlying concepts, we have a section dedicated to it (:doc:`concepts/index`).
 
-Wrap up
+Warp up
 -------
 
 Things to remember about quasardb:
 
-    * Fast and scalable key/value store
+    * Fast and scalable
     * High-performance binary protocol
     * Multi-platform: FreeBSD, Linux 2.6+, OS X and Windows NT (32-bit and 64-bit)
     * Peer-to-peer network distribution

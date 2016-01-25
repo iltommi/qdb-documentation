@@ -1,6 +1,20 @@
 Change log
 **********
 
+2.0.0 - "Aristotle" - 2016
+==================================
+
+From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+   `Aristotle <http://en.wikipedia.org/wiki/Aristotle>`_ was a Greek philosopher and scientist born in the city of Stagira, Chalkidice, on the northern periphery of Classical Greece. [...] His writings cover many subjects – including physics, biology, zoology, metaphysics, logic, ethics, aesthetics, poetry, theater, music, rhetoric, linguistics, politics and government – 
+   and constitute the first comprehensive system of Western philosophy
+
+Building on the solid foundation of quasardb 1.2
+
+
+Changes in the version
+----------------------
+
 1.2.1 - "Anaximander" - 05/05/2015
 ==================================
 
