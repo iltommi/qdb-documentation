@@ -50,38 +50,59 @@ Wait, what is a blob? A blob is a "binary large object" and should be your go-to
 and actually optimal. A blobed is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
 blobs.
 
-There are other types of data into quasardb, such as integers:
+When you use the blob_put command, quasardb will return an error if the entry already exists:
 
-    qdbsh> int_put value 10
-    qdbsh> int_get value
+    qdbsh> blob_put entry other_value
+    An entry matching the provided alias already exists.
+
+To update a value, you have the blob_update command, which creates the entry when it doesn't exist:
+
+    qdbsh> blob_update entry other_value
+
+Beyond blobs
+------------
+
+There are other types of entries in quasardb, such as integers:
+
+    qdbsh> int_put my_value 10
+    qdbsh> int_get my_value
     10
 
-Of course you can store the string "10" into a blob, but with integer you have cross-platform 64-bit signed integer available at your finger tip,
+Of course you could store the string "10" into a blob, but with integers you have cross-platform 64-bit signed integer available at your finger tips,
 which enables you to do things such as::
 
-    qdbsh> int_add value 5
+    qdbsh> int_add my_value 5
     15
 
-The power of arithmetic compels you! In quasaradb all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had
-thousands of shells doing "int_add" you are guaranteed that all operations are properly accounted.
+The power of arithmetics compels you! When requesting quasardb through the API, integers are provided in a native format understood by the programming language
+you are using.
+
+In quasardb all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had thousands of shells doing "int_add"
+you are guaranteed that all operations are properly accounted.
 
 But, wait, there's more!
 ------------------------
 
-Integers, blobs, what about "a list of stuff"? We have you covered. Lists in quasardb are named "deques" and stand for "double entry queues". They support concurrent
-and scalable insertion at the beginning and the end and O(1) random access to any element within the deque. Deques are automatically scaled accross all the nodes of your
-cluster and have absolutely no limit, because at quasardb, we don't like limits::
+Integers, blobs...
+
+What about "a list of stuff"?
+
+Lists in quasardb are named "deques" and stand for "double entry queues". They support concurrent and scalable insertions at the beginning and the end and O(1) 
+random access to any element within the deque. Deques are automatically scaled accross all the nodes of your cluster and have absolutely no limit, 
+because at quasardb, we don't like limits::
 
     qdbsh> deque_push_back my_list entry_one
     qdbsh> deque_push_back my_list entry_two
     qdbsh> deque_pop_front my_list
     entry_one
 
+Every entry within the deque is a blob, of whatever size you fancy.
+
 But, wait, there's more!
 ------------------------
 
-We could spend more time covering all the features of the types we saw, but we'd like to show you one of the most exciting features of quasardb: tags. Since
-quasardb is a key/value store it provides you extremly fast access to any entry within the cluster, if you have a key.
+Now we'd like to show you one of the most exciting features of quasardb: tags. Since quasardb is a key/value store it provides you extremly fast access to any 
+entry within the cluster, if you have a key.
 
 What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
 a different value than the key, you can use tags. There is no limit to the number of tags you can have for a key and no limit to the number of keys you can have
@@ -90,7 +111,7 @@ for a tag.
 Let's see it in action::
 
     qdbsh> int_put client1_views 1000
-    qdbsh> int_put client1_oders 500
+    qdbsh> int_put client1_orders 500
     qdbsh> add_tag client1_views client1
     qdbsh> add_tag client1_orders client1
     qdbsh> get_tagged client1
@@ -101,7 +122,6 @@ Let's see it in action::
 You can see tags as manual secondary indexes. You never pay for tags if you don't need them and tags are designed to be distributed and scalable. Tags are ideal
 when you have a lot of unstructured data or need a flexible model to work with. There is no background jobs that analyzes your data to create indexes so tags
 are very fast and inexpensive.
-
 
 But, wait, there is so much more!
 ---------------------------------
@@ -121,7 +141,7 @@ Here is a short Python code snippet::
     import qdb
 
     # connecting, default port is 2836
-    c = qdb.Cluster("qdb://127.0.0.1:2836"))
+    c = qdb.Cluster("qdb://127.0.0.1:2836")
     # adding an entry
     c.blob("entry").put("really amazing...")
     # getting and printing the content
