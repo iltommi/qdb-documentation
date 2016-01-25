@@ -1,3 +1,4 @@
+.. highlight:: python
 Primer
 ******
 
@@ -46,23 +47,23 @@ Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give t
     qdbsh> blob_get entry
     amazing...
 
-Wait, what is a blob? A blob is a "binary large object" and should be your go-to type when unsure about how to stare data. Using blob for text is perfectly fine
-and actually optimal. A blobed is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
+Wait, what is a blob? A blob is a "binary large object" and should be your go-to type when unsure. Using blob for text is perfectly fine
+and actually optimal. A blob is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
 blobs.
 
-When you use the blob_put command, quasardb will return an error if the entry already exists:
+When you use the blob_put command, quasardb will return an error if the entry already exists::
 
     qdbsh> blob_put entry other_value
     An entry matching the provided alias already exists.
 
-To update a value, you have the blob_update command, which creates the entry when it doesn't exist:
+To update a value, you have the blob_update command, which creates the entry when it doesn't exist::
 
     qdbsh> blob_update entry other_value
 
 Beyond blobs
 ------------
 
-There are other types of entries in quasardb, such as integers:
+There are other types of entries in quasardb, such as integers::
 
     qdbsh> int_put my_value 10
     qdbsh> int_get my_value
@@ -93,6 +94,7 @@ because at quasardb, we don't like limits::
 
     qdbsh> deque_push_back my_list entry_one
     qdbsh> deque_push_back my_list entry_two
+
     qdbsh> deque_pop_front my_list
     entry_one
 
@@ -112,10 +114,13 @@ Let's see it in action::
 
     qdbsh> int_put client1_views 1000
     qdbsh> int_put client1_orders 500
+
     qdbsh> add_tag client1_views client1
     qdbsh> add_tag client1_orders client1
+
     qdbsh> get_tagged client1
     client1_views, client1_orders
+
     qdbsh> get_tags client1_views
     client1
 
