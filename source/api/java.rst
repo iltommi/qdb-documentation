@@ -28,8 +28,10 @@ The Java API package is downloadable from the quasardb download site. All inform
 Installation
 ------------
 
-The Java API package is qdb-java-api-<version>, and can be downloaded from the quasardb download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the Java API package are::
-    
+The Java API package is qdb-java-api-<version>, and can be downloaded from the quasardb download site. All information regarding the Bureau 14 download site is in your welcome e-mail. The contents of the Java API package are:
+
+.. code-block:: none
+
     \qdb-java-api-<version>
           \doc                         // This documentation
           \example                     // Low-level and high-level Java API examples
@@ -83,7 +85,7 @@ Java objects can be added and retrieved directly::
 
     // You can put a simple String Object...
     qdb.put("obj1", "My First value !!!");
-	
+
     // ... or any Java Object you want (even a POJO)
     qdb.put("obj2", new Object[] {new String[] {"11", "2222", null, "4"}, new int[] {1, 2, 3, 4}, new int[][] { {1, 2}, {100, 4}}});
 
@@ -97,15 +99,15 @@ Java objects can be added and retrieved directly::
     // And update stored values:
     qdb.update("obj1", new Character[] { new Character('t'), new Character('e'), new Character('s'), new Character('t') });
 
-	
+
 Note about java entries :
 
-A majority of entries type can be stored in quasardb without any further work (for example all `Serializable <http://docs.oracle.com/javase/7/docs/api/java/io/Serializable.html>`_ and `Externalizable <http://docs.oracle.com/javase/7/docs/api/java/io/Externalizable.html>`_ objects can be used directly).
+A majority of entries type can be stored in quasardb without any further work (for example all :java:ref:`Serializable <java.io.Serializable>` and :java:ref:`Externalizable <java.io.Externalizable>` objects can be used directly).
 
-You can use almost any java objects you want (for example a `POJO <http://en.wikipedia.org/wiki/Plain_Old_Java_Object>`_).
+You can use almost any java objects you want (for example a `POJO <https://en.wikipedia.org/wiki/Plain_Old_Java_Object>`_).
 
 But there are some limitations. As Kryo is the underlying framework used to serialize objects in quasardb, you can find all limitations by consulting `Kryo's documentation <https://github.com/EsotericSoftware/kryo#compatibility>`_.
-	
+
 Using the low-level API
 -----------------------
 
@@ -145,7 +147,7 @@ Each connection to a server must be terminated manually: ::
 Adding an entry to the cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To add an entry to the cluster you need to specify it's alias and wrap the content in a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_, see :ref:`java-memory-management`: ::
+To add an entry to the cluster you need to specify it's alias and wrap the content in a :java:ref:`ByteBuffer <java.nio.ByteBuffer>`, see :ref:`java-memory-management`: ::
 
             String alias = "myAlias";
             String myData = "this is my data";
@@ -167,7 +169,7 @@ Keys beginning with the string "qdb" are reserved and cannot be added to the clu
 Getting an entry from the cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Retrieving an entry requires knowing the alias and allocating a `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ large enough to hold all the content, see :ref:`java-memory-management`: ::
+Retrieving an entry requires knowing the alias and allocating a :java:ref:`ByteBuffer <java.nio.ByteBuffer>` large enough to hold all the content, see :ref:`java-memory-management`: ::
 
     String alias = "myAlias";
     java.nio.ByteBuffer content = java.nio.ByteBuffer.allocateDirect(1024);
@@ -195,11 +197,11 @@ Memory management
 
 The API uses a logic very close to the QuasarDB C API (Feel free to review the C API documentation for useful background information, see :doc:`c`).
 
-In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in `ByteBuffer <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html>`_ objects instead of byte arrays or `String <http://download.oracle.com/javase/1.4.2/docs/api/java/lang/String.html>`_ objects.
+In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in :java:ref:`ByteBuffer <java.nio.ByteBuffer>` objects instead of byte arrays or :java:ref:`String <java.lang.String>` objects.
 
 Aliases - on the other hand - use regular String objects for convenience.
 
-The ByteBuffer must be initialized with `allocateDirect <http://download.oracle.com/javase/1.4.2/docs/api/java/nio/ByteBuffer.html#allocateDirect%28int%29>`_ so that the JNI may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
+The :java:ref:`ByteBuffer <java.nio.ByteBuffer>` must be initialized with :java:ref:`allocateDirect <java.nio.ByteBuffer.allocateDirect(int)>` so that the JNI may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
 
 When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the :js:func:`get_size` to obtain the size of an entry.
 
@@ -208,7 +210,7 @@ Reference
 
 .. toctree::
     :maxdepth: 3
-    
+
     packages
 
 The reference guide is also available in the following locations:

@@ -27,8 +27,8 @@ Command line options
  ===================================== ============================ ==============
                 Option                             Usage                Default
  ===================================== ============================ ==============
- :option:`-h`                          display help                  
- :option:`-v`                          display quasardb version      
+ :option:`-h`, :option:`--help`        display help
+ :option:`-v`, :option:`--version`     display quasardb version
  :option:`--daemon`                    the daemon to connect to     127.0.0.1:2836
  ===================================== ============================ ==============
 
@@ -57,7 +57,7 @@ Commands
  :ref:`stop_node host reason <qdbsh_stopnode>`               stops the node
  :ref:`update alias data <qdbsh_update>`                     updates the entry. The entry will be created if it doesn't exist
  :ref:`version <qdbsh_version>`                              display quasardb version
- 
+
  ========================================================== ==========================================================
 
 
@@ -160,6 +160,10 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdbsh --help
 
+.. option:: -v, --version
+
+    Displays shell version.
+
 .. option:: --daemon <address>:<port>
 
    Specifies the address and port of the quasardb daemon on which the shell will connect.
@@ -197,8 +201,8 @@ A command generally requires one or several arguments. Each argument is separate
         The alias cannot contain the space character and its length must be below 1024.
         The new content can only be printable characters. This is a qdbsh restriction only.
         There must be one space and only one space between the comparand and the content. There is no practical limit to the comparand length and all characters until the end of the input will be used for the comparand, including space characters.
-    
-    
+
+
 .. _qdbsh_exit:
 .. option:: exit
 
@@ -207,9 +211,9 @@ A command generally requires one or several arguments. Each argument is separate
 
 .. _qdbsh_expiresat:
 .. option:: expires_at <alias> <expiry>
-    
+
     Sets the expiry time of an existing entry from the quasardb cluster.
-    
+
     :param alias: A string representing the entry's alias for which the expiry must be set.
     :param expiry: The absolute time at which the entry expires.
 
@@ -217,9 +221,9 @@ A command generally requires one or several arguments. Each argument is separate
 
 .. _qdbsh_expiresfromnow:
 .. option:: expires_from_now <alias> <delta>
-    
+
     Sets the expiry time of an existing entry from the quasardb cluster.
-    
+
     :param alias: A string representing the entry's alias for which the expiry must be set.
     :param delta: A time, relative to the call time, after which the entry expires.
 
@@ -286,34 +290,34 @@ A command generally requires one or several arguments. Each argument is separate
 
 .. _qdbsh_nodeconfig:
 .. option:: node_config <host>
-    
+
     Returns the node configuration as a JSON string
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
     :return: *(string)* The node configuration.
 
 .. _qdbsh_nodestatus:
 .. option:: node_status <host>
-    
+
     Returns the node status as a JSON string.
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
     :return: *(string)* The node status.
 
 .. _qdbsh_nodetopology:
 .. option:: node_topology <host>
-    
+
     Returns the node topology (list of predecessors and successors) as a JSON string.
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
     :return: *(string)* The node topology.
 
 
 .. _qdbsh_prefixget:
 .. option:: prefix_get <prefix>
-    
+
     Returns the list of aliases matching the given prefix.
-    
+
     :param prefix: *(string)* A prefix to search for.
     :return: *(string)* The list of matching aliases.
 
@@ -375,9 +379,9 @@ A command generally requires one or several arguments. Each argument is separate
 
 .. _qdbsh_stopnode:
 .. option:: stop_node <host>
-    
+
     Stops the node designated by its host and port number. This stop is generally effective within a few seconds of being issued, enabling inflight calls to complete successfully.
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
 
 

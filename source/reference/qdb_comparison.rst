@@ -2,7 +2,7 @@ quasardb benchmarking tool
 ******************************
 
 .. highlight:: js
-
+.. program:: qdb_comparison
 
 Introduction
 ============
@@ -16,12 +16,12 @@ Quick Reference
  ===================================== ============================ ================
                 Option                             Usage                Default
  ===================================== ============================ ================
- :option:`-h`, `--help`                display help                  
+ :option:`-h`, :option:`--help`        display help
  :option:`--daemon`                    address:port of server        127.0.0.1:2836
  :option:`--protocol`                  test protocol to use          quasardb
  :option:`--threads`                   number of threads to use      1
- :option:`-f`, `--test-file`           test script to run            test.cfg
- :option:`-o`, `--output-file`         path for CSV output           report_<date>
+ :option:`-f`, :option:`--test-file`   test script to run            test.cfg
+ :option:`-o`, :option:`--output-file` path for CSV output           report_<date>
  ===================================== ============================ ================
 
 
@@ -90,8 +90,6 @@ The accepted commands are:
 Parameters reference
 ====================
 
-.. program:: qdb_comparison
-
 .. option:: -h, --help
 
     Displays basic usage information.
@@ -101,7 +99,7 @@ Parameters reference
 
             qdb_comparison --help
 
-.. option:: --daemon <address>:<port>
+.. option:: --daemon=<address>:<port>
 
    Specifies the address and port of the quasardb daemon to which the comparison tool must connect. The daemon must conform to the protocol specified by the ``protocol`` parameter.
 
@@ -114,7 +112,7 @@ Parameters reference
    Example
         If the daemon listens on localhost and on the port 5009::
 
-            qdb_httpd --daemon-port=localhost:5009
+            qdb_httpd --daemon=localhost:5009
 
 .. option:: --protocol=<protocol>
 
@@ -163,7 +161,7 @@ Parameters reference
 
 .. option:: -o <path>, --output-file=<path>
 
-    Specifies the path for the `CSV <http://en.wikipedia.org/wiki/Comma-separated_values>`_ output.
+    Specifies the path for the `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_ output.
 
     Argument
         A string representing the full path to the results file:

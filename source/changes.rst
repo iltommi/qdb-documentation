@@ -117,9 +117,9 @@ Changes in this version
 About
 -----
 
-From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
-   `Pythagoras of Samos <http://en.wikipedia.org/wiki/Pythagoras>`_ was an Ionian Greek philosopher, mathematician, and founder of the religious movement called Pythagoreanism. [...] Pythagoras made influential contributions to philosophy and religious teaching in the late 6th century BC. He is often revered as a great mathematician, mystic and scientist, but he is best known for the Pythagorean theorem which bears his name.
+   `Pythagoras of Samos <https://en.wikipedia.org/wiki/Pythagoras>`_ was an Ionian Greek philosopher, mathematician, and founder of the religious movement called Pythagoreanism. [...] Pythagoras made influential contributions to philosophy and religious teaching in the late 6th century BC. He is often revered as a great mathematician, mystic and scientist, but he is best known for the Pythagorean theorem which bears his name.
 
 This release brings major new features. quasardb now support prefix based research, configurable expiration and batch operations. These features are brought to you without compromising on performance or reliability.
 
@@ -183,9 +183,9 @@ Changes in this version
 About
 -----
 
-From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
-   `Zeno of Citium <http://en.wikipedia.org/wiki/Zeno_of_Citium>`_ was the founder of the `Stoic <http://en.wikipedia.org/wiki/Stoicism>`_ school of philosophy, which he taught in Athens from about 300 BC. [...] Stoicism laid great emphasis on goodness and peace of mind gained from living a life of Virtue in accordance with Nature.
+   `Zeno of Citium <https://en.wikipedia.org/wiki/Zeno_of_Citium>`_ was the founder of the `Stoic <https://en.wikipedia.org/wiki/Stoicism>`_ school of philosophy, which he taught in Athens from about 300 BC. [...] Stoicism laid great emphasis on goodness and peace of mind gained from living a life of Virtue in accordance with Nature.
 
 After years of research and developement it is an overwhelming pleasure to annonce the availability of version 1.0.0. The last eighteen months have been dedicated to the everlasting quest of performance and stability. It is now time for the version number to reflect the level of quality and trustworthiness that quasardb delivers.
 
@@ -367,7 +367,7 @@ Changes in this version
     * Peer-to-peer network distribution
     * Web bridge with JSON/JSONP interfaces
     * Java API
-    * New persistence layer based on `LevelDB <http://code.google.com/p/leveldb/>`_
+    * New persistence layer based on `LevelDB <https://github.com/google/leveldb>`_
     * Lightweight HTML 5 monitoring console
     * Reduced overall memory load
     * Improved performance by 10-20 %

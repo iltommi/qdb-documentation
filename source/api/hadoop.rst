@@ -4,7 +4,7 @@ Hadoop Integration
 Introduction
 ------------
 
-`Map/Reduce <http://en.wikipedia.org/wiki/MapReduce>`_ is a model for processing large amounts of data in parallel. One well-known implementation is Hadoop MapReduce.
+`Map/Reduce <https://en.wikipedia.org/wiki/MapReduce>`_ is a model for processing large amounts of data in parallel. One well-known implementation is Hadoop MapReduce.
 
 A Map/Reduce job is divided into 2 phases:
 	- Map phase

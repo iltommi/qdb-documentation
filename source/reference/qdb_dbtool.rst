@@ -1,6 +1,8 @@
 quasardb database tool
 ******************************
 
+.. program:: qdb_dbtool
+
 Introduction
 ============
 
@@ -13,12 +15,12 @@ Quick Reference
  ===================================== ============================ ==============
                 Option                             Usage                Default
  ===================================== ============================ ==============
- :option:`-h`, `--help`                display help                  
- :option:`--database`                  path to the database          
- :option:`-a`, `--analyze`             analyzes the database         
- :option:`-d`, `--dump`                dumps database to stdout      
- :option:`-b`, `--backup`              performs backup to new db     
- :option:`-r`, `--repair`              repairs the database          
+ :option:`-h`, :option:`--help`        display help
+ :option:`--database`                  path to the database
+ :option:`-a`, :option:`--analyze`     analyzes the database
+ :option:`-d`, :option:`--dump`        dumps database to stdout
+ :option:`-b`, :option:`--backup`      performs backup to new db
+ :option:`-r`, :option:`--repair`      repairs the database
  ===================================== ============================ ==============
 
 
@@ -27,8 +29,6 @@ Parameters reference
 ====================
 
 Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
-
-.. program:: qdb_dbtool
 
 .. option:: -h, --help
 
@@ -58,7 +58,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_dbtool --database=/var/quasardb/db directory
 
-.. option:: --analyze, -a
+.. option:: -a, --analyze
 
     Requests an analysis of the database. A report will be printed to the standard output.
 
@@ -67,7 +67,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_dbtool --database=. --analyze
 
-.. option:: --dump, -d
+.. option:: -d, --dump
 
     Dumps the content of the database to the standard output.
 
@@ -76,7 +76,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_dbtool --database=. --dump
 
-.. option:: --backup=<path>, -b <path>
+.. option:: -b <path>, --backup=<path>
 
     Copies all the content of the database to a new database in the specified directory. If the directory does not exist it will be created.
     If a database exists in the destination directory, its content may be overwritten by the new content.
@@ -92,7 +92,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_dbtool --database=/var/quasardb/db --backup=/var/backup/quasardb/db
 
-.. option:: --repair, -r
+.. option:: -r, --repair
 
     Attempts to repair the database. All data may not be recovered. Note that the :doc:`qdbd` daemon automatically attempts to repair the database if needed; this option is intended for offline operations.
 

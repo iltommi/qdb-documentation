@@ -4,7 +4,7 @@ Primer
 What is quasardb?
 -----------------
 
-quasardb is a key / value store. It is fast and scalable, handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a `NoSQL database <http://en.wikipedia.org/wiki/NoSQL>`_.
+quasardb is a key / value store. It is fast and scalable, handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a `NoSQL database <https://en.wikipedia.org/wiki/NoSQL>`_.
 quasardb is *limitless*. If your computer has enough memory and enough disk space to store it, quasardb can handle it.
 
 Where would you want to use quasardb? Here are a couple of use cases:

@@ -45,13 +45,13 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'quasardb'
-copyright = u'2015, Quasardb SAS'
+copyright = u'2015-2016, Quasardb SAS'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
-# Adding a new version of the docs? Make sure you update 
+# Adding a new version of the docs? Make sure you update
 # "source/version_switch.js" in the qdb-doc repo so your new version appears in the drop down!
 #
 # The short X.Y version.
@@ -233,7 +233,7 @@ man_pages = [
 epub_title = u'quasardb'
 epub_author = u'Quasardb SAS'
 epub_publisher = u'Quasardb SAS'
-epub_copyright = u'2015, Quasardb SAS'
+epub_copyright = u'2015-2016, Quasardb SAS'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.
@@ -268,4 +268,10 @@ epub_copyright = u'2015, Quasardb SAS'
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'http://docs.python.org/': None}
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/2/', None)
+}
+
+javadoc_url_map = {
+    'java': ('https://docs.oracle.com/javase/7/docs/api/', 'javadoc')
+}

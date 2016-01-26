@@ -37,7 +37,7 @@ Quick Reference
   System.String        :ref:`NodeConfig <csharp_handle_node_config>`                      (System.String uri)
   System.String        :ref:`NodeTopology <csharp_handle_node_topology>`                  (System.String uri)
   void                 :ref:`StopNode <csharp_handle_stop_node>`                          (System.String uri, System.String reason)
-  
+
  ==================== ================================================================== ===================
 
 
@@ -51,7 +51,7 @@ DLL
 
 All object definitions and functions are made available in the ``QdbNetApi.dll`` file. All classes and methods reside in the ``qdb`` namespace.
 
-The library requires `Visual Studio 2013 Update 4 <http://www.visualstudio.com/en-us/news/vs2013-update4-rtm-vs>`_ to function properly.
+The library requires `Visual Studio 2013 Update 4 <https://www.visualstudio.com/en-us/news/vs2013-update4-rtm-vs>`_ to function properly.
 
 The handle object
 -------------------
@@ -62,13 +62,13 @@ Use the Handle object to interact with the cluster. Simply having a Handle objec
     {
         // Create a Handle.
         qdb.Handle h = new qdb.Handle();
-        
+
         // Connect to the cluster.
         h.Connect("qdb://127.0.0.1:2836");
-        
+
         // Removes the entry "myalias" if it exists, errors otherwise
         h.Remove("myalias");
-        
+
         // An explicit Close() is not mandatory but permits catching errors in the surrounding try-catch block.
         h.Close();
     }
@@ -87,7 +87,7 @@ Adding and getting data to and from a cluster
 ---------------------------------------------
 
 To put and get an entry, the C# way::
-    
+
     try
     {
         // Adds the entry "myalias" with the System.Byte[] value in_data, with no expiration time.

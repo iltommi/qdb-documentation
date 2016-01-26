@@ -6,7 +6,7 @@ Data Storage
 Where are Entries Stored in the Cluster?
 ----------------------------------------
 
-When an entry is added to the cluster, it is assigned a unique ID. This ID is a `SHA-3 <http://en.wikipedia.org/wiki/SHA-3>`_ of the alias. The entry is then placed on the node whose ID is the successor of the entry's ID. If replication is in place, the entry will be copied to other nodes for redundancy.
+When an entry is added to the cluster, it is assigned a unique ID. This ID is a `SHA-3 <https://en.wikipedia.org/wiki/SHA-3>`_ of the alias. The entry is then placed on the node whose ID is the successor of the entry's ID. If replication is in place, the entry will be copied to other nodes for redundancy.
 
 .. figure:: qdb_entry_storage/01_three_node_qdb_cluster.png
    :scale: 50%

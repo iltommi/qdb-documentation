@@ -11,7 +11,7 @@ Transactions are only available in Quasardb 2.0.0 and higher.
 Design
 ------
 
-Transactions in quasardb are based off of `Multiversion concurrency control <http://en.wikipedia.org/wiki/Multiversion_concurrency_control>`_  The basic principle of MVCC is to create a new *uncommitted* version everytime you modify or delete an entry. Each version has a minimum date before which it didn't exist and potentially a maximum date after which it no longer exists. When the transaction is successful the affected version are flagged as *committed*.
+Transactions in quasardb are based off of `Multiversion concurrency control <https://en.wikipedia.org/wiki/Multiversion_concurrency_control>`_  The basic principle of MVCC is to create a new *uncommitted* version everytime you modify or delete an entry. Each version has a minimum date before which it didn't exist and potentially a maximum date after which it no longer exists. When the transaction is successful the affected version are flagged as *committed*.
 
 Getting an entry is just a matter of getting the version matching the time at which you query it.
 
@@ -31,7 +31,7 @@ Relying on the cluster to generate timestamps ensures that offset client clocks 
 
 If two nodes generate the same timestamp for two different transactions, the transaction from the larger node ID will appear "after" the node with the smaller ID. This is not an issue as in the case of any transaction collision we would need to make an arbitrary decision about which transaction came "before" the other.
 
-For more information on how quasardb generates the high-resolution timestamp, see the blog post `A Portable High-Resolution Timestamp in C++ <https://blog.quasardb.net/index.php/2014/06/a-portable-high-resolution-timestamp-in-c/>`_
+For more information on how quasardb generates the high-resolution timestamp, see the blog post `A Portable High-Resolution Timestamp in C++ <https://blog.quasardb.net/a-portable-high-resolution-timestamp-in-c/>`_
 
 
 Multiple Versions and Garbage Collection
@@ -208,7 +208,7 @@ References
 
 Use the following links to learn more about MVCC. Keep in mind that the quasardb implementation may be different, especially because it implements MVCC transactions on a distributed cluster.
 
- * `MVCC on Wikipedia <http://en.wikipedia.org/wiki/Multiversion_concurrency_control>`_
+ * `MVCC on Wikipedia <https://en.wikipedia.org/wiki/Multiversion_concurrency_control>`_
  * `MVCC unmasked <http://momjian.us/main/writings/pgsql/mvcc.pdf>`_
  * `MVCC in PostgreSQL <http://www.postgresql.org/docs/7.1/static/mvcc.html>`_
  * `Understanding PostgreSQL MVCC <http://eric.themoritzfamily.com/understanding-psqls-mvcc.html>`_

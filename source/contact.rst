@@ -13,7 +13,7 @@ Website
     `http://www.quasardb.net/ <http://www.quasardb.net/>`_.
 
 Twitter
-    `http://www.twitter.com/quasardb <http://www.twitter.com/quasardb>`_.
+    `https://twitter.com/quasardb <https://twitter.com/quasardb>`_.
 
 Contacting a salesperson
 ------------------------
