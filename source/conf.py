@@ -283,3 +283,8 @@ intersphinx_mapping = {
 javadoc_url_map = {
     'java': ('https://docs.oracle.com/javase/7/docs/api/', 'javadoc')
 }
+
+linkcheck_anchors = False
+linkcheck_ignore = [
+    r'http://127.0.0.1:8080/'
+]
