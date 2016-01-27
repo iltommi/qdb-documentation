@@ -61,7 +61,7 @@ Quick Reference
   :c:type:`void`                         :cpp:func:`handle::close`                          |VOID_ARGS|
   :c:type:`bool`                         :cpp:func:`handle::connected`                      |VOID_ARGS_CONST|
   :c:type:`qdb_error_t`                  :cpp:func:`handle::set_timeout`                    ``(``\ :c:type:`int` ``timeout);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::set_compression`                ``(``\ :cpp:type:`qdb_compression_t` ``comp_level);``
+  :c:type:`qdb_error_t`                  :cpp:func:`handle::set_compression`                ``(``\ :c:type:`qdb_compression_t` ``comp_level);``
   :c:type:`qdb_error_t`                  :cpp:func:`handle::connect`                        ``(``\ |CONST_CHAR_P| ``uri);``
   :c:type:`qdb_error_t`                  :cpp:func:`handle::blob_put`                       ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length,`` :cpp:type:`qdb_time_t` ``expiry_time);``
   :c:type:`qdb_error_t`                  :cpp:func:`handle::int_get`                        ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t *` ``number);``
@@ -365,12 +365,6 @@ Reference
 
         :returns: The size of the managed buffer.
 
-    .. cpp:function:: qdb_size_t size(void) const
-
-        Gives the size of the managed buffer.
-
-        :returns: The size of the managed buffer.
-
 .. cpp:type:: api_buffer_ptr
 
     A smart pointer to an api_buffer used by the handle object.
@@ -468,10 +462,6 @@ Reference
         Gets a pointer to the object at the iterator.
 
         :returns: A pointer to a key/value pair.
-
-    .. cpp:function:: qdb_error_t last_error(void) const
-
-        :returns: The error code of the last iterator operation
 
     .. cpp:function:: bool valid(void) const
 

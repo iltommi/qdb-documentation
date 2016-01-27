@@ -1,6 +1,9 @@
 FAQ
 ***
 
+.. |ContactUs| replace:: :doc:`Contact us for more information <contact>`.
+..
+
 Does quasardb support IPv6?
 ============================
 
@@ -38,7 +41,7 @@ Is quasardb faster than... ?
 
 Quasardb is not only faster but also more frugal: it will consume less memory, less disk space and less CPU while achieving a higher level of performance.
 
-Nevertheless, keep in mind that what matters is *your usage scenario*. We will be happy to help you answer this question: contact us for more information (see :doc:`contact`).
+Nevertheless, keep in mind that what matters is *your usage scenario*. We will be happy to help you answer this question. |ContactUs|
 
 Does quasardb support 32-bit operating systems?
 ===============================================
@@ -76,19 +79,19 @@ quasardb requires a :doc:`license`.
 
 Non-profit organizations and non-commercial usage are eligible for free licenses.
 
-Contact us for more information, see :doc:`contact` and :doc:`license`.
+|ContactUs| Take a look as well at :doc:`licensing information <license>`.
 
 Can I embed the quasardb technology in my hardware/software?
 ============================================================
 
-Yes, we have a special license for this case. Contact us for more information, see :doc:`contact`
+Yes, we have a special license for this case. |ContactUs|
 
 Do I need a license to write a client?
 ======================================
 
 No license is required to write a quasardb client, but the software's documentation and credits must state the following "This software features quasardb, a Quasardb SAS technology. All rights reserved.".
 
-A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. Contact us for more information, see :doc:`contact`
+A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. |ContactUs|
 
 What happens when my license expires?
 =====================================
@@ -104,7 +107,7 @@ Changes in patch level, such as 1.1.0 to 1.1.1, are maintenance releases. The da
 
 Changes in minor level, such as 1.0.0 to 1.1.0, add features to quasardb. The database and client API are 100% backwards compatible with previous versions.
 
-Changes in major level, such as 1.0.0 to 2.0.0, add significant features to quasardb. The database and client API may not be backwards compatible. Upgrades may require manual intervention. `Contact Quasardb <contact.html>`_ for assistance.
+Changes in major level, such as 1.0.0 to 2.0.0, add significant features to quasardb. The database and client API may not be backwards compatible. Upgrades may require manual intervention. :doc:`Contact us for assistance <contact>`.
 
 In what language is quasardb written?
 =====================================
@@ -128,7 +131,7 @@ Yes it does! Here is the list:
 * `Boost <http://www.boost.org/>`_
 * `Datejs <http://code.google.com/archive/p/datejs/>`_
 * `hiredis <https://github.com/antirez/hiredis>`_
-* `LevelDB <https://github.com/google/leveldb>`_
+* `RocksDB <https://github.com/facebook/rocksdb>`_
 * `javabi-sizeof <http://code.google.com/archive/p/javabi-sizeof/>`_
 * `JQuery <http://jquery.com/>`_
 * `Kryo <http://code.google.com/archive/p/kryo/>`_

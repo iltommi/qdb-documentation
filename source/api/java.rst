@@ -3,17 +3,18 @@ Java
 
 
 .. highlight:: java
+.. _JNI: http://docs.oracle.com/javase/7/docs/technotes/guides/jni/
 
 Introduction
 ------------
 
-The quasardb Java API uses JNI to bring the power and speed of quasardb to the Java world without compromising performance.
+The quasardb Java API uses JNI_ to bring the power and speed of quasardb to the Java world without compromising performance.
 
-You can access your cluster using either the high level Java classes or the low level JNI API. In almost all cases you should use the high level classes.
+You can access your cluster using either the high level Java classes or the low level JNI_ API. In almost all cases you should use the high level classes.
 
 You may download the Java package from the quasardb download site or build it from the sourcecode `https://github.com/bureau14/qdb-api-java <https://github.com/bureau14/qdb-api-java>`_.  All information regarding the quasardb download site is in your welcome e-mail.
 
-The .jar package is qdb-java-api-<os>-<version>.jar and contains both the base Java classes and support for the JNI interface. The classes reside in the ``net.quasardb.qdb`` package.
+The .jar package is ``qdb-java-api-<os>-<version>.jar`` and contains both the base Java classes and support for the JNI_ interface. The classes reside in the ``net.quasardb.qdb`` package.
 
 
 Requirements
@@ -56,7 +57,7 @@ The high-level API is recommended because:
 Configuring the quasardb instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To connect to a quasardb cluster, create a new Qdbcluster object. Pass in the IP address and port of an online node in the qdb:// string format::
+To connect to a quasardb cluster, create a new Qdbcluster object. Pass in the IP address and port of an online node in the ``qdb://`` string format::
 
     cluster = new QdbCluster("qdb://127.0.0.1:2836");
 
@@ -65,7 +66,7 @@ If the cluster object is not null, your quasardb instance is ready to use.
 Using the quasardb instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Entries in the cluster are stored and retrieved by their aliases, in the form of Strings. Their content is stored and retrieved as a `ByteBuffer <http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html>`_. See :ref:`java-memory-management`.
+Entries in the cluster are stored and retrieved by their aliases, in the form of Strings. Their content is stored and retrieved as a :java:ref:`ByteBuffer <java.nio.ByteBuffer>`. See :ref:`java-memory-management`.
 
 For example, to get an existing Blob named "obj1" or create it if the entry does not exist::
 
@@ -78,7 +79,7 @@ To get the value of an object, get and convert the ByteBuffer::
     byte[] bytes = new byte[buffer.limit()];
     buffer.get(bytes, 0, buffer.limit());
     String value = new String(bytes);
-    
+
 To remove an entry::
 
     cluster.getBlob("obj1").remove();
@@ -90,15 +91,15 @@ Quasardb also supports other object types than Blobs, including Double-Ended Que
 Memory management
 ^^^^^^^^^^^^^^^^^^
 
-The API uses a logic very close to the QuasarDB C API (Feel free to review the C API documentation for useful background information, see :doc:`c`).
+The API uses a logic very close to the QuasarDB C API. Feel free to review the :doc:`C API <c>` documentation for useful background information.
 
-In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in `ByteBuffer <http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html>`_ objects instead of byte arrays or `String <http://docs.oracle.com/javase/7/docs/api/java/lang/String.html>`_ objects.
+In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in :java:ref:`ByteBuffer <java.nio.ByteBuffer>` objects instead of byte arrays or :java:ref:`String <java.lang.String>` objects.
 
 Aliases, on the other hand, use regular String objects for convenience.
 
-The :java:ref:`ByteBuffer <java.nio.ByteBuffer>` must be initialized with :java:ref:`allocateDirect <java.nio.ByteBuffer.allocateDirect(int)>` so that the JNI may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
+The :java:ref:`ByteBuffer <java.nio.ByteBuffer>` must be initialized with :java:ref:`allocateDirect <java.nio.ByteBuffer.allocateDirect(int)>` so that the JNI_ may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
 
-When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the ByteBuffer limit() to obtain the size of an entry.
+When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the :java:ref:`ByteBuffer.limit() <java.nio.Buffer.limit()>` to obtain the size of an entry.
 
 Reference
 ---------
