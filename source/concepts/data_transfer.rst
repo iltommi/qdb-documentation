@@ -4,7 +4,7 @@ Data Transfer
 Designed for Concurrency
 ------------------------
 
-At the heart of quasardb design and technology decisions lies the desire to solve the `C10k problem <http://en.wikipedia.org/wiki/C10k_problem>`_. To do so, quasardb uses a combination of asynchronous I/O, lock-free containers and parallel processing.
+At the heart of quasardb design and technology decisions lies the desire to solve the `C10k problem <https://en.wikipedia.org/wiki/C10k_problem>`_. To do so, quasardb uses a combination of asynchronous I/O, lock-free containers and parallel processing.
 
 Server
 ^^^^^^
@@ -54,7 +54,7 @@ Once a cluster has completed :ref:`stabilization`, a client only needs to connec
 
 When you store an entry in a cluster:
 
-    #. The client computes the entry's UUID using the `SHA-3 <http://en.wikipedia.org/wiki/Skein_(hash_function)>`_ algorithm.
+    #. The client computes the entry's UUID using the `SHA-3 <https://en.wikipedia.org/wiki/Skein_(hash_function)>`_ algorithm.
     #. The client searches the cluster for the node that should store the original entry.
     #. The client sends the data to the node.
     #. The cluster replicates the data as necessary, then responds with OK.

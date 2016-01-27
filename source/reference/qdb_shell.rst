@@ -25,10 +25,10 @@ Command line options
 ---------------------
 
  ===================================== ============================ ====================
-                Option                             Usage                  Default
+                Option                             Usage                Default
  ===================================== ============================ ====================
- :option:`-h`,`--help`                 display help                  
- :option:`-v`,`--version`              display quasardb version      
+ :option:`-h`, :option:`--help`        display help
+ :option:`-v`, :option:`--version`     display quasardb version
  :option:`-c`                          run a qdb command
  ===================================== ============================ ====================
 

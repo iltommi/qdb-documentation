@@ -3,6 +3,11 @@ Python
 
 .. highlight:: python
 
+.. testsetup:: *
+
+    import datetime
+    import qdb
+
 Introduction
 --------------
 
@@ -32,9 +37,11 @@ Windows users can download the installer from the download site. The installers 
 Compiling From Source
 `````````````````````
 
-If you have a different Python version or you want to recompile the extension, download the source package. To compile the source package, you need the Quasardb C library, `CMake <http://www.cmake.org/>`_, `SWIG <http://www.swig.org/>`_, and the Python dist utils installed.
+If you have a different Python version or you want to recompile the extension, download the source package. To compile the source package, you need the Quasardb C library, `CMake <https://cmake.org/>`_, `SWIG <http://www.swig.org/>`_, and the Python dist utils installed.
 
-Unpack the archive and in the directory run::
+Unpack the archive and in the directory run:
+
+.. code-block:: shell
 
     mkdir build
     cd build
@@ -52,20 +59,24 @@ Once the installation is complete, you must be able to import quasardb without a
     Python 2.7.2 (default, Dec  5 2011, 15:17:56)
     [GCC 4.2.1 20070831 patched [FreeBSD]] on freebsd9
     Type "help", "copyright", "credits" or "license" for more information.
+
+.. doctest:: package
+
     >>> import qdb
     >>>
 
 .. attention::
     If you built the extension from the sources, do not run the above command from the sources directory as it will attempt to load the local source code instead of the properly configured extension.
 
-If you have a server up and running, you must be able to add and access entries::
+If you have a server up and running, you must be able to add and access entries:
 
-    >>> c = qdb.Cluster("qdb://127.0.0.1:2836"))
+.. doctest:: qdb
+
+    >>> c = qdb.Cluster("qdb://127.0.0.1:2836")
     >>> b = c.blob("entry")
     >>> b.put("content")
     >>> print b.get()
     content
-    >>>
 
 Expiry
 ------
@@ -75,29 +86,42 @@ Expiry is either set at creation or through the `expires_at` and `expires_from_n
 .. danger::
     The behavior of `expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
 
-To set the expiry time of an entry to 1 minute, relative to the call time::
+To set the expiry time of an entry to 1 minute, relative to the call time:
 
-    c = qdb.Cluster("qdb://127.0.0.1:2836")
-    b = c.blob("entry")
-    b.put("content")
-    b.expires_from_now(60)
+.. doctest:: qdb
 
-To set the expiry time of an entry to January, 1st 2020::
+    >>> b.expires_from_now(60)
 
-    b.put("content")
-    b.expires_at(datetime.datetime(year=2020, month=1, day=1))
+To set the expiry time of an entry to January, 1st 2020:
 
-Or alternatively::
+.. doctest:: qdb
 
-    b.put("content", datetime.datetime(year=2020, month=1, day=1))
+    >>> b.expires_at(datetime.datetime(year=2020, month=1, day=1))
 
-To prevent an entry from ever expiring::
+Or alternatively:
 
-    b.expires_at(None);
+.. doctest:: qdb
 
-By default, entries never expire. To obtain the expiry time of an existing entry as a :py:class:`datetime.datetime` object::
+    >>> b.update("content", datetime.datetime(year=2020, month=1, day=1))
 
-    expiry = b.get_expiry_time("entry")
+To prevent an entry from ever expiring:
+
+.. doctest:: qdb
+
+    >>> b.expires_at(None);
+
+By default, entries never expire. To obtain the expiry time of an existing entry as a :py:class:`datetime.datetime` object:
+
+.. doctest:: qdb
+    :hide:
+
+    >>> b.expires_at(datetime.datetime(year=2020, month=1, day=1))
+
+.. doctest:: qdb
+
+    >>> expiry = b.get_expiry_time()
+    >>> expiry.strftime("%Y-%m-%d")
+    '2020-01-01'
 
 Example Client
 --------------

@@ -162,7 +162,7 @@ Note that we could have used the IP address instead: ::
 .. caution::
     Concurrent calls to :c:func:`qdb_connect` using the same handle results in undefined behaviour.
 
-`IPv6 <http://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address: ::
+`IPv6 <https://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address: ::
 
     qdb_error_t connection = qdb_connect(handle, "qdb://::1:2836");
     if (connection != qdb_error_ok)

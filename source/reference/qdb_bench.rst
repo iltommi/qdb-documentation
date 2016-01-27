@@ -2,7 +2,7 @@ quasardb benchmarking tool
 ******************************
 
 .. highlight:: js
-
+.. program:: qdb_comparison
 
 Introduction
 ============
@@ -16,12 +16,12 @@ Quick Reference
  ===================================== ============================ ============================
                 Option                             Usage                Default
  ===================================== ============================ ============================
- :option:`--help`                      display help                  
- :option:`--cluster`                   address:port of node          127.0.0.1:2836
+ :option:`-h`, :option:`--help`        display help
+ :option:`--cluster`                    address:port of node         127.0.0.1:2836
  :option:`--protocol`                  test protocol to use          quasardb
  :option:`--threads`                   number of threads to use      1
- :option:`-f`, `--test-file`           test script to run            test.cfg
- :option:`-o`, `--output-file`         path for CSV output           report_<date>-<time>.csv
+ :option:`-f`, :option:`--test-file`   test script to run            test.cfg
+ :option:`-o`, :option:`--output-file` path for CSV output           report_<date>-<time>.csv
  ===================================== ============================ ============================
 
 
@@ -94,8 +94,6 @@ The accepted commands are:
 Parameters reference
 ====================
 
-.. program:: qdb_bench
-
 .. option:: -h, --help
 
     Displays basic usage information.
@@ -105,7 +103,7 @@ Parameters reference
 
             qdb_bench --help
 
-.. option:: --daemon <address>:<port>
+.. option:: --cluster=<address>:<port>
 
    Specifies the address and port of the quasardb daemon to which the benchmark tool must connect. The daemon must conform to the protocol specified by the ``protocol`` parameter.
 
@@ -118,7 +116,7 @@ Parameters reference
    Example
         If the daemon listens on localhost and on the port 5009::
 
-            qdb_httpd --daemon-port=localhost:5009
+            qdb_httpd --cluster=localhost:5009
 
 .. option:: --protocol=<protocol>
 
@@ -163,11 +161,11 @@ Parameters reference
     Example
         Runs the tests written in ``stress.cfg``::
 
-            qdb_bench -f stress.cfg
+            qdb_bench --test-file=stress.cfg
 
 .. option:: -o <path>, --output-file=<path>
 
-    Specifies the path for the `CSV <http://en.wikipedia.org/wiki/Comma-separated_values>`_ output.
+    Specifies the path for the `CSV <https://en.wikipedia.org/wiki/Comma-separated_values>`_ output.
 
     Argument
         A string representing the full path to the results file:

@@ -96,7 +96,7 @@ In particular, to avoid pressuring the garbage collector, and to minimize useles
 
 Aliases, on the other hand, use regular String objects for convenience.
 
-The ByteBuffer must be initialized with `allocateDirect <http://docs.oracle.com/javase/7/docs/api/java/nio/ByteBuffer.html#allocateDirect%28int%29>`_ so that the JNI may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
+The :java:ref:`ByteBuffer <java.nio.ByteBuffer>` must be initialized with :java:ref:`allocateDirect <java.nio.ByteBuffer.allocateDirect(int)>` so that the JNI may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
 
 When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the ByteBuffer limit() to obtain the size of an entry.
 

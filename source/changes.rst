@@ -4,9 +4,9 @@ Change log
 2.0.0 - "Aristotle" - 2016
 ==================================
 
-From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
-   `Aristotle <http://en.wikipedia.org/wiki/Aristotle>`_ was a Greek philosopher and scientist born in the city of Stagira, Chalkidice, on the northern periphery of Classical Greece. [...] His writings cover many subjects – including physics, biology, zoology, metaphysics, logic, ethics, aesthetics, poetry, theater, music, rhetoric, linguistics, politics and government – 
+   `Aristotle <https://en.wikipedia.org/wiki/Aristotle>`_ was a Greek philosopher and scientist born in the city of Stagira, Chalkidice, on the northern periphery of Classical Greece. [...] His writings cover many subjects – including physics, biology, zoology, metaphysics, logic, ethics, aesthetics, poetry, theater, music, rhetoric, linguistics, politics and government –
    and constitute the first comprehensive system of Western philosophy
 
 Building on the solid foundation of quasardb 1.2
@@ -35,9 +35,9 @@ Changes in this version
 1.2.0 - "Anaximander" - 02/09/2015
 ==================================
 
-From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
-   `Anaximander <http://en.wikipedia.org/wiki/Anaximander>`_ was a pre-Socratic Greek philosopher who lived in Miletus,[3] a city of Ionia (in modern-day Turkey). [...] He was an early proponent of science and tried to observe and explain different aspects of the universe, with a particular interest in its origins, claiming that nature is ruled by laws, just like human societies, and anything that disturbs the balance of nature does not last long.
+   `Anaximander <https://en.wikipedia.org/wiki/Anaximander>`_ was a pre-Socratic Greek philosopher who lived in Miletus,[3] a city of Ionia (in modern-day Turkey). [...] He was an early proponent of science and tried to observe and explain different aspects of the universe, with a particular interest in its origins, claiming that nature is ruled by laws, just like human societies, and anything that disturbs the balance of nature does not last long.
 
 This release unlocks even more performance with a brand new load-balancing algorithm. Without any configuration, reads will be done on the nearest, most available replica, resulting is better network usage and reduced latency.
 
@@ -172,9 +172,9 @@ Changes in this version
 About
 -----
 
-From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
-   `Pythagoras of Samos <http://en.wikipedia.org/wiki/Pythagoras>`_ was an Ionian Greek philosopher, mathematician, and founder of the religious movement called Pythagoreanism. [...] Pythagoras made influential contributions to philosophy and religious teaching in the late 6th century BC. He is often revered as a great mathematician, mystic and scientist, but he is best known for the Pythagorean theorem which bears his name.
+   `Pythagoras of Samos <https://en.wikipedia.org/wiki/Pythagoras>`_ was an Ionian Greek philosopher, mathematician, and founder of the religious movement called Pythagoreanism. [...] Pythagoras made influential contributions to philosophy and religious teaching in the late 6th century BC. He is often revered as a great mathematician, mystic and scientist, but he is best known for the Pythagorean theorem which bears his name.
 
 This release brings major new features. quasardb now support prefix based research, configurable expiration and batch operations. These features are brought to you without compromising on performance or reliability.
 
@@ -194,7 +194,7 @@ Changes in this version
 About
 -----
 
-This version is 100 % compatible with quasardb 1.0.1 "Zeno" and only includes important fixes. 
+This version is 100 % compatible with quasardb 1.0.1 "Zeno" and only includes important fixes.
 
 Changes in this version
 -----------------------
@@ -238,9 +238,9 @@ Changes in this version
 About
 -----
 
-From `Wikipedia <http://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
-   `Zeno of Citium <http://en.wikipedia.org/wiki/Zeno_of_Citium>`_ was the founder of the `Stoic <http://en.wikipedia.org/wiki/Stoicism>`_ school of philosophy, which he taught in Athens from about 300 BC. [...] Stoicism laid great emphasis on goodness and peace of mind gained from living a life of Virtue in accordance with Nature.
+   `Zeno of Citium <https://en.wikipedia.org/wiki/Zeno_of_Citium>`_ was the founder of the `Stoic <https://en.wikipedia.org/wiki/Stoicism>`_ school of philosophy, which he taught in Athens from about 300 BC. [...] Stoicism laid great emphasis on goodness and peace of mind gained from living a life of Virtue in accordance with Nature.
 
 After years of research and developement it is an overwhelming pleasure to annonce the availability of version 1.0.0. The last eighteen months have been dedicated to the everlasting quest of performance and stability. It is now time for the version number to reflect the level of quality and trustworthiness that quasardb delivers.
 
@@ -422,7 +422,7 @@ Changes in this version
     * Peer-to-peer network distribution
     * Web bridge with JSON/JSONP interfaces
     * Java API
-    * New persistence layer based on `LevelDB <http://code.google.com/p/leveldb/>`_
+    * New persistence layer based on `LevelDB <https://github.com/google/leveldb>`_
     * Lightweight HTML 5 monitoring console
     * Reduced overall memory load
     * Improved performance by 10-20 %

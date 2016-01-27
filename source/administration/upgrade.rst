@@ -4,7 +4,7 @@ Upgrade a Cluster
 There are two methods to upgrade a cluster, :ref:`online-upgrade` and :ref:`offline-upgrade`.
 
 .. warning::
-    Do not upgrade your cluster to a new major version, such as 1.0.0 to 2.0.0, without `contacting Quasardb <contact.html>`_ for assistance.
+    Do not upgrade your cluster to a new major version, such as 1.0.0 to 2.0.0, without `contacting Quasardb :doc:`contact` for assistance.
 
 .. _online-upgrade:
 

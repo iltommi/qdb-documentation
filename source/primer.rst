@@ -7,7 +7,7 @@ What is quasardb?
 
 quasardb is an advanced data management system. At its heat, it is a transactional key/value store with indexing capabilities. It is fast and scalable
 (up and out), handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a
-`NoSQL database <http://en.wikipedia.org/wiki/NoSQL>`_.
+`NoSQL database <https://en.wikipedia.org/wiki/NoSQL>`_.
 
 quasardb is *limitless*. If the hardware can handle it, quasardb can handle it.
 

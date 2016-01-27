@@ -8,8 +8,8 @@ Introduction
 
 The quasardb daemon is a highly scalable data repository that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a cluster.
 
-The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
-The network distribution uses the `Chord <http://pdos.csail.mit.edu/chord/>`_ protocol.
+The persistence layer is based on `LevelDB <https://github.com/google/leveldb>`_ (c) LevelDB authors. All rights reserved.
+The network distribution uses the `Chord <https://github.com/sit/dht/wiki>`_ protocol.
 
 The quasardb daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
 
@@ -21,32 +21,32 @@ Quick Reference
 ===============
 
  ===================================== =============================== ===================== ============ ==============
-                Option                               Usage                  Default             Global     Req. Version
+                Option                               Usage               Default             Global       Req. Version
  ===================================== =============================== ===================== ============ ==============
- :option:`-h`                          display help                                              No       
- :option:`-v`                          display version information                               No        
- :option:`--gen-config`                generate default config file                              No        >=1.1.3
- :option:`-c`, `--config`              specify config file                                       No        >=1.1.3
- :option:`-d`, `--daemonize`           daemonize                                                 No       
- :option:`--license-file`              specify license                 qdb_license.txt           No       
- :option:`-a`, `--address`             address to listen on            127.0.0.1:2836            No       
- :option:`-s`, `--sessions`            max client sessions             20000                     No       
- :option:`--idle-duration`             max seconds to idle timeout     600                       No
- :option:`--request-timeout`           max seconds to request timeout  60                        No
- :option:`--peer`                      one peer to form a cluster                                No       
- :option:`--id`                        set the node id                 generated                 No       
- :option:`-r`, `--root`                persistence directory           ./db                      Yes      
- :option:`--sync`                      sync every disk write                                     Yes      
- :option:`--replication`               sets the replication factor     1                         Yes      
- :option:`--max-depot-size`            max db size on node             0 (disabled)              Yes       >=1.1.3
- :option:`--transient`                 disable persistence                                       Yes      
- :option:`--limiter-max-entries-count` max entries in cache            1000000                   Yes      
- :option:`--limiter-max-bytes`         max bytes in cache              Automatic                 Yes      
- :option:`-l`, `--log-file`            log on given file                                         No       
- :option:`--log-dump`                  dump file location              qdb_error_dump.txt        No       
- :option:`--log-syslog`                log on syslog                                             No       
- :option:`--log-level`                 change log level                info                      No       
- :option:`--log-flush-interval`        change log flush                3                         No       
+ :option:`-h`, :option:`--help`        display help                                          No
+ :option:`-v`, :option:`--version`     display version information                           No
+ :option:`--gen-config`                generate default config file                          No           >=1.1.3
+ :option:`-c`, :option:`--config`      specify config file                                   No           >=1.1.3
+ :option:`-d`, :option:`--daemonize`   daemonize                                             No
+ :option:`--license-file`              specify license                 qdb_license.txt       No
+ :option:`-a`, :option:`--address`     address to listen on            127.0.0.1:2836        No
+ :option:`-s`, :option:`--sessions`    max client sessions             20000                 No
+ :option:`--idle-duration`             max seconds to idle timeout     600                   No
+ :option:`--request-timeout`           max seconds to request timeout  60                    No
+ :option:`--peer`                      one peer to form a cluster                            No
+ :option:`--id`                        set the node id                 generated             No
+ :option:`-r`, :option:`--root`        persistence directory           ./db                  Yes
+ :option:`--sync`                      sync every disk write                                 Yes
+ :option:`--replication`               sets the replication factor     1                     Yes
+ :option:`--max-depot-size`            max db size on node             0 (disabled)          Yes          >=1.1.3
+ :option:`--transient`                 disable persistence                                   Yes
+ :option:`--limiter-max-entries-count` max entries in cache            1000000               Yes
+ :option:`--limiter-max-bytes`         max bytes in cache              Automatic             Yes
+ :option:`-l`, :option:`--log-file`    log on given file                                     No
+ :option:`--log-dump`                  dump file location              qdb_error_dump.txt    No
+ :option:`--log-syslog`                log on syslog                                         No
+ :option:`--log-level`                 change log level                info                  No
+ :option:`--log-flush-interval`        change log flush                3                     No
  ===================================== =============================== ===================== ============ ==============
 
 
@@ -190,7 +190,7 @@ Instance specific
 
             qdbd --help
 
-.. option:: -v
+.. option:: -v, --version
 
     Displays qdbd version information.
 
@@ -211,11 +211,11 @@ Instance specific
 .. option:: -c, --config
 
     Specifies a configuration file to use. See :ref:`qdbd-config-file-reference`.
-    
+
         * Any other command-line options will be ignored.
         * If an option is omitted in the config file, the default will be used.
         * If an option is malformed in the config file, it will be ignored.
-    
+
     Argument
         The path to a valid configuration file.
 
@@ -476,44 +476,44 @@ Global
 .. option:: --max-depot-size=<size-in-bytes>
 
     Sets the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
-    
+
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
-    
+
     Argument
         An integer representing the maximum size of the database on disk in bytes.
-    
+
     Default value
         0 (disabled)
-    
+
     Example A
         To limit the database size on each node to 12 Terabytes:
-        
+
         .. math::
-            
+
             \text{Max Depot Size Value} &= \text{12 Terabytes} \: * \: \frac{1024^4 \: \text{Bytes}}{\text{1 Terabyte}}\\
                                         &= \text{13194139533312 Bytes}
-        
+
         And thus the command: ::
-        
+
             qdbd --max-depot-size=13194139533312
-        
+
         This database may expand out to approximately 14.4 Terabytes due to meta-data and uncompressed db entries.
-            
+
     Example B
         This example will limit the database size to ensure it fits within 1 Terabyte of free space. Since limiting to a specific overhead is important in this example, the filesystem cluster size is also taken into account; the default for most filesystems is 4096 bytes.
-        
+
         .. math::
-            
+
             \text{Max Depot Size Value} &= \text{1099511627776 Bytes} - \text{(1099511627776 Bytes} \: * \: 0.2 \text{)} - \text{Cluster Size of 4096} \\
                                         &= \text{1099511627776 Bytes} - \text{219902325555.2 Bytes} - \text{4096 Bytes} \\
                                         &= \text{879609298124.8 Bytes}
-        
+
         And thus the command, truncating down to an integer: ::
-        
+
             qdbd --max-depot-size=879609298124
-        
+
         This database should not exceed 1 Terabyte.
-    
+
     .. note::
         The --max-depot-size argument is only available with QuasarDB 1.1.2 or higher.
 
@@ -547,7 +547,7 @@ Global
             qdbd --limiter-max-bytes=8589934592
 
     .. note::
-        Setting this value too high may lead to `thrashing <http://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
+        Setting this value too high may lead to `thrashing <https://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
 
 
 .. option:: --limiter-max-entries-count=<count>

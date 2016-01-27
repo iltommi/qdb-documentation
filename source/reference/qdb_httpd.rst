@@ -26,20 +26,20 @@ Quick Reference
  ===================================== ============================ =================== ==============
                 Option                               Usage               Default         Req. Version
  ===================================== ============================ =================== ==============
- :option:`-h`                          display help                                     
- :option:`-v`                          display version information                       
- :option:`--gen-config`                generate default config file                      >=1.1.3
- :option:`-c`, `--config`              specify config file                               >=1.1.3
- :option:`-d`, `--daemonize`           daemonize                                        
- :option:`-a`, `--address`             address to listen on         127.0.0.1:8080      
- :option:`-r`, `--root`                html files directory         ./html              
- :option:`--node`                      address:port of server       127.0.0.1:2836      
- :option:`-l`, `--log-file`            log on given file                                
- :option:`--log-dump`                  dump file location           qdb_error_dump.txt  
- :option:`--log-syslog`                log on syslog                                    
- :option:`--log-level`                 change log level             info                
- :option:`--log-flush-interval`        change log flush             3                   
- :option:`-t`, `--threads`             number of threads to use     1                  
+ :option:`-h`, :option:`--help`        display help
+ :option:`-v`                          display version information
+ :option:`--gen-config`                generate default config file                     >=1.1.3
+ :option:`-c`, :option:`--config`      specify config file                              >=1.1.3
+ :option:`-d`, :option:`--daemonize`   daemonize
+ :option:`-a`, :option:`--address`     address to listen on         127.0.0.1:8080
+ :option:`-r`, :option:`--root`        html files directory         ./html
+ :option:`--node`                      address:port of server       127.0.0.1:2836
+ :option:`-l`, :option:`--log-file`    log on given file
+ :option:`--log-dump`                  dump file location           qdb_error_dump.txt
+ :option:`--log-syslog`                log on syslog
+ :option:`--log-level`                 change log level             info
+ :option:`--log-flush-interval`        change log flush             3
+ :option:`-t`, :option:`--threads`     number of threads to use     1
  ===================================== ============================ =================== ==============
 
 
@@ -83,19 +83,19 @@ The cluster stability and number of nodes are shown in the image to the left. Ea
 The table on the right shows live statistics from the cluster.
 
  * General Data
- 
+
    - Cluster Status: The overall status of the cluster.
    - Evictions Count: The number of entries that were rejected due to node or cluster limits.
- 
+
  * Aggregated Data
- 
+
    - Persisted Size: The size of all data stored on all disks across all nodes.
    - Resident Size: The size of data stored on RAM across all nodes.
    - Persisted Entries Count: The number of entries stored in disk across all nodes.
    - Resident Entries Count: The number of entries stored on RAM across all nodes.
- 
+
  * Aggregated operations statistics
- 
+
    - put: The number of put operations the cluster has received from clients.
    - get: The number of get operations the cluster has received from clients.
    - update: The number of get operations the cluster has received from clients.
@@ -139,12 +139,12 @@ The table on the right shows live statistics from the selected node.
 
  * Node ID: The unique hexadecimal node ID assigned as part of its configuration file or when it joined the cluster.
  * Machine Configuration
- 
+
    - OS: The operating system of the node.
    - CPU: The CPU model of the node.
- 
+
  * Node Data
- 
+
    - Uptime: The amount of time in hours and minutes the node has been online.
    - Virtual Memory: The total amount of memory in the node, including swap space.
    - Physical Memory: The total amount of physical memory in the node.
@@ -172,7 +172,7 @@ Node Operation Statistics
    - remove if: The number of remove if operations the cluster has received from clients.
 
 Sessions information by partition
- 
+
    - Each partition is shown with a number of available simultaneous connections out of its maximum simultaneous connections. The maximum number of connections is determined by your license file.
 
 
@@ -180,7 +180,7 @@ There are two download buttons beneath the operation statistics:
 
 .. image:: qdb_httpd_raw_json_data.png
     :align: center
-    
+
 .. image:: qdb_httpd_configuration_as_json.png
     :align: center
 
@@ -217,9 +217,10 @@ Using the qdb_httpd JSON interface
 
 The server only accepts specific URLs and will service JSON or JSONP data depending on the URL and its parameters. If the URL does not exist, the server will return a page not found (404) error.
 
-A comprehensive list of urls and parameters is listed below at :ref:`qdb_httpd-url-reference`. 
+A comprehensive list of URLs and parameters is listed below at :ref:`qdb_httpd-url-reference`.
 
 
+.. highlight:: shell
 
 .. _qdb_httpd-parameters-reference:
 
@@ -249,26 +250,26 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To create a new config file with the name "qdb_httpd_default_config.json", type: ::
 
             qdb_httpd --gen-config > qdb_httpd_default_config.json
-    
+
     .. note::
         The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
 
 .. option:: -c, --config
 
     Specifies a configuration file to use. See :ref:`qdb_httpd-config-file-reference`.
-    
+
         * Any other command-line options will be ignored.
         * If an option is omitted in the config file, the default will be used.
         * If an option is malformed in the config file, it will be ignored.
-    
+
     Argument
         The path to a valid configuration file.
 
     Example
-        To use a configuration file named "qdb_httpd_default_config.json", type: ::
+        To use a configuration file named "qdb_httpd_default_config.json", type::
 
             qdb_httpd --config=qdb_httpd_default_config.json
-        
+
     .. note::
         The --config argument is only available with QuasarDB 2.0.0 or higher.
 
@@ -332,7 +333,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         A string representing one (or several) path(s) to the log file(s).
 
     Example
-        Log in /var/log/qdbd.log: ::
+        Log in /var/log/qdbd.log::
 
             qdb_httpd --log-file=/var/log/qdbd.log
 
@@ -345,7 +346,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         A string representing a relative or absolute path to the dump file.
 
     Example
-        Dump to qdb_error_dump.txt: ::
+        Dump to qdb_error_dump.txt::
 
             qdb_httpd --log-dump=qdb_error_dump.txt
 
@@ -373,7 +374,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         info
 
     Example
-        Request a debug level logging: ::
+        Request a debug level logging::
 
             qdb_httpd --log-level=debug
 
@@ -470,7 +471,7 @@ The default configuration file is shown below::
 .. describe:: logger::log_level
 
     An integer representing the verbosity of the log output. Acceptable values are::
-    
+
         0 = detailed (most output)
         1 = debug
         2 = info (default)

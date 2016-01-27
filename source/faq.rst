@@ -126,19 +126,19 @@ Does quasardb use open source libraries?
 Yes it does! Here is the list:
 
 * `Boost <http://www.boost.org/>`_
-* `Datejs <http://code.google.com/p/datejs/>`_
+* `Datejs <http://code.google.com/archive/p/datejs/>`_
 * `hiredis <https://github.com/antirez/hiredis>`_
-* `LevelDB <http://code.google.com/p/leveldb/>`_
-* `javabi-sizeof <http://code.google.com/p/javabi-sizeof/>`_
+* `LevelDB <https://github.com/google/leveldb>`_
+* `javabi-sizeof <http://code.google.com/archive/p/javabi-sizeof/>`_
 * `JQuery <http://jquery.com/>`_
-* `Kryo <http://code.google.com/p/kryo/>`_
-* `Intel Threading Building Blocks <http://threadingbuildingblocks.org/>`_ (commercial license)
+* `Kryo <http://code.google.com/archive/p/kryo/>`_
+* `Intel Threading Building Blocks <https://www.threadingbuildingblocks.org/>`_ (commercial license)
 * `memcachepp <https://github.com/mikhailberis/memcachepp>`_
-* `Snappy <http://code.google.com/p/snappy/>`_
+* `Snappy <http://google.github.io/snappy/>`_
 
 If you find the list to be inaccurate or suspect a license violation, mail to `support@quasardb.net <support@quasardb.net>`_.
 
 Where are you located?
 ======================
 
-We are located in Paris, France. 
+We are located in Paris, France.
