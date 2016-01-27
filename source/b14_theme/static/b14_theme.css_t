@@ -149,6 +149,7 @@ div.important {
 
 /* Rules for all API blocks. */
 dl.function,
+dl.attribute,
 dl.type,
 dl.method,
 dl.class,
@@ -162,6 +163,7 @@ dl.option {
 
 /* Second-level API blocks. */
 dl.class dl.function,
+dl.class dl.attribute,
 dl.class dl.type,
 dl.class dl.method,
 dl.class dl.constructor,
@@ -176,6 +178,7 @@ dl > dt {
 }
 
 dl.function > dd > table th,
+dl.attribute > dd > table th,
 dl.type > dd > table th,
 dl.method > dd > table th,
 dl.class > dd > table th,
@@ -189,6 +192,7 @@ dl.describe > dd > table th {
 /* Second level */
 /* C, C++, .NET, and Javasphinx */
 dl.class dl.function > dd > table th,
+dl.class dl.attribute > dd > table th,
 dl.class dl.type > dd > table th,
 dl.class dl.method > dd > table th,
 dl.class dl.class > dd > table th,
@@ -196,6 +200,7 @@ dl.class dl.constructor > dd > table th,
 dl.class dl.exception > dd > table th,
 /* Python auto-generated documentation */
 dl.class dl.function table.field-list th.field-name,
+dl.class dl.attribute table.field-list th.field-name,
 dl.class dl.type table.field-list th.field-name,
 dl.class dl.method table.field-list th.field-name,
 dl.class dl.class table.field-list th.field-name,

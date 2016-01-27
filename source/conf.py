@@ -25,7 +25,15 @@ import sys, os
 
 # Add any Sphinx extension module names here, as strings. They can be extensions
 # coming with Sphinx (named 'sphinx.ext.*') or your custom ones.
-extensions = ['sphinx.ext.intersphinx', 'sphinx.ext.todo', 'sphinx.ext.mathjax', 'sphinx.ext.autodoc', 'javasphinx', 'sphinxcontrib.phpdomain']
+extensions = [
+    'sphinx.ext.doctest',
+    'sphinx.ext.intersphinx',
+    'sphinx.ext.todo',
+    'sphinx.ext.mathjax',
+    'sphinx.ext.autodoc',
+    'javasphinx',
+    'sphinxcontrib.phpdomain'
+]
 
 qdb_api_folder = os.path.join(os.getcwd(), '..', 'qdb', 'python')
 sys.path.insert(0, qdb_api_folder)
@@ -176,7 +184,7 @@ html_use_modindex = False
 html_show_sourcelink = False
 
 # Force MathJax to use https.
-mathjax_path = 'https://c328740.ssl.cf1.rackcdn.com/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
+mathjax_path = 'https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'
 
 # -- Options for LaTeX output --------------------------------------------------
 

@@ -6,11 +6,6 @@ Common principles
 
 The APIs have been designed to be close to the *way of thinking* of each programming language, but they share common principles. This chapter will give you a rapid overview of how the API works and the principles behind each language binding.
 
-Error management
-----------------
-
-Most success and failure conditions are based on return values. When an operation is successful, a function returns with the status qdb_e_ok. In Python and Java, errors are translated to exceptions.
-
 Connection
 ----------
 
@@ -31,10 +26,32 @@ Atomicity
 
 Unless otherwise noted, all calls are atomic. When a call returns, you can be assured the data has been persisted to disk (to the limit of what the operating system can guarantee in that aspect).
 
+Data Types
+----------
+
+See :doc:`../concepts/data_types`.
+
+Tags
+----
+
+See :doc:`../concepts/tags`.
+
 Memory management
 -----------------
 
 A lot of calls allocate memory on the client side. For example, when you get an entry, the calls allocate a buffer large enough to hold the entry for you. In C, the memory needs to be explicitly released. In C++, Java and Python, this is not necessary as a memory management mechanism is included with the API.
+
+Error management
+----------------
+
+Most success and failure conditions are based on return values. When an operation is successful, a function returns with the status qdb_e_ok. Other error types are returned as a value from the qdb_error_t enum, which can be examined using the QDB_SUCCESS(qdb_error_t), QDB_TRANSIENT(qdb_error_t) and QDB_SEVERITY(qdb_error_t) macros.
+
+Transient errors may resolve by themselves given time. Transient errors are commonly transaction conflicts, network timeouts, or an unstable cluster.
+
+An informational error means that the query has been succesfully processed by the server and your parameters were valid but the result is either empty or unavailable. Informational errors include non-existent entries, empty collections, indexes out of range, or integer overflow/underflows.
+
+If the language supports exceptions, like .NET, Python, and Java, errors are translated to exceptions.
+
 
 Automatic Load Balancing
 ------------------------
@@ -63,78 +80,9 @@ If it is impossible to recover from an error during the iteration, the iteration
 
 The "current" state of the cluster is what is iterated upon. No "snapshot" is made. If an entry is added during iteration it may, or may not, be included in the iteration, depending on its placement respective to the iteration cursor. It is planned to change this behaviour to allow "consistent" iteration in a future release.
 
-Prefix based search
--------------------
-
-Introduction
-^^^^^^^^^^^^
-
-Quasardb enables you to access entries provided that you know the associated key. But what if you don't know the key? It is still possible to iterate on the whole cluster to list all entries but this is not very efficient.
-
-Fortunately, quasardb provides you with a prefix based search. This feature enables you to list all keys based on a prefix, in other words, you can list all keys starting with a specified bytes sequence.
-
-This feature transforms quasardb into a hierarchical database, since with an appropriate naming scheme it becomes possible to group keys.
-
-C++ Example
-^^^^^^^^^^^^^
-
-Let's say you want to store financial instruments' values into quasardb. Imagine we have the following entries:
-
-    * instruments.forex.spot.usd.eur
-    * instruments.forex.spot.usd.cad
-    * instruments.debt.bond.mybound1
-    * instruments.equity.stock.mystock1
-
-In one query you can efficiently list all available forex spots for a given currency::
-
-    // we assume a properly initialized qdb::handle named h
-    qdb_error_t err = qdb_e_uninitialized;
-    std::vector<std::string> usd_spots = h.prefix_get("instruments.forex.spot.usd.", err);
-    if (err != qdb_e_ok)
-    {
-        // error management
-        // ...
-    }
-
-`usd_spots` will contain the list of all keys (with their full name) starting with "instruments.forex.spot.usd.", in our case the list will contain:
-
-    * instruments.forex.spot.usd.eur
-    * instruments.forex.spot.usd.cad
-
-Once you have this list, it's easy to query the content.
-
-Limitations
-^^^^^^^^^^^^
-
-    * The client needs to have enough memory to allocate the results list
-    * The search prefix needs to be at least three bytes long
-    * It is not possible to list reserved entries (entries starting with "qdb")
-    * Once the list is returned, it may change as concurrent requests may add or remove entries that ought to be in the list
-
-Complexity
-^^^^^^^^^^^
-
-How fast is the query? The complexity isn't dependent on the number of entries in your cluster. Whether you have 1 billion entries or only two, the query runs in comparable time (if you set aside the memory management overhead which varies in time based on the size of the result).
-
-The complexity of the request is dependent on the number of nodes and the length of the key.
-
-Formally, if :math:`k` is the number of characters in the prefix, and :math:`n` the number of nodes in the cluster, the complexity is:
-
-.. math::
-    O(k.n)
-
-This means that run time grows linearly with the cluster size.
-
 .. note::
-    As of this writing, we are working on an improved version whose run time complexity will be:
+	Entries cannot be iterated if the cluster is in transient mode.
 
-    .. math::
-        O(k.log(n))
-
-Summary
-^^^^^^^^^^^^^^^^
-
-Prefix-based search brings a lot of flexibility to quasardb, enabling you to organize your data into logical trees for efficient queries. Although the runtime performance is dependent on the cluster size, performance is excellent and an order of magnitude faster than iteration. Additionally, performance for large clusters will be greatly improved in future releases.
 
 Batch operations
 ----------------

@@ -13,34 +13,53 @@ Create a Cluster with Three Nodes
 In this tutorial we will set up a cluster of three machines with static IP addresses of 192.168.1.1, 192.168.1.2 and 192.168.1.3. All nodes are equal in features and responsibility, making our cluster very resilient to failure. The theoretical limit to the number of nodes a cluster may have is so high (more than several trillions) that there is no practical limit, but three will do for this exercise.
 
 
-Generating Configuration Files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Configure the First Node
+~~~~~~~~~~~~~~~~~~~~~~~~
 
-We can create configuration files for all of the nodes at once using the :doc:`../reference/confgen`.
+#. Generate a default configuration from qdbd by running `qdbd --gen-config > 192.168.1.1.conf`.
 
-#. Access the :doc:`../reference/confgen`.
+#. Edit the configuration file using your favorite editor.
 
-#. Enter the RAM, disk space, and number of cores available to quasardb.
+#. Set the `local::network::listen_on` value to `192.168.1.1:2836`.
 
-#. Add the IP address of 192.168.1.1.
+#. Set the `global::depot::replication_factor` value to 2.
 
-#. Click the "Click here to add another node" link twice.
+#. Save the file.
 
-#. Add the IP addresses of 192.168.1.2 and 192.168.1.3.
+Configure the Second Node
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Set the :ref:`data-replication` factor to 2.
+#. Generate a default configuration from qdbd by running `qdbd --gen-config > 192.168.1.2.conf`.
 
-#. Set the "Allowed simultaneous connections" to 2000.
+#. Edit the configuration file using your favorite editor.
 
-#. Click Generate Configuration File.
+#. Set the `local::network::listen_on` value to `192.168.1.2:2836`.
 
-#. Save the compressed file somewhere you will remember.
+#. Set the `local::chord::bootstrapping_peers` value to `[192.168.1.1:2836]`
 
+#. Set the `global::depot::replication_factor` value to 2.
+
+#. Save the file.
+
+Configure the Third Node
+~~~~~~~~~~~~~~~~~~~~~~~~
+
+#. Generate a default configuration from qdbd by running `qdbd --gen-config > 192.168.1.3.conf`.
+
+#. Edit the configuration file using your favorite editor.
+
+#. Set the `local::network::listen_on` value to `192.168.1.3:2836`.
+
+#. Set the `local::chord::bootstrapping_peers` value to `[192.168.1.1:2836]`
+
+#. Set the `global::depot::replication_factor` value to 2.
+
+#. Save the file.
 
 Starting the Daemons
 ~~~~~~~~~~~~~~~~~~~~
 
-#. Extract the named configuration files to the qdbd folder on the respective nodes. Each conf file will be named the IP address or hostname you entered in the configuration generator.
+#. Copy the named configuration files to the qdbd folder on the respective nodes.
    
 #. Start the quasardb daemon on the first node. ::
 
@@ -65,7 +84,7 @@ If you add a node to the cluster, you do not have to make *any* change on the cl
 
 #. Run qdbsh::
 
-    qdbsh --daemon=192.168.1.2:2836
+    qdbsh qdb://192.168.1.2:2836
 
 #. Test a couple of commands::
 
@@ -76,7 +95,7 @@ If you add a node to the cluster, you do not have to make *any* change on the cl
 
 #. Test that a different node acknowledges the entry::
 
-    qdbsh --daemon=192.168.1.3:2836
+    qdbsh qdb://192.168.1.3:2836
     
     ok:qdbsh> get entry
     thisismyentry

@@ -4,7 +4,7 @@ Performance tuning
 Measuring performance
 ---------------------
 
-The best way to test the performance of your cluster is to use the :doc:`../reference/qdb_comparison`. It comes with a wide range of test scenarii and it understands quasardb, memchached, and redis protocols.
+The best way to test the performance of your cluster is to use the :doc:`../reference/qdb_bench`. It comes with a wide range of test scenarii and it understands quasardb, memchached, and redis protocols.
 
 
 Rules of thumb
@@ -25,4 +25,32 @@ Recommendations
     * Homogenous node configurations make it easier to diagnose performance issues.
     * A quasardb cluster can be very network intensive. Make sure you have the network infrastructure the handle the load.
     * Don't be afraid to add nodes. It's simple and safe.
+
+Linux Recommendations
+----------------------
+
+ #. Disable system swappiness in ``/etc/sysctl.conf``::
+         
+         vm.swappiness = 0
+         
+ #. Disable Transparent Huge Pages by adding the following to ``/etc/rc.local``::
+         
+         if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
+           echo never > /sys/kernel/mm/transparent_hugepage/enabled
+         fi
+         
+         if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
+            echo never > /sys/kernel/mm/transparent_hugepage/defrag
+         fi
+         
+ #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values::
+         
+         net.core.somaxconn = 8192
+         net.ipv4.tcp_max_syn_backlog = 8192
+         net.core.rmem_max = 16777216
+         net.core.wmem_max = 16777216
+         
+ #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``::
+         
+         qdb    soft    nofile    65536
 
