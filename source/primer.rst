@@ -1,4 +1,5 @@
 .. highlight:: python
+
 Primer
 ******
 
