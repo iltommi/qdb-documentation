@@ -49,10 +49,10 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_blob_compare_and_swap`    (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` new_value, :c:type:`qdb_size_t` new_value_length, :c:type:`const char *` comparand, :c:type:`qdb_size_t` comparand_length, :c:type:`qdb_time_t` expiry_time, :c:type:`char **` original_value, :c:type:`qdb_size_t *` original_value_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_remove`                   (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias);
   :c:type:`qdb_error_t`       :c:type:`qdb_blob_remove_if`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` comparand, :c:type:`qdb_size_t` comparand_length);
-  :c:type:`qdb_error_t`       :c:type:`qdb_init_operations`          (:c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operations_count);
-  :c:type:`qdb_size_t`        :c:type:`qdb_run_batch`                (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operations_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_run_transaction`          (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operations_count, :c:type:`qdb_size_t *` failed_index);
-  :c:type:`void`              :c:type:`qdb_free_operations`          (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operations_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_init_operations`          (:c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operation_count);
+  :c:type:`qdb_size_t`        :c:type:`qdb_run_batch`                (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operation_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_run_transaction`          (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operation_count, :c:type:`qdb_size_t *` failed_index);
+  :c:type:`void`              :c:type:`qdb_free_operations`          (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operation_t *` operations, :c:type:`qdb_size_t` operation_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_expires_at`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_time);
   :c:type:`qdb_error_t`       :c:type:`qdb_expires_from_now`         (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_delta);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_expiry_time`          (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_time_t` expiry_time);
@@ -870,18 +870,18 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_init_operations(qdb_operations_t * operations, qdb_size_t operations_count)
+.. c:function:: qdb_error_t qdb_init_operations(qdb_operations_t * operations, qdb_size_t operation_count)
 
     Initializes an array of operations to the default value, making its later usage safe.
 
     :param operations: Pointer to an array of qdb_operations_t
     :type operations: qdb_operations_t *
-    :param operations_count: Size of the array, in entry count
-    :type operations_count: qdb_size_t
+    :param operation_count: Size of the array, in entry count
+    :type operation_count: qdb_size_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_run_batch(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operations_count)
+.. c:function:: qdb_size_t qdb_run_batch(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operation_count)
 
     Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
@@ -891,12 +891,12 @@ Reference
     :type handle: qdb_handle_t
     :param operations: Pointer to an array of qdb_operations_t
     :type operations: qdb_operations_t *
-    :param operations_count: Size of the array, in entry count
-    :type operations_count: qdb_size_t
+    :param operation_count: Size of the array, in entry count
+    :type operation_count: qdb_size_t
 
-    :returns: An error code of type :c:type:`qdb_error_t`
+    :returns: The number of successful operations
 
-.. c:function:: qdb_error_t qdb_run_transaction(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operations_count, qdb_size_t * failed_index)
+.. c:function:: qdb_error_t qdb_run_transaction(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operation_count, qdb_size_t * failed_index)
 
     Runs the provided operations as a transaction on the cluster. The operations are run in the provided order. If any operation fails, all previously run operations are rolled back.
 
@@ -906,14 +906,14 @@ Reference
     :type handle: qdb_handle_t
     :param operations: Pointer to an array of qdb_operations_t
     :type operations: qdb_operations_t *
-    :param operations_count: Size of the array, in entry count
-    :type operations_count: qdb_size_t
+    :param operation_count: Size of the array, in entry count
+    :type operation_count: qdb_size_t
     :param failed_index: The index in the operations array for the operation that failed.
     :type failed_index: qdb_size_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operations_count)
+.. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operation_count)
 
     Releases all API-allocated memory by a :c:func:`qdb_run_batch` or :c:func:`qdb_run_transaction` call. This function is safe to call even if :c:func:`qdb_run_batch` or :c:func:`qdb_run_transaction` didn't allocate any memory.
 
@@ -921,8 +921,8 @@ Reference
     :type handle: qdb_handle_t
     :param operations: Pointer to an array of qdb_operations_t
     :type operations: qdb_operations_t *
-    :param operations_count: Size of the array, in entry count
-    :type operations_count: qdb_size_t
+    :param operation_count: Size of the array, in entry count
+    :type operation_count: qdb_size_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 

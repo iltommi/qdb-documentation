@@ -82,9 +82,9 @@ Quick Reference
   :c:type:`qdb_error_t`                  :cpp:func:`handle::hset_contains`                  ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :cpp:type:`qdb_size_t` ``content_length);``
   :c:type:`qdb_error_t`                  :cpp:func:`handle::blob_update`                    ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :cpp:type:`qdb_size_t` ``content_length,`` :cpp:type:`qdb_time_t` ``expiry_time);``
   :c:type:`qdb_error_t`                  :cpp:func:`handle::blob_get_noalloc`               ``(``\ |CONST_CHAR_P| ``alias,`` |CHAR_P| ``content,`` :c:type:`qdb_size_t *` ``content_length);``
-  :c:type:`qdb_size_t`                   :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` ``operations,`` :cpp:type:`qdb_size_t` ``operations_count);``
-  :cpp:type:`std::vector\<batch_result>` :cpp:func:`handle::run_batch`                      (:c:type:`const std::vector\<batch_request> &` ``requests,`` :c:type:`qdb_size_t &` ``successes_count);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::run_transaction`                (:c:type:`qdb_operation_t *` ``operations,`` :cpp:type:`qdb_size_t` ``operations_count,`` :c:type:`qdb_size_t &` ``fail_index);``
+  :c:type:`qdb_size_t`                   :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` ``operations,`` :cpp:type:`qdb_size_t` ``operation_count);``
+  :cpp:type:`std::vector\<batch_result>` :cpp:func:`handle::run_batch`                      (:c:type:`const std::vector\<batch_request> &` ``requests,`` :c:type:`qdb_size_t &` ``success_count);``
+  :c:type:`qdb_error_t`                  :cpp:func:`handle::run_transaction`                (:c:type:`qdb_operation_t *` ``operations,`` :cpp:type:`qdb_size_t` ``operation_count,`` :c:type:`qdb_size_t &` ``fail_index);``
   :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get`                       ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
   :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get_and_remove`            ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
   :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get_and_update`            ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``update_content,`` :cpp:type:`qdb_size_t` ``update_content_length,`` :cpp:type:`qdb_time_t` ``expiry_time,`` :c:type:`qdb_error_t &` ``error);``
@@ -728,32 +728,32 @@ Reference
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_size_t run_batch(qdb_operation_t * operations, qdb_size_t operations_count)
+    .. cpp:function:: qdb_size_t run_batch(qdb_operation_t * operations, qdb_size_t operation_count)
 
         Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
         It is preferred to use the std::vector version of run_batch where possible.
 
         :param operations: Pointer to an array of qdb_operations_t
-        :param operations_count: Size of the array, in entry count
+        :param operation_count: Size of the array, in entry count
 
         :returns: The number of successful operations
 
-    .. cpp:function:: std::vector run_batch(const std::vector<batch_request> & requests, qdb_size_t & successes_count)
+    .. cpp:function:: std::vector run_batch(const std::vector<batch_request> & requests, qdb_size_t & success_count)
 
         Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
         :param requests: A vector containing the batch requests to run on the cluster.
-        :param operations_count: A reference that will be set to the number of successful operations.
+        :param operation_count: A reference that will be set to the number of successful operations.
 
         :returns: A vector containing the batch results.
 
-    .. cpp:function:: qdb_error_t run_transaction(qdb_operation_t * operations, qdb_size_t operations_count, qdb_size_t & fail_index)
+    .. cpp:function:: qdb_error_t run_transaction(qdb_operation_t * operations, qdb_size_t operation_count, qdb_size_t & fail_index)
 
         Runs the provided operations as a transaction on the cluster. The operations are run in the provided order. If any operation fails, all previously run operations are rolled back.
 
         :param operations: Pointer to an array of qdb_operations_t
-        :param operations_count: Size of the array, in entry count
+        :param operation_count: Size of the array, in entry count
         :param fail_index: The index in the operations array for the operation that failed.
 
         :returns: An error code of type :c:type:`qdb_error_t`
