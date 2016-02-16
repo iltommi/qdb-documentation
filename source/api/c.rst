@@ -89,8 +89,8 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_add_tag`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
   :c:type:`qdb_error_t`       :c:type:`qdb_has_tag`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
   :c:type:`qdb_error_t`       :c:type:`qdb_remove_tag`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get_tagged`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` tag, :c:type:`const char ***` aliases, :c:type:`qdb_size_t` aliases_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get_tags`                 (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char ***` tags, :c:type:`qdb_size_t` tags_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_tagged`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` tag, :c:type:`const char ***` aliases, :c:type:`qdb_size_t` alias_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_tags`                 (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char ***` tags, :c:type:`qdb_size_t` tag_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_stream_open`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_stream_mode_t` mode, :c:type:`qdb_stream_t` * stream);
   :c:type:`qdb_error_t`       :c:type:`qdb_stream_close`             (:c:type:`qdb_stream_t` stream);
   :c:type:`qdb_error_t`       :c:type:`qdb_stream_read`              (:c:type:`qdb_stream_t` stream, :c:type:`void *` data, :c:type:`size_t *` size);
@@ -1450,7 +1450,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_tagged(qdb_handle_t handle, const char * tag, const char *** aliases, qdb_size_t aliases_count)
+.. c:function:: qdb_error_t qdb_get_tagged(qdb_handle_t handle, const char * tag, const char *** aliases, qdb_size_t alias_count)
 
     Retrieves the aliases that have been tagged with the given tag.
 
@@ -1460,12 +1460,12 @@ Reference
     :type tag: const char *
     :param aliases: A pointer to a pointer of an array of alias pointers. This will be set to list each alias tagged with the given tag.
     :type aliases: :c:type:`const char ***`
-    :param aliases_count: The number of aliases in the array.
-    :type aliases_count: qdb_size_t
+    :param alias_count: The number of aliases in the array.
+    :type alias_count: qdb_size_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_tags(qdb_handle_t handle, const char * alias, const char *** tags, qdb_size_t tags_count)
+.. c:function:: qdb_error_t qdb_get_tags(qdb_handle_t handle, const char * alias, const char *** tags, qdb_size_t tag_count)
 
     Retrieves the tags assigned to the given alias.
 
@@ -1475,8 +1475,8 @@ Reference
     :type alias: const char *
     :param tags: A pointer to a pointer of an array of tag pointers. This will be set to list each tag assigned to the alias.
     :type tags: :c:type:`const char ***`
-    :param aliases_count: The number of tags in the array.
-    :type aliases_count: qdb_size_t
+    :param tag_count: The number of tags in the array.
+    :type tag_count: qdb_size_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
