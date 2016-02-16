@@ -4,14 +4,14 @@ C
 .. highlight:: c
 
 
-.. // The functions below are linked using :c:type: not :c:func: so that Sphinx 
-.. // does not add a (). This allows a reader to copy-and-paste the whole row. 
+.. // The functions below are linked using :c:type: not :c:func: so that Sphinx
+.. // does not add a (). This allows a reader to copy-and-paste the whole row.
 
 Quick Reference
 ---------------
 
  =========================== ================================== ===================
-        Return Type                       Name                       Arguments     
+        Return Type                       Name                       Arguments
  =========================== ================================== ===================
   ..                          :c:type:`qdb_handle_t`;            ..
   ..                          :c:type:`qdb_remote_node_t`;       ..
@@ -28,16 +28,16 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_connect`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` host, :c:type:`unsigned short` port);
   :c:type:`size_t`            :c:type:`qdb_multi_connect`        (:c:type:`qdb_handle_t` handle, :c:type:`qdb_remote_node_t *` servers, :c:type:`size_t` count);
   :c:type:`qdb_error_t`       :c:type:`qdb_close`                (:c:type:`qdb_handle_t` handle);
-  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t` results_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t` result_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_get`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char *` content, :c:type:`size_t *` content_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_buffer`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`size_t *` content_length);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_remove`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`char **` content, :c:type:`size_t *` content_length);
   :c:type:`void`              :c:type:`qdb_free_buffer`          (:c:type:`qdb_handle_t` handle, :c:type:`char *` buffer);
-  :c:type:`void`              :c:type:`qdb_free_results`         (:c:type:`qdb_handle_t` handle, :c:type:`const char **` results, :c:type:`size_t` results_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t *` results_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_init_operations`      (:c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_run_batch`            (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_free_operations`      (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operations_count);
+  :c:type:`void`              :c:type:`qdb_free_results`         (:c:type:`qdb_handle_t` handle, :c:type:`const char **` results, :c:type:`size_t` result_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_prefix_get`           (:c:type:`qdb_handle_t` handle, :c:type:`const char *` prefix, :c:type:`const char ***` results, :c:type:`size_t *` result_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_init_operations`      (:c:type:`qdb_operations_t *` operations, :c:type:`size_t` operation_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_run_batch`            (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operation_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_free_operations`      (:c:type:`qdb_handle_t` handle, :c:type:`qdb_operations_t *` operations, :c:type:`size_t` operation_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_put`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`size_t` content_length, :c:type:`qdb_time_t` expiry_time);
   :c:type:`qdb_error_t`       :c:type:`qdb_update`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` content, :c:type:`size_t` content_length, :c:type:`qdb_time_t` expiry_time);
   :c:type:`qdb_error_t`       :c:type:`qdb_get_buffer_update`    (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` update_content, :c:type:`size_t` update_content_length, :c:type:`qdb_time_t` expiry_time, :c:type:`char **` get_content, :c:type:`size_t *` get_content_length);
@@ -58,9 +58,9 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_previous`    (:c:type:`qdb_const_iterator_t *` iterator);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_copy`        (:c:type:`qdb_const_iterator_t *` original, :c:type:`qdb_const_iterator_t *` copy);
   :c:type:`qdb_error_t`       :c:type:`qdb_iterator_close`       (:c:type:`qdb_const_iterator_t *` iterator);
-  
+
  =========================== ================================== ===================
- 
+
 
 Introduction
 --------------
@@ -318,14 +318,14 @@ By default, entries never expire. To obtain the expiry time of an existing entry
 Prefix based search
 --------------------
 
-Prefix based search is a powerful tool that helps you lookup entries efficiently. 
+Prefix based search is a powerful tool that helps you lookup entries efficiently.
 
 For example, if you want to find all entries whose aliases start with "record"::
 
     const char ** results = 0;
-    size_t results_count = 0;
+    size_t result_count = 0;
 
-    r = qdb_prefix_get(handle, "record", &results, &results_count);
+    r = qdb_prefix_get(handle, "record", &results, &result_count);
     if (r != qdb_error_ok)
     {
         // error management
@@ -336,7 +336,7 @@ For example, if you want to find all entries whose aliases start with "record"::
 
 The qdb_prefix_get function automatically allocates all required memory. This memory must be released by the caller at a later time::
 
-    qdb_free_results(handle, &results, &results_count);
+    qdb_free_results(handle, &results, &result_count);
 
 Batch operations
 -----------------
@@ -396,7 +396,7 @@ Let's imagine in our case we have an error, here is a possible error lookup code
         }
     }
 
-What you must do when an error occurs is entirely dependent on your application. 
+What you must do when an error occurs is entirely dependent on your application.
 
 In our case, there have been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
 
@@ -473,7 +473,7 @@ The parameters passed to the callback are:
     * *date:* an array of six unsigned longs describing the timestamp of the log message. They are ordered as such: year, month, day, hours, minutes, seconds. The time is in 24h format.
     * *pid:* the process id of the log message.
     * *tid:* the thread id of the log message.
-    * *message_buffer:* a null-terminated buffer that is valid only in the context of the callback. 
+    * *message_buffer:* a null-terminated buffer that is valid only in the context of the callback.
     * *message_size:* the size of the buffer, in bytes.
 
 Here is a callback example::
@@ -496,7 +496,7 @@ Setting the callback is done with :c:func:`qdb_set_option`::
     qdb_set_option(handle, qdb_o_log_callback, my_log_callback);
 
 .. warning::
-    It is not possible to unregister a log callback. Multiple calls to :c:func:`qdb_set_option` will result in several callbacks being registered. Registering the same callback multiple times results in undefined behaviour. 
+    It is not possible to unregister a log callback. Multiple calls to :c:func:`qdb_set_option` will result in several callbacks being registered. Registering the same callback multiple times results in undefined behaviour.
 
 
 Reference
@@ -530,7 +530,7 @@ Reference
 
     Translate an error into a meaningful message. If the content does not fit into the buffer, the content is truncated. A null terminator is always appended, except if the buffer is empty. The function never fails and returns the passed pointer for convenience.
 
-    :param error: An error code 
+    :param error: An error code
     :type error: qdb_error_t
     :param message: A pointer to a buffer that will receive the translated error message.
     :type message: char *
@@ -593,7 +593,7 @@ Reference
 .. c:function:: size_t qdb_multi_connect(qdb_handle_t handle, qdb_remote_node_t * servers, size_t count)
 
     Bind the client instance to a quasardb :term:`cluster` and connect to multiple nodes within the cluster. The function returns the number of successful
-    unique connections. If the same node (address and port) is present several times in the input array, it will count as only one successful 
+    unique connections. If the same node (address and port) is present several times in the input array, it will count as only one successful
     connection.
 
     The user supplies an array of qdb_remote_node_t and the function updates the error member of each entry according to the result of the operation.
@@ -618,7 +618,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * results_count)
+.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * result_count)
 
     Search the cluster for entries with the provided prefix. The function will return the list of matching aliases, but not the associated content.
 
@@ -632,8 +632,8 @@ Reference
     :type alias: const char ``*``
     :param results: A pointer to a const char ** that will receive an API allocated array of NULL terminated strings representing the list of matching aliases
     :type results: const char ``*````*````*``
-    :param results_count: A pointer to a size_t that will receive the number of results
-    :type  results_count: size_t ``*``
+    :param result_count: A pointer to a size_t that will receive the number of results
+    :type  result_count: size_t ``*``
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
@@ -709,7 +709,7 @@ Reference
 
     :returns: This function does not return a value.
 
-.. c:function:: void qdb_free_results(qdb_handle_t handle, const char ** results, size_t results_count)
+.. c:function:: void qdb_free_results(qdb_handle_t handle, const char ** results, size_t result_count)
 
     Frees a buffer allocated by :c:func:`qdb_prefix_get`.
 
@@ -717,10 +717,10 @@ Reference
     :type handle: qdb_handle_t
     :param results: A pointer to a buffer to release allocated by :c:func:`qdb_prefix_get`
     :type results: const char **
-    :param results_count: The number of entries in results
-    :type results_count: size_t
+    :param result_count: The number of entries in results
+    :type result_count: size_t
 
-.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * results_count)
+.. c:function:: qdb_error_t qdb_prefix_get(qdb_handle_t handle, const char * prefix, const char *** results, size_t * result_count)
 
     Searches the cluster for all entries whose aliases start with "prefix". The function will allocate an array of strings containing the aliases of matching entries. This array must be freed later with :c:func:`qdb_free_results`.
 
@@ -732,25 +732,25 @@ Reference
     :type prefix: const char *
     :param results: A pointer to an array of results to be freed with :c:func:`qdb_free_results`
     :type results: const char **
-    :param results_count: A pointer to a size_t that will receive the number of results
-    :type results_count: size_t *
+    :param result_count: A pointer to a size_t that will receive the number of results
+    :type result_count: size_t *
 
-    :returns: An error code of type :c:type:`qdb_error_t` 
+    :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_init_operations(qdb_operations_t * operations, size_t operations_count)
+.. c:function:: qdb_error_t qdb_init_operations(qdb_operations_t * operations, size_t operation_count)
 
     Initializes an array of operations to the default value, making its later usage safe.
 
     :param operations: Pointer to an array of qdb_operations_t
     :type operations: qdb_operations_t *
-    :param operations_count: Size of the array, in entry count
-    :type operations_count: size_t
+    :param operation_count: Size of the array, in entry count
+    :type operation_count: size_t
 
-    :returns: An error code of type :c:type:`qdb_error_t` 
+    :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_run_batch(qdb_handle_t handle, qdb_operations_t * operations, size_t operations_count)
+.. c:function:: size_t qdb_run_batch(qdb_handle_t handle, qdb_operations_t * operations, size_t operation_count)
 
-    Runs the provided operations in batch on the cluster. The operations are run in arbitrary order. 
+    Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -758,12 +758,12 @@ Reference
     :type handle: qdb_handle_t
     :param operations: Pointer to an array of qdb_operations_t
     :type operations: qdb_operations_t *
-    :param operations_count: Size of the array, in entry count
-    :type operations_count: size_t
+    :param operation_count: Size of the array, in entry count
+    :type operation_count: size_t
 
     :returns: The number of successful operations
 
-.. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, size_t operations_count)
+.. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, size_t operation_count)
 
     Releases all API-allocated memory by a :c:func:`qdb_run_batch` call. This function is safe to call even if :c:func:`qdb_run_batch` didn't allocate any memory.
 
@@ -771,10 +771,10 @@ Reference
     :type handle: qdb_handle_t
     :param operations: Pointer to an array of qdb_operations_t
     :type operations: qdb_operations_t *
-    :param operations_count: Size of the array, in entry count
-    :type operations_count: size_t
+    :param operation_count: Size of the array, in entry count
+    :type operation_count: size_t
 
-    :returns: An error code of type :c:type:`qdb_error_t` 
+    :returns: An error code of type :c:type:`qdb_error_t`
 
 .. c:function:: qdb_error_t qdb_put(qdb_handle_t handle, const char * alias, const char * content, size_t content_length, qdb_time_t expiry_time, qdb_time_t expiry_time)
 
@@ -943,7 +943,7 @@ Reference
 
     Removes all the entries on all the nodes of the quasardb cluster. The function returns when the command has been dispatched and executed on the whole cluster or an error occurred.
 
-    This call is **not** atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code. 
+    This call is **not** atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a qdb_e_ok code.
 
     The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
@@ -956,7 +956,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_node_status(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
 
-    Obtains a node status as a JSON string. 
+    Obtains a node status as a JSON string.
 
     The function will allocate a buffer large enough to hold the status string and a terminating zero. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
 
@@ -975,7 +975,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_node_config(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
 
-    Obtains a node configuration as a JSON string. 
+    Obtains a node configuration as a JSON string.
 
     The function will allocate a buffer large enough to hold the configuration string and a terminating zero. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
 
@@ -994,7 +994,7 @@ Reference
 
 .. c:function:: qdb_error_t qdb_node_topology(qdb_handle_t handle, const qdb_remote_node_t * node, const char ** content, size_t * content_length)
 
-    Obtains a node topology as a JSON string. 
+    Obtains a node topology as a JSON string.
 
     The function will allocate a buffer large enough to hold the topology string and a terminating zero. This buffer must be released by the caller with a call to :c:func:`qdb_free_buffer`.
 
@@ -1033,7 +1033,7 @@ Reference
 
     The iterator must be released with a call to :c:func:`qdb_iterator_close`.
 
-    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`). 
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
@@ -1047,7 +1047,7 @@ Reference
 
     The iterator must be released with a call to :c:func:`qdb_iterator_close`.
 
-    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`). 
+    The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
     :param handle: An initialized handle (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
@@ -1059,7 +1059,7 @@ Reference
 
     Updates the iterator to point to the next available entry in the cluster. Iteration is unordered. If no other entry is available, the function will return qdb_e_alias_not_found.
 
-    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`).
 
     :param iterator: A pointer to a qdb_const_iterator structure that has been previously been initialized.
     :type iterator: qdb_const_iterator *
@@ -1069,7 +1069,7 @@ Reference
 
     Updates the iterator to point to the previous available entry in the cluster. Iteration is unordered. If no other entry is available, the function will return qdb_e_alias_not_found.
 
-    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`).
 
     :param iterator: A pointer to a qdb_const_iterator structure that has been previously been initialized.
     :type iterator: qdb_const_iterator *
@@ -1081,7 +1081,7 @@ Reference
 
     The iterator copy must be released with a call to :c:func:`qdb_iterator_close`.
 
-    The original iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+    The original iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`).
 
     :param original: A pointer to a qdb_const_iterator structure that has been previously been initialized.
     :type original: qdb_const_iterator *
@@ -1093,7 +1093,7 @@ Reference
 
     Releases all resources associated with the iterator.
 
-    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`). 
+    The iterator must be initialized (see :c:func:`qdb_iterator_begin` and :c:func:`qdb_iterator_rbegin`).
 
     :param iterator: A pointer to a qdb_const_iterator structure that has been previously been initialized.
     :type iterator: qdb_const_iterator *

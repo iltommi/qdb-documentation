@@ -12,7 +12,7 @@ Quick Reference
 ---------------
 
  ====================================== ================================================== ===================
-        Return Type                                  Name                                       Arguments     
+        Return Type                                  Name                                       Arguments
  ====================================== ================================================== ===================
   ..                                     :cpp:class:`const_iterator`;                       ..
   :cpp:type:`qdb_error_t`                :cpp:func:`const_iterator::last_error`             (:cpp:type:`void`) const;
@@ -40,7 +40,7 @@ Quick Reference
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove`                         (:cpp:type:`const char *` alias);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_if`                      (:cpp:type:`const char *` alias, :cpp:type:`const char *` comparand, :cpp:type:`size_t` comparand_length);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::remove_all`                     (:cpp:type:`void`);
-  :cpp:type:`size_t`                     :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` operations, :cpp:type:`size_t` operations_count);
+  :cpp:type:`size_t`                     :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` operations, :cpp:type:`size_t` operation_count);
   :cpp:type:`std::vector<std::string>`   :cpp:func:`handle::prefix_get`                     (:cpp:type:`const char *` prefix, :cpp:type:`qdb_error_t &` error);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_at`                     (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_time);
   :cpp:type:`qdb_error_t`                :cpp:func:`handle::expires_from_now`               (:cpp:type:`const char *` alias, :cpp:type:`qdb_time_t` expiry_delta);
@@ -54,7 +54,7 @@ Quick Reference
   :cpp:type:`const char *`               :cpp:func:`api_buffer::data`                       (:cpp:type:`void`) const;
   :cpp:type:`size_t`                     :cpp:func:`api_buffer::size`                       (:cpp:type:`void`) const;
   ..                                     :cpp:type:`api_buffer_ptr`;                        ..
-  
+
  ====================================== ================================================== ===================
 
 
@@ -537,14 +537,14 @@ Reference
 
         .. caution:: This function is meant for very specific use cases and its usage is discouraged.
 
-    .. cpp:function:: size_t run_batch(qdb_operation_t * operations, size_t operations_count)
+    .. cpp:function:: size_t run_batch(qdb_operation_t * operations, size_t operation_count)
 
         Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
         The handle must be initialized and connected (see :cpp:func:`connect` and :cpp:func:`multi_connect`).
 
         :param operations: Pointer to an array of qdb_operations_t
-        :param operations_count: Size of the array, in entry count
+        :param operation_count: Size of the array, in entry count
 
         :returns: The number of successful operations
 
