@@ -4,7 +4,6 @@ C++
 .. cpp:namespace:: qdb
 .. highlight:: cpp
 
-
 .. // Can't pull the same :type: instead of :func: trick like I did in c.rst.
 .. // The CPP parser is too smart to be fooled. We'll have to live with the extra ().
 
