@@ -367,7 +367,7 @@ Instance specific
     Example
         Log in /var/log/qdb::
 
-            qdbd --log-file=/var/log/qdb
+            qdbd --log-directory=/var/log/qdb
 
 .. option:: --log-syslog
 
@@ -643,14 +643,14 @@ The default configuration file is shown below::
 .. describe:: local::depot::storage_warning_level
 
     An integer between 50 and 100 (inclusive) specifying the percentage of disk usage at which a warning about depleting disk space will be emitted.
-    See also |global__depot__storage_warning_interval|_.
+    See also |local__depot__storage_warning_interval|_.
 
 .. |local__depot__storage_warning_interval| replace:: ``local::depot::storage_warning_interval``
 .. _local__depot__storage_warning_interval:
 .. describe:: local::depot::storage_warning_interval
 
     An integer representing how often quasardb will emit a warning about depleting disk space, in seconds.
-    See also |global__depot__storage_warning_level|_.
+    See also |local__depot__storage_warning_level|_.
 
 .. describe:: local::depot::metadata_mem_budget
 

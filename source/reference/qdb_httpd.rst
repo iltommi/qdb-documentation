@@ -23,27 +23,23 @@ Multiple web servers can be installed and run simultaneously for redundancy, but
 Quick Reference
 ===============
 
- ===================================== ============================ =================== ==============
-                Option                               Usage               Default         Req. Version
- ===================================== ============================ =================== ==============
- :option:`-h`, :option:`--help`        display help
- :option:`-v`                          display version information
- :option:`--gen-config`                generate default config file                     >=1.1.3
- :option:`-c`, :option:`--config`      specify config file                              >=1.1.3
- :option:`-d`, :option:`--daemonize`   daemonize
- :option:`-a`, :option:`--address`     address to listen on         127.0.0.1:8080
- :option:`-r`, :option:`--root`        html files directory         ./html
- :option:`--node`                      address:port of server       127.0.0.1:2836
- :option:`-l`, :option:`--log-file`    log on given file
- :option:`--log-dump`                  dump file location           qdb_error_dump.txt
- :option:`--log-syslog`                log on syslog
- :option:`--log-level`                 change log level             info
- :option:`--log-flush-interval`        change log flush             3
- :option:`-t`, :option:`--threads`     number of threads to use     1
- ===================================== ============================ =================== ==============
-
-
-
+ =======================================   ============================ =================== ==============
+                Option                               Usage                   Default         Req. Version
+ =======================================   ============================ =================== ==============
+ :option:`-h`, :option:`--help`             display help
+ :option:`-v`                               display version information
+ :option:`--gen-config`                     generate default config file                     >=1.1.3
+ :option:`-c`, :option:`--config`           specify config file                              >=1.1.3
+ :option:`-d`, :option:`--daemonize`        daemonize
+ :option:`-a`, :option:`--address`          address to listen on         127.0.0.1:8080
+ :option:`-r`, :option:`--root`             html files directory         ./html
+ :option:`--node`                           address:port of server       127.0.0.1:2836
+ :option:`-l`, :option:`--log-directory`    log in given directory
+ :option:`--log-syslog`                     log on syslog
+ :option:`--log-level`                      change log level             info
+ :option:`--log-flush-interval`             change log flush             3
+ :option:`-t`, :option:`--threads`          number of threads to use     1
+ =======================================   ============================ =================== ==============
 
 
 Launching the qdb_httpd daemon
@@ -325,18 +321,17 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
             qdb_httpd --node=localhost:5009
 
 
-.. option:: -l <path>, --log-file=<path>
+.. option:: -l <path>, --log-directory=<path>
 
-    Activates logging to one or several files.
+    Logs in the designated directory.
 
     Argument
-        A string representing one (or several) path(s) to the log file(s).
+        A string representing a path to a directory where log files will be created.
 
     Example
-        Log in /var/log/qdbd.log::
+        Log in /var/log/qdb::
 
-            qdb_httpd --log-file=/var/log/qdbd.log
-
+            qdbd --log-directory=/var/log/qdb
 
 .. option:: --log-dump=<path>
 
@@ -350,11 +345,9 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --log-dump=qdb_error_dump.txt
 
-
 .. option:: --log-syslog
 
     Activates logging to the system log.
-
 
 .. option:: --log-level=<value>
 
@@ -410,9 +403,6 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --threads=2
 
-
-
-
 .. highlight:: html
 
 .. _qdb_httpd-config-file-reference:
@@ -431,22 +421,20 @@ Some things to note when working with a configuration file:
 
 The default configuration file is shown below::
 
-    {
-        "doc_root": "html",
-        "daemonize": false,
-        "listen_on": "127.0.0.1:8080",
-        "threads": 1,
-        "remote_node": "127.0.0.1:2836",
-        "logger":
-        {
-            "log_level": 2,
-            "flush_interval": 3,
-            "log_files": [],
-            "dump_file": "qdb_error_dump.txt",
-            "log_to_console": false,
-            "log_to_syslog": false
-        }
-    }
+  {
+      "doc_root": "www",
+      "daemonize": false,
+      "listen_on": "127.0.0.1:8080",
+      "threads": 1,
+      "remote_node": "127.0.0.1:2836",
+      "logger": {
+          "log_level": 2,
+          "flush_interval": 3,
+          "log_directory": "",
+          "log_to_console": false,
+          "log_to_syslog": false
+      }
+  }
 
 .. describe:: doc_root
 
@@ -483,13 +471,9 @@ The default configuration file is shown below::
 
     An integer representing how frequently qdb_httpd log messages should be flushed to the log locations, in seconds.
 
-.. describe:: logger::log_files
+.. describe:: local::logger::log_directory
 
-    An array of strings representing the relative or absolute paths to the qdb_httpd log files.
-
-.. describe:: logger::dump_file
-
-    A string representing the relative or absolute path to the system error dump file.
+    A string representing the relative or absolute path to the directory where log files will be created.
 
 .. describe:: logger::log_to_console
 
@@ -498,12 +482,6 @@ The default configuration file is shown below::
 .. describe:: logger::log_to_syslog
 
     A boolean value representing whether or not the qdb_httpd daemon should log to the syslog.
-
-
-
-
-
-
 
 .. _qdb_httpd-url-reference:
 
