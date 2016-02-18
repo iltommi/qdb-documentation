@@ -23,24 +23,23 @@ Multiple web servers can be installed and run simultaneously for redundancy, but
 Quick Reference
 ===============
 
- =======================================   ============================ =================== ==============
+ =======================================   ============================= =================== ==============
                 Option                               Usage                   Default         Req. Version
- =======================================   ============================ =================== ==============
+ =======================================   ============================= =================== ==============
  :option:`-h`, :option:`--help`             display help
  :option:`-v`                               display version information
- :option:`--gen-config`                     generate default config file                     >=1.1.3
- :option:`-c`, :option:`--config`           specify config file                              >=1.1.3
+ :option:`--gen-config`                     generate default config file                      >=1.1.3
+ :option:`-c`, :option:`--config`           specify config file                               >=1.1.3
  :option:`-d`, :option:`--daemonize`        daemonize
- :option:`-a`, :option:`--address`          address to listen on         127.0.0.1:8080
- :option:`-r`, :option:`--root`             html files directory         ./html
- :option:`--node`                           address:port of server       127.0.0.1:2836
+ :option:`-a`, :option:`--address`          address to listen on          127.0.0.1:8080
+ :option:`-r`, :option:`--root`             html files directory          ./html
+ :option:`--node`                           address:port of server        127.0.0.1:2836
  :option:`-l`, :option:`--log-directory`    log in given directory
  :option:`--log-syslog`                     log on syslog
- :option:`--log-level`                      change log level             info
- :option:`--log-flush-interval`             change log flush             3
- :option:`-t`, :option:`--threads`          number of threads to use     1
- =======================================   ============================ =================== ==============
-
+ :option:`--log-level`                      change log level              info
+ :option:`--log-flush-interval`             change log flush              3
+ :option:`-t`, :option:`--threads`          number of threads to use      1
+ =======================================   ============================= =================== ==============
 
 Launching the qdb_httpd daemon
 ==============================

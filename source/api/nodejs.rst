@@ -1,70 +1,71 @@
 Node.js
 =======
 
+.. default-domain:: js
+.. highlight:: js
+
 Quick Reference
 ---------------
 
  ================ ================================================== =====================================================================================
    Return type     Name                                               Arguments
  ================ ================================================== =====================================================================================
-  ..               ``Entity::``:js:func:`remove`                      ``(callback(err))``
-  ..               ``Entity::``:js:func:`addTag`                      ``(String tagName, callback(err))``
-  ..               ``Entity::``:js:func:`addTags`                     ``(String[] tagNames, callback(err))``
-  ..               ``Entity::``:js:func:`getTags`                     ``(callback(err, tags))``
-  ..               ``Entity::``:js:func:`hasTag`                      ``(String tagName, callback(err))``
-  ..               ``Entity::``:js:func:`hasTags`                     ``(String[] tagNames, callback(err, success_count, result))``
-  ..               ``Entity::``:js:func:`removeTag`                   ``(String tagName, callback(err))``
-  ..               ``Entity::``:js:func:`removeTags`                  ``(String[] tagNames, callback(err))``
+  ..               :func:`Entity.remove`                              ``(callback(err))``
+  ..               :func:`Entity.addTag`                              ``(String tagName, callback(err))``
+  ..               :func:`Entity.addTags`                             ``(String[] tagNames, callback(err))``
+  ..               :func:`Entity.getTags`                             ``(callback(err, tags))``
+  ..               :func:`Entity.hasTag`                              ``(String tagName, callback(err))``
+  ..               :func:`Entity.hasTags`                             ``(String[] tagNames, callback(err, success_count, result))``
+  ..               :func:`Entity.removeTag`                           ``(String tagName, callback(err))``
+  ..               :func:`Entity.removeTags`                          ``(String[] tagNames, callback(err))``
   ..
-  ..               ``ExpirableEntity::``:js:func:`expiresAt`          ``(Date expiry_time)``
-  ..               ``ExpirableEntity::``:js:func:`expiresFromNow`     ``(int seconds)``
-  Date             ``ExpirableEntity::``:js:func:`getExpiry`          ``()``
+  ..               :func:`ExpirableEntity.expiresAt`                  ``(Date expiry_time)``
+  ..               :func:`ExpirableEntity.expiresFromNow`             ``(int seconds)``
+  Date             :func:`ExpirableEntity.getExpiry`                  ``()``
   ..
-  String           ``Blob::``:js:attr:`alias`                         ``()``
-  ..               ``Blob::``:js:func:`put`                           ``(Buffer content, [Date expiry_time], callback(err))``
-  ..               ``Blob::``:js:func:`update`                        ``(Buffer content, [Date expiry_time], callback(err))``
-  ..               ``Blob::``:js:func:`get`                           ``(callback(err, data))``
+  String           :attr:`Blob.alias`                                 ``()``
+  ..               :func:`Blob.put`                                   ``(Buffer content, [Date expiry_time], callback(err))``
+  ..               :func:`Blob.update`                                ``(Buffer content, [Date expiry_time], callback(err))``
+  ..               :func:`Blob.get`                                   ``(callback(err, data))``
   ..
-  Cluster          :js:class:`Cluster`                                ``(String uri)``
-  Cluster          ``Cluster::``:js:func:`connect`                    ``(callback(), callback(err))``
-  ..               ``Cluster::``:js:func:`setTimeout`                 ``(int milliseconds)``
-  Blob             ``Cluster::``:js:func:`blob`                       ``(String alias)``
-  Deque            ``Cluster::``:js:func:`deque`                      ``(String alias)``
-  Integer          ``Cluster::``:js:func:`integer`                    ``(String alias)``
-  Set              ``Cluster::``:js:func:`set`                        ``(String alias)``
-  Tag              ``Cluster::``:js:func:`tag`                        ``(String tagName)``
+  Cluster          :class:`Cluster`                                   ``(String uri)``
+  Cluster          :func:`Cluster.connect`                            ``(callback(), callback(err))``
+  ..               :func:`Cluster.setTimeout`                         ``(int milliseconds)``
+  Blob             :func:`Cluster.blob`                               ``(String alias)``
+  Deque            :func:`Cluster.deque`                              ``(String alias)``
+  Integer          :func:`Cluster.integer`                            ``(String alias)``
+  Set              :func:`Cluster.set`                                ``(String alias)``
+  Tag              :func:`Cluster.tag`                                ``(String tagName)``
   ..
-  bool             ``Error::``:js:func:`informational`                ``()``
-  bool             ``Error::``:js:func:`transient`                    ``()``
-  String           ``Error::``:js:func:`message`                      ``()``
-  int              ``Error::``:js:func:`code`                         ``()``
+  bool             :func:`Error.informational`                        ``()``
+  bool             :func:`Error.transient`                            ``()``
+  String           :func:`Error.message`                              ``()``
+  int              :func:`Error.code`                                 ``()``
   ..
-  String           ``Deque::``:js:attr:`alias`                        ``()``
-  ..               ``Deque::``:js:func:`pushFront`                    ``(Buffer content, callback(err))``
-  ..               ``Deque::``:js:func:`pushBack`                     ``(Buffer content, callback(err))``
-  ..               ``Deque::``:js:func:`popFront`                     ``(callback(err, data))``
-  ..               ``Deque::``:js:func:`popBack`                      ``(callback(err, data))``
-  ..               ``Deque::``:js:func:`front`                        ``(callback(err, data))``
-  ..               ``Deque::``:js:func:`back`                         ``(callback(err, data))``
-  ..               ``Deque::``:js:func:`at`                           ``(index, callback(err, data))``
-  ..               ``Deque::``:js:func:`size`                         ``(callback(err, size))``
+  String           :attr:`Deque.alias`                                ``()``
+  ..               :func:`Deque.pushFront`                            ``(Buffer content, callback(err))``
+  ..               :func:`Deque.pushBack`                             ``(Buffer content, callback(err))``
+  ..               :func:`Deque.popFront`                             ``(callback(err, data))``
+  ..               :func:`Deque.popBack`                              ``(callback(err, data))``
+  ..               :func:`Deque.front`                                ``(callback(err, data))``
+  ..               :func:`Deque.back`                                 ``(callback(err, data))``
+  ..               :func:`Deque.at`                                   ``(index, callback(err, data))``
+  ..               :func:`Deque.size`                                 ``(callback(err, size))``
   ..
-  String           ``Integer::``:js:attr:`alias`                      ``()``
-  ..               ``Integer::``:js:func:`put`                        ``(int value, [Date expiry_time], callback(err))``
-  ..               ``Integer::``:js:func:`update`                     ``(int value, [Date expiry_time], callback(err))``
-  ..               ``Integer::``:js:func:`get`                        ``(callback(err, data))``
-  ..               ``Integer::``:js:func:`add`                        ``(int value, callback(err, data))``
+  String           :attr:`Integer.alias`                              ``()``
+  ..               :func:`Integer.put`                                ``(int value, [Date expiry_time], callback(err))``
+  ..               :func:`Integer.update`                             ``(int value, [Date expiry_time], callback(err))``
+  ..               :func:`Integer.get`                                ``(callback(err, data))``
+  ..               :func:`Integer.add`                                ``(int value, callback(err, data))``
   ..
-  String           ``Set::``:js:attr:`alias`                          ``()``
-  ..               ``Set::``:js:func:`insert`                         ``(Buffer value, callback(err, data))``
-  ..               ``Set::``:js:func:`erase`                          ``(Buffer value, callback(err, data))``
-  ..               ``Set::``:js:func:`contains`                       ``(Buffer value, callback(err, data))``
+  String           :attr:`Set.alias`                                  ``()``
+  ..               :func:`Set.insert`                                 ``(Buffer value, callback(err, data))``
+  ..               :func:`Set.erase`                                  ``(Buffer value, callback(err, data))``
+  ..               :func:`Set.contains`                               ``(Buffer value, callback(err, data))``
   ..
-  String           ``Tag::``:js:attr:`alias`                          ``()``
-  ..               ``Tag::``:js:func:`getEntries`                     ``(callback(err, entries))``
-
+  String           :attr:`Tag.alias`                                  ``()``
+  ..               :func:`Tag.getEntries`                             ``(callback(err, entries))``
  ================ ================================================== =====================================================================================
-
 
 Introduction
 --------------
@@ -78,7 +79,7 @@ Using *quasardb* cluster from a Node.js installation is extremely straightforwar
 
     b.put(new Buffer('value 0'), function(err) {});
     b.get(new Buffer('key 0'), function(err, data) {
-		console.log(data);
+        console.log(data);
     });
 
 You may download the Node.js API from the quasardb site or from GitHub at `https://github.com/bureau14/qdb-api-nodejs <https://github.com/bureau14/qdb-api-nodejs>`_.
@@ -86,62 +87,63 @@ You may download the Node.js API from the quasardb site or from GitHub at `https
 Requirements and Installation
 -----------------------------
 
-To build the Node.js API, you will need the C API. It can either be installed on the machine (e.g. on unix in /usr/lib or /usr/local/lib) or you can unpack the C API archive in deps/qdb.
+To build the Node.js API, you will need the C API. It can either be installed on the machine (e.g. on Unix in ``/usr/lib`` or ``/usr/local/lib``) or you can unpack the C API archive in ``deps/qdb``.
 
 You will need to have `node-gyp <https://github.com/nodejs/node-gyp>`_ installed.
 
-In the directory run::
+In the directory run:
+
+.. code-block:: shell
 
     npm install
 
-You will then find a qdb.node file which is the quasardb addon in build/Release.
-
+You will then find a ``qdb.node`` file which is the quasardb add-on in ``build/Release`` directory.
 
 Reference
 ---------
 
-The `Entity` class
-^^^^^^^^^^^^^^^^^^
+The `Entity` interface
+^^^^^^^^^^^^^^^^^^^^^^
 
-Entity is the base class for all entry classes stored in quasardb.
-All the classes inherit the following interface.
+Entity is the base interface for all entry classes stored in quasardb.
+All the classes inherit the following methods.
 
 .. js:class:: Entity
 
-  .. js:function:: remove (callback(err))
+  .. js:function:: Entity.remove (callback(err))
 
       Removes the Entity from the cluster.
 
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: addTag (String tagName, callback(err))
+  .. js:function:: Entity.addTag (String tagName, callback(err))
 
       Assigns the Entity to the specified tag. Errors if the tag is already assigned.
 
       :param String tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: addTags (String[] tagNames, callback(err))
+  .. js:function:: Entity.addTags (String[] tagNames, callback(err))
 
       Assigns the Entity to the specified tags. Errors if any of the tags is already assigned.
 
       :param String[] tagNames: Array of names of the tags (Array of Strings).
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: getTags (callback(err, tags))
+  .. js:function:: Entity.getTags (callback(err, tags))
 
       Gets an array of tag objects associated with the Entity.
 
       :param function callback(err, tags): A callback or anonymous function with error and array of tags parameters.
 
-  .. js:function:: hasTag (String tagName, callback(err))
+  .. js:function:: Entity.hasTag (String tagName, callback(err))
 
       Determines if the Entity has the specified tag.
 
       :param String tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: hasTags (String[] tagNames, callback(err, success_count, result))
+  .. js:function:: Entity.hasTags (String[] tagNames, callback(err, success_count, result))
 
       Determines if the Entity has the specified tags.
 
@@ -149,42 +151,42 @@ All the classes inherit the following interface.
       :param function callback(err, success_count, result): A callback or anonymous function with: error parameter, number of specified tags assigned to the Entity and query result.
         Result is an Object with as many fields as the length of ``tagNames`` array, each having a ``bool`` value ``true`` (tag assigned) or ``false`` (otherwise).
 
-  .. js:function:: removeTag (String tagName, callback(err))
+  .. js:function:: Entity.removeTag (String tagName, callback(err))
 
       Removes the Entity from the specified tag. Errors if the tag is not assigned.
 
       :param String tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: removeTags (String[] tagNames, callback(err))
+  .. js:function:: Entity.removeTags (String[] tagNames, callback(err))
 
       Removes the Entity from the specified tags. Errors if any of the tags is not assigned.
 
       :param String[] tagNames: Array of names of the tags (Array of Strings).
       :param function callback(err): A callback or anonymous function with error parameter.
 
-The `ExpirableEntity` class
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The `ExpirableEntity` interface
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Entity is the base class for entry classes that may expire, i.e. be removed from the database automatically at some time point or after some time (duration).
+Entity is the base interface for entry classes that may expire, i.e. be removed from the database automatically at some time point or after some time (duration).
 ExpirableEntity is inherited by Blob and Integer.
-These classes inherit the following interface.
+These classes inherit the following methods.
 
 .. js:class:: ExpirableEntity
 
-  .. js:function:: expiresAt (Date expiry_time)
+  .. js:function:: ExpirableEntity.expiresAt (Date expiry_time)
 
       Sets the expiration time for the ExpirableEntity at a given Date.
 
       :param Date expiry_time: A Date at which the ExpirableEntity expires.
 
-  .. js:function:: expiresFromNow (int seconds)
+  .. js:function:: ExpirableEntity.expiresFromNow (int seconds)
 
       Sets the expiration time for the ExpirableEntity as a number of seconds from call time.
 
       :param int seconds: A number of seconds from call time at which the ExpirableEntity expires.
 
-  .. js:function:: getExpiry ()
+  .. js:function:: ExpirableEntity.getExpiry ()
 
       Gets the expiration time of the ExpirableEntity. A return Date of Jan 1, 1970 means the ExpirableEntity does not expire.
 
@@ -195,24 +197,24 @@ The `Blob` class
 
 Represents a blob in a quasardb database. Blob stands for Binary Large Object, meaning that you can store arbitrary data in this blob.
 
-You get a Blob instance by calling ```cluster.blob('alias')```. Then you can perform atomic operations on the blob::
+You get a ``Blob`` instance by calling :func:`Cluster.blob`. Then you can perform atomic operations on the blob::
 
     var b = c.blob('bam');
 
     b.put(new Buffer("boom"), function(err) { /* */  });
     b.get(function(err, data) { /* */  });
 
-Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/all.html#all_buffer>`_ is important, as JavaScript does not play nice with binary data.
+Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/buffer.html>`_ is important, as JavaScript does not play nice with binary data.
 
 .. js:class:: Blob
 
-  .. js:attribute:: alias
+  .. js:attribute:: Blob.alias
 
       Gets the alias (i.e. its "key") of the blob in the database.
 
       :returns: A string representing the blob's key.
 
-  .. js:function:: put (Buffer content, [Date expiry_time], callback(err))
+  .. js:function:: Blob.put (Buffer content, [Date expiry_time], callback(err))
 
       Sets blob's content but fails if the blob already exists. See also update().
 
@@ -222,17 +224,17 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: update (Buffer content, [Date expiry_time], callback(err))
+  .. js:function:: Blob.update (Buffer content, [Date expiry_time], callback(err))
 
       Updates the content of the blob.
 
       Aliases beginning with "qdb" are reserved and cannot be used. See also put().
 
-      :param Buffer content: A Buffer representing the blob’s content to be added.
+      :param Buffer content: A Buffer representing the blob's content to be added.
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: get (callback(err, data))
+  .. js:function:: Blob.get (callback(err, data))
 
       Retrieves the blob's content, passes to callback as data.
 
@@ -262,7 +264,7 @@ Example::
 
   :param String uri: A string having the format ``qdb://host:port[,host:port]``.
 
-  .. js:function:: connect (callback(), callback_on_failure(err))
+  .. js:function:: Cluster.connect (callback(), callback_on_failure(err))
 
     Connects to a quasardb cluster. The successful function is run when the connection is made. The failure callback is called for major errors such as disconnections from the cluster after the connection is successful::
 
@@ -271,41 +273,41 @@ Example::
     :param function callback(): A callback or anonymous function without parameters.
     :param function callback_on_failure(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: setTimeout (int milliseconds)
+  .. js:function:: Cluster.setTimeout (int milliseconds)
 
       Sets the client-side timeout value for callbacks. The default is 60,000ms, or one minute. This should be run before the call to Cluster::connect.
 
       :param int milliseconds: the number of milliseconds to set.
 
-  .. js:function:: blob (String alias)
+  .. js:function:: Cluster.blob (String alias)
 
       Creates a Blob associated with the specified alias. No query is performed at this point.
 
       :param String alias: the alias of the blob in the database.
       :returns: the Blob
 
-  .. js:function:: integer (String alias)
+  .. js:function:: Cluster.integer (String alias)
 
       Creates an Integer associated with the specified alias. No query is performed at this point.
 
       :param String alias: the alias of the integer in the database.
       :returns: the Integer
 
-  .. js:function:: deque (String alias)
+  .. js:function:: Cluster.deque (String alias)
 
       Creates a Deque associated with the specified alias. No query is performed at this point.
 
       :param String alias: the alias of the deque in the database.
       :returns: the Deque
 
-  .. js:function:: set (String alias)
+  .. js:function:: Cluster.set (String alias)
 
       Creates a Set associated with the specified alias. No query is performed at this point.
 
       :param String alias: the alias of the set in the database.
       :returns: the Set
 
-  .. js:function:: tag (String tagName)
+  .. js:function:: Cluster.tag (String tagName)
 
       Creates a Tag with the specified name.
 
@@ -318,69 +320,69 @@ The `Deque` class
 
 Represents a double-ended queue of blob in the quasardb database. You can both enqueue and dequeue from the front and the back.
 
-You get a qdb.Deque instance by calling QdbCluster::deque(). Then you can perform atomic operations on the queue::
+You get a ``Deque`` instance by calling :func:`Cluster.deque`. Then you can perform atomic operations on the queue::
 
     var q = c.deque('q2');
     q.pushBack(new Buffer("boom"), function(err) { /* */ });
     q.popFront(function(err, data) { /* */ });
     q.pushFront(new Buffer("bang"), function(err) { /* */ });
 
-Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/all.html#all_buffer>`_ is important, as Javascript does not play nice with binary data.
+Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/buffer.html>`_ is important, as JavaScript does not play nice with binary data.
 
 .. js:class:: Deque
 
-  .. js:attribute:: alias
+  .. js:attribute:: Deque.alias
 
       Gets the alias (i.e. its "key") of the queue in the database.
 
       :returns: A string with the alias of the queue.
 
-  .. js:function:: pushFront (Buffer content, callback(err))
+  .. js:function:: Deque.pushFront (Buffer content, callback(err))
 
       Add a value to the front of the queue.
 
       :param Buffer content: The value to add to the queue.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: pushBack (Buffer content, callback(err))
+  .. js:function:: Deque.pushBack (Buffer content, callback(err))
 
       Add a value to the back of the queue.
 
       :param Buffer content: The value to add to the queue.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: popFront (callback(err, data))
+  .. js:function:: Deque.popFront (callback(err, data))
 
       Remove the value at the front of the queue and return it.
 
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
-  .. js:function:: popBack (callback(err, data))
+  .. js:function:: Deque.popBack (callback(err, data))
 
       Remove the value at the end of the queue and return it.
 
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
-  .. js:function:: front (callback(err, data))
+  .. js:function:: Deque.front (callback(err, data))
 
       Retrieves the value at the front of the queue, without removing it.
 
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
-  .. js:function:: back (callback(err, data))
+  .. js:function:: Deque.back (callback(err, data))
 
       Retrieves the value at the end of the queue, without removing it.
 
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
-  .. js:function:: at (index, callback(err, data))
+  .. js:function:: Deque.at (index, callback(err, data))
 
       Retrieves the value at the index in the queue. The item at the index must exist or it will throw an error.
 
       :param index: The index of the object in the Deque.
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
-  .. js:function:: size (callback(err, size))
+  .. js:function:: Deque.size (callback(err, size))
 
       Returns the size of the Deque.
 
@@ -393,7 +395,7 @@ Quasardb callbacks return error messages. When the callback is successful, the e
 
 Transient errors may resolve by themselves given time. Transient errors are commonly transaction conflicts, network timeouts, or an unstable cluster.
 
-An informational error means that the query has been succesfully processed by the server and your parameters were valid but the result is either empty or unavailable. Informational errors include non-existent entries, empty collections, indexes out of range, or integer overflow/underflows.
+An informational error means that the query has been successfully processed by the server and your parameters were valid but the result is either empty or unavailable. Informational errors include non-existent entries, empty collections, indexes out of range, or integer overflow/underflows.
 
 Example::
 
@@ -412,25 +414,25 @@ Example::
 
 .. js:class:: Error
 
-  .. js:function:: informational ()
+  .. js:function:: Error.informational ()
 
       Determines if the error is an informational error.
 
       :returns: True if the error is informational, false otherwise.
 
-  .. js:function:: transient ()
+  .. js:function:: Error.transient ()
 
         Determines if the error is a transient error.
 
       :returns: True if the error is transient, false otherwise.
 
-  .. js:function:: message ()
+  .. js:function:: Error.message ()
 
       Gets a description of the error.
 
       :returns: A string containing the error message.
 
-  .. js:function:: code ()
+  .. js:function:: Error.code ()
 
       Gets the error code.
 
@@ -442,7 +444,7 @@ The `Integer` class
 
 Represents an signed 64-bit integer in a quasardb database.
 
-You get a qdb.Integer instance by calling cluster.integer(). Then you can perform atomic operations on the integer::
+You get an ``Integer`` instance by calling :func:`Cluster.integer`. Then you can perform atomic operations on the integer::
 
     var i = c.integer('will_be_ten');
     i.put(3, function(err){ /* */});
@@ -450,13 +452,13 @@ You get a qdb.Integer instance by calling cluster.integer(). Then you can perfor
 
 .. js:class:: Integer
 
-  .. js:attribute:: alias
+  .. js:attribute:: Integer.alias
 
       Gets the alias (i.e. its "key") of the set in the database.
 
       :returns: A string with the alias of the integer.
 
-  .. js:function:: put (int value, [Date expiry_time], callback(err))
+  .. js:function:: Integer.put (int value, [Date expiry_time], callback(err))
 
       Adds an entry. Aliases beginning with "qdb" are reserved and cannot be used.
 
@@ -464,7 +466,7 @@ You get a qdb.Integer instance by calling cluster.integer(). Then you can perfor
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: update (int value, [Date expiry_time], callback(err))
+  .. js:function:: Integer.update (int value, [Date expiry_time], callback(err))
 
       Updates an entry. Aliases beginning with "qdb" are reserved and cannot be used.
 
@@ -472,13 +474,13 @@ You get a qdb.Integer instance by calling cluster.integer(). Then you can perfor
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: get (callback(err, data))
+  .. js:function:: Integer.get (callback(err, data))
 
       Retrieves an entry's value.
 
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
-  .. js:function:: add (int value, callback(err, data))
+  .. js:function:: Integer.add (int value, callback(err, data))
 
       Atomically increment the value in the database.
 
@@ -490,23 +492,23 @@ The `Set` class
 
 Represents an unordered set of blob in the quasardb database.
 
-You get a Set instance by calling ```cluster.set('alias')```. Then you can perform atomic operations on the set::
+You get a ``Set`` instance by calling func:`Cluster.set`. Then you can perform atomic operations on the set::
 
     var s = c.set('bam');
     s.insert(new Buffer("boom"), function(err, data) { /* */  });
     s.contains(new Buffer("boom"), function(err, data) { /* */  });
 
-Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/all.html#all_buffer>`_ is important, as Javascript does not play nice with binary data.
+Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/buffer.html>`_ is important, as JavaScript does not play nice with binary data.
 
 .. js:class:: Set
 
-  .. js:attribute:: alias
+  .. js:attribute:: Set.alias
 
       Gets the alias (i.e. its "key") of the set in the database.
 
       :returns: A string with the alias of the Set.
 
-  .. js:function:: insert (Buffer value, callback(err, data))
+  .. js:function:: Set.insert (Buffer value, callback(err, data))
 
       Adds the specified value to the set.
 
@@ -514,14 +516,14 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
       :returns: true if the value was added, false if it was already present in the set.
 
-  .. js:function:: erase (Buffer value, callback(err, data))
+  .. js:function:: Set.erase (Buffer value, callback(err, data))
 
       Removes the value from the set.
 
       :param Buffer value: the value to remove from the Set.
       :param function callback(err, data): A callback or anonymous function with error and data parameters.
 
-  .. js:function:: contains (Buffer value, callback(err, data))
+  .. js:function:: Set.contains (Buffer value, callback(err, data))
 
       Determines if the value is present in the set.
 
@@ -541,8 +543,7 @@ Represents a tag in a quasardb database. Any entry can be tagged, including othe
     b.getTags(function(err, tags) { /* */ });
     b.removeTag('myTag', function(err) { /* */ } );
 
-
-You can create a Tag instance by calling ```cluster.tag('tagName')```. Then, you can look up entries by their association with the tag::
+You can create a ``Tag`` instance by calling :func:`Cluster.tag`. Then, you can look up entries by their association with the tag::
 
     var t = c.tag('myTag');
 
@@ -551,16 +552,15 @@ You can create a Tag instance by calling ```cluster.tag('tagName')```. Then, you
 
 .. js:class:: Tag
 
-  .. js:attribute:: alias
+  .. js:attribute:: Tag.alias
 
       Gets the alias (i.e. its "name" or "key") of the tag in the database.
 
       :returns: A string with the alias of the Tag.
 
-  .. js:function:: getEntries (callback(err, entities))
+  .. js:function:: Tag.getEntries (callback(err, entities))
 
       Gets an array of entities associated with the Tag.
 
       :param function callback(err, entities): A callback or anonymous function with error and array of entities parameters.
-
 
