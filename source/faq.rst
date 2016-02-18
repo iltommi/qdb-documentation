@@ -12,7 +12,7 @@ Yes.
 Which platform does quasardb support?
 =====================================
 
-FreeBSD, Linux and Windows.
+FreeBSD, Linux, OS X and Windows.
 
 What is the best platform to use quasardb?
 ==========================================
@@ -34,12 +34,12 @@ How fast is quasardb?
 
 In terms of requests per second, a Core i7 desktop computer can serve more than 1,000,000 (one million) requests per second.
 
-In terms of bandwidth, the same computer easily saturates a ten gigabit network. Your maximum bandwidth will depend on the size and the type of your data and your network capability.
+In terms of bandwidth, the same computer easily saturates a ten-gigabit network. Your maximum bandwidth will depend on the size and the type of your data and your network capability.
 
 Is quasardb faster than... ?
 ============================
 
-Quasardb is not only faster but also more frugal: it will consume less memory, less disk space and less CPU while achieving a higher level of performance.
+quasardb is not only faster but also more frugal: it will consume less memory, less disk space and less CPU while achieving a higher level of performance.
 
 Nevertheless, keep in mind that what matters is *your usage scenario*. We will be happy to help you answer this question. |ContactUs|
 
@@ -89,7 +89,7 @@ Yes, we have a special license for this case. |ContactUs|
 Do I need a license to write a client?
 ======================================
 
-No license is required to write a quasardb client, but the software's documentation and credits must state the following "This software features quasardb, a Quasardb SAS technology. All rights reserved.".
+No license is required to write a quasardb client, but the software's documentation and credits must state the following "This software features quasardb, a quasardb SAS technology. All rights reserved.".
 
 A client is software that connects to a remote or local quasardb server running as a separate instance. If your product needs to include the server as well, a license is required. |ContactUs|
 
@@ -101,7 +101,7 @@ See :ref:`license_expiration`.
 How long are versions compatible?
 =================================
 
-Quasardb is versioned using a MAJOR.MINOR.PATCH system. All patch notes can be found at :doc:`changes`.
+quasardb is versioned using a MAJOR.MINOR.PATCH system. All patch notes can be found at :doc:`changes`.
 
 Changes in patch level, such as 1.1.0 to 1.1.1, are maintenance releases. The database and client API are 100% backwards compatible with previous versions.
 
@@ -112,9 +112,9 @@ Changes in major level, such as 1.0.0 to 2.0.0, add significant features to quas
 In what language is quasardb written?
 =====================================
 
-The core quasardb engine (that we also call kernel) is written in C++ 14 and assembly. It makes an intensive usage of the STL and the `boost libraries <http://www.boost.org/>`_.
+The core quasardb engine (that we also call kernel) is written in C++ 14 and assembly. It makes an intensive usage of the STL and the `Boost C++ Libraries <http://www.boost.org/>`_.
 
-The administration interface is written in HTML5/Javascript.
+The administration interface is written in HTML 5/JavaScript.
 
 Is quasardb open source?
 ========================

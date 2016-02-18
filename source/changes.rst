@@ -17,13 +17,13 @@ Changes in this version
     * Protocol version 16
     * Distributed ACID transactions
     * Distributed secondary-indexes (tags)
-    * Distributed double-entry queues
-    * Distributed hashed set
+    * Distributed double-ended queues (deques)
+    * Distributed hash sets
     * Native atomic signed 64-bit integers operations
-    * Native support for MacOS X
+    * Native support for Mac OS X
     * Many usability improvements in all tools
     * Switched from LevelDB to a customized RocksDB persistence layer
-    * New APIs: NodeJS and PHP
+    * New APIs: Node.js and PHP
     * Greatly improved .NET and Java APIs
     * And so much more!
 

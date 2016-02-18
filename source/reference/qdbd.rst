@@ -8,7 +8,7 @@ Introduction
 
 The quasardb daemon is a highly scalable data repository that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a cluster.
 
-The persistence layer is based on `RocksDB <https://http://rocksdb.org/>`_ (c) RocksDB authors. All rights reserved.
+The persistence layer is based on `RocksDB <http://rocksdb.org/>`_ (c) RocksDB authors. All rights reserved.
 The network distribution uses the `Chord <https://github.com/sit/dht/wiki>`_ protocol.
 
 The quasardb daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
@@ -635,7 +635,7 @@ The default configuration file is shown below::
     An integer representing the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
 
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
-    
+
     See :option:`--max-depot-size` for more details and examples to calculate the max_bytes value.
 
 .. |local__depot__storage_warning_level| replace:: ``local::depot::storage_warning_level``
@@ -691,14 +691,14 @@ The default configuration file is shown below::
 .. describe:: local::logger::log_level
 
     An integer representing the verbosity of the log output. Acceptable values are::
-    
+
         0 = detailed (most output)
         1 = debug
         2 = info (default)
         3 = warning
         4 = error
         5 = panic (least output)
-    
+
 .. describe:: local::logger::flush_interval
 
     An integer representing how frequently quasardb log messages should be flushed to the log locations, in seconds.
