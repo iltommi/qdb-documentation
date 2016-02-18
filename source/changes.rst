@@ -1,16 +1,31 @@
 Change log
 **********
 
-2.0.0 - "Aristotle" - 2016
-==================================
+2.0.0 - "Aristotle" - 03/07/2016
+================================
 
 From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
    `Aristotle <https://en.wikipedia.org/wiki/Aristotle>`_ was a Greek philosopher and scientist born in the city of Stagira, Chalkidice, on the northern periphery of Classical Greece. [...] His writings cover many subjects – including physics, biology, zoology, metaphysics, logic, ethics, aesthetics, poetry, theater, music, rhetoric, linguistics, politics and government –
    and constitute the first comprehensive system of Western philosophy
 
-Building on the solid foundation of quasardb 1.2
+Building on the solid foundation of quasardb 1.2, quasardb 2.0 is now fully transactional and support distributed secondary indexes while managing to push the performance limits even further.
 
+Changes in this version
+-----------------------
+
+    * Protocol version 16
+    * Distributed ACID transactions
+    * Distributed secondary-indexes (tags)
+    * Distributed double-entry queues
+    * Distributed hashed set
+    * Native atomic signed 64-bit integers operations
+    * Native support for MacOS X
+    * Many usability improvements in all tools
+    * Switched from LevelDB to a customized RocksDB persistence layer
+    * New APIs: NodeJS and PHP
+    * Greatly improved .NET and Java APIs
+    * And so much more!
 
 Changes in the version
 ----------------------
