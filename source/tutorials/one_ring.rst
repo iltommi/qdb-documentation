@@ -7,52 +7,62 @@ This tutorial will guide you through the steps required to setup such a cluster.
 .. important::
     A valid license is required to run the daemon (see :doc:`../license`). In the examples below, we will use the default path and filename of "qdb_license.txt". Ensure your license file is properly named and placed in same folder as qdbd before continuing.
 
+
+
 Create a Cluster with Three Nodes
 =================================
 
 In this tutorial we will set up a cluster of three machines with static IP addresses of 192.168.1.1, 192.168.1.2 and 192.168.1.3. All nodes are equal in features and responsibility, making our cluster very resilient to failure. The theoretical limit to the number of nodes a cluster may have is so high (more than several trillions) that there is no practical limit, but three will do for this exercise.
 
+For smaller clusters it is generally advised to manually specify the id of each node for ideal load-balancing (see :ref:`nodes_is_info`).
+
 
 Configure the First Node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Generate a default configuration from qdbd by running `qdbd --gen-config > 192.168.1.1.conf`.
+#. Generate a default configuration from qdbd by running ``qdbd --gen-config > 192.168.1.1.conf``.
 
 #. Edit the configuration file using your favorite editor.
 
-#. Set the `local::network::listen_on` value to `192.168.1.1:2836`.
+#. Set the ``local::network::listen_on`` value to ``"192.168.1.1:2836"``.
 
-#. Set the `global::depot::replication_factor` value to 2.
+#. Set the ``global::cluster::replication_factor`` value to 2.
+
+#. Set the ``local::chord::node_id`` value to ``0000000000000000-0-0-1``
 
 #. Save the file.
 
 Configure the Second Node
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Generate a default configuration from qdbd by running `qdbd --gen-config > 192.168.1.2.conf`.
+#. Generate a default configuration from qdbd by running ``qdbd --gen-config > 192.168.1.2.conf``.
 
 #. Edit the configuration file using your favorite editor.
 
-#. Set the `local::network::listen_on` value to `192.168.1.2:2836`.
+#. Set the ``local::network::listen_on`` value to ``"192.168.1.2:2836"``.
 
-#. Set the `local::chord::bootstrapping_peers` value to `[192.168.1.1:2836]`
+#. Set the ``local::chord::bootstrapping_peers`` value to ``["192.168.1.1:2836"]``
 
-#. Set the `global::depot::replication_factor` value to 2.
+#. Set the ``global::cluster::replication_factor`` value to 2.
+
+#. Set the ``local::chord::node_id`` value to ``5b00000000000000-0-0-0``
 
 #. Save the file.
 
 Configure the Third Node
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
-#. Generate a default configuration from qdbd by running `qdbd --gen-config > 192.168.1.3.conf`.
+#. Generate a default configuration from qdbd by running ``qdbd --gen-config > 192.168.1.3.conf``.
 
 #. Edit the configuration file using your favorite editor.
 
-#. Set the `local::network::listen_on` value to `192.168.1.3:2836`.
+#. Set the ``local::network::listen_on`` value to ``"192.168.1.3:2836"``.
 
-#. Set the `local::chord::bootstrapping_peers` value to `[192.168.1.1:2836]`
+#. Set the ``local::chord::bootstrapping_peers`` value to ``["192.168.1.1:2836"]``
 
-#. Set the `global::depot::replication_factor` value to 2.
+#. Set the ``global::cluster::replication_factor`` value to 2.
+
+#. Set the ``local::chord::node_id`` value to ``b600000000000000-0-0-0``
 
 #. Save the file.
 
