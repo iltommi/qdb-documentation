@@ -8,7 +8,7 @@ Introduction
 
 The quasardb daemon is a highly scalable data repository that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a cluster.
 
-The persistence layer is based on `LevelDB <https://github.com/google/leveldb>`_ (c) LevelDB authors. All rights reserved.
+The persistence layer is based on `RocksDB <https://http://rocksdb.org/>`_ (c) RocksDB authors. All rights reserved.
 The network distribution uses the `Chord <https://github.com/sit/dht/wiki>`_ protocol.
 
 The quasardb daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
@@ -20,34 +20,33 @@ The quasardb daemon does not require privileges (unless listening on a port unde
 Quick Reference
 ===============
 
- ===================================== =============================== ===================== ============ ==============
-                Option                               Usage               Default             Global       Req. Version
- ===================================== =============================== ===================== ============ ==============
- :option:`-h`, :option:`--help`        display help                                          No
- :option:`-v`, :option:`--version`     display version information                           No
- :option:`--gen-config`                generate default config file                          No           >=1.1.3
- :option:`-c`, :option:`--config`      specify config file                                   No           >=1.1.3
- :option:`-d`, :option:`--daemonize`   daemonize                                             No
- :option:`--license-file`              specify license                 qdb_license.txt       No
- :option:`-a`, :option:`--address`     address to listen on            127.0.0.1:2836        No
- :option:`-s`, :option:`--sessions`    max client sessions             20000                 No
- :option:`--idle-duration`             max seconds to idle timeout     600                   No
- :option:`--request-timeout`           max seconds to request timeout  60                    No
- :option:`--peer`                      one peer to form a cluster                            No
- :option:`--id`                        set the node id                 generated             No
- :option:`-r`, :option:`--root`        persistence directory           ./db                  Yes
- :option:`--sync`                      sync every disk write                                 Yes
- :option:`--replication`               sets the replication factor     1                     Yes
- :option:`--max-depot-size`            max db size on node             0 (disabled)          Yes          >=1.1.3
- :option:`--transient`                 disable persistence                                   Yes
- :option:`--limiter-max-entries-count` max entries in cache            1000000               Yes
- :option:`--limiter-max-bytes`         max bytes in cache              Automatic             Yes
- :option:`-l`, :option:`--log-file`    log on given file                                     No
- :option:`--log-dump`                  dump file location              qdb_error_dump.txt    No
- :option:`--log-syslog`                log on syslog                                         No
- :option:`--log-level`                 change log level                info                  No
- :option:`--log-flush-interval`        change log flush                3                     No
- ===================================== =============================== ===================== ============ ==============
+ ======================================== =============================== ===================== ============ ==============
+                Option                               Usage                   Default               Global     Req. Version
+ ======================================== =============================== ===================== ============ ==============
+ :option:`-h`, :option:`--help`           display help                                          No
+ :option:`-v`, :option:`--version`        display version information                           No
+ :option:`--gen-config`                   generate default config file                          No           >=1.1.3
+ :option:`-c`, :option:`--config`         specify config file                                   No           >=1.1.3
+ :option:`-d`, :option:`--daemonize`      daemonize                                             No
+ :option:`--license-file`                 specify license                 qdb_license.txt       No
+ :option:`-a`, :option:`--address`        address to listen on            127.0.0.1:2836        No
+ :option:`-s`, :option:`--sessions`       max client sessions             20000                 No
+ :option:`--idle-duration`                max seconds to idle timeout     600                   No
+ :option:`--request-timeout`              max seconds to request timeout  60                    No
+ :option:`--peer`                         one peer to form a cluster                            No
+ :option:`--id`                           set the node id                 generated             No
+ :option:`-r`, :option:`--root`           persistence directory           ./db                  Yes
+ :option:`--sync`                         sync every disk write                                 Yes
+ :option:`--replication`                  sets the replication factor     1                     Yes
+ :option:`--max-depot-size`               max db size on node             0 (disabled)          No           >=1.1.3
+ :option:`--transient`                    disable persistence                                   Yes
+ :option:`--limiter-max-entries-count`    max entries in cache            1000000               No
+ :option:`--limiter-max-bytes`            max bytes in cache              Automatic             No
+ :option:`-l`, :option:`--log-directory`  log in the given directory                            No
+ :option:`--log-syslog`                   log on syslog                                         No
+ :option:`--log-level`                    change log level                info                  No
+ :option:`--log-flush-interval`           change log flush                3                     No
+ ======================================== =============================== ===================== ============ ==============
 
 
 
@@ -358,32 +357,17 @@ Instance specific
         an ID that is guaranteed to be unique on any given ring. Only modify the node ID if the topology of
         the ring is unsatisfactory and you are certain no two node IDs are the same.
 
-.. option:: -l <path>, --log-file=<path>
+.. option:: -l <path>, --log-directory=<path>
 
-    Activates logging to one or several files.
-
-    Argument
-        A string representing one (or several) path(s) to the log file(s).
-
-    Example
-        Log in /var/log/qdbd.log: ::
-
-            qdbd --log-file=/var/log/qdbd.log
-
-.. option:: --log-dump
-
-    Specifies the dump file location. The dump file is a text file that is written to when quasardb detects a critical error.
+    Logs in the designated directory.
 
     Argument
-        A string representing a path to a dump file.
-
-    Default
-        qdb_error_dump.txt
+        A string representing a path to a directory where log files will be created.
 
     Example
-        Dump to /var/log/qdb_error_dump.log::
+        Log in /var/log/qdb::
 
-            qdb --log-dump=/var/log/qdb_error_dump.log
+            qdbd --log-file=/var/log/qdb
 
 .. option:: --log-syslog
 
@@ -425,53 +409,6 @@ Instance specific
         Flush the log every minute::
 
             qdbd --log-flush-interval=60
-
-
-
-Global
-----------
-
-
-.. option:: -r <path>, --root=<path>
-
-    Specifies the directory where data will be persisted for the node where the process has been launched.
-
-    Argument
-        A string representing a full path to the directory where data will be persisted.
-
-    Default value
-        The "db" subdirectory relative to the current working directory.
-
-    Example
-        Persist data in /var/quasardb/db ::
-
-            qdbd --root=/var/quasardb/db
-
-    .. note::
-        Although this parameter is global, the directory refers to the local node of each instance.
-
-.. option:: --sync
-
-    Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. (global parameter)
-
-    .. note::
-        This option increases reliability at the cost of performances.
-
-.. option:: --replication=<factor>
-
-    Specifies the replication factor (global parameter). For more information, see :ref:`data-replication`.
-
-    Argument
-        A positive integer between 1 and 4 (inclusive) specifying the replication factor. If the integer is higher than the number of nodes in the cluster, it will be automatically reduced to the cluster size.
-
-    Default value
-        1 (replication disabled)
-
-    Example
-        Have one copy of every entry in the cluster::
-
-            qdbd --replication=2
-
 
 .. option:: --max-depot-size=<size-in-bytes>
 
@@ -520,12 +457,6 @@ Global
     .. note::
         Using a max depot size may cause a slight performance penalty on writes.
 
-
-.. option:: --transient
-
-    Disable persistence. Evicted data is lost when qdbd is transient. For more information, see `transient-mode`.
-
-
 .. option:: --limiter-max-bytes=<value>
 
    The maximum usable memory by entries, in bytes (global parameter). Entries will be evicted as needed to enforce this limit. The alias length as well
@@ -568,6 +499,55 @@ Global
     .. note::
         Setting this value too low may cause the server to spend more time evicting entries than processing requests.
 
+Global
+----------
+
+
+.. option:: -r <path>, --root=<path>
+
+    Specifies the directory where data will be persisted for the node where the process has been launched.
+
+    Argument
+        A string representing a full path to the directory where data will be persisted.
+
+    Default value
+        The "db" subdirectory relative to the current working directory.
+
+    Example
+        Persist data in /var/quasardb/db ::
+
+            qdbd --root=/var/quasardb/db
+
+    .. note::
+        Although this parameter is global, the directory refers to the local node of each instance.
+
+.. option:: --sync
+
+    Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. (global parameter)
+
+    .. note::
+        This option increases reliability at the cost of performances.
+
+.. option:: --replication=<factor>
+
+    Specifies the replication factor (global parameter). For more information, see :ref:`data-replication`.
+
+    Argument
+        A positive integer between 1 and 4 (inclusive) specifying the replication factor. If the integer is higher than the number of nodes in the cluster, it will be automatically reduced to the cluster size.
+
+    Default value
+        1 (replication disabled)
+
+    Example
+        Have one copy of every entry in the cluster::
+
+            qdbd --replication=2
+
+
+.. option:: --transient
+
+    Disable persistence. Evicted data is lost when qdbd is transient. For more information, see `transient-mode`.
+
 
 .. _qdbd-config-file-reference:
 
@@ -587,21 +567,36 @@ The default configuration file is shown below::
 
     {
         "local": {
+            "depot": {
+                "sync": false,
+                "root": "db",
+                "max_bytes": 0,
+                "storage_warning_level": 90,
+                "storage_warning_interval": 3600,
+                "metadata_mem_budget": 268435456,
+                "data_cache": 134217728,
+                "threads": 4,
+                "hi_threads": 2,
+                "max_open_files": 10000
+            },
             "user": {
                 "license_file": "",
                 "daemon": false
             },
+            "limiter": {
+                "max_in_entries_count": 1000000,
+                "max_bytes": 0
+            },
             "logger": {
                 "log_level": 2,
                 "flush_interval": 3,
-                "log_files": [],
-                "dump_file": "qdb_error_dump.txt",
+                "log_directory": "",
                 "log_to_console": false,
                 "log_to_syslog": false
             },
             "network": {
                 "server_sessions": 20000,
-                "partitions_count": 1,
+                "partitions_count": 9,
                 "idle_timeout": 600,
                 "client_timeout": 60,
                 "listen_on": "127.0.0.1:2836"
@@ -613,28 +608,69 @@ The default configuration file is shown below::
             }
         },
         "global": {
-            "depot": {
+            "cluster": {
                 "transient": false,
                 "history": false,
-                "sync": false,
-                "root": "db",
                 "replication_factor": 1,
-                "max_bytes": 0,
                 "max_versions": 7,
-                "max_transaction_duration": 300,
-                "storage_warning_level": 90,
-                "storage_warning_interval": 3600,
-                "meta_data_cache": 10485760,
-                "data_cache": 104857600,
-                "threads": 2
+                "max_transaction_duration": 300
             },
-            "limiter": {
-                "max_in_entries_count": 1000000,
-                "max_bytes": 0
+            "security": {
+                "enable_stop": false,
+                "enable_purge_all": false
             }
         }
     }
 
+.. describe:: local::depot::sync
+
+    A boolean representing whether or not the node should sync to the underlying filesystem for each write command.
+
+.. describe:: local::depot::root
+
+    A string representing the relative or absolute path to the directory where data will be stored.
+
+.. describe:: local::depot::max_bytes
+
+    An integer representing the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
+
+    Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
+    
+    See :option:`--max-depot-size` for more details and examples to calculate the max_bytes value.
+
+.. |local__depot__storage_warning_level| replace:: ``local::depot::storage_warning_level``
+.. _local__depot__storage_warning_level:
+.. describe:: local::depot::storage_warning_level
+
+    An integer between 50 and 100 (inclusive) specifying the percentage of disk usage at which a warning about depleting disk space will be emitted.
+    See also |global__depot__storage_warning_interval|_.
+
+.. |local__depot__storage_warning_interval| replace:: ``local::depot::storage_warning_interval``
+.. _local__depot__storage_warning_interval:
+.. describe:: local::depot::storage_warning_interval
+
+    An integer representing how often quasardb will emit a warning about depleting disk space, in seconds.
+    See also |global__depot__storage_warning_level|_.
+
+.. describe:: local::depot::metadata_mem_budget
+
+    An integer representing the approximate amount of memory (RAM) that should be dedicated to the management of metadata.
+
+.. describe:: local::depot::data_cache
+
+    An integer representing the apporximate amount of memory (RAM) that should be used for caching data blocks.
+
+.. describe:: local::depot::threads
+
+    An integer representing the number of threads dedicated to the persistence layer.
+
+.. describe:: local::depot::hi_threads
+
+    An integer representing the number of high-priority threads dedicated to the persistence layer, in addition to the normal priority threads.
+
+.. describe:: local::depot::max_open_files
+
+    An integer representing the maximum number of files to keep open at a time.
 
 .. describe:: local::user::license_file
 
@@ -643,6 +679,14 @@ The default configuration file is shown below::
 .. describe:: local::user::daemon
 
     A boolean value representing whether or not the quasardb daemon should daemonize on launch.
+
+.. describe:: local::limiter::max_in_entries_count
+
+    An integer representing the maximum number of entries that can be stored in memory. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the entry limit.
+
+.. describe:: local::limiter::max_bytes
+
+    An integer representing the maximum amount of memory usage in bytes for each node's cache. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the byte limit.
 
 .. describe:: local::logger::log_level
 
@@ -659,13 +703,9 @@ The default configuration file is shown below::
 
     An integer representing how frequently quasardb log messages should be flushed to the log locations, in seconds.
 
-.. describe:: local::logger::log_files
+.. describe:: local::logger::log_directory
 
-    An array of strings representing the relative or absolute paths to the quasardb log files.
-
-.. describe:: local::logger::dump_file
-
-    A string representing the relative or absolute path to the system error dump file.
+    A string representing the relative or absolute path to the directory where log files will be created.
 
 .. describe:: local::logger::log_to_console
 
@@ -707,68 +747,26 @@ The default configuration file is shown below::
 
     An array of strings representing other nodes in the cluster which will bootstrap this node upon startup. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
 
-.. describe:: global::depot::transient
+.. describe:: global::cluster::transient
 
-    A boolean representing whether or not to persist data on the hard drive. If true, all data will be stored in memory. Entries cannot be interated in transient mode. For more information, see `transient-mode`.
+    Disables persistence on disk
 
-.. .. describe:: global::depot::history # According to Edouard on 2015-11-17, this value is ignored and will be left undocumented.
-
-.. describe:: global::depot::sync
-
-    A boolean representing whether or not the node should sync to the underlying filesystem for each write command.
-
-.. describe:: global::depot::root
-
-    A string representing the relative or absolute path to the directory where data will be stored.
-
-.. describe:: global::depot::replication_factor
+.. describe:: global::cluster::replication_factor
 
     An integer between 1 and 4 (inclusive) specifying the replication factor for the cluster. A higher value indicates more copies of data on each node.
 
-.. describe:: global::depot::max_bytes
+.. describe:: global::cluster::max_versions
 
-    An integer representing the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
-    
-    Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
-    
-    See :option:`--max-depot-size` for more details and examples to calculate the max_bytes value.
-
-.. describe:: global::depot::max_versions
-    
     An integer represending the maximum number of copies the cluster keeps for transaction history. If an entry has more versions than this value, the oldest version is garbage collected.
 
-.. describe:: global::depot::max_transaction_duration
+.. describe:: global::cluster::max_transaction_duration
 
-    An integer representing the maximum guaranteed duration of a transaction, in seconds.
+    An integer representing the maximum guaranteed duration of a transaction, in seconds. Transactions lasting longer than this interval will be rolled-back.
 
-.. |global__depot__storage_warning_level| replace:: ``global::depot::storage_warning_level``
-.. _global__depot__storage_warning_level:
-.. describe:: global::depot::storage_warning_level
+.. describe:: global::security::enable_stop
 
-    An integer between 50 and 100 (inclusive) specifying the percentage of disk usage at which a warning about depleting disk space will be emitted.
-    See also |global__depot__storage_warning_interval|_.
+    Allows a node to be remotely stop via an API call. False by default.
 
-.. |global__depot__storage_warning_interval| replace:: ``global::depot::storage_warning_interval``
-.. _global__depot__storage_warning_interval:
-.. describe:: global::depot::storage_warning_interval
+.. describe:: global::security::enable_purge_all
 
-    An integer representing how often quasardb will emit a warning about depleting disk space, in seconds.
-    See also |global__depot__storage_warning_level|_.
-
-.. describe:: global::depot::meta_data_cache
-
-    An integer representing the maximum size for the metadata cache. The default value is 10 megabytes. Values below 4 megabytes are invalid and will be set to 4 megabytes.
-
-.. describe:: global::depot::data_cache
-
-    An integer representing the maximum size for the data cache. The default value is 100 megabytes. Values below 4 megabytes are invalid and will be set to 4 megabytes.
-
-.. describe:: global::limiter::max_in_entries_count
-
-    An integer representing the maximum number of entries that can be stored in memory. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the entry limit.
-
-.. describe:: global::limiter::max_bytes
-
-    An integer representing the maximum amount of memory usage in bytes for each node's cache. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the byte limit.
-
-
+    Allows the cluster to be remotely purged via an API call. False by default.

@@ -89,8 +89,8 @@ Quick Reference
   :c:type:`qdb_error_t`       :c:type:`qdb_add_tag`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
   :c:type:`qdb_error_t`       :c:type:`qdb_has_tag`                  (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
   :c:type:`qdb_error_t`       :c:type:`qdb_remove_tag`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char *` tag);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get_tagged`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` tag, :c:type:`const char ***` aliases, :c:type:`qdb_size_t` aliases_count);
-  :c:type:`qdb_error_t`       :c:type:`qdb_get_tags`                 (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char ***` tags, :c:type:`qdb_size_t` tags_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_tagged`               (:c:type:`qdb_handle_t` handle, :c:type:`const char *` tag, :c:type:`const char ***` aliases, :c:type:`qdb_size_t` alias_count);
+  :c:type:`qdb_error_t`       :c:type:`qdb_get_tags`                 (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`const char ***` tags, :c:type:`qdb_size_t` tag_count);
   :c:type:`qdb_error_t`       :c:type:`qdb_stream_open`              (:c:type:`qdb_handle_t` handle, :c:type:`const char *` alias, :c:type:`qdb_stream_mode_t` mode, :c:type:`qdb_stream_t` * stream);
   :c:type:`qdb_error_t`       :c:type:`qdb_stream_close`             (:c:type:`qdb_stream_t` stream);
   :c:type:`qdb_error_t`       :c:type:`qdb_stream_read`              (:c:type:`qdb_stream_t` stream, :c:type:`void *` data, :c:type:`size_t *` size);
@@ -345,8 +345,8 @@ Batch operations can greatly increase performance when it is necessary to run ma
 
 The :c:func:`qdb_init_operations` ensures that the operations are properly reset before setting any value::
 
-    qdb_operations_t ops[3];
-    r = qdb_init_operations(ops, 3);
+    qdb_operations_t ops[4];
+    r = qdb_init_operations(ops, 4);
     if (r != qdb_error_ok)
     {
         // error management
@@ -370,11 +370,16 @@ Once this is done, you can fill the array with the operations you would like to 
     ops[2].content = content;
     ops[2].content_size = 100;
 
+    // the fourth operation will be increasing an integer "int_value" by 42
+    ops[3].type = qdb_op_int_inc_dec;
+    ops[3].alias = "int_value";
+    ops[3].int_op.value = 42;
+
 You now have an operations batch that can be run on the cluster::
 
     // runs the three operations on the cluster
-    qdb_size_t success_count = qdb_run_batch(handle, ops, 3);
-    if (success_count != 3)
+    qdb_size_t success_count = qdb_run_batch(handle, ops, 4);
+    if (success_count != 4)
     {
         // error management
     }
@@ -385,9 +390,9 @@ The error field of each operation is updated to reflect its status. If it is not
 
 Let's imagine the previous example returned an error. Here is some simple code for error detection::
 
-    if (success_count != 3)
+    if (success_count != 4)
     {
-        for(qdb_size_t i = 0; i < 3; ++i)
+        for(qdb_size_t i = 0; i < 4; ++i)
         {
             if (ops[i].error != qdb_e_ok)
             {
@@ -398,7 +403,7 @@ Let's imagine the previous example returned an error. Here is some simple code f
 
 What you must do when an error occurs is entirely dependent on your application.
 
-In our case, there have been three operations, two gets and one update. In the case of the update, we only care if the operation has been successful or not. But what about the gets? The content is available in the result field::
+In our case, there have been four operations, two blob gets, one blob update and one int increase. In the case of the update, we only care if the operation has been successful or not. But what about the gets and the increase? The content is available in the result field for blobs::
 
     const char * entry1_content = ops[0].result;
     qdb_size_t entry1_size = ops[0].result_size;
@@ -406,9 +411,13 @@ In our case, there have been three operations, two gets and one update. In the c
     const char * entry2_content = ops[1].result;
     qdb_size_t entry2_size = ops[1].result_size;
 
+And for the integer in result_value::
+
+    qdb_int_t result_value = ops[3].int_op.result_vale;
+
 Once you are finished with a series of batch operations, you must release the memory that the API allocated using :c:func:`qdb_free_operations`. The call releases all buffers at once::
 
-    r = qdb_free_operations(ops, 3);
+    r = qdb_free_operations(ops, 4);
     if (r != qdb_error_ok)
     {
         // error management
@@ -1450,7 +1459,7 @@ Reference
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_tagged(qdb_handle_t handle, const char * tag, const char *** aliases, qdb_size_t aliases_count)
+.. c:function:: qdb_error_t qdb_get_tagged(qdb_handle_t handle, const char * tag, const char *** aliases, qdb_size_t alias_count)
 
     Retrieves the aliases that have been tagged with the given tag.
 
@@ -1460,12 +1469,12 @@ Reference
     :type tag: const char *
     :param aliases: A pointer to a pointer of an array of alias pointers. This will be set to list each alias tagged with the given tag.
     :type aliases: :c:type:`const char ***`
-    :param aliases_count: The number of aliases in the array.
-    :type aliases_count: qdb_size_t
+    :param alias_count: The number of aliases in the array.
+    :type alias_count: qdb_size_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_get_tags(qdb_handle_t handle, const char * alias, const char *** tags, qdb_size_t tags_count)
+.. c:function:: qdb_error_t qdb_get_tags(qdb_handle_t handle, const char * alias, const char *** tags, qdb_size_t tag_count)
 
     Retrieves the tags assigned to the given alias.
 
@@ -1475,8 +1484,8 @@ Reference
     :type alias: const char *
     :param tags: A pointer to a pointer of an array of tag pointers. This will be set to list each tag assigned to the alias.
     :type tags: :c:type:`const char ***`
-    :param aliases_count: The number of tags in the array.
-    :type aliases_count: qdb_size_t
+    :param tag_count: The number of tags in the array.
+    :type tag_count: qdb_size_t
 
     :returns: An error code of type :c:type:`qdb_error_t`
 

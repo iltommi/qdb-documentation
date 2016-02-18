@@ -133,7 +133,7 @@ Each result is now available in the "result" structure member and its size is st
 Limitations
 ^^^^^^^^^^^^
 
-    * The order in which operations in a batch are executed is undetermined
+    * The order in which operations in a batch are executed is undefined
     * Each operation in a batch is ACID, however the batch as a whole is neither ACID nor transactional
     * Running a batch adds overhead. Using the batch API for small batches may therefore yield unsatisfactory performance
 
@@ -176,3 +176,27 @@ Summary
 
 Used properly, batch operations can turn around performance and enable you to process extremely fast large sets of small operations.
 
+Transactions
+-------------
+
+quasardb supports distributed, multi-entry key transactions. The transaction API is very close to the batch API, with the exceptions that:
+
+    * Operations are executed in order
+    * Transactions are "all or nothing", if one operation fails, the whole transaction is rolled back
+    * Transactions are generally slower than batches.
+
+quasardb transactions are based on Multi-Version Concurrency Control and two-phase commit (2PC).
+
+Limitations
+^^^^^^^^^^^^
+
+Transactions are currently auto-commit only, meaning that you can only submit a list of instructions that will be committed on success or rolled back on failure.
+
+Transactions must run within a cluster-side configurable time limit or be cancelled.
+
+This is an API restriction only and may change in the future.
+
+Allowed operations
+^^^^^^^^^^^^^^^^^^^^
+
+Transactions support the same operations than batches.
