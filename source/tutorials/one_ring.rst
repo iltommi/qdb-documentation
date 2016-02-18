@@ -4,7 +4,7 @@ Your first quasardb cluster
 quasardb is designed to be run as a cluster. A cluster is multiple instances of the daemon running separate servers which collaborate to balance the load.
 This tutorial will guide you through the steps required to setup such a cluster. If you have not done so yet, going through the introductory tutorial is highly recommended (see :doc:`tut_quick`).
 
-.. important:: 
+.. important::
     A valid license is required to run the daemon (see :doc:`../license`). In the examples below, we will use the default path and filename of "qdb_license.txt". Ensure your license file is properly named and placed in same folder as qdbd before continuing.
 
 Create a Cluster with Three Nodes
@@ -60,7 +60,7 @@ Starting the Daemons
 ~~~~~~~~~~~~~~~~~~~~
 
 #. Copy the named configuration files to the qdbd folder on the respective nodes.
-   
+
 #. Start the quasardb daemon on the first node. ::
 
     qdbd -c 192.168.1.1.conf
@@ -68,7 +68,7 @@ Starting the Daemons
 #. Start the quasardb daemon on the second and third nodes. ::
 
     qdbd -c 192.168.1.2.conf
-    
+
     qdbd -c 192.168.1.3.conf
 
 As nodes come online, they will stabilize themselves by self-organizing into a ring and determining storage locations for data. For more information, see :ref:`stabilization`.
@@ -88,14 +88,14 @@ If you add a node to the cluster, you do not have to make *any* change on the cl
 
 #. Test a couple of commands::
 
-    ok:qdbsh> put entry thisismycontent
-    ok:qdbsh> get entry
+    ok:qdbsh> blob_put entry thisismycontent
+    ok:qdbsh> blob_get entry
     thisismycontent
     ok:qdbsh> exit
 
 #. Test that a different node acknowledges the entry::
 
     qdbsh qdb://192.168.1.3:2836
-    
-    ok:qdbsh> get entry
+
+    ok:qdbsh> blob_get entry
     thisismyentry
