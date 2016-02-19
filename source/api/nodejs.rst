@@ -275,7 +275,7 @@ Example::
 
   .. js:function:: Cluster.setTimeout (int milliseconds)
 
-      Sets the client-side timeout value for callbacks. The default is 60,000ms, or one minute. This should be run before the call to Cluster::connect.
+      Sets the client-side timeout value for callbacks. The default is 60,000 ms, or one minute. This should be run before the call to :func:`Cluster.connect`.
 
       :param int milliseconds: the number of milliseconds to set.
 
