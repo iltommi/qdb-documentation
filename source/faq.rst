@@ -121,7 +121,7 @@ Is quasardb open source?
 
 We want to open source as much as we can of quasardb in the form of packaged libraries.
 
-You can find `the open sourced code on github <https://github.com/bureau14/open_lib>`_ under a three-clauses BSD license.
+You can find `the open sourced code on GitHub <https://github.com/bureau14/open_lib>`_ under a three-clauses BSD license.
 
 Does quasardb use open source libraries?
 ========================================

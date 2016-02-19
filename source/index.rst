@@ -8,7 +8,7 @@ quasardb
 
 **quasardb** - a creation of  `quasardb SAS <http://www.quasardb.net>`_  - is a high-performance, non-relational database designed from the ground up for the most demanding environments.
 
-A wealth of languages are officially supported with open source APIs available on `github <https://github.com/bureau14>`_.
+A wealth of languages are officially supported with open source APIs available on `GitHub <https://github.com/bureau14>`_.
 
 If you are new to quasardb the :doc:`primer` and :doc:`concepts/index` are a good introduction. The :doc:`faq` may also have the information you are looking for.
 

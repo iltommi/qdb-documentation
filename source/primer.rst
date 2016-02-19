@@ -89,8 +89,8 @@ Integers, blobs...
 
 What about "a list of stuff"?
 
-Lists in quasardb are named "deques" and stand for "double entry queues". They support concurrent and scalable insertions at the beginning and the end and O(1) 
-random access to any element within the deque. Deques are automatically scaled accross all the nodes of your cluster and have absolutely no limit, 
+Lists in quasardb are named "deques" and stand for "double-ended queues". They support concurrent and scalable insertions at the beginning and the end and O(1)
+random access to any element within the deque. Deques are automatically scaled across all the nodes of your cluster and have absolutely no limit,
 because at quasardb, we don't like limits::
 
     qdbsh> deque_push_back my_list entry_one
@@ -104,7 +104,7 @@ Every entry within the deque is a blob, of whatever size you fancy.
 But, wait, there's more!
 ------------------------
 
-Now we'd like to show you one of the most exciting features of quasardb: tags. Since quasardb is a key/value store it provides you extremly fast access to any 
+Now we'd like to show you one of the most exciting features of quasardb: tags. Since quasardb is a key/value store it provides you extremely fast access to any
 entry within the cluster, if you have a key.
 
 What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
@@ -136,24 +136,33 @@ The shell tool is not always the right tool for the job and generally has a subs
 
 If you have your own application, you may find it cumbersome to run a third-party program every time you want to access the database.
 
-That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_,
+That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/cpp`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_,
 :doc:`api/nodejs` and :doc:`api/python`.
 
-You can either fetch a binary package or build the API from source (BSD License). You will find them on `github <http://github.com/bureau14>`. Our APIs do their
+You can either fetch a binary package or build the API from source (BSD License). You will find them on `GitHub <http://github.com/bureau14>`. Our APIs do their
 best to be simple and straightforward.
 
-Here is a short Python code snippet::
+Here is a short Python code snippet:
+
+.. testcode:: primer
 
     import qdb
 
     # connecting, default port is 2836
     c = qdb.Cluster("qdb://127.0.0.1:2836")
     # adding an entry
-    c.blob("entry").put("really amazing...")
+    b = c.blob("my_entry")
+    b.put("really amazing...")
     # getting and printing the content
-    print c.blob("entry").get()
+    print b.get()
     # closing connection
     del c
+
+Which will output the following when executed:
+
+.. testoutput:: primer
+
+    really amazing...
 
 That demo is nice, but what happens when I go to production?
 ------------------------------------------------------------
@@ -184,14 +193,14 @@ If you'd like to learn more about building a quasardb cluster, head over to the 
 
 Curious about the underlying concepts, we have a section dedicated to it (:doc:`concepts/index`).
 
-Warp up
+Wrap up
 -------
 
 Things to remember about quasardb:
 
     * Fast and scalable
     * High-performance binary protocol
-    * Multi-platform: FreeBSD, Linux 2.6+, OS X and Windows NT (32-bit and 64-bit)
+    * Multi-platform: FreeBSD, Linux 2.6+, OS X and Windows (32-bit and 64-bit)
     * Peer-to-peer network distribution
     * Transparent persistence
     * Distributed transactions
