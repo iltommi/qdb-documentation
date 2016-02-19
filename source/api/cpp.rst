@@ -1,6 +1,7 @@
 C++
 ====
 
+.. default-domain:: cpp
 .. cpp:namespace:: qdb
 .. highlight:: cpp
 
@@ -9,6 +10,9 @@ C++
 
 Quick Reference
 ---------------
+
+.. |CONST| replace:: ``const``
+..
 
 .. |VOID_ARGS| replace:: ``(``\ :c:type:`void`\ ``);``
 ..
@@ -19,96 +23,101 @@ Quick Reference
 .. |CHAR_P| replace:: :c:type:`char` ``*``
 ..
 
-.. |CONST_CHAR_P| replace:: ``const`` :c:type:`char` ``*``
+.. |CONST_CHAR_P| replace:: |CONST| :c:type:`char` ``*``
+..
+
+.. TODO: batch_request
+.. TODO: batch_result
+.. TODO: remote_node
 ..
 
  ======================================= ================================================== ===================
         Return Type                                  Name                                       Arguments
  ======================================= ================================================== ===================
-  ..                                     :cpp:class:`api_buffer`\ ``;``                     ..
-  :c:type:`bool`                         :cpp:func:`api_buffer::operator==`                 ``(const`` :cpp:type:`api_buffer` ``& other) const;``
-  :c:type:`bool`                         :cpp:func:`api_buffer::operator!=`                 ``(const`` :cpp:type:`api_buffer` ``& other) const;``
-  |CONST_CHAR_P|                         :cpp:func:`api_buffer::data`                       |VOID_ARGS_CONST|
-  :cpp:type:`qdb_size_t`                 :cpp:func:`api_buffer::size`                       |VOID_ARGS_CONST|
-  ..                                     :cpp:type:`api_buffer_ptr`\ ``;``                  ..
-  ..                                     :cpp:class:`const_iterator`\ ``;``                 ..
-  :c:type:`bool`                         :cpp:func:`const_iterator::operator==`             ``(const`` :cpp:type:`const_iterator` ``& other) const;``
-  :c:type:`bool`                         :cpp:func:`const_iterator::operator!=`             ``(const`` :cpp:type:`const_iterator` ``& other) const;``
-  :c:type:`bool`                         :cpp:func:`const_iterator::operator++`             |VOID_ARGS|
-  :c:type:`bool`                         :cpp:func:`const_iterator::operator--`             |VOID_ARGS|
-  :c:type:`const value_type &`           :cpp:func:`const_iterator::operator*`              |VOID_ARGS_CONST|
-  :c:type:`const value_type *`           :cpp:func:`const_iterator::operator->`             |VOID_ARGS_CONST|
-  :c:type:`qdb_error_t`                  :cpp:func:`const_iterator::last_error`             |VOID_ARGS_CONST|
-  :c:type:`bool`                         :cpp:func:`const_iterator::valid`                  |VOID_ARGS_CONST|
-  :c:type:`void`                         :cpp:func:`const_iterator::close`                  |VOID_ARGS|
-  ..                                     :cpp:class:`const_reverse_iterator`\ ``;``         ..
-  :c:type:`bool`                         :cpp:func:`const_reverse_iterator::operator==`     ``(const`` :cpp:type:`const_reverse_iterator` ``& other) const;``
-  :c:type:`bool`                         :cpp:func:`const_reverse_iterator::operator!=`     ``(const`` :cpp:type:`const_reverse_iterator` ``& other) const;``
-  :c:type:`bool`                         :cpp:func:`const_reverse_iterator::operator++`     |VOID_ARGS|
-  :c:type:`bool`                         :cpp:func:`const_reverse_iterator::operator--`     |VOID_ARGS|
-  :c:type:`const value_type &`           :cpp:func:`const_reverse_iterator::operator*`      |VOID_ARGS_CONST|
-  :c:type:`const value_type *`           :cpp:func:`const_reverse_iterator::operator->`     |VOID_ARGS_CONST|
-  :c:type:`qdb_error_t`                  :cpp:func:`const_reverse_iterator::last_error`     |VOID_ARGS_CONST|
-  :c:type:`bool`                         :cpp:func:`const_reverse_iterator::valid`          |VOID_ARGS_CONST|
-  :c:type:`void`                         :cpp:func:`const_reverse_iterator::close`          |VOID_ARGS|
-  ..                                     :cpp:class:`handle`\ ``;``                         ..
-  :c:type:`handle &`                     :cpp:func:`handle::operator=`                      ``(``\ :cpp:type:`handle` ``&& h) const;``
-  :cpp:type:`const_iterator`             :cpp:func:`handle::begin`                          |VOID_ARGS|
-  :cpp:type:`const_iterator`             :cpp:func:`handle::end`                            |VOID_ARGS|
-  :cpp:type:`const_reverse_iterator`     :cpp:func:`handle::rbegin`                         |VOID_ARGS|
-  :cpp:type:`const_reverse_iterator`     :cpp:func:`handle::rend`                           |VOID_ARGS|
-  :c:type:`void`                         :cpp:func:`handle::close`                          |VOID_ARGS|
-  :c:type:`bool`                         :cpp:func:`handle::connected`                      |VOID_ARGS_CONST|
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::set_timeout`                    ``(``\ :c:type:`int` ``timeout);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::set_compression`                ``(``\ :c:type:`qdb_compression_t` ``comp_level);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::connect`                        ``(``\ |CONST_CHAR_P| ``uri);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::blob_put`                       ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length,`` :cpp:type:`qdb_time_t` ``expiry_time);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::int_get`                        ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t *` ``number);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::int_put`                        ``(``\ |CONST_CHAR_P| ``alias,`` :cpp:type:`qdb_int_t` ``number,`` :cpp:type:`qdb_time_t` ``expiry_time);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::int_update`                     ``(``\ |CONST_CHAR_P| ``alias,`` :cpp:type:`qdb_int_t` ``number,`` :cpp:type:`qdb_time_t` ``expiry_time);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::int_add`                        ``(``\ |CONST_CHAR_P| ``alias,`` :cpp:type:`qdb_int_t` ``addend,`` :c:type:`qdb_int_t *` result = ``NULL);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::deque_size`                     ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t *` ``size);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_get_at`                   ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t` ``index,`` :c:type:`qdb_error_t &` ``error);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::deque_set_at`                   ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t` ``index,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::deque_push_front`               ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::deque_push_back`                ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_pop_front`                ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_pop_back`                 ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_front`                    ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::deque_back`                     ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::hset_insert`                    ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :cpp:type:`qdb_size_t` ``content_length);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::hset_erase`                     ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :cpp:type:`qdb_size_t` ``content_length);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::hset_contains`                  ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :cpp:type:`qdb_size_t` ``content_length);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::blob_update`                    ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :cpp:type:`qdb_size_t` ``content_length,`` :cpp:type:`qdb_time_t` ``expiry_time);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::blob_get_noalloc`               ``(``\ |CONST_CHAR_P| ``alias,`` |CHAR_P| ``content,`` :c:type:`qdb_size_t *` ``content_length);``
-  :c:type:`qdb_size_t`                   :cpp:func:`handle::run_batch`                      (:cpp:type:`qdb_operation_t` ``operations,`` :cpp:type:`qdb_size_t` ``operation_count);``
-  :cpp:type:`std::vector\<batch_result>` :cpp:func:`handle::run_batch`                      (:c:type:`const std::vector\<batch_request> &` ``requests,`` :c:type:`qdb_size_t &` ``success_count);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::run_transaction`                (:c:type:`qdb_operation_t *` ``operations,`` :cpp:type:`qdb_size_t` ``operation_count,`` :c:type:`qdb_size_t &` ``fail_index);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get`                       ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get_and_remove`            ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_get_and_update`            ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``update_content,`` :cpp:type:`qdb_size_t` ``update_content_length,`` :cpp:type:`qdb_time_t` ``expiry_time,`` :c:type:`qdb_error_t &` ``error);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`handle::blob_compare_and_swap`          ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``new_value,`` :cpp:type:`qdb_size_t` ``new_value_length,`` |CONST_CHAR_P| ``comparand,`` :cpp:type:`qdb_size_t` ``comparand_length,`` :cpp:type:`qdb_time_t` ``expiry_time,`` :c:type:`qdb_error_t &` ``error);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::expires_at`                     ``(``\ |CONST_CHAR_P| ``alias,`` :cpp:type:`qdb_time_t` ``expiry_time);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::expires_from_now`               ``(``\ |CONST_CHAR_P| ``alias,`` :cpp:type:`qdb_time_t` ``expiry_delta);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::get_expiry_time`                ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_time_t &` ``expiry_time);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::get_location`                   ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`remote_node &` ``location);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::get_type`                       ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_entry_type *` ``entry_type);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::node_status`                    ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t &` ``error);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::node_config`                    ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t &` ``error);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::node_topology`                  ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t &` ``error);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::stop_node`                      ``(``\ |CONST_CHAR_P| ``uri,`` |CONST_CHAR_P| ``reason);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::remove`                         ``(``\ |CONST_CHAR_P| ``alias);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::blob_remove_if`                 ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``comparand,`` :cpp:type:`qdb_size_t` ``comparand_length);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::add_tag`                        ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::has_tag`                        ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::remove_tag`                     ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
-  :cpp:type:`std::vector\<std::string>`  :cpp:func:`handle::get_tagged`                     ``(``\ |CONST_CHAR_P| ``tag,`` :c:type:`qdb_error_t &` ``error);``
-  :cpp:type:`std::vector\<std::string>`  :cpp:func:`handle::get_tags`                       ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t &` ``error);``
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::purge_all`                      |VOID_ARGS|
-  :c:type:`qdb_error_t`                  :cpp:func:`handle::trim_all`                       |VOID_ARGS|
-  ..                                     :cpp:type:`handle_ptr`\ ``;``                      ..
-  :cpp:type:`std::string`                :cpp:func:`make_error_string`                      (:cpp:type:`qdb_error_t` ``err);``
-  :cpp:type:`api_buffer_ptr`             :cpp:func:`make_api_buffer_ptr`                    (:cpp:type:`qdb_handle_t` ``h,`` |CONST_CHAR_P| ``data,`` :cpp:type:`qdb_size_t` ``length);``
+  ..                                     :class:`api_buffer`\ ``;``                         ..
+  :c:type:`bool`                         :func:`api_buffer::operator==`                     ``(const`` :type:`api_buffer` ``& other) const;``
+  :c:type:`bool`                         :func:`api_buffer::operator!=`                     ``(const`` :type:`api_buffer` ``& other) const;``
+  |CONST_CHAR_P|                         :func:`api_buffer::data`                           |VOID_ARGS_CONST|
+  :type:`qdb_size_t`                     :func:`api_buffer::size`                           |VOID_ARGS_CONST|
+  ..                                     :type:`api_buffer_ptr`\ ``;``                      ..
+  ..                                     :class:`const_iterator`\ ``;``                     ..
+  :c:type:`bool`                         :func:`const_iterator::operator==`                 ``(const`` :type:`const_iterator` ``& other) const;``
+  :c:type:`bool`                         :func:`const_iterator::operator!=`                 ``(const`` :type:`const_iterator` ``& other) const;``
+  :c:type:`bool`                         :func:`const_iterator::operator++`                 |VOID_ARGS|
+  :c:type:`bool`                         :func:`const_iterator::operator--`                 |VOID_ARGS|
+  :c:type:`const value_type &`           :func:`const_iterator::operator*`                  |VOID_ARGS_CONST|
+  :c:type:`const value_type *`           :func:`const_iterator::operator->`                 |VOID_ARGS_CONST|
+  :c:type:`qdb_error_t`                  :func:`const_iterator::last_error`                 |VOID_ARGS_CONST|
+  :c:type:`bool`                         :func:`const_iterator::valid`                      |VOID_ARGS_CONST|
+  :c:type:`void`                         :func:`const_iterator::close`                      |VOID_ARGS|
+  ..                                     :class:`const_reverse_iterator`\ ``;``             ..
+  :c:type:`bool`                         :func:`const_reverse_iterator::operator==`         ``(const`` :type:`const_reverse_iterator` ``& other) const;``
+  :c:type:`bool`                         :func:`const_reverse_iterator::operator!=`         ``(const`` :type:`const_reverse_iterator` ``& other) const;``
+  :c:type:`bool`                         :func:`const_reverse_iterator::operator++`         |VOID_ARGS|
+  :c:type:`bool`                         :func:`const_reverse_iterator::operator--`         |VOID_ARGS|
+  :c:type:`const value_type &`           :func:`const_reverse_iterator::operator*`          |VOID_ARGS_CONST|
+  :c:type:`const value_type *`           :func:`const_reverse_iterator::operator->`         |VOID_ARGS_CONST|
+  :c:type:`qdb_error_t`                  :func:`const_reverse_iterator::last_error`         |VOID_ARGS_CONST|
+  :c:type:`bool`                         :func:`const_reverse_iterator::valid`              |VOID_ARGS_CONST|
+  :c:type:`void`                         :func:`const_reverse_iterator::close`              |VOID_ARGS|
+  ..                                     :class:`handle`\ ``;``                             ..
+  :c:type:`handle &`                     :func:`handle::operator=`                          ``(``\ :type:`handle` ``&& h) const;``
+  :type:`const_iterator`                 :func:`handle::begin`                              |VOID_ARGS|
+  :type:`const_iterator`                 :func:`handle::end`                                |VOID_ARGS|
+  :type:`const_reverse_iterator`         :func:`handle::rbegin`                             |VOID_ARGS|
+  :type:`const_reverse_iterator`         :func:`handle::rend`                               |VOID_ARGS|
+  :c:type:`void`                         :func:`handle::close`                              |VOID_ARGS|
+  :c:type:`bool`                         :func:`handle::connected`                          |VOID_ARGS_CONST|
+  :c:type:`qdb_error_t`                  :func:`handle::set_timeout`                        ``(``\ :c:type:`int` ``timeout);``
+  :c:type:`qdb_error_t`                  :func:`handle::set_compression`                    ``(``\ :c:type:`qdb_compression_t` ``comp_level);``
+  :c:type:`qdb_error_t`                  :func:`handle::connect`                            ``(``\ |CONST_CHAR_P| ``uri);``
+  :c:type:`qdb_error_t`                  :func:`handle::blob_put`                           ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length,`` :c:type:`qdb_time_t` ``expiry_time);``
+  :c:type:`qdb_error_t`                  :func:`handle::int_get`                            ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t *` ``number);``
+  :c:type:`qdb_error_t`                  :func:`handle::int_put`                            ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t` ``number,`` :c:type:`qdb_time_t` ``expiry_time);``
+  :c:type:`qdb_error_t`                  :func:`handle::int_update`                         ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t` ``number,`` :c:type:`qdb_time_t` ``expiry_time);``
+  :c:type:`qdb_error_t`                  :func:`handle::int_add`                            ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t` ``addend,`` :c:type:`qdb_int_t *` ``result = NULL);``
+  :c:type:`qdb_error_t`                  :func:`handle::deque_size`                         ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t *` ``size);``
+  :type:`api_buffer_ptr`                 :func:`handle::deque_get_at`                       ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t` ``index,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :c:type:`qdb_error_t`                  :func:`handle::deque_set_at`                       ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t` ``index,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
+  :c:type:`qdb_error_t`                  :func:`handle::deque_push_front`                   ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
+  :c:type:`qdb_error_t`                  :func:`handle::deque_push_back`                    ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
+  :type:`api_buffer_ptr`                 :func:`handle::deque_pop_front`                    ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :type:`api_buffer_ptr`                 :func:`handle::deque_pop_back`                     ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :type:`api_buffer_ptr`                 :func:`handle::deque_front`                        ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :type:`api_buffer_ptr`                 :func:`handle::deque_back`                         ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :c:type:`qdb_error_t`                  :func:`handle::hset_insert`                        ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
+  :c:type:`qdb_error_t`                  :func:`handle::hset_erase`                         ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
+  :c:type:`qdb_error_t`                  :func:`handle::hset_contains`                      ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
+  :c:type:`qdb_error_t`                  :func:`handle::blob_update`                        ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length,`` :c:type:`qdb_time_t` ``expiry_time);``
+  :c:type:`qdb_error_t`                  :func:`handle::blob_get_noalloc`                   ``(``\ |CONST_CHAR_P| ``alias,`` |CHAR_P| ``content,`` :c:type:`qdb_size_t *` ``content_length);``
+  :c:type:`qdb_size_t`                   :func:`handle::run_batch`                          ``(``:c:type:`qdb_operation_t *` ``operations,`` :c:type:`qdb_size_t` ``operation_count);``
+  :type:`std::vector\<batch_result>`     :func:`handle::run_batch`                          ``(``:c:type:`const std::vector\<batch_request> &` ``requests,`` :c:type:`qdb_size_t` ``&`` ``success_count);``
+  :c:type:`qdb_error_t`                  :func:`handle::run_transaction`                    ``(``:c:type:`qdb_operation_t *` ``operations,`` :c:type:`qdb_size_t` ``operation_count,`` :c:type:`qdb_size_t` ``&`` ``fail_index);``
+  :type:`api_buffer_ptr`                 :func:`handle::blob_get`                           ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :type:`api_buffer_ptr`                 :func:`handle::blob_get_and_remove`                ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :type:`api_buffer_ptr`                 :func:`handle::blob_get_and_update`                ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``update_content,`` :c:type:`qdb_size_t` ``update_content_length,`` :c:type:`qdb_time_t` ``expiry_time,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :type:`api_buffer_ptr`                 :func:`handle::blob_compare_and_swap`              ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``new_value,`` :c:type:`qdb_size_t` ``new_value_length,`` |CONST_CHAR_P| ``comparand,`` :c:type:`qdb_size_t` ``comparand_length,`` :c:type:`qdb_time_t` ``expiry_time,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :c:type:`qdb_error_t`                  :func:`handle::expires_at`                         ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_time_t` ``expiry_time);``
+  :c:type:`qdb_error_t`                  :func:`handle::expires_from_now`                   ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_time_t` ``expiry_delta);``
+  :c:type:`qdb_error_t`                  :func:`handle::get_expiry_time`                    ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_time_t` ``&`` ``expiry_time);``
+  :c:type:`qdb_error_t`                  :func:`handle::get_location`                       ``(``\ |CONST_CHAR_P| ``alias,`` :type:`remote_node` ``&`` ``location);``
+  :c:type:`qdb_error_t`                  :func:`handle::get_type`                           ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_entry_type_t *` ``entry_type);``
+  :c:type:`qdb_error_t`                  :func:`handle::node_status`                        ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :c:type:`qdb_error_t`                  :func:`handle::node_config`                        ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :c:type:`qdb_error_t`                  :func:`handle::node_topology`                      ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :c:type:`qdb_error_t`                  :func:`handle::stop_node`                          ``(``\ |CONST_CHAR_P| ``uri,`` |CONST_CHAR_P| ``reason);``
+  :c:type:`qdb_error_t`                  :func:`handle::remove`                             ``(``\ |CONST_CHAR_P| ``alias);``
+  :c:type:`qdb_error_t`                  :func:`handle::blob_remove_if`                     ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``comparand,`` :c:type:`qdb_size_t` ``comparand_length);``
+  :c:type:`qdb_error_t`                  :func:`handle::add_tag`                            ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
+  :c:type:`qdb_error_t`                  :func:`handle::has_tag`                            ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
+  :c:type:`qdb_error_t`                  :func:`handle::remove_tag`                         ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
+  :type:`std::vector\<std::string>`      :func:`handle::get_tagged`                         ``(``\ |CONST_CHAR_P| ``tag,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :type:`std::vector\<std::string>`      :func:`handle::get_tags`                           ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_error_t` ``&`` ``error);``
+  :c:type:`qdb_error_t`                  :func:`handle::purge_all`                          |VOID_ARGS|
+  :c:type:`qdb_error_t`                  :func:`handle::trim_all`                           |VOID_ARGS|
+  ..                                     :type:`handle_ptr`\ ``;``                          ..
+  :type:`std::string`                    :func:`make_error_string`                          ``(``:c:type:`qdb_error_t` ``err);``
+  :type:`api_buffer_ptr`                 :func:`make_api_buffer_ptr`                        ``(``:c:type:`qdb_handle_t` ``h,`` |CONST_CHAR_P| ``data,`` :c:type:`qdb_size_t` ``length);``
 
  ======================================= ================================================== ===================
 
