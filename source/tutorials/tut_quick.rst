@@ -4,7 +4,10 @@ An installation tutorial for people with very little time
 A minimal quasardb setup requires deploying the quasardb daemon on a single server and making sure that the client can access it.
 
 .. important::
-    A valid license is required to run the daemon (see :doc:`../license`). In the examples below, we will use the default path and filename of "qdb_license.txt". Ensure your license file is properly named and placed in same folder as qdbd before continuing.
+    This tutorial is based on a manual installation of quasardb, that is, we will expand an archive and configure manually the daemon. For many platform we
+    provide a packaged installer and it is recommended to use this packaged installer in production (see :doc:`../administration/index`).
+
+    You *may* need license to run this tutorial (see :doc:`../license`).
 
 
 Installing a quasardb daemon in three steps
@@ -124,4 +127,4 @@ All information is available in both JSON and JSONP format.
 
    If you want the content in JSONP format, the URL becomes::
 
-       http://127.0.0.1:8080/global_status?callback=MyCallBack
+       http://127.0.0.1:8080/global_status?daemon=127.0.0.1:2836&callback=MyCallBack
