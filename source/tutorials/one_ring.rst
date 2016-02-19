@@ -5,8 +5,10 @@ quasardb is designed to be run as a cluster. A cluster is multiple instances of 
 This tutorial will guide you through the steps required to setup such a cluster. If you have not done so yet, going through the introductory tutorial is highly recommended (see :doc:`tut_quick`).
 
 .. important::
-    A valid license is required to run the daemon (see :doc:`../license`). In the examples below, we will use the default path and filename of "qdb_license.txt". Ensure your license file is properly named and placed in same folder as qdbd before continuing.
+    This tutorial is based on a manual installation of quasardb, that is, we will expand an archive and configure manually the daemon. For many platform we
+    provide a packaged installer and it is recommended to use this packaged installer in production (see :doc:`../administration/index`).
 
+    You *may* need license to run this tutorial (see :doc:`../license`).
 
 
 Create a Cluster with Three Nodes
