@@ -40,7 +40,7 @@ Quick Reference
  :option:`--replication`                  sets the replication factor     1                     Yes
  :option:`--max-depot-size`               max db size on node             0 (disabled)          No           >=1.1.3
  :option:`--transient`                    disable persistence                                   Yes
- :option:`--limiter-max-entries-count`    max entries in cache            1000000               No
+ :option:`--limiter-max-resident-entries` max entries in cache            1000000               No
  :option:`--limiter-max-bytes`            max bytes in cache              Automatic             No
  :option:`-l`, :option:`--log-directory`  log in the given directory                            No
  :option:`--log-syslog`                   log on syslog                                         No
@@ -126,7 +126,7 @@ The ideal number of partitions is close to the number of physical cores your ser
 .. note::
     Unless a performance issue is identified, it is best to let the daemon compute the partition count.
 
-Use :option:`--limiter-max-entries-count` (defaults to 1,000,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
+Use :option:`--limiter-max-resident-entries` (defaults to 1,000,000) and :option:`--limiter-max-bytes` (defaults to a half the available physical memory) options to configure these thresholds.
 
 Operating limits
 ================
@@ -481,7 +481,7 @@ Instance specific
         Setting this value too high may lead to `thrashing <https://en.wikipedia.org/wiki/Thrashing_%28computer_science%29>`_.
 
 
-.. option:: --limiter-max-entries-count=<count>
+.. option:: --limiter-max-resident-entries=<count>
 
     The maximum number of entries allowed in memory. Entries will be evicted as needed to enforce this limit.
 
@@ -494,7 +494,7 @@ Instance specific
     Example
         To keep the number of entries in memory below 101::
 
-            qdbd --limiter-max-entries=100
+            qdbd --limiter-max-resident-entries=100
 
     .. note::
         Setting this value too low may cause the server to spend more time evicting entries than processing requests.
@@ -584,7 +584,7 @@ The default configuration file is shown below::
                 "daemon": false
             },
             "limiter": {
-                "max_in_entries_count": 1000000,
+                "max_resident_entries": 1000000,
                 "max_bytes": 0
             },
             "logger": {
