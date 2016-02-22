@@ -286,7 +286,8 @@ javadoc_url_map = {
 
 linkcheck_anchors = False
 linkcheck_ignore = [
-    r'http://127.0.0.1:8080/'
+    r'http://127.0.0.1:8080/',
+    r'https://cmake.org'
 ]
 
 # Not included in any toctree, because it contains only abbreviations.
