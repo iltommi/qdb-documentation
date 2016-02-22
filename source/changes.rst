@@ -438,7 +438,7 @@ Changes in this version
     * Web bridge with JSON/JSONP interfaces
     * Java API
     * New persistence layer based on `LevelDB <https://github.com/google/leveldb>`_
-    * Lightweight HTML 5 monitoring console
+    * Lightweight HTML5 monitoring console
     * Reduced overall memory load
     * Improved performance by 10-20 %
     * Removed legacy code and API

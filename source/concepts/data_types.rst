@@ -13,7 +13,7 @@ Blobs are suitable to store binary data or text of any size. When you don't know
 Integers
 ^^^^^^^^
 
-Quasardb provides native, signed 64-bit integers. Native signed integers allow you to perform concurrent, atomic increments and decrements on the value with little overhead.
+quasardb provides native, signed 64-bit integers. Native signed integers allow you to perform concurrent, atomic increments and decrements on the value with little overhead.
 
 For example, your client can send the request "add 10 to this value, whatever its current value is". If several concurrent clients send the same request, all requests are guaranteed to be acknowledged and the result will be consistent.
 

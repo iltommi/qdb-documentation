@@ -391,7 +391,7 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
 The `Error` class
 ^^^^^^^^^^^^^^^^^
 
-Quasardb callbacks return error messages. When the callback is successful, the error object is null. You may not want to throw at every error: some errors are transient and some are informational. You can check their types with the transient and informational methods.
+quasardb callbacks return error messages. When the callback is successful, the error object is null. You may not want to throw at every error: some errors are transient and some are informational. You can check their types with the transient and informational methods.
 
 Transient errors may resolve by themselves given time. Transient errors are commonly transaction conflicts, network timeouts, or an unstable cluster.
 

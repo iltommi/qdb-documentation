@@ -13,16 +13,16 @@ quasardb is developed in C++11 and assembly with performance in mind. The qdbd d
 
 Network I/O operations are done asynchronously for maximum performance. Most of the I/O framework is based on `Boost.Asio <http://www.boost.org/doc/libs/1_51_0/doc/html/boost_asio.html>`_.
 
-The concept of multithreading often implies locking access to a resource. Quasardb reduces locking to a minimum with the use of lock-free structures and transactional memory. Whenever possible, quasardb allocates memory on the stack rather than on the heap. If a heap allocation cannot be avoided, quasardb's zero-copy architecture makes sure no cycle is wasted duplicating data, unless it causes data contention.
+The concept of multi-threading often implies locking access to a resource. quasardb reduces locking to a minimum with the use of lock-free structures and transactional memory. Whenever possible, quasardb allocates memory on the stack rather than on the heap. If a heap allocation cannot be avoided, quasardb's zero-copy architecture makes sure no cycle is wasted duplicating data, unless it causes data contention.
 
 The cluster will make sure that requests do not conflict with each other.
  * Only one client can write to a specific entry at a time.
- * Multiple clients can simultaenously read the same entry.
+ * Multiple clients can simultaneously read the same entry.
  * Multiple clients can simultaneously read and write to multiple, unique entries.
 
-As of quasardb 1.2.0, if the cluster uses :ref:`data-replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup times.
+Since quasardb version 1.2.0, if the cluster uses :ref:`data-replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup times.
 
-quasardb automatically scales its multithreading engine to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
+quasardb automatically scales its multi-threading engine to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
 
 
 Client
@@ -140,7 +140,7 @@ If Client B makes the query too early, the two entries do not match. While it's 
 
 Like above, this is a design usage problem on the client side.
 
-    * Should Client B fail if it receives a mistmatch?
+    * Should Client B fail if it receives a mismatch?
     * Can Client B timeout and try again later?
     * If several entries must be consistent, can those entries be with a single entry?
     * Can Client A and B be synchronized? That is, can Client B query the entries once it knows Client A has completed updating them?
@@ -157,7 +157,7 @@ Things to consider:
     * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing a *one size fits all* client.
     * There is always an update delay, no matter how powerful your nodes are or how big your cluster is. The question is, what delay can your business case tolerate? A high frequency trading automaton and a reservation system will have different latency requirements.
     * The problem is never the conflict in itself. The problem is clients operating without realizing that there was a conflict in the first place.
-    * The quasardb API provides ways to synchronize clients or detect concurrency issues. For example, "put" fails if the entry already exists, "update" always succeds, and "compare_and_swap" can provide a conditional "put".
+    * The quasardb API provides ways to synchronize clients or detect concurrency issues. For example, "put" fails if the entry already exists, "update" always succeeds, and "compare_and_swap" can provide a conditional "put".
     * Last but not least, trying to squeeze a schema into a non-relational database will result in disaster. A non-relational system such as quasardb will likely require you to rethink your data model.
 
 

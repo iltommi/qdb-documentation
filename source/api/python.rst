@@ -1,6 +1,7 @@
 Python
 ======
 
+.. default-domain:: py
 .. highlight:: python
 
 .. testsetup:: *
@@ -11,9 +12,9 @@ Python
 Introduction
 --------------
 
-The `qdb` module contains multiple classes to make working with a quasardb cluster simple. It uses the standard :py:mod:`pickle` module to serialize your objects to and from the `quasardb` cluster.
+The `qdb` module contains multiple classes to make working with a quasardb cluster simple. It uses the standard :mod:`pickle` module to serialize your objects to and from the `quasardb` cluster.
 
-The Python API is BSD licensed. You may download it from the quasardb site or from GitHub at `https://github.com/bureau14/qdb-api-python <https://github.com/bureau14/qdb-api-python>`_.
+The Python API is BSD licensed. You may download it from the quasardb site or from GitHub at `<https://github.com/bureau14/qdb-api-python>`_.
 
 Requirements
 ------------------------
@@ -37,7 +38,7 @@ Windows users can download the installer from the download site. The installers 
 Compiling From Source
 `````````````````````
 
-If you have a different Python version or you want to recompile the extension, download the source package. To compile the source package, you need the Quasardb C library, `CMake <https://cmake.org/>`_, `SWIG <http://www.swig.org/>`_, and the Python dist utils installed.
+If you have a different Python version or you want to recompile the extension, download the source package. To compile the source package, you need the quasardb C library, `CMake <https://cmake.org/>`_, `SWIG <http://www.swig.org/>`_, and the Python :mod:`distutils` installed.
 
 Unpack the archive and in the directory run:
 
@@ -114,7 +115,7 @@ To prevent an entry from ever expiring:
 
     b.expires_at(None);
 
-By default, entries never expire. To obtain the expiry time of an existing entry as a :py:class:`datetime.datetime` object:
+By default, entries never expire. To obtain the expiry time of an existing entry as a :class:`datetime.datetime` object:
 
 .. doctest:: qdb
     :hide:

@@ -16,12 +16,12 @@ For example, here is a three node cluster. The nodes have UUID identifiers begin
 .. figure:: qdb_entry_storage/02_data_added_to_b4_node.png
    :scale: 50%
 
-A client (qdbsh) puts a file on the b4b80e node. Quasardb computes the file's UUID as "4c6019...".
+A client (qdbsh) puts a file on the b4b80e node. quasardb computes the file's UUID as "4c6019...".
 
 .. figure:: qdb_entry_storage/03_data_moved_to_appropriate_successor.png
    :scale: 50%
 
-Quasardb compares the UUIDs of each node to the UUID for the new entity. Because the new entity's UUID begins with 4, its successor is 539fc6. The file is stored on the 539fc6 node.
+quasardb compares the UUIDs of each node to the UUID for the new entity. Because the new entity's UUID begins with 4, its successor is 539fc6. The file is stored on the 539fc6 node.
 
 .. figure:: qdb_entry_storage/04_data_replicated.png
    :scale: 50%
@@ -38,7 +38,7 @@ Since the location of the entry depends on the order of nodes in the ring, exact
 Where are Entries Stored in a Node?
 -----------------------------------
 
-Each node saves its data in its "root" directory, determined by its configuration file or the global parameter received from the cluster. By default this is the /db directory under the qusardb daemon's working directory. In production environments, the root folder should be on its own partition. See :doc:`../administration/system_requirements`.
+Each node saves its data in its "root" directory, determined by its configuration file or the global parameter received from the cluster. By default this is the ``db`` directory under the quasardb daemon's working directory. In production environments, the root folder should be on its own partition. See :doc:`../administration/system_requirements`.
 
 .. caution::
     Never operate directly on the files in the root directory. To backup, dump, analyze, or repair the database, use :doc:`../reference/qdb_dbtool`.
@@ -46,11 +46,11 @@ Each node saves its data in its "root" directory, determined by its configuratio
 .. caution::
     Never save other files in this directory; they might be deleted or modified by the daemon.
 
-Quasardb's persistence layer is built using `LevelDB <https://github.com/google/leveldb>`_. All software that is LevelDB compatible can process the quasardb database file.
+quasardb's persistence layer is built using `RocksDB <https://github.com/facebook/rocksdb>`_. All software that is RocksDB compatible can process the quasardb database file.
 
 Entries are usually stored "as is", unmodified within the database. Data may be compressed for efficiency purposes, but this is transparent to the client and is never done to the detriment of performance.
 
-Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaenous requests. When a user adds or updates an entry on the cluster the entry's value may not be synced to the disk immediately. However, quasardb guarantees the data is consistent at all times, even in case of hardware or software failure.
+Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaneous requests. When a user adds or updates an entry on the cluster the entry's value may not be synced to the disk immediately. However, quasardb guarantees the data is consistent at all times, even in case of hardware or software failure.
 
 If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true. Disabling the write cache may have an impact on performance.
 
@@ -61,7 +61,7 @@ Transient mode
 
 Transient mode disables data storage altogether, transforming quasardb into a pure in-memory database. In transient mode:
 
-    * Performance may increase 
+    * Performance may increase
     * Memory usage may be reduced
     * Disk usage will be significantly lowered
 
@@ -104,7 +104,7 @@ For example:
 .. note::
     Migration speed depends on the available network bandwidth, the speed of the underlying hardware, and the amount of data to migrate. Therefore, a large amount of data (several gigabytes) on older hardware may negatively impact client performance.
 
-During migration, nodes remain available and will answer to requests. However, since migration occurs *after* the node is registered, there is a time interval during which some entries are being moved to their nodes. These entries may be temporarly unvailable.
+During migration, nodes remain available and will answer to requests. However, since migration occurs *after* the node is registered, there is a time interval during which some entries are being moved to their nodes. These entries may be temporarily unavailable.
 
 Failure scenario:
 
@@ -149,7 +149,7 @@ When a new node joins a ring, data is migrated (see :ref:`data-migration`) to it
 Conflict resolution
 ^^^^^^^^^^^^^^^^^^^^^
 
-Because of the way replication works, an original and a replica entry cannot be simultenously edited. The client will always access the version considered the *original* entry and replicas are always overwritten in favor of the *original*. Replication is completely transparent to the client.
+Because of the way replication works, an original and a replica entry cannot be simultaneously edited. The client will always access the version considered the *original* entry and replicas are always overwritten in favor of the *original*. Replication is completely transparent to the client.
 
 When the original is unavailable due to data migration and the client sends a read-only request, the client will be provided with the replica entry. When the original is unavailable due to data migration and the client sends a write request, the cluster will respond with "unavailable" until the migration is complete.
 

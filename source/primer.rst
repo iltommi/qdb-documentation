@@ -1,18 +1,20 @@
+.. include:: abbreviations.rst
+
 .. highlight:: python
 
 Primer
 ******
 
-What is quasardb?
------------------
+What is |quasardb|?
+-------------------
 
-quasardb is an advanced data management system. At its heat, it is a transactional key/value store with indexing capabilities. It is fast and scalable
-(up and out), handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label quasardb as a
+|Quasardb| is an advanced data management system. At its heat, it is a transactional key/value store with indexing capabilities. It is fast and scalable
+(up and out), handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label |quasardb| as a
 `NoSQL database <https://en.wikipedia.org/wiki/NoSQL>`_.
 
-quasardb is *limitless*. If the hardware can handle it, quasardb can handle it.
+|Quasardb| is *limitless*. If the hardware can handle it, |quasardb| can handle it.
 
-Where would you want to use quasardb? Here are a couple of use cases:
+Where would you want to use |quasardb|? Here are a couple of use cases:
 
     * Trading market data store
     * Apache Spark backend
@@ -24,14 +26,14 @@ Where would you want to use quasardb? Here are a couple of use cases:
 Shall we dance?
 ---------------
 
-To start a quasardb server, just run it! We provide packages for many platform, but you can always work in a local directory where you manually extracted your
-quasardb binaries. We also support docker and are available on Microsoft Azure and Amazon EC2.
+To start a |quasardb| server, just run it! We provide packages for many platform, but you can always work in a local directory where you manually
+extracted your |quasardb| binaries. We also support docker and are available on Microsoft Azure and Amazon EC2.
 
-Let's assume we extracted the quasardb archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
+Let's assume we extracted the |quasardb| archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
 
     qdbdd
 
-You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests. You can store into quasardb anything,
+You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests. You can store into |quasardb| anything,
 images, videos, XML, text... It will automatically optimize storage for you.
 
 Let's fire up the shell and run a couple of commands::
@@ -52,7 +54,7 @@ Wait, what is a blob? A blob is a "binary large object" and should be your go-to
 and actually optimal. A blob is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
 blobs.
 
-When you use the blob_put command, quasardb will return an error if the entry already exists::
+When you use the blob_put command, |quasardb| will return an error if the entry already exists::
 
     qdbsh> blob_put entry other_value
     An entry matching the provided alias already exists.
@@ -64,7 +66,7 @@ To update a value, you have the blob_update command, which creates the entry whe
 Beyond blobs
 ------------
 
-There are other types of entries in quasardb, such as integers::
+There are other types of entries in |quasardb|, such as integers::
 
     qdbsh> int_put my_value 10
     qdbsh> int_get my_value
@@ -76,10 +78,10 @@ which enables you to do things such as::
     qdbsh> int_add my_value 5
     15
 
-The power of arithmetics compels you! When requesting quasardb through the API, integers are provided in a native format understood by the programming language
+The power of arithmetics compels you! When requesting |quasardb| through the API, integers are provided in a native format understood by the programming language
 you are using.
 
-In quasardb all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had thousands of shells doing "int_add"
+In |quasardb| all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had thousands of shells doing "int_add"
 you are guaranteed that all operations are properly accounted.
 
 But, wait, there's more!
@@ -89,9 +91,9 @@ Integers, blobs...
 
 What about "a list of stuff"?
 
-Lists in quasardb are named "deques" and stand for "double-ended queues". They support concurrent and scalable insertions at the beginning and the end and O(1)
+Lists in |quasardb| are named "deques" and stand for "double-ended queues". They support concurrent and scalable insertions at the beginning and the end and O(1)
 random access to any element within the deque. Deques are automatically scaled across all the nodes of your cluster and have absolutely no limit,
-because at quasardb, we don't like limits::
+because at |quasardb|, we don't like limits::
 
     qdbsh> deque_push_back my_list entry_one
     qdbsh> deque_push_back my_list entry_two
@@ -104,7 +106,7 @@ Every entry within the deque is a blob, of whatever size you fancy.
 But, wait, there's more!
 ------------------------
 
-Now we'd like to show you one of the most exciting features of quasardb: tags. Since quasardb is a key/value store it provides you extremely fast access to any
+Now we'd like to show you one of the most exciting features of |quasardb|: tags. Since |quasardb| is a key/value store it provides you extremely fast access to any
 entry within the cluster, if you have a key.
 
 What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
@@ -132,7 +134,7 @@ are very fast and inexpensive.
 But, wait, there is so much more!
 ---------------------------------
 
-The shell tool is not always the right tool for the job and generally has a subset of all the features available in quasardb.
+The shell tool is not always the right tool for the job and generally has a subset of all the features available in |quasardb|.
 
 If you have your own application, you may find it cumbersome to run a third-party program every time you want to access the database.
 
@@ -180,23 +182,23 @@ and even::
 
     c = qdb.Cluster("qdb://192.168.1.1:2836")
 
-That's because quasardb protocol has built-in discovery! Just give any node in the cluster and we take care of the rest. The more nodes the better as we can
+That's because |quasardb| protocol has built-in discovery! Just give any node in the cluster and we take care of the rest. The more nodes the better as we can
 try another node if the one provided is down at the moment of the connection.
 
 Going further
 -------------
 
-We hope this quick tour left you wanting for more! quasardb is feature-rich yet simple to use and operate. If you want to go further, the best course of
+We hope this quick tour left you wanting for more! |quasardb| is feature-rich yet simple to use and operate. If you want to go further, the best course of
 action is to start with the documentation of the API for the language of your choice (:doc:`api/index`).
 
-If you'd like to learn more about building a quasardb cluster, head over to the administrative section (:doc:`administration/index`).
+If you'd like to learn more about building a |quasardb| cluster, head over to the administrative section (:doc:`administration/index`).
 
 Curious about the underlying concepts, we have a section dedicated to it (:doc:`concepts/index`).
 
 Wrap up
 -------
 
-Things to remember about quasardb:
+Things to remember about |quasardb|:
 
     * Fast and scalable
     * High-performance binary protocol

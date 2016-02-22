@@ -68,7 +68,7 @@ As much as the operating system can.
 How can one administrate a quasardb cluster?
 ============================================
 
-A web bridge enables the user to monitor a node with a HTML 5 interface. The bridge also offers JSON/JSONP interfaces to access data and statistics.
+A web bridge enables the user to monitor a node with a HTML5 interface. The bridge also offers JSON/JSONP interfaces to access data and statistics.
 
 See :doc:`../reference/qdb_httpd` for more information.
 
@@ -114,7 +114,7 @@ In what language is quasardb written?
 
 The core quasardb engine (that we also call kernel) is written in C++ 14 and assembly. It makes an intensive usage of the STL and the `Boost C++ Libraries <http://www.boost.org/>`_.
 
-The administration interface is written in HTML 5/JavaScript.
+The administration interface is written in HTML5/JavaScript.
 
 Is quasardb open source?
 ========================

@@ -1,7 +1,7 @@
 Java
 ====
 
-
+.. default-domain:: java
 .. highlight:: java
 .. _JNI: http://docs.oracle.com/javase/7/docs/technotes/guides/jni/
 
@@ -12,7 +12,7 @@ The quasardb Java API uses JNI_ to bring the power and speed of quasardb to the 
 
 You can access your cluster using either the high level Java classes or the low level JNI_ API. In almost all cases you should use the high level classes.
 
-You may download the Java package from the quasardb download site or build it from the sourcecode `https://github.com/bureau14/qdb-api-java <https://github.com/bureau14/qdb-api-java>`_.  All information regarding the quasardb download site is in your welcome e-mail.
+You may download the Java package from the quasardb download site or build it from the source code `<https://github.com/bureau14/qdb-api-java>`_.  All information regarding the quasardb download site is in your welcome e-mail.
 
 The .jar package is ``qdb-java-api-<os>-<version>.jar`` and contains both the base Java classes and support for the JNI_ interface. The classes reside in the ``net.quasardb.qdb`` package.
 
@@ -32,7 +32,7 @@ One of the following Java Development Kits:
 Run the Example
 ------------------
 
-The Java API example can be downloaded from `https://github.com/bureau14/qdb-api-java/tree/master/example <https://github.com/bureau14/qdb-api-java/tree/master/example>`_.
+The Java API example can be downloaded from `<https://github.com/bureau14/qdb-api-java/tree/master/example>`_.
 
   1. Compile the example with ``javac``. Assuming ``quasardb-java-<os>-<version>.jar`` is in ``/tmp``::
 
@@ -42,7 +42,7 @@ The Java API example can be downloaded from `https://github.com/bureau14/qdb-api
 
       java -classpath /tmp/quasardb-java-<os>-<version>.jar:. QuasardbExample
 
-The example requires a quasardb server listening on ``127.0.0.1`` (IPV4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb cluster.
+The example requires a quasardb server listening on ``127.0.0.1`` (IPv4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb cluster.
 
 Using the high-level API
 ------------------------
@@ -57,7 +57,7 @@ The high-level API is recommended because:
 Configuring the quasardb instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-To connect to a quasardb cluster, create a new Qdbcluster object. Pass in the IP address and port of an online node in the ``qdb://`` string format::
+To connect to a quasardb cluster, create a new QdbCluster object. Pass in the IP address and port of an online node in the ``qdb://`` string format::
 
     cluster = new QdbCluster("qdb://127.0.0.1:2836");
 
@@ -66,14 +66,14 @@ If the cluster object is not null, your quasardb instance is ready to use.
 Using the quasardb instance
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Entries in the cluster are stored and retrieved by their aliases, in the form of Strings. Their content is stored and retrieved as a :java:ref:`ByteBuffer <java.nio.ByteBuffer>`. See :ref:`java-memory-management`.
+Entries in the cluster are stored and retrieved by their aliases, in the form of Strings. Their content is stored and retrieved as a :ref:`ByteBuffer <java.nio.ByteBuffer>`. See :ref:`java-memory-management`.
 
 For example, to get an existing Blob named "obj1" or create it if the entry does not exist::
 
     String content = "Content";
     cluster.getBlob("obj1").put(ByteBuffer.allocateDirect(content.getBytes().length).put(content.getBytes()));
 
-To get the value of an object, get and convert the ByteBuffer::
+To get the value of an object, get and convert the :ref:`ByteBuffer <java.nio.ByteBuffer>`::
 
     ByteBuffer buffer = cluster.getBlob("obj1").get();
     byte[] bytes = new byte[buffer.limit()];
@@ -84,22 +84,22 @@ To remove an entry::
 
     cluster.getBlob("obj1").remove();
 
-Quasardb also supports other object types than Blobs, including Double-Ended Queues, Hash Sets, and Integers. These have get/put/update methods on the cluster object as well as their own convenience methods.
+quasardb also supports other object types than Blobs, including Double-Ended Queues, Hash Sets, and Integers. These have get/put/update methods on the cluster object as well as their own convenience methods.
 
 .. _java-memory-management:
 
 Memory management
 ^^^^^^^^^^^^^^^^^^
 
-The API uses a logic very close to the QuasarDB C API. Feel free to review the :doc:`C API <c>` documentation for useful background information.
+The API uses a logic very close to the quasardb C API. Feel free to review the :doc:`C API <c>` documentation for useful background information.
 
-In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in :java:ref:`ByteBuffer <java.nio.ByteBuffer>` objects instead of byte arrays or :java:ref:`String <java.lang.String>` objects.
+In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in :ref:`ByteBuffer <java.nio.ByteBuffer>` objects instead of byte arrays or :ref:`String <java.lang.String>` objects.
 
 Aliases, on the other hand, use regular String objects for convenience.
 
-The :java:ref:`ByteBuffer <java.nio.ByteBuffer>` must be initialized with :java:ref:`allocateDirect <java.nio.ByteBuffer.allocateDirect(int)>` so that the JNI_ may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
+The :ref:`ByteBuffer <java.nio.ByteBuffer>` must be initialized with :ref:`allocateDirect <java.nio.ByteBuffer.allocateDirect(int)>` so that the JNI_ may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
 
-When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the :java:ref:`ByteBuffer.limit() <java.nio.Buffer.limit()>` to obtain the size of an entry.
+When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the :ref:`ByteBuffer.limit() <java.nio.Buffer.limit()>` to obtain the size of an entry.
 
 Reference
 ---------

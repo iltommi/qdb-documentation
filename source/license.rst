@@ -31,7 +31,7 @@ When your quasardb license expires:
  #. You are not eligible for upgrades or dedicated assistance.
  #. You may report bugs at `support@quasardb.net <support@quasardb.net>`_,
 
-Please contact your Quasardb representative to renew your license (see :doc:`contact`).
+Please contact your quasardb representative to renew your license (see :doc:`contact`).
 
 Scope of the licensed rights
 ----------------------------

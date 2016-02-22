@@ -1,7 +1,7 @@
 Contacting us
 =============
 
-About Quasardb
+About quasardb
 ---------------
 
 quasardb is the work of `quasardb SAS <http://www.quasardb.net/>`_ a company located in Paris, France.

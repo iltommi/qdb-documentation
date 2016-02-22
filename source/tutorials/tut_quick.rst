@@ -21,7 +21,7 @@ Without a configuration file
 #. Install the server
 
    * On FreeBSD and Linux you just need to expand the tarball.
-   * On Windows it comes as a zip file or as an automated setup, which includes both the 32-bit and the 64-bit version. 
+   * On Windows it comes as a zip file or as an automated setup, which includes both the 32-bit and the 64-bit version.
 
 #. Run the daemon from the command line.
 
@@ -41,7 +41,7 @@ With a configuration file
 #. Install the server
 
    * On FreeBSD and Linux you just need to expand the tarball.
-   * On Windows it comes as a zip file or as an automated setup, which includes both the 32-bit and the 64-bit version. 
+   * On Windows it comes as a zip file or as an automated setup, which includes both the 32-bit and the 64-bit version.
 
 #. Generate a default configuration file using the command line.
 
@@ -117,7 +117,7 @@ All information is available in both JSON and JSONP format.
 
 #. Test it from a browser
 
-   The primary node monitoring interface is an HTML 5 web interface. If using the default settings, simply point your browser to::
+   The primary node monitoring interface is an HTML5 web interface. If using the default settings, simply point your browser to::
 
        http://127.0.0.1:8080/view/index.html
 

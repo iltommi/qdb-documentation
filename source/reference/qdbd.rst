@@ -203,7 +203,7 @@ Instance specific
             qdbd --gen-config > qdbd_default_config.json
 
     .. note::
-        The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
+        The --gen-config argument is only available with quasardb 1.1.3 or higher.
 
 
 
@@ -224,7 +224,7 @@ Instance specific
             qdbd --config=qdbd_default_config.json
 
     .. note::
-        The --config argument is only available with QuasarDB 2.0.0 or higher.
+        The --config argument is only available with quasardb 2.0.0 or higher.
 
 .. option:: -d, --daemonize
 
@@ -452,7 +452,7 @@ Instance specific
         This database should not exceed 1 Terabyte.
 
     .. note::
-        The --max-depot-size argument is only available with QuasarDB 1.1.2 or higher.
+        The --max-depot-size argument is only available with quasardb 1.1.2 or higher.
 
     .. note::
         Using a max depot size may cause a slight performance penalty on writes.
@@ -554,7 +554,7 @@ Global
 Config File Reference
 =====================
 
-As of QuasarDB version 1.1.3, the qdbd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
+As of quasardb version 1.1.3, the qdbd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
 
 Some things to note when working with a configuration file:
 
@@ -680,7 +680,7 @@ The default configuration file is shown below::
 
     A boolean value representing whether or not the quasardb daemon should daemonize on launch.
 
-.. describe:: local::limiter::max_in_entries_count
+.. describe:: local::limiter::max_resident_entries
 
     An integer representing the maximum number of entries that can be stored in memory. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the entry limit.
 

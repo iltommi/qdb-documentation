@@ -4,7 +4,7 @@ Operations
 Monitoring
 -----------
 
-There are three ways to monitor the health and activity of your QuasarDB cluster:
+There are three ways to monitor the health and activity of your quasardb cluster:
 
  1. Through the HTML5 web interface provided by qdb_httpd. See :doc:`../reference/qdb_httpd`.
  2. Through the JSON and JSONP interfaces provided by qdb_httpd's RESTful API. See :ref:`qdb_httpd-url-reference`.
@@ -28,7 +28,7 @@ On UNIX, a node can be gracefully stopped in sending the QUIT signal to the daem
 Log and Dump Files
 ------------------
 
-Log files are created only when qdbd is run in non-daemonized mode, or is daemonized with the -l (log to file) or --log-syslog (log to syslog) arguments. If logging is enabled, it is performed asynchronously based on the --log-flush-interval argument, which defaults to 3 seconds.
+Log files are created only when qdbd is run in non-daemonized mode, or is daemonized with the ``-l`` (log to file) or ``--log-syslog`` (log to syslog) arguments. If logging is enabled, it is performed asynchronously based on the ``--log-flush-interval`` argument, which defaults to 3 seconds.
 
 In a production environment, it is recommended to log to a file at least with an "information" log level. For more detailed information on quasardb logging options, see :doc:`../reference/qdbd`.
 
@@ -48,30 +48,29 @@ Enabling data replication of 2 or higher is sufficient to protect against disk f
 The amount of hard drive space required for a quasardb database on a given node depends on the number of nodes, the replication factor of the cluster, and the amount of data you expect to maintain across the entire cluster. Specifically, the formula is:
 
 .. math::
-    
+
     \text{Space Required Per Node} = \tfrac{(\text{Total Size of Data in Cluster} \: * \: 3 \: * \: \text{Replication Factor})} {\text{Number of Nodes}}
 
-For example, if you are storing 8 Terabytes of data across 4 nodes with a Replication Factor of 2...
+For example, if you are storing 8 terabytes of data across 4 nodes with a Replication Factor of 2...
 
 .. math::
-    
-    \text{Space Required Per Node} &= \tfrac{(\text{8 Terabytes} \: * \: 3 \: * \: \text{Replication Factor of 2})} {\text{4 Nodes}} \\
-                                   &= \text{12 Terabytes}
+
+    \text{Space Required Per Node} &= \tfrac{(\text{8 terabytes} \: * \: 3 \: * \: \text{Replication Factor of 2})} {\text{4 Nodes}} \\
+                                   &= \text{12 terabytes}
 
 
-If you are using quasardb 1.1.2 or higher, you may also use the --max-depot-size= command-line argument to forcefully limit the database size at a small performance cost. If enabled, write operations that would overflow the node will return with a qdb_e_system error. However, when using --max-depot-size= you will also need to have a safeguard of 20% more disk space, should meta-data or uncompressed values overflow the setting.
+If you are using quasardb 1.1.2 or higher, you may also use the ``--max-depot-size`` command-line argument to forcefully limit the database size at a small performance cost. If enabled, write operations that would overflow the node will return with a qdb_e_system error. However, when using ``--max-depot-size`` you will also need to have a safeguard of 20% more disk space, should meta-data or uncompressed values overflow the setting.
 
-Therefore, when using --max-depot-size and the example above, calculating the Space Required per Node requires one more step:
+Therefore, when using ``--max-depot-size`` and the example above, calculating the Space Required per Node requires one more step:
 
 .. math::
-    
-    \text{Space Required Per Node} &= \text{12 Terabytes} \: + \: (\text{12 Terabytes} * 0.2) \\
-                                   &= \text{12 Terabytes} \: + \: (\text{2.4 Terabytes}) \\
-                                   &= \text{14.4 Terabytes}
 
+    \text{Space Required Per Node} &= \text{12 terabytes} \: + \: (\text{12 terabytes} * 0.2) \\
+                                   &= \text{12 terabytes} \: + \: (\text{2.4 terabytes}) \\
+                                   &= \text{14.4 terabytes}
 
-For more information on --max-depot-size=, see :doc:`../reference/qdbd`.
-                                   
+For more information on ``--max-depot-size``, see :doc:`../reference/qdbd`.
+
 Repair, dump, or backup operations on a node's database should be done while the quasardb daemon is stopped, using qdb_dbtool (see :doc:`../reference/qdb_dbtool`). It is currently not possible to backup a database while the quasardb daemon is running.
 
 Expanding the cluster

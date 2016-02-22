@@ -6,7 +6,7 @@ Overview
 
 While commands in quasardb are already atomic, transactions allow you to run several API commands as an atomic group. Either all commands in a transaction succeed or no commands succeed.
 
-Transactions are only available in Quasardb 2.0.0 and higher.
+Transactions are only available in quasardb 2.0.0 and higher.
 
 Characteristics
 ---------------

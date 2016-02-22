@@ -247,7 +247,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
             qdb_httpd --gen-config > qdb_httpd_default_config.json
 
     .. note::
-        The --gen-config argument is only available with QuasarDB 1.1.3 or higher.
+        The --gen-config argument is only available with quasardb 1.1.3 or higher.
 
 .. option:: -c, --config
 
@@ -266,7 +266,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
             qdb_httpd --config=qdb_httpd_default_config.json
 
     .. note::
-        The --config argument is only available with QuasarDB 2.0.0 or higher.
+        The --config argument is only available with quasardb 2.0.0 or higher.
 
 .. option:: -d, --daemonize
 
@@ -409,7 +409,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 Config File Reference
 =====================
 
-As of QuasarDB version 1.1.3, the qdb_httpd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
+As of quasardb version 1.1.3, the qdb_httpd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
 
 Some things to note when working with a configuration file:
 
@@ -442,7 +442,7 @@ The default configuration file is shown below::
 .. describe:: daemonize
 
     A boolean value representing whether or not the qdb_httpd daemon should daemonize on launch.
-    
+
 .. describe:: listen_on
 
     A string representing an address and port the web server should listen on. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
@@ -453,7 +453,7 @@ The default configuration file is shown below::
 
 .. describe:: remote_node
 
-    A string representing an address and port where the server can find a QuasarDB daemon. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
+    A string representing an address and port where the server can find a quasardb daemon. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
 
 .. describe:: logger::log_level
 
