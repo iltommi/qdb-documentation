@@ -1,2 +1,8 @@
 *.pyc
 /build/
+/qdb/python/qdb/*.dll
+/qdb/python/qdb/*.lib
+/qdb/python/qdb/*.pyc
+/qdb/python/qdb/*.pyd
+/qdb/python/qdb32
+/qdb/python/qdb64
