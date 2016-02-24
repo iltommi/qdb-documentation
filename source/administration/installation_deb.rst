@@ -50,6 +50,7 @@ By default, the quasardb daemon listens on the port 2836 on the local address. T
  #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``::
          
          qdb    soft    nofile    65536
+         qdb    hard    nofile    65536
 
 
 The .deb package automatically sets the following values in `/etc/sysctl.d/30-quasardb.conf`::
