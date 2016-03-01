@@ -583,6 +583,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: stream_to_buffer <alias>
 
     Dumps the whole content of the stream to the standard output. Warning, the stream may contain a lot of data. The entry must be a stream and must already exist.
+    The stream is read in chunks from the database for maximum performance and reduced memory usage.
 
     :param alias: *(string)* the alias of the entry, which must be a stream
     :return: nothing if successful, an error message otherwise.
