@@ -73,13 +73,14 @@ Commands
  :ref:`add_tag alias tag <qdbsh_add_tag>`                                             add a tag to an entry
  :ref:`get_tagged tag <qdbsh_get_tagged>`                                             get entries with the given tag
  :ref:`has_tag alias tag <qdbsh_has_tag>`                                             returns true if the entry has the tag
+ :ref:`stream_to_buffer alias <qdbsh_stream_to_buffer>`                               dumps the content of a stream
+ :ref:`stream_from_buffer alias content <qdbsh_stream_from_buffer>`                   write content into a stream
+ :ref:`stream_to_file alias file_path <qdbsh_stream_to_file>`                         dumps the content of a stream into a file
+ :ref:`stream_from_file alias file_path <qdbsh_stream_from_file>`                     loads a file and adds it into a file
  :ref:`remove_tag alias tag <qdbsh_remove_tag>`                                       removes a tag from an entry
  :ref:`version <qdbsh_version>`                                                       display the quasardb version
- 
+
  =================================================================================== =================================================================
-
-
-
 
 
 .. _qdbsh-interactive-mode:
@@ -178,7 +179,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 .. option:: -c <command>
 
    Specifies a command to run in non-interactive mode. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
-   
+
    Argument
         The command and required parameters for the command.
 
@@ -223,7 +224,7 @@ A command generally requires one or several arguments. Each argument is separate
         * There must be one space and only one space between the comparand and the content.
         * There is no practical limit to the comparand length. All characters until the end of the input are used for the comparand, including space characters.
 
-    
+
 .. _qdbsh_blob_get:
 .. option:: blob_get <alias>
 
@@ -327,7 +328,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: cluster_purge
 
     Remove all entries from the cluster. This command is not atomic. When activated:
-    
+
       #. Replication and migration is stopped.
       #. The directories containing data and metadata are removed.
       #. All entries are cleared from memory.
@@ -342,14 +343,14 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: cluster_trim
 
     Remove unused versions of entries from the cluster, freeing up disk space.
-    
+
     :return: nothing if successful, an error message otherwise
 
 .. _qdbsh_expires_at:
 .. option:: expires_at <alias> <expiry>
-    
+
     Set the expiry time of an existing entry from the quasardb cluster.
-    
+
     :param alias: *(string)* A string with the alias of the entry for which the expiry must be set.
     :param expiry: *(string)* The absolute time at which the entry expires.
     :return: nothing if successful, an error message otherwise
@@ -357,9 +358,9 @@ A command generally requires one or several arguments. Each argument is separate
 
 .. _qdbsh_expires_from_now:
 .. option:: expires_from_now <alias> <delta>
-    
+
     Set the expiry time of an existing entry from the quasardb cluster.
-    
+
     :param alias: *(string)* the alias of the entry for which the expiry must be set
     :param delta: *(string)* A time, relative to the call time, after which the entry expires
     :return: nothing if successful, an error message otherwise
@@ -431,7 +432,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: int_add <alias> <value>
 
     Atomically increment the Integer by the value
-    
+
     :param alias: *(string)* the alias of the Integer
     :param value: *(string)* the value to add to the Integer
     :return: the value of the Integer after the addition
@@ -441,7 +442,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: int_get <alias>
 
     Return the value of the Integer
-    
+
     :param alias: *(string)* the alias of the Integer
     :return: *(string)* the value of the Integer
 
@@ -450,7 +451,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: int_put <alias> <value>
 
     Add a new Integer to the cluster. The Integer must not already exist. Aliases beginning with the string "qdb" are reserved and cannot be added to the cluster.
-    
+
     :param alias: *(string)* the alias of the Integer
     :param value: *(string)* the value of the Integer
     :return: nothing if successful, an error message otherwise
@@ -468,35 +469,35 @@ A command generally requires one or several arguments. Each argument is separate
 
 .. _qdbsh_node_config:
 .. option:: node_config <host>
-    
+
     Return the node configuration as a JSON string
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
     :return: *(string)* The node configuration.
 
 .. _qdbsh_node_status:
 .. option:: node_status <host>
-    
+
     Return the node status as a JSON string.
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
     :return: *(string)* The node status.
 
 
 .. _qdbsh_node_topology:
 .. option:: node_topology <host>
-    
+
     Return the node topology (list of predecessors and successors) as a JSON string.
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
     :return: *(string)* The node topology.
 
 
 .. _qdbsh_node_stop:
 .. option:: node_stop <host>
-    
+
     Stop the node designated by its host and port number. The stop is generally effective within a few seconds of being issued, which allows inflight calls to complete successfully.
-    
+
     :param host: *(string)* The node designated by its host and port number (e.g. "127.0.0.1:2836")
 
 
@@ -504,7 +505,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: deque_back <alias>
 
     Get the value at the end of the Deque.
-    
+
     :param alias: *(string)* the alias of the Deque
     :return: *(string)* the value of the last item in the Deque.
 
@@ -513,7 +514,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: deque_front <alias>
 
     Get the value at the start of the Deque.
-    
+
     :param alias: *(string)* the alias of the Deque
     :return: *(string)* the value of the first item in the Deque.
 
@@ -522,7 +523,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: deque_pop_back <alias>
 
     Remove the value at the end of the Deque and return its value.
-    
+
     :param alias: *(string)* the alias of the Deque
     :return: *(string)* the value of the last item in the Deque.
 
@@ -530,7 +531,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: deque_pop_front <alias>
 
     Remove the value at the start of the Deque and return its value.
-    
+
     :param alias: *(string)* the alias of the Deque
     :return: *(string)* the value of the first item in the Deque.
 
@@ -539,7 +540,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: deque_push_back <alias> <content>
 
     Append the value to the Deque.
-    
+
     :param alias: *(string)* the alias of the Deque
     :param content: *(string)* the value to add to the end of the Deque.
     :return: nothing if successful, an error message otherwise.
@@ -549,7 +550,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: deque_push_front <alias> <content>
 
     Prepend the value to the Deque.
-    
+
     :param alias: *(string)* the alias of the Deque
     :param content: *(string)* the value to add to the start of the Deque.
     :return: nothing if successful, an error message otherwise.
@@ -558,7 +559,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: add_tag <alias> <tag>
 
     Add a tag to the specified entry.
-    
+
     :param alias: *(string)* the alias of the entry
     :param tag: *(string)* the tag to assign to the entry
 
@@ -566,7 +567,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: get_tagged <tag>
 
     Get a list of entries tagged with the specified tag.
-    
+
     :param tag: *(string)* the tag to search for
 
 
@@ -574,16 +575,47 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: has_tag <alias> <tag>
 
     Determine if an entry has a specified tag.
-    
+
     :param alias: *(string)* the alias of the entry
     :param tag: *(string)* the tag to compare against the entry
 
+.. _qdbsh_stream_to_buffer:
+.. option:: stream_to_buffer <alias>
+
+    Dumps the whole content of the stream to the standard output. Warning, the stream may contain a lot of data. The entry must be a stream and must already exist.
+
+    :param alias: *(string)* the alias of the entry, which must be a stream
+
+.. _qdbsh_stream_from_buffer:
+.. option:: stream_from_buffer <alias> <content>
+
+    Write the buffer to the stream. If an entry with an identical name already exists, it will be overwritten and not appended.
+
+    :param alias: *(string)* the alias of the entry, which must be a stream
+    :param content: *(string)* the buffer to write to the stream
+
+.. _qdbsh_stream_to_file:
+.. option:: stream_to_file <alias> <path>
+
+    Dumps the whole content of the stream to the specified file. If the file already exists, it will be overwitten. The entry must be a stream and must already exist.
+
+    :param alias: *(string)* the alias of the entry, which must be a stream
+    :param path: *(string)* the path to the file to which the content of the stream will be dumped
+
+.. _qdbsh_stream_from_file:
+.. option:: stream_from_file <alias> <path>
+
+    Reads content from the specified file and writes it to the stream. If an entry with an identical name already exists, it will be overwritten and not appended. The file is read in chunks
+    from disk for maximum performance and reduced memory usage.
+
+    :param alias: *(string)* the alias of the entry, which must be a stream
+    :param path: *(string)* the path to the file whose content will be written into the stream
 
 .. _qdbsh_remove_tag:
 .. option:: remove_tag <alias> <tag>
 
     Remove a tag from the entry.
-    
+
     :param alias: *(string)* the alias of the entry
     :param tag: *(string)* the tag to remove from the entry
 

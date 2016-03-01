@@ -499,10 +499,6 @@ Instance specific
     .. note::
         Setting this value too low may cause the server to spend more time evicting entries than processing requests.
 
-Global
-----------
-
-
 .. option:: -r <path>, --root=<path>
 
     Specifies the directory where data will be persisted for the node where the process has been launched.
@@ -523,10 +519,15 @@ Global
 
 .. option:: --sync
 
-    Sync every disk write. By default, disk writes are buffered. This option disables the buffering and makes sure every write is synced to disk. (global parameter)
+    Flushes OS buffers to disk after every write. Enabled by default.
 
     .. note::
         This option increases reliability at the cost of performances.
+
+
+
+Global
+----------
 
 .. option:: --replication=<factor>
 
@@ -568,11 +569,14 @@ The default configuration file is shown below::
     {
         "local": {
             "depot": {
-                "sync": false,
+                "sync": true,
+                "sync_every_write": false,
+                "disable_wal": false,
                 "root": "db",
                 "max_bytes": 0,
                 "storage_warning_level": 90,
                 "storage_warning_interval": 3600,
+                "write_buffer_size": 0,
                 "metadata_mem_budget": 268435456,
                 "data_cache": 134217728,
                 "threads": 4,
@@ -624,7 +628,20 @@ The default configuration file is shown below::
 
 .. describe:: local::depot::sync
 
-    A boolean representing whether or not the node should sync to the underlying filesystem for each write command.
+    A boolean representing whether or not the node should flush the operating system write buffers after writes. This has an impact on write performance but
+    prevents data loss if an operating systems or hardware failure occurs. For write-heavy database you may consider disabling this feature. Enabled by default.
+
+.. describe:: local::depot::sync_every_write
+
+    A boolean representing whether or not the node should sync to disk every write. This option has a hugh negative impact on performance, especially on high
+    latency media and adds only marginal safety compared to the sync option. Disabled by default.
+
+.. describe:: local::depot::disable_wal
+
+    A boolean repersenting whether or not the write-ahead log should be used. When you write data to quasardb, it is added in a buffer who is backed by a disk
+    file called the write ahead log. In case of failure, quasardb is able to recover by reading from the write ahead log. For applications that are looking for
+    maximum write performance, you may want to disable the write-ahead log. However, disabling the write-ahead log means that you can lose data should a failure
+    occur before the buffer is flushed into the database. Disabled by default (that is, by default, buffers are backed by disk).
 
 .. describe:: local::depot::root
 
@@ -651,6 +668,11 @@ The default configuration file is shown below::
 
     An integer representing how often quasardb will emit a warning about depleting disk space, in seconds.
     See also |local__depot__storage_warning_level|_.
+
+.. describe:: local::depot::write_buffer_size
+
+    An integer representing a value for global write buffer. Quasardb has many internal write buffer, this is an additional write buffer shared by all entries.
+    It is generally not required and may actually degrade performances. By default the value is 0.
 
 .. describe:: local::depot::metadata_mem_budget
 
