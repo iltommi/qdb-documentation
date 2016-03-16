@@ -1,6 +1,6 @@
 Cluster Organization
 ====================
-   
+
 What is a Cluster?
 ------------------
 
@@ -25,35 +25,35 @@ Adding a Node to a Cluster
 
 .. figure:: qdb_add_node_process/01_qdb_cluster_at_start.png
    :scale: 50%
-   
+
    Four nodes connected in a ring, forming an operational cluster.
 
 
 .. figure:: qdb_add_node_process/02_qdbd_add_node.png
    :scale: 50%
-   
+
    A fifth node is created and peered to the node at IP address 192.168.1.134. The fifth node connects, then downloads the configuration of the cluster, overwriting its global parameters with the cluster's global parameters. This ensures that global parameters are consistent across the cluster, which is important for options like replication and persistence, where disparate parameters between nodes could cause unwanted behavior or data loss.
-   
+
    Once the node has received and applied the global parameters, the cluster begins the two-step process of Stabilization, where nodes validate their position in the ring, then rearrange how and where data is distributed.
-   
+
    Note that in this example, the fifth node assigned itself the unique ID of 4. In a production environment, the IDs are randomized hashes. In the unlikely event that a new node assigns itself an ID that is already taken by another node in the cluster, the new node will abort the join and stabilization process. The cluster remains unchanged.
 
 
 .. figure:: qdb_add_node_process/03_qdb_peering.png
    :scale: 50%
-   
+
    The fifth node uses the predecessor and successor values of its neighbor nodes to move itself to its appropriate location within the cluster. In this example, it moves until it has a predecessor of 3 and a successor of 0.
-   
+
 .. figure:: qdb_add_node_process/04_qdb_data_migration.png
    :scale: 50%
-   
+
    Once the node has a valid predecessor and successor, data is migrated based on the number of nodes and replication factor in order to load balance across the cluster. During this period, some nodes may be unavailable, namely the predecessor, the successor, and the node that was added.
-   
+
    For more information on data migration, see :ref:`data-migration`.
 
 .. figure:: qdb_add_node_process/05_qdb_cluster_at_end.png
    :scale: 50%
-   
+
    Once data migration is complete, stabilization is complete and the finished cluster has five nodes.
 
 .. tip::
@@ -90,10 +90,30 @@ Nodes IDs
 
 Each node is identified by an unique 256-bit number: the ID. If a node attempts to join a cluster and a node with a similar ID is found, the new node will exit the cluster.
 
-In quasardb 2.0 nodes ID are either automatic or manual. Our current automatic ID generation is safe and correct but for clusters with less than 16 nodes, it may result in invalid distribution, which
-means sub-optimal load-balancing.
+In quasardb 2.0 nodes ID are either automatic, indexed or manual. The syntax is as such:
 
-The ideal IDs are equidistant from each-other, for optimal key-space value, the following table gives a list of possible good IDs for a given cluster size.
+ * automatic: auto
+ * indexed: current_node/total_node (e.g. ``3/8`` for the third node of an 8 nodes clustter)
+ * manual: a 256-bit hexadecimal number grouped by 64-bit blocks (e.g ``2545ef-35465f-87887e-5354``)
+
+Users are strongly encouraged to use the indexed ID generation mode. In indexed mode, quasardb will generate the ideal ID for a node given it's relative position. For example, if you have
+a 4 nodes clusters, each node should be given the following id:
+
+ * node 1 - ``1/4``
+ * node 2 - ``2/4``
+ * node 3 - ``3/4``
+ * node 4 - ``4/4``
+
+ If you want to reserve ID space to allow the cluster to grow to 32 nodes without changing all ids, you should then use the following numbering
+
+ * node 1 - ``1/32``
+ * node 2 - ``9/32``
+ * node 3 - ``17/32``
+ * node 4 - ``25/32``
+
+The ideal IDs are equidistant from each-other, for optimal key-space value and that's exactly what indexed mode computes.
+
+If you wish to manually supply the nodes ID of your cluster, the following table gives a list of possible good IDs for a given cluster size:
 
 +--------------+--------------------------------------------------------------+
 | Cluster size | Suggested IDs                                                |

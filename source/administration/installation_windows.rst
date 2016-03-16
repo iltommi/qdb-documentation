@@ -17,7 +17,7 @@ The setup program ensures all required libraries are installed. There is one set
 Configuration
 -------------
 
-By default, the quasardb daemon listens on the port 2836 on the local address. The quasardb web bridge listens on the port 8080 on the local address. These may be the IPv6 localhost if IPv6 is installed. 
+By default, the quasardb daemon listens on the port 2836 on the local address. The quasardb web bridge listens on the port 8080 on the local address. These may be the IPv6 localhost if IPv6 is installed.
 
  #. Edit the qdbd configuration file at ``C:\Program Files\quasardb\conf\qdbd.conf``.
      * Set ``local::user::license_file`` to your license file path.
@@ -27,6 +27,8 @@ By default, the quasardb daemon listens on the port 2836 on the local address. T
  #. (optional) Edit the qdb_httpd configuration file at ``C:\Program Files\quasardb\conf\qdb_httpd.conf``.
      * Set ``remote_node`` to the IP address of the quasardb daemon.
      * Set other values as needed. See :ref:`qdb_httpd-config-file-reference` for more information.
+
+To ensure satisfactory performance, we strongly encourage you to have a look at the tuning guide (:doc:`tuning`).
 
 Test the Node
 -------------

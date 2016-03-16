@@ -341,8 +341,8 @@ Instance specific
     Sets the node ID.
 
     Argument
-        A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing
-        the 256-bit ID to use. This value may not be zero (0-0-0-0).
+        A string representing the ID to of the node. This can either be a 256-bit number in hexadecimal form, the value "random" and use the
+        indexed syntax. This value may not be zero (``0-0-0-0``).You are strongly encouraged to use the indexed syntax.  See :doc:`../concepts/cluster_organization`.
 
     Default value
         Unique random value.
@@ -351,6 +351,14 @@ Instance specific
         Set the node ID to 1-a-2-b::
 
             qdbd --id=1-a-2-b
+
+        Set the node ID to a random value::
+
+            qdb --id=random
+
+        Set the node to the ideal value for the third node of a cluster totalling 8 nodes::
+
+            qdbd --id=3/8
 
     .. warning::
         Having two nodes with the same ID on the ring leads to undefined behaviour. By default the daemon generates
@@ -759,7 +767,9 @@ The default configuration file is shown below::
 
 .. describe:: local::chord::node_id
 
-    A string in the form hex-hex-hex-hex, where hex is an hexadecimal number lower than 2^64, representing the 256-bit ID to use. If left at the default of 0-0-0-0, the daemon will assign a random node ID at startup. **Contact a quasardb representative before changing this from the default value.**
+    A string representing the ID to of the node. This can either be a 256-bit number in hexadecimal form, the value "random" and use the indexed syntax.
+    This value may not be zero (``0-0-0-0``). If left at the default of ``0-0-0-0``, the daemon will assign a random node ID at startup. You are strongly
+    encouraged to use the indexed syntax. See :doc:`../concepts/cluster_organization`.
 
 .. describe:: local::chord::no_stabilization
 

@@ -34,38 +34,8 @@ Configuration
  #. (optional) Edit the qdb_httpd configuration file at ``/etc/qdb/qdb_httpd.conf``.
      * Set ``remote_node`` to the IP address of a node.
      * Set other values as needed. See :ref:`qdb_httpd-config-file-reference` for more information.
-         
- #. Disable Transparent Huge Pages by adding the following to ``/etc/rc.local``::
-         
-         if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
-           echo never > /sys/kernel/mm/transparent_hugepage/enabled
-         fi
-         
-         if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
-            echo never > /sys/kernel/mm/transparent_hugepage/defrag
-         fi
-         
- #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``::
-         
-         qdb    soft    nofile    65536
-         qdb    hard    nofile    65536
 
-
-The .rpm package automatically sets the following values in `/etc/sysctl.d/30-quasardb.conf`::
-
-    # Max number of incoming connections
-    net.core.somaxconn = 8192
-    
-    # Max number of pending connections
-    net.ipv4.tcp_max_syn_backlog = 8192
-    
-    # Max socket memory (read & write)
-    net.core.rmem_max = 16777216
-    net.core.wmem_max = 16777216
-    
-    # Swap only when running out of memory 
-    vm.swappiness = 0
-
+To ensure satisfactory performance, we strongly encourage you to have a look at the tuning guide (:doc:`tuning`).
 
 Test the Node
 -------------

@@ -30,27 +30,46 @@ Linux Recommendations
 ----------------------
 
  #. Disable system swappiness in ``/etc/sysctl.conf``::
-         
+
          vm.swappiness = 0
-         
+
+    For kernel version 3.5 and over, as well as Red Hat kernel version 2.6.32-303::
+
+         vm.swappiness = 1
+
  #. Disable Transparent Huge Pages by adding the following to ``/etc/rc.local``::
-         
+
          if test -f /sys/kernel/mm/transparent_hugepage/enabled; then
            echo never > /sys/kernel/mm/transparent_hugepage/enabled
          fi
-         
+
          if test -f /sys/kernel/mm/transparent_hugepage/defrag; then
             echo never > /sys/kernel/mm/transparent_hugepage/defrag
          fi
-         
+
  #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values::
-         
+
          net.core.somaxconn = 8192
          net.ipv4.tcp_max_syn_backlog = 8192
          net.core.rmem_max = 16777216
          net.core.wmem_max = 16777216
-         
+
  #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``::
-         
+
          qdb    soft    nofile    65536
+         qdb    hard    nofile    65536
+
+ #. We recommend storing quasardb on a dedicated EXT4 partition with the following parameters:
+
+        * ``delalloc``: Delayed allocation. This is normally the default.
+        * ``data=ordered``: Data is written before metadata is updated, preventing inconsistencies. This is normally the default.
+        * ``discard``: Enables `Trim <https://en.wikipedia.org/wiki/Trim_(computing)>`_ for SSD drives. Use only for SSD. Ensure the driver of your SSD supports this correctly. This is not enabled by default.
+
+    The partition should be mounted with the following parameters:
+
+        * ``async``: important for SSD lifetime as I/O will be asynchronous.
+        * ``noatime``: quasardb doesn't care about access time information
+
+    It is paramount to check that partition alignment is ideal for the drive you are using. Modern partition tools do that automatically but improper
+    alignment can destroy performances.
 
