@@ -583,8 +583,10 @@ A command generally requires one or several arguments. Each argument is separate
 .. option:: stream_to_buffer <alias>
 
     Dumps the whole content of the stream to the standard output. Warning, the stream may contain a lot of data. The entry must be a stream and must already exist.
+    The stream is read in chunks from the database for maximum performance and reduced memory usage.
 
     :param alias: *(string)* the alias of the entry, which must be a stream
+    :return: nothing if successful, an error message otherwise.
 
 .. _qdbsh_stream_from_buffer:
 .. option:: stream_from_buffer <alias> <content>
@@ -593,14 +595,17 @@ A command generally requires one or several arguments. Each argument is separate
 
     :param alias: *(string)* the alias of the entry, which must be a stream
     :param content: *(string)* the buffer to write to the stream
+    :return: nothing if successful, an error message otherwise.
 
 .. _qdbsh_stream_to_file:
 .. option:: stream_to_file <alias> <path>
 
     Dumps the whole content of the stream to the specified file. If the file already exists, it will be overwitten. The entry must be a stream and must already exist.
+    The stream is read in chunks from the database for maximum performance and reduced memory usage.
 
     :param alias: *(string)* the alias of the entry, which must be a stream
     :param path: *(string)* the path to the file to which the content of the stream will be dumped
+    :return: nothing if successful, an error message otherwise.
 
 .. _qdbsh_stream_from_file:
 .. option:: stream_from_file <alias> <path>
@@ -610,6 +615,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     :param alias: *(string)* the alias of the entry, which must be a stream
     :param path: *(string)* the path to the file whose content will be written into the stream
+    :return: nothing if successful, an error message otherwise.
 
 .. _qdbsh_remove_tag:
 .. option:: remove_tag <alias> <tag>
@@ -618,6 +624,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     :param alias: *(string)* the alias of the entry
     :param tag: *(string)* the tag to remove from the entry
+    :return: nothing if successful, an error message otherwise.
 
 .. _qdbsh_version:
 .. option:: version

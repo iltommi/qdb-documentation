@@ -38,6 +38,8 @@ By default, the quasardb daemon listens on the port 2836 on the local address. T
      * Set ``daemonize`` to ``true`` to daemonize qdb_httpd on startup.
      * Set other values as needed. See :ref:`qdb_httpd-config-file-reference` for more information.
 
+To ensure satisfactory performance, we strongly encourage you to have a look at the tuning guide (:doc:`tuning`).
+
 Test the Node
 -------------
 
