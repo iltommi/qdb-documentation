@@ -46,76 +46,76 @@ Quick Reference
   ..                          :type:`qdb_stream_mode_t`\ ``;``       ..
   ..                          :type:`qdb_stream_size_t`\ ``;``              ..
   ..                          :type:`qdb_stream_t`\ ``;``            ..
-  |CONST_CHAR_P|              :type:`qdb_error`                      ``(``:type:`qdb_error_t` ``error);``
-  |CONST_CHAR_P|              :type:`qdb_version`                    |VOID_ARGS|
-  |CONST_CHAR_P|              :type:`qdb_build`                      |VOID_ARGS|
-  :type:`qdb_error_t`         :type:`qdb_open`                       ``(``:type:`qdb_handle_t *` ``handle,`` :type:`qdb_protocol_t` ``proto);``
-  :type:`qdb_handle_t`        :type:`qdb_open_tcp`                   |VOID_ARGS|
-  :type:`qdb_error_t`         :type:`qdb_option_set_timeout`         ``(``:type:`qdb_handle_t` ``handle,`` :type:`int` ``timeout_ms);``
-  :type:`qdb_error_t`         :type:`qdb_option_add_log_callback`    ``(``:type:`qdb_log_callback` ``cb);``
-  :type:`qdb_error_t`         :type:`qdb_option_set_compression`     ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_compression_t` ``comp_level);``
-  :type:`qdb_error_t`         :type:`qdb_connect`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri);``
-  :type:`qdb_error_t`         :type:`qdb_close`                      ``(``:type:`qdb_handle_t` ``handle);``
-  :type:`qdb_error_t`         :type:`qdb_blob_get_noalloc`           ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`char *` ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_blob_get`                   ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_copy_alloc_buffer`          ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``source_buffer,`` :type:`qdb_size_t` ``source_buffer_size,`` :type:`const char **` ``dest_buffer);``
-  :type:`qdb_error_t`         :type:`qdb_blob_get_and_remove`        ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`void`                :type:`qdb_free_buffer`                ``(``:type:`qdb_handle_t` ``handle,`` :type:`char *` ``buffer);``
-  :type:`qdb_error_t`         :type:`qdb_blob_put`                   ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length,`` :type:`qdb_time_t` ``expiry_time);``
-  :type:`qdb_error_t`         :type:`qdb_blob_update`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length,`` :type:`qdb_time_t` ``expiry_time);``
-  :type:`qdb_error_t`         :type:`qdb_blob_get_and_update`        ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``update_content,`` :type:`qdb_size_t` ``update_content_length,`` :type:`qdb_time_t` ``expiry_time,`` :type:`char **` ``get_content,`` :type:`qdb_size_t *` ``get_content_length);``
+  :type:`qdb_error_t`         :type:`qdb_add_tag`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
   :type:`qdb_error_t`         :type:`qdb_blob_compare_and_swap`      ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``new_value,`` :type:`qdb_size_t` ``new_value_length,`` |CONST_CHAR_P| ``comparand,`` :type:`qdb_size_t` ``comparand_length,`` :type:`qdb_time_t` ``expiry_time,`` :type:`char **` ``original_value,`` :type:`qdb_size_t *` ``original_value_length);``
-  :type:`qdb_error_t`         :type:`qdb_remove`                     ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias);``
+  :type:`qdb_error_t`         :type:`qdb_blob_get`                   ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_blob_get_and_remove`        ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_blob_get_and_update`        ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``update_content,`` :type:`qdb_size_t` ``update_content_length,`` :type:`qdb_time_t` ``expiry_time,`` :type:`char **` ``get_content,`` :type:`qdb_size_t *` ``get_content_length);``
+  :type:`qdb_error_t`         :type:`qdb_blob_get_noalloc`           ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`char *` ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_blob_put`                   ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length,`` :type:`qdb_time_t` ``expiry_time);``
   :type:`qdb_error_t`         :type:`qdb_blob_remove_if`             ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``comparand,`` :type:`qdb_size_t` ``comparand_length);``
-  :type:`qdb_error_t`         :type:`qdb_init_operations`            ``(``:type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count);``
-  :type:`qdb_size_t`          :type:`qdb_run_batch`                  ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count);``
-  :type:`qdb_error_t`         :type:`qdb_run_transaction`            ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count,`` :type:`qdb_size_t *` ``failed_index);``
-  :type:`void`                :type:`qdb_free_operations`            ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count);``
+  :type:`qdb_error_t`         :type:`qdb_blob_update`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length,`` :type:`qdb_time_t` ``expiry_time);``
+  |CONST_CHAR_P|              :type:`qdb_build`                      |VOID_ARGS|
+  :type:`qdb_error_t`         :type:`qdb_close`                      ``(``:type:`qdb_handle_t` ``handle);``
+  :type:`qdb_error_t`         :type:`qdb_connect`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri);``
+  :type:`qdb_error_t`         :type:`qdb_copy_alloc_buffer`          ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``source_buffer,`` :type:`qdb_size_t` ``source_buffer_size,`` :type:`const char **` ``dest_buffer);``
+  :type:`qdb_error_t`         :type:`qdb_deque_back`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_front`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_get_at`               ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_size_t` ``index,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_pop_back`             ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_pop_front`            ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_push_back`            ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_push_front`           ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_set_at`               ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_size_t` ``index,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_deque_size`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_size_t *` ``size);``
+  |CONST_CHAR_P|              :type:`qdb_error`                      ``(``:type:`qdb_error_t` ``error);``
   :type:`qdb_error_t`         :type:`qdb_expires_at`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_time_t` ``expiry_time);``
   :type:`qdb_error_t`         :type:`qdb_expires_from_now`           ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_time_t` ``expiry_delta);``
+  :type:`void`                :type:`qdb_free_buffer`                ``(``:type:`qdb_handle_t` ``handle,`` :type:`char *` ``buffer);``
+  :type:`void`                :type:`qdb_free_operations`            ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count);``
   :type:`qdb_error_t`         :type:`qdb_get_expiry_time`            ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_time_t` ``expiry_time);``
   :type:`qdb_error_t`         :type:`qdb_get_location`               ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_remote_node_t *` ``location);``
+  :type:`qdb_error_t`         :type:`qdb_get_tagged`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``tag,`` :type:`const char ***` ``aliases,`` :type:`qdb_size_t` ``alias_count);``
+  :type:`qdb_error_t`         :type:`qdb_get_tags`                   ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char ***` ``tags,`` :type:`qdb_size_t` ``tag_count);``
   :type:`qdb_error_t`         :type:`qdb_get_type`                   ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_entry_type_t *` ``entry_type);``
-  :type:`qdb_error_t`         :type:`qdb_purge_all`                  ``(``:type:`qdb_handle_t` ``handle);``
-  :type:`qdb_error_t`         :type:`qdb_trim_all`                   ``(``:type:`qdb_handle_t` ``handle);``
-  :type:`qdb_error_t`         :type:`qdb_node_status`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_node_config`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_node_topology`              ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_stop_node`                  ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` |CONST_CHAR_P| ``reason);``
+  :type:`qdb_error_t`         :type:`qdb_hset_insert`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_hset_erase`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_hset_contains`              ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_has_tag`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
+  :type:`qdb_error_t`         :type:`qdb_init_operations`            ``(``:type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count);``
+  :type:`qdb_error_t`         :type:`qdb_int_add`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t` ``addend,`` :type:`qdb_int_t *` ``result);``
+  :type:`qdb_error_t`         :type:`qdb_int_get`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t *` ``integer);``
+  :type:`qdb_error_t`         :type:`qdb_int_put`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t` ``integer,`` :type:`qdb_time_t` ``expiry_time);``
+  :type:`qdb_error_t`         :type:`qdb_int_update`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t` ``integer,`` :type:`qdb_time_t` ``expiry_time);``
   :type:`qdb_error_t`         :type:`qdb_iterator_begin`             ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_const_iterator_t *` ``iterator);``
   :type:`qdb_error_t`         :type:`qdb_iterator_rbegin`            ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_const_iterator_t *` ``iterator);``
   :type:`qdb_error_t`         :type:`qdb_iterator_next`              ``(``:type:`qdb_const_iterator_t *` ``iterator);``
   :type:`qdb_error_t`         :type:`qdb_iterator_previous`          ``(``:type:`qdb_const_iterator_t *` ``iterator);``
   :type:`qdb_error_t`         :type:`qdb_iterator_close`             ``(``:type:`qdb_const_iterator_t *` ``iterator);``
   :type:`qdb_error_t`         :type:`qdb_iterator_copy`              ``(``:type:`qdb_const_iterator_t *` ``original,`` :type:`qdb_const_iterator_t *` ``copy);``
-  :type:`qdb_error_t`         :type:`qdb_hset_insert`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_hset_erase`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_hset_contains`              ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_int_put`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t` ``integer,`` :type:`qdb_time_t` ``expiry_time);``
-  :type:`qdb_error_t`         :type:`qdb_int_update`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t` ``integer,`` :type:`qdb_time_t` ``expiry_time);``
-  :type:`qdb_error_t`         :type:`qdb_int_get`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t *` ``integer);``
-  :type:`qdb_error_t`         :type:`qdb_int_add`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_int_t` ``addend,`` :type:`qdb_int_t *` ``result);``
-  :type:`qdb_error_t`         :type:`qdb_deque_size`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_size_t *` ``size);``
-  :type:`qdb_error_t`         :type:`qdb_deque_get_at`               ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_size_t` ``index,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_deque_set_at`               ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_size_t` ``index,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t *` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_deque_push_front`           ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_deque_push_back`            ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_deque_pop_front`            ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_deque_pop_back`             ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_deque_front`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_deque_back`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char **` ``content,`` :type:`qdb_size_t` ``content_length);``
-  :type:`qdb_error_t`         :type:`qdb_add_tag`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
-  :type:`qdb_error_t`         :type:`qdb_has_tag`                    ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
+  :type:`qdb_error_t`         :type:`qdb_node_config`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_node_status`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_node_topology`              ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` :type:`const char **` ``content,`` :type:`qdb_size_t *` ``content_length);``
+  :type:`qdb_error_t`         :type:`qdb_open`                       ``(``:type:`qdb_handle_t *` ``handle,`` :type:`qdb_protocol_t` ``proto);``
+  :type:`qdb_handle_t`        :type:`qdb_open_tcp`                   |VOID_ARGS|
+  :type:`qdb_error_t`         :type:`qdb_option_add_log_callback`    ``(``:type:`qdb_log_callback` ``cb);``
+  :type:`qdb_error_t`         :type:`qdb_option_set_compression`     ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_compression_t` ``comp_level);``
+  :type:`qdb_error_t`         :type:`qdb_option_set_timeout`         ``(``:type:`qdb_handle_t` ``handle,`` :type:`int` ``timeout_ms);``
+  :type:`qdb_error_t`         :type:`qdb_purge_all`                  ``(``:type:`qdb_handle_t` ``handle);``
+  :type:`qdb_error_t`         :type:`qdb_remove`                     ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias);``
   :type:`qdb_error_t`         :type:`qdb_remove_tag`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
-  :type:`qdb_error_t`         :type:`qdb_get_tagged`                 ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``tag,`` :type:`const char ***` ``aliases,`` :type:`qdb_size_t` ``alias_count);``
-  :type:`qdb_error_t`         :type:`qdb_get_tags`                   ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`const char ***` ``tags,`` :type:`qdb_size_t` ``tag_count);``
-  :type:`qdb_error_t`         :type:`qdb_stream_open`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_stream_mode_t` ``mode,`` :type:`qdb_stream_t` * ``stream);``
+  :type:`qdb_size_t`          :type:`qdb_run_batch`                  ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count);``
+  :type:`qdb_error_t`         :type:`qdb_run_transaction`            ``(``:type:`qdb_handle_t` ``handle,`` :type:`qdb_operation_t *` ``operations,`` :type:`qdb_size_t` ``operation_count,`` :type:`qdb_size_t *` ``failed_index);``
+  :type:`qdb_error_t`         :type:`qdb_stop_node`                  ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``uri,`` |CONST_CHAR_P| ``reason);``
   :type:`qdb_error_t`         :type:`qdb_stream_close`               ``(``:type:`qdb_stream_t` ``stream);``
-  :type:`qdb_error_t`         :type:`qdb_stream_read`                ``(``:type:`qdb_stream_t` ``stream,`` :type:`void *` ``data,`` :type:`size_t *` ``size);``
-  :type:`qdb_error_t`         :type:`qdb_stream_write`               ``(``:type:`qdb_stream_t` ``stream,`` :type:`const void *` ``data,`` :type:`size_t` ``size);``
-  :type:`qdb_error_t`         :type:`qdb_stream_size`                ``(``:type:`qdb_stream_t` ``stream,`` :type:`qdb_stream_size_t *` ``size);``
   :type:`qdb_error_t`         :type:`qdb_stream_getpos`              ``(``:type:`qdb_stream_t` ``stream,`` :type:`qdb_stream_size_t *` ``position);``
+  :type:`qdb_error_t`         :type:`qdb_stream_open`                ``(``:type:`qdb_handle_t` ``handle,`` |CONST_CHAR_P| ``alias,`` :type:`qdb_stream_mode_t` ``mode,`` :type:`qdb_stream_t` * ``stream);``
+  :type:`qdb_error_t`         :type:`qdb_stream_read`                ``(``:type:`qdb_stream_t` ``stream,`` :type:`void *` ``data,`` :type:`size_t *` ``size);``
   :type:`qdb_error_t`         :type:`qdb_stream_setpos`              ``(``:type:`qdb_stream_t` ``stream,`` |CONST| :type:`qdb_stream_size_t *` ``position);``
+  :type:`qdb_error_t`         :type:`qdb_stream_size`                ``(``:type:`qdb_stream_t` ``stream,`` :type:`qdb_stream_size_t *` ``size);``
+  :type:`qdb_error_t`         :type:`qdb_stream_write`               ``(``:type:`qdb_stream_t` ``stream,`` :type:`const void *` ``data,`` :type:`size_t` ``size);``
+  :type:`qdb_error_t`         :type:`qdb_trim_all`                   ``(``:type:`qdb_handle_t` ``handle);``
+  |CONST_CHAR_P|              :type:`qdb_version`                    |VOID_ARGS|
 
  =========================== ====================================== ===================
 
@@ -363,7 +363,7 @@ Batch operations can greatly increase performance when it is necessary to run ma
 
 The :func:`qdb_init_operations` ensures that the operations are properly reset before setting any value::
 
-    qdb_operations_t ops[4];
+    qdb_operation_t ops[4];
     r = qdb_init_operations(ops, 4);
     if (r != qdb_error_ok)
     {
@@ -913,18 +913,18 @@ Reference
 
     :returns: An error code of type :type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_init_operations(qdb_operations_t * operations, qdb_size_t operation_count)
+.. c:function:: qdb_error_t qdb_init_operations(qdb_operation_t * operations, qdb_size_t operation_count)
 
     Initializes an array of operations to the default value, making its later usage safe.
 
-    :param operations: Pointer to an array of qdb_operations_t
-    :type operations: qdb_operations_t *
+    :param operations: Pointer to an array of qdb_operation_t
+    :type operations: qdb_operation_t *
     :param operation_count: Size of the array, in entry count
     :type operation_count: qdb_size_t
 
     :returns: An error code of type :type:`qdb_error_t`
 
-.. c:function:: qdb_size_t qdb_run_batch(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operation_count)
+.. c:function:: qdb_size_t qdb_run_batch(qdb_handle_t handle, qdb_operation_t * operations, qdb_size_t operation_count)
 
     Runs the provided operations in batch on the cluster. The operations are run in arbitrary order.
 
@@ -932,14 +932,14 @@ Reference
 
     :param handle: An initialized handle (see :func:`qdb_open` and :func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param operations: Pointer to an array of qdb_operations_t
-    :type operations: qdb_operations_t *
+    :param operations: Pointer to an array of qdb_operation_t
+    :type operations: qdb_operation_t *
     :param operation_count: Size of the array, in entry count
     :type operation_count: qdb_size_t
 
     :returns: The number of successful operations
 
-.. c:function:: qdb_error_t qdb_run_transaction(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operation_count, qdb_size_t * failed_index)
+.. c:function:: qdb_error_t qdb_run_transaction(qdb_handle_t handle, qdb_operation_t * operations, qdb_size_t operation_count, qdb_size_t * failed_index)
 
     Runs the provided operations as a transaction on the cluster. The operations are run in the provided order. If any operation fails, all previously run operations are rolled back.
 
@@ -947,8 +947,8 @@ Reference
 
     :param handle: An initialized handle (see :func:`qdb_open` and :func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param operations: Pointer to an array of qdb_operations_t
-    :type operations: qdb_operations_t *
+    :param operations: Pointer to an array of qdb_operation_t
+    :type operations: qdb_operation_t *
     :param operation_count: Size of the array, in entry count
     :type operation_count: qdb_size_t
     :param failed_index: The index in the operations array for the operation that failed.
@@ -956,14 +956,14 @@ Reference
 
     :returns: An error code of type :type:`qdb_error_t`
 
-.. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operations_t * operations, qdb_size_t operation_count)
+.. c:function:: qdb_error_t qdb_free_operations(qdb_handle_t handle, qdb_operation_t * operations, qdb_size_t operation_count)
 
     Releases all API-allocated memory by a :func:`qdb_run_batch` or :func:`qdb_run_transaction` call. This function is safe to call even if :func:`qdb_run_batch` or :func:`qdb_run_transaction` didn't allocate any memory.
 
     :param handle: An initialized handle (see :func:`qdb_open` and :func:`qdb_open_tcp`)
     :type handle: qdb_handle_t
-    :param operations: Pointer to an array of qdb_operations_t
-    :type operations: qdb_operations_t *
+    :param operations: Pointer to an array of qdb_operation_t
+    :type operations: qdb_operation_t *
     :param operation_count: Size of the array, in entry count
     :type operation_count: qdb_size_t
 
