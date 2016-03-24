@@ -1,5 +1,6 @@
 build/
 source/index.html
+source/shared/_static/version_switch.js
 source/1.*
 source/2.*
 source/3.*

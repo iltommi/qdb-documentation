@@ -1,18 +1,7 @@
 (function() {
   'use strict';
 
-  var all_versions = {
-    // 'url_string': 'display_name_when_not_active'
-    '1.1.0': '1.1.0',
-    '1.1.1': '1.1.1',
-    '1.1.2': '1.1.2',
-    '1.1.3': '1.1.3',
-    '1.1.4': '1.1.4',
-    '1.1.5': '1.1.5',
-    '1.2.0': '1.2.0',
-    '1.2.1': '1.2.1',
-    '2.0.0': '2.0.0'
-  };
+  var all_versions = "$BRANCHES".split(" ");
   
   // Builds a <select> tag with options from each of the all_versions variable above.
   // 
@@ -21,19 +10,19 @@
     var new_select_tag = ['<select>'];
     
     // For each of the versions in var all_versions...
-    $.each(all_versions, function(url_string, display_name) {
+    $.each(all_versions, function(version) {
       
         // Create a new option using the url string as the 
-        new_select_tag.push('<option value="' + url_string + '"');
+        new_select_tag.push('<option value="' + version + '"');
         
         // If the all_versions item we're on matches the SPHINX Documentation version,
         // set the combo box to display it as the selected item.
         // Also, replace the var all_versions display name with SPHINX Documentation full version number.
-        if (url_string == version_number) {
+        if (version == version_number) {
             new_select_tag.push(' selected="selected">' + version_number + '</option>');
 		}
         else {
-            new_select_tag.push('>' + display_name + '</option>');
+            new_select_tag.push('>' + version + '</option>');
 		}
     });
 
