@@ -8,8 +8,8 @@ Primer
 What is |quasardb|?
 -------------------
 
-|Quasardb| is an advanced data management system. At its heat, it is a transactional key/value store with indexing capabilities. It is fast and scalable
-(up and out), handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label |quasardb| as a
+|Quasardb| is an advanced data management system. At its heart, it is a transactional key/value store with indexing capabilities. It is fast scales up and out,
+handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label |quasardb| as a
 `NoSQL database <https://en.wikipedia.org/wiki/NoSQL>`_.
 
 |Quasardb| is *limitless*. If the hardware can handle it, |quasardb| can handle it.
@@ -27,14 +27,16 @@ Shall we dance?
 ---------------
 
 To start a |quasardb| server, just run it! We provide packages for many platform, but you can always work in a local directory where you manually
-extracted your |quasardb| binaries. We also support docker and are available on Microsoft Azure and Amazon EC2.
+extracted your |quasardb| binaries. We also support docker and are available on
+`Microsoft Azure <https://azure.microsoft.com/en-us/marketplace/partners/quasardb/quasardb-xtp-node/>`_ and Amazon EC2.
 
 Let's assume we extracted the |quasardb| archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
 
     qdbdd
 
-You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests. You can store into |quasardb| anything,
-images, videos, XML, text... It will automatically optimize storage for you.
+You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests. 
+
+There is no limit to what you can store into |quasardb|. Images, videos, JSON, XML, text... |quasardb| will automatically optimize storage for you.
 
 Let's fire up the shell and run a couple of commands::
 
@@ -50,7 +52,9 @@ Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give t
     qdbsh> blob_get entry
     amazing...
 
-Wait, what is a blob? A blob is a "binary large object" and should be your go-to type when unsure. Using blob for text is perfectly fine
+Wait, what is a blob? 
+
+A blob is a "binary large object" and should be your go-to type when unsure. Using blob for text is perfectly fine
 and actually optimal. A blob is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
 blobs.
 
@@ -78,8 +82,9 @@ which enables you to do things such as::
     qdbsh> int_add my_value 5
     15
 
-The power of arithmetics compels you! When requesting |quasardb| through the API, integers are provided in a native format understood by the programming language
-you are using.
+The power of arithmetics compels you!
+
+When requesting |quasardb| through the API, integers are provided in a native format understood by the programming language you are using.
 
 In |quasardb| all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had thousands of shells doing "int_add"
 you are guaranteed that all operations are properly accounted.
@@ -106,8 +111,8 @@ Every entry within the deque is a blob, of whatever size you fancy.
 But, wait, there's more!
 ------------------------
 
-Now we'd like to show you one of the most exciting features of |quasardb|: tags. Since |quasardb| is a key/value store it provides you extremely fast access to any
-entry within the cluster, if you have a key.
+Now we'd like to show you one of the most exciting features of |quasardb|: tags. Since |quasardb| is a key/value store it provides you with an immediate 
+access to any entry within the cluster, if you have a key.
 
 What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
 a different value than the key, you can use tags. There is no limit to the number of tags you can have for a key and no limit to the number of keys you can have
@@ -127,7 +132,9 @@ Let's see it in action::
     qdbsh> get_tags client1_views
     client1
 
-You can see tags as manual secondary indexes. You never pay for tags if you don't need them and tags are designed to be distributed and scalable. Tags are ideal
+You can see tags as manual secondary indexes.
+
+You never pay for tags if you don't need them and tags are designed to be distributed and scalable. Tags are ideal
 when you have a lot of unstructured data or need a flexible model to work with. There is no background jobs that analyzes your data to create indexes so tags
 are very fast and inexpensive.
 
