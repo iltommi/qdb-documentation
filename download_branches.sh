@@ -2,7 +2,7 @@
 
 cd $(dirname $0)
 
-git pull
+git fetch
 
 ORIGIN=$(git config --get remote.origin.url)
 BRANCHES=$(git branch --list --remotes origin/* | grep -E 'origin/[0-9]+.[0-9]+.[0-9]' | sed 's|origin/||' | sort --version-sort)
