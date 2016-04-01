@@ -3,103 +3,263 @@ Java
 
 .. default-domain:: java
 .. highlight:: java
-.. _JNI: http://docs.oracle.com/javase/7/docs/technotes/guides/jni/
 
 Introduction
 ------------
 
-The quasardb Java API uses JNI_ to bring the power and speed of quasardb to the Java world without compromising performance.
+This document is an introduction to the quasardb Java API.
 
-You can access your cluster using either the high level Java classes or the low level JNI_ API. In almost all cases you should use the high level classes.
+You can see this code in action in this sample project:
+http://github.com/bureau14/qdb-api-java-example
 
-You may download the Java package from the quasardb download site or build it from the source code `<https://github.com/bureau14/qdb-api-java>`_.  All information regarding the quasardb download site is in your welcome e-mail.
+For more detail, please refer to the Javadoc.
 
-The .jar package is ``qdb-java-api-<os>-<version>.jar`` and contains both the base Java classes and support for the JNI_ interface. The classes reside in the ``net.quasardb.qdb`` package.
-
-
-Requirements
+Installation
 ------------
 
-One of the following Java Development Kits:
+The quasardb Java API is available in our Maven repositiory.
 
-    * Oracle Java JDK SE 1.6
-    * Oracle Java JDK EE 1.6
-    * Oracle Java JDK SE 1.7
-    * Oracle Java JDK EE 1.7
-    * OpenJDK 6
-    * OpenJDK 7u
+To use it in your project, you need to add the repository ``maven.quasardb.net``
 
-Run the Example
-------------------
+Then, you must add a dependency to ``net.quasardb:qdb``
 
-The Java API example can be downloaded from `<https://github.com/bureau14/qdb-api-java/tree/master/example>`_.
+For example, if you're using Maven, your ``pom.xml`` should look like:
 
-  1. Compile the example with ``javac``. Assuming ``quasardb-java-<os>-<version>.jar`` is in ``/tmp``::
+.. code-block:: xml
 
-      javac -classpath /tmp/quasardb-java-<os>-<version>.jar QuasardbExample.java
+    <project>
+      [...]
+      <repositories>
+        <repository>
+          <id>quasardb</id>
+          <name>Quasardb Official Repository</name>
+          <url>http://maven.quasardb.net</url>
+        </repository>
+      </repositories>
+      <dependencies>
+        <dependency>
+          <groupId>net.quasardb</groupId>
+          <artifactId>qdb</artifactId>
+          <version>2.0.0-SNAPSHOT</version>
+        </dependency>
+      </dependencies>
+    </project>
 
-  2. Run the example::
+Or, if you use Gradle, your ``build.gradle`` should look like:
 
-      java -classpath /tmp/quasardb-java-<os>-<version>.jar:. QuasardbExample
-
-The example requires a quasardb server listening on ``127.0.0.1`` (IPv4 localhost) port 2836. Should you wish to run the example on a different server, you need but to edit it! See :doc:`../reference/qdbd` to configure a quasardb cluster.
-
-Using the high-level API
-------------------------
-
-The high-level API is recommended because:
-
-  * It is object oriented
-  * It loads native libraries no matter which OS you are running (FreeBSD, Linux, Win32 or Win64).
-  * It is thread-safe, unlike the low-level API.
+.. code-block:: groovy
 
 
-Configuring the quasardb instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    apply plugin: 'java'
 
-To connect to a quasardb cluster, create a new QdbCluster object. Pass in the IP address and port of an online node in the ``qdb://`` string format::
+    repositories {
+        maven {
+            url "http://maven.quasardb.net"
+        }
+    }
 
-    cluster = new QdbCluster("qdb://127.0.0.1:2836");
+    dependencies {
+        compile 'net.quasardb:qdb:2.0.0-SNAPSHOT'
+    }
 
-If the cluster object is not null, your quasardb instance is ready to use.
+Connecting to the database
+--------------------------
 
-Using the quasardb instance
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+You connect to a quasardb database by creating an instance of ``QdbCluster``.
+The address of the clutser (the URI) must be given as an argument to the constructor.
 
-Entries in the cluster are stored and retrieved by their aliases, in the form of Strings. Their content is stored and retrieved as a :ref:`ByteBuffer <java.nio.ByteBuffer>`. See :ref:`java-memory-management`.
+For example, to connect to a quasardb node running on the local machine:
 
-For example, to get an existing Blob named "obj1" or create it if the entry does not exist::
+.. code-block:: java
 
-    String content = "Content";
-    cluster.getBlob("obj1").put(ByteBuffer.allocateDirect(content.getBytes().length).put(content.getBytes()));
+    QdbCluster db = new QdbCluster("qdb://127.0.0.1:2836");
 
-To get the value of an object, get and convert the :ref:`ByteBuffer <java.nio.ByteBuffer>`::
+The constructor of ``QdbCluster`` will throw an exception if the connection cannot be established.
 
-    ByteBuffer buffer = cluster.getBlob("obj1").get();
-    byte[] bytes = new byte[buffer.limit()];
-    buffer.get(bytes, 0, buffer.limit());
-    String value = new String(bytes);
+Manipulating "blobs"
+--------------------
 
-To remove an entry::
+Blob stands for Binary Large Object, it's the term in quasardb for unstructured data.
+A blob is a finite sequence of bytes, of any size.
+In Java, a blob is materialized by an instance of ``java.nio.ByteBuffer``.
 
-    cluster.getBlob("obj1").remove();
+To perform operations on a blob, you need to get an instance of ``QdbBlob`` like this::
 
-quasardb also supports other object types than Blobs, including Double-Ended Queues, Hash Sets, and Integers. These have get/put/update methods on the cluster object as well as their own convenience methods.
+    QdbBlob blob = db.blob("name of the blob");
 
-.. _java-memory-management:
+The ``String`` that is passed to ``QdbCluster.blob()`` is called the "alias" of the blob. It's the identifier of the blob in the database and it must be unique.
 
-Memory management
-^^^^^^^^^^^^^^^^^^
+Then, you can perform operations on the blob.
 
-The API uses a logic very close to the quasardb C API. Feel free to review the :doc:`C API <c>` documentation for useful background information.
+First, there is the ``put()`` operation, that creates a blob::
 
-In particular, to avoid pressuring the garbage collector, and to minimize useless copies, entries' content are wrapped in :ref:`ByteBuffer <java.nio.ByteBuffer>` objects instead of byte arrays or :ref:`String <java.lang.String>` objects.
+    ByteBuffer someData = getSomeData();
+    blob.put(someData);
 
-Aliases, on the other hand, use regular String objects for convenience.
+Then, there is the ``update()`` operation, which is exactly like ``put()`` excepts that it doesn't throw if the entry already exists::
 
-The :ref:`ByteBuffer <java.nio.ByteBuffer>` must be initialized with :ref:`allocateDirect <java.nio.ByteBuffer.allocateDirect(int)>` so that the JNI_ may access the memory. The buffer *must* be large enough to hold all the content, otherwise the call will fail.
+    ByteBuffer someNewData = getSomeData();
+    blob.update(someData);
 
-When adding entries, this is generally not an issue as the caller knows the size of the content it will add, however when retrieving entries this may be more problematic. Either the caller can allocate more data than required or it can use the :ref:`ByteBuffer.limit() <java.nio.Buffer.limit()>` to obtain the size of an entry.
+Reading the content of the blob is done by the ``get()`` operation::
+
+    try (QdbBuffer content = blob.get()) {
+      ByteBuffer someData = content.toByteBuffer();
+      // ...
+    }
+
+As you see, ``QdbBlob.get()`` doesn't return a ``ByteBuffer``, but a ``QdbBuffer`` which implements ``AutoCloseable``.
+You'll find an entire section dedicated to ``QdbBuffer`` later in this document.
+
+To delete the blob, you can call::
+
+    blob.remove();
+
+We just saw the main four operations on blobs: ``put()``, ``update()``, ``get()`` and ``remove()``.
+
+There are four other operations for blobs:
+
+- ``compareAndSwap()``
+- ``getAndRemove()``
+- ``getAndUpdate()``
+- ``removeIf()``
+
+You'll find the details in the Javadoc.
+
+Manipulating "deques"
+---------------------
+
+Deque stands for "double-ended queue".
+There are queues that can be used in both directions: forward and backward.
+
+A deque can be seen as a list of blob.
+
+To perform operations on a deque, you need to get an instance of ``QdbDeque`` like this::
+
+    QdbDeque deque = db.deque("name of the deque");
+
+As for the blob, the alias of the deque is passed to ``QdbCluster.deque()``.
+
+To create a deque, you just need to enqueue an item.
+
+For example, to enqueue at the end of the deque::
+
+    ByteBuffer someData = someData();
+    deque.pushBack(someData);
+
+And to enqueue at the beginning of the deque::
+
+    ByteBuffer someData = someData();
+    deque.pushFront(someData);
+
+Then, to dequeue an item from the beginning::
+
+    try (QdbBuffer content =  deque.popFront()) {
+      ByteBuffer someData = content.toByteBuffer();
+      // ...
+    }
+
+or from the end::
+
+    try (QdbBuffer content = deque.popBack()) {
+      ByteBuffer someData = content.toByteBuffer();
+      // ...
+    }
+
+These two methods extract the item from the deque and return the content in a ``QdbBuffer``.
+You'll find an entire section dedicated to ``QdbBuffer`` later in this document.
+
+You can also read the content of the first or last item with out removing them from the deque::
+
+    QdbBuffer firstItem = deque.front();
+    QdbBuffer lastItem = deque.back();
+
+It's also possible to read any item of the deque by it's position::
+
+    int index = getPosition();
+    QdbBuffer item = deque.get(index);
+
+The position is a zero-based index, ie the first item is at index 0 and the last at index N-1.
+
+If the position is negative, then the deque is read from the back, ie the last item is at index -1 and the first at -N-1.
+
+As a consequence, ``QdbDeque.front()`` is equivalent to ``QdbDeque.get(0)`` and ``QdbDeque.back()`` is equivalent to ``QdbDeque.get(-1)``.
+
+To known the actual number of item in the deque, call ``QdbDeque.size()``::
+
+    int numberOfItem = deque.size();
+
+Lastly, you can delete a deque, just like a blob::
+
+    deque.remove();
+
+
+Manipulating integer
+--------------------
+
+Although it's possible to store integer in blobs, it's not very convenient.
+For that reason, quasardb has a dedicated type for storing 64-bit integers.
+
+To perform operations on an integer, you need to get an instance of ``QdbInteger`` like this::
+
+    QdbInteger integer = db.integer("name of the integer");
+
+As for blobs and deques, the alias of the integer is passed to ``QdbCluster.integer()``.
+
+Just like blobs, integers support ``put()``, ``update()``, ``get()`` and ``remove()`` operations::
+
+    integer.put(10);
+    integer.update(20);
+    long value = integer.get();
+    integer.remove();
+
+And there is a special function for performing atomic additions::
+
+    long result = integer.add(30);
+
+``QdbInteger.add()`` increments (or decrements if the argument is negative) the value in the database and returns the new value.
+
+
+Why ``QdbBuffer`` instead of ``ByteBuffer``?
+--------------------------------------------
+
+Some operations return a buffer that is allocated in non-managed memory.
+This memory is out-side of the Java heap, and is not handled by the garbage collector.
+
+``QdbBuffer`` responsible for releasing this memory.
+
+The memory is released by ``QdbBuffer.close()``::
+
+    QdbBuffer buffer = db.blob("name of the blob").get();
+    try {
+        ByteBuffer data = buffer.toByteBuffer();
+    }
+    finally {
+        buffer.close();
+    }
+
+Or, better, by using the try-with-resource statement introduced in Java 7::
+
+    try (QdbBuffer buffer = db.blob("name of the blob").get()) {
+        ByteBuffer data = buffer.toByteBuffer();
+    }
+
+If you don't call ``QdbBuffer.close()``, the memory will be released by the finalizer.
+However, this is a bad practice because you would waste a lot of memory and ultimately be out of memory.
+The best is to close the ``QdbBuffer`` as soon as possible.
+
+.. warning:: ``ByteBuffer`` and ``QdbBuffer`` life spans
+
+    It's very important that you never have a reference to the ``ByteBuffer`` with a longer life span than the ``QdbBuffer``.
+
+    Indeed, if you don't hold a reference to the ``QdbBuffer``, the garbage collector might decide to destroy it, thereby releasing the non-managed memory.
+
+    As a result, ``ByteBuffer`` would point to invalid location in memory and your program would crash in an unpredictable manner.
+
+So, in a nutshell:
+
+1. don't keep the result of ``QdbBuffer.toByteBuffer()``
+2. call ``QdbBuffer.close()`` as soon as possible
 
 Reference
 ---------
