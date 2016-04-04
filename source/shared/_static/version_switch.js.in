@@ -10,7 +10,7 @@
     var new_select_tag = ['<select>'];
     
     // For each of the versions in var all_versions...
-    $.each(all_versions, function(version) {
+    $.each(all_versions, function(idx, version) {
       
         // Create a new option using the url string as the 
         new_select_tag.push('<option value="' + version + '"');
