@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structint__put__update__t" kind="struct" language="C++" prot="public">
+    <compoundname>int_put_update_t</compoundname>
+    <includes local="no">batch.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structint__put__update__t_1aebd981ff6589eecbfbfc2c3fbcc571fb" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
+        <definition>qdb_int_t int_put_update_t::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>The value of the integer to use. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="88" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/batch.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref></type>
+        <definition>qdb_time_t int_put_update_t::expiry_time</definition>
+        <argsstring></argsstring>
+        <name>expiry_time</name>
+        <briefdescription>
+<para>The optional expiration time. Use qdb_never_expires for no expiration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="90" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/batch.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The required parameters for an integer operation within a batch. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="86" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/batch.h" bodystart="85" bodyend="91"/>
+    <listofallmembers>
+      <member refid="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" prot="public" virt="non-virtual"><scope>int_put_update_t</scope><name>expiry_time</name></member>
+      <member refid="structint__put__update__t_1aebd981ff6589eecbfbfc2c3fbcc571fb" prot="public" virt="non-virtual"><scope>int_put_update_t</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,555 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__deque" kind="group">
+    <compoundname>deque</compoundname>
+    <title>Distributed double-ended queues operations</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__deque_1gae20c3496aa14ae6b1d4e6fc390832ae7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_size</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, qdb_size_t *size)</argsstring>
+        <name>qdb_deque_size</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Returns the number of elements in a deque. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed accross the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>It is an error to call this function on a non existing deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the size of the deque. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="67" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga3678d442c73b31619cc209b7b2a01176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_get_at</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, long index, const void **content, qdb_size_t *content_length)</argsstring>
+        <name>qdb_deque_get_at</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const void **</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Returns the element at the designated index. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>The index is 0 based starting at the first element (front) of the deque.</para><para>It is an error to call this function on a non existing deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The zero based index to the element of the deque </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API allocated to receive the result of the operation, if successful </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="97" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga7788665b46f36886435fd41fa7f663fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_set_at</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, long index, const void *content, qdb_size_t content_length)</argsstring>
+        <name>qdb_deque_set_at</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>index</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Updates element at the designated index. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>There is no arbitrary limit to the size of an element within a deque.</para><para>The index is 0 based starting at the first element (front) of the deque.</para><para>It is an error to call this function on a non existing deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The zero based index to the element of the deque </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A to a pointer to a buffer with the new content </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="130" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga8986f95f3da63618366b6fe07acd56c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_push_front</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
+        <name>qdb_deque_push_front</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Atomically appends an element to the front of the deque. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>There is no arbitrary limit to the size of an element within a deque.</para><para>Calling this function on a non-existing deque will create the deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A to a pointer to a buffer with the new entry content </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga7d371a022681a2fda3d5e0c06f0deab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_push_back</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
+        <name>qdb_deque_push_back</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Atomically appends an element to the end of the deque. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>There is no arbitrary limit to the size of an element within a deque.</para><para>Calling this function on a non-existing deque will create the deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A to a pointer to a buffer with the new entry content </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="189" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga253f33e3ac2d2bddcc847852186bdafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_pop_front</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
+        <name>qdb_deque_pop_front</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const void **</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Atomically remove the element at the front of the deque and return its content. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>Removing the last element of the deque will not remove the entry but leave an empty deque.</para><para>It is an error to call this function on a non existing or empty deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the first element, if successful </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="221" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga8d39a12e25511b534a81d01ca910d03e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_pop_back</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
+        <name>qdb_deque_pop_back</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const void **</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Atomically remove the element at the end of the deque and return its content. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>Removing the last element of the deque will not remove the entry but leave an empty deque.</para><para>It is an error to call this function on a non existing or emtpy deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the last element, if successful </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="253" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga0fd8c2078f7df690bc096c9ba89aa018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_front</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
+        <name>qdb_deque_front</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const void **</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Returns the content of the first element in the deque. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>It is an error to call this function on a non existing or empty deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the first element, if successful </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="281" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__deque_1ga201ba1ae8df5b0690121ef4d1010b4ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_back</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
+        <name>qdb_deque_back</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const void **</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Returns the content of the last element in the deque. </para>        </briefdescription>
+        <detaileddescription>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>It is an error to call this function on a non existing or empty deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the last element, if successful </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="309" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

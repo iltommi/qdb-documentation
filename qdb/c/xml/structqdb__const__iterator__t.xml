@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structqdb__const__iterator__t" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_const_iterator_t</compoundname>
+    <includes local="no">client.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__const__iterator__t_1a927647d3cfb4448d3478b412d8ab9e88" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+        <definition>qdb_handle_t qdb_const_iterator_t::handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <briefdescription>
+<para>The handle created with qdb_open. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="243" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__const__iterator__t_1aae12cd8f75a5c54451a7ea659cc603e9" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* qdb_const_iterator_t::token</definition>
+        <argsstring></argsstring>
+        <name>token</name>
+        <briefdescription>
+<para>Opaque token, don&apos;t use. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="245" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="245" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__const__iterator__t_1a80b00b45e0c316e0c9b92b7b40978d89" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* qdb_const_iterator_t::node</definition>
+        <argsstring></argsstring>
+        <name>node</name>
+        <briefdescription>
+<para>Opaque pointer to internal structure, don&apos;t use. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="248" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="248" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__const__iterator__t_1a459431039fadae36f0897219c4e5ca6f" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* qdb_const_iterator_t::ref</definition>
+        <argsstring></argsstring>
+        <name>ref</name>
+        <briefdescription>
+<para>Opaque pointer to reference, don&apos;t use. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="250" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="250" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__const__iterator__t_1a4f11b17402cbcad7f3bce792c86a560b" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* qdb_const_iterator_t::alias</definition>
+        <argsstring></argsstring>
+        <name>alias</name>
+        <briefdescription>
+<para>The current alias of the entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="253" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="253" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__const__iterator__t_1a1fe275c6a929d5abdd3c80b248bb7a6b" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* qdb_const_iterator_t::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <briefdescription>
+<para>The content of the current entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="255" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="255" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__const__iterator__t_1a400dacc3a35ddd86e5cd6155aa470c39" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+        <definition>qdb_size_t qdb_const_iterator_t::content_size</definition>
+        <argsstring></argsstring>
+        <name>content_size</name>
+        <briefdescription>
+<para>The size of the content of the current entry. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="257" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="257" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A read-only iterator on quasardb entries. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="241" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="240" bodyend="258"/>
+    <listofallmembers>
+      <member refid="structqdb__const__iterator__t_1a4f11b17402cbcad7f3bce792c86a560b" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>alias</name></member>
+      <member refid="structqdb__const__iterator__t_1a1fe275c6a929d5abdd3c80b248bb7a6b" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>content</name></member>
+      <member refid="structqdb__const__iterator__t_1a400dacc3a35ddd86e5cd6155aa470c39" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>content_size</name></member>
+      <member refid="structqdb__const__iterator__t_1a927647d3cfb4448d3478b412d8ab9e88" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>handle</name></member>
+      <member refid="structqdb__const__iterator__t_1a80b00b45e0c316e0c9b92b7b40978d89" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>node</name></member>
+      <member refid="structqdb__const__iterator__t_1a459431039fadae36f0897219c4e5ca6f" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>ref</name></member>
+      <member refid="structqdb__const__iterator__t_1aae12cd8f75a5c54451a7ea659cc603e9" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>token</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

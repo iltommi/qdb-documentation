@@ -1,0 +1,84 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__prefix" kind="group">
+    <compoundname>prefix</compoundname>
+    <title>Prefix based operations</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__prefix_1ga2e0288558e495e43435b38e0a637ddf8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_prefix_get</definition>
+        <argsstring>(qdb_handle_t handle, const char *prefix, qdb_int_t max_count, const char ***results, size_t *results_count)</argsstring>
+        <name>qdb_prefix_get</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>prefix</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
+          <declname>max_count</declname>
+        </param>
+        <param>
+          <type>const char ***</type>
+          <declname>results</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>results_count</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the list of all entries matching the provided prefix. </para>        </briefdescription>
+        <detaileddescription>
+<para>A prefix based search will enable you to find all entries matching a provided prefix.</para><para>This function returns the list of aliases, it&apos;s up to the user to query the content, if needed associated with every entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>prefix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the desired prefix </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An integer limiting the number of results returned by the function </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>results</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a list of results </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>results_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer giving the results count </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/prefix.h" line="66" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

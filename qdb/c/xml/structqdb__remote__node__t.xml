@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structqdb__remote__node__t" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_remote_node_t</compoundname>
+    <includes local="no">client.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__remote__node__t_1a0d17da9467be3445198fe4151c0d932a" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* qdb_remote_node_t::address</definition>
+        <argsstring></argsstring>
+        <name>address</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>A pointer to a null terminated string representing the address of the remote node </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="267" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="267" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__remote__node__t_1a8701b59cea4b7e358f2528c73f9e45b8" prot="public" static="no" mutable="no">
+        <type>unsigned short</type>
+        <definition>unsigned short qdb_remote_node_t::port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+<para>The port of the remote node. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="269" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="269" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A structure representing the address of a quasardb node. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="264" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="263" bodyend="270"/>
+    <listofallmembers>
+      <member refid="structqdb__remote__node__t_1a0d17da9467be3445198fe4151c0d932a" prot="public" virt="non-virtual"><scope>qdb_remote_node_t</scope><name>address</name></member>
+      <member refid="structqdb__remote__node__t_1a8701b59cea4b7e358f2528c73f9e45b8" prot="public" virt="non-virtual"><scope>qdb_remote_node_t</scope><name>port</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

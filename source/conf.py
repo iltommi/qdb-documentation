@@ -32,8 +32,15 @@ extensions = [
     'sphinx.ext.mathjax',
     'sphinx.ext.autodoc',
     'javasphinx',
-    'sphinxcontrib.phpdomain'
+    'sphinxcontrib.phpdomain',
+    'breathe'
 ]
+
+breathe_projects = {
+    "qdb_capi": "../qdb/c/xml"
+}
+
+breathe_default_project = "qdb_capi"
 
 qdb_api_folder = os.path.join(os.getcwd(), '..', 'qdb', 'python')
 sys.path.insert(0, qdb_api_folder)

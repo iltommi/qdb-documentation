@@ -1,0 +1,406 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__stream" kind="group">
+    <compoundname>stream</compoundname>
+    <title>Stream operations</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_open</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, qdb_stream_mode_t mode, qdb_stream_t *stream)</argsstring>
+        <name>qdb_stream_open</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type><ref refid="group__stream_1ga61e9edaf4ece741a98bfa4a04257bd93" kindref="member">qdb_stream_mode_t</ref></type>
+          <declname>mode</declname>
+        </param>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref> *</type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Opens a stream in the specified mode. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stream are distributed over the nodes of the cluster and have no limit in size.</para><para>After the stream is opened, the cursor is positioned at the beginning of the stream.</para><para>The caller must release API-allocated resources with <ref refid="group__stream_1gab541089fe78e233916857687c74eb827" kindref="member">qdb_stream_close</ref> when the handle is no longer required.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the alias of the stream to open. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The mode in which the stream has to be open, read or read/write </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a stream handle that will be initialized if the function is successful </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1gab541089fe78e233916857687c74eb827" kindref="member">qdb_stream_close</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="92" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gab541089fe78e233916857687c74eb827" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_close</definition>
+        <argsstring>(qdb_stream_t stream)</argsstring>
+        <name>qdb_stream_close</name>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <briefdescription>
+<para>Closes a previously opened stream. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A stream handle previously initialized with <ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="102" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga82ce3a2f0714ae886f9b5e8f74949107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_read</definition>
+        <argsstring>(qdb_stream_t stream, void *content, size_t *content_length)</argsstring>
+        <name>qdb_stream_read</name>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>void *</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Reads data from the stream. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stream are distributed over the nodes of the cluster and have no limit in size.</para><para>The function will read at most content_length bytes from the stream and update the user provided buffer accordingly.</para><para>The cursor will be positioned just after the last byte read.</para><para>If no data is available, content_length will be set to zero and no bytes will be read.</para><para>The user provided buffer must be large enough to receive content_length bytes</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A stream handle previously initialized with <ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an user allocated buffer that will receive the bytes read from the stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer set by the caller to the desired amount of bytes to read from the stream. After the function complete, it will be updated by the number of bytes actually read from the stream. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="130" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga8a0002debbac3cd257700937c72388a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_write</definition>
+        <argsstring>(qdb_stream_t stream, const void *content, size_t size)</argsstring>
+        <name>qdb_stream_write</name>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>const void *</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type>size_t</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Writes data to the stream. </para>        </briefdescription>
+        <detaileddescription>
+<para>Stream are distributed over the nodes of the cluster and have no limit in size.</para><para>The function will write exactly the number of bytes specified by the user to the stream and position the cursor at the end of the written bytes.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A stream handle previously initialized with <ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a buffer with the content to add to the stream </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the buffer, in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="148" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gaa302c10e7d888f7f14e0471a6b70346e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_size</definition>
+        <argsstring>(qdb_stream_t stream, qdb_stream_size_t *size)</argsstring>
+        <name>qdb_stream_size</name>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="group__stream_1ga1779eebda777b5f992be5c8c61a6ffba" kindref="member">qdb_stream_size_t</ref> *</type>
+          <declname>size</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the total number of bytes written in a stream. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A stream handle previously initialized with <ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the size of the stream, in bytes </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga47df6f38db1b652dd2dd79f11418cd4f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_getpos</definition>
+        <argsstring>(qdb_stream_t stream, qdb_stream_size_t *position)</argsstring>
+        <name>qdb_stream_getpos</name>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="group__stream_1ga1779eebda777b5f992be5c8c61a6ffba" kindref="member">qdb_stream_size_t</ref> *</type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the current position of the cursor within the stream. </para>        </briefdescription>
+        <detaileddescription>
+<para>The cursor is zero based relative to the beginning of the stream.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A stream handle previously initialized with <ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the position of the cursor relative to the beginning of the stream. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="173" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1gabec707327492fe151cf336c75a7408e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_setpos</definition>
+        <argsstring>(qdb_stream_t stream, qdb_stream_size_t position)</argsstring>
+        <name>qdb_stream_setpos</name>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="group__stream_1ga1779eebda777b5f992be5c8c61a6ffba" kindref="member">qdb_stream_size_t</ref></type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Sets the position of the cursor in the stream. </para>        </briefdescription>
+        <detaileddescription>
+<para>The cursor is zero based relative to the beginning of the stream. The cursor may not point beyond the end of the stream.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A stream handle previously initialized with <ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An integer specifying the new cursor value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="186" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__stream_1ga1b1b13ecdbfa4a30387d6b3b0aaec3ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_stream_truncate</definition>
+        <argsstring>(qdb_stream_t stream, qdb_stream_size_t position)</argsstring>
+        <name>qdb_stream_truncate</name>
+        <param>
+          <type><ref refid="group__stream_1gaabc28f25030436673cff52fc4897589e" kindref="member">qdb_stream_t</ref></type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type><ref refid="group__stream_1ga1779eebda777b5f992be5c8c61a6ffba" kindref="member">qdb_stream_size_t</ref></type>
+          <declname>position</declname>
+        </param>
+        <briefdescription>
+<para>Truncates the stream at the specified position. </para>        </briefdescription>
+        <detaileddescription>
+<para>The position is zero based relative to the beginning of the stream. The position may not point beyond the end of the stream.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>stream</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A stream handle previously initialized with <ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>position</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An integer specifying the index at which the stream must be truncated. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__stream_1ga8f82cf6e595524a2bcc6b7a6f9d14ebb" kindref="member">qdb_stream_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="200" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__stream_1ga61e9edaf4ece741a98bfa4a04257bd93" prot="public" static="no">
+        <name>qdb_stream_mode_t</name>
+        <enumvalue id="stream_8h_1ga61e9edaf4ece741a98bfa4a04257bd93a783dcba4bcfdf258316d80325732a4ef" prot="public">
+          <name>qdb_stream_mode_read</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>Opens the stream in read only mode. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="stream_8h_1ga61e9edaf4ece741a98bfa4a04257bd93ae3b1f53fc9788126713487ef030c542d" prot="public">
+          <name>qdb_stream_mode_append</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Opens the stream in read and write mode Only one client at a time may open a stream for writing </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>The possible modes in which a stream may be opened. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="63" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/stream.h" bodystart="63" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__stream_1ga1779eebda777b5f992be5c8c61a6ffba" prot="public" static="no">
+        <type>uint64_t</type>
+        <definition>qdb_stream_size_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_stream_size_t</name>
+        <briefdescription>
+<para>A cross platform integer representing a stream size or position. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="52" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/stream.h" bodystart="52" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__stream_1gaabc28f25030436673cff52fc4897589e" prot="public" static="no">
+        <type>struct qdb_stream_internal *</type>
+        <definition>qdb_stream_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_stream_t</name>
+        <briefdescription>
+<para>An opaque stream handle. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="58" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/stream.h" bodystart="58" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
