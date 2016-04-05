@@ -194,8 +194,8 @@ Lastly, you can delete a deque, just like a blob::
     deque.remove();
 
 
-Manipulating integer
---------------------
+Manipulating integers
+---------------------
 
 Although it's possible to store integer in blobs, it's not very convenient.
 For that reason, quasardb has a dedicated type for storing 64-bit integers.
@@ -219,6 +219,52 @@ And there is a special function for performing atomic additions::
 
 ``QdbInteger.add()`` increments (or decrements if the argument is negative) the value in the database and returns the new value.
 
+
+Manipulating tags
+-----------------
+
+In quasardb, tags are strings that you can attach to entries. There are used as a kind of lightweight index.
+
+To add a tag to an entry, just call ``QdbEntry.addTag()``::
+
+    blob.addTag("name of the tag");
+
+A tag is also an entry, that you can manipulate through an instance of ``QdbTag``::
+
+    QdbTag tag = db.tag("name of the tag");
+
+From here, you can tag entries::
+
+    tag.addEntry("name of the blob");
+
+which is exactly the same as calling ``QdbEntry.addTag()``.
+
+It was also possible to use the handles instead of the alias, like this::
+
+    tag.addEntry(blob);
+    blob.addTag(tag);
+
+All of these constructions are synonym.
+
+Like adding a tag, there are four ways to remove a tag from an entry::
+
+    blob.removeTag("name of the tag");
+    blob.removeTag(tag);
+    tag.removeEntry("name of the blob");
+    tag.removeEntry(blob);
+
+From a ``QdbTag``, you can enumerate all tagged entries::
+
+    Iterable<QdbEntry> taggedEntries = tag.entries();
+
+And, from a ``QdbEntry``, you can enumerate all tags::
+
+    Iterable<QdbTag> tagsOfEntry = blob.tags();
+
+Like any other entry, a tag can be tagged and be removed::
+
+    tag.addTag("name of another tag");
+    tag.remove();
 
 Why ``QdbBuffer`` instead of ``ByteBuffer``?
 --------------------------------------------
@@ -260,6 +306,80 @@ So, in a nutshell:
 
 1. don't keep the result of ``QdbBuffer.toByteBuffer()``
 2. call ``QdbBuffer.close()`` as soon as possible
+
+Appendix A: entry class hierarchy
+---------------------------------
+
+* ``QdbEntry``
+
+  * ``QdbDeque``
+
+  * ``QdbExpirableEntry``
+
+    * ``QdbBlob``
+
+    * ``QdbInteger``
+
+  * ``QdbHashSet``
+
+  * ``QdbStream``
+
+  * ``QdbTag``
+
+Appendix B: exception class hierarchy
+-------------------------------------
+
+* ``RuntimeException``
+
+  * ``QdbException``
+
+    * ``QdbConnectionException``
+
+      * ``QdbConnectionRefusedException``
+
+      * ``QdbHostNotFoundException``
+
+    * ``QdbInputException``
+
+      * ``QdbInvalidArgumentException``
+
+      * ``QdbOutOfBoundsException``
+
+      * ``QdbReservedException``
+
+    * ``QdbOperationException``
+
+      * ``QdbAliasAlreadyExistsException``
+
+      * ``QdbAliasNotFoundException``
+
+      * ``QdbBatchAlreadyRunException``
+
+      * ``QdbBatchCloseException``
+
+      * ``QdbBatchNotRunException``
+
+      * ``QdbBufferClosedException``
+
+      * ``QdbIncompatibleTypeException``
+
+      * ``QdbOperationDisabledException``
+
+      * ``QdbOverflowException``
+
+      * ``QdbResourceLockedException``
+
+      * ``QdbUnderflowException``
+
+    * ``QdbProtocolException``
+
+      * ``QdbUnexpeectedReplyException``
+
+    * ``QdbSystemException``
+
+      * ``QdbLocalSystemException``
+
+      * ``QdbRemoteSystemException``
 
 Reference
 ---------
