@@ -266,6 +266,43 @@ Like any other entry, a tag can be tagged and be removed::
     tag.addTag("name of another tag");
     tag.remove();
 
+Batching operation
+------------------
+
+When manipulating a lot of small blobs, the network can become a bottleneck. To improve performance, quasardb allows to group operations together in a "batch".
+
+A batch is created from the ``QdbCluster``::
+
+    QdbBatch batch = db.createBatch();
+
+Then, you queue the operations, just like you did before::
+
+    batch.blob("name of the blob").put(someData);
+
+For operations that returns a value, the return type is wrapped in a "future"::
+
+    QdbFuture<ByteBuffer> content = batch.blob("name of the blob").get();
+
+A ``QdbFuture`` will contain the result of the operation, but only after running the batch::
+
+    batch.run();
+
+To read the result of the future, just call ``QdbFuture.get()``::
+
+    ByteBuffer bb = content.get();
+
+As you can see, the return value is a ``ByteBuffer``, and not a ``QdbBuffer``.
+This is because the memory is held by the ``QdbBatch``, until ``close()`` is called.
+For this reason, it's recommended to use a batch in a try-with-resource statement::
+
+    try (QdbBatch batch = db.createBatch()) {
+        batch.blob("blob1").put(contentOfBlob1);
+        QdbFuture<ByteBuffer> contentOfBlob2 = batch.blob("blob2").get();
+        batch.run();
+        doSomething(contentOfBlob2.get());
+    }
+
+
 Why ``QdbBuffer`` instead of ``ByteBuffer``?
 --------------------------------------------
 
