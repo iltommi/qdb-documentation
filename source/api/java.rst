@@ -266,6 +266,47 @@ Like any other entry, a tag can be tagged and be removed::
     tag.addTag("name of another tag");
     tag.remove();
 
+Manipulating streams
+--------------------
+
+In quasardb, a stream is like a blob, except that it's distributed and can grow indefinitely.
+
+As for the other types of entry, you get a handle via the ``QdbCluster``::
+
+    QdbStream stream = db.stream("name of the stream");
+
+Then you can do the common things you do with other entries::
+
+    stream.addTag("name of the tag");
+    stream.remove();
+
+But when you want to write to the stream, you need to open it::
+
+    SeekableByteChannel channel = stream.open(QdbStream.Mode.Append);
+    channel.write(someByteBuffer);
+    channel.close();
+
+Which, once again, should be used in a try-with-resource block::
+
+    try (SeekableByteChannel channel = stream.open(QdbStream.Mode.Append)) {
+      channel.write(someByteBuffer);
+    }
+
+The mode ``QdbStream.Mode.Append`` allows to read and write to the stream.
+Only one client can open the stream in this mode at a given type.
+In other words, the write access to the stream is exclusive.
+
+The ``SeekableByteChannel`` returned by ``open()`` allows to seek and truncate the stream.
+
+In a similar fashion, you can open the stream in read-only mode::
+
+    try (SeekableByteChannel channel = stream.open(QdbStream.Mode.Read)) {
+      channel.read(someByteBuffer);
+    }
+
+Except that there can be any number of clients reading the stream at the same time.
+
+
 Batching operation
 ------------------
 
@@ -301,7 +342,6 @@ For this reason, it's recommended to use a batch in a try-with-resource statemen
         batch.run();
         doSomething(contentOfBlob2.get());
     }
-
 
 Why ``QdbBuffer`` instead of ``ByteBuffer``?
 --------------------------------------------
