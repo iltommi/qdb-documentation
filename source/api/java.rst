@@ -40,7 +40,7 @@ For example, if you're using Maven, your ``pom.xml`` should look like:
         <dependency>
           <groupId>net.quasardb</groupId>
           <artifactId>qdb</artifactId>
-          <version>2.0.0-SNAPSHOT</version>
+          <version>2.0.0rc5</version>
         </dependency>
       </dependencies>
     </project>
@@ -59,7 +59,7 @@ Or, if you use Gradle, your ``build.gradle`` should look like:
     }
 
     dependencies {
-        compile 'net.quasardb:qdb:2.0.0-SNAPSHOT'
+        compile 'net.quasardb:qdb:2.0.0rc5'
     }
 
 Connecting to the database
