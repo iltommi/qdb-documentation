@@ -15,7 +15,7 @@
 <para>the associated handle set by <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="252" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="252" bodyend="-1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="235" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="235" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__tag__iterator__t_1a41dafce24eb28fa1aed7ac56b2d5b336" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -28,7 +28,7 @@
 <para>reserved do not use set by <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="255" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="255" bodyend="-1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="238" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="238" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__tag__iterator__t_1af342a0fb175ea3e3529d8a6e53ab6d79" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -41,7 +41,7 @@
 <para>reserved do not use set by <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="258" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="258" bodyend="-1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="241" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="241" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__tag__iterator__t_1a4c2ea878551cd1cf2e18cdcd5d59649e" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="261" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="261" bodyend="-1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="244" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="244" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__tag__iterator__t_1a7d18d152698307f4bf3505e7a5ff9939" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1gaaa6272f78edda811822bfce05a07f944" kindref="member">qdb_entry_type_t</ref></type>
@@ -67,14 +67,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="263" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="263" bodyend="-1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="246" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="246" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>An iterator to iterate on the entries matching a certain tag. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="249" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="248" bodyend="264"/>
+    <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="232" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/tag.h" bodystart="231" bodyend="247"/>
     <listofallmembers>
       <member refid="structqdb__const__tag__iterator__t_1a4c2ea878551cd1cf2e18cdcd5d59649e" prot="public" virt="non-virtual"><scope>qdb_const_tag_iterator_t</scope><name>alias</name></member>
       <member refid="structqdb__const__tag__iterator__t_1a68f9972cbcff5f14d42456122885a6ad" prot="public" virt="non-virtual"><scope>qdb_const_tag_iterator_t</scope><name>handle</name></member>

@@ -48,16 +48,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1gae5209e70934e590806717a1b24daf40c" kindref="member">qdb_add_tags</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga1e472453b30ae0a338011ae501215afe" kindref="member">qdb_has_tag</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gae5209e70934e590806717a1b24daf40c" kindref="member">qdb_add_tags</ref>, <ref refid="group__tag_1ga1e472453b30ae0a338011ae501215afe" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="72" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="67" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1gae5209e70934e590806717a1b24daf40c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -113,16 +108,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1gaef8490d3ad7b0f5033d555adc557c9f4" kindref="member">qdb_add_tag</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga1e472453b30ae0a338011ae501215afe" kindref="member">qdb_has_tag</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gaef8490d3ad7b0f5033d555adc557c9f4" kindref="member">qdb_add_tag</ref>, <ref refid="group__tag_1ga1e472453b30ae0a338011ae501215afe" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="104" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="94" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga1e472453b30ae0a338011ae501215afe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -167,13 +157,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__batch_1ga7d8d05b00ee1fab020dde4efae1113ff" kindref="member">qdb_run_batch</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref>, <ref refid="group__batch_1ga7d8d05b00ee1fab020dde4efae1113ff" kindref="member">qdb_run_batch</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="130" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="118" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -218,13 +206,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="156" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="142" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga3cba8891e8d89bbff092723a17671927" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -280,13 +266,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="183" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="167" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -342,12 +326,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref>, <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="214" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="197" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -407,7 +390,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="238" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="221" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -452,13 +435,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1gad00591559b223acc6eb0579b26acd489" kindref="member">qdb_tag_iterator_next</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gad00591559b223acc6eb0579b26acd489" kindref="member">qdb_tag_iterator_next</ref>, <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="295" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="276" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1gad00591559b223acc6eb0579b26acd489" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -481,13 +462,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="321" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="300" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -514,7 +493,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="335" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="314" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

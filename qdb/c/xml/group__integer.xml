@@ -58,13 +58,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1ga0fbe264da4dee45294b893f3146a2c28" kindref="member">qdb_int_update</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1gad5d98664f4e7318e1ae95083b50bc227" kindref="member">qdb_int_get</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1ga1c2b514094983bffbfb0c9fdb3c9e822" kindref="member">qdb_int_add</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__integer_1ga0fbe264da4dee45294b893f3146a2c28" kindref="member">qdb_int_update</ref>, <ref refid="group__integer_1gad5d98664f4e7318e1ae95083b50bc227" kindref="member">qdb_int_get</ref>, <ref refid="group__integer_1ga1c2b514094983bffbfb0c9fdb3c9e822" kindref="member">qdb_int_add</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="71" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="69" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__integer_1ga0fbe264da4dee45294b893f3146a2c28" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -120,13 +118,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1gab32a0cebd83b03fbf9e9c6c4afe8efd2" kindref="member">qdb_int_put</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1gad5d98664f4e7318e1ae95083b50bc227" kindref="member">qdb_int_get</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1ga1c2b514094983bffbfb0c9fdb3c9e822" kindref="member">qdb_int_add</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__integer_1gab32a0cebd83b03fbf9e9c6c4afe8efd2" kindref="member">qdb_int_put</ref>, <ref refid="group__integer_1gad5d98664f4e7318e1ae95083b50bc227" kindref="member">qdb_int_get</ref>, <ref refid="group__integer_1ga1c2b514094983bffbfb0c9fdb3c9e822" kindref="member">qdb_int_add</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="98" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="94" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__integer_1gad5d98664f4e7318e1ae95083b50bc227" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -171,13 +167,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1gab32a0cebd83b03fbf9e9c6c4afe8efd2" kindref="member">qdb_int_put</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1ga0fbe264da4dee45294b893f3146a2c28" kindref="member">qdb_int_update</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1ga1c2b514094983bffbfb0c9fdb3c9e822" kindref="member">qdb_int_add</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__integer_1gab32a0cebd83b03fbf9e9c6c4afe8efd2" kindref="member">qdb_int_put</ref>, <ref refid="group__integer_1ga0fbe264da4dee45294b893f3146a2c28" kindref="member">qdb_int_update</ref>, <ref refid="group__integer_1ga1c2b514094983bffbfb0c9fdb3c9e822" kindref="member">qdb_int_add</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="121" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="115" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__integer_1ga1c2b514094983bffbfb0c9fdb3c9e822" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -235,13 +229,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1gab32a0cebd83b03fbf9e9c6c4afe8efd2" kindref="member">qdb_int_put</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1ga0fbe264da4dee45294b893f3146a2c28" kindref="member">qdb_int_update</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__integer_1gad5d98664f4e7318e1ae95083b50bc227" kindref="member">qdb_int_get</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__integer_1gab32a0cebd83b03fbf9e9c6c4afe8efd2" kindref="member">qdb_int_put</ref>, <ref refid="group__integer_1ga0fbe264da4dee45294b893f3146a2c28" kindref="member">qdb_int_update</ref>, <ref refid="group__integer_1gad5d98664f4e7318e1ae95083b50bc227" kindref="member">qdb_int_get</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="150" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="142" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
