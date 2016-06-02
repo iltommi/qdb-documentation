@@ -37,10 +37,10 @@ Quick Reference
   Set              :func:`Cluster.set`                                ``(String alias)``
   Tag              :func:`Cluster.tag`                                ``(String tagName)``
   ..
-  bool             :func:`Error.informational`                        ``()``
-  bool             :func:`Error.transient`                            ``()``
-  String           :func:`Error.message`                              ``()``
-  int              :func:`Error.code`                                 ``()``
+  bool             :attr:`Error.informational`
+  bool             :attr:`Error.transient`
+  String           :attr:`Error.message`
+  int              :attr:`Error.code`
   ..
   String           :attr:`Deque.alias`                                ``()``
   ..               :func:`Deque.pushFront`                            ``(Buffer content, callback(err))``
@@ -414,25 +414,25 @@ Example::
 
 .. js:class:: Error
 
-  .. js:function:: Error.informational ()
+  .. js:attribute:: Error.informational
 
       Determines if the error is an informational error.
 
       :returns: True if the error is informational, false otherwise.
 
-  .. js:function:: Error.transient ()
+  .. js:attribute:: Error.transient
 
         Determines if the error is a transient error.
 
       :returns: True if the error is transient, false otherwise.
 
-  .. js:function:: Error.message ()
+  .. js:attribute:: Error.message
 
       Gets a description of the error.
 
       :returns: A string containing the error message.
 
-  .. js:function:: Error.code ()
+  .. js:attribute:: Error.code
 
       Gets the error code.
 
