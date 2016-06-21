@@ -110,6 +110,8 @@ Entries are often kept resident in a write cache so the daemon can rapidly serve
 
 You can also disable data storage altogether, making quasardb a pure in-memory repository. In transient mode, entries will be lost on eviction or node shutdown and entries cannot be interated upon. See :option:`--transient` and `transient-mode`.
 
+It is possible to limit the amount of space a node will occupy with the "max_size" option. The writes to the node will fail when the disk usage reaches that limit, warnings being emitted before that point. The write ahead log is not accounted in the space usage meaning that the actual disk usage may be greater than the limit. Compression may also reduce the actual disk usage.
+
 For more information, see :doc:`../concepts/data_storage` and :doc:`../concepts/data_transfer`.
 
 
@@ -421,11 +423,12 @@ Instance specific
 .. option:: --max-depot-size=<size-in-bytes>
 
     Sets the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
+    The write ahead log is not accounted in the disk usage.
 
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
 
     Argument
-        An integer representing the maximum size of the database on disk in bytes.
+        An integer representing the maximum size of the database on disk in bytes. The minimum value is 134,217,728 (128 MB).
 
     Default value
         0 (disabled)

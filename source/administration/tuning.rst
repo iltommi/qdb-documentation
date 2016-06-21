@@ -26,6 +26,13 @@ Recommendations
     * A quasardb cluster can be very network intensive. Make sure you have the network infrastructure the handle the load.
     * Don't be afraid to add nodes. It's simple and safe.
 
+OS X Recommendations
+--------------------
+
+ #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, you should update the values. For example, to set it to 65535::
+
+         sudo launchctl limit maxfiles 65535 65535
+
 Linux Recommendations
 ----------------------
 
