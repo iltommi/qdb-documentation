@@ -4,9 +4,9 @@
     <compoundname>deque</compoundname>
     <title>Distributed double-ended queues operations</title>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__deque_1gae20c3496aa14ae6b1d4e6fc390832ae7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_size</definition>
+      <memberdef kind="function" id="group__deque_1ga754d6acdf6f648fa89023076143ab245" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_size</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_size_t *size)</argsstring>
         <name>qdb_deque_size</name>
         <param>
@@ -29,7 +29,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -50,12 +50,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="67" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="67" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga3678d442c73b31619cc209b7b2a01176" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_get_at</definition>
-        <argsstring>(qdb_handle_t handle, const char *alias, long index, const void **content, qdb_size_t *content_length)</argsstring>
+      <memberdef kind="function" id="group__deque_1gac64f3e6b2463c2f36d8edb6f85a8b136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_get_at</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, qdb_int_t index, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_get_at</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -66,7 +66,7 @@
           <declname>alias</declname>
         </param>
         <param>
-          <type>long</type>
+          <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
           <declname>index</declname>
         </param>
         <param>
@@ -85,7 +85,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -120,12 +120,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="97" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="97" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga7788665b46f36886435fd41fa7f663fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_set_at</definition>
-        <argsstring>(qdb_handle_t handle, const char *alias, long index, const void *content, qdb_size_t content_length)</argsstring>
+      <memberdef kind="function" id="group__deque_1ga1f82de28b65550983ce7d9112527d844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_set_at</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, qdb_int_t index, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_set_at</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -136,7 +136,7 @@
           <declname>alias</declname>
         </param>
         <param>
-          <type>long</type>
+          <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
           <declname>index</declname>
         </param>
         <param>
@@ -155,7 +155,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -190,11 +190,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="130" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="130" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga8986f95f3da63618366b6fe07acd56c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_push_front</definition>
+      <memberdef kind="function" id="group__deque_1ga9097a68764ab9e96f5c2849c44db3811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_push_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_push_front</name>
         <param>
@@ -221,7 +221,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -249,11 +249,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="160" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="160" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga7d371a022681a2fda3d5e0c06f0deab3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_push_back</definition>
+      <memberdef kind="function" id="group__deque_1gaf1854a920646563935af1c921e3c8b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_push_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_push_back</name>
         <param>
@@ -280,7 +280,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -308,11 +308,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="189" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="189" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga253f33e3ac2d2bddcc847852186bdafe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_pop_front</definition>
+      <memberdef kind="function" id="group__deque_1ga72d53de692f62d2179bd09dd7f2d54d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_pop_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_pop_front</name>
         <param>
@@ -339,7 +339,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -367,11 +367,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="221" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="221" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga8d39a12e25511b534a81d01ca910d03e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_pop_back</definition>
+      <memberdef kind="function" id="group__deque_1gaa8d4c4e5d3ad4d25ccf0df5c19268980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_pop_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_pop_back</name>
         <param>
@@ -398,7 +398,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -426,11 +426,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="253" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="253" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga0fd8c2078f7df690bc096c9ba89aa018" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_front</definition>
+      <memberdef kind="function" id="group__deque_1gaa87d20cc39c8c53158356e8c44e2c0eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_front</name>
         <param>
@@ -457,7 +457,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -485,11 +485,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="281" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="281" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__deque_1ga201ba1ae8df5b0690121ef4d1010b4ed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_deque_back</definition>
+      <memberdef kind="function" id="group__deque_1ga7c90633e28b95906e815a9317bc8d547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_deque_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_back</name>
         <param>
@@ -516,7 +516,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -544,7 +544,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="309" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/deque.h" line="309" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

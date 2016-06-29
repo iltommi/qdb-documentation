@@ -6,9 +6,9 @@
     <innerclass refid="structqdb__const__iterator__t" prot="public">qdb_const_iterator_t</innerclass>
     <innerclass refid="structqdb__remote__node__t" prot="public">qdb_remote_node_t</innerclass>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__client_1ga8aaf6c6f60163c385d79a2043a9ed199" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> const char *</type>
-        <definition>QDB_API_LINKAGE const char* qdb_error</definition>
+      <memberdef kind="function" id="group__client_1gac19115af2f71978c584cfcee8059c7c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* qdb_error</definition>
         <argsstring>(qdb_error_t error)</argsstring>
         <name>qdb_error</name>
         <param>
@@ -30,11 +30,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="304" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="305" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gab0ffd6b2788132113bf3152d2d8bb329" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> const char *</type>
-        <definition>QDB_API_LINKAGE const char* qdb_version</definition>
+      <memberdef kind="function" id="group__client_1ga49d1a4e7a20ad93207402c701b57643b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* qdb_version</definition>
         <argsstring>(void)</argsstring>
         <name>qdb_version</name>
         <param>
@@ -47,11 +47,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="311" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="312" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga9be759a55d51e1d1407150985ff1397e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> const char *</type>
-        <definition>QDB_API_LINKAGE const char* qdb_build</definition>
+      <memberdef kind="function" id="group__client_1ga4057e6f052a167bf6206b465582f9e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>const char *</type>
+        <definition>const char* qdb_build</definition>
         <argsstring>(void)</argsstring>
         <name>qdb_build</name>
         <param>
@@ -64,11 +64,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="318" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="319" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_open</definition>
+      <memberdef kind="function" id="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_open</definition>
         <argsstring>(qdb_handle_t *handle, qdb_protocol_t proto)</argsstring>
         <name>qdb_open</name>
         <param>
@@ -98,15 +98,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gab10eb8485f7e3088c91800b0dd254b71" kindref="member">qdb_connect</ref>, <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>, <ref refid="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" kindref="member">qdb_protocol_t</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kindref="member">qdb_connect</ref>, <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>, <ref refid="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" kindref="member">qdb_protocol_t</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="327" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="328" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_handle_t qdb_open_tcp</definition>
+      <memberdef kind="function" id="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+        <definition>qdb_handle_t qdb_open_tcp</definition>
         <argsstring>(void)</argsstring>
         <name>qdb_open_tcp</name>
         <param>
@@ -116,15 +116,15 @@
 <para>Creates a TCP/IP qdb_handle_t. No connection will be established. </para>        </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>An initialized qdb_handle_t, ready to connect, in case of success, NULL in case of failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gab10eb8485f7e3088c91800b0dd254b71" kindref="member">qdb_connect</ref>, <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kindref="member">qdb_connect</ref>, <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="335" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="336" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gae3e829dc03d7c340a29205577aedaa69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_timeout</definition>
+      <memberdef kind="function" id="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_option_set_timeout</definition>
         <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
         <name>qdb_option_set_timeout</name>
         <param>
@@ -158,11 +158,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="344" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="345" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga4bd0df71f3846e92ac1d3ff0e2eb8a87" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_add_log_callback</definition>
+      <memberdef kind="function" id="group__client_1ga41f40fc5037f4f3cfcd09a5a7e74156d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_option_add_log_callback</definition>
         <argsstring>(qdb_log_callback cb, qdb_log_callback_id *callback_id)</argsstring>
         <name>qdb_option_add_log_callback</name>
         <param>
@@ -192,15 +192,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__client_1ga662ae988771904ba26c9ab8d07cc5884" kindref="member">qdb_option_remove_log_callback</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__client_1gaaa9fff3de285c08fad5b8f5d3b89f466" kindref="member">qdb_option_remove_log_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="357" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="358" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga662ae988771904ba26c9ab8d07cc5884" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_remove_log_callback</definition>
+      <memberdef kind="function" id="group__client_1gaaa9fff3de285c08fad5b8f5d3b89f466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_option_remove_log_callback</definition>
         <argsstring>(qdb_log_callback_id callback_id)</argsstring>
         <name>qdb_option_remove_log_callback</name>
         <param>
@@ -219,15 +219,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__client_1ga4bd0df71f3846e92ac1d3ff0e2eb8a87" kindref="member">qdb_option_add_log_callback</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__client_1ga41f40fc5037f4f3cfcd09a5a7e74156d" kindref="member">qdb_option_add_log_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="367" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="368" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gaec243774077e7b323dd5b57c99d00e2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_compression</definition>
+      <memberdef kind="function" id="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_option_set_compression</definition>
         <argsstring>(qdb_handle_t handle, qdb_compression_t comp_level)</argsstring>
         <name>qdb_option_set_compression</name>
         <param>
@@ -262,11 +262,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="380" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="381" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gab10eb8485f7e3088c91800b0dd254b71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_connect</definition>
+      <memberdef kind="function" id="group__client_1ga76340764ecf54bcf726bb9ced7f33041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_connect</definition>
         <argsstring>(qdb_handle_t handle, const char *uri)</argsstring>
         <name>qdb_connect</name>
         <param>
@@ -287,7 +287,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -298,16 +298,16 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref>, <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref>, <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref> </para></simplesect>
 <simplesect kind="attention"><para>Make sure all the addresses in the URI belong to the same cluster </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="406" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="407" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gadbacfb13356c82e1cf54896ed4d8fb58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_close</definition>
+      <memberdef kind="function" id="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_close</definition>
         <argsstring>(qdb_handle_t handle)</argsstring>
         <name>qdb_close</name>
         <param>
@@ -322,7 +322,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
@@ -330,11 +330,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="421" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="422" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gac730e57a2af51766f07acf092bdd6e22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_copy_alloc_buffer</definition>
+      <memberdef kind="function" id="group__client_1gad44ca490ccc6252718a67385646a2706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_copy_alloc_buffer</definition>
         <argsstring>(qdb_handle_t handle, const void *source_buffer, qdb_size_t source_buffer_size, const void **dest_buffer)</argsstring>
         <name>qdb_copy_alloc_buffer</name>
         <param>
@@ -386,15 +386,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="437" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="438" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> void</type>
-        <definition>QDB_API_LINKAGE void qdb_free_buffer</definition>
+      <memberdef kind="function" id="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qdb_free_buffer</definition>
         <argsstring>(qdb_handle_t handle, const void *buffer)</argsstring>
         <name>qdb_free_buffer</name>
         <param>
@@ -408,12 +408,12 @@
         <briefdescription>
 <para>Releases an API allocated buffer. </para>        </briefdescription>
         <detaileddescription>
-<para>Failure to properly call this function may result in excessive memory usage. Most operations that return a content (e.g. batch operations, <ref refid="group__blob_1ga79619e400997cf67c7f213fbcccd88c4" kindref="member">qdb_blob_get</ref>, <ref refid="group__blob_1gad2ac5b09a51722c08bda77eaff228e9d" kindref="member">qdb_blob_get_and_update</ref>, <ref refid="group__blob_1gac15e696f07b3099e8390fdf7acb3352f" kindref="member">qdb_blob_compare_and_swap</ref>...) will allocate a buffer for the content and will not release the allocated buffer until you either call this function or close the handle.</para><para>For API functions that returns a collection of results, use <ref refid="group__client_1ga17d5c82ec27ff68c94870a69b603dc6f" kindref="member">qdb_free_results</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Failure to properly call this function may result in excessive memory usage. Most operations that return a content (e.g. batch operations, <ref refid="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" kindref="member">qdb_blob_get</ref>, <ref refid="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" kindref="member">qdb_blob_get_and_update</ref>, <ref refid="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" kindref="member">qdb_blob_compare_and_swap</ref>...) will allocate a buffer for the content and will not release the allocated buffer until you either call this function or close the handle.</para><para>For API functions that returns a collection of results, use <ref refid="group__client_1ga256f95b0fdde386ec074c416634a64b7" kindref="member">qdb_free_results</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -424,15 +424,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga17d5c82ec27ff68c94870a69b603dc6f" kindref="member">qdb_free_results</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga256f95b0fdde386ec074c416634a64b7" kindref="member">qdb_free_results</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="461" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="462" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga17d5c82ec27ff68c94870a69b603dc6f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> void</type>
-        <definition>QDB_API_LINKAGE void qdb_free_results</definition>
+      <memberdef kind="function" id="group__client_1ga256f95b0fdde386ec074c416634a64b7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>void</type>
+        <definition>void qdb_free_results</definition>
         <argsstring>(qdb_handle_t handle, const char **results, qdb_size_t results_count)</argsstring>
         <name>qdb_free_results</name>
         <param>
@@ -451,13 +451,13 @@
 <para>Results a collection of API allocated results. </para>        </briefdescription>
         <detaileddescription>
 <para>Functions that returns a list of results expect the API-allocated buffers to be released with qdb_free_results.</para><para>Example of such functions:<itemizedlist>
-<listitem><para><ref refid="group__prefix_1ga2e0288558e495e43435b38e0a637ddf8" kindref="member">qdb_prefix_get</ref></para></listitem><listitem><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref></para></listitem><listitem><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref></para></listitem></itemizedlist>
+<listitem><para><ref refid="group__prefix_1ga920582605239db5da468546cd42ddbfc" kindref="member">qdb_prefix_get</ref></para></listitem><listitem><para><ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref></para></listitem><listitem><para><ref refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kindref="member">qdb_get_tags</ref></para></listitem></itemizedlist>
 </para><para>For API functions that return a single content, use qdb_free_buffer.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -475,15 +475,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="483" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="484" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gae2e11082ceb8cb647680482b9056a2a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_remove</definition>
+      <memberdef kind="function" id="group__client_1ga20ff61aa14d5b7659e2e22c2798503ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_remove</definition>
         <argsstring>(qdb_handle_t handle, const char *alias)</argsstring>
         <name>qdb_remove</name>
         <param>
@@ -502,7 +502,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -516,11 +516,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="503" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="504" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gad9d32d4869c9950803f7cde8893de1fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_expires_at</definition>
+      <memberdef kind="function" id="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_expires_at</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t expiry_time)</argsstring>
         <name>qdb_expires_at</name>
         <param>
@@ -538,12 +538,12 @@
         <briefdescription>
 <para>Sets the absolute expiration time of an entry, if the type supports expiration. </para>        </briefdescription>
         <detaileddescription>
-<para>Blobs and integers can have an expiration time and will automatically be removed by the cluster when they expire.</para><para>The absolute expiration time is the Unix epoch, that is, the number of seconds since January 1st 1970 00h00 (UTC). To use a relative expiration time (that is expiration relative to the time of the call), use <ref refid="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" kindref="member">qdb_expires_from_now</ref>.</para><para>To remove the expiration time of an entry, use the specify value qdb_never_expires.</para><para>Values in the past are refused, but the cluster will have a certain tolerance to account for clock skews.</para><para><parameterlist kind="param"><parameteritem>
+<para>Blobs and integers can have an expiration time and will automatically be removed by the cluster when they expire.</para><para>The absolute expiration time is the Unix epoch, that is, the number of seconds since January 1st 1970 00h00 (UTC). To use a relative expiration time (that is expiration relative to the time of the call), use <ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref>.</para><para>To remove the expiration time of an entry, use the specify value qdb_never_expires.</para><para>Values in the past are refused, but the cluster will have a certain tolerance to account for clock skews.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -562,15 +562,15 @@
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
 <simplesect kind="attention"><para>It is an error to specify an expiration in the time, although the cluster has a certain tolerance </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="533" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="534" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_expires_from_now</definition>
+      <memberdef kind="function" id="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_expires_from_now</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t expiry_delta)</argsstring>
         <name>qdb_expires_from_now</name>
         <param>
@@ -588,12 +588,12 @@
         <briefdescription>
 <para>Sets the expiration time of an entry, relative to the current time of the client, if the type supports expiration. </para>        </briefdescription>
         <detaileddescription>
-<para>Blobs and integers can have an expiration time and will automatically be removed by the cluster when they expire.</para><para>The expiration is relative to the current time of the machine.</para><para>To remove the expiration time of an entry or to use an absolute expiration time use <ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Blobs and integers can have an expiration time and will automatically be removed by the cluster when they expire.</para><para>The expiration is relative to the current time of the machine.</para><para>To remove the expiration time of an entry or to use an absolute expiration time use <ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -611,15 +611,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="557" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="558" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga596f19e470bf460cd552db37530961e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_expiry_time</definition>
+      <memberdef kind="function" id="group__client_1ga089edb1764e8a5567c24dbd001a325db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_get_expiry_time</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t *expiry_time)</argsstring>
         <name>qdb_get_expiry_time</name>
         <param>
@@ -642,7 +642,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -660,16 +660,16 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="575" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="576" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga00e927042f6f031e2b07bc8b2ea579f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_location</definition>
+      <memberdef kind="function" id="group__client_1gaa71923537cfe32018774ad55eacd246e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_get_location</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_remote_node_t *location)</argsstring>
         <name>qdb_get_location</name>
         <param>
@@ -692,7 +692,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -713,11 +713,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="597" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="598" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga6446b0628a8ee9639e1fa0da3c6c8527" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_type</definition>
+      <memberdef kind="function" id="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_get_type</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_entry_type_t *entry_type)</argsstring>
         <name>qdb_get_type</name>
         <param>
@@ -740,7 +740,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -761,16 +761,20 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="611" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="612" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga9852d2db0f72a49e5eec798cf2c11acb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_purge_all</definition>
-        <argsstring>(qdb_handle_t handle)</argsstring>
+      <memberdef kind="function" id="group__client_1gafd9d900e49d68ed2989ac489360baa96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_purge_all</definition>
+        <argsstring>(qdb_handle_t handle, int timeout)</argsstring>
         <name>qdb_purge_all</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
           <declname>handle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
         </param>
         <briefdescription>
 <para>Removes irremediably all data from all the nodes of the cluster. </para>        </briefdescription>
@@ -780,7 +784,14 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A timeout value, in seconds </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
@@ -788,16 +799,20 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="634" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="636" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga9b43c77ce9986e8ab424219336674da0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_trim_all</definition>
-        <argsstring>(qdb_handle_t handle)</argsstring>
+      <memberdef kind="function" id="group__client_1gad0b2a001e96c9afd91706cd1c451be11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_trim_all</definition>
+        <argsstring>(qdb_handle_t handle, int timeout)</argsstring>
         <name>qdb_trim_all</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
           <declname>handle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout</declname>
         </param>
         <briefdescription>
 <para>Trims all data on all the nodes of the cluster. </para>        </briefdescription>
@@ -807,7 +822,14 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A timeout value, in seconds </para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
@@ -815,11 +837,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="661" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="664" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga9e206a7e7c1423fea3164104c27c11c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_status</definition>
+      <memberdef kind="function" id="group__client_1gad25f0db2db8eb2cb7285f3d65c070c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_node_status</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_status</name>
         <param>
@@ -841,12 +863,12 @@
         <briefdescription>
 <para>Returns the status of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its status and allocate a buffer of the appropriate size, which will later have to be releases with <ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref>.</para><para>The status is JSON object and contains current information of the node state, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its status and allocate a buffer of the appropriate size, which will later have to be releases with <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref>.</para><para>The status is JSON object and contains current information of the node state, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -871,15 +893,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="683" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="686" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga5276d38715650cb3102ce3f1f22a4945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_config</definition>
+      <memberdef kind="function" id="group__client_1ga14c411ee3a3c3fec0e57ba48eba411b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_node_config</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_config</name>
         <param>
@@ -901,12 +923,12 @@
         <briefdescription>
 <para>Returns the configuration of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its configuration and allocate a buffer of the appropriate size, which will later have to be releases with <ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref>.</para><para>The configuration is JSON object, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its configuration and allocate a buffer of the appropriate size, which will later have to be releases with <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref>.</para><para>The configuration is JSON object, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -931,15 +953,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="707" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="710" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga0f18055deb3c22c89e6391595b85a4aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_topology</definition>
+      <memberdef kind="function" id="group__client_1gaa448d12338945be0e16f1ac63bb0eb92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_node_topology</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_topology</name>
         <param>
@@ -961,12 +983,12 @@
         <briefdescription>
 <para>Returns the topology of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its topology and allocate a buffer of the appropriate size, which will later have to be releases with <ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref>.</para><para>The topology is JSON object containing the node address, and the addresses of its successor and predecessor.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its topology and allocate a buffer of the appropriate size, which will later have to be releases with <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref>.</para><para>The topology is JSON object containing the node address, and the addresses of its successor and predecessor.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -991,15 +1013,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gab8d186d33a31fa0004c1102b76dc50d5" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="732" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="735" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gab7c73a18d1c3efff80b73a542d192d83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_stop</definition>
+      <memberdef kind="function" id="group__client_1ga0ee58acda04e9acb66e4a22b5ddf6c03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_node_stop</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char *reason)</argsstring>
         <name>qdb_node_stop</name>
         <param>
@@ -1022,7 +1044,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1043,11 +1065,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="753" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="756" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_begin</definition>
+      <memberdef kind="function" id="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_begin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_begin</name>
         <param>
@@ -1061,12 +1083,12 @@
         <briefdescription>
 <para>Creates an iterator that points to the &quot;first&quot; entry of the cluster. </para>        </briefdescription>
         <detaileddescription>
-<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__client_1ga33c4a95b80034c417b92a5fb4afb70d8" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return qdb_e_alias_not_found and the user must call <ref refid="group__client_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> to release client allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__client_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return qdb_e_alias_not_found and the user must call <ref refid="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> to release client allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1077,15 +1099,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga33c4a95b80034c417b92a5fb4afb70d8" kindref="member">qdb_iterator_next</ref>, <ref refid="group__client_1gab7a14f035da4003117b815466c226715" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__client_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__client_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="788" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="791" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga20f363c2e7bdaa7ffaedc835dd08b34f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_rbegin</definition>
+      <memberdef kind="function" id="group__client_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_rbegin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_rbegin</name>
         <param>
@@ -1099,12 +1121,12 @@
         <briefdescription>
 <para>Creates an iterator that points to the &quot;last&quot; entry of the cluster. </para>        </briefdescription>
         <detaileddescription>
-<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>This works exactly like <ref refid="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref>, excepts it starts at the &quot;end&quot; of the cluster.</para><para>Call <ref refid="group__client_1gab7a14f035da4003117b815466c226715" kindref="member">qdb_iterator_previous</ref> to go to the previous available entry, if any.</para><para>See <ref refid="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>This works exactly like <ref refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, excepts it starts at the &quot;end&quot; of the cluster.</para><para>Call <ref refid="group__client_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref> to go to the previous available entry, if any.</para><para>See <ref refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1115,15 +1137,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__client_1ga33c4a95b80034c417b92a5fb4afb70d8" kindref="member">qdb_iterator_next</ref>, <ref refid="group__client_1gab7a14f035da4003117b815466c226715" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__client_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__client_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__client_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="813" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="816" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga33c4a95b80034c417b92a5fb4afb70d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_next</definition>
+      <memberdef kind="function" id="group__client_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_next</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_next</name>
         <param>
@@ -1141,15 +1163,15 @@
 <para>A pointer to a previously initialized iterator.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="826" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="829" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gab7a14f035da4003117b815466c226715" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_previous</definition>
+      <memberdef kind="function" id="group__client_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_previous</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_previous</name>
         <param>
@@ -1167,15 +1189,15 @@
 <para>A pointer to a previously initialized iterator.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="841" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="844" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga61e0ede851d11ec7fa4dce54bf26434f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_close</definition>
+      <memberdef kind="function" id="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_close</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_close</name>
         <param>
@@ -1193,15 +1215,15 @@
 <para>A pointer to a previously initialized iterator. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="group__client_1ga20f363c2e7bdaa7ffaedc835dd08b34f" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="848" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="851" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gac0ad474e9a8360e23c049266f2b6b402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_copy</definition>
+      <memberdef kind="function" id="group__client_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_copy</definition>
         <argsstring>(const qdb_const_iterator_t *original, qdb_const_iterator_t *copy)</argsstring>
         <name>qdb_iterator_copy</name>
         <param>
@@ -1215,15 +1237,15 @@
         <briefdescription>
 <para>Clones a previously initialized iterator. </para>        </briefdescription>
         <detaileddescription>
-<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__client_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__client_1ga20f363c2e7bdaa7ffaedc835dd08b34f" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__client_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__client_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__client_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="859" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="862" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga5381c438bbdf8f637e9257793679344a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_tag_iterator_copy</definition>
+      <memberdef kind="function" id="group__client_1ga649bfb20c6c8f6b2495b1d2878633298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_tag_iterator_copy</definition>
         <argsstring>(const qdb_const_tag_iterator_t *original, qdb_const_tag_iterator_t *copy)</argsstring>
         <name>qdb_tag_iterator_copy</name>
         <param>
@@ -1237,24 +1259,14 @@
         <briefdescription>
 <para>Clones a previously initialized tag iterator. </para>        </briefdescription>
         <detaileddescription>
-<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
+<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="325" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="325" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="define">
-      <memberdef kind="define" id="group__client_1ga008cbf050a89152ec67d33e534cd3012" prot="public" static="no">
-        <name>QDB_API_LINKAGE</name>
-        <briefdescription>
-<para>Linking parameters for the API functions. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="83" column="11" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="83" bodyend="-1"/>
-      </memberdef>
       <memberdef kind="define" id="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" prot="public" static="no">
         <name>qdb_never_expires</name>
         <initializer>((<ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref>)0u)</initializer>
@@ -1265,11 +1277,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="120" column="9" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="120" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="121" column="9" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__client_1gacec73da0a3d7364196f4e6682f5fd522" prot="public" static="no">
         <name>qdb_preserve_expiration</name>
-        <initializer>((<ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref>)0xffffffffffffffffull)</initializer>
+        <initializer>((<ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref>)0xFFFFFFFFFFFFFFFFull)</initializer>
         <briefdescription>
 <para>An arbitrary time value representing the &quot;preserve existing
 expiration&quot; time value. </para>        </briefdescription>
@@ -1278,7 +1290,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="126" column="9" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="126" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="127" column="9" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="127" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -1306,7 +1318,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="135" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="135" bodyend="140"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="136" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="136" bodyend="141"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1ga2c0493e17b424c05b599b54ea641adba" prot="public" static="no">
         <name>qdb_compression</name>
@@ -1337,11 +1349,11 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>An enumeration of compression parameters. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gaec243774077e7b323dd5b57c99d00e2d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="151" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="151" bodyend="160"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="152" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="152" bodyend="161"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1ga222536ecf11bc6ab9468946ba51a446a" prot="public" static="no">
         <name>qdb_protocol</name>
@@ -1356,11 +1368,11 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>An enumeration of allowed network protocols. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="171" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="171" bodyend="175"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="172" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="172" bodyend="176"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1ga8dc603a7bf83954b01043dcba99354fd" prot="public" static="no">
         <name>qdb_log_level</name>
@@ -1419,7 +1431,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="186" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="186" bodyend="199"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="187" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="187" bodyend="200"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1gabc708719df4e28cd85c743e1a4582661" prot="public" static="no">
         <name>qdb_entry_type</name>
@@ -1485,7 +1497,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="279" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="279" bodyend="294"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="280" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="280" bodyend="295"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -1497,12 +1509,12 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>A cross-platform type that represents a time value. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref> </para></simplesect>
 <simplesect kind="remark"><para>qdb_time_t MUST be 64-bit large. The API will probably not link otherwise. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="98" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="98" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="99" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="99" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga2b6f368592c49501d41ec2330b964147" prot="public" static="no">
         <type>size_t</type>
@@ -1515,7 +1527,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="104" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="104" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="105" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga17492cb84da5466d0c742f0561df6597" prot="public" static="no">
         <type>int64_t</type>
@@ -1528,7 +1540,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="113" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="113" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="114" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="114" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1gab2ede040a754735a3f751a14acd8cf7f" prot="public" static="no">
         <type>enum <ref refid="group__client_1ga14ba3138099f3c7969f707eb4b16c35b" kindref="member">qdb_limits</ref></type>
@@ -1541,7 +1553,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="140" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="141" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga3b4ea526bf0468ff144305f011eb1793" prot="public" static="no">
         <type>enum <ref refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kindref="member">qdb_compression</ref></type>
@@ -1551,11 +1563,11 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>A type alias for enum qdb_compression. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gaec243774077e7b323dd5b57c99d00e2d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="160" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="161" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" prot="public" static="no">
         <type>enum <ref refid="group__client_1ga222536ecf11bc6ab9468946ba51a446a" kindref="member">qdb_protocol</ref></type>
@@ -1565,11 +1577,11 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>A type alias for enum qdb_protocol. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="175" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="176" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1gae0666863f2369cd07dbd9fdf350c8cd6" prot="public" static="no">
         <type>enum <ref refid="group__client_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref></type>
@@ -1579,11 +1591,11 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>A type alias for enum qdb_log_level. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="199" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="200" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga720fb72da4197685cc354214e96796c1" prot="public" static="no">
         <type>struct qdb_handle_internal *</type>
@@ -1596,7 +1608,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="205" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="205" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="206" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="206" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga6a72d356408c58332b03af73a52c84d6" prot="public" static="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -1606,11 +1618,11 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>An unique callback identifier returned by qdb_option_add_log_callback. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1ga4bd0df71f3846e92ac1d3ff0e2eb8a87" kindref="member">qdb_option_add_log_callback</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1ga41f40fc5037f4f3cfcd09a5a7e74156d" kindref="member">qdb_option_add_log_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="211" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="211" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="212" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="212" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga27259bcef89d32c184a9e03fc0f157ce" prot="public" static="no">
         <type>void(*</type>
@@ -1620,11 +1632,11 @@ expiration&quot; time value. </para>        </briefdescription>
         <briefdescription>
 <para>A typedef representing a log callback. </para>        </briefdescription>
         <detaileddescription>
-<para>The profile of the functions</para><para><simplesect kind="see"><para><ref refid="group__client_1ga4bd0df71f3846e92ac1d3ff0e2eb8a87" kindref="member">qdb_option_add_log_callback</ref> </para></simplesect>
+<para>The profile of the functions</para><para><simplesect kind="see"><para><ref refid="group__client_1ga41f40fc5037f4f3cfcd09a5a7e74156d" kindref="member">qdb_option_add_log_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="220" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/client.h" bodystart="220" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="221" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/client.h" bodystart="221" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1gaaa6272f78edda811822bfce05a07f944" prot="public" static="no">
         <type>enum <ref refid="group__client_1gabc708719df4e28cd85c743e1a4582661" kindref="member">qdb_entry_type</ref></type>
@@ -1637,7 +1649,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="294" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/client.h" line="295" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

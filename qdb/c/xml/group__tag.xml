@@ -5,9 +5,9 @@
     <title>Tagging operations</title>
     <innerclass refid="structqdb__const__tag__iterator__t" prot="public">qdb_const_tag_iterator_t</innerclass>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__tag_1gaef8490d3ad7b0f5033d555adc557c9f4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_add_tag</definition>
+      <memberdef kind="function" id="group__tag_1gabcec257605aa79190104e71d73d397d3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_add_tag</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *tag)</argsstring>
         <name>qdb_add_tag</name>
         <param>
@@ -25,12 +25,12 @@
         <briefdescription>
 <para>Adds a tag to an entry. </para>        </briefdescription>
         <detaileddescription>
-<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The entry must exist.</para><para>The tag may or may not exist.</para><para>Consider using <ref refid="group__tag_1gae5209e70934e590806717a1b24daf40c" kindref="member">qdb_add_tags</ref> if you are adding several tags to the same entry.</para><para><parameterlist kind="param"><parameteritem>
+<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The entry must exist.</para><para>The tag may or may not exist.</para><para>Consider using <ref refid="group__tag_1ga3ef742e0b4f4fa6e1e7cfef6d64b331f" kindref="member">qdb_add_tags</ref> if you are adding several tags to the same entry.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -48,15 +48,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1gae5209e70934e590806717a1b24daf40c" kindref="member">qdb_add_tags</ref>, <ref refid="group__tag_1ga1e472453b30ae0a338011ae501215afe" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga3ef742e0b4f4fa6e1e7cfef6d64b331f" kindref="member">qdb_add_tags</ref>, <ref refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1ga00074225d5dbfa6b699fd957b2a63550" kindref="member">qdb_remove_tag</ref>, <ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="67" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="67" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1gae5209e70934e590806717a1b24daf40c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_add_tags</definition>
+      <memberdef kind="function" id="group__tag_1ga3ef742e0b4f4fa6e1e7cfef6d64b331f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_add_tags</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *const *tags, size_t tag_count)</argsstring>
         <name>qdb_add_tags</name>
         <param>
@@ -78,12 +78,12 @@
         <briefdescription>
 <para>Adds a collection of tags to a single entry. </para>        </briefdescription>
         <detaileddescription>
-<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The function will ignore existing tags.</para><para>The entry must exist.</para><para>The tag may or may not exist.</para><para>Consider using <ref refid="group__tag_1gaef8490d3ad7b0f5033d555adc557c9f4" kindref="member">qdb_add_tag</ref> if you are adding a single tag.</para><para><parameterlist kind="param"><parameteritem>
+<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The function will ignore existing tags.</para><para>The entry must exist.</para><para>The tag may or may not exist.</para><para>Consider using <ref refid="group__tag_1gabcec257605aa79190104e71d73d397d3" kindref="member">qdb_add_tag</ref> if you are adding a single tag.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -108,15 +108,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1gaef8490d3ad7b0f5033d555adc557c9f4" kindref="member">qdb_add_tag</ref>, <ref refid="group__tag_1ga1e472453b30ae0a338011ae501215afe" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gabcec257605aa79190104e71d73d397d3" kindref="member">qdb_add_tag</ref>, <ref refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1gadd43f2d4ac78bbcb7ac0dc3c8fcbadba" kindref="member">qdb_remove_tags</ref>, <ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="94" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="94" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1ga1e472453b30ae0a338011ae501215afe" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_has_tag</definition>
+      <memberdef kind="function" id="group__tag_1ga68697989d68da597dac0a844c20c93a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_has_tag</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *tag)</argsstring>
         <name>qdb_has_tag</name>
         <param>
@@ -139,7 +139,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -157,15 +157,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref>, <ref refid="group__batch_1ga7d8d05b00ee1fab020dde4efae1113ff" kindref="member">qdb_run_batch</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kindref="member">qdb_get_tags</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="118" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="118" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_remove_tag</definition>
+      <memberdef kind="function" id="group__tag_1ga00074225d5dbfa6b699fd957b2a63550" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_remove_tag</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *tag)</argsstring>
         <name>qdb_remove_tag</name>
         <param>
@@ -183,12 +183,12 @@
         <briefdescription>
 <para>Removes a tag from an entry. </para>        </briefdescription>
         <detaileddescription>
-<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The entry must exist.</para><para>The tag must exist.</para><para>Consider using <ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref> if you are removing several tags at once.</para><para><parameterlist kind="param"><parameteritem>
+<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The entry must exist.</para><para>The tag must exist.</para><para>Consider using <ref refid="group__tag_1gadd43f2d4ac78bbcb7ac0dc3c8fcbadba" kindref="member">qdb_remove_tags</ref> if you are removing several tags at once.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -206,15 +206,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga3cba8891e8d89bbff092723a17671927" kindref="member">qdb_remove_tags</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gadd43f2d4ac78bbcb7ac0dc3c8fcbadba" kindref="member">qdb_remove_tags</ref>, <ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="142" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="142" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1ga3cba8891e8d89bbff092723a17671927" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_remove_tags</definition>
+      <memberdef kind="function" id="group__tag_1gadd43f2d4ac78bbcb7ac0dc3c8fcbadba" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_remove_tags</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *const *tags, size_t tag_count)</argsstring>
         <name>qdb_remove_tags</name>
         <param>
@@ -236,12 +236,12 @@
         <briefdescription>
 <para>Removes a collection of tags from a single entry. </para>        </briefdescription>
         <detaileddescription>
-<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The entry must exist.</para><para>The tags must exist.</para><para>Consider using <ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref> if you are removing a single tag.</para><para><parameterlist kind="param"><parameteritem>
+<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The entry must exist.</para><para>The tags must exist.</para><para>Consider using <ref refid="group__tag_1ga00074225d5dbfa6b699fd957b2a63550" kindref="member">qdb_remove_tag</ref> if you are removing a single tag.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -266,15 +266,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga2616cb6fb2cb34d338b007f46c6fedf3" kindref="member">qdb_remove_tag</ref>, <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga00074225d5dbfa6b699fd957b2a63550" kindref="member">qdb_remove_tag</ref>, <ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="167" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="167" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_tagged</definition>
+      <memberdef kind="function" id="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_get_tagged</definition>
         <argsstring>(qdb_handle_t handle, const char *tag, const char ***aliases, size_t *aliases_count)</argsstring>
         <name>qdb_get_tagged</name>
         <param>
@@ -296,12 +296,12 @@
         <briefdescription>
 <para>Retrieves all entries that have the specified tag. </para>        </briefdescription>
         <detaileddescription>
-<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The tag must exist.</para><para>The complexity of this function is constant.</para><para>Consider using <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> if you expect the number of entries to be very large.</para><para><parameterlist kind="param"><parameteritem>
+<para>Tagging an entry enables you to search for entries based on their tags. Tags scale across nodes.</para><para>The tag must exist.</para><para>The complexity of this function is constant.</para><para>Consider using <ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref> if you expect the number of entries to be very large.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -326,15 +326,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" kindref="member">qdb_get_tags</ref>, <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kindref="member">qdb_get_tags</ref>, <ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="197" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="197" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1ga0cf641ba3a42e9478e25bffb0d17b360" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_tags</definition>
+      <memberdef kind="function" id="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_get_tags</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char ***tags, size_t *tags_count)</argsstring>
         <name>qdb_get_tags</name>
         <param>
@@ -361,7 +361,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -386,15 +386,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="221" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="221" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_tag_iterator_begin</definition>
+      <memberdef kind="function" id="group__tag_1ga94e7687010c7f78d9e678850691abb48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_tag_iterator_begin</definition>
         <argsstring>(qdb_handle_t handle, const char *tag, qdb_const_tag_iterator_t *iterator)</argsstring>
         <name>qdb_tag_iterator_begin</name>
         <param>
@@ -412,12 +412,12 @@
         <briefdescription>
 <para>Creates an iterator that will point to the first entry having the the specified tag. </para>        </briefdescription>
         <detaileddescription>
-<para>The order in which iteration occurs is unspecified, but entries matching a tag will never appear twice.</para><para>Only forward iteration is currently supported.</para><para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref></para><para>If you expect the number of entries to be very small, you might consider using <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>The order in which iteration occurs is unspecified, but entries matching a tag will never appear twice.</para><para>Only forward iteration is currently supported.</para><para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref></para><para>If you expect the number of entries to be very small, you might consider using <ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -435,15 +435,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gad00591559b223acc6eb0579b26acd489" kindref="member">qdb_tag_iterator_next</ref>, <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kindref="member">qdb_tag_iterator_next</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="276" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="276" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1gad00591559b223acc6eb0579b26acd489" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_tag_iterator_next</definition>
+      <memberdef kind="function" id="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_tag_iterator_next</definition>
         <argsstring>(qdb_const_tag_iterator_t *iterator)</argsstring>
         <name>qdb_tag_iterator_next</name>
         <param>
@@ -453,7 +453,7 @@
         <briefdescription>
 <para>Advance a previously initialized iterator to the next entry. </para>        </briefdescription>
         <detaileddescription>
-<para>The order in which iteration occurs is unspecified, but entries matching a tag will never appear twice.</para><para>Only forward iteration is currently supported.</para><para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref></para><para>If you expect the number of entries to be very small, you might consider using <ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>The order in which iteration occurs is unspecified, but entries matching a tag will never appear twice.</para><para>Only forward iteration is currently supported.</para><para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref></para><para>If you expect the number of entries to be very small, you might consider using <ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>iterator</parametername>
 </parameternamelist>
@@ -462,15 +462,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga574db1ed3adf7164e01266433fba1ba1" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="300" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="300" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>QDB_API_LINKAGE qdb_error_t qdb_tag_iterator_close</definition>
+      <memberdef kind="function" id="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_tag_iterator_close</definition>
         <argsstring>(qdb_const_tag_iterator_t *iterator)</argsstring>
         <name>qdb_tag_iterator_close</name>
         <param>
@@ -480,7 +480,7 @@
         <briefdescription>
 <para>Releases all API-allocated resources during a previous iteration. </para>        </briefdescription>
         <detaileddescription>
-<para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref></para><para><parameterlist kind="param"><parameteritem>
+<para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref></para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>iterator</parametername>
 </parameternamelist>
@@ -489,11 +489,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/tag.h" line="314" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/tag.h" line="314" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

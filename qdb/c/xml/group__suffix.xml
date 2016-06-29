@@ -1,21 +1,21 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
-  <compounddef id="group__prefix" kind="group">
-    <compoundname>prefix</compoundname>
-    <title>Prefix-based operations</title>
+  <compounddef id="group__suffix" kind="group">
+    <compoundname>suffix</compoundname>
+    <title>Suffix-based operations</title>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__prefix_1ga920582605239db5da468546cd42ddbfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__suffix_1gaafa6694ef459194fe3d7c78a35cb6e19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_prefix_get</definition>
-        <argsstring>(qdb_handle_t handle, const char *prefix, qdb_int_t max_count, const char ***results, size_t *results_count)</argsstring>
-        <name>qdb_prefix_get</name>
+        <definition>qdb_error_t qdb_suffix_get</definition>
+        <argsstring>(qdb_handle_t handle, const char *suffix, qdb_int_t max_count, const char ***results, size_t *results_count)</argsstring>
+        <name>qdb_suffix_get</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
           <declname>handle</declname>
         </param>
         <param>
           <type>const char *</type>
-          <declname>prefix</declname>
+          <declname>suffix</declname>
         </param>
         <param>
           <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
@@ -30,9 +30,9 @@
           <declname>results_count</declname>
         </param>
         <briefdescription>
-<para>Retrieves the list of all entries matching the provided prefix. </para>        </briefdescription>
+<para>Retrieves the list of all entries matching the provided suffix. </para>        </briefdescription>
         <detaileddescription>
-<para>A prefix based search will enable you to find all entries matching a provided prefix.</para><para>This function returns the list of aliases, it&apos;s up to the user to query the content, if needed associated with every entry.</para><para><parameterlist kind="param"><parameteritem>
+<para>A suffix based search will enable you to find all entries matching a provided suffix.</para><para>This function returns the list of aliases, it&apos;s up to the user to query the content, if needed associated with every entry.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -41,10 +41,10 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>prefix</parametername>
+<parametername>suffix</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the desired prefix </para></parameterdescription>
+<para>A pointer to a null terminated UTF-8 string representing the desired suffix </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -73,7 +73,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/prefix.h" line="66" column="1"/>
+        <location file="D:/workspace/quasardb/qdb/api/include/qdb/suffix.h" line="66" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
