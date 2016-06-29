@@ -11,5 +11,6 @@ API Reference
    java
    hadoop
    nodejs
-   6.8. PHP <https://doc.quasardb.net/php/>
-   6.9. .NET (C#, VisualBasic...) <https://doc.quasardb.net/dotnet/>
+   rest
+   6.9. PHP <https://doc.quasardb.net/php/>
+   6.10. .NET (C#, VisualBasic...) <https://doc.quasardb.net/dotnet/>
