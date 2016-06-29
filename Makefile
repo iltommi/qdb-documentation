@@ -36,7 +36,7 @@ help:
 html dirhtml singlehtml :
 	@mkdir -p $(BUILDDIR)/$@
 	@install -m 644 source/index.html $(BUILDDIR)/$@/index.html
-	
+
 	@# For each version...
 	@# ... announce what we're building
 	@# ... replace the html static path with the version switching static path
@@ -49,8 +49,8 @@ html dirhtml singlehtml :
 	@for VERSION in $(VER); do \
 		echo "##teamcity[blockOpened name='Build $$VERSION']" ;\
 		\
-		sed -i "s;html_static_path = .*;html_static_path = \[\'../../shared/_static\'\];" source/$$VERSION/source/conf.py ;\
-		sed -i "s;templates_path = .*;templates_path = \[\'../../shared/_templates\'\];" source/$$VERSION/source/conf.py ;\
+		sed -i='' "s;html_static_path = .*;html_static_path = \[\'../../shared/_static\'\];" source/$$VERSION/source/conf.py ;\
+		sed -i='' "s;templates_path = .*;templates_path = \[\'../../shared/_templates\'\];" source/$$VERSION/source/conf.py ;\
 		\
 		$(MAKE) -C "source/$$VERSION" $@ ;\
 		\
@@ -59,18 +59,18 @@ html dirhtml singlehtml :
 		\
 		command -v git >/dev/null 2>&1 || git -C "source/$$VERSION" checkout -- source/conf.py ;\
 		\
-		sed -i "s;https://doc.quasardb.net/[0-9].[0-9].*/\";https://doc.quasardb.net/$$VERSION/\";" $(BUILDDIR)/$@/index.html ;\
+		sed -i='' "s;https://doc.quasardb.net/[0-9].[0-9].*/\";https://doc.quasardb.net/$$VERSION/\";" $(BUILDDIR)/$@/index.html ;\
 		\
 		echo "##teamcity[blockClosed name='Build $$VERSION']" ;\
 	done
-	
+
 	@echo
 	@echo "Build finished. The files in $(BUILDDIR)/$@."
 
 
 pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest :
 	@mkdir -p $(BUILDDIR)/$@
-	
+
 	# For each version...
 	# ... announce what we're building
 	# ... call "make <target>" on the version's folder
@@ -85,7 +85,7 @@ pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkche
 		\
 		echo "##teamcity[blockClosed name='Build $$VERSION']" ;\
 	done
-	
+
 	@echo
 	@echo "Build finished. The files in $(BUILDDIR)/$@."
 
