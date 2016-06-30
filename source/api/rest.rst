@@ -13,7 +13,7 @@ Features available on all types of entries
 Get the list of tags attached to an entry
 -----------------------------------------
 
-This is the equivalent of the ``qdb_get_tags()`` in the C API.
+This is the equivalent of :c:func:`qdb_get_tags` in the C API.
 
 Query
 """""
@@ -57,7 +57,7 @@ Response
 Attaching a tag to an entry
 ---------------------------
 
-This is the equivalent of the ``qdb_add_tag()`` in the C API.
+This is the equivalent of :c:func:`qdb_add_tag` in the C API.
 
 Query
 """""
@@ -103,7 +103,7 @@ Response
 Detaching a tag from an entry
 -----------------------------
 
-This is the equivalent of the ``qdb_remove_tag()`` in the C API.
+This is the equivalent of :c:func:`qdb_remove_tag` in the C API.
 
 Query
 """""
@@ -148,7 +148,7 @@ Response
 Removing an entry from the database
 -----------------------------------
 
-This is the equivalent of the ``qdb_remove()`` in the C API.
+This is the equivalent of :c:func:`qdb_remove` in the C API.
 
 Query
 """""
@@ -183,7 +183,7 @@ Response
 Searching entry by prefix
 -------------------------
 
-This is the equivalent of the ``qdb_prefix_get()`` in the C API.
+This is the equivalent of :c:func:`qdb_prefix_get` in the C API.
 
 Query
 """""
@@ -271,7 +271,7 @@ Response
 Creating a blob
 ---------------
 
-This is the equivalent of the ``qdb_blob_put()`` in the C API.
+This is the equivalent of :c:func:`qdb_blob_put` in the C API.
 
 Query
 """""
@@ -306,7 +306,7 @@ Response
 Reading the content of a blob
 -----------------------------
 
-This is the equivalent of the ``qdb_blob_get()`` in the C API.
+This is the equivalent of :c:func:`qdb_blob_get` in the C API.
 
 Query
 """""
@@ -339,7 +339,7 @@ Response
 Finding a blob by its content
 -----------------------------
 
-This is the equivalent of the ``qdb_blob_scan()`` in the C API.
+This is the equivalent of :c:func:`qdb_blob_scan` in the C API.
 
 Query
 """""
@@ -425,7 +425,7 @@ Response
 Getting the list of tagged entries
 ----------------------------------
 
-This is the equivalent of the ``qdb_get_tagged()`` in the C API.
+This is the equivalent of :c:func:`qdb_get_tagged` in the C API.
 
 Query
 """""

@@ -41,6 +41,9 @@ breathe_projects = {
 }
 
 breathe_default_project = "qdb_capi"
+breathe_domain_by_extension = {
+    "h" : "c",
+}
 
 qdb_api_folder = os.path.join(os.getcwd(), '..', 'qdb', 'python')
 sys.path.insert(0, qdb_api_folder)
