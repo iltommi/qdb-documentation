@@ -24,7 +24,7 @@ Table of Contents
 -----------------
 
 .. toctree::
-   :numbered:
+   :numbered: 3
    :maxdepth: 1
 
    primer

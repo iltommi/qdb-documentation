@@ -7,8 +7,8 @@ The REST API is a part of the *web-bridge*: https://github.com/bureau14/qdb-web-
 To install, please follow the instruction  on the GitHub project page.
 
 
-Features available on all type of entry
-=======================================
+Features available on all types of entries
+==========================================
 
 Get the list of tags attached to an entry
 -----------------------------------------
