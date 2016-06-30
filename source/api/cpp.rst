@@ -38,7 +38,7 @@ Quick Reference
   :c:type:`bool`                         :func:`api_buffer::operator==`                     ``(const`` :type:`api_buffer` ``& other) const;``
   :c:type:`bool`                         :func:`api_buffer::operator!=`                     ``(const`` :type:`api_buffer` ``& other) const;``
   |CONST_CHAR_P|                         :func:`api_buffer::data`                           |VOID_ARGS_CONST|
-  :type:`qdb_size_t`                     :func:`api_buffer::size`                           |VOID_ARGS_CONST|
+  :c:type:`qdb_size_t`                     :func:`api_buffer::size`                           |VOID_ARGS_CONST|
   ..                                     :type:`api_buffer_ptr`\ ``;``                      ..
   ..                                     :class:`const_iterator`\ ``;``                     ..
   :c:type:`bool`                         :func:`const_iterator::operator==`                 ``(const`` :type:`const_iterator` ``& other) const;``
