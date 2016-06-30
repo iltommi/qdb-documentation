@@ -2,6 +2,11 @@
 Amazon Web Services Installation
 ================================
 
+AWS Marketplace
+-----------------
+
+`Quasardb <https://aws.amazon.com/marketplace/seller-profile/ref=dtl_pcp_sold_by?id=6a474569-7e8f-4752-9278-b6609c3cd732>`_ is directly available on `AWS Marketplace <https://aws.amazon.com/marketplace/>`_ as a pre-configured `Linux node <https://aws.amazon.com/marketplace/pp/B01FUR400S/>`_.
+
 Windows Instance
 ----------------
 
