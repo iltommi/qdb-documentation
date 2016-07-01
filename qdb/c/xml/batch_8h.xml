@@ -7,14 +7,21 @@
       <node id="5">
         <label>stdint.h</label>
       </node>
-      <node id="0">
-        <label>D:/workspace/quasardb/qdb/api/include/qdb/batch.h</label>
-        <link refid="batch.h"/>
-        <childnode refid="1" relation="include">
-        </childnode>
+      <node id="4">
+        <label>qdb/error.h</label>
+        <link refid="error_8h"/>
       </node>
       <node id="2">
         <label>stddef.h</label>
+      </node>
+      <node id="3">
+        <label>time.h</label>
+      </node>
+      <node id="0">
+        <label>D:/sources/quasardb/qdb/api/include/qdb/batch.h</label>
+        <link refid="batch.h"/>
+        <childnode refid="1" relation="include">
+        </childnode>
       </node>
       <node id="1">
         <label>qdb/client.h</label>
@@ -27,13 +34,6 @@
         </childnode>
         <childnode refid="5" relation="include">
         </childnode>
-      </node>
-      <node id="4">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-      </node>
-      <node id="3">
-        <label>time.h</label>
       </node>
     </incdepgraph>
     <innerclass refid="structint__put__update__t" prot="public">int_put_update_t</innerclass>
@@ -127,7 +127,7 @@
 <para>Operations are used by batches and transactions. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/batch.h" line="58" column="1" bodyfile="D:/workspace/quasardb/qdb/api/include/qdb/batch.h" bodystart="58" bodyend="79"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="58" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/batch.h" bodystart="58" bodyend="79"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -142,7 +142,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/batch.h" line="79" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="79" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -182,7 +182,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/batch.h" line="206" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="206" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -231,7 +231,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/batch.h" line="242" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="242" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -291,7 +291,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/batch.h" line="274" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="274" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1ga2e82d4882460729fc5bbe716b05c5b4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -340,7 +340,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/batch.h" line="292" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="292" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -495,6 +495,6 @@
 <codeline lineno="299"><highlight class="normal"></highlight></codeline>
 <codeline lineno="300"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_BATCH_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="D:/workspace/quasardb/qdb/api/include/qdb/batch.h"/>
+    <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h"/>
   </compounddef>
 </doxygen>

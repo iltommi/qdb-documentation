@@ -494,13 +494,13 @@
     <member refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kind="function"><name>qdb_tag_iterator_next</name></member>
     <member refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kind="function"><name>qdb_tag_iterator_close</name></member>
   </compound>
-  <compound refid="dir_15cc682625682d2d08b4e1950e709ca7" kind="dir"><name>D:/workspace/quasardb/qdb/api</name>
+  <compound refid="dir_15cc682625682d2d08b4e1950e709ca7" kind="dir"><name>D:/sources/quasardb/qdb/api</name>
   </compound>
-  <compound refid="dir_459c29b4a51f26e33090a7f03d80cc41" kind="dir"><name>D:/workspace/quasardb/qdb/api/include</name>
+  <compound refid="dir_459c29b4a51f26e33090a7f03d80cc41" kind="dir"><name>D:/sources/quasardb/qdb/api/include</name>
   </compound>
-  <compound refid="dir_b1390110faa6419f3381c3bf40c78339" kind="dir"><name>D:/workspace/quasardb/qdb/api/include/qdb</name>
+  <compound refid="dir_b1390110faa6419f3381c3bf40c78339" kind="dir"><name>D:/sources/quasardb/qdb/api/include/qdb</name>
   </compound>
-  <compound refid="dir_632ff29478d52ad59079539d00d369ff" kind="dir"><name>D:/workspace/quasardb/qdb</name>
+  <compound refid="dir_632ff29478d52ad59079539d00d369ff" kind="dir"><name>D:/sources/quasardb/qdb</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

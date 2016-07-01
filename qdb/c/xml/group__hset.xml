@@ -62,7 +62,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/hset.h" line="68" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="68" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga7922b2dfddbe9df957cf594e87d27d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -122,7 +122,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/hset.h" line="100" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="100" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
@@ -182,7 +182,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/qdb/api/include/qdb/hset.h" line="129" column="1"/>
+        <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="129" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
