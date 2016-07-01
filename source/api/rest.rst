@@ -187,6 +187,50 @@ Response
 +-------------+--------------+-----------------------------------------+
 
 
+Changing the expiry time of an entry
+------------------------------------
+
+This is the equivalent of :c:func:`qdb_expires_at` in the C API.
+
+Query
+"""""
+
+.. raw:: html
+
+    <div class='highlight'>
+        <pre><span class='kd'>PATCH</span> /api/v1/entries/<span class='nx'>:alias</span>?action=setExpiry&expiry=<span class='nx'>:expiry</span></pre>
+    </div>
+
+
+Parameters
+""""""""""
+
++------------+-------------+-------------------------------------------------+
+| Name       | Type        | Description                                     |
++============+=============+=================================================+
+| ``action`` | ``string``  | Type of operation, must be "setExpiry"          |
++------------+-------------+-------------------------------------------------+
+| ``expiry`` | ``integer`` | The UNIX timestamp, or 0 if entry never expires |
++------------+-------------+-------------------------------------------------+
+
+Response
+""""""""
+
++-------------+-----------------+----------------------------------------------------------------+
+| HTTP Status | Meaning         | Description                                                    |
++=============+=================+================================================================+
+| ``204``     | Success         | Expiry time changed                                            |
++-------------+-----------------+----------------------------------------------------------------+
+| ``404``     | Not found       | Entry doesn't exist                                            |
++-------------+-----------------+----------------------------------------------------------------+
+| ``422``     | Operation Error | Cannot set expiry time.                                        |
+|             |                 | Most likely because that type of entry doesn't support expiry. |
+|             |                 | See response content for details                               |
++-------------+-----------------+----------------------------------------------------------------+
+| ``5xx``     | Server Error    | See error message in response's content                        |
++-------------+-----------------+----------------------------------------------------------------+
+
+
 
 Searching entry by prefix
 -------------------------
@@ -268,6 +312,7 @@ Response
         "type": "blob",
         "mime": "text/plain", // the MIME type (as detected by libmagic)
         "size": 1024, // the size of the blob, in bytes
+        "expiry": 1469149260, // UNIX timestamp, or 0 if entry never expires
         "links": {
             "self": "/api/v1/blobs/:alias",
             "content": "/api/v1/blobs/:alias/content",
