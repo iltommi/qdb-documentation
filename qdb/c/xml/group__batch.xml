@@ -7,7 +7,7 @@
     <innerclass refid="structqdb__operation__t" prot="public">qdb_operation_t</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__batch_1ga8b3e3f28c66a4e9bb3826658e260041c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_init_operations</definition>
         <argsstring>(qdb_operation_t *operations, size_t operation_count)</argsstring>
         <name>qdb_init_operations</name>
@@ -94,7 +94,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="242" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_run_transaction</definition>
         <argsstring>(qdb_handle_t handle, qdb_operation_t *operations, size_t operation_count, size_t *failed_index)</argsstring>
         <name>qdb_run_transaction</name>

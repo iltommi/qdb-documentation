@@ -5,7 +5,7 @@
     <title>Distributed double-ended queues operations</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__deque_1ga754d6acdf6f648fa89023076143ab245" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_size</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_size_t *size)</argsstring>
         <name>qdb_deque_size</name>
@@ -53,7 +53,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="67" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gac64f3e6b2463c2f36d8edb6f85a8b136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_get_at</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_int_t index, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_get_at</name>
@@ -123,7 +123,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="97" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga1f82de28b65550983ce7d9112527d844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_set_at</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_int_t index, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_set_at</name>
@@ -193,7 +193,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="130" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga9097a68764ab9e96f5c2849c44db3811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_push_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_push_front</name>
@@ -252,7 +252,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="160" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaf1854a920646563935af1c921e3c8b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_push_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_push_back</name>
@@ -311,7 +311,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="189" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga72d53de692f62d2179bd09dd7f2d54d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_pop_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_pop_front</name>
@@ -370,7 +370,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="221" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa8d4c4e5d3ad4d25ccf0df5c19268980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_pop_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_pop_back</name>
@@ -429,7 +429,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="253" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa87d20cc39c8c53158356e8c44e2c0eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_front</name>
@@ -488,7 +488,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/deque.h" line="281" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga7c90633e28b95906e815a9317bc8d547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_back</name>

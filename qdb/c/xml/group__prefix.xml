@@ -5,7 +5,7 @@
     <title>Prefix-based operations</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__prefix_1ga920582605239db5da468546cd42ddbfc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_prefix_get</definition>
         <argsstring>(qdb_handle_t handle, const char *prefix, qdb_int_t max_count, const char ***results, size_t *results_count)</argsstring>
         <name>qdb_prefix_get</name>

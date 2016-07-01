@@ -97,7 +97,7 @@
       </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_open</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_stream_mode_t mode, qdb_stream_t *stream)</argsstring>
         <name>qdb_stream_open</name>
@@ -157,7 +157,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="92" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga449b224e9375ada8221175b7c3565dcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_close</definition>
         <argsstring>(qdb_stream_t stream)</argsstring>
         <name>qdb_stream_close</name>
@@ -184,7 +184,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="102" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga7049c1a51b92867ba7a57e503b9bc977" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_read</definition>
         <argsstring>(qdb_stream_t stream, void *content, size_t *content_length)</argsstring>
         <name>qdb_stream_read</name>
@@ -233,7 +233,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="130" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga0d6c25a71270ae6779793249572fa5e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_write</definition>
         <argsstring>(qdb_stream_t stream, const void *content, size_t size)</argsstring>
         <name>qdb_stream_write</name>
@@ -282,7 +282,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="148" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga6a61e49f5c35fde9eca4221045f9909b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_size</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t *size)</argsstring>
         <name>qdb_stream_size</name>
@@ -320,7 +320,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="160" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1gace0078f3bc035cc4e614eab161dd5028" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_getpos</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t *position)</argsstring>
         <name>qdb_stream_getpos</name>
@@ -358,7 +358,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="173" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga6d3fde3c308ceade76e8e501e2326b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_setpos</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t position)</argsstring>
         <name>qdb_stream_setpos</name>
@@ -396,7 +396,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="186" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga30b851ac70222d9b55ce783a33a7782b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_truncate</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t position)</argsstring>
         <name>qdb_stream_truncate</name>
@@ -495,31 +495,31 @@
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="stream_8h_1ga61e9edaf4ece741a98bfa4a04257bd93ae3b1f53fc9788126713487ef030c542d" kindref="member">qdb_stream_mode_append</ref><sp/>=<sp/>1,</highlight></codeline>
 <codeline lineno="69"><highlight class="normal">}<sp/><ref refid="group__stream_1ga61e9edaf4ece741a98bfa4a04257bd93" kindref="member">qdb_stream_mode_t</ref>;</highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="92"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
 <codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
 <codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__stream_1ga61e9edaf4ece741a98bfa4a04257bd93" kindref="member">qdb_stream_mode_t</ref><sp/>mode,</highlight></codeline>
 <codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_stream_t<sp/>*<sp/>stream);</highlight></codeline>
 <codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="102"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga449b224e9375ada8221175b7c3565dcf" kindref="member">qdb_stream_close</ref>(qdb_stream_t<sp/>stream);</highlight></codeline>
+<codeline lineno="102"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga449b224e9375ada8221175b7c3565dcf" kindref="member">qdb_stream_close</ref>(qdb_stream_t<sp/>stream);</highlight></codeline>
 <codeline lineno="103"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga7049c1a51b92867ba7a57e503b9bc977" kindref="member">qdb_stream_read</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga7049c1a51b92867ba7a57e503b9bc977" kindref="member">qdb_stream_read</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
 <codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
 <codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<sp/>content_length);</highlight></codeline>
 <codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="148"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga0d6c25a71270ae6779793249572fa5e9" kindref="member">qdb_stream_write</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga0d6c25a71270ae6779793249572fa5e9" kindref="member">qdb_stream_write</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
 <codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
 <codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>size);</highlight></codeline>
 <codeline lineno="151"><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga6a61e49f5c35fde9eca4221045f9909b" kindref="member">qdb_stream_size</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
+<codeline lineno="160"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga6a61e49f5c35fde9eca4221045f9909b" kindref="member">qdb_stream_size</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
 <codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_stream_size_t<sp/>*<sp/>size);</highlight></codeline>
 <codeline lineno="162"><highlight class="normal"></highlight></codeline>
-<codeline lineno="173"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1gace0078f3bc035cc4e614eab161dd5028" kindref="member">qdb_stream_getpos</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1gace0078f3bc035cc4e614eab161dd5028" kindref="member">qdb_stream_getpos</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_stream_size_t<sp/>*<sp/>position);</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga6d3fde3c308ceade76e8e501e2326b72" kindref="member">qdb_stream_setpos</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
+<codeline lineno="186"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga6d3fde3c308ceade76e8e501e2326b72" kindref="member">qdb_stream_setpos</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
 <codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_stream_size_t<sp/>position);</highlight></codeline>
 <codeline lineno="188"><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga30b851ac70222d9b55ce783a33a7782b" kindref="member">qdb_stream_truncate</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
+<codeline lineno="200"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__stream_1ga30b851ac70222d9b55ce783a33a7782b" kindref="member">qdb_stream_truncate</ref>(qdb_stream_t<sp/>stream,</highlight></codeline>
 <codeline lineno="201"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_stream_size_t<sp/>position);</highlight></codeline>
 <codeline lineno="202"><highlight class="normal"></highlight></codeline>
 <codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>

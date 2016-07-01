@@ -5,7 +5,7 @@
     <title>Distributed hash set operations</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_hset_insert</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_hset_insert</name>
@@ -65,7 +65,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="68" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga7922b2dfddbe9df957cf594e87d27d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_hset_erase</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_hset_erase</name>
@@ -125,7 +125,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="100" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_hset_contains</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_hset_contains</name>
