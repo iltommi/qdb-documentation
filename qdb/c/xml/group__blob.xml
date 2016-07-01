@@ -5,7 +5,7 @@
     <title>Binary large objects (blob) operations</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__blob_1ga815f319575a422331ed4d5eed0cc69bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get_noalloc</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, void *content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get_noalloc</name>
@@ -64,7 +64,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="71" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get</name>
@@ -123,7 +123,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="101" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gacccb11b84a007ec4f2036ec316060282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get_and_remove</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get_and_remove</name>
@@ -182,7 +182,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="132" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga67db324cbeccb7f130f8006830468d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_put</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_time_t expiry_time)</argsstring>
         <name>qdb_blob_put</name>
@@ -252,7 +252,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="163" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga79aafb696593432010c6d624f0894061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_update</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_time_t expiry_time)</argsstring>
         <name>qdb_blob_update</name>
@@ -322,7 +322,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="194" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaef0400b3b58a23ebffe6085641581e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_reserved_blob_merge</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_size_t offset, int truncate, qdb_time_t expiry_time)</argsstring>
         <name>qdb_reserved_blob_merge</name>
@@ -414,7 +414,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="216" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get_and_update</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *update_content, qdb_size_t update_content_length, qdb_time_t expiry_time, const void **get_content, qdb_size_t *get_content_length)</argsstring>
         <name>qdb_blob_get_and_update</name>
@@ -506,7 +506,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="247" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_compare_and_swap</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *new_value, qdb_size_t new_value_length, const void *comparand, qdb_size_t comparand_length, qdb_time_t expiry_time, const void **original_value, qdb_size_t *original_value_length)</argsstring>
         <name>qdb_blob_compare_and_swap</name>
@@ -620,7 +620,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="288" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_remove_if</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *comparand, qdb_size_t comparand_length)</argsstring>
         <name>qdb_blob_remove_if</name>
@@ -679,7 +679,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="314" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_scan</definition>
         <argsstring>(qdb_handle_t handle, const void *pattern, qdb_size_t pattern_length, qdb_int_t max_count, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_blob_scan</name>
@@ -761,7 +761,7 @@ The complexity of this function is linear in the number of entries.</para><para>
         <location file="D:/sources/quasardb/qdb/api/include/qdb/blob.h" line="339" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_scan_regex</definition>
         <argsstring>(qdb_handle_t handle, const char *pattern, qdb_int_t max_count, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_blob_scan_regex</name>

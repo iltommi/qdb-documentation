@@ -12,7 +12,7 @@
         <argsstring>(qdb_error_t error)</argsstring>
         <name>qdb_error</name>
         <param>
-          <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+          <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
           <declname>error</declname>
         </param>
         <briefdescription>
@@ -67,7 +67,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="319" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_open</definition>
         <argsstring>(qdb_handle_t *handle, qdb_protocol_t proto)</argsstring>
         <name>qdb_open</name>
@@ -123,7 +123,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="336" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_timeout</definition>
         <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
         <name>qdb_option_set_timeout</name>
@@ -161,7 +161,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="345" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga41f40fc5037f4f3cfcd09a5a7e74156d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_add_log_callback</definition>
         <argsstring>(qdb_log_callback cb, qdb_log_callback_id *callback_id)</argsstring>
         <name>qdb_option_add_log_callback</name>
@@ -199,7 +199,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="358" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaaa9fff3de285c08fad5b8f5d3b89f466" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_remove_log_callback</definition>
         <argsstring>(qdb_log_callback_id callback_id)</argsstring>
         <name>qdb_option_remove_log_callback</name>
@@ -226,7 +226,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="368" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_compression</definition>
         <argsstring>(qdb_handle_t handle, qdb_compression_t comp_level)</argsstring>
         <name>qdb_option_set_compression</name>
@@ -265,7 +265,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="381" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga76340764ecf54bcf726bb9ced7f33041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_connect</definition>
         <argsstring>(qdb_handle_t handle, const char *uri)</argsstring>
         <name>qdb_connect</name>
@@ -306,7 +306,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="407" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_close</definition>
         <argsstring>(qdb_handle_t handle)</argsstring>
         <name>qdb_close</name>
@@ -333,7 +333,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="422" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gad44ca490ccc6252718a67385646a2706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_copy_alloc_buffer</definition>
         <argsstring>(qdb_handle_t handle, const void *source_buffer, qdb_size_t source_buffer_size, const void **dest_buffer)</argsstring>
         <name>qdb_copy_alloc_buffer</name>
@@ -482,7 +482,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="484" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga20ff61aa14d5b7659e2e22c2798503ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_remove</definition>
         <argsstring>(qdb_handle_t handle, const char *alias)</argsstring>
         <name>qdb_remove</name>
@@ -519,7 +519,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="504" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_expires_at</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t expiry_time)</argsstring>
         <name>qdb_expires_at</name>
@@ -569,7 +569,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="534" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_expires_from_now</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t expiry_delta)</argsstring>
         <name>qdb_expires_from_now</name>
@@ -618,7 +618,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="558" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga089edb1764e8a5567c24dbd001a325db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_get_expiry_time</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t *expiry_time)</argsstring>
         <name>qdb_get_expiry_time</name>
@@ -668,7 +668,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="576" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaa71923537cfe32018774ad55eacd246e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_get_location</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_remote_node_t *location)</argsstring>
         <name>qdb_get_location</name>
@@ -716,7 +716,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="598" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_get_type</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_entry_type_t *entry_type)</argsstring>
         <name>qdb_get_type</name>
@@ -764,7 +764,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="612" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gafd9d900e49d68ed2989ac489360baa96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_purge_all</definition>
         <argsstring>(qdb_handle_t handle, int timeout)</argsstring>
         <name>qdb_purge_all</name>
@@ -802,7 +802,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="636" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gad0b2a001e96c9afd91706cd1c451be11" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_trim_all</definition>
         <argsstring>(qdb_handle_t handle, int timeout)</argsstring>
         <name>qdb_trim_all</name>
@@ -840,7 +840,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="664" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gad25f0db2db8eb2cb7285f3d65c070c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_node_status</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_status</name>
@@ -900,7 +900,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="686" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga14c411ee3a3c3fec0e57ba48eba411b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_node_config</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_config</name>
@@ -960,7 +960,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="710" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaa448d12338945be0e16f1ac63bb0eb92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_node_topology</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_topology</name>
@@ -1020,7 +1020,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="735" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga0ee58acda04e9acb66e4a22b5ddf6c03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_node_stop</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char *reason)</argsstring>
         <name>qdb_node_stop</name>
@@ -1068,7 +1068,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="756" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_begin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_begin</name>
@@ -1106,7 +1106,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="791" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_rbegin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_rbegin</name>
@@ -1144,7 +1144,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="816" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_next</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_next</name>
@@ -1170,7 +1170,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="829" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_previous</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_previous</name>
@@ -1196,7 +1196,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="844" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_close</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_close</name>
@@ -1222,7 +1222,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="851" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_copy</definition>
         <argsstring>(const qdb_const_iterator_t *original, qdb_const_iterator_t *copy)</argsstring>
         <name>qdb_iterator_copy</name>
@@ -1244,7 +1244,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/client.h" line="862" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga649bfb20c6c8f6b2495b1d2878633298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_tag_iterator_copy</definition>
         <argsstring>(const qdb_const_tag_iterator_t *original, qdb_const_tag_iterator_t *copy)</argsstring>
         <name>qdb_tag_iterator_copy</name>

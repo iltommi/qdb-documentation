@@ -5,7 +5,7 @@
     <title>Stream operations</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_open</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_stream_mode_t mode, qdb_stream_t *stream)</argsstring>
         <name>qdb_stream_open</name>
@@ -65,7 +65,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="92" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga449b224e9375ada8221175b7c3565dcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_close</definition>
         <argsstring>(qdb_stream_t stream)</argsstring>
         <name>qdb_stream_close</name>
@@ -92,7 +92,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="102" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga7049c1a51b92867ba7a57e503b9bc977" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_read</definition>
         <argsstring>(qdb_stream_t stream, void *content, size_t *content_length)</argsstring>
         <name>qdb_stream_read</name>
@@ -141,7 +141,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="130" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga0d6c25a71270ae6779793249572fa5e9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_write</definition>
         <argsstring>(qdb_stream_t stream, const void *content, size_t size)</argsstring>
         <name>qdb_stream_write</name>
@@ -190,7 +190,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="148" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga6a61e49f5c35fde9eca4221045f9909b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_size</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t *size)</argsstring>
         <name>qdb_stream_size</name>
@@ -228,7 +228,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="160" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1gace0078f3bc035cc4e614eab161dd5028" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_getpos</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t *position)</argsstring>
         <name>qdb_stream_getpos</name>
@@ -266,7 +266,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="173" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga6d3fde3c308ceade76e8e501e2326b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_setpos</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t position)</argsstring>
         <name>qdb_stream_setpos</name>
@@ -304,7 +304,7 @@
         <location file="D:/sources/quasardb/qdb/api/include/qdb/stream.h" line="186" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga30b851ac70222d9b55ce783a33a7782b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1gada358af95715bb5350cc2d09123cb3f8" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_stream_truncate</definition>
         <argsstring>(qdb_stream_t stream, qdb_stream_size_t position)</argsstring>
         <name>qdb_stream_truncate</name>
