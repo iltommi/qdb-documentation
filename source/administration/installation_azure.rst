@@ -5,7 +5,7 @@ Microsoft Azure Installation
 Azure Marketplace
 -----------------
 
-Quasardb is directly available on `Azure Marketplace <https://azure.microsoft.com/en-us/marketplace/>`_ as a pre-configured `Linux node <https://azure.microsoft.com/en-us/marketplace/partners/quasardb/quasardb-xtp-node/>`_.
+Quasardb is directly available on `Azure Marketplace <https://azure.microsoft.com/en-us/marketplace/>`_ as a pre-configured `Linux node <https://azure.microsoft.com/en-us/marketplace/partners/quasardb/quasardb/>`_.
 
 Windows Instance
 ----------------
