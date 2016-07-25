@@ -110,4 +110,4 @@ If you add a node to the cluster, you do not have to make *any* change on the cl
     qdbsh qdb://192.168.1.3:2836
 
     ok:qdbsh> blob_get entry
-    thisismyentry
+    thisismycontent
