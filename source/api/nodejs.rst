@@ -190,9 +190,10 @@ These classes inherit the following methods.
 
   .. js:function:: ExpirableEntity.getExpiry (callback(err, expiry))
 
-      Gets the expiration time of the ExpirableEntity. A return Date of Jan 1, 1970 means the ExpirableEntity does not expire.
+      Gets the expiration time of the ExpirableEntity.
 
       :param function callback(err, expiry): A callback or anonymous function with: error parameter, a Date object with the expiration time of the entity.
+        An undefined expiry Date means the ExpirableEntity does not expire.
 
 The `Blob` class
 ^^^^^^^^^^^^^^^^
