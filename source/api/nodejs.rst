@@ -19,9 +19,9 @@ Quick Reference
   ..               :func:`Entity.removeTag`                           ``(String tagName, callback(err))``
   ..               :func:`Entity.removeTags`                          ``(String[] tagNames, callback(err))``
   ..
-  ..               :func:`ExpirableEntity.expiresAt`                  ``(Date expiry_time)``
-  ..               :func:`ExpirableEntity.expiresFromNow`             ``(int seconds)``
-  Date             :func:`ExpirableEntity.getExpiry`                  ``()``
+  ..               :func:`ExpirableEntity.expiresAt`                  ``(Date expiry_time, callback(err))``
+  ..               :func:`ExpirableEntity.expiresFromNow`             ``(int seconds, callback(err))``
+  Date             :func:`ExpirableEntity.getExpiry`                  ``(callback(err, expiry))``
   ..
   String           :attr:`Blob.alias`                                 ``()``
   ..               :func:`Blob.put`                                   ``(Buffer content, [Date expiry_time], callback(err))``
@@ -174,23 +174,25 @@ These classes inherit the following methods.
 
 .. js:class:: ExpirableEntity
 
-  .. js:function:: ExpirableEntity.expiresAt (Date expiry_time)
+  .. js:function:: ExpirableEntity.expiresAt (Date expiry_time, callback(err))
 
       Sets the expiration time for the ExpirableEntity at a given Date.
 
       :param Date expiry_time: A Date at which the ExpirableEntity expires.
+      :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: ExpirableEntity.expiresFromNow (int seconds)
+  .. js:function:: ExpirableEntity.expiresFromNow (int seconds, callback(err))
 
       Sets the expiration time for the ExpirableEntity as a number of seconds from call time.
 
       :param int seconds: A number of seconds from call time at which the ExpirableEntity expires.
+      :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: ExpirableEntity.getExpiry ()
+  .. js:function:: ExpirableEntity.getExpiry (callback(err, expiry))
 
       Gets the expiration time of the ExpirableEntity. A return Date of Jan 1, 1970 means the ExpirableEntity does not expire.
 
-      :returns: A Date object with the expiration time.
+      :param function callback(err, expiry): A callback or anonymous function with: error parameter, a Date object with the expiration time of the entity.
 
 The `Blob` class
 ^^^^^^^^^^^^^^^^
