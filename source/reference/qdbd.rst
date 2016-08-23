@@ -36,7 +36,6 @@ Quick Reference
  :option:`--peer`                         one peer to form a cluster                            No
  :option:`--id`                           set the node id                 generated             No
  :option:`-r`, :option:`--root`           persistence directory           ./db                  Yes
- :option:`--sync`                         sync every disk write                                 Yes
  :option:`--replication`                  sets the replication factor     1                     Yes
  :option:`--max-depot-size`               max db size on node             0 (disabled)          No           >=1.1.3
  :option:`--transient`                    disable persistence                                   Yes
@@ -528,14 +527,6 @@ Instance specific
     .. note::
         Although this parameter is global, the directory refers to the local node of each instance.
 
-.. option:: --sync
-
-    Flushes OS buffers to disk after every write. Enabled by default.
-
-    .. note::
-        This option increases reliability at the cost of performances.
-
-
 
 Global
 ----------
@@ -580,7 +571,6 @@ The default configuration file is shown below::
     {
         "local": {
             "depot": {
-                "sync": true,
                 "sync_every_write": false,
                 "disable_wal": false,
                 "root": "db",
@@ -636,11 +626,6 @@ The default configuration file is shown below::
             }
         }
     }
-
-.. describe:: local::depot::sync
-
-    A boolean representing whether or not the node should flush the operating system write buffers after writes. This has an impact on write performance but
-    prevents data loss if an operating systems or hardware failure occurs. For write-heavy database you may consider disabling this feature. Enabled by default.
 
 .. describe:: local::depot::sync_every_write
 
