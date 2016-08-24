@@ -31,7 +31,7 @@ Quick Reference
  :option:`--license-file`                 specify license                 qdb_license.txt       No
  :option:`-a`, :option:`--address`        address to listen on            127.0.0.1:2836        No
  :option:`-s`, :option:`--sessions`       max client sessions             20000                 No
- :option:`--idle-duration`                max seconds to idle timeout     600                   No
+ :option:`--idle-timeout`                 max seconds to idle timeout     600                   No
  :option:`--request-timeout`              max seconds to request timeout  60                    No
  :option:`--peer`                         one peer to form a cluster                            No
  :option:`--id`                           set the node id                 generated             No
@@ -291,7 +291,7 @@ Instance specific
         The sessions count determines the number of simultaneous clients the server may handle at any given time.
         Increasing the value increases the memory load. This value may be limited by your license.
 
-.. option:: --idle-duration=<duration>
+.. option:: --idle-timeout=<duration>
 
     Sets the timeout after which inactive sessions will be considered for termination.
 
@@ -304,7 +304,7 @@ Instance specific
     Example
         Set the timeout to one minute::
 
-            qdbd --idle-duration=60
+            qdbd --idle-timeout=60
 
 .. option:: --request-timeout=<timeout>
 
