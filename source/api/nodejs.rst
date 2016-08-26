@@ -11,13 +11,13 @@ Quick Reference
    Return type     Name                                               Arguments
  ================ ================================================== =====================================================================================
   ..               :func:`Entity.remove`                              ``(callback(err))``
-  ..               :func:`Entity.addTag`                              ``(String tagName, callback(err))``
-  ..               :func:`Entity.addTags`                             ``(String[] tagNames, callback(err))``
+  ..               :func:`Entity.attachTag`                              ``(String tagName, callback(err))``
+  ..               :func:`Entity.attachTags`                             ``(String[] tagNames, callback(err))``
   ..               :func:`Entity.getTags`                             ``(callback(err, tags))``
   ..               :func:`Entity.hasTag`                              ``(String tagName, callback(err))``
   ..               :func:`Entity.hasTags`                             ``(String[] tagNames, callback(err, success_count, result))``
-  ..               :func:`Entity.removeTag`                           ``(String tagName, callback(err))``
-  ..               :func:`Entity.removeTags`                          ``(String[] tagNames, callback(err))``
+  ..               :func:`Entity.detachTag`                           ``(String tagName, callback(err))``
+  ..               :func:`Entity.detachTags`                          ``(String[] tagNames, callback(err))``
   ..
   ..               :func:`ExpirableEntity.expiresAt`                  ``(Date expiry_time, callback(err))``
   ..               :func:`ExpirableEntity.expiresFromNow`             ``(int seconds, callback(err))``
@@ -116,16 +116,16 @@ All the classes inherit the following methods.
 
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: Entity.addTag (String tagName, callback(err))
+  .. js:function:: Entity.attachTag (String tagName, callback(err))
 
-      Assigns the Entity to the specified tag. Errors if the tag is already assigned.
+      Attaches the Entity to the specified tag. Errors if the tag is already assigned.
 
       :param String tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: Entity.addTags (String[] tagNames, callback(err))
+  .. js:function:: Entity.attachTags (String[] tagNames, callback(err))
 
-      Assigns the Entity to the specified tags. Errors if any of the tags is already assigned.
+      Attaches the Entity to the specified tags. Errors if any of the tags is already assigned.
 
       :param String[] tagNames: Array of names of the tags (Array of Strings).
       :param function callback(err): A callback or anonymous function with error parameter.
@@ -151,16 +151,16 @@ All the classes inherit the following methods.
       :param function callback(err, success_count, result): A callback or anonymous function with: error parameter, number of specified tags assigned to the Entity and query result.
         Result is an Object with as many fields as the length of ``tagNames`` array, each having a ``bool`` value ``true`` (tag assigned) or ``false`` (otherwise).
 
-  .. js:function:: Entity.removeTag (String tagName, callback(err))
+  .. js:function:: Entity.detatchTag (String tagName, callback(err))
 
-      Removes the Entity from the specified tag. Errors if the tag is not assigned.
+      Detaches the Entity from the specified tag. Errors if the tag is not assigned.
 
       :param String tagName: The name of the tag.
       :param function callback(err): A callback or anonymous function with error parameter.
 
-  .. js:function:: Entity.removeTags (String[] tagNames, callback(err))
+  .. js:function:: Entity.detachTags (String[] tagNames, callback(err))
 
-      Removes the Entity from the specified tags. Errors if any of the tags is not assigned.
+      Detaches the Entity from the specified tags. Errors if any of the tags is not assigned.
 
       :param String[] tagNames: Array of names of the tags (Array of Strings).
       :param function callback(err): A callback or anonymous function with error parameter.
@@ -541,10 +541,10 @@ Represents a tag in a quasardb database. Any entry can be tagged, including othe
     var b = c.blob('myBlob');
 
     b.put(new Buffer("boom"), function(err) { /* */  });
-    b.addTag('myTag', function(err) { /* */  });
+    b.attachTag('myTag', function(err) { /* */  });
     b.hasTag('myTag', function(err) { /* */ });
     b.getTags(function(err, tags) { /* */ });
-    b.removeTag('myTag', function(err) { /* */ } );
+    b.detachTag('myTag', function(err) { /* */ } );
 
 You can create a ``Tag`` instance by calling :func:`Cluster.tag`. Then, you can look up entries by their association with the tag::
 
