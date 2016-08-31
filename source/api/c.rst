@@ -32,7 +32,7 @@ It is initialized using the function :func:`qdb_open`::
 
     qdb_handle_t handle = 0;
     qdb_error_t r = qdb_open(&handle, qdb_proto_tcp);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -45,18 +45,18 @@ We can also use the convenience function :func:`qdb_open_tcp`::
         // error management
     }
 
-Once the handle is initialized, it can be used to establish a connection. Keep in mind that the API does not actually keep the connection alive all the time. Connections are opened and closed as needed. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function::
+Once the handle is initialized, it can be used to establish a connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function::
 
-    qdb_error_t connection = qdb_connect(handle, "qdb://localhost:2836");
-    if (connection != qdb_error_ok)
+    qdb_error_t r = qdb_connect(handle, "qdb://localhost:2836");
+    if (r != qdb_e_ok)
     {
         // error management
     }
 
 Note that we could have used the IP address instead::
 
-    qdb_error_t connection = qdb_connect(handle, "qdb://127.0.0.1:2836");
-    if (connection != qdb_error_ok)
+    qdb_error_t r = qdb_connect(handle, "qdb://127.0.0.1:2836");
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -66,8 +66,8 @@ Note that we could have used the IP address instead::
 
 `IPv6 <https://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address::
 
-    qdb_error_t connection = qdb_connect(handle, "qdb://::1:2836");
-    if (connection != qdb_error_ok)
+    qdb_error_t r = qdb_connect(handle, "qdb://::1:2836");
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -78,13 +78,13 @@ Note that we could have used the IP address instead::
 Connecting to multiple nodes within the same cluster
 ------------------------------------------------------
 
-Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a uri string to qdb_connect with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed. ::
+Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a uri string to :func:`qdb_connect` with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed. ::
 
     const char * remote_nodes = "qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836";
 
     // the function will return 1 if any of the connections succeed.
-    qdb_error_t connections = qdb_connect(handle, remote_nodes);
-    if (connections != qdb_error_ok)
+    qdb_error_t r = qdb_connect(handle, remote_nodes);
+    if (r != qdb_e_ok)
     {
         // error management...
     }
@@ -94,7 +94,7 @@ If the same address/port pair is present multiple times within the string, only 
 Adding entries
 -----------------
 
-Each entry is identified by an unique alias. You pass the alias as a null-terminated string. The alias may contain arbitrary characters but it's probably more convenient to use printable characters only.
+Each entry is identified by a unique alias. You pass the alias as a null-terminated string. The alias must be a valid UTF-8 string.
 
 The content is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
@@ -105,7 +105,7 @@ There are two ways to add entries into the repository. You can use :func:`qdb_bl
     // ...
 
     r = qdb_blob_put(handle, "myalias", content, sizeof(content), 0);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -117,7 +117,7 @@ or you can use :func:`qdb_blob_update`::
     // ...
 
     r = qdb_blob_update(handle, "myalias", content, sizeof(content), 0);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -129,10 +129,10 @@ Getting entries
 
 The most convenient way to fetch an entry is :func:`qdb_blob_get`::
 
-    char * allocated_content = 0;
+    const void * allocated_content = 0;
     qdb_size_t allocated_content_length = 0;
     r = qdb_blob_get(handle, "myalias", &allocated_content, &allocated_content_length);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -145,14 +145,14 @@ However, for maximum performance you might want to manage allocation yourself an
 
     char buffer[1024];
 
-    size content_length = sizeof(buffer);
+    qdb_size_t content_length = sizeof(buffer);
 
     // ...
 
     // content_length must be initialized with the buffer's size
     // and will be update with the retrieved content's size
     r = qdb_blob_get_noalloc(handle, "myalias", buffer, &content_length);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -166,7 +166,7 @@ Removing entries
 Removing is done with the function :func:`qdb_remove`::
 
     r = qdb_remove(handle, "myalias");
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -177,11 +177,11 @@ The function fails if the entry does not exist.
 Cleaning up
 --------------------
 
-When you are done working with a quasardb repository, call :func:`qdb_close`::
+When you are done working with a quasardb cluster, call :func:`qdb_close`::
 
     qdb_close(handle);
 
-:func:`qdb_close` **does not** release memory allocated by :func:`qdb_blob_get`. You will need to make appropriate calls to :func:`qdb_free_buffer` for each call to :func:`qdb_blob_get`.
+:func:`qdb_close` **does not guarantee** to release memory allocated by :func:`qdb_blob_get`. You will need to make appropriate calls to :func:`qdb_free_buffer` for each call to :func:`qdb_blob_get`.
 
 .. note ::
 
@@ -193,7 +193,7 @@ Timeout
 It is possible to configure the client-side timeout with the :func:`qdb_option_set_timeout`::
 
     // sets the timeout to 5000 ms
-    qdb_option_set_timeout(h, 5000);
+    qdb_option_set_timeout(handle, 5000);
 
 Currently running requests are not affected by the modification, only new requests will use the new timeout value. The default client-side timeout is one minute. Keep in mind that the server-side timeout might be shorter.
 
@@ -211,14 +211,14 @@ To set the expiry time of an entry to 1 minute, relative to the call time::
 
     // ...
 
-    r = qdb_blob_put(handle, "myalias", content, sizeof(content), 0);
-    if (r != qdb_error_ok)
+    r = qdb_blob_put(handle, "myalias", content, sizeof(content), qdb_never_expires);
+    if (r != qdb_e_ok)
     {
         // error management
     }
 
     r = qdb_expires_from_now(handle, "myalias", 60);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -226,7 +226,7 @@ To set the expiry time of an entry to 1 minute, relative to the call time::
 To prevent an entry from ever expiring::
 
     r = qdb_expires_at(handle, "myalias", 0);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -235,7 +235,7 @@ By default, entries never expire. To obtain the expiry time of an existing entry
 
     qdb_time_t expiry_time = 0;
     r = qdb_get_expiry_time(handle, "myalias", &expiry_time);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -249,7 +249,7 @@ The :func:`qdb_init_operations` ensures that the operations are properly reset b
 
     qdb_operation_t ops[4];
     r = qdb_init_operations(ops, 4);
-    if (r != qdb_error_ok)
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -257,25 +257,25 @@ The :func:`qdb_init_operations` ensures that the operations are properly reset b
 Once this is done, you can fill the array with the operations you would like to run. :func:`qdb_init_operations` makes sure all the values have proper defaults::
 
     // the first operation will be a get for "entry1"
-    ops[0].type = qdb_op_get_alloc;
+    ops[0].type = qdb_op_blob_get;
     ops[0].alias = "entry1";
 
     // the second operation will be a get for "entry2"
-    ops[1].type = qdb_op_get_alloc;
+    ops[1].type = qdb_op_blob_get;
     ops[1].alias = "entry2";
 
     char content[100];
 
     // the third operation will be an update for "entry3"
-    ops[2].type = qdb_op_update;
+    ops[2].type = qdb_op_blob_update;
     ops[2].alias = "entry3";
     ops[2].content = content;
     ops[2].content_size = 100;
 
     // the fourth operation will be increasing an integer "int_value" by 42
-    ops[3].type = qdb_op_int_inc_dec;
+    ops[3].type = qdb_op_int_add;
     ops[3].alias = "int_value";
-    ops[3].int_op.value = 42;
+    ops[3].int_add.value = 42;
 
 You now have an operations batch that can be run on the cluster::
 
@@ -315,12 +315,12 @@ In our case, there have been four operations, two blob gets, one blob update and
 
 And for the integer in result_value::
 
-    qdb_int_t result_value = ops[3].int_op.result_vale;
+    qdb_int_t result_value = ops[3].int_add.result_value;
 
 Once you are finished with a series of batch operations, you must release the memory that the API allocated using :func:`qdb_free_operations`. The call releases all buffers at once::
 
-    r = qdb_free_operations(ops, 4);
-    if (r != qdb_error_ok)
+    r = qdb_free_operations(handle, ops, 4);
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -366,8 +366,8 @@ Use the streaming API to read or write portions of large entries in linear packe
 
     qdb_stream_open(handle, alias, mode, stream)
 
-    status = qdb_stream_write(stream, content, sizeof(content));
-    if (status != qdb_error_ok)
+    r = qdb_stream_write(stream, content, sizeof(content));
+    if (r != qdb_e_ok)
     {
         // error management
     }
@@ -387,17 +387,17 @@ Logging is asynchronous, however buffers are flushed when :func:`qdb_close` is s
 
 The callback profile is the following::
 
-     void qdb_log_callback(const char * log_level,       // qdb log level
+     void qdb_log_callback(qdb_log_level_t log_level,       // qdb log level
                            const unsigned long * date,   // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
                            unsigned long pid,            // process id
                            unsigned long tid,            // thread id
                            const char * message_buffer,  // message buffer (valid only in the context of the callback)
-                           qdb_size_t message_size);         // message buffer size
+                           size_t message_size);         // message buffer size
 
 
 The parameters passed to the callback are:
 
-    * *log_level:* a null-terminated string describing the log level for the message. The possible log levels are: detailed, debug, info, warning, error and panic. The string is static and valid as long as the dynamic library remains loaded in memory.
+    * *log_level:* a qdb_log_level_t describing the log_level. The possible values are: qdb_log_detailed, qdb_log_debug, qdb_log_info, qdb_log_warning, qdb_log_error and qdb_log_panic.
     * *date:* an array of six unsigned longs describing the timestamp of the log message. They are ordered as such: year, month, day, hours, minutes, seconds. The time is in 24h format.
     * *pid:* the process id of the log message.
     * *tid:* the thread id of the log message.
