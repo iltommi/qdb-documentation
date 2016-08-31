@@ -87,10 +87,10 @@ The quasardb shell offers an interactive mode from which the user can enter comm
 
 #. Add and get an entry from the server::
 
-       ok:qdbsh> blob_put entry thisismycontent
-       ok:qdbsh> blob_get entry
+       qdbsh> blob_put entry thisismycontent
+       qdbsh> blob_get entry
        thisismycontent
-       ok:qdbsh> exit
+       qdbsh> exit
 
 Type `help` to get a list of available commands. See :doc:`../reference/qdb_shell` for more information.
 

@@ -26,11 +26,11 @@ Configure the First Node
 
 #. Edit the configuration file using your favorite editor.
 
-#. Set the ``local::network::listen_on`` value to ``"192.168.1.1:2836"``.
+#. Set the ``local.network.listen_on`` value to ``"192.168.1.1:2836"``.
 
-#. Set the ``global::cluster::replication_factor`` value to 2.
+#. Set the ``global.cluster.replication_factor`` value to 2.
 
-#. Set the ``local::chord::node_id`` value to ``0000000000000000-0-0-1``
+#. Set the ``local.chord.node_id`` value to ``1/3``
 
 #. Save the file.
 
@@ -41,13 +41,13 @@ Configure the Second Node
 
 #. Edit the configuration file using your favorite editor.
 
-#. Set the ``local::network::listen_on`` value to ``"192.168.1.2:2836"``.
+#. Set the ``local.network.listen_on`` value to ``"192.168.1.2:2836"``.
 
-#. Set the ``local::chord::bootstrapping_peers`` value to ``["192.168.1.1:2836"]``
+#. Set the ``local.chord.bootstrapping_peers`` value to ``["192.168.1.1:2836"]``
 
-#. Set the ``global::cluster::replication_factor`` value to 2.
+#. Set the ``global.cluster.replication_factor`` value to 2.
 
-#. Set the ``local::chord::node_id`` value to ``5b00000000000000-0-0-0``
+#. Set the ``local.chord.node_id`` value to ``2/3``
 
 #. Save the file.
 
@@ -58,13 +58,13 @@ Configure the Third Node
 
 #. Edit the configuration file using your favorite editor.
 
-#. Set the ``local::network::listen_on`` value to ``"192.168.1.3:2836"``.
+#. Set the ``local.network.listen_on`` value to ``"192.168.1.3:2836"``.
 
-#. Set the ``local::chord::bootstrapping_peers`` value to ``["192.168.1.1:2836"]``
+#. Set the ``local.chord.bootstrapping_peers`` value to ``["192.168.1.1:2836"]``
 
-#. Set the ``global::cluster::replication_factor`` value to 2.
+#. Set the ``global.cluster.replication_factor`` value to 2.
 
-#. Set the ``local::chord::node_id`` value to ``b600000000000000-0-0-0``
+#. Set the ``local.chord.node_id`` value to ``3/3``
 
 #. Save the file.
 
