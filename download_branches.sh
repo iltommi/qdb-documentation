@@ -7,6 +7,15 @@ git fetch
 ORIGIN=$(git config --get remote.origin.url)
 BRANCHES=$(git branch --list --sort=version:refname --remotes origin/* | grep -E '^\s*origin/[0-9]+.[0-9]+.[0-9]$' | sed 's|origin/||')
 
+if [[ $# -ge 1 ]] ; then
+    ADDITIONAL_BRANCH=$1
+    if [[ ! -z ${ADDITIONAL_BRANCH// } ]] ; then
+        BRANCHES+=" ${ADDITIONAL_BRANCH}"
+    fi
+fi
+
+echo 'Branches:' $BRANCHES
+
 for BRANCH in $BRANCHES; do
     if [ -e "source/$BRANCH/.git" ]; then
         echo "Pulling branch $BRANCH"
