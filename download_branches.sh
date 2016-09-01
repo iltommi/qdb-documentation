@@ -5,7 +5,7 @@ cd $(dirname $0)
 git fetch
 
 ORIGIN=$(git config --get remote.origin.url)
-BRANCHES=$(git branch --list --sort=version:refname --remotes origin/* | grep -E 'origin/[0-9]+.[0-9]+.[0-9]' | sed 's|origin/||')
+BRANCHES=$(git branch --list --sort=version:refname --remotes origin/* | grep -E '^\s*origin/[0-9]+.[0-9]+.[0-9]$' | sed 's|origin/||')
 
 for BRANCH in $BRANCHES; do
     if [ -e "source/$BRANCH/.git" ]; then
@@ -21,7 +21,6 @@ done
 (
     export BRANCHES=$(echo ${BRANCHES[*]})
     export LATEST
-
 
     echo "Generate index.html"
     envsubst <source/index.html.in >source/index.html
