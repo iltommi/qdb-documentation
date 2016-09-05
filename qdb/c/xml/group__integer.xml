@@ -28,7 +28,7 @@
         <briefdescription>
 <para>Creates a new signed 64-bit integer. </para>        </briefdescription>
         <detaileddescription>
-<para>Atomically creates an entry of the given alias and sets it to a cross-platform signed 64-bit integer. If the entry already exists, the function returns an error.</para><para>You can specify an expiry or use qdb_never_expires if you don&apos;t want the entry to expire.</para><para>If you want to create or update an entry use <ref refid="group__integer_1ga8adfbb676817447300db1f34f971ca7c" kindref="member">qdb_int_update</ref>.</para><para>The value will be correctly translated on every API on every platform.</para><para><parameterlist kind="param"><parameteritem>
+<para>Atomically creates an entry of the given alias and sets it to a cross-platform signed 64-bit integer. If the entry already exists, the function returns an error.</para><para>You can specify an expiry or use qdb_never_expires if you don&apos;t want the entry to expire.</para><para>If you want to create or update an entry use <ref refid="group__integer_1ga8adfbb676817447300db1f34f971ca7c" kindref="member">qdb_int_update</ref>.</para><para>The value will be correctly translated independently of the endianness of the client&apos;s platform.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>

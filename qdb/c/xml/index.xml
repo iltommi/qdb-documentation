@@ -162,6 +162,7 @@
     <member refid="group__error_1ga9c4473d8d1f9a870925121d8b5085c3c" kind="define"><name>QDB_ERROR_ORIGIN</name></member>
     <member refid="group__error_1ga988fa2631bf090c9c57ca4ef1df4875a" kind="define"><name>QDB_ERROR_SEVERITY</name></member>
     <member refid="group__error_1ga8c7fbec5c8f5da7e6ee37bb587273433" kind="define"><name>QDB_SUCCESS</name></member>
+    <member refid="group__error_1ga4956ff9626cdf92f077a8327a7b08507" kind="define"><name>QDB_FAILURE</name></member>
     <member refid="group__error_1gaef8f2ffc9bd2ee1abe785a8aeb86c701" kind="enum"><name>qdb_err_origin</name></member>
     <member refid="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701aabeb79ba7024616cd1d1f0d28364479d" kind="enumvalue"><name>qdb_e_origin_system_remote</name></member>
     <member refid="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701a7bb5c5e7a8c4fca41c54d4cf1fb8ff6b" kind="enumvalue"><name>qdb_e_origin_system_local</name></member>
@@ -468,6 +469,7 @@
     <member refid="group__error_1ga9c4473d8d1f9a870925121d8b5085c3c" kind="define"><name>QDB_ERROR_ORIGIN</name></member>
     <member refid="group__error_1ga988fa2631bf090c9c57ca4ef1df4875a" kind="define"><name>QDB_ERROR_SEVERITY</name></member>
     <member refid="group__error_1ga8c7fbec5c8f5da7e6ee37bb587273433" kind="define"><name>QDB_SUCCESS</name></member>
+    <member refid="group__error_1ga4956ff9626cdf92f077a8327a7b08507" kind="define"><name>QDB_FAILURE</name></member>
   </compound>
   <compound refid="group__hset" kind="group"><name>hset</name>
     <member refid="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" kind="function"><name>qdb_hset_insert</name></member>
