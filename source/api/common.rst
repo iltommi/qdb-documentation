@@ -44,7 +44,7 @@ A lot of calls allocate memory on the client side. For example, when you get an 
 Error management
 ----------------
 
-Most success and failure conditions are based on return values. When an operation is successful, a function returns with the status qdb_e_ok. Other error types are returned as a value from the qdb_error_t enum, which can be examined using the QDB_SUCCESS(qdb_error_t), QDB_TRANSIENT(qdb_error_t) and QDB_SEVERITY(qdb_error_t) macros.
+Most success and failure conditions are based on return values. When an operation is successful, a function returns with the status :c:macro:`qdb_e_ok<qdb_error_t>`. Other error types are returned as a value from the :c:macro:`qdb_error_t` enum, which can be examined using the :c:macro:`QDB_SUCCESS(qdb_error_t)<QDB_SUCCESS>`, :c:macro:`QDB_FAILURE(qdb_error_t)<QDB_FAILURE>` and :c:macro:`QDB_ERROR_SEVERITY(qdb_error_t)<QDB_ERROR_SEVERITY>` macros.
 
 Transient errors may resolve by themselves given time. Transient errors are commonly transaction conflicts, network timeouts, or an unstable cluster.
 
@@ -148,11 +148,11 @@ Batches may contain any combination of gets, puts, updates, removes, compare and
 Error management
 ^^^^^^^^^^^^^^^^^^
 
-Each operation receives a status, independent from other operations. If for some reason the cluster estimates that running the batch may be unsafe or unreliable, operations may be skipped and will have the qdb_e_skipped error code. This can also happen in case of a global error (unstable ring, low memory condition) or malformed batch.
+Each operation receives a status, independent from other operations. If for some reason the cluster estimates that running the batch may be unsafe or unreliable, operations may be skipped and will have the :c:macro:`qdb_e_skipped<qdb_error_t>` error code. This can also happen in case of a global error (unstable ring, low memory condition) or malformed batch.
 
 A batch with an invalid request or an invalid number of operations is considered malformed as a whole and ignored. This is because quasardb considers that a batch with invalid entries is probably erroneous as a whole and even requests that look valid should not be run as a precaution.
 
-For example, if you submit a batch of put operations and one of the operations has an invalid parameter (for example an empty alias), the whole batch will be in error. The operation with the invalid parameter will have the qdb_e_invalid_argument error code and other operations will have the qdb_e_skipped error code.
+For example, if you submit a batch of put operations and one of the operations has an invalid parameter (for example an empty alias), the whole batch will be in error. The operation with the invalid parameter will have the :c:macro:`qdb_e_invalid_argument<qdb_error_t>` error code and other operations will have the :c:macro:`qdb_e_skipped<qdb_error_t>` error code.
 
 Complexity
 ^^^^^^^^^^^^
