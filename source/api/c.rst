@@ -14,11 +14,15 @@ Installing
 
 The C API package is downloadable from the quasardb download site. All information regarding the quasardb download site are in your welcome e-mail.
 
-    \qdb-capi-<version>
-          \doc        // This documentation
-          \example    // C and C++ API examples
-          \include    // C and C++ header files
-          \lib        // QDB API shared libraries
+::
+
+    \qdb-<version>-<platform>-c-api
+        \bin        // QDB API shared libraries (.dll, Windows only)
+        \examples   // C and C++ API examples
+        \include    // C and C++ header files
+        \lib        // QDB API shared libraries
+        \share
+            \doc    // This documentation
 
 
 Most C functions, typedefs and enums are available in the ``include/qdb/client.h`` header file. The object specific functions for hsets, integers, double-ended queues, and tags are in their respective ``include/qdb/*.h`` files.
