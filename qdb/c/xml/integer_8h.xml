@@ -4,36 +4,44 @@
     <compoundname>integer.h</compoundname>
     <includes refid="client_8h" local="no">qdb/client.h</includes>
     <incdepgraph>
-      <node id="60">
-        <label>stdint.h</label>
+      <node id="84">
+        <label>qdb/_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
-      <node id="59">
+      <node id="85">
         <label>qdb/error.h</label>
         <link refid="error_8h"/>
-      </node>
-      <node id="57">
-        <label>stddef.h</label>
-      </node>
-      <node id="58">
-        <label>time.h</label>
-      </node>
-      <node id="55">
-        <label>D:/sources/quasardb/qdb/api/include/qdb/integer.h</label>
-        <link refid="integer.h"/>
-        <childnode refid="56" relation="include">
+        <childnode refid="84" relation="include">
         </childnode>
       </node>
-      <node id="56">
+      <node id="83">
         <label>qdb/client.h</label>
         <link refid="client_8h"/>
-        <childnode refid="57" relation="include">
+        <childnode refid="84" relation="include">
         </childnode>
-        <childnode refid="58" relation="include">
+        <childnode refid="85" relation="include">
         </childnode>
-        <childnode refid="59" relation="include">
+        <childnode refid="86" relation="include">
         </childnode>
-        <childnode refid="60" relation="include">
+        <childnode refid="87" relation="include">
         </childnode>
+        <childnode refid="88" relation="include">
+        </childnode>
+      </node>
+      <node id="82">
+        <label>D:/workspace/quasardb/api/include/qdb/integer.h</label>
+        <link refid="integer.h"/>
+        <childnode refid="83" relation="include">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>stdint.h</label>
+      </node>
+      <node id="86">
+        <label>stddef.h</label>
+      </node>
+      <node id="87">
+        <label>time.h</label>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -95,7 +103,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="69" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/integer.h" line="69" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__integer_1ga8adfbb676817447300db1f34f971ca7c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -155,7 +163,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="94" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/integer.h" line="94" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__integer_1ga12a283f0b974a91433cb09054b94a10a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -204,7 +212,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="115" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/integer.h" line="115" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__integer_1ga7335937383f6ab76b319924d83a968c7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -266,7 +274,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h" line="142" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/integer.h" line="142" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -342,6 +350,6 @@
 <codeline lineno="150"><highlight class="normal"></highlight></codeline>
 <codeline lineno="151"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="D:/sources/quasardb/qdb/api/include/qdb/integer.h"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/integer.h"/>
   </compounddef>
 </doxygen>

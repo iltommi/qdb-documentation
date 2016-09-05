@@ -1,0 +1,190 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__iterator" kind="group">
+    <compoundname>iterator</compoundname>
+    <title>Iteration-related operations</title>
+    <innerclass refid="structqdb__const__iterator__t" prot="public">qdb_const_iterator_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_begin</definition>
+        <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_begin</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Creates an iterator that points to the &quot;first&quot; entry of the cluster. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return qdb_e_alias_not_found and the user must call <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> to release client allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an uninitialized iterator structure that will be set to the first entry if successful</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_rbegin</definition>
+        <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_rbegin</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Creates an iterator that points to the &quot;last&quot; entry of the cluster. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>This works exactly like <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, excepts it starts at the &quot;end&quot; of the cluster.</para><para>Call <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref> to go to the previous available entry, if any.</para><para>See <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an uninitialized iterator structure that will be set to the last entry if successful</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="132" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_next</definition>
+        <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_next</name>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Advances an iterator to the next entry, if any. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the iterator to point to the next available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined.If there is no following entry or it is otherwise unavailable, the function will return qdb_e_alias_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a previously initialized iterator.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="145" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_previous</definition>
+        <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_previous</name>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Advances an iterator to the previous entry, if any. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the iterator to point to the previous available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no previous entry or it is otherwise unavailable, the function will return qdb_e_alias_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a previously initialized iterator.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_close</definition>
+        <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_close</name>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Closes a previously initialized iterator and releases all associated resources. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a previously initialized iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="167" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_copy</definition>
+        <argsstring>(const qdb_const_iterator_t *original, qdb_const_iterator_t *copy)</argsstring>
+        <name>qdb_iterator_copy</name>
+        <param>
+          <type>const <ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>original</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+<para>Clones a previously initialized iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="178" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

@@ -20,6 +20,17 @@
     <member refid="structqdb__const__tag__iterator__t_1a4c2ea878551cd1cf2e18cdcd5d59649e" kind="variable"><name>alias</name></member>
     <member refid="structqdb__const__tag__iterator__t_1a7d18d152698307f4bf3505e7a5ff9939" kind="variable"><name>type</name></member>
   </compound>
+  <compound refid="structqdb__entry__metadata__t" kind="struct"><name>qdb_entry_metadata_t</name>
+    <member refid="structqdb__entry__metadata__t_1a38fdb97e118a81e434a35a79084b7d8f" kind="variable"><name>reference</name></member>
+    <member refid="structqdb__entry__metadata__t_1af1c3dd521b4f9cb05b60964e6a95f7d1" kind="variable"><name>type</name></member>
+    <member refid="structqdb__entry__metadata__t_1a10a79e4ba033cf2ffa3d5b92709219c3" kind="variable"><name>size</name></member>
+    <member refid="structqdb__entry__metadata__t_1aaec1b20dd3c2798869b6dbbcaab157e8" kind="variable"><name>creation_time</name></member>
+    <member refid="structqdb__entry__metadata__t_1a35cc79231cacad4ba201d068357458f3" kind="variable"><name>modification_time</name></member>
+    <member refid="structqdb__entry__metadata__t_1a6271af0c9ae26c09df2e4849f0d06f01" kind="variable"><name>expiry_time</name></member>
+  </compound>
+  <compound refid="structqdb__id__t" kind="struct"><name>qdb_id_t</name>
+    <member refid="structqdb__id__t_1abb5374c9dc6502879e2a0221caa44529" kind="variable"><name>data</name></member>
+  </compound>
   <compound refid="structqdb__operation__t" kind="struct"><name>qdb_operation_t</name>
     <member refid="structqdb__operation__t_1a7857a5094bbd023e9ed35c032aa440cc" kind="variable"><name>type</name></member>
     <member refid="structqdb__operation__t_1a118c83d65a06b70a2a854b22d5bb0464" kind="variable"><name>alias</name></member>
@@ -32,18 +43,25 @@
     <member refid="structqdb__operation__t_1acaced12578ef76867aeb3d77e6588aa0" kind="variable"><name>int_get</name></member>
     <member refid="structqdb__operation__t_1aad61a99111e59c9139de89c0ed274b6f" kind="variable"><name>int_put</name></member>
     <member refid="structqdb__operation__t_1a07e07a0c1be63cc522d511e26a7ab1f1" kind="variable"><name>int_update</name></member>
+    <member refid="structqdb__operation__t_1a2d8f398edba694767fb7a707014ebde1" kind="variable"><name>type</name></member>
+    <member refid="structqdb__operation__t_1a5caff5fcd9f68fd280c6a17666673bd9" kind="variable"><name>get_entry_type</name></member>
     <member refid="structqdb__operation__t_1a6232073010ed9c3c2400053fc0a69511" kind="variable"><name>content</name></member>
     <member refid="structqdb__operation__t_1a6ac5ccdbc957954df31ab412cecb49b2" kind="variable"><name>content_size</name></member>
     <member refid="structqdb__operation__t_1ac9f0b15106cdeea2943fd2a1b044718b" kind="variable"><name>comparand</name></member>
     <member refid="structqdb__operation__t_1aebf68508b3e720b1e90250c22f2a8014" kind="variable"><name>comparand_size</name></member>
+    <member refid="structqdb__operation__t_1ae59ced88d6bc367796132b0bd976f06a" kind="variable"><name>comparand_offset</name></member>
     <member refid="structqdb__operation__t_1af2b73538b2c723d93fa46ffc43975805" kind="variable"><name>expiry_time</name></member>
     <member refid="structqdb__operation__t_1a7a52fdff3b208f181b4f5ca5f58d4170" kind="variable"><name>result</name></member>
     <member refid="structqdb__operation__t_1ae2201190f0876c8860a0c7893dcea21a" kind="variable"><name>result_size</name></member>
+    <member refid="structqdb__operation__t_1ae4913cb6c5bc9ec00b3d44842fc4c12a" kind="variable"><name>result_offset</name></member>
     <member refid="structqdb__operation__t_1a49f1cf6d45dc2a82c93a82e088f3e64c" kind="variable"><name>@1</name></member>
   </compound>
   <compound refid="structqdb__remote__node__t" kind="struct"><name>qdb_remote_node_t</name>
     <member refid="structqdb__remote__node__t_1a0d17da9467be3445198fe4151c0d932a" kind="variable"><name>address</name></member>
     <member refid="structqdb__remote__node__t_1a8701b59cea4b7e358f2528c73f9e45b8" kind="variable"><name>port</name></member>
+  </compound>
+  <compound refid="__attr_8h" kind="file"><name>_attr.h</name>
+    <member refid="group__attr_1gaa465b14ec10488af72bffdb52265603c" kind="define"><name>QDB_DEPRECATED</name></member>
   </compound>
   <compound refid="batch_8h" kind="file"><name>batch.h</name>
     <member refid="group__batch_1ga76e411451eeda47e0cd972e4a634ea3d" kind="enum"><name>qdb_operation_type</name></member>
@@ -53,10 +71,12 @@
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4ada68b172af41831bbcef735f1e11cd" kind="enumvalue"><name>qdb_op_blob_update</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da7de4a75f77b198a6a0e0855058386239" kind="enumvalue"><name>qdb_op_blob_cas</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da89db036e3c5308ad4d8b19d197bc54b0" kind="enumvalue"><name>qdb_op_blob_get_and_update</name></member>
+    <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4411d4842c65bccf6877c7ceace9c025" kind="enumvalue"><name>qdb_op_has_tag</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da925c976afb2896f99bdfa90359f5ff14" kind="enumvalue"><name>qdb_op_int_put</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da69ce1cd8d4ffef775933a926ab98bcfb" kind="enumvalue"><name>qdb_op_int_update</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da153f096496c868cb5c79d450506bd998" kind="enumvalue"><name>qdb_op_int_get</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da52e5c4f75dce3f2f85e87d82bb840ee1" kind="enumvalue"><name>qdb_op_int_add</name></member>
+    <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3dab65f10ac39632bceb9bf27a308fcb553" kind="enumvalue"><name>qdb_op_get_entry_type</name></member>
     <member refid="batch_8h_1aaaebee34ad682f0ba961780f59d765d4" kind="typedef"><name>qdb_operation_type_t</name></member>
     <member refid="group__batch_1ga8b3e3f28c66a4e9bb3826658e260041c" kind="function"><name>qdb_init_operations</name></member>
     <member refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kind="function"><name>qdb_run_batch</name></member>
@@ -66,12 +86,14 @@
   <compound refid="blob_8h" kind="file"><name>blob.h</name>
     <member refid="group__blob_1ga815f319575a422331ed4d5eed0cc69bf" kind="function"><name>qdb_blob_get_noalloc</name></member>
     <member refid="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" kind="function"><name>qdb_blob_get</name></member>
+    <member refid="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" kind="function"><name>qdb_reserved_blob_get</name></member>
     <member refid="group__blob_1gacccb11b84a007ec4f2036ec316060282" kind="function"><name>qdb_blob_get_and_remove</name></member>
     <member refid="group__blob_1ga67db324cbeccb7f130f8006830468d12" kind="function"><name>qdb_blob_put</name></member>
     <member refid="group__blob_1ga79aafb696593432010c6d624f0894061" kind="function"><name>qdb_blob_update</name></member>
     <member refid="group__blob_1gaef0400b3b58a23ebffe6085641581e53" kind="function"><name>qdb_reserved_blob_merge</name></member>
     <member refid="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" kind="function"><name>qdb_blob_get_and_update</name></member>
     <member refid="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" kind="function"><name>qdb_blob_compare_and_swap</name></member>
+    <member refid="blob_8h_1a807cfac5f74e781b9ad967531c85bad8" kind="function"><name>qdb_reserved_blob_cas_partial</name></member>
     <member refid="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" kind="function"><name>qdb_blob_remove_if</name></member>
     <member refid="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" kind="function"><name>qdb_blob_scan</name></member>
     <member refid="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" kind="function"><name>qdb_blob_scan_regex</name></member>
@@ -81,20 +103,12 @@
     <member refid="group__client_1gacec73da0a3d7364196f4e6682f5fd522" kind="define"><name>qdb_preserve_expiration</name></member>
     <member refid="group__client_1ga14ba3138099f3c7969f707eb4b16c35b" kind="enum"><name>qdb_limits</name></member>
     <member refid="client_8h_1ga14ba3138099f3c7969f707eb4b16c35bada77b67d62cfd28f8f9131dc039dbf64" kind="enumvalue"><name>qdb_l_alias_max_length</name></member>
-    <member refid="client_8h_1ga14ba3138099f3c7969f707eb4b16c35badf6734fe131fa7d3f5523b8845787d93" kind="enumvalue"><name>qdb_l_min_prefix_length</name></member>
     <member refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kind="enum"><name>qdb_compression</name></member>
     <member refid="client_8h_1ga2c0493e17b424c05b599b54ea641adbaa4933efb6777664f0e19587b8be37f8d2" kind="enumvalue"><name>qdb_comp_none</name></member>
     <member refid="client_8h_1ga2c0493e17b424c05b599b54ea641adbaae779c527ad92b6adb5c979f5d0bf0569" kind="enumvalue"><name>qdb_comp_fast</name></member>
     <member refid="client_8h_1ga2c0493e17b424c05b599b54ea641adbaaa224c10b51af9f8da172e9b2aa6efcb3" kind="enumvalue"><name>qdb_comp_best</name></member>
     <member refid="group__client_1ga222536ecf11bc6ab9468946ba51a446a" kind="enum"><name>qdb_protocol</name></member>
     <member refid="client_8h_1ga222536ecf11bc6ab9468946ba51a446aa2ce2bdabaf83de1269519c5ddec8d71b" kind="enumvalue"><name>qdb_p_tcp</name></member>
-    <member refid="group__client_1ga8dc603a7bf83954b01043dcba99354fd" kind="enum"><name>qdb_log_level</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" kind="enumvalue"><name>qdb_log_detailed</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" kind="enumvalue"><name>qdb_log_debug</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" kind="enumvalue"><name>qdb_log_info</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" kind="enumvalue"><name>qdb_log_warning</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" kind="enumvalue"><name>qdb_log_error</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" kind="enumvalue"><name>qdb_log_panic</name></member>
     <member refid="group__client_1gabc708719df4e28cd85c743e1a4582661" kind="enum"><name>qdb_entry_type</name></member>
     <member refid="client_8h_1gabc708719df4e28cd85c743e1a4582661a696fbb89655c7dd32c7a7e75b8681bcf" kind="enumvalue"><name>qdb_entry_uninitialized</name></member>
     <member refid="client_8h_1gabc708719df4e28cd85c743e1a4582661ace9c26f51f6c16e8ddbc3f28186ab651" kind="enumvalue"><name>qdb_entry_blob</name></member>
@@ -106,22 +120,17 @@
     <member refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kind="typedef"><name>qdb_time_t</name></member>
     <member refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kind="typedef"><name>qdb_size_t</name></member>
     <member refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kind="typedef"><name>qdb_int_t</name></member>
+    <member refid="client_8h_1a60aaba4b909917d504fa86443dd72085" kind="typedef"><name>qdb_timestamp_t</name></member>
     <member refid="group__client_1gab2ede040a754735a3f751a14acd8cf7f" kind="typedef"><name>qdb_limits_t</name></member>
     <member refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kind="typedef"><name>qdb_compression_t</name></member>
     <member refid="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" kind="typedef"><name>qdb_protocol_t</name></member>
-    <member refid="group__client_1gae0666863f2369cd07dbd9fdf350c8cd6" kind="typedef"><name>qdb_log_level_t</name></member>
     <member refid="group__client_1ga720fb72da4197685cc354214e96796c1" kind="typedef"><name>qdb_handle_t</name></member>
-    <member refid="group__client_1ga6a72d356408c58332b03af73a52c84d6" kind="typedef"><name>qdb_log_callback_id</name></member>
-    <member refid="group__client_1ga27259bcef89d32c184a9e03fc0f157ce" kind="typedef"><name>qdb_log_callback</name></member>
     <member refid="group__client_1gaaa6272f78edda811822bfce05a07f944" kind="typedef"><name>qdb_entry_type_t</name></member>
-    <member refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kind="function"><name>qdb_error</name></member>
     <member refid="group__client_1ga49d1a4e7a20ad93207402c701b57643b" kind="function"><name>qdb_version</name></member>
     <member refid="group__client_1ga4057e6f052a167bf6206b465582f9e5c" kind="function"><name>qdb_build</name></member>
     <member refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kind="function"><name>qdb_open</name></member>
     <member refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kind="function"><name>qdb_open_tcp</name></member>
     <member refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kind="function"><name>qdb_option_set_timeout</name></member>
-    <member refid="group__client_1ga41f40fc5037f4f3cfcd09a5a7e74156d" kind="function"><name>qdb_option_add_log_callback</name></member>
-    <member refid="group__client_1gaaa9fff3de285c08fad5b8f5d3b89f466" kind="function"><name>qdb_option_remove_log_callback</name></member>
     <member refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kind="function"><name>qdb_option_set_compression</name></member>
     <member refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kind="function"><name>qdb_connect</name></member>
     <member refid="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" kind="function"><name>qdb_close</name></member>
@@ -134,18 +143,9 @@
     <member refid="group__client_1ga089edb1764e8a5567c24dbd001a325db" kind="function"><name>qdb_get_expiry_time</name></member>
     <member refid="group__client_1gaa71923537cfe32018774ad55eacd246e" kind="function"><name>qdb_get_location</name></member>
     <member refid="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" kind="function"><name>qdb_get_type</name></member>
-    <member refid="group__client_1gafd9d900e49d68ed2989ac489360baa96" kind="function"><name>qdb_purge_all</name></member>
-    <member refid="group__client_1gad0b2a001e96c9afd91706cd1c451be11" kind="function"><name>qdb_trim_all</name></member>
-    <member refid="group__client_1gad25f0db2db8eb2cb7285f3d65c070c41" kind="function"><name>qdb_node_status</name></member>
-    <member refid="group__client_1ga14c411ee3a3c3fec0e57ba48eba411b6" kind="function"><name>qdb_node_config</name></member>
-    <member refid="group__client_1gaa448d12338945be0e16f1ac63bb0eb92" kind="function"><name>qdb_node_topology</name></member>
-    <member refid="group__client_1ga0ee58acda04e9acb66e4a22b5ddf6c03" kind="function"><name>qdb_node_stop</name></member>
-    <member refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kind="function"><name>qdb_iterator_begin</name></member>
-    <member refid="group__client_1ga683cbf388cebd5af505f68ed4b3f5ed3" kind="function"><name>qdb_iterator_rbegin</name></member>
-    <member refid="group__client_1ga5e45817b99939b2543feb5b48d53a3e4" kind="function"><name>qdb_iterator_next</name></member>
-    <member refid="group__client_1gaedb4d21b23eede0ae7523094a2c65d01" kind="function"><name>qdb_iterator_previous</name></member>
-    <member refid="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kind="function"><name>qdb_iterator_close</name></member>
-    <member refid="group__client_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" kind="function"><name>qdb_iterator_copy</name></member>
+    <member refid="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" kind="function"><name>qdb_get_metadata</name></member>
+    <member refid="group__client_1ga08f21b80163d0b36c03c9e80c2c5df25" kind="function"><name>qdb_purge_all</name></member>
+    <member refid="group__client_1ga871994aec633bde734dbe84a9011a615" kind="function"><name>qdb_trim_all</name></member>
   </compound>
   <compound refid="deque_8h" kind="file"><name>deque.h</name>
     <member refid="group__deque_1ga754d6acdf6f648fa89023076143ab245" kind="function"><name>qdb_deque_size</name></member>
@@ -209,9 +209,7 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa60d8ccf2fc347efd408331f072a15bd" kind="enumvalue"><name>qdb_e_invalid_protocol</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a222f8fa54b5ef5ac8c3b86aee685f746" kind="enumvalue"><name>qdb_e_host_not_found</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a13d942a5ac05a02071d2142beb559bea" kind="enumvalue"><name>qdb_e_buffer_too_small</name></member>
-    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ac15d8a1a3c570205185338fa4828ba19" kind="enumvalue"><name>qdb_e_unexpected_reply</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a11764d6e4f4e9db55e0385fd866768ab" kind="enumvalue"><name>qdb_e_not_implemented</name></member>
-    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ae91986c74e4b323c3611730a008324a6" kind="enumvalue"><name>qdb_e_protocol_error</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa04c0faf49159dd2cd66d8786bdaceef" kind="enumvalue"><name>qdb_e_invalid_version</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9f2aa83ba8969f389f23a281bb8227a8" kind="enumvalue"><name>qdb_e_invalid_argument</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0a1723dd0a90a9a60aa89d6fba1ad4cd" kind="enumvalue"><name>qdb_e_invalid_handle</name></member>
@@ -223,10 +221,13 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5e3f7ff277511984a70139328714d839" kind="enumvalue"><name>qdb_e_operation_disabled</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a1cd256fddf4fd12463e5aa9e453289c7" kind="enumvalue"><name>qdb_e_operation_not_permitted</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2af3d584049b45f2aacca139de8c34a20b" kind="enumvalue"><name>qdb_e_iterator_end</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0af9a802084f4c4c563aee0293a08ee7" kind="enumvalue"><name>qdb_e_invalid_reply</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a40e9d1f18501d50eef1fc8af06bfcc5f" kind="enumvalue"><name>qdb_e_ok_created</name></member>
     <member refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kind="typedef"><name>qdb_error_origin_t</name></member>
     <member refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kind="typedef"><name>qdb_error_severity_t</name></member>
     <member refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kind="typedef"><name>qdb_error_t</name></member>
     <member refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kind="typedef"><name>qdb_status_t</name></member>
+    <member refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kind="function"><name>qdb_error</name></member>
   </compound>
   <compound refid="hset_8h" kind="file"><name>hset.h</name>
     <member refid="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" kind="function"><name>qdb_hset_insert</name></member>
@@ -238,6 +239,34 @@
     <member refid="group__integer_1ga8adfbb676817447300db1f34f971ca7c" kind="function"><name>qdb_int_update</name></member>
     <member refid="group__integer_1ga12a283f0b974a91433cb09054b94a10a" kind="function"><name>qdb_int_get</name></member>
     <member refid="group__integer_1ga7335937383f6ab76b319924d83a968c7" kind="function"><name>qdb_int_add</name></member>
+  </compound>
+  <compound refid="iterator_8h" kind="file"><name>iterator.h</name>
+    <member refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kind="function"><name>qdb_iterator_begin</name></member>
+    <member refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kind="function"><name>qdb_iterator_rbegin</name></member>
+    <member refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kind="function"><name>qdb_iterator_next</name></member>
+    <member refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kind="function"><name>qdb_iterator_previous</name></member>
+    <member refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kind="function"><name>qdb_iterator_close</name></member>
+    <member refid="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" kind="function"><name>qdb_iterator_copy</name></member>
+  </compound>
+  <compound refid="log_8h" kind="file"><name>log.h</name>
+    <member refid="log_8h_1a8dc603a7bf83954b01043dcba99354fd" kind="enum"><name>qdb_log_level</name></member>
+    <member refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" kind="enumvalue"><name>qdb_log_detailed</name></member>
+    <member refid="log_8h_1a8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" kind="enumvalue"><name>qdb_log_debug</name></member>
+    <member refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" kind="enumvalue"><name>qdb_log_info</name></member>
+    <member refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" kind="enumvalue"><name>qdb_log_warning</name></member>
+    <member refid="log_8h_1a8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" kind="enumvalue"><name>qdb_log_error</name></member>
+    <member refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" kind="enumvalue"><name>qdb_log_panic</name></member>
+    <member refid="log_8h_1ae0666863f2369cd07dbd9fdf350c8cd6" kind="typedef"><name>qdb_log_level_t</name></member>
+    <member refid="log_8h_1a6a72d356408c58332b03af73a52c84d6" kind="typedef"><name>qdb_log_callback_id</name></member>
+    <member refid="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" kind="typedef"><name>qdb_log_callback</name></member>
+    <member refid="log_8h_1aaedde07e4ca97105358685c6b31c8301" kind="function"><name>qdb_log_add_callback</name></member>
+    <member refid="log_8h_1add4e2284dfa7a452b2a3d5820e17c582" kind="function"><name>qdb_log_remove_callback</name></member>
+  </compound>
+  <compound refid="node_8h" kind="file"><name>node.h</name>
+    <member refid="group__node_1gad25f0db2db8eb2cb7285f3d65c070c41" kind="function"><name>qdb_node_status</name></member>
+    <member refid="group__node_1ga14c411ee3a3c3fec0e57ba48eba411b6" kind="function"><name>qdb_node_config</name></member>
+    <member refid="group__node_1gaa448d12338945be0e16f1ac63bb0eb92" kind="function"><name>qdb_node_topology</name></member>
+    <member refid="group__node_1ga0ee58acda04e9acb66e4a22b5ddf6c03" kind="function"><name>qdb_node_stop</name></member>
   </compound>
   <compound refid="prefix_8h" kind="file"><name>prefix.h</name>
     <member refid="group__prefix_1ga920582605239db5da468546cd42ddbfc" kind="function"><name>qdb_prefix_get</name></member>
@@ -261,17 +290,20 @@
     <member refid="group__suffix_1gaafa6694ef459194fe3d7c78a35cb6e19" kind="function"><name>qdb_suffix_get</name></member>
   </compound>
   <compound refid="tag_8h" kind="file"><name>tag.h</name>
-    <member refid="group__tag_1gabcec257605aa79190104e71d73d397d3" kind="function"><name>qdb_add_tag</name></member>
-    <member refid="group__tag_1ga3ef742e0b4f4fa6e1e7cfef6d64b331f" kind="function"><name>qdb_add_tags</name></member>
+    <member refid="group__tag_1ga571507d1aa1ca6bfc7b75766963c7770" kind="function"><name>qdb_attach_tag</name></member>
+    <member refid="group__tag_1gaa8b8afc25faab9d31f181f01c0903369" kind="function"><name>qdb_attach_tags</name></member>
     <member refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kind="function"><name>qdb_has_tag</name></member>
-    <member refid="group__tag_1ga00074225d5dbfa6b699fd957b2a63550" kind="function"><name>qdb_remove_tag</name></member>
-    <member refid="group__tag_1gadd43f2d4ac78bbcb7ac0dc3c8fcbadba" kind="function"><name>qdb_remove_tags</name></member>
+    <member refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kind="function"><name>qdb_detach_tag</name></member>
+    <member refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kind="function"><name>qdb_detach_tags</name></member>
     <member refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kind="function"><name>qdb_get_tagged</name></member>
     <member refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kind="function"><name>qdb_get_tags</name></member>
     <member refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kind="function"><name>qdb_tag_iterator_begin</name></member>
     <member refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kind="function"><name>qdb_tag_iterator_next</name></member>
     <member refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kind="function"><name>qdb_tag_iterator_close</name></member>
     <member refid="group__client_1ga649bfb20c6c8f6b2495b1d2878633298" kind="function"><name>qdb_tag_iterator_copy</name></member>
+  </compound>
+  <compound refid="group__attr" kind="group"><name>attr</name>
+    <member refid="group__attr_1gaa465b14ec10488af72bffdb52265603c" kind="define"><name>QDB_DEPRECATED</name></member>
   </compound>
   <compound refid="group__batch" kind="group"><name>batch</name>
     <member refid="group__batch_1ga8b3e3f28c66a4e9bb3826658e260041c" kind="function"><name>qdb_init_operations</name></member>
@@ -285,14 +317,17 @@
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4ada68b172af41831bbcef735f1e11cd" kind="enumvalue"><name>qdb_op_blob_update</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da7de4a75f77b198a6a0e0855058386239" kind="enumvalue"><name>qdb_op_blob_cas</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da89db036e3c5308ad4d8b19d197bc54b0" kind="enumvalue"><name>qdb_op_blob_get_and_update</name></member>
+    <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4411d4842c65bccf6877c7ceace9c025" kind="enumvalue"><name>qdb_op_has_tag</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da925c976afb2896f99bdfa90359f5ff14" kind="enumvalue"><name>qdb_op_int_put</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da69ce1cd8d4ffef775933a926ab98bcfb" kind="enumvalue"><name>qdb_op_int_update</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da153f096496c868cb5c79d450506bd998" kind="enumvalue"><name>qdb_op_int_get</name></member>
     <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da52e5c4f75dce3f2f85e87d82bb840ee1" kind="enumvalue"><name>qdb_op_int_add</name></member>
+    <member refid="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3dab65f10ac39632bceb9bf27a308fcb553" kind="enumvalue"><name>qdb_op_get_entry_type</name></member>
   </compound>
   <compound refid="group__blob" kind="group"><name>blob</name>
     <member refid="group__blob_1ga815f319575a422331ed4d5eed0cc69bf" kind="function"><name>qdb_blob_get_noalloc</name></member>
     <member refid="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" kind="function"><name>qdb_blob_get</name></member>
+    <member refid="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" kind="function"><name>qdb_reserved_blob_get</name></member>
     <member refid="group__blob_1gacccb11b84a007ec4f2036ec316060282" kind="function"><name>qdb_blob_get_and_remove</name></member>
     <member refid="group__blob_1ga67db324cbeccb7f130f8006830468d12" kind="function"><name>qdb_blob_put</name></member>
     <member refid="group__blob_1ga79aafb696593432010c6d624f0894061" kind="function"><name>qdb_blob_update</name></member>
@@ -304,14 +339,11 @@
     <member refid="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" kind="function"><name>qdb_blob_scan_regex</name></member>
   </compound>
   <compound refid="group__client" kind="group"><name>client</name>
-    <member refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kind="function"><name>qdb_error</name></member>
     <member refid="group__client_1ga49d1a4e7a20ad93207402c701b57643b" kind="function"><name>qdb_version</name></member>
     <member refid="group__client_1ga4057e6f052a167bf6206b465582f9e5c" kind="function"><name>qdb_build</name></member>
     <member refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kind="function"><name>qdb_open</name></member>
     <member refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kind="function"><name>qdb_open_tcp</name></member>
     <member refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kind="function"><name>qdb_option_set_timeout</name></member>
-    <member refid="group__client_1ga41f40fc5037f4f3cfcd09a5a7e74156d" kind="function"><name>qdb_option_add_log_callback</name></member>
-    <member refid="group__client_1gaaa9fff3de285c08fad5b8f5d3b89f466" kind="function"><name>qdb_option_remove_log_callback</name></member>
     <member refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kind="function"><name>qdb_option_set_compression</name></member>
     <member refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kind="function"><name>qdb_connect</name></member>
     <member refid="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" kind="function"><name>qdb_close</name></member>
@@ -324,37 +356,21 @@
     <member refid="group__client_1ga089edb1764e8a5567c24dbd001a325db" kind="function"><name>qdb_get_expiry_time</name></member>
     <member refid="group__client_1gaa71923537cfe32018774ad55eacd246e" kind="function"><name>qdb_get_location</name></member>
     <member refid="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" kind="function"><name>qdb_get_type</name></member>
-    <member refid="group__client_1gafd9d900e49d68ed2989ac489360baa96" kind="function"><name>qdb_purge_all</name></member>
-    <member refid="group__client_1gad0b2a001e96c9afd91706cd1c451be11" kind="function"><name>qdb_trim_all</name></member>
-    <member refid="group__client_1gad25f0db2db8eb2cb7285f3d65c070c41" kind="function"><name>qdb_node_status</name></member>
-    <member refid="group__client_1ga14c411ee3a3c3fec0e57ba48eba411b6" kind="function"><name>qdb_node_config</name></member>
-    <member refid="group__client_1gaa448d12338945be0e16f1ac63bb0eb92" kind="function"><name>qdb_node_topology</name></member>
-    <member refid="group__client_1ga0ee58acda04e9acb66e4a22b5ddf6c03" kind="function"><name>qdb_node_stop</name></member>
-    <member refid="group__client_1ga7b3d0943c32e7f47921663d47829fa9c" kind="function"><name>qdb_iterator_begin</name></member>
-    <member refid="group__client_1ga683cbf388cebd5af505f68ed4b3f5ed3" kind="function"><name>qdb_iterator_rbegin</name></member>
-    <member refid="group__client_1ga5e45817b99939b2543feb5b48d53a3e4" kind="function"><name>qdb_iterator_next</name></member>
-    <member refid="group__client_1gaedb4d21b23eede0ae7523094a2c65d01" kind="function"><name>qdb_iterator_previous</name></member>
-    <member refid="group__client_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kind="function"><name>qdb_iterator_close</name></member>
-    <member refid="group__client_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" kind="function"><name>qdb_iterator_copy</name></member>
+    <member refid="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" kind="function"><name>qdb_get_metadata</name></member>
+    <member refid="group__client_1ga08f21b80163d0b36c03c9e80c2c5df25" kind="function"><name>qdb_purge_all</name></member>
+    <member refid="group__client_1ga871994aec633bde734dbe84a9011a615" kind="function"><name>qdb_trim_all</name></member>
+    <member refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kind="function"><name>qdb_error</name></member>
     <member refid="group__client_1ga649bfb20c6c8f6b2495b1d2878633298" kind="function"><name>qdb_tag_iterator_copy</name></member>
     <member refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kind="define"><name>qdb_never_expires</name></member>
     <member refid="group__client_1gacec73da0a3d7364196f4e6682f5fd522" kind="define"><name>qdb_preserve_expiration</name></member>
     <member refid="group__client_1ga14ba3138099f3c7969f707eb4b16c35b" kind="enum"><name>qdb_limits</name></member>
     <member refid="client_8h_1ga14ba3138099f3c7969f707eb4b16c35bada77b67d62cfd28f8f9131dc039dbf64" kind="enumvalue"><name>qdb_l_alias_max_length</name></member>
-    <member refid="client_8h_1ga14ba3138099f3c7969f707eb4b16c35badf6734fe131fa7d3f5523b8845787d93" kind="enumvalue"><name>qdb_l_min_prefix_length</name></member>
     <member refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kind="enum"><name>qdb_compression</name></member>
     <member refid="client_8h_1ga2c0493e17b424c05b599b54ea641adbaa4933efb6777664f0e19587b8be37f8d2" kind="enumvalue"><name>qdb_comp_none</name></member>
     <member refid="client_8h_1ga2c0493e17b424c05b599b54ea641adbaae779c527ad92b6adb5c979f5d0bf0569" kind="enumvalue"><name>qdb_comp_fast</name></member>
     <member refid="client_8h_1ga2c0493e17b424c05b599b54ea641adbaaa224c10b51af9f8da172e9b2aa6efcb3" kind="enumvalue"><name>qdb_comp_best</name></member>
     <member refid="group__client_1ga222536ecf11bc6ab9468946ba51a446a" kind="enum"><name>qdb_protocol</name></member>
     <member refid="client_8h_1ga222536ecf11bc6ab9468946ba51a446aa2ce2bdabaf83de1269519c5ddec8d71b" kind="enumvalue"><name>qdb_p_tcp</name></member>
-    <member refid="group__client_1ga8dc603a7bf83954b01043dcba99354fd" kind="enum"><name>qdb_log_level</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" kind="enumvalue"><name>qdb_log_detailed</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" kind="enumvalue"><name>qdb_log_debug</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" kind="enumvalue"><name>qdb_log_info</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" kind="enumvalue"><name>qdb_log_warning</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" kind="enumvalue"><name>qdb_log_error</name></member>
-    <member refid="client_8h_1ga8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" kind="enumvalue"><name>qdb_log_panic</name></member>
     <member refid="group__client_1gabc708719df4e28cd85c743e1a4582661" kind="enum"><name>qdb_entry_type</name></member>
     <member refid="client_8h_1gabc708719df4e28cd85c743e1a4582661a696fbb89655c7dd32c7a7e75b8681bcf" kind="enumvalue"><name>qdb_entry_uninitialized</name></member>
     <member refid="client_8h_1gabc708719df4e28cd85c743e1a4582661ace9c26f51f6c16e8ddbc3f28186ab651" kind="enumvalue"><name>qdb_entry_blob</name></member>
@@ -369,10 +385,7 @@
     <member refid="group__client_1gab2ede040a754735a3f751a14acd8cf7f" kind="typedef"><name>qdb_limits_t</name></member>
     <member refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kind="typedef"><name>qdb_compression_t</name></member>
     <member refid="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" kind="typedef"><name>qdb_protocol_t</name></member>
-    <member refid="group__client_1gae0666863f2369cd07dbd9fdf350c8cd6" kind="typedef"><name>qdb_log_level_t</name></member>
     <member refid="group__client_1ga720fb72da4197685cc354214e96796c1" kind="typedef"><name>qdb_handle_t</name></member>
-    <member refid="group__client_1ga6a72d356408c58332b03af73a52c84d6" kind="typedef"><name>qdb_log_callback_id</name></member>
-    <member refid="group__client_1ga27259bcef89d32c184a9e03fc0f157ce" kind="typedef"><name>qdb_log_callback</name></member>
     <member refid="group__client_1gaaa6272f78edda811822bfce05a07f944" kind="typedef"><name>qdb_entry_type_t</name></member>
   </compound>
   <compound refid="group__deque" kind="group"><name>deque</name>
@@ -434,9 +447,7 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa60d8ccf2fc347efd408331f072a15bd" kind="enumvalue"><name>qdb_e_invalid_protocol</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a222f8fa54b5ef5ac8c3b86aee685f746" kind="enumvalue"><name>qdb_e_host_not_found</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a13d942a5ac05a02071d2142beb559bea" kind="enumvalue"><name>qdb_e_buffer_too_small</name></member>
-    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ac15d8a1a3c570205185338fa4828ba19" kind="enumvalue"><name>qdb_e_unexpected_reply</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a11764d6e4f4e9db55e0385fd866768ab" kind="enumvalue"><name>qdb_e_not_implemented</name></member>
-    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ae91986c74e4b323c3611730a008324a6" kind="enumvalue"><name>qdb_e_protocol_error</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa04c0faf49159dd2cd66d8786bdaceef" kind="enumvalue"><name>qdb_e_invalid_version</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9f2aa83ba8969f389f23a281bb8227a8" kind="enumvalue"><name>qdb_e_invalid_argument</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0a1723dd0a90a9a60aa89d6fba1ad4cd" kind="enumvalue"><name>qdb_e_invalid_handle</name></member>
@@ -448,6 +459,8 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5e3f7ff277511984a70139328714d839" kind="enumvalue"><name>qdb_e_operation_disabled</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a1cd256fddf4fd12463e5aa9e453289c7" kind="enumvalue"><name>qdb_e_operation_not_permitted</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2af3d584049b45f2aacca139de8c34a20b" kind="enumvalue"><name>qdb_e_iterator_end</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0af9a802084f4c4c563aee0293a08ee7" kind="enumvalue"><name>qdb_e_invalid_reply</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a40e9d1f18501d50eef1fc8af06bfcc5f" kind="enumvalue"><name>qdb_e_ok_created</name></member>
     <member refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kind="typedef"><name>qdb_error_origin_t</name></member>
     <member refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kind="typedef"><name>qdb_error_severity_t</name></member>
     <member refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kind="typedef"><name>qdb_error_t</name></member>
@@ -466,6 +479,20 @@
     <member refid="group__integer_1ga8adfbb676817447300db1f34f971ca7c" kind="function"><name>qdb_int_update</name></member>
     <member refid="group__integer_1ga12a283f0b974a91433cb09054b94a10a" kind="function"><name>qdb_int_get</name></member>
     <member refid="group__integer_1ga7335937383f6ab76b319924d83a968c7" kind="function"><name>qdb_int_add</name></member>
+  </compound>
+  <compound refid="group__iterator" kind="group"><name>iterator</name>
+    <member refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kind="function"><name>qdb_iterator_begin</name></member>
+    <member refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kind="function"><name>qdb_iterator_rbegin</name></member>
+    <member refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kind="function"><name>qdb_iterator_next</name></member>
+    <member refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kind="function"><name>qdb_iterator_previous</name></member>
+    <member refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kind="function"><name>qdb_iterator_close</name></member>
+    <member refid="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" kind="function"><name>qdb_iterator_copy</name></member>
+  </compound>
+  <compound refid="group__node" kind="group"><name>node</name>
+    <member refid="group__node_1gad25f0db2db8eb2cb7285f3d65c070c41" kind="function"><name>qdb_node_status</name></member>
+    <member refid="group__node_1ga14c411ee3a3c3fec0e57ba48eba411b6" kind="function"><name>qdb_node_config</name></member>
+    <member refid="group__node_1gaa448d12338945be0e16f1ac63bb0eb92" kind="function"><name>qdb_node_topology</name></member>
+    <member refid="group__node_1ga0ee58acda04e9acb66e4a22b5ddf6c03" kind="function"><name>qdb_node_stop</name></member>
   </compound>
   <compound refid="group__prefix" kind="group"><name>prefix</name>
     <member refid="group__prefix_1ga920582605239db5da468546cd42ddbfc" kind="function"><name>qdb_prefix_get</name></member>
@@ -489,24 +516,22 @@
     <member refid="group__suffix_1gaafa6694ef459194fe3d7c78a35cb6e19" kind="function"><name>qdb_suffix_get</name></member>
   </compound>
   <compound refid="group__tag" kind="group"><name>tag</name>
-    <member refid="group__tag_1gabcec257605aa79190104e71d73d397d3" kind="function"><name>qdb_add_tag</name></member>
-    <member refid="group__tag_1ga3ef742e0b4f4fa6e1e7cfef6d64b331f" kind="function"><name>qdb_add_tags</name></member>
+    <member refid="group__tag_1ga571507d1aa1ca6bfc7b75766963c7770" kind="function"><name>qdb_attach_tag</name></member>
+    <member refid="group__tag_1gaa8b8afc25faab9d31f181f01c0903369" kind="function"><name>qdb_attach_tags</name></member>
     <member refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kind="function"><name>qdb_has_tag</name></member>
-    <member refid="group__tag_1ga00074225d5dbfa6b699fd957b2a63550" kind="function"><name>qdb_remove_tag</name></member>
-    <member refid="group__tag_1gadd43f2d4ac78bbcb7ac0dc3c8fcbadba" kind="function"><name>qdb_remove_tags</name></member>
+    <member refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kind="function"><name>qdb_detach_tag</name></member>
+    <member refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kind="function"><name>qdb_detach_tags</name></member>
     <member refid="group__tag_1gaefbaa4641fb6482f75396e8b1180a7a5" kind="function"><name>qdb_get_tagged</name></member>
     <member refid="group__tag_1gaafe45e8a99aa6d5a16ec2e4e4ed285e3" kind="function"><name>qdb_get_tags</name></member>
     <member refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kind="function"><name>qdb_tag_iterator_begin</name></member>
     <member refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kind="function"><name>qdb_tag_iterator_next</name></member>
     <member refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kind="function"><name>qdb_tag_iterator_close</name></member>
   </compound>
-  <compound refid="dir_15cc682625682d2d08b4e1950e709ca7" kind="dir"><name>D:/sources/quasardb/qdb/api</name>
+  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>D:/workspace/quasardb/api</name>
   </compound>
-  <compound refid="dir_459c29b4a51f26e33090a7f03d80cc41" kind="dir"><name>D:/sources/quasardb/qdb/api/include</name>
+  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>D:/workspace/quasardb/api/include</name>
   </compound>
-  <compound refid="dir_b1390110faa6419f3381c3bf40c78339" kind="dir"><name>D:/sources/quasardb/qdb/api/include/qdb</name>
-  </compound>
-  <compound refid="dir_632ff29478d52ad59079539d00d369ff" kind="dir"><name>D:/sources/quasardb/qdb</name>
+  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>D:/workspace/quasardb/api/include/qdb</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

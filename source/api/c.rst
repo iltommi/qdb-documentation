@@ -28,49 +28,43 @@ Connecting to a cluster
 --------------------------
 
 The first thing to do is to initialize a handle. A handle is an opaque structure that represents a client side instance.
-It is initialized using the function :func:`qdb_open`::
+It is initialized using the function :func:`qdb_open`:
 
-    qdb_handle_t handle = 0;
-    qdb_error_t r = qdb_open(&handle, qdb_proto_tcp);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/connect.c
+    :start-after: doc-start-open
+    :end-before: doc-end-open
+    :dedent: 4
 
-We can also use the convenience function :func:`qdb_open_tcp`::
+We can also use the convenience function :func:`qdb_open_tcp`:
 
-    qdb_handle_t handle = qdb_open_tcp();
-    if (!handle)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/connect_tcp.c
+    :start-after: doc-start-open
+    :end-before: doc-end-open
+    :dedent: 4
 
-Once the handle is initialized, it can be used to establish a connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function::
+Once the handle is initialized, it can be used to establish a connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function:
 
-    qdb_error_t r = qdb_connect(handle, "qdb://localhost:2836");
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/connect.c
+    :start-after: doc-start-connect
+    :end-before: doc-end-connect
+    :dedent: 4
 
-Note that we could have used the IP address instead::
+Note that we could have used the IP address instead:
 
-    qdb_error_t r = qdb_connect(handle, "qdb://127.0.0.1:2836");
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/connect_tcp.c
+    :start-after: doc-start-connect
+    :end-before: doc-end-connect
+    :dedent: 4
 
 .. caution::
     Concurrent calls to :func:`qdb_connect` using the same handle results in undefined behaviour.
 
-`IPv6 <https://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address::
+`IPv6 <https://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address:
 
-    qdb_error_t r = qdb_connect(handle, "qdb://::1:2836");
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/connect_ipv6.c
+    :start-after: doc-start-connect
+    :end-before: doc-end-connect
+    :dedent: 4
 
 .. note::
     When you call :func:`qdb_open` and :func:`qdb_connect`, a lot of initialization and system calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the same handle alive for the lifetime of the program.
@@ -78,16 +72,12 @@ Note that we could have used the IP address instead::
 Connecting to multiple nodes within the same cluster
 ------------------------------------------------------
 
-Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a uri string to :func:`qdb_connect` with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed. ::
+Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a URI string to :func:`qdb_connect` with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed.
 
-    const char * remote_nodes = "qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836";
-
-    // the function will return 1 if any of the connections succeed.
-    qdb_error_t r = qdb_connect(handle, remote_nodes);
-    if (r != qdb_e_ok)
-    {
-        // error management...
-    }
+.. literalinclude:: ../../../../examples/c/connect_many.c
+    :start-after: doc-start-connect
+    :end-before: doc-end-connect
+    :dedent: 4
 
 If the same address/port pair is present multiple times within the string, only the first occurrence is used.
 
@@ -98,64 +88,48 @@ Each entry is identified by a unique alias. You pass the alias as a null-termina
 
 The content is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
-There are two ways to add entries into the repository. You can use :func:`qdb_blob_put`::
+There are two ways to add entries into the repository. You can use :func:`qdb_blob_put`:
 
-    char content[100];
+.. literalinclude:: ../../../../examples/c/blob_put.c
+    :start-after: doc-start-blob_put
+    :end-before: doc-end-blob_put
+    :dedent: 12
 
-    // ...
+or you can use :func:`qdb_blob_update`:
 
-    r = qdb_blob_put(handle, "myalias", content, sizeof(content), 0);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/blob_update.c
+    :start-after: doc-start-blob_update
+    :end-before: doc-end-blob_update
+    :dedent: 12
 
-or you can use :func:`qdb_blob_update`::
-
-    char content[100];
-
-    // ...
-
-    r = qdb_blob_update(handle, "myalias", content, sizeof(content), 0);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
-
-The difference is that :func:`qdb_blob_put` fails when the entry already exists. :func:`qdb_blob_update` will create the entry if it does not, or update its content if it does.
+The difference is that :func:`qdb_blob_put` fails when the entry already exists. :func:`qdb_blob_update` will create the entry if it does not (and return :cpp:enum:`qdb_e_ok_created`), or update its content if it does (and return :cpp:enum:`qdb_e_ok`).
+:func:`qdb_blob_update` may be called with expiry time equal to :macro:`qdb_preserve_expiration`, in which case, it will not modify the expiration of the updated entry.
+Should the entry be created, it will have no expiration.
+:func:`qdb_blob_put`, if called with expiry time equal to :macro:`qdb_preserve_expiration`, will behave as if the argument were equal to :macro:`qdb_never_expires`.
 
 Getting entries
 --------------------
 
-The most convenient way to fetch an entry is :func:`qdb_blob_get`::
+The most convenient way to fetch an entry is :func:`qdb_blob_get`:
 
-    const void * allocated_content = 0;
-    qdb_size_t allocated_content_length = 0;
-    r = qdb_blob_get(handle, "myalias", &allocated_content, &allocated_content_length);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/blob_get.c
+    :start-after: doc-start-blob_get
+    :end-before: doc-end-blob_get
+    :dedent: 12
 
-The function will allocate the buffer and update the length. You will need to release the memory later with :func:`qdb_free_buffer`::
+The function will allocate the buffer and update the length. You will need to release the memory later with :func:`qdb_free_buffer`:
 
-    qdb_free_buffer(allocated_content);
+.. literalinclude:: ../../../../examples/c/blob_get.c
+    :start-after: doc-start-free_buffer
+    :end-before: doc-end-free_buffer
+    :dedent: 16
 
-However, for maximum performance you might want to manage allocation yourself and reuse buffers (for example). In which case you will prefer to use :func:`qdb_blob_get_noalloc`::
+However, for maximum performance you might want to manage allocation yourself and reuse buffers (for example). In which case you will prefer to use :func:`qdb_blob_get_noalloc`:
 
-    char buffer[1024];
-
-    qdb_size_t content_length = sizeof(buffer);
-
-    // ...
-
-    // content_length must be initialized with the buffer's size
-    // and will be update with the retrieved content's size
-    r = qdb_blob_get_noalloc(handle, "myalias", buffer, &content_length);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/blob_get_noalloc.c
+    :start-after: doc-start-blob_get_noalloc
+    :end-before: doc-end-blob_get_noalloc
+    :dedent: 12
 
 The function will update content_length even if the buffer isn't large enough, giving you a chance to increase the buffer's size and try again.
 
@@ -163,13 +137,12 @@ The function will update content_length even if the buffer isn't large enough, g
 Removing entries
 ---------------------
 
-Removing is done with the function :func:`qdb_remove`::
+Removing is done with the function :func:`qdb_remove`:
 
-    r = qdb_remove(handle, "myalias");
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/remove.c
+    :start-after: doc-start-remove
+    :end-before: doc-end-remove
+    :dedent: 12
 
 The function fails if the entry does not exist.
 
@@ -177,9 +150,12 @@ The function fails if the entry does not exist.
 Cleaning up
 --------------------
 
-When you are done working with a quasardb cluster, call :func:`qdb_close`::
+When you are done working with a quasardb cluster, call :func:`qdb_close`:
 
-    qdb_close(handle);
+.. literalinclude:: ../../../../examples/c/connect.c
+    :start-after: doc-start-close
+    :end-before: doc-end-close
+    :dedent: 4
 
 :func:`qdb_close` **does not guarantee** to release memory allocated by :func:`qdb_blob_get`. You will need to make appropriate calls to :func:`qdb_free_buffer` for each call to :func:`qdb_blob_get`.
 
@@ -190,10 +166,12 @@ When you are done working with a quasardb cluster, call :func:`qdb_close`::
 Timeout
 -------
 
-It is possible to configure the client-side timeout with the :func:`qdb_option_set_timeout`::
+It is possible to configure the client-side timeout with the :func:`qdb_option_set_timeout`:
 
-    // sets the timeout to 5000 ms
-    qdb_option_set_timeout(handle, 5000);
+.. literalinclude:: ../../../../examples/c/blob_get.c
+    :start-after: doc-start-option_set_timeout
+    :end-before: doc-end-option_set_timeout
+    :dedent: 12
 
 Currently running requests are not affected by the modification, only new requests will use the new timeout value. The default client-side timeout is one minute. Keep in mind that the server-side timeout might be shorter.
 
@@ -202,155 +180,106 @@ Expiry
 
 Expiry is set with :func:`qdb_expires_at` and :func:`qdb_expires_from_now`. It is obtained with :func:`qdb_get_expiry_time`. Expiry time is always passed in as seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :func:`qdb_expires_at` or relative to the call time when using :func:`qdb_expires_from_now`.
 
-.. danger::
+.. warning::
     The behavior of :func:`qdb_expires_from_now` is undefined if the time zone or the clock of the client computer is improperly configured.
 
-To set the expiry time of an entry to 1 minute, relative to the call time::
+To set the expiry time of an entry relatively to the call time:
 
-    char content[100];
+.. literalinclude:: ../../../../examples/c/expires.c
+    :start-after: doc-start-expires_from_now
+    :end-before: doc-end-expires_from_now
+    :dedent: 12
 
-    // ...
+To prevent an entry from ever expiring:
 
-    r = qdb_blob_put(handle, "myalias", content, sizeof(content), qdb_never_expires);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/expires.c
+    :start-after: doc-start-expires_at
+    :end-before: doc-end-expires_at
+    :dedent: 12
 
-    r = qdb_expires_from_now(handle, "myalias", 60);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+By default, entries never expire. To obtain the expiry time of an existing entry:
 
-To prevent an entry from ever expiring::
-
-    r = qdb_expires_at(handle, "myalias", 0);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
-
-By default, entries never expire. To obtain the expiry time of an existing entry::
-
-    qdb_time_t expiry_time = 0;
-    r = qdb_get_expiry_time(handle, "myalias", &expiry_time);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/expires.c
+    :start-after: doc-start-get_expiry_time
+    :end-before: doc-end-get_expiry_time
+    :dedent: 12
 
 Batch operations
 -----------------
 
 Batch operations can greatly increase performance when it is necessary to run many small operations. Using batch operations requires initializing, running and freeing an array of operations.
 
-The :func:`qdb_init_operations` ensures that the operations are properly reset before setting any value::
+The :func:`qdb_init_operations` ensures that the operations are properly reset before setting any value:
 
-    qdb_operation_t ops[4];
-    r = qdb_init_operations(ops, 4);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/batch.c
+    :start-after: doc-start-init_operations
+    :end-before: doc-end-init_operations
+    :dedent: 12
 
-Once this is done, you can fill the array with the operations you would like to run. :func:`qdb_init_operations` makes sure all the values have proper defaults::
+Once this is done, you can fill the array with the operations you would like to run. :func:`qdb_init_operations` makes sure all the values have proper defaults:
 
-    // the first operation will be a get for "entry1"
-    ops[0].type = qdb_op_blob_get;
-    ops[0].alias = "entry1";
+.. literalinclude:: ../../../../examples/c/batch.c
+    :start-after: doc-start-batch-create
+    :end-before: doc-end-batch-create
+    :dedent: 16
 
-    // the second operation will be a get for "entry2"
-    ops[1].type = qdb_op_blob_get;
-    ops[1].alias = "entry2";
+You now have an operations batch that can be run on the cluster:
 
-    char content[100];
-
-    // the third operation will be an update for "entry3"
-    ops[2].type = qdb_op_blob_update;
-    ops[2].alias = "entry3";
-    ops[2].content = content;
-    ops[2].content_size = 100;
-
-    // the fourth operation will be increasing an integer "int_value" by 42
-    ops[3].type = qdb_op_int_add;
-    ops[3].alias = "int_value";
-    ops[3].int_add.value = 42;
-
-You now have an operations batch that can be run on the cluster::
-
-    // runs the three operations on the cluster
-    qdb_size_t success_count = qdb_run_batch(handle, ops, 4);
-    if (success_count != 4)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/batch.c
+    :start-after: doc-start-run_batch
+    :end-before: doc-end-run_batch
+    :dedent: 16
 
 Note that the order in which operations run is undefined. Error management with batch operations is a little bit more delicate than with other functions. :func:`qdb_run_batch` returns the number of successful operations. If this number is not equal to the number of submitted operations, it means you have an error.
 
-The error field of each operation is updated to reflect its status. If it is not qdb_e_ok, an error occured.
+The error field of each operation is updated to reflect its status. If it is not :cpp:enum:`qdb_e_ok` or :cpp:enum:`qdb_e_ok_created`, an error occured.
 
-Let's imagine the previous example returned an error. Here is some simple code for error detection::
+Let's imagine the previous example returned an error. Here is some simple code for error detection:
 
-    if (success_count != 4)
-    {
-        for(qdb_size_t i = 0; i < 4; ++i)
-        {
-            if (ops[i].error != qdb_e_ok)
-            {
-                // we have an error in this operation
-            }
-        }
-    }
+.. literalinclude:: ../../../../examples/c/batch.c
+    :start-after: doc-start-error
+    :end-before: doc-end-error
+    :dedent: 16
 
 What you must do when an error occurs is entirely dependent on your application.
 
-In our case, there have been four operations, two blob gets, one blob update and one int increase. In the case of the update, we only care if the operation has been successful or not. But what about the gets and the increase? The content is available in the result field for blobs::
+In our case, there have been four operations, two blob gets, one blob update and one int increase. In the case of the update, we only care if the operation has been successful or not. But what about the gets and the increase? The content is available in the result field for blobs:
 
-    const char * entry1_content = ops[0].result;
-    qdb_size_t entry1_size = ops[0].result_size;
+.. literalinclude:: ../../../../examples/c/batch.c
+    :start-after: doc-start-results-blob
+    :end-before: doc-end-results-blob
+    :dedent: 16
 
-    const char * entry2_content = ops[1].result;
-    qdb_size_t entry2_size = ops[1].result_size;
+And for the integer in result_value:
 
-And for the integer in result_value::
+.. literalinclude:: ../../../../examples/c/batch.c
+    :start-after: doc-start-results-int
+    :end-before: doc-end-results-int
+    :dedent: 16
 
-    qdb_int_t result_value = ops[3].int_add.result_value;
+Once you are finished with a series of batch operations, you must release the memory that the API allocated using :func:`qdb_free_operations`. The call releases all buffers at once:
 
-Once you are finished with a series of batch operations, you must release the memory that the API allocated using :func:`qdb_free_operations`. The call releases all buffers at once::
-
-    r = qdb_free_operations(handle, ops, 4);
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/batch.c
+    :start-after: doc-start-free_operations
+    :end-before: doc-end-free_operations
+    :dedent: 16
 
 Iteration
 -----------
 
 Iteration on the cluster's entries can be done forward and backward. You initialize the iterator with :func:`qdb_iterator_begin` or :func:`qdb_iterator_rbegin` depending on whether you want to start from the first entry or the last entry.
 
-Actual iteration is done with :func:`qdb_iterator_next` and :func:`qdb_iterator_previous`. Once completed, the iterator should be freed with :func:`qdb_iterator_close`::
+Actual iteration is done with :func:`qdb_iterator_next` and :func:`qdb_iterator_previous`. Once completed, the iterator should be freed with :func:`qdb_iterator_close`:
 
-    qdb_const_iterator_t it;
+.. literalinclude:: ../../../../examples/c/iterator.c
+    :start-after: doc-start-iterator_begin
+    :end-before: doc-end-iterator_begin
+    :dedent: 12
 
-    // forward loop
-    for(qdb_error_t err = qdb_iterator_begin(h, &it); err == qdb_e_ok; err = qdb_iterator_next(&it))
-    {
-        // work on entry
-        // it.content and it.content_size is the entry content
-    }
-
-    qdb_iterator_close(&it);
-
-    // backward loop
-    for(qdb_error_t err = qdb_iterator_rbegin(h, &it); err = qdb_e_ok; err = qdb_iterator_previous(&it))
-    {
-        // work on entry
-        // it.content and it.content_size is the entry content
-    }
-
-    qdb_iterator_close(&it);
+.. literalinclude:: ../../../../examples/c/iterator.c
+    :start-after: doc-start-iterator_rbegin
+    :end-before: doc-end-iterator_rbegin
+    :dedent: 12
 
 .. note::
     Although each entry is returned only once, the order in which entries are returned is undefined.
@@ -358,20 +287,27 @@ Actual iteration is done with :func:`qdb_iterator_next` and :func:`qdb_iterator_
 Streaming
 ----------
 
-Use the streaming API to read or write portions of large entries in linear packets. There is no limit to the size of entries that can be streamed to or from the client. ::
+Use the streaming API to read or write portions of large entries in linear packets. There is no limit to the size of entries that can be streamed to or from the client.
+First, one should open the stream handle choosing an appropriate mode:
 
-    char * content = load_video("large_video_file.mp4"); // large amount of data
-    qdb_stream_t * stream;
-    qdb_stream_mode_t mode = qdb_stream_mode_write;
+.. literalinclude:: ../../../../examples/c/stream_write.c
+    :start-after: doc-start-stream_open
+    :end-before: doc-end-stream_open
+    :dedent: 4
 
-    qdb_stream_open(handle, alias, mode, stream)
+Then, you can stream in (write) as much data as you wish:
 
-    r = qdb_stream_write(stream, content, sizeof(content));
-    if (r != qdb_e_ok)
-    {
-        // error management
-    }
+.. literalinclude:: ../../../../examples/c/stream_write.c
+    :start-after: doc-start-stream_write
+    :end-before: doc-end-stream_write
+    :dedent: 8
 
+To get the current size of the stream, in bytes, there is :func:`qdb_stream_size`:
+
+.. literalinclude:: ../../../../examples/c/stream_write.c
+    :start-after: doc-start-stream_size
+    :end-before: doc-end-stream_size
+    :dedent: 8
 
 Logging
 ----------
@@ -385,15 +321,11 @@ The thread and context in which the callback is called is undefined and the deve
 
 Logging is asynchronous, however buffers are flushed when :func:`qdb_close` is successfully called.
 
-The callback profile is the following::
+The callback profile is the following:
 
-     void qdb_log_callback(qdb_log_level_t log_level,       // qdb log level
-                           const unsigned long * date,   // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
-                           unsigned long pid,            // process id
-                           unsigned long tid,            // thread id
-                           const char * message_buffer,  // message buffer (valid only in the context of the callback)
-                           size_t message_size);         // message buffer size
-
+.. literalinclude:: ../../../../examples/c/log_callback.c
+    :start-after: doc-start-log_callback
+    :end-before: doc-end-log_callback
 
 The parameters passed to the callback are:
 
@@ -404,34 +336,35 @@ The parameters passed to the callback are:
     * *message_buffer:* a null-terminated buffer that is valid only in the context of the callback.
     * *message_size:* the size of the buffer, in bytes.
 
-Here is a callback example::
+Here is a callback example:
 
-     void my_log_callback(const char * log_level,       // qdb log level
-                          const unsigned long * date,   // [years, months, day, hours, minute, seconds] (valid only in the context of the callback)
-                          unsigned long pid,            // process id
-                          unsigned long tid,            // thread id
-                          const char * message_buffer,  // message buffer (valid only in the context of the callback)
-                          qdb_size_t message_size)          // message buffer size
-    {
-        // will print to the console the log message, e.g.
-        // 12/31/2013-23:12:01 debug: here is the message
-        // note that you don't have to use all provided information, only use what you need!
-        printf("%02d/%02d/%04d-%02d:%02d:%02d %s: %s", date[1], date[2], date[0], date[3], date[4], date[5], log_level, message_buffer);
-    }
+.. literalinclude:: ../../../../examples/c/log_callback.c
+    :start-after: doc-start-my_log_callback
+    :end-before: doc-end-my_log_callback
 
-Setting the callback is done with :func:`qdb_option_add_log_callback`::
+Setting the callback is done with :func:`qdb_log_add_callback`:
 
+.. literalinclude:: ../../../../examples/c/log_callback.c
+    :start-after: doc-start-log_add_callback
+    :end-before: doc-end-log_add_callback
+    :dedent: 12
 
-    qdb_log_callback_id cid = 0; 
+If you later wish to unregister the callback:
 
-    qdb_option_add_log_callback(my_log_callback, &cid);
+.. literalinclude:: ../../../../examples/c/log_callback.c
+    :start-after: doc-start-log_remove_callback
+    :end-before: doc-end-log_remove_callback
+    :dedent: 16
 
-If you later wish to unregister the callback::
+You may pass a null pointer as callback identifier to :func:`qdb_log_add_callback`, but then you will lose the possibility to unregister it.
 
-    qdb_option_remove_log_callback(cid);
+.. literalinclude:: ../../../../examples/c/log_callback.c
+    :start-after: doc-start-log_add_callback-no-cid
+    :end-before: doc-end-log_add_callback-no-cid
+    :dedent: 12
 
 .. warning::
-    Multiple calls to :func:`qdb_option_add_log_callback` will result in several callbacks being registered. Registering the same callback multiple times results in undefined behaviour.
+    Multiple calls to :func:`qdb_log_add_callback` will result in several callbacks being registered. Registering the same callback multiple times results in undefined behaviour.
 
 
 Reference

@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="72" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/error.h" bodystart="71" bodyend="79"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="78" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="77" bodyend="85"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gaa48fc525bae5abec03a6e216128e5a76" prot="public" static="no">
         <name>qdb_err_severity</name>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="92" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/error.h" bodystart="91" bodyend="97"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="98" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="97" bodyend="103"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" prot="public" static="no">
         <name>qdb_err</name>
@@ -378,25 +378,9 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ac15d8a1a3c570205185338fa4828ba19" prot="public">
-          <name>qdb_e_unexpected_reply</name>
-          <initializer>= qdb_e_origin_protocol      | qdb_e_severity_unrecoverable | 0x0010</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
         <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a11764d6e4f4e9db55e0385fd866768ab" prot="public">
           <name>qdb_e_not_implemented</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_unrecoverable | 0x0011</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ae91986c74e4b323c3611730a008324a6" prot="public">
-          <name>qdb_e_protocol_error</name>
-          <initializer>= qdb_e_origin_system_local  | qdb_e_severity_unrecoverable | 0x0013</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -490,13 +474,29 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0af9a802084f4c4c563aee0293a08ee7" prot="public">
+          <name>qdb_e_invalid_reply</name>
+          <initializer>= qdb_e_origin_protocol      | qdb_e_severity_unrecoverable | 0x0031</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a40e9d1f18501d50eef1fc8af06bfcc5f" prot="public">
+          <name>qdb_e_ok_created</name>
+          <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x0032</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An error code indicating success or failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="115" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/error.h" bodystart="114" bodyend="170"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="121" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="120" bodyend="176"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -511,7 +511,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="79" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="85" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1gabf6c4d9393dd881c3a517f8a28187193" prot="public" static="no">
         <type>enum <ref refid="group__error_1gaa48fc525bae5abec03a6e216128e5a76" kindref="member">qdb_err_severity</ref></type>
@@ -524,7 +524,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="97" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="103" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga352232196dc2f9b9a89d701f63916cec" prot="public" static="no">
         <type>enum <ref refid="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" kindref="member">qdb_err</ref></type>
@@ -537,7 +537,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="170" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="176" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga7f530850c85980b74be1119741da4bb0" prot="public" static="no">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -550,21 +550,21 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="177" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/error.h" bodystart="177" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="183" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="183" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="define">
       <memberdef kind="define" id="group__error_1ga9c4473d8d1f9a870925121d8b5085c3c" prot="public" static="no">
         <name>QDB_ERROR_ORIGIN</name>
         <param><defname>x</defname></param>
-        <initializer>((x) &amp; 0xf0000000)</initializer>
+        <initializer>((int)((x) &amp; 0xf0000000))</initializer>
         <briefdescription>
 <para>Extracts the origin out of a qdb_error_t. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="84" column="9" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/error.h" bodystart="84" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="90" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="90" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1ga988fa2631bf090c9c57ca4ef1df4875a" prot="public" static="no">
         <name>QDB_ERROR_SEVERITY</name>
@@ -576,7 +576,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="102" column="9" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/error.h" bodystart="102" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="108" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="108" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1ga8c7fbec5c8f5da7e6ee37bb587273433" prot="public" static="no">
         <name>QDB_SUCCESS</name>
@@ -588,7 +588,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/error.h" line="107" column="9" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/error.h" bodystart="107" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="113" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

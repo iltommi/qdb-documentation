@@ -1,0 +1,30 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="structqdb__id__t" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_id_t</compoundname>
+    <includes local="no">client.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__id__t_1abb5374c9dc6502879e2a0221caa44529" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
+        <definition>qdb_int_t qdb_id_t::data[4]</definition>
+        <argsstring>[4]</argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="218" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="218" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A cluster-wide unique identifier. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="217" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="216" bodyend="219"/>
+    <listofallmembers>
+      <member refid="structqdb__id__t_1abb5374c9dc6502879e2a0221caa44529" prot="public" virt="non-virtual"><scope>qdb_id_t</scope><name>data</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

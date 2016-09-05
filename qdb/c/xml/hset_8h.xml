@@ -4,36 +4,44 @@
     <compoundname>hset.h</compoundname>
     <includes refid="client_8h" local="no">qdb/client.h</includes>
     <incdepgraph>
-      <node id="53">
-        <label>stdint.h</label>
+      <node id="76">
+        <label>qdb/_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
-      <node id="52">
+      <node id="77">
         <label>qdb/error.h</label>
         <link refid="error_8h"/>
-      </node>
-      <node id="48">
-        <label>D:/sources/quasardb/qdb/api/include/qdb/hset.h</label>
-        <link refid="hset.h"/>
-        <childnode refid="49" relation="include">
+        <childnode refid="76" relation="include">
         </childnode>
       </node>
-      <node id="50">
-        <label>stddef.h</label>
-      </node>
-      <node id="51">
-        <label>time.h</label>
-      </node>
-      <node id="49">
+      <node id="75">
         <label>qdb/client.h</label>
         <link refid="client_8h"/>
-        <childnode refid="50" relation="include">
+        <childnode refid="76" relation="include">
         </childnode>
-        <childnode refid="51" relation="include">
+        <childnode refid="77" relation="include">
         </childnode>
-        <childnode refid="52" relation="include">
+        <childnode refid="78" relation="include">
         </childnode>
-        <childnode refid="53" relation="include">
+        <childnode refid="79" relation="include">
         </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+      </node>
+      <node id="80">
+        <label>stdint.h</label>
+      </node>
+      <node id="74">
+        <label>D:/workspace/quasardb/api/include/qdb/hset.h</label>
+        <link refid="hset.h"/>
+        <childnode refid="75" relation="include">
+        </childnode>
+      </node>
+      <node id="78">
+        <label>stddef.h</label>
+      </node>
+      <node id="79">
+        <label>time.h</label>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -95,7 +103,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="68" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/hset.h" line="68" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga7922b2dfddbe9df957cf594e87d27d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -155,7 +163,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="100" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/hset.h" line="100" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -215,7 +223,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h" line="129" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/hset.h" line="129" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -287,6 +295,6 @@
 <codeline lineno="137"><highlight class="normal"></highlight></codeline>
 <codeline lineno="138"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="D:/sources/quasardb/qdb/api/include/qdb/hset.h"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/hset.h"/>
   </compounddef>
 </doxygen>

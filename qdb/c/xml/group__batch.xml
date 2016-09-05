@@ -42,7 +42,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="206" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="223" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -91,7 +91,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="242" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="259" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -151,7 +151,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="274" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="291" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1ga2e82d4882460729fc5bbe716b05c5b4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -200,7 +200,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="292" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="309" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -254,6 +254,14 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4411d4842c65bccf6877c7ceace9c025" prot="public">
+          <name>qdb_op_has_tag</name>
+          <initializer>= 8</initializer>
+          <briefdescription>
+<para>Tag existence test operation. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da925c976afb2896f99bdfa90359f5ff14" prot="public">
           <name>qdb_op_int_put</name>
           <initializer>= 9</initializer>
@@ -286,13 +294,21 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3dab65f10ac39632bceb9bf27a308fcb553" prot="public">
+          <name>qdb_op_get_entry_type</name>
+          <initializer>= 13</initializer>
+          <briefdescription>
+<para>Entry type check. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An enumeration of possible operation type. </para>        </briefdescription>
         <detaileddescription>
 <para>Operations are used by batches and transactions. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/qdb/api/include/qdb/batch.h" line="58" column="1" bodyfile="D:/sources/quasardb/qdb/api/include/qdb/batch.h" bodystart="58" bodyend="79"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="58" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="58" bodyend="83"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

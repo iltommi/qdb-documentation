@@ -1,0 +1,317 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="iterator_8h" kind="file" language="C++">
+    <compoundname>iterator.h</compoundname>
+    <includes refid="client_8h" local="no">qdb/client.h</includes>
+    <incdepgraph>
+      <node id="92">
+        <label>qdb/_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
+      <node id="93">
+        <label>qdb/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="92" relation="include">
+        </childnode>
+      </node>
+      <node id="91">
+        <label>qdb/client.h</label>
+        <link refid="client_8h"/>
+        <childnode refid="92" relation="include">
+        </childnode>
+        <childnode refid="93" relation="include">
+        </childnode>
+        <childnode refid="94" relation="include">
+        </childnode>
+        <childnode refid="95" relation="include">
+        </childnode>
+        <childnode refid="96" relation="include">
+        </childnode>
+      </node>
+      <node id="96">
+        <label>stdint.h</label>
+      </node>
+      <node id="94">
+        <label>stddef.h</label>
+      </node>
+      <node id="95">
+        <label>time.h</label>
+      </node>
+      <node id="90">
+        <label>D:/workspace/quasardb/api/include/qdb/iterator.h</label>
+        <link refid="iterator.h"/>
+        <childnode refid="91" relation="include">
+        </childnode>
+      </node>
+    </incdepgraph>
+    <innerclass refid="structqdb__const__iterator__t" prot="public">qdb_const_iterator_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_begin</definition>
+        <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_begin</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Creates an iterator that points to the &quot;first&quot; entry of the cluster. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return qdb_e_alias_not_found and the user must call <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> to release client allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an uninitialized iterator structure that will be set to the first entry if successful</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="106" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_rbegin</definition>
+        <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_rbegin</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Creates an iterator that points to the &quot;last&quot; entry of the cluster. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>This works exactly like <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, excepts it starts at the &quot;end&quot; of the cluster.</para><para>Call <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref> to go to the previous available entry, if any.</para><para>See <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an uninitialized iterator structure that will be set to the last entry if successful</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="132" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_next</definition>
+        <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_next</name>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Advances an iterator to the next entry, if any. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the iterator to point to the next available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined.If there is no following entry or it is otherwise unavailable, the function will return qdb_e_alias_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a previously initialized iterator.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="145" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_previous</definition>
+        <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_previous</name>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Advances an iterator to the previous entry, if any. </para>        </briefdescription>
+        <detaileddescription>
+<para>Updates the iterator to point to the previous available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no previous entry or it is otherwise unavailable, the function will return qdb_e_alias_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a previously initialized iterator.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="160" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_close</definition>
+        <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
+        <name>qdb_iterator_close</name>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>iterator</declname>
+        </param>
+        <briefdescription>
+<para>Closes a previously initialized iterator and releases all associated resources. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>iterator</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a previously initialized iterator. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="167" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_iterator_copy</definition>
+        <argsstring>(const qdb_const_iterator_t *original, qdb_const_iterator_t *copy)</argsstring>
+        <name>qdb_iterator_copy</name>
+        <param>
+          <type>const <ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>original</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref> *</type>
+          <declname>copy</declname>
+        </param>
+        <briefdescription>
+<para>Clones a previously initialized iterator. </para>        </briefdescription>
+        <detaileddescription>
+<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="178" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>QDB_API_ITERATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QDB_API_ITERATOR_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Official<sp/>quasardb<sp/>C<sp/>API<sp/>@QDB_VERSION@</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>@QDB_BUILD_REFERENCE@</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2009-2016,<sp/>quasardb<sp/>SAS</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>quasardb<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/>may</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>QUASARDB<sp/>AND<sp/>CONTRIBUTORS<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>REGENTS<sp/>AND<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="client_8h" kindref="compound">qdb/client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>explicit<sp/>packing<sp/>will<sp/>prevent<sp/>some<sp/>incompatibility<sp/>cases<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(push)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(16)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="48"><highlight class="normal"></highlight></codeline>
+<codeline lineno="52" refid="structqdb__const__iterator__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>token;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>node;</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>ref;</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>content;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_size;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}<sp/><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="72"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(pop)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref><sp/>*<sp/>iterator);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><ref refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref><sp/>*<sp/>iterator);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="145"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>(<ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref><sp/>*<sp/>iterator);</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>(<ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref><sp/>*<sp/>iterator);</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"></highlight></codeline>
+<codeline lineno="167"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref>(<ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref><sp/>*<sp/>iterator);</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"></highlight></codeline>
+<codeline lineno="177"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><ref refid="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" kindref="member">qdb_iterator_copy</ref>(</highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref><sp/>*<sp/>original,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__const__iterator__t" kindref="compound">qdb_const_iterator_t</ref><sp/>*<sp/>copy);</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_ITERATOR_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+    </programlisting>
+    <location file="D:/workspace/quasardb/api/include/qdb/iterator.h"/>
+  </compounddef>
+</doxygen>

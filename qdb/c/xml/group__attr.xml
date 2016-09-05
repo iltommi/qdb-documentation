@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="group__attr" kind="group">
+    <compoundname>attr</compoundname>
+    <title>Function attributes</title>
+      <sectiondef kind="define">
+      <memberdef kind="define" id="group__attr_1gaa465b14ec10488af72bffdb52265603c" prot="public" static="no">
+        <name>QDB_DEPRECATED</name>
+        <param><defname>msg</defname></param>
+        <briefdescription>
+<para>Mark a funtion as deprecated. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/_attr.h" line="48" column="11" bodyfile="D:/workspace/quasardb/api/include/qdb/_attr.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>
