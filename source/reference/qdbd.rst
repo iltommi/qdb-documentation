@@ -469,8 +469,8 @@ Instance specific
 
 .. option:: --limiter-max-bytes=<value>
 
-   The maximum usable memory by entries, in bytes (global parameter). Entries will be evicted as needed to enforce this limit. The alias length as well
-   as the content size are recorded to measure the actual size of entries in memory. Other contents such as bookkeping, temporary copies, or internal structures are not included. Therefore, the daemon memory usage may slightly exceed the specified maximum memory usage.
+   The maximum usable memory by entries, in bytes (global parameter). Entries will be evicted as needed to enforce this limit. Metadata and data are accounted by the computation,
+   however memory alignment and allocator pre-allocations are not included which may result in the daemon actual memory usage slightly exceeding the specifided maximum memory usage.
 
    Argument
         An integer representing the maximum size, in bytes, of the entries in memory.
@@ -499,7 +499,7 @@ Instance specific
         An integer representing the maximum number of entries allowed in memory.
 
     Default value
-        1,000,000
+        0 (automatic, computation based on the available physical memory)
 
     Example
         To keep the number of entries in memory below 101::

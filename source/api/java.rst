@@ -87,7 +87,7 @@ To perform operations on a blob, you need to get an instance of ``QdbBlob`` like
 
     QdbBlob blob = db.blob("name of the blob");
 
-The ``String`` that is passed to ``QdbCluster.blob()`` is called the "alias" of the blob. It's the identifier of the blob in the database and it must be unique.
+The ``String`` that is passed to ``QdbCluster.blob()`` is called the "alias" of the blob. It's the identifier of the blob in the database and it must be unique. See :ref:`aliases` for more information.
 
 Then, you can perform operations on the blob.
 

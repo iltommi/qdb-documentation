@@ -88,7 +88,7 @@ If the same address/port pair is present multiple times within the string, only 
 Adding entries
 -----------------
 
-Each entry is identified by a unique alias. You pass the alias as a null-terminated string. The alias must be a valid UTF-8 string.
+Each entry is identified by a unique alias. See :ref:`aliases` for more information.
 
 The content is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 

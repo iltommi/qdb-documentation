@@ -15,6 +15,19 @@ Connecting to a single node is more simple and suitable for non-critical clients
 
 Once the connection is established, the client will lazily explore the ring as requests are made.
 
+.. _aliases:
+
+Aliases
+-------
+
+Each entry in the database (a blob, an integer, a deque...) has a user-defined unique identifier: an alias (or a key).
+
+The following restrictions apply:
+
+ * Aliases must be valid, null-terminated UTF-8 strings
+ * Aliases must not be empty
+ * The length must not exceed 1,024 *bytes*
+
 Put vs update
 --------------
 
