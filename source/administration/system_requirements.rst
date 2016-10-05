@@ -14,9 +14,10 @@ Hardware Requirements
 
 It is strongly advised to have a homogenous hardware configuration within a cluster.
 
-
 Software Requirements
 ---------------------
+
+All nodes must be time-synchronized. NTP can deliver a satisfactory time synchronization level for most use cases. For the most demanding use case, timing PCIe cards may be required.
 
 .. _sysreq-freebsd:
 

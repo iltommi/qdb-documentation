@@ -1,6 +1,11 @@
 Troubleshooting
 ===============
 
+Excessive transactions conflicts
+--------------------------------
+
+Excessive transactions conflicts may be caused by nodes being not properly time synchronized. When a node joins a cluster it will attempt to evaluate its time difference with other nodes and log a warning if it is found to be too important (For more information: :doc:`../concepts/transactions`).
+
 Performance drop
 ----------------
 
@@ -25,8 +30,6 @@ If you are experiencing a failure, make sure that:
 Generally when failure happens repeatedly on the same node this can be a hardware or system-related error. If the failure occurs on a random node within the cluster this can be a network problem or a quasardb bug.
 
 Although quasardb is extremely fast, it's always possible to have a workload larger than the cluster capabilities. That's why an important thing is to make sure that the system isn't over capacity. When the system is over capacity, this can result in denial of service (DoS) on certain nodes in the cluster, manifesting as random failures. 
-
-
 
 .. _troubleshooting-disk-full:
 

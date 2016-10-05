@@ -148,7 +148,7 @@ If you have your own application, you may find it cumbersome to run a third-part
 That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/cpp`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_,
 :doc:`api/nodejs` and :doc:`api/python`.
 
-You can either fetch a binary package or build the API from source (BSD License). You will find them on `GitHub <http://github.com/bureau14>`. Our APIs do their
+You can either fetch a binary package or build the API from source (BSD License). You will find them on `GitHub <http://github.com/bureau14>`_. Our APIs do their
 best to be simple and straightforward.
 
 Here is a short Python code snippet:
