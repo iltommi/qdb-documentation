@@ -119,9 +119,6 @@ Entry E will only be unavailable for the duration of the migration and does not 
     To reduce the chance of unavailable data due to data migration, add nodes when cluster traffic is at its lowest point.
 
 
-
-
-
 .. _data-replication:
 
 Data replication
@@ -208,7 +205,23 @@ In order to achieve high performance, quasardb keeps as much data as possible in
 .. note::
     The memory usage (bytes) limit includes the alias and content for each entry, but doesn't include bookkeeping, temporary copies or internal structures. Thus, the daemon memory usage may slightly exceed the specified maximum memory usage.
 
-The quasardb daemon chooses which entries to evict using a proprietary, *fast monte-carlo* heuristic. Evicted entries stay on disk until requested, at which point they are paged into the cache.
+The quasardb daemon has a combination of heuristic based on usage statitics which gives a behaviour close to LRU cache.
+
+
+.. _trimming:
+
+Data trimming
+--------------
+
+When you remove an entry in quasardb, it's not actually deleted but a new version of the entry is added, flagging the entry as deleted. The actual data removal occurs in an operation called trimming.
+
+When quasardb trims an entry, it will discard old versions in memory and on disk. Trimming is done automatically at the best time, as priority is given to reading and writing data.
+
+Once the entry is trimmed, quasardb will signal the persistence layer to discard the old data, which will result in actually freeing up disk space. This phase is called compacting. The quasardb daemon will log when it requests the persistence layer to compact itself.
+
+That is why when you remove entries from quasardb, the disk usage may not be immediately reduced. It can take up to ten minutes for the disk usage to actually be reduced.
+
+You can request the whole cluster to trim everything immediately with the cluster_trim command from the shell (see :doc:`../reference/qdbsh`). The command is also available from the API.
 
 .. _cluster-statistics:
 

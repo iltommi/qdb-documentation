@@ -617,8 +617,8 @@ The default configuration file is shown below::
                 "transient": false,
                 "history": false,
                 "replication_factor": 1,
-                "max_versions": 7,
-                "max_transaction_duration": 300
+                "max_versions": 3,
+                "max_transaction_duration": 60
             },
             "security": {
                 "enable_stop": false,
@@ -777,7 +777,7 @@ The default configuration file is shown below::
 
 .. describe:: global::cluster::max_versions
 
-    An integer represending the maximum number of copies the cluster keeps for transaction history. If an entry has more versions than this value, the oldest version is garbage collected.
+    An integer represending the maximum number of copies the cluster keeps for transaction history. If an entry has more versions than this value, the oldest versions are garbage collected.
 
 .. describe:: global::cluster::max_transaction_duration
 

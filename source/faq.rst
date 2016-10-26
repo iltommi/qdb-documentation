@@ -98,6 +98,17 @@ What happens when my license expires?
 
 See :ref:`license_expiration`.
 
+I deleted data, but my disk remains full
+========================================
+
+quasardb uses Multi Version Concurrency Control (MVCC). Deleted data is not immediately removed from disk. You can learn more in :doc:`../concepts/data_storage`.
+
+My quasardb cluster doesn't scale in performance
+================================================
+
+By default, quasardb will use a random ID for each node. It is recommended to use the indexed ID notation for maximum scalability. More information in :doc:`../concepts/cluster_organization`.
+
+
 How long are versions compatible?
 =================================
 
@@ -112,36 +123,34 @@ Changes in major level, such as 1.0.0 to 2.0.0, add significant features to quas
 In what language is quasardb written?
 =====================================
 
-The core quasardb engine (that we also call kernel) is written in C++ 14 and assembly. It makes an intensive usage of the STL and the `Boost C++ Libraries <http://www.boost.org/>`_.
+The core quasardb engine (that we also call kernel) is written in C++ 14 and assembly. It makes an intensive usage of template metaprogramming, the standard library and the `Boost C++ Libraries <http://www.boost.org/>`_.
 
 The administration interface is written in HTML5/JavaScript.
 
 Is quasardb open source?
 ========================
 
-We want to open source as much as we can of quasardb in the form of packaged libraries.
+quasardb core isn't open source, however many components and APIs are fully open-sourced under a three-clauses BSD license.
 
-You can find `the open sourced code on GitHub <https://github.com/bureau14/open_lib>`_ under a three-clauses BSD license.
+You will find all our open sourced components and API on our `GitHub account <https://github.com/bureau14/>`_ .
 
 Does quasardb use open source libraries?
 ========================================
 
 Yes it does! Here is the list:
 
+* `Arduino JSON <https://github.com/bblanchon/ArduinoJson>`_
 * `Boost <http://www.boost.org/>`_
+* `Brigand <https://github.com/edouarda/brigand>`_
 * `Datejs <http://code.google.com/archive/p/datejs/>`_
-* `hiredis <https://github.com/antirez/hiredis>`_
-* `RocksDB <https://github.com/facebook/rocksdb>`_
-* `javabi-sizeof <http://code.google.com/archive/p/javabi-sizeof/>`_
+* `Farmhash <https://github.com/google/farmhash>`_
+* `fmt <https://github.com/fmtlib/fmt>`_
+* `Intel Threading Building Blocks <https://www.threadingbuildingblocks.org/>`_
 * `JQuery <http://jquery.com/>`_
-* `Kryo <http://code.google.com/archive/p/kryo/>`_
-* `Intel Threading Building Blocks <https://www.threadingbuildingblocks.org/>`_ (commercial license)
-* `memcachepp <https://github.com/mikhailberis/memcachepp>`_
-* `Snappy <http://google.github.io/snappy/>`_
+* `Linenoise <https://github.com/antirez/linenoise>`_
+* `LZ4 <http://lz4.github.io/lz4/>`_
+* `RapidJson <http://rapidjson.org/>`_
+* `RocksDB <https://github.com/facebook/rocksdb>`_
+* `ZLib <http://www.zlib.net/>`_
 
-If you find the list to be inaccurate or suspect a license violation, mail to `support@quasardb.net <support@quasardb.net>`_.
-
-Where are you located?
-======================
-
-We are located in Paris, France.
+If you find the list to be inaccurate or suspect a license violation, mail to `bug@quasardb.net <bug@quasardb.net>`_.
