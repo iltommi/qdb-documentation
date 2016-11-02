@@ -221,7 +221,7 @@ Once the entry is trimmed, quasardb will signal the persistence layer to discard
 
 That is why when you remove entries from quasardb, the disk usage may not be immediately reduced. It can take up to ten minutes for the disk usage to actually be reduced.
 
-You can request the whole cluster to trim everything immediately with the cluster_trim command from the shell (see :doc:`../reference/qdbsh`). The command is also available from the API.
+You can request the whole cluster to trim everything immediately with the cluster_trim command from the shell (see :doc:`../reference/qdb_shell`). The command is also available from the API.
 
 .. _cluster-statistics:
 
