@@ -17,5 +17,6 @@ Server Administration
    operations
    tuning
    troubleshooting
+   backup
    upgrade
    security
