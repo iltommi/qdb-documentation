@@ -29,7 +29,7 @@ Quasardb stores its data in a Virtual File System (VFS) that is seen by the oper
 
 Offline backups have the following advantages:
 
- * Doesn't require quasardb to be running.
+ * quasardb doesn't have to be running.
  * Can be done with third-party backup software or quasardb tools.
  * Backup doesn't need to be aware of the business logic.
  * Support of incremental backups.
@@ -48,7 +48,7 @@ An offline backup of a quasardb node is strictly backing up its database directo
 
  #. Locate your quasardb database directory (see :doc:`../reference/qdbd`).
  #. Ensure you have read permission on the quasardb directory.
- #. (optional) Stop the quasardb daemon.
+ #. *(optional)* Stop the quasardb daemon.
  #. Backup the quasardb database directory with your backup software (you can alternatively use :doc:`../reference/qdb_dbtool`).
  #. If you stopped the quasardb daemon, restart it once the backup is finished.
 
@@ -62,9 +62,9 @@ Quasardb comes with advanced, automatic, recovery mechanisms. All is needed to r
  #. Ensure you have write permissions on the quasardb directory.
  #. Ensure you have sufficient space on the filesystem that hosts the quasardb directory.
  #. Ensure the quasardb daemon is stopped.
- #. (optional) Remove all content from the existing database directory.
+ #. *(optional)* Remove all content from the existing database directory.
  #. Restore your backup in the quasardb directory with your backup software (you can alternatively use :doc:`../reference/qdb_dbtool`).
- #. (optional) Use :doc:`../reference/qdb_dbtool` to validate the database.
+ #. *(optional)* Use :doc:`../reference/qdb_dbtool` to validate the database.
  #. Start the quasardb daemon.
  #. The daemon will validate and optionally repair the database. If, needed, it will migrate and replicate the content to other nodes.
 
@@ -90,14 +90,14 @@ For clusters that are not replicated, it may be needed to restore one or several
 Complete offline restoration of a quasardb cluster
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. caution::
-    Offline restoration only works if the target cluster is at least as large as the backup.
-
  #. Ensure all quasardb daemons are stopped.
  #. Ensure all quasardb daemons have a virgin quasardb directory.
  #. Restore all the nodes. This can be done simultaneously, if your backup software supports it.
  #. Start all quasardb nodes in any order.
  #. Wait for the quasardb cluster to stabilize and data to be replicated. If the cluster on which you restore the backup is larger than the original cluster, this will require, at worst, all the data to be transfered to different nodes. The time it takes depends on the volume of your data and your network bandwidth.
+
+.. caution::
+    Offline restoration only works if the target cluster is at least as large as the backup.
 
 Online backups
 ----------------------------
