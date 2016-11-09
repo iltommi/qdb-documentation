@@ -230,14 +230,14 @@ In addition to basic put/update/get/remove operations, integers support atomic i
 
 The :func:`qdb_int_add` function requires the entry to already exist.
 
-Quasardb integers storage on disk is highly optimized and increment/decrement use native instruction. If you are working on 64-bit signed integers, using quasardb native integers can deliver a significant performance boost.
+Quasardb integers storage on disk is highly optimized and increment/decrement use native instructions. If you are working on 64-bit signed integers, using quasardb native integers can deliver a significant performance boost compared to blobs.
 
 Tags
 ----
 
-Any entry can have an arbitrary number of tags, and you can lookup entries based on their tags. In other words, you can ask quasardb questions like "give me all the entry having the tag X". You can only tag existing entries. There is no predetermined limit on the number of tags per entry, or the number of entries a tag may refer to.
+Any entry can have an arbitrary number of tags, and you can lookup entries based on their tags. In other words, you can ask quasardb questions like "give me all the entry with the tag X". You can only tag existing entries. There is no predetermined limit on the number of tags per entry, or the number of entries a tag may refer to.
 
-You can attach a tag to an entry (:func:`qdb_attach_tag`), or several tags at once (:func:`qdb_attach_tags`):
+You can attach one tag at a time to an entry (:func:`qdb_attach_tag`), or several tags at once (:func:`qdb_attach_tags`):
 
 .. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_attach
@@ -255,7 +255,7 @@ To remove a tag, use :func:`qdb_detach_tag`:
 
 It is an error to detach a non-existing tag.
 
-To retrieve the entries matching a tag, there are two possibilities. 
+To retrieve the entries matching a tag, there are two possibilities: fetch everything at once or iterate on the entries.
 
 If you think the number of returned entries will be reasonable (e.g. easily fits in RAM), you can use :func:`qdb_get_tagged`:
 
@@ -274,7 +274,7 @@ If you suspect the number of results to be very high, you may want to iterate ov
     :end-before: doc-end-tag_iterate
     :dedent: 12
 
-Iteration prefetches the results to optimize network traffic and occurs on a snapshot of the database (concurrent operations are invisible). Once you are finished with an iterator, call :func:`qdb_tag_iterator_close`. When iteration reaches the final entry, :func:`qdb_tag_iterator_next` will return  :cpp:enum:`qdb_e_iterator_end`.
+Iteration prefetches the results to optimize network traffic and occurs on a snapshot of the database. Once you are finished with an iterator, call :func:`qdb_tag_iterator_close`. When iteration reaches the final entry, :func:`qdb_tag_iterator_next` will return  :cpp:enum:`qdb_e_iterator_end`.
 
 Removing an entry correctly updates the associated tags, in other words, a removed entry will no longer be reported as tagged.
 
@@ -296,7 +296,9 @@ Double-ended queues
 .. warning::
     Experimental feature
 
-Double-ended queues (deques) are distributed containers that support concurrent insertion and removal at the beginning and the end. Random access to any element within the queue is also supported.
+Double-ended queues (deques) are distributed containers that support concurrent insertion and removal at the beginning and the end. Random access to any element within the deque is also supported.
+
+The flexibility of the deque API enables you to implement at-most-once and at-least-once semantics.
 
 There is no limit to the number of entries in a deque, no limit to the size of the entries within the deque.
 
@@ -309,7 +311,7 @@ To create a deque, you push elements to it using either :func:`qdb_deque_push_fr
 
 Push operations are atomic and safe to use concurrently.
 
-To access elements within a deque, you can either use :func:`qdb_deque_front`, :func:`qdb_deque_back` or :func:`qdb_deque_get_at`. Each function has a constant complexity, independenant of the length of the deque. The :func:`qdb_deque_get_at` use 0 based index, 0 representing the front item.
+To access elements within a deque, you can either use :func:`qdb_deque_front`, :func:`qdb_deque_back` or :func:`qdb_deque_get_at`. Each function has a constant complexity, independant of the length of the deque. The :func:`qdb_deque_get_at` function uses 0 based index, 0 representing the front item.
 
 .. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_axx
@@ -359,6 +361,8 @@ Hashed sets
     Experimental feature
 
 Hashed sets are distributed over the nodes and have no limit in the number of entries or the size of the entries. Hashed set currently support only insertion, erasure and querying. Entries are hashed using a cryptographically strong 256-bit hash, making collision extremely unlikely.
+
+Insertion, access and removal are logarithmic respective to the size of the set.
 
 To create a set, you insert an entry to a previously non existing set with :func:`qdb_hset_insert`:
 
