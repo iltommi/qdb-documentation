@@ -235,14 +235,16 @@ Quasardb integers storage on disk is highly optimized and increment/decrement us
 Tags
 ------
 
-Any entry can have an arbitrary number of tags, and you can lookup entries based on their tags. In other words, you can ask quasardb questions like "give me all the entry having the tag X". You can only tag existing entries.
+Any entry can have an arbitrary number of tags, and you can lookup entries based on their tags. In other words, you can ask quasardb questions like "give me all the entry having the tag X". You can only tag existing entries. There is no predetermined limit on the number of tags per entry, or the number of entries a tag may refer to.
 
-You can add a tag to an entry one at a time (:func:`qdb_attach_tag`), or add several tags at once (:func:`qdb_attach_tags`):
+You can attach a tag to an entry (:func:`qdb_attach_tag`), or several tags at once (:func:`qdb_attach_tags`):
 
 .. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_attach
     :end-before: doc-end-tag_attach
     :dedent:12
+
+If the tag is already set, the error code returned will be :cpp:enum:`qdb_e_tag_already_set`. You can only attach tag to previously created entries.
 
 To remove a tag, use :func:`qdb_detach_tag`:
 
@@ -251,31 +253,48 @@ To remove a tag, use :func:`qdb_detach_tag`:
     :end-before: doc-end-tag_detach
     :dedent:12
 
+It is an error to detach a non-existing tag.
+
 To retrieve the entries matching a tag, there are two possibilities. 
 
 If you think the number of returned entries will be reasonable (e.g. easily fits in RAM), you can use :func:`qdb_get_tagged`:
 
-..literalinclude:: ../../../../examples/c/tags.c
+.. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_get
     :end-before: doc-end-tag_get
     :dedent:12
 
-If that number can exceed millions of entries, you may want to iterate over the results to avoid exhausting the client memory:
+.. note::
+    You must use :func:`qdb_free_results` on the aliases returned by :func:`qdb_get_tagged`.
 
-..literalinclude:: ../../../../examples/c/tags.c
+If you suspect the number of results to be very high, you may want to iterate over the results:
+
+.. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_iterate
     :end-before: doc-end-tag_iterate
     :dedent:12
 
-Iteration prefetches the result to optimize network traffic and occurs on a snapshot of the database (concurrent operations are invisible).
+Iteration prefetches the results to optimize network traffic and occurs on a snapshot of the database (concurrent operations are invisible). Once you are finished with an iterator, call :func:`qdb_tag_iterator_close`. When iteration reaches the final entry, :func:`qdb_tag_iterator_next` will return  :cpp:enum:`qdb_e_iterator_end`.
 
 Removing an entry correctly updates the associated tags, in other words, a removed entry will no longer be reported as tagged.
+
+Forward lookup is also supported. For any entry, you can test the existence of a tag or just retrieve the list of tags:
+
+.. literalinclude:: ../../../../examples/c/tags.c
+    :start-after: doc-start-tag_meta
+    :end-before: doc-end-tag_meta
+    :dedent:12
+
+:func:`qdb_has_tag` will return :cpp:enum:`qdb_e_tag_not_set` if the tag isn't set.
+
+.. note::
+    Tags returned by :func:`qdb_get_tags` must be freed with :func:`qdb_free_results`.
 
 Double-ended queues
 ---------------------
 
-..warning::
-    Doubled-ended queues are still considered experimental.
+.. warning::
+    Experimental feature
 
 Double-ended queues (deques) are distributed containers that support concurrent insertion and removal at the beginning and the end. Random access to any element within the queue is also supported.
 
@@ -283,7 +302,7 @@ There is no limit to the number of entries in a deque, no limit to the size of t
 
 To create a deque, you push elements to it using either :func:`qdb_deque_push_front` or :func:`qdb_deque_push_back`. Each function has a constant complexity and will span the deque accross nodes as it grows.
 
-..literalinclude:: ../../../../examples/c/deque.c
+.. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_push
     :end-before: doc-end-deque_push
     :dedent:12
@@ -292,35 +311,38 @@ Push operations are atomic and safe to use concurrently.
 
 To access elements within a deque, you can either use :func:`qdb_deque_front`, :func:`qdb_deque_back` or :func:`qdb_deque_get_at`. Each function has a constant complexity, independenant of the length of the deque. The :func:`qdb_deque_get_at` use 0 based index, 0 representing the front item.
 
-..literalinclude:: ../../../../examples/c/deque.c
+.. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_axx
     :end-before: doc-end-deque_axx
     :dedent:12
 
 It is possible to atomically update any entry within the deque with :func:`qdb_deque_set_at`:
 
-..literalinclude:: ../../../../examples/c/deque.c
+.. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_axx
     :end-before: doc-end-deque_axx
     :dedent:12
 
 In addition to accessing entries, it is also possible to atomically remove and retrieve an entry with the :func:`qdb_deque_pop_front` and :func:`qdb_deque_pop_back` functions:
 
-..literalinclude:: ../../../../examples/c/deque.c
+.. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_set
     :end-before: doc-end-deque_set
     :dedent:12
 
+.. note::
+    You must call :func:`qdb_free_buffer` on entries returned by :func:`qdb_deque_pop_front`, :func:`qdb_deque_pop_back` and :func:`qdb_deque_get_at`.
+
 A deque can be empty. You can query the size of the deque with the :func:`qdb_deque_size` function:
 
-..literalinclude:: ../../../../examples/c/deque.c
+.. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_size
     :end-before: doc-end-deque_size
     :dedent:12
 
 To fully a deque, use :func:`qdb_remove`, like any other entry type:
 
-..literalinclude:: ../../../../examples/c/deque.c
+.. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_remove
     :end-before: doc-end-deque_remove
     :dedent:12
@@ -330,9 +352,38 @@ Removing a deque has a linear complexity.
 Hashed sets
 -------------
 
-..warning::
-    Hashed sets are still considered experimental.
+.. warning::
+    Experimental feature
 
+Hashed sets are distributed over the nodes and have no limit in the number of entries or the size of the entries. Hashed set currently support only insertion, erasure and querying. Entries are hashed using a cryptographically strong 256-bit hash, making collision extremely unlikely.
+
+To create a set, you insert an entry to a previously non existing set with :func:`qdb_hset_insert`:
+
+.. literalinclude:: ../../../../examples/c/hset.c
+    :start-after: doc-start-hset_insert
+    :end-before: doc-end-hset_insert
+    :dedent:12
+
+When you need to remove an entry from a set, use :func:`qdb_hset_erase`:
+
+.. literalinclude:: ../../../../examples/c/hset.c
+    :start-after: doc-start-hset_erase
+    :end-before: doc-end-hset_erase
+    :dedent:12
+
+To test the existence of an entry within a set, use :func:`qdb_hset_contains`:
+
+.. literalinclude:: ../../../../examples/c/hset.c
+    :start-after: doc-start-hset_contains
+    :end-before: doc-end-hset_contains
+    :dedent:12
+
+To fully remove a set, use :func:`qdb_remove`, like any other entry type:
+
+.. literalinclude:: ../../../../examples/c/hset.c
+    :start-after: doc-start-hset_remove
+    :end-before: doc-end-hset_remove
+    :dedent: 12
 
 Batch operations
 -----------------
