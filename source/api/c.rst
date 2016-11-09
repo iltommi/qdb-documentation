@@ -1,16 +1,15 @@
 C
-==
+=
 
 .. default-domain:: c
-.. highlight:: c
 
 Introduction
---------------
+------------
 
 The quasardb C API is the lowest-level API offered but also the fastest and the most powerful.
 
 Installing
---------------
+----------
 
 The C API package is downloadable from the quasardb download site. All information regarding the quasardb download site are in your welcome e-mail.
 
@@ -27,9 +26,10 @@ The C API package is downloadable from the quasardb download site. All informati
 
 Most C functions, typedefs and enums are available in the ``include/qdb/client.h`` header file. The object specific functions for hsets, integers, double-ended queues, and tags are in their respective ``include/qdb/*.h`` files.
 
+.. highlight:: c
 
 Connecting to a cluster
---------------------------
+-----------------------
 
 The first thing to do is to initialize a handle. A handle is an opaque structure that represents a client side instance.
 It is initialized using the function :func:`qdb_open`:
@@ -74,7 +74,7 @@ Note that we could have used the IP address instead:
     When you call :func:`qdb_open` and :func:`qdb_connect`, a lot of initialization and system calls are made. It is therefore advised to reduce the calls to these functions to the strict minimum, ideally keeping the same handle alive for the lifetime of the program.
 
 Connecting to multiple nodes within the same cluster
-------------------------------------------------------
+----------------------------------------------------
 
 Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a URI string to :func:`qdb_connect` with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed.
 
@@ -86,7 +86,7 @@ Although quasardb is fault tolerant, if the client tries to connect to the clust
 If the same address/port pair is present multiple times within the string, only the first occurrence is used.
 
 Adding entries
------------------
+--------------
 
 Each entry is identified by a unique alias. See :ref:`aliases` for more information.
 
@@ -112,7 +112,7 @@ Should the entry be created, it will have no expiration.
 :func:`qdb_blob_put`, if called with expiry time equal to :macro:`qdb_preserve_expiration`, will behave as if the argument were equal to :macro:`qdb_never_expires`.
 
 Getting entries
---------------------
+---------------
 
 The most convenient way to fetch an entry is :func:`qdb_blob_get`:
 
@@ -139,7 +139,7 @@ The function will update content_length even if the buffer isn't large enough, g
 
 
 Removing entries
----------------------
+----------------
 
 Removing is done with the function :func:`qdb_remove`:
 
@@ -152,7 +152,7 @@ The function fails if the entry does not exist.
 
 
 Cleaning up
---------------------
+-----------
 
 When you are done working with a quasardb cluster, call :func:`qdb_close`:
 
@@ -180,7 +180,7 @@ It is possible to configure the client-side timeout with the :func:`qdb_option_s
 Currently running requests are not affected by the modification, only new requests will use the new timeout value. The default client-side timeout is one minute. Keep in mind that the server-side timeout might be shorter.
 
 Expiry
--------
+------
 
 Expiry is set with :func:`qdb_expires_at` and :func:`qdb_expires_from_now`. It is obtained with :func:`qdb_get_expiry_time`. Expiry time is always passed in as seconds, either relative to epoch (January 1st, 1970 00:00 UTC) when using :func:`qdb_expires_at` or relative to the call time when using :func:`qdb_expires_from_now`.
 
@@ -209,7 +209,7 @@ By default, entries never expire. To obtain the expiry time of an existing entry
     :dedent: 12
 
 Integers
-----------
+--------
 
 Quasardb supports signed 64-bit integers natively. All operations on integers are guaranteed to be atomic. Likes blobs, integers support put (:func:`qdb_int_put`),
 update (:func:`qdb_int_update`), get (:func:`qdb_int_get`) and remove (:func:`qdb_remove`):
@@ -233,7 +233,7 @@ The :func:`qdb_int_add` function requires the entry to already exist.
 Quasardb integers storage on disk is highly optimized and increment/decrement use native instruction. If you are working on 64-bit signed integers, using quasardb native integers can deliver a significant performance boost.
 
 Tags
-------
+----
 
 Any entry can have an arbitrary number of tags, and you can lookup entries based on their tags. In other words, you can ask quasardb questions like "give me all the entry having the tag X". You can only tag existing entries. There is no predetermined limit on the number of tags per entry, or the number of entries a tag may refer to.
 
@@ -242,7 +242,7 @@ You can attach a tag to an entry (:func:`qdb_attach_tag`), or several tags at on
 .. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_attach
     :end-before: doc-end-tag_attach
-    :dedent:12
+    :dedent: 12
 
 If the tag is already set, the error code returned will be :cpp:enum:`qdb_e_tag_already_set`. You can only attach tag to previously created entries.
 
@@ -251,7 +251,7 @@ To remove a tag, use :func:`qdb_detach_tag`:
 .. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_detach
     :end-before: doc-end-tag_detach
-    :dedent:12
+    :dedent: 12
 
 It is an error to detach a non-existing tag.
 
@@ -262,7 +262,7 @@ If you think the number of returned entries will be reasonable (e.g. easily fits
 .. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_get
     :end-before: doc-end-tag_get
-    :dedent:12
+    :dedent: 12
 
 .. note::
     You must use :func:`qdb_free_results` on the aliases returned by :func:`qdb_get_tagged`.
@@ -272,7 +272,7 @@ If you suspect the number of results to be very high, you may want to iterate ov
 .. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_iterate
     :end-before: doc-end-tag_iterate
-    :dedent:12
+    :dedent: 12
 
 Iteration prefetches the results to optimize network traffic and occurs on a snapshot of the database (concurrent operations are invisible). Once you are finished with an iterator, call :func:`qdb_tag_iterator_close`. When iteration reaches the final entry, :func:`qdb_tag_iterator_next` will return  :cpp:enum:`qdb_e_iterator_end`.
 
@@ -283,7 +283,7 @@ Forward lookup is also supported. For any entry, you can test the existence of a
 .. literalinclude:: ../../../../examples/c/tags.c
     :start-after: doc-start-tag_meta
     :end-before: doc-end-tag_meta
-    :dedent:12
+    :dedent: 12
 
 :func:`qdb_has_tag` will return :cpp:enum:`qdb_e_tag_not_set` if the tag isn't set.
 
@@ -291,7 +291,7 @@ Forward lookup is also supported. For any entry, you can test the existence of a
     Tags returned by :func:`qdb_get_tags` must be freed with :func:`qdb_free_results`.
 
 Double-ended queues
----------------------
+-------------------
 
 .. warning::
     Experimental feature
@@ -305,7 +305,7 @@ To create a deque, you push elements to it using either :func:`qdb_deque_push_fr
 .. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_push
     :end-before: doc-end-deque_push
-    :dedent:12
+    :dedent: 12
 
 Push operations are atomic and safe to use concurrently.
 
@@ -314,21 +314,24 @@ To access elements within a deque, you can either use :func:`qdb_deque_front`, :
 .. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_axx
     :end-before: doc-end-deque_axx
-    :dedent:12
+    :dedent: 12
 
 It is possible to atomically update any entry within the deque with :func:`qdb_deque_set_at`:
 
 .. literalinclude:: ../../../../examples/c/deque.c
-    :start-after: doc-start-deque_axx
-    :end-before: doc-end-deque_axx
-    :dedent:12
+    :start-after: doc-start-deque_set
+    :end-before: doc-end-deque_set
+    :dedent: 12
+
+.. note::
+    You must call :func:`qdb_free_buffer` on entries returned by deque accessors.
 
 In addition to accessing entries, it is also possible to atomically remove and retrieve an entry with the :func:`qdb_deque_pop_front` and :func:`qdb_deque_pop_back` functions:
 
 .. literalinclude:: ../../../../examples/c/deque.c
-    :start-after: doc-start-deque_set
-    :end-before: doc-end-deque_set
-    :dedent:12
+    :start-after: doc-start-deque_pop
+    :end-before: doc-end-deque_pop
+    :dedent: 12
 
 .. note::
     You must call :func:`qdb_free_buffer` on entries returned by :func:`qdb_deque_pop_front`, :func:`qdb_deque_pop_back` and :func:`qdb_deque_get_at`.
@@ -338,19 +341,19 @@ A deque can be empty. You can query the size of the deque with the :func:`qdb_de
 .. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_size
     :end-before: doc-end-deque_size
-    :dedent:12
+    :dedent: 12
 
 To fully a deque, use :func:`qdb_remove`, like any other entry type:
 
 .. literalinclude:: ../../../../examples/c/deque.c
     :start-after: doc-start-deque_remove
     :end-before: doc-end-deque_remove
-    :dedent:12
+    :dedent: 12
 
 Removing a deque has a linear complexity.
 
 Hashed sets
--------------
+-----------
 
 .. warning::
     Experimental feature
@@ -362,21 +365,21 @@ To create a set, you insert an entry to a previously non existing set with :func
 .. literalinclude:: ../../../../examples/c/hset.c
     :start-after: doc-start-hset_insert
     :end-before: doc-end-hset_insert
-    :dedent:12
+    :dedent: 12
 
 When you need to remove an entry from a set, use :func:`qdb_hset_erase`:
 
 .. literalinclude:: ../../../../examples/c/hset.c
     :start-after: doc-start-hset_erase
     :end-before: doc-end-hset_erase
-    :dedent:12
+    :dedent: 12
 
 To test the existence of an entry within a set, use :func:`qdb_hset_contains`:
 
 .. literalinclude:: ../../../../examples/c/hset.c
     :start-after: doc-start-hset_contains
     :end-before: doc-end-hset_contains
-    :dedent:12
+    :dedent: 12
 
 To fully remove a set, use :func:`qdb_remove`, like any other entry type:
 
@@ -386,7 +389,7 @@ To fully remove a set, use :func:`qdb_remove`, like any other entry type:
     :dedent: 12
 
 Batch operations
------------------
+----------------
 
 Batch operations can greatly increase performance when it is necessary to run many small operations. Using batch operations requires initializing, running and freeing an array of operations.
 
@@ -446,7 +449,7 @@ Once you are finished with a series of batch operations, you must release the me
     :dedent: 16
 
 Iteration
------------
+---------
 
 Iteration on the cluster's entries can be done forward and backward. You initialize the iterator with :func:`qdb_iterator_begin` or :func:`qdb_iterator_rbegin` depending on whether you want to start from the first entry or the last entry.
 
@@ -466,7 +469,7 @@ Actual iteration is done with :func:`qdb_iterator_next` and :func:`qdb_iterator_
     Although each entry is returned only once, the order in which entries are returned is undefined.
 
 Streaming
-----------
+---------
 
 Use the streaming API to read or write portions of large entries in linear packets. There is no limit to the size of entries that can be streamed to or from the client.
 First, one should open the stream handle choosing an appropriate mode:
@@ -491,7 +494,7 @@ To get the current size of the stream, in bytes, there is :func:`qdb_stream_size
     :dedent: 8
 
 Logging
-----------
+-------
 
 It can be useful for debugging and information purposes to obtain all logs. The C API provides access to the internal log system through a callback which is called each time the API has to log something.
 
@@ -549,66 +552,66 @@ You may pass a null pointer as callback identifier to :func:`qdb_log_add_callbac
 
 
 Reference
-----------------
+---------
 
 General
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^
 
 .. doxygengroup:: client
   :content-only:
 
 Error codes 
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^
 
 .. doxygengroup:: error
   :content-only:
 
 
 Blobs
-^^^^^^^^^^^^^^^^^^
+^^^^^^
 
 .. doxygengroup:: blob
   :content-only:
 
 Batches 
-^^^^^^^^^^^^^^^^^^
+^^^^^^^
 
 .. doxygengroup:: batch
   :content-only:
 
 Deques
-^^^^^^^^^^^^^^^^^^
+^^^^^^
 
 .. doxygengroup:: deque
   :content-only:
 
 Integers
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^
 
 .. doxygengroup:: integer
   :content-only:
 
 Hash sets
-^^^^^^^^^^^^^^^^^^
+^^^^^^^^^
 
 .. doxygengroup:: hset
   :content-only:
 
 Prefix
-^^^^^^^^^^^^^^^^^^
+^^^^^^
 
 .. doxygengroup:: prefix
   :content-only:
 
 
 Streams
-^^^^^^^^^^^^^^^^^^
+^^^^^^^
 
 .. doxygengroup:: stream
   :content-only:
 
 Tags
-^^^^^^^^^^^^^^^^^^
+^^^^
 
 .. doxygengroup:: tag
   :content-only:

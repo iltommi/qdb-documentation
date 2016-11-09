@@ -32,7 +32,7 @@ extracted your |quasardb| binaries. We also support docker and are available on
 
 Let's assume we extracted the |quasardb| archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
 
-    qdbdd
+    qdbd
 
 You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests. 
 
