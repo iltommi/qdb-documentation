@@ -1,0 +1,183 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="group__log" kind="group">
+    <compoundname>log</compoundname>
+    <title>Logging-related operations</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__log_1gaaedde07e4ca97105358685c6b31c8301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_log_add_callback</definition>
+        <argsstring>(qdb_log_callback cb, qdb_log_callback_id *callback_id)</argsstring>
+        <name>qdb_log_add_callback</name>
+        <param>
+          <type><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref></type>
+          <declname>cb</declname>
+        </param>
+        <param>
+          <type><ref refid="group__log_1ga6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref> *</type>
+          <declname>callback_id</declname>
+        </param>
+        <briefdescription>
+<para>Adds a callback that will receive internal API log messages. This can be used to incorporate internal API statuses in your log. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>cb</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A callback of type qdb_log_callback. The callback will be called every time the API logs </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>callback_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an unique callback identifier that can be used to remove the callback </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="108" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_log_remove_callback</definition>
+        <argsstring>(qdb_log_callback_id callback_id)</argsstring>
+        <name>qdb_log_remove_callback</name>
+        <param>
+          <type><ref refid="group__log_1ga6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref></type>
+          <declname>callback_id</declname>
+        </param>
+        <briefdescription>
+<para>Removes a previously added log callback. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>callback_id</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The identifier set by qdb_log_add_callback that will determine which callback to remove </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="117" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__log_1ga8dc603a7bf83954b01043dcba99354fd" prot="public" static="no">
+        <name>qdb_log_level</name>
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" prot="public">
+          <name>qdb_log_detailed</name>
+          <initializer>= 100</initializer>
+          <briefdescription>
+<para>Log everything. Very verbose. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" prot="public">
+          <name>qdb_log_debug</name>
+          <initializer>= 200</initializer>
+          <briefdescription>
+<para>Log debug level messages and below. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" prot="public">
+          <name>qdb_log_info</name>
+          <initializer>= 300</initializer>
+          <briefdescription>
+<para>Log information level messages and below. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" prot="public">
+          <name>qdb_log_warning</name>
+          <initializer>= 400</initializer>
+          <briefdescription>
+<para>Log warning level messages and below. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" prot="public">
+          <name>qdb_log_error</name>
+          <initializer>= 500</initializer>
+          <briefdescription>
+<para>Log error level messages and below. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" prot="public">
+          <name>qdb_log_panic</name>
+          <initializer>= 600</initializer>
+          <briefdescription>
+<para>Log panic level messages and below. Very terse. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>An enumeration of log level. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="56" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/log.h" bodystart="56" bodyend="69"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" prot="public" static="no">
+        <type>enum <ref refid="group__log_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref></type>
+        <definition>qdb_log_level_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_log_level_t</name>
+        <briefdescription>
+<para>A type alias for enum qdb_log_level. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="69" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__log_1ga6a72d356408c58332b03af73a52c84d6" prot="public" static="no">
+        <type>size_t</type>
+        <definition>qdb_log_callback_id</definition>
+        <argsstring></argsstring>
+        <name>qdb_log_callback_id</name>
+        <briefdescription>
+<para>An unique callback identifier returned by qdb_log_add_callback. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="76" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/log.h" bodystart="76" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" prot="public" static="no">
+        <type>void(*</type>
+        <definition>qdb_log_callback</definition>
+        <argsstring>)(qdb_log_level_t, const unsigned long *, unsigned long, unsigned long, const char *, size_t)</argsstring>
+        <name>qdb_log_callback</name>
+        <briefdescription>
+<para>A typedef representing a log callback. </para>        </briefdescription>
+        <detaileddescription>
+<para>The profile of the functions</para><para><simplesect kind="see"><para><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="85" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/log.h" bodystart="85" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

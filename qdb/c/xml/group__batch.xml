@@ -1,9 +1,10 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="group__batch" kind="group">
     <compoundname>batch</compoundname>
     <title>Batch functions</title>
     <innerclass refid="structint__put__update__t" prot="public">int_put_update_t</innerclass>
+    <innerclass refid="structblob__put__update__t" prot="public">blob_put_update_t</innerclass>
     <innerclass refid="structqdb__operation__t" prot="public">qdb_operation_t</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__batch_1ga8b3e3f28c66a4e9bb3826658e260041c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
@@ -42,7 +43,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="223" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="254" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -64,7 +65,7 @@
         <briefdescription>
 <para>Runs the operations in batch. </para>        </briefdescription>
         <detaileddescription>
-<para>When operations are run in batch the order of execution is optimized for speed and each operation is run independently.</para><para>Running operations is batch is generally the best way to achieve a very high level of performance, especially for bulk loading of data. That&apos;s because batches minimize network communication and organize the order of execution for maximum throughput.</para><para>If one or several operations within the batch fail, the rest of the batch isn&apos;t affected.</para><para>If one or several operations within the batch is ill-formed, the whole batch will be aborted. An ill formed operation is for example an operation missing a parameter.</para><para>Each operation will result a result according to its type.</para><para>After a batch has been run (successful or not), the user must call <ref refid="group__batch_1ga2e82d4882460729fc5bbe716b05c5b4a" kindref="member">qdb_free_operations</ref> to release any API-allocated buffer.</para><para>For an ordered, transactional &quot;all or nothing&quot; behavior use <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>When operations are run in batch the order of execution is optimized for speed and each operation is run independently.</para><para>Running operations is batch is generally the best way to achieve a very high level of performance, especially for bulk loading of data. That&apos;s because batches minimize network communication and organize the order of execution for maximum throughput.</para><para>If one or several operations within the batch fail, the rest of the batch isn&apos;t affected.</para><para>If one or several operations within the batch is ill-formed, the whole batch will be aborted. An ill formed operation is for example an operation missing a parameter.</para><para>Each operation will result a result according to its type.</para><para>After a batch has been run (successful or not), the user must call <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref> to release any API-allocated buffer.</para><para>For an ordered, transactional &quot;all or nothing&quot; behavior use <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -87,11 +88,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>The number of successful operations in the batch. </para></simplesect>
-<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref>, <ref refid="group__batch_1ga2e82d4882460729fc5bbe716b05c5b4a" kindref="member">qdb_free_operations</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref>, <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="259" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="290" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -117,7 +118,7 @@
         <briefdescription>
 <para>Runs the operations in a single transaction. </para>        </briefdescription>
         <detaileddescription>
-<para>Operations that run in a transaction will be executed ordered to preserve the logic of the transaction and if an error occurred the previously executed operations will be rolled back.</para><para>The operation is committed if and only if all operations have been successful.</para><para>The result of the transaction is not visible by other clients until it has been committed.</para><para>After a transaction has been run (successful or not), the user must call <ref refid="group__batch_1ga2e82d4882460729fc5bbe716b05c5b4a" kindref="member">qdb_free_operations</ref> to release any API-allocated buffer.</para><para>Use transactions when integrity and order is paramount. For maximum performances consider using batches (<ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>).</para><para><parameterlist kind="param"><parameteritem>
+<para>Operations that run in a transaction will be executed ordered to preserve the logic of the transaction and if an error occurred the previously executed operations will be rolled back.</para><para>The operation is committed if and only if all operations have been successful.</para><para>The result of the transaction is not visible by other clients until it has been committed.</para><para>After a transaction has been run (successful or not), the user must call <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref> to release any API-allocated buffer.</para><para>Use transactions when integrity and order is paramount. For maximum performances consider using batches (<ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>).</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -147,15 +148,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>, <ref refid="group__batch_1ga2e82d4882460729fc5bbe716b05c5b4a" kindref="member">qdb_free_operations</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>, <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="291" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="322" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__batch_1ga2e82d4882460729fc5bbe716b05c5b4a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void qdb_free_operations</definition>
+      <memberdef kind="function" id="group__batch_1ga93345ffaa1f79909d09ede32158bd747" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_free_operations</definition>
         <argsstring>(qdb_handle_t handle, qdb_operation_t *operations, size_t operation_count)</argsstring>
         <name>qdb_free_operations</name>
         <param>
@@ -200,7 +201,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="309" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="340" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -308,7 +309,7 @@
 <para>Operations are used by batches and transactions. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="58" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="58" bodyend="83"/>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="58" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="58" bodyend="83"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

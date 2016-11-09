@@ -1,13 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="log_8h" kind="file" language="C++">
     <compoundname>log.h</compoundname>
     <includes refid="error_8h" local="no">qdb/error.h</includes>
     <includes local="no">stddef.h</includes>
     <incdepgraph>
-      <node id="100">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
+      <node id="98">
+        <label>C:/sources/quasardb/api/include/qdb/log.h</label>
+        <link refid="log_8h"/>
+        <childnode refid="99" relation="include">
+        </childnode>
+        <childnode refid="101" relation="include">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>stddef.h</label>
       </node>
       <node id="99">
         <label>qdb/error.h</label>
@@ -15,22 +22,15 @@
         <childnode refid="100" relation="include">
         </childnode>
       </node>
-      <node id="101">
-        <label>stddef.h</label>
-      </node>
-      <node id="98">
-        <label>D:/workspace/quasardb/api/include/qdb/log.h</label>
-        <link refid="log.h"/>
-        <childnode refid="99" relation="include">
-        </childnode>
-        <childnode refid="101" relation="include">
-        </childnode>
+      <node id="100">
+        <label>qdb/_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="log_8h_1a8dc603a7bf83954b01043dcba99354fd" prot="public" static="no">
+      <memberdef kind="enum" id="group__log_1ga8dc603a7bf83954b01043dcba99354fd" prot="public" static="no">
         <name>qdb_log_level</name>
-        <enumvalue id="log_8h_1a8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" prot="public">
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" prot="public">
           <name>qdb_log_detailed</name>
           <initializer>= 100</initializer>
           <briefdescription>
@@ -38,7 +38,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1a8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" prot="public">
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" prot="public">
           <name>qdb_log_debug</name>
           <initializer>= 200</initializer>
           <briefdescription>
@@ -46,7 +46,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1a8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" prot="public">
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" prot="public">
           <name>qdb_log_info</name>
           <initializer>= 300</initializer>
           <briefdescription>
@@ -54,7 +54,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1a8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" prot="public">
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" prot="public">
           <name>qdb_log_warning</name>
           <initializer>= 400</initializer>
           <briefdescription>
@@ -62,7 +62,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1a8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" prot="public">
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" prot="public">
           <name>qdb_log_error</name>
           <initializer>= 500</initializer>
           <briefdescription>
@@ -70,7 +70,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1a8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" prot="public">
+        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" prot="public">
           <name>qdb_log_panic</name>
           <initializer>= 600</initializer>
           <briefdescription>
@@ -81,16 +81,16 @@
         <briefdescription>
 <para>An enumeration of log level. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="55" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/log.h" bodystart="55" bodyend="68"/>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="56" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/log.h" bodystart="56" bodyend="69"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="log_8h_1ae0666863f2369cd07dbd9fdf350c8cd6" prot="public" static="no">
-        <type>enum <ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref></type>
+      <memberdef kind="typedef" id="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" prot="public" static="no">
+        <type>enum <ref refid="group__log_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref></type>
         <definition>qdb_log_level_t</definition>
         <argsstring></argsstring>
         <name>qdb_log_level_t</name>
@@ -101,9 +101,9 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="68" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="69" column="1"/>
       </memberdef>
-      <memberdef kind="typedef" id="log_8h_1a6a72d356408c58332b03af73a52c84d6" prot="public" static="no">
+      <memberdef kind="typedef" id="group__log_1ga6a72d356408c58332b03af73a52c84d6" prot="public" static="no">
         <type>size_t</type>
         <definition>qdb_log_callback_id</definition>
         <argsstring></argsstring>
@@ -111,13 +111,13 @@
         <briefdescription>
 <para>An unique callback identifier returned by qdb_log_add_callback. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="log_8h_1aaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="log_8h_1add4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="75" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/log.h" bodystart="75" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="76" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/log.h" bodystart="76" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="typedef" id="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" prot="public" static="no">
+      <memberdef kind="typedef" id="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" prot="public" static="no">
         <type>void(*</type>
         <definition>qdb_log_callback</definition>
         <argsstring>)(qdb_log_level_t, const unsigned long *, unsigned long, unsigned long, const char *, size_t)</argsstring>
@@ -125,25 +125,25 @@
         <briefdescription>
 <para>A typedef representing a log callback. </para>        </briefdescription>
         <detaileddescription>
-<para>The profile of the functions</para><para><simplesect kind="see"><para><ref refid="log_8h_1aaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="log_8h_1add4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+<para>The profile of the functions</para><para><simplesect kind="see"><para><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="84" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/log.h" bodystart="84" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="85" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/log.h" bodystart="85" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="log_8h_1aaedde07e4ca97105358685c6b31c8301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__log_1gaaedde07e4ca97105358685c6b31c8301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_log_add_callback</definition>
         <argsstring>(qdb_log_callback cb, qdb_log_callback_id *callback_id)</argsstring>
         <name>qdb_log_add_callback</name>
         <param>
-          <type><ref refid="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref></type>
+          <type><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref></type>
           <declname>cb</declname>
         </param>
         <param>
-          <type><ref refid="log_8h_1a6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref> *</type>
+          <type><ref refid="group__log_1ga6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref> *</type>
           <declname>callback_id</declname>
         </param>
         <briefdescription>
@@ -165,19 +165,19 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="log_8h_1add4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="107" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="108" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="log_8h_1add4e2284dfa7a452b2a3d5820e17c582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_log_remove_callback</definition>
         <argsstring>(qdb_log_callback_id callback_id)</argsstring>
         <name>qdb_log_remove_callback</name>
         <param>
-          <type><ref refid="log_8h_1a6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref></type>
+          <type><ref refid="group__log_1ga6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref></type>
           <declname>callback_id</declname>
         </param>
         <briefdescription>
@@ -192,11 +192,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="log_8h_1aaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="116" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/log.h" line="117" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -207,83 +207,84 @@
 <codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>QDB_API_LOG_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QDB_API_LOG_H</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="3"><highlight class="normal"></highlight></codeline>
-<codeline lineno="6"><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="7"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="8"><highlight class="comment"><sp/>*<sp/>Official<sp/>quasardb<sp/>C<sp/>API<sp/>@QDB_VERSION@</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>@QDB_BUILD_REFERENCE@</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2009-2016,<sp/>quasardb<sp/>SAS</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
-<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
-<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>quasardb<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/>may</highlight></codeline>
-<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software</highlight></codeline>
-<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
-<codeline lineno="25"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="26"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>QUASARDB<sp/>AND<sp/>CONTRIBUTORS<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
-<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED</highlight></codeline>
-<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE</highlight></codeline>
-<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>REGENTS<sp/>AND<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY</highlight></codeline>
-<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES</highlight></codeline>
-<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
-<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND</highlight></codeline>
-<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
-<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS</highlight></codeline>
-<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
-<codeline lineno="36"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="37"><highlight class="normal"></highlight></codeline>
-<codeline lineno="38"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="error_8h" kindref="compound">qdb/error.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="50"></codeline>
-<codeline lineno="55"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref><sp/>{</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" kindref="member">qdb_log_detailed</ref><sp/>=<sp/>100,</highlight></codeline>
-<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" kindref="member">qdb_log_debug</ref><sp/>=<sp/>200,</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" kindref="member">qdb_log_info</ref><sp/>=<sp/>300,</highlight></codeline>
-<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" kindref="member">qdb_log_warning</ref><sp/>=<sp/>400,</highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" kindref="member">qdb_log_error</ref><sp/>=<sp/>500,</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1a8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" kindref="member">qdb_log_panic</ref><sp/>=<sp/>600</highlight></codeline>
-<codeline lineno="68"><highlight class="normal">}<sp/><ref refid="log_8h_1ae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="75"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="log_8h_1a6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref>;</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"></highlight></codeline>
-<codeline lineno="84"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>)(</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>log<sp/>level<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="comment">/*<sp/>[year,<sp/>month,<sp/>day,<sp/>hours,</highlight></codeline>
-<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minutes,<sp/>seconds]<sp/>(valid<sp/>only</highlight></codeline>
-<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>context<sp/>of<sp/>the<sp/>callback)</highlight></codeline>
-<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>process<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>thread<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>(valid<sp/>only<sp/>in<sp/>the</highlight></codeline>
-<codeline lineno="93"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/>of<sp/>the<sp/>callback)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="96"><highlight class="normal"></highlight></codeline>
-<codeline lineno="106"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><ref refid="log_8h_1aaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>(<ref refid="log_8h_1a27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref><sp/>cb,<sp/>qdb_log_callback_id<sp/>*<sp/>callback_id);</highlight></codeline>
-<codeline lineno="108"><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><ref refid="log_8h_1add4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref>(qdb_log_callback_id<sp/>callback_id);</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_LOG_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Official<sp/>quasardb<sp/>C<sp/>API<sp/>@QDB_VERSION@</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>@QDB_BUILD_REFERENCE@</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2009-@QDB_COPYRIGHT_YEAR@,<sp/>quasardb<sp/>SAS</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>quasardb<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/>may</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>QUASARDB<sp/>AND<sp/>CONTRIBUTORS<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>REGENTS<sp/>AND<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="error_8h" kindref="compound">qdb/error.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"></codeline>
+<codeline lineno="56"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__log_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref><sp/>{</highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" kindref="member">qdb_log_detailed</ref><sp/>=<sp/>100,</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" kindref="member">qdb_log_debug</ref><sp/>=<sp/>200,</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" kindref="member">qdb_log_info</ref><sp/>=<sp/>300,</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" kindref="member">qdb_log_warning</ref><sp/>=<sp/>400,</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" kindref="member">qdb_log_error</ref><sp/>=<sp/>500,</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" kindref="member">qdb_log_panic</ref><sp/>=<sp/>600</highlight></codeline>
+<codeline lineno="69"><highlight class="normal">}<sp/><ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__log_1ga6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref>;</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"></highlight></codeline>
+<codeline lineno="85"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>)(</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>log<sp/>level<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="comment">/*<sp/>[year,<sp/>month,<sp/>day,<sp/>hours,</highlight></codeline>
+<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minutes,<sp/>seconds]<sp/>(valid<sp/>only</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>context<sp/>of<sp/>the<sp/>callback)</highlight></codeline>
+<codeline lineno="90"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>process<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>thread<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>(valid<sp/>only<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="94"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/>of<sp/>the<sp/>callback)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>(<ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref><sp/>cb,<sp/>qdb_log_callback_id<sp/>*<sp/>callback_id);</highlight></codeline>
+<codeline lineno="109"><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="117"><highlight class="normal"><ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref>(qdb_log_callback_id<sp/>callback_id);</highlight></codeline>
+<codeline lineno="118"><highlight class="normal"></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_LOG_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="D:/workspace/quasardb/api/include/qdb/log.h"/>
+    <location file="C:/sources/quasardb/api/include/qdb/log.h"/>
   </compounddef>
 </doxygen>

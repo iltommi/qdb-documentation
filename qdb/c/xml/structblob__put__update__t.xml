@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structblob__put__update__t" kind="struct" language="C++" prot="public">
+    <compoundname>blob_put_update_t</compoundname>
+    <includes local="no">batch.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structblob__put__update__t_1acf495f7b69a76fdb31d079b08cefbb93" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* blob_put_update_t::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <briefdescription>
+<para>A pointer to the buffer with the data to be written. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="101" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="101" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structblob__put__update__t_1ac2ee57e5b05bce4588d2359b2008c3d2" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+        <definition>qdb_size_t blob_put_update_t::content_size</definition>
+        <argsstring></argsstring>
+        <name>content_size</name>
+        <briefdescription>
+<para>The size of the buffer pointed by content. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="103" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="103" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structblob__put__update__t_1a598967c3300a24672d0693eb3da3ea86" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref></type>
+        <definition>qdb_time_t blob_put_update_t::expiry_time</definition>
+        <argsstring></argsstring>
+        <name>expiry_time</name>
+        <briefdescription>
+<para>The optional expiration time. Use qdb_never_expires for no expiration. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="105" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="105" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>The required parameters for a blob put or update operations within a batch. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="99" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="98" bodyend="106"/>
+    <listofallmembers>
+      <member refid="structblob__put__update__t_1acf495f7b69a76fdb31d079b08cefbb93" prot="public" virt="non-virtual"><scope>blob_put_update_t</scope><name>content</name></member>
+      <member refid="structblob__put__update__t_1ac2ee57e5b05bce4588d2359b2008c3d2" prot="public" virt="non-virtual"><scope>blob_put_update_t</scope><name>content_size</name></member>
+      <member refid="structblob__put__update__t_1a598967c3300a24672d0693eb3da3ea86" prot="public" virt="non-virtual"><scope>blob_put_update_t</scope><name>expiry_time</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

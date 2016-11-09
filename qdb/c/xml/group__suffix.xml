@@ -1,13 +1,13 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="group__suffix" kind="group">
     <compoundname>suffix</compoundname>
     <title>Suffix-based operations</title>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__suffix_1gaafa6694ef459194fe3d7c78a35cb6e19" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__suffix_1gab96e2070e54f4d52ec966e627c06264a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_suffix_get</definition>
-        <argsstring>(qdb_handle_t handle, const char *suffix, qdb_int_t max_count, const char ***results, size_t *results_count)</argsstring>
+        <argsstring>(qdb_handle_t handle, const char *suffix, qdb_int_t max_count, const char ***results, size_t *result_count)</argsstring>
         <name>qdb_suffix_get</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -27,7 +27,7 @@
         </param>
         <param>
           <type>size_t *</type>
-          <declname>results_count</declname>
+          <declname>result_count</declname>
         </param>
         <briefdescription>
 <para>Retrieves the list of all entries matching the provided suffix. </para>        </briefdescription>
@@ -62,7 +62,7 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>results_count</parametername>
+<parametername>result_count</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an integer giving the results count </para></parameterdescription>
@@ -73,7 +73,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/suffix.h" line="66" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/suffix.h" line="65" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

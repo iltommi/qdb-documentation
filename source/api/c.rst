@@ -208,6 +208,132 @@ By default, entries never expire. To obtain the expiry time of an existing entry
     :end-before: doc-end-get_expiry_time
     :dedent: 12
 
+Integers
+----------
+
+Quasardb supports signed 64-bit integers natively. All operations on integers are guaranteed to be atomic. Likes blobs, integers support put (:func:`qdb_int_put`),
+update (:func:`qdb_int_update`), get (:func:`qdb_int_get`) and remove (:func:`qdb_remove`):
+
+.. literalinclude:: ../../../../examples/c/int_basics.c
+    :start-after: doc-start-int_basics
+    :end-before: doc-end-int_basics
+    :dedent: 12
+
+Quasardb API defines a cross platform integer to be used with all integer operations: `qdb_int_t`. You are strongly encouraged to use this type.
+
+In addition to basic put/update/get/remove operations, integers support atomic increment and decrement through the :func:`qdb_int_add` function:
+
+.. literalinclude:: ../../../../examples/c/int_add.c
+    :start-after: doc-start-int_add
+    :end-before: doc-end-int_add
+    :dedent: 12
+
+The :func:`qdb_int_add` function requires the entry to already exist.
+
+Quasardb integers storage on disk is highly optimized and increment/decrement use native instruction. If you are working on 64-bit signed integers, using quasardb native integers can deliver a significant performance boost.
+
+Tags
+------
+
+Any entry can have an arbitrary number of tags, and you can lookup entries based on their tags. In other words, you can ask quasardb questions like "give me all the entry having the tag X". You can only tag existing entries.
+
+You can add a tag to an entry one at a time (:func:`qdb_attach_tag`), or add several tags at once (:func:`qdb_attach_tags`):
+
+.. literalinclude:: ../../../../examples/c/tags.c
+    :start-after: doc-start-tag_attach
+    :end-before: doc-end-tag_attach
+    :dedent:12
+
+To remove a tag, use :func:`qdb_detach_tag`:
+
+.. literalinclude:: ../../../../examples/c/tags.c
+    :start-after: doc-start-tag_detach
+    :end-before: doc-end-tag_detach
+    :dedent:12
+
+To retrieve the entries matching a tag, there are two possibilities. 
+
+If you think the number of returned entries will be reasonable (e.g. easily fits in RAM), you can use :func:`qdb_get_tagged`:
+
+..literalinclude:: ../../../../examples/c/tags.c
+    :start-after: doc-start-tag_get
+    :end-before: doc-end-tag_get
+    :dedent:12
+
+If that number can exceed millions of entries, you may want to iterate over the results to avoid exhausting the client memory:
+
+..literalinclude:: ../../../../examples/c/tags.c
+    :start-after: doc-start-tag_iterate
+    :end-before: doc-end-tag_iterate
+    :dedent:12
+
+Iteration prefetches the result to optimize network traffic and occurs on a snapshot of the database (concurrent operations are invisible).
+
+Removing an entry correctly updates the associated tags, in other words, a removed entry will no longer be reported as tagged.
+
+Double-ended queues
+---------------------
+
+..warning::
+    Doubled-ended queues are still considered experimental.
+
+Double-ended queues (deques) are distributed containers that support concurrent insertion and removal at the beginning and the end. Random access to any element within the queue is also supported.
+
+There is no limit to the number of entries in a deque, no limit to the size of the entries within the deque.
+
+To create a deque, you push elements to it using either :func:`qdb_deque_push_front` or :func:`qdb_deque_push_back`. Each function has a constant complexity and will span the deque accross nodes as it grows.
+
+..literalinclude:: ../../../../examples/c/deque.c
+    :start-after: doc-start-deque_push
+    :end-before: doc-end-deque_push
+    :dedent:12
+
+Push operations are atomic and safe to use concurrently.
+
+To access elements within a deque, you can either use :func:`qdb_deque_front`, :func:`qdb_deque_back` or :func:`qdb_deque_get_at`. Each function has a constant complexity, independenant of the length of the deque. The :func:`qdb_deque_get_at` use 0 based index, 0 representing the front item.
+
+..literalinclude:: ../../../../examples/c/deque.c
+    :start-after: doc-start-deque_axx
+    :end-before: doc-end-deque_axx
+    :dedent:12
+
+It is possible to atomically update any entry within the deque with :func:`qdb_deque_set_at`:
+
+..literalinclude:: ../../../../examples/c/deque.c
+    :start-after: doc-start-deque_axx
+    :end-before: doc-end-deque_axx
+    :dedent:12
+
+In addition to accessing entries, it is also possible to atomically remove and retrieve an entry with the :func:`qdb_deque_pop_front` and :func:`qdb_deque_pop_back` functions:
+
+..literalinclude:: ../../../../examples/c/deque.c
+    :start-after: doc-start-deque_set
+    :end-before: doc-end-deque_set
+    :dedent:12
+
+A deque can be empty. You can query the size of the deque with the :func:`qdb_deque_size` function:
+
+..literalinclude:: ../../../../examples/c/deque.c
+    :start-after: doc-start-deque_size
+    :end-before: doc-end-deque_size
+    :dedent:12
+
+To fully a deque, use :func:`qdb_remove`, like any other entry type:
+
+..literalinclude:: ../../../../examples/c/deque.c
+    :start-after: doc-start-deque_remove
+    :end-before: doc-end-deque_remove
+    :dedent:12
+
+Removing a deque has a linear complexity.
+
+Hashed sets
+-------------
+
+..warning::
+    Hashed sets are still considered experimental.
+
+
 Batch operations
 -----------------
 

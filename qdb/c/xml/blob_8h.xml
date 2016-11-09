@@ -1,18 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="blob_8h" kind="file" language="C++">
     <compoundname>blob.h</compoundname>
     <includes refid="client_8h" local="no">qdb/client.h</includes>
     <incdepgraph>
-      <node id="26">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
+      <node id="30">
+        <label>stdint.h</label>
       </node>
-      <node id="27">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="26" relation="include">
-        </childnode>
+      <node id="28">
+        <label>stddef.h</label>
       </node>
       <node id="25">
         <label>qdb/client.h</label>
@@ -28,20 +24,24 @@
         <childnode refid="30" relation="include">
         </childnode>
       </node>
-      <node id="30">
-        <label>stdint.h</label>
+      <node id="27">
+        <label>qdb/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="26" relation="include">
+        </childnode>
       </node>
       <node id="24">
-        <label>D:/workspace/quasardb/api/include/qdb/blob.h</label>
-        <link refid="blob.h"/>
+        <label>C:/sources/quasardb/api/include/qdb/blob.h</label>
+        <link refid="blob_8h"/>
         <childnode refid="25" relation="include">
         </childnode>
       </node>
-      <node id="28">
-        <label>stddef.h</label>
-      </node>
       <node id="29">
         <label>time.h</label>
+      </node>
+      <node id="26">
+        <label>qdb/_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -102,7 +102,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="71" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="70" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -161,7 +161,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="96" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="95" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -231,7 +231,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="129" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="128" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gacccb11b84a007ec4f2036ec316060282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -290,7 +290,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="161" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="160" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga67db324cbeccb7f130f8006830468d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -360,7 +360,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="191" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="190" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga79aafb696593432010c6d624f0894061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -430,7 +430,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="221" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="220" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaef0400b3b58a23ebffe6085641581e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -522,7 +522,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="243" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="242" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -614,7 +614,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="274" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="273" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -728,7 +728,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="315" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="314" column="1"/>
       </memberdef>
       <memberdef kind="function" id="blob_8h_1a807cfac5f74e781b9ad967531c85bad8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -781,7 +781,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="327" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="326" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -840,7 +840,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="354" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="353" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -922,7 +922,7 @@ The complexity of this function is linear in the number of entries.</para><para>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="379" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="378" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -994,7 +994,7 @@ The complexity of this function is linear in the number of entries.</para><para>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="410" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="409" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1002,148 +1002,147 @@ The complexity of this function is linear in the number of entries.</para><para>
     <detaileddescription>
     </detaileddescription>
     <programlisting>
-<codeline lineno="1"><highlight class="normal"></highlight></codeline>
-<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#ifndef<sp/>QDB_API_BLOB_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="3"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QDB_API_BLOB_H</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="4"><highlight class="normal"></highlight></codeline>
-<codeline lineno="7"><highlight class="normal"></highlight></codeline>
-<codeline lineno="8"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
-<codeline lineno="9"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>Official<sp/>quasardb<sp/>C<sp/>API<sp/>@QDB_VERSION@</highlight></codeline>
-<codeline lineno="11"><highlight class="comment"><sp/>*<sp/>@QDB_BUILD_REFERENCE@</highlight></codeline>
-<codeline lineno="12"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2009-2016,<sp/>quasardb<sp/>SAS</highlight></codeline>
-<codeline lineno="14"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
-<codeline lineno="15"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
-<codeline lineno="17"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
-<codeline lineno="18"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
-<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
-<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
-<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
-<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
-<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>quasardb<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/>may</highlight></codeline>
-<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software</highlight></codeline>
-<codeline lineno="26"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
-<codeline lineno="27"><highlight class="comment"><sp/>*</highlight></codeline>
-<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>QUASARDB<sp/>AND<sp/>CONTRIBUTORS<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
-<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED</highlight></codeline>
-<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE</highlight></codeline>
-<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>REGENTS<sp/>AND<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY</highlight></codeline>
-<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES</highlight></codeline>
-<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
-<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND</highlight></codeline>
-<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
-<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS</highlight></codeline>
-<codeline lineno="37"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
-<codeline lineno="38"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="client_8h" kindref="compound">qdb/client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga815f319575a422331ed4d5eed0cc69bf" kindref="member">qdb_blob_get_noalloc</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length);</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"></highlight></codeline>
-<codeline lineno="96"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" kindref="member">qdb_blob_get</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>content,</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length);</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight></codeline>
-<codeline lineno="129"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" kindref="member">qdb_reserved_blob_get</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>content,</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length,</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>offset);</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"></highlight></codeline>
-<codeline lineno="160"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><ref refid="group__blob_1gacccb11b84a007ec4f2036ec316060282" kindref="member">qdb_blob_get_and_remove</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>content,</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length);</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"></highlight></codeline>
-<codeline lineno="191"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga67db324cbeccb7f130f8006830468d12" kindref="member">qdb_blob_put</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length,</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/><ref refid="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" kindref="member">expiry_time</ref>);</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="221"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga79aafb696593432010c6d624f0894061" kindref="member">qdb_blob_update</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
-<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length,</highlight></codeline>
-<codeline lineno="225"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/><ref refid="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" kindref="member">expiry_time</ref>);</highlight></codeline>
-<codeline lineno="226"><highlight class="normal"></highlight></codeline>
-<codeline lineno="243"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1gaef0400b3b58a23ebffe6085641581e53" kindref="member">qdb_reserved_blob_merge</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
-<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length,</highlight></codeline>
-<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>offset,</highlight></codeline>
-<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>truncate,</highlight></codeline>
-<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/><ref refid="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" kindref="member">expiry_time</ref>);</highlight></codeline>
-<codeline lineno="250"><highlight class="normal"></highlight></codeline>
-<codeline lineno="273"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="274"><highlight class="normal"><ref refid="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" kindref="member">qdb_blob_get_and_update</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>update_content,</highlight></codeline>
-<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>update_content_length,</highlight></codeline>
-<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/><ref refid="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" kindref="member">expiry_time</ref>,</highlight></codeline>
-<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>get_content,</highlight></codeline>
-<codeline lineno="280"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>get_content_length);</highlight></codeline>
-<codeline lineno="281"><highlight class="normal"></highlight></codeline>
-<codeline lineno="314"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="315"><highlight class="normal"><ref refid="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" kindref="member">qdb_blob_compare_and_swap</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>new_value,</highlight></codeline>
-<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>new_value_length,</highlight></codeline>
-<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>comparand,</highlight></codeline>
-<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_length,</highlight></codeline>
-<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/><ref refid="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" kindref="member">expiry_time</ref>,</highlight></codeline>
-<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>original_value,</highlight></codeline>
-<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>original_value_length);</highlight></codeline>
-<codeline lineno="324"><highlight class="normal"></highlight></codeline>
-<codeline lineno="325"><highlight class="normal"></highlight><highlight class="comment">//<sp/>partial<sp/>comparand,<sp/>complete<sp/>swap</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="326"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="327"><highlight class="normal">qdb_reserved_blob_cas_partial(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>new_value,</highlight></codeline>
-<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>new_value_length,</highlight></codeline>
-<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>comparand,</highlight></codeline>
-<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_length,</highlight></codeline>
-<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_offset,</highlight></codeline>
-<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/><ref refid="structint__put__update__t_1aebe6a874bc403a9695806625896c7821" kindref="member">expiry_time</ref>,</highlight></codeline>
-<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>original_value,</highlight></codeline>
-<codeline lineno="336"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>original_value_length);</highlight></codeline>
-<codeline lineno="337"><highlight class="normal"></highlight></codeline>
-<codeline lineno="354"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" kindref="member">qdb_blob_remove_if</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>comparand,</highlight></codeline>
-<codeline lineno="357"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_length);</highlight></codeline>
-<codeline lineno="358"><highlight class="normal"></highlight></codeline>
-<codeline lineno="379"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" kindref="member">qdb_blob_scan</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>pattern,</highlight></codeline>
-<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>pattern_length,</highlight></codeline>
-<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref><sp/>max_count,</highlight></codeline>
-<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>***<sp/>aliases,</highlight></codeline>
-<codeline lineno="384"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<sp/>alias_count);</highlight></codeline>
-<codeline lineno="385"><highlight class="normal"></highlight></codeline>
-<codeline lineno="410"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" kindref="member">qdb_blob_scan_regex</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>pattern,</highlight></codeline>
-<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref><sp/>max_count,</highlight></codeline>
-<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>***<sp/>aliases,</highlight></codeline>
-<codeline lineno="414"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<sp/>alias_count);</highlight></codeline>
-<codeline lineno="415"><highlight class="normal"></highlight></codeline>
-<codeline lineno="416"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="417"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="418"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="419"><highlight class="normal"></highlight></codeline>
-<codeline lineno="420"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="1"><highlight class="preprocessor">#ifndef<sp/>QDB_API_BLOB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>QDB_API_BLOB_H</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight><highlight class="comment">/*</highlight></codeline>
+<codeline lineno="8"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="9"><highlight class="comment"><sp/>*<sp/>Official<sp/>quasardb<sp/>C<sp/>API<sp/>@QDB_VERSION@</highlight></codeline>
+<codeline lineno="10"><highlight class="comment"><sp/>*<sp/>@QDB_BUILD_REFERENCE@</highlight></codeline>
+<codeline lineno="11"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="12"><highlight class="comment"><sp/>*<sp/>Copyright<sp/>(c)<sp/>2009-@QDB_COPYRIGHT_YEAR@,<sp/>quasardb<sp/>SAS</highlight></codeline>
+<codeline lineno="13"><highlight class="comment"><sp/>*<sp/>All<sp/>rights<sp/>reserved.</highlight></codeline>
+<codeline lineno="14"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="15"><highlight class="comment"><sp/>*<sp/>Redistribution<sp/>and<sp/>use<sp/>in<sp/>source<sp/>and<sp/>binary<sp/>forms,<sp/>with<sp/>or<sp/>without</highlight></codeline>
+<codeline lineno="16"><highlight class="comment"><sp/>*<sp/>modification,<sp/>are<sp/>permitted<sp/>provided<sp/>that<sp/>the<sp/>following<sp/>conditions<sp/>are<sp/>met:</highlight></codeline>
+<codeline lineno="17"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="18"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>of<sp/>source<sp/>code<sp/>must<sp/>retain<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="19"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer.</highlight></codeline>
+<codeline lineno="20"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Redistributions<sp/>in<sp/>binary<sp/>form<sp/>must<sp/>reproduce<sp/>the<sp/>above<sp/>copyright</highlight></codeline>
+<codeline lineno="21"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>notice,<sp/>this<sp/>list<sp/>of<sp/>conditions<sp/>and<sp/>the<sp/>following<sp/>disclaimer<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="22"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>documentation<sp/>and/or<sp/>other<sp/>materials<sp/>provided<sp/>with<sp/>the<sp/>distribution.</highlight></codeline>
+<codeline lineno="23"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/>*<sp/>Neither<sp/>the<sp/>name<sp/>of<sp/>quasardb<sp/>nor<sp/>the<sp/>names<sp/>of<sp/>its<sp/>contributors<sp/>may</highlight></codeline>
+<codeline lineno="24"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>be<sp/>used<sp/>to<sp/>endorse<sp/>or<sp/>promote<sp/>products<sp/>derived<sp/>from<sp/>this<sp/>software</highlight></codeline>
+<codeline lineno="25"><highlight class="comment"><sp/>*<sp/><sp/><sp/><sp/><sp/><sp/>without<sp/>specific<sp/>prior<sp/>written<sp/>permission.</highlight></codeline>
+<codeline lineno="26"><highlight class="comment"><sp/>*</highlight></codeline>
+<codeline lineno="27"><highlight class="comment"><sp/>*<sp/>THIS<sp/>SOFTWARE<sp/>IS<sp/>PROVIDED<sp/>BY<sp/>QUASARDB<sp/>AND<sp/>CONTRIBUTORS<sp/>``AS<sp/>IS&apos;&apos;<sp/>AND<sp/>ANY</highlight></codeline>
+<codeline lineno="28"><highlight class="comment"><sp/>*<sp/>EXPRESS<sp/>OR<sp/>IMPLIED<sp/>WARRANTIES,<sp/>INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>THE<sp/>IMPLIED</highlight></codeline>
+<codeline lineno="29"><highlight class="comment"><sp/>*<sp/>WARRANTIES<sp/>OF<sp/>MERCHANTABILITY<sp/>AND<sp/>FITNESS<sp/>FOR<sp/>A<sp/>PARTICULAR<sp/>PURPOSE<sp/>ARE</highlight></codeline>
+<codeline lineno="30"><highlight class="comment"><sp/>*<sp/>DISCLAIMED.<sp/>IN<sp/>NO<sp/>EVENT<sp/>SHALL<sp/>THE<sp/>REGENTS<sp/>AND<sp/>CONTRIBUTORS<sp/>BE<sp/>LIABLE<sp/>FOR<sp/>ANY</highlight></codeline>
+<codeline lineno="31"><highlight class="comment"><sp/>*<sp/>DIRECT,<sp/>INDIRECT,<sp/>INCIDENTAL,<sp/>SPECIAL,<sp/>EXEMPLARY,<sp/>OR<sp/>CONSEQUENTIAL<sp/>DAMAGES</highlight></codeline>
+<codeline lineno="32"><highlight class="comment"><sp/>*<sp/>(INCLUDING,<sp/>BUT<sp/>NOT<sp/>LIMITED<sp/>TO,<sp/>PROCUREMENT<sp/>OF<sp/>SUBSTITUTE<sp/>GOODS<sp/>OR<sp/>SERVICES;</highlight></codeline>
+<codeline lineno="33"><highlight class="comment"><sp/>*<sp/>LOSS<sp/>OF<sp/>USE,<sp/>DATA,<sp/>OR<sp/>PROFITS;<sp/>OR<sp/>BUSINESS<sp/>INTERRUPTION)<sp/>HOWEVER<sp/>CAUSED<sp/>AND</highlight></codeline>
+<codeline lineno="34"><highlight class="comment"><sp/>*<sp/>ON<sp/>ANY<sp/>THEORY<sp/>OF<sp/>LIABILITY,<sp/>WHETHER<sp/>IN<sp/>CONTRACT,<sp/>STRICT<sp/>LIABILITY,<sp/>OR<sp/>TORT</highlight></codeline>
+<codeline lineno="35"><highlight class="comment"><sp/>*<sp/>(INCLUDING<sp/>NEGLIGENCE<sp/>OR<sp/>OTHERWISE)<sp/>ARISING<sp/>IN<sp/>ANY<sp/>WAY<sp/>OUT<sp/>OF<sp/>THE<sp/>USE<sp/>OF<sp/>THIS</highlight></codeline>
+<codeline lineno="36"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
+<codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="38"><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="client_8h" kindref="compound">qdb/client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="70"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga815f319575a422331ed4d5eed0cc69bf" kindref="member">qdb_blob_get_noalloc</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length);</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="95"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" kindref="member">qdb_blob_get</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="97"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>content,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length);</highlight></codeline>
+<codeline lineno="99"><highlight class="normal"></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" kindref="member">qdb_reserved_blob_get</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>content,</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length,</highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>offset);</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"></highlight></codeline>
+<codeline lineno="159"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><ref refid="group__blob_1gacccb11b84a007ec4f2036ec316060282" kindref="member">qdb_blob_get_and_remove</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>content,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>content_length);</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"></highlight></codeline>
+<codeline lineno="190"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga67db324cbeccb7f130f8006830468d12" kindref="member">qdb_blob_put</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
+<codeline lineno="193"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length,</highlight></codeline>
+<codeline lineno="194"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/>expiry_time);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="220"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga79aafb696593432010c6d624f0894061" kindref="member">qdb_blob_update</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length,</highlight></codeline>
+<codeline lineno="224"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/>expiry_time);</highlight></codeline>
+<codeline lineno="225"><highlight class="normal"></highlight></codeline>
+<codeline lineno="242"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1gaef0400b3b58a23ebffe6085641581e53" kindref="member">qdb_reserved_blob_merge</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="243"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="244"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content,</highlight></codeline>
+<codeline lineno="245"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length,</highlight></codeline>
+<codeline lineno="246"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>offset,</highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>truncate,</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/>expiry_time);</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"></highlight></codeline>
+<codeline lineno="272"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="273"><highlight class="normal"><ref refid="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" kindref="member">qdb_blob_get_and_update</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>update_content,</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>update_content_length,</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/>expiry_time,</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>get_content,</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>get_content_length);</highlight></codeline>
+<codeline lineno="280"><highlight class="normal"></highlight></codeline>
+<codeline lineno="313"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="314"><highlight class="normal"><ref refid="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" kindref="member">qdb_blob_compare_and_swap</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="315"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="316"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>new_value,</highlight></codeline>
+<codeline lineno="317"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>new_value_length,</highlight></codeline>
+<codeline lineno="318"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>comparand,</highlight></codeline>
+<codeline lineno="319"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_length,</highlight></codeline>
+<codeline lineno="320"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/>expiry_time,</highlight></codeline>
+<codeline lineno="321"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>original_value,</highlight></codeline>
+<codeline lineno="322"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>original_value_length);</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal"></highlight><highlight class="comment">//<sp/>partial<sp/>comparand,<sp/>complete<sp/>swap</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="325"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="326"><highlight class="normal">qdb_reserved_blob_cas_partial(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="327"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="328"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>new_value,</highlight></codeline>
+<codeline lineno="329"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>new_value_length,</highlight></codeline>
+<codeline lineno="330"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>comparand,</highlight></codeline>
+<codeline lineno="331"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_length,</highlight></codeline>
+<codeline lineno="332"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_offset,</highlight></codeline>
+<codeline lineno="333"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref><sp/>expiry_time,</highlight></codeline>
+<codeline lineno="334"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>original_value,</highlight></codeline>
+<codeline lineno="335"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>original_value_length);</highlight></codeline>
+<codeline lineno="336"><highlight class="normal"></highlight></codeline>
+<codeline lineno="353"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" kindref="member">qdb_blob_remove_if</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>comparand,</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>comparand_length);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="378"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" kindref="member">qdb_blob_scan</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="379"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>pattern,</highlight></codeline>
+<codeline lineno="380"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>pattern_length,</highlight></codeline>
+<codeline lineno="381"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref><sp/>max_count,</highlight></codeline>
+<codeline lineno="382"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>***<sp/>aliases,</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<sp/>alias_count);</highlight></codeline>
+<codeline lineno="384"><highlight class="normal"></highlight></codeline>
+<codeline lineno="409"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" kindref="member">qdb_blob_scan_regex</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="410"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>pattern,</highlight></codeline>
+<codeline lineno="411"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref><sp/>max_count,</highlight></codeline>
+<codeline lineno="412"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>***<sp/>aliases,</highlight></codeline>
+<codeline lineno="413"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<sp/>alias_count);</highlight></codeline>
+<codeline lineno="414"><highlight class="normal"></highlight></codeline>
+<codeline lineno="415"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="416"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="417"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="418"><highlight class="normal"></highlight></codeline>
+<codeline lineno="419"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="D:/workspace/quasardb/api/include/qdb/blob.h"/>
+    <location file="C:/sources/quasardb/api/include/qdb/blob.h"/>
   </compounddef>
 </doxygen>
