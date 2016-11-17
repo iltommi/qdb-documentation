@@ -102,13 +102,13 @@ def build():
 import inspect
 
 def _api_buffer_to_string(buf):
-    return None if buf is None else str(buf.data())[:buf.size()]
+    return None if buf is None else impl.api_buffer_ptr_as_string(buf)
 
-def _string_to_api_buffer(h, str):
+def _string_to_api_buffer(h, s):
     """
     Converts a string to an internal qdb::api_buffer_ptr
     """
-    return None if str is None else impl.make_api_buffer_ptr_from_string(h, str)
+    return None if s is None else impl.make_api_buffer_ptr_from_string(h, s)
 
 class TimeZone(datetime.tzinfo):
     """The quasardb time zone is UTC. Please refer to the documentation for further information."""
@@ -125,7 +125,7 @@ class TimeZone(datetime.tzinfo):
 tz = TimeZone()
 
 def _convert_expiry_time(expiry_time):
-    return long(calendar.timegm(expiry_time.timetuple())) if expiry_time != None else long(0)
+    return 1000 * long(calendar.timegm(expiry_time.timetuple())) if expiry_time != None else long(0)
 
 def make_error_carrier():
     err = impl.error_carrier()
@@ -144,17 +144,17 @@ class Entry(object):
         """
         return self.__alias
 
-    def add_tag(self, tag):
+    def attach_tag(self, tag):
         """
-            Tag the entry with "new_tag"
+            Attach a tag to the entry
 
-            :param tag: The tag to add
+            :param tag: The tag to attach
             :type tag: str
 
-            :returns: True if the tag was successfully add, False if it was already set
+            :returns: True if the tag was successfully attached, False if it was already attached
             :raises: QuasardbException
         """
-        err = self.handle.add_tag(self.alias(), tag)
+        err = self.handle.attach_tag(self.alias(), tag)
         if err == impl.error_tag_already_set:
             return False
 
@@ -163,17 +163,17 @@ class Entry(object):
 
         return True
 
-    def remove_tag(self, tag):
+    def detach_tag(self, tag):
         """
-            Remove the tag (untag) from the entry
+            Detach a tag from the entry
 
-            :param tag: The tag to remove
+            :param tag: The tag to detach
             :type tag: str
 
-            :returns: True if the tag was successfully removed, False if it was not set
+            :returns: True if the tag was successfully detached, False if it was not attached
             :raises: QuasardbException
         """
-        err = self.handle.remove_tag(self.alias(), tag)
+        err = self.handle.detach_tag(self.alias(), tag)
 
         if err == impl.error_tag_not_set:
             return False
@@ -185,9 +185,9 @@ class Entry(object):
 
     def get_tags(self):
         """
-            Returns the list of tags of the entry
+            Returns the list of tags attached to the entry
 
-            :returns: A list of strings representing the entries with the specified tag
+            :returns: A list of alias (stings) of tags
             :raises: QuasardbException
         """
         err = make_error_carrier()
@@ -198,7 +198,7 @@ class Entry(object):
 
     def has_tag(self, tag):
         """
-            Returns true if and only if the entry is tagged with tag
+            Test if a tag is attached to the entry
 
             :param tag: The tag to test
             :type tag: str
@@ -222,7 +222,7 @@ class RemoveableEntry(Entry):
         super(RemoveableEntry, self).__init__(handle, alias)
 
     def remove(self):
-        """ 
+        """
             Removes the given Entry from the repository. It is an error to remove a non-existing Entry.
 
             :raises: QuasardbException
@@ -251,9 +251,9 @@ class ExpirableEntry(RemoveableEntry):
 
     def expires_from_now(self, expiry_delta):
         """
-            Sets the expiry time of an existing Entry relative to the current time, in seconds.
+            Sets the expiry time of an existing Entry relative to the current time, in milliseconds.
 
-            :param expiry_delta: The expiry delta in seconds
+            :param expiry_delta: The expiry delta in milliseconds
             :type expiry_delta: long
 
             :raises: QuasardbException
@@ -345,7 +345,7 @@ class Integer(ExpirableEntry):
         """
         assert(isinstance(number, long) or isinstance(number, int))
         err = self.handle.int_update(super(Integer, self).alias(), number, _convert_expiry_time(expiry_time))
-        if err != impl.error_ok:
+        if not ((err == impl.error_ok) or (err == impl.error_ok_created)):
             raise QuasardbException(err)
 
     def add(self, addend):
@@ -538,7 +538,7 @@ class Blob(ExpirableEntry):
             :raises: QuasardbException
         """
         err = self.handle.blob_update(super(Blob, self).alias(), data, _convert_expiry_time(expiry_time))
-        if err != impl.error_ok:
+        if not ((err == impl.error_ok) or (err == impl.error_ok_created)):
             raise QuasardbException(err)
 
     def get(self):
@@ -607,7 +607,7 @@ class Blob(ExpirableEntry):
         err = make_error_carrier()
         buf = impl.blob_compare_and_swap(self.handle, super(Blob, self).alias(), new_data, comparand, _convert_expiry_time(expiry_time), err)
         if err.error == impl.error_unmatched_content:
-        	return _api_buffer_to_string(buf)
+            return _api_buffer_to_string(buf)
 
         if err.error != impl.error_ok:
             raise QuasardbException(err.error)
@@ -709,24 +709,30 @@ class Cluster(object):
         """
         return Tag(self.handle, alias)
 
-    def purge_all(self):
+    def purge_all(self, timeout):
         """ Removes all the entries from all nodes of the cluster.
+
+            :param timeout: Operation timeout, in milliseconds
+            :type timeout: long
 
             :raises: QuasardbException
 
             .. caution::
                 This method is intended for very specific usage scenarii. Use at your own risks.
         """
-        err = self.handle.purge_all()
+        err = self.handle.purge_all(timeout)
         if err != impl.error_ok:
             raise QuasardbException(err)
 
-    def trim_all(self):
+    def trim_all(self, timeout):
         """ Trims all entries of all nodes of the cluster.
+
+            :param timeout: Operation timeout, in milliseconds
+            :type timeout: long
 
             :raises: QuasardbException
         """
-        err = self.handle.trim_all()
+        err = self.handle.trim_all(timeout)
         if err != impl.error_ok:
             raise QuasardbException(err)
 
@@ -794,3 +800,48 @@ class Cluster(object):
         if err.error != impl.error_ok:
             raise QuasardbException(err.error)
         return json.loads(res)
+
+    def blob_scan(self, pattern, max_count):
+        """ Scans all blobs and returns the list of entries whose content matches the provided sub-string.
+
+            :param pattern: The substring to look for
+            :type pattern: str
+
+            :param max_count: The maximum number of entries to return
+            :type max_count: long
+
+            :returns: The list of matching aliases. If no match is found, returns an empty list.
+
+            :raises: QuasardbException
+        """
+        err = make_error_carrier()
+        result = impl.blob_scan(self.handle, pattern, max_count, err)
+        if err.error == impl.error_alias_not_found:
+            return []
+
+        if err.error != impl.error_ok:
+            raise QuasardbException(err.error)
+        return result
+
+    def blob_scan_regex(self, pattern, max_count):
+        """ Scans all blobs and returns the list of entries whose content that match the provided
+         regular expression (ECMA-262).
+
+        :param pattern: The regular expression to use for matching
+        :type pattern: str
+
+        :param max_count: The maximum number of entries to return
+        :type max_count: long
+
+        :returns: The list of matching aliases. If no match is found, returns an empty list.
+
+        :raises: QuasardbException
+        """
+        err = make_error_carrier()
+        result = impl.blob_scan_regex(self.handle, pattern, max_count, err)
+        if err.error == impl.error_alias_not_found:
+            return []
+
+        if err.error != impl.error_ok:
+            raise QuasardbException(err.error)
+        return result
