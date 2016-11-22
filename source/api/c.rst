@@ -255,6 +255,9 @@ To remove a tag, use :func:`qdb_detach_tag`:
 
 It is an error to detach a non-existing tag.
 
+.. note::
+    The :func:`qdb_attach_tags` and :func:`qdb_detach_tags` take as the tags list an array of pointers to null terminated strings.
+
 To retrieve the entries matching a tag, there are two possibilities: fetch everything at once or iterate on the entries.
 
 If you think the number of returned entries will be reasonable (e.g. easily fits in RAM), you can use :func:`qdb_get_tagged`:
