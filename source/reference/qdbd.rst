@@ -572,24 +572,26 @@ The default configuration file is shown below::
         "local": {
             "depot": {
                 "sync_every_write": false,
-                "disable_wal": false,
                 "root": "db",
                 "max_bytes": 0,
                 "storage_warning_level": 90,
                 "storage_warning_interval": 3600,
+                "disable_wal": false,
+                "max_total_wal_size": 1073741824,
                 "write_buffer_size": 0,
                 "metadata_mem_budget": 268435456,
                 "data_cache": 134217728,
-                "threads": 4,
-                "hi_threads": 2,
+                "threads": 2,
+                "hi_threads": 1,
                 "max_open_files": 10000
             },
             "user": {
                 "license_file": "",
+                "license_key": "",
                 "daemon": false
             },
             "limiter": {
-                "max_resident_entries": 1000000,
+                "max_resident_entries": 0,
                 "max_bytes": 0
             },
             "logger": {
@@ -601,7 +603,7 @@ The default configuration file is shown below::
             },
             "network": {
                 "server_sessions": 20000,
-                "partitions_count": 9,
+                "partitions_count": 1,
                 "idle_timeout": 600,
                 "client_timeout": 60,
                 "listen_on": "127.0.0.1:2836"
@@ -609,13 +611,15 @@ The default configuration file is shown below::
             "chord": {
                 "node_id": "0-0-0-0",
                 "no_stabilization": false,
-                "bootstrapping_peers": []
+                "bootstrapping_peers": [],
+                "min_stabilization_interval": 100,
+                "max_stabilization_interval": 60000
             }
         },
         "global": {
             "cluster": {
                 "transient": false,
-                "history": false,
+                "history": true,
                 "replication_factor": 1,
                 "max_versions": 3,
                 "max_transaction_duration": 60
@@ -638,6 +642,10 @@ The default configuration file is shown below::
     file called the write ahead log. In case of failure, quasardb is able to recover by reading from the write ahead log. For applications that are looking for
     maximum write performance, you may want to disable the write-ahead log. However, disabling the write-ahead log means that you can lose data should a failure
     occur before the buffer is flushed into the database. Disabled by default (that is, by default, buffers are backed by disk).
+
+.. describe:: local::depot::max_total_wal_size
+
+    The maximum size, in bytes, of the write ahead log.
 
 .. describe:: local::depot::root
 
@@ -762,6 +770,14 @@ The default configuration file is shown below::
 .. describe:: local::chord::no_stabilization
 
     A read-only boolean value representing whether or not this node should stabilize upon startup. Even if set to true, stabilization will still occur.
+
+.. describe:: local::chord::min_stabilization_interval
+
+    The minimum wait interval between two stabilizations, in milliseconds. The default value is 100 ms, it is rarely needed to change this value. This value cannot be zero.
+
+.. describe:: local::chord::max_stabilization_interval
+
+    The maximum wait interval between two stabilizations, in milliseconds. Nodes disapearance will take at least that amount of time. The default value is 60,000 ms (one minute). This value must be greater than the minimum stabilization interval, and cannot be lower than 10 ms.
 
 .. describe:: local::chord::bootstrapping_peers
 
