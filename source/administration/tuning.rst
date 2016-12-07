@@ -36,13 +36,21 @@ OS X Recommendations
 Linux Recommendations
 ----------------------
 
- #. Disable system swappiness in ``/etc/sysctl.conf``::
+ #. Disable system swappiness in ``/etc/sysctl.conf`` (requires reboot)::
 
-         vm.swappiness = 0
+         vm.swappiness=0
 
     For kernel version 3.5 and over, as well as Red Hat kernel version 2.6.32-303::
 
-         vm.swappiness = 1
+         vm.swappiness=1
+
+ #. (Alternatively) You can use sysctl to disable system swappiness without rebooting::
+
+        sysctl -w vm.swappiness=0
+
+    For kernel version 3.5 and over, as well as Red Hat kernel version 2.6.32-303::
+
+        sysctl -w vm.swappiness=1
 
  #. Disable Transparent Huge Pages by adding the following to ``/etc/rc.local``::
 
@@ -75,7 +83,7 @@ Linux Recommendations
     The partition should be mounted with the following parameters:
 
         * ``async``: important for SSD lifetime as I/O will be asynchronous.
-        * ``noatime``: quasardb doesn't care about access time information
+        * ``noatime``: quasardb doesn't need access time information
 
     It is paramount to check that partition alignment is ideal for the drive you are using. Modern partition tools do that automatically but improper
     alignment can destroy performances.
