@@ -1,10 +1,23 @@
 Performance tuning
 ==================
 
+Testing cluster connectivity
+----------------------------
+
+The most frequent cause of failure is the improprer configuration of the operating system which prevents quasardb from opening enough sockets.
+
+The qdb_max_conn command line tool available in the tools package will tell you exactly how much connections can be opened to a quasardb cluster.
+
+For example, to test how many connections you can open to a cluster listening on 192.168.1.1:2836::
+
+    qdb_max_conn qdb://192.168.1.1:2836
+
+If you cannot generate at least 1,000 connections you have a serious operating system configuration. A properly configured quasardb cluster should easily handle tens of thousands of connections.
+
 Measuring performance
 ---------------------
 
-The best way to test the performance of your cluster is to use the :doc:`../reference/qdb_bench`. It comes with a wide range of test scenarii and it understands quasardb, memchached, and redis protocols.
+The best way to test the performance of your cluster is to use our open source benchmarking tool (see :doc:`../reference/qdb_bench`).
 
 
 Rules of thumb
@@ -64,10 +77,15 @@ Linux Recommendations
 
  #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values::
 
-         net.core.somaxconn = 8192
-         net.ipv4.tcp_max_syn_backlog = 8192
-         net.core.rmem_max = 16777216
-         net.core.wmem_max = 16777216
+         net.core.somaxconn=8192
+         net.ipv4.tcp_max_syn_backlog=8192
+         net.core.rmem_max=16777216
+         net.core.wmem_max=16777216
+
+ #. (Optional) If running Linux 3.11 or later, you can benefit from busy polling::
+
+        sysctl.net.core.busy_read=50
+        sysctl.net.core.busy_poll=50
 
  #. Run ``ulimit -n`` as a regular user. If the value is less than 65000, add the following line to ``/etc/security/limits.conf``::
 
