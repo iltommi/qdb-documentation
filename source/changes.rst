@@ -1,7 +1,7 @@
 Change log
 **********
 
-2.0.0 - "Aristotle" - 03/07/2016
+2.0.0 - "Aristotle" - 12/15/2016
 ================================
 
 From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
@@ -14,17 +14,18 @@ Building on the solid foundation of quasardb 1.2, quasardb 2.0 is now fully tran
 Changes in this version
 -----------------------
 
-    * Protocol version 16
+    * Protocol version 20
     * Distributed ACID transactions
     * Distributed secondary-indexes (tags)
     * Distributed double-ended queues (deques)
-    * Distributed hash sets
+    * Distributed hash sets (hset)
     * Native atomic signed 64-bit integers operations
     * Native support for Mac OS X
     * Many usability improvements in all tools
     * Switched from LevelDB to a customized RocksDB persistence layer
     * New APIs: Node.js and PHP
     * Greatly improved .NET and Java APIs
+    * Performance level: ludicrous
     * And so much more!
 
 Changes in the version
