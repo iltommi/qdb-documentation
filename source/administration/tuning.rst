@@ -75,6 +75,10 @@ Linux Recommendations
             echo never > /sys/kernel/mm/transparent_hugepage/defrag
          fi
 
+    You may need as well to make ``/etc/rc.local`` executable::
+
+        chmod +x /etc/rc.local
+
  #. If using a Gigabit Ethernet connection, edit ``/etc/sysctl.conf`` and set the following values::
 
          net.core.somaxconn=8192
