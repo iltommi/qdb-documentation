@@ -10,7 +10,7 @@ Introduction
 This document is an introduction to the quasardb Java API.
 
 You can see this code in action in this sample project:
-http://github.com/bureau14/qdb-api-java-example
+https://github.com/bureau14/qdb-api-java-example
 
 For more detail, please refer to the Javadoc.
 

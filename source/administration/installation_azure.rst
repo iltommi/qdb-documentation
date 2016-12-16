@@ -10,14 +10,14 @@ Quasardb is directly available on `Azure Marketplace <https://azure.microsoft.co
 Windows Instance
 ----------------
 
- #. Create a `Windows <https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-windows-tutorial/>`_  virtual machine. Make sure your purchased and configured options meet the :ref:`sysreq-windows`.
+ #. Create a `Windows <https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-windows-hero-tutorial>`_  virtual machine. Make sure your purchased and configured options meet the :ref:`sysreq-windows`.
  #. Log in to your virtual machine.
  #. Complete the quasardb :doc:`installation_windows` instructions.
 
 Linux Instance
 --------------
 
- #. Create a `Linux <https://azure.microsoft.com/en-us/documentation/articles/virtual-machines-linux-tutorial/>`_  virtual machine. Make sure your purchased and configured options meet the :ref:`sysreq-linux`.
+ #. Create a `Linux <https://docs.microsoft.com/en-us/azure/virtual-machines/virtual-machines-linux-quick-create-cli>`_  virtual machine. Make sure your purchased and configured options meet the :ref:`sysreq-linux`.
  #. Log in to your virtual machine.
  #. Complete the quasardb installation instructions for your Linux distribution:
 

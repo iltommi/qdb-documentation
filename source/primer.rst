@@ -34,7 +34,7 @@ Let's assume we extracted the |quasardb| archive in a local directory. The defau
 
     qdbd
 
-You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests. 
+You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests.
 
 There is no limit to what you can store into |quasardb|. Images, videos, JSON, XML, text... |quasardb| will automatically optimize storage for you.
 
@@ -52,7 +52,7 @@ Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give t
     qdbsh> blob_get entry
     amazing...
 
-Wait, what is a blob? 
+Wait, what is a blob?
 
 A blob is a "binary large object" and should be your go-to type when unsure. Using blob for text is perfectly fine
 and actually optimal. A blob is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
@@ -111,7 +111,7 @@ Every entry within the deque is a blob, of whatever size you fancy.
 But, wait, there's more!
 ------------------------
 
-Now we'd like to show you one of the most exciting features of |quasardb|: tags. Since |quasardb| is a key/value store it provides you with an immediate 
+Now we'd like to show you one of the most exciting features of |quasardb|: tags. Since |quasardb| is a key/value store it provides you with an immediate
 access to any entry within the cluster, if you have a key.
 
 What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
@@ -148,7 +148,7 @@ If you have your own application, you may find it cumbersome to run a third-part
 That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/cpp`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_,
 :doc:`api/nodejs` and :doc:`api/python`.
 
-You can either fetch a binary package or build the API from source (BSD License). You will find them on `GitHub <http://github.com/bureau14>`_. Our APIs do their
+You can either fetch a binary package or build the API from source (BSD License). You will find them on `GitHub <https://github.com/bureau14>`_. Our APIs do their
 best to be simple and straightforward.
 
 Here is a short Python code snippet:

@@ -8,7 +8,7 @@ Software Installation
 Depending on your host operating system, all of the following docker commands may require root permissions.
 
  #. Verify your system meets the :doc:`system_requirements`.
- #. Install `Docker <http://www.docker.com>`_ for your host operating system.
+ #. Install `Docker <https://www.docker.com>`_ for your host operating system.
  #. Install the qdb image using ``docker pull bureau14/qdb``.
  #. Install the qdb-http image using ``docker pull bureau14/qdb-http``.
 
