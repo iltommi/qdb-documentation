@@ -205,7 +205,23 @@ Each graph displays historical cluster data for the past hour, day, week, month,
 
 Hover over the black line on the graph to display detailed information about the selected data point.
 
+Securing access to the console
+==============================
 
+By default the console access is free to anyone who has network access. It is possible enable basic http authentication to secure access to the console.
+
+Both the login name and the password can be configured to an arbitrary value.
+
+.. caution::
+  The password is stored in clear in the configuration file. To properly secure your console, you must ensure that the web bridge configuration file is not accessible to anyone.
+
+  In addition, you may want to tunnel the traffic through TLS for increased security as basic http authentication does not securely transmits credentials.
+
+The configuration of the login and the password can be done from the command line::
+
+  qdb_httpd --user=admin --password=secret
+
+This will require the login "admin" and the password "secret" to be entered when accessing the console. It is recommended to set the value of the password in the configuration file (see :ref:`qdb_httpd-config-file-reference`).
 
 Using the qdb_httpd JSON interface
 ==================================
@@ -402,6 +418,38 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --threads=2
 
+.. option:: --user=<user>
+
+    Specifies the user name required for basic http authentication. Both an user and a password must be specified for authentication to be active.
+
+    Argument
+      A string representing the user name to be used for basic http authentication.
+
+    Default value
+      Empty
+
+    Example
+        To set the authentication user name to "administrator"::
+
+            qdb_httpd --user=administrator
+
+ .. option:: --password=<password>
+
+    Specifies the password required for basic http authentication. Both an user and a password must be specified for authentication to be active.
+    
+    It is not recommended to use the command line to specify the password, but to set the value into the configuration file.
+
+    Argument
+      A string representing the password to be used for basic http authentication.
+
+    Default value
+      Empty
+
+    Example
+       To set the password to "my_pass"::
+
+          qdb_httpd --password=my_pass
+
 .. highlight:: html
 
 .. _qdb_httpd-config-file-reference:
@@ -433,6 +481,8 @@ The default configuration file is shown below::
           "log_to_console": false,
           "log_to_syslog": false
       }
+      "user": "",
+      "password": ""
   }
 
 .. describe:: doc_root
@@ -481,6 +531,14 @@ The default configuration file is shown below::
 .. describe:: logger::log_to_syslog
 
     A boolean value representing whether or not the qdb_httpd daemon should log to the syslog.
+
+.. describe:: user
+
+    A string representing the user name for authentication. Both the user and password must be set for authentication to be active.
+
+.. describe:: password
+
+    A string representing the password for authentication. Both the user and password must be set for authentication to be active.
 
 .. _qdb_httpd-url-reference:
 
