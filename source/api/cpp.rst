@@ -535,7 +535,7 @@ Reference
 
         Initialize all required resources and connect to a remote host.
 
-        :param host: A pointer to a null terminated string in the format "qdb://host:port[,host:port]".
+        :param host: A pointer to a null-terminated string in the format "qdb://host:port[,host:port]".
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
@@ -545,7 +545,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias to create.
+        :param alias: A pointer to a null-terminated string representing the entry's alias to create.
         :param content: A pointer to a buffer that represents the entry's content to be added to the server.
         :param content_length: The length of the entry's content, in bytes.
         :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
@@ -556,7 +556,7 @@ Reference
 
         Retrieves the value of an integer. The integer must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param number: The value of the retrieved qdb_int_t.
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
@@ -565,7 +565,7 @@ Reference
 
         Creates a new integer. Errors if the integer already exists.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param number: The value of the retrieved qdb_int_t.
         :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
 
@@ -575,7 +575,7 @@ Reference
 
         Updates an existing integer or creates one if it does not exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param number: The value of the retrieved qdb_int_t.
         :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
 
@@ -585,7 +585,7 @@ Reference
 
         Atomically addes the value to the integer. The integer must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param addend: The value that will be added to the existing qdb_int_t.
         :param result: A pointer that will be updated to point to the new qdb_int_t.
 
@@ -595,7 +595,7 @@ Reference
 
         Retrieves the size of the queue. The queue must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param size: A pointer to a qdb_size_t that will be set to the content's size, in bytes.
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
@@ -604,7 +604,7 @@ Reference
 
         Retrieves the value of the queue at the specified index. The queue must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param index: The index you wish to retrieve.
         :param error: A reference to an error that will receive the result of the operation.
 
@@ -614,7 +614,7 @@ Reference
 
         Sets the value of the queue at the specified index. The queue must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param index: The index you wish to retrieve.
         :param content: A pointer to a buffer that represents the entry's content to be added to the server.
         :param content_length: The length of the entry's content, in bytes.
@@ -625,7 +625,7 @@ Reference
 
         Inserts the content at the front of the queue. Creates the queue if it does not exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param content: A pointer to the content that will be added to the queue.
         :param content_length: A pointer to a qdb_size_t that will be set to the content's size, in bytes.
 
@@ -635,7 +635,7 @@ Reference
 
         Inserts the content at the back of the queue. Creates the queue if it does not exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param content: A pointer to the content that will be added to the queue.
         :param content_length: A pointer to a qdb_size_t that will be set to the content's size, in bytes.
 
@@ -645,7 +645,7 @@ Reference
 
         Removes and retrieves the item at the front of the queue. The queue must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
@@ -654,7 +654,7 @@ Reference
 
         Removes and retrieves the item at the back of the queue. The queue must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
@@ -663,7 +663,7 @@ Reference
 
         Retrieves the item at the front of the queue. The queue must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
@@ -672,7 +672,7 @@ Reference
 
         Retrieves the item at the back of the queue. The queue must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
@@ -681,7 +681,7 @@ Reference
 
         Inserts a value into a hset. Creates the hset if it does not already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param content: A pointer to the content that will be added to the hset.
         :param content_length: A qdb_size_t with the length of the target buffer, in bytes.
 
@@ -691,7 +691,7 @@ Reference
 
         Removes a value from a hset. The hset must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param content: A pointer to the content that will be removed from the hset.
         :param content_length: A qdb_size_t with the length of the target buffer, in bytes.
 
@@ -701,7 +701,7 @@ Reference
 
         Determines if a hset has a given value. The hset must already exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param content: A pointer to a buffer to search for and compare against.
         :param content_length: A qdb_size_t with the length of the target buffer, in bytes.
 
@@ -713,7 +713,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias to update.
+        :param alias: A pointer to a null-terminated string representing the entry's alias to update.
         :param content: A pointer to a buffer that represents the entry's content to be updated to the server.
         :param content_length: The length of the entry's content, in bytes.
         :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
@@ -730,7 +730,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect`).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
+        :param alias: A pointer to a null-terminated string representing the entry's alias whose content is to be retrieved.
         :param content: A pointer to an user allocated buffer that will receive the entry's content.
         :param content_length: A pointer to a qdb_size_t initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.
 
@@ -776,7 +776,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
+        :param alias: A pointer to a null-terminated string representing the entry's alias whose content is to be retrieved.
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
@@ -789,7 +789,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias whose content is to be retrieved.
+        :param alias: A pointer to a null-terminated string representing the entry's alias whose content is to be retrieved.
         :param error: A reference to an error that will receive the result of the operation.
 
         :returns: An api_buffer_ptr holding the entry content, if it exists, a null pointer otherwise.
@@ -800,7 +800,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias to update.
+        :param alias: A pointer to a null-terminated string representing the entry's alias to update.
         :param update_content: A pointer to a buffer that represents the entry's content to be updated to the server.
         :param update_content_length: The length of the buffer, in bytes.
         :param expiry_time: The absolute expiry time of the entry, in seconds, relative to epoch
@@ -814,7 +814,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias to compare to.
+        :param alias: A pointer to a null-terminated string representing the entry's alias to compare to.
         :param new_value: A pointer to a buffer that represents the entry's content to be updated to the server in case of match.
         :param new_value_length: The length of the buffer, in bytes.
         :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
@@ -830,7 +830,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
+        :param alias: A pointer to a null-terminated string representing the entry's alias for which the expiry must be set.
         :param expiry_time: Absolute time after which the entry expires
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
@@ -841,7 +841,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be set.
+        :param alias: A pointer to a null-terminated string representing the entry's alias for which the expiry must be set.
         :param expiry_time: Time in seconds, relative to the call time, after which the entry expires
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
@@ -852,7 +852,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias for which the expiry must be get.
+        :param alias: A pointer to a null-terminated string representing the entry's alias for which the expiry must be get.
         :param expiry_time: A pointer to a qdb_time_t that will receive the absolute expiry time.
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
@@ -863,7 +863,7 @@ Reference
 
         The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param location: A pointer to a qdb_remote_node_t that will receive the entry locations.
 
         :returns: An error code of type :c:type:`qdb_error_t`
@@ -874,7 +874,7 @@ Reference
 
         The handle must be initialized (see :c:func:`qdb_open` and :c:func:`qdb_open_tcp`) and the connection established (see :c:func:`qdb_connect`).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
         :param location: A pointer to a qdb_entry_type_t that will receive the entry locations.
 
         :returns: An error code of type :c:type:`qdb_error_t`
@@ -885,7 +885,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param node: A pointer to a null terminated string in the format "qdb://host:port".
+        :param node: A pointer to a null-terminated string in the format "qdb://host:port".
         :param error: A reference to an error code that will be updated according to the success of the operation
 
         :returns: The status of the node as a JSON string.
@@ -896,7 +896,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param node: A pointer to a null terminated string in the format "qdb://host:port".
+        :param node: A pointer to a null-terminated string in the format "qdb://host:port".
         :param error: A reference to an error code that will be updated according to the success of the operation
 
         :returns: The configuration of the node as a JSON string.
@@ -907,7 +907,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param node: A pointer to a null terminated string in the format "qdb://host:port".
+        :param node: A pointer to a null-terminated string in the format "qdb://host:port".
         :param error: A reference to an error code that will be updated according to the success of the operation
 
         :returns: The topology of the node as a JSON string.
@@ -919,8 +919,8 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param node: A pointer to a null terminated string in the format "qdb://host:port".
-        :param reason: A pointer to a null terminated string detailling the reason for the stop that will appear in the remote node's log.
+        :param node: A pointer to a null-terminated string in the format "qdb://host:port".
+        :param reason: A pointer to a null-terminated string detailling the reason for the stop that will appear in the remote node's log.
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
@@ -932,7 +932,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+        :param alias: A pointer to a null-terminated string representing the entry's alias to delete.
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
@@ -942,7 +942,7 @@ Reference
 
         The handle must be initialized and connected (see :cpp:func`connect).
 
-        :param alias: A pointer to a null terminated string representing the entry's alias to delete.
+        :param alias: A pointer to a null-terminated string representing the entry's alias to delete.
         :param comparand: A pointer to a buffer that represents the entry's content to be compared to.
         :param comparand_length: The length of the buffer, in bytes.
 
@@ -952,8 +952,8 @@ Reference
 
         Assigns a tag to an entry. The tag is created if it does not exist.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
-        :param tag: A pointer to a null terminated string representing the tag.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
+        :param tag: A pointer to a null-terminated string representing the tag.
 
         :returns: An error code of type :c:type:`qdb_error_t`
 
@@ -961,8 +961,8 @@ Reference
 
     Determines if a given tag has been assigned to an entry.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
-        :param tag: A pointer to a null terminated string representing the tag.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
+        :param tag: A pointer to a null-terminated string representing the tag.
 
         :returns: An error code of type :c:type:`qdb_error_t`
 
@@ -970,8 +970,8 @@ Reference
 
         Removes a tag assignment from an entry.
 
-        :param alias: A pointer to a null terminated string representing the entry's alias.
-        :param tag: A pointer to a null terminated string representing the tag.
+        :param alias: A pointer to a null-terminated string representing the entry's alias.
+        :param tag: A pointer to a null-terminated string representing the tag.
 
         :returns: An error code of type :c:type:`qdb_error_t`
 
@@ -979,7 +979,7 @@ Reference
 
         Retrieves the aliases that have been tagged with the given tag.
 
-        :param tag: A pointer to a null terminated string representing the tag.
+        :param tag: A pointer to a null-terminated string representing the tag.
         :param error: A qdb_error_t reference that will be set to the error code, if any.
 
         :returns: A std::vector containing the aliases tagged with the tag.
@@ -988,7 +988,7 @@ Reference
 
         Retrieves the tags assigned to the given alias.
 
-        :param alias: A pointer to a null terminated string representing the alias.
+        :param alias: A pointer to a null-terminated string representing the alias.
         :param error: A qdb_error_t reference that will be set to the error code, if any.
 
         :returns: A std::vector containing the tags assigned to the alias.

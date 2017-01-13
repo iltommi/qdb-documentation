@@ -194,8 +194,8 @@ Transactions
 
 quasardb supports distributed, multi-entry key transactions. The transaction API is very close to the batch API, with the exceptions that:
 
-    * Operations are executed in order
-    * Transactions are "all or nothing", if one operation fails, the whole transaction is rolled back
+    * Operations are executed in order.
+    * Transactions are "all or nothing", if one operation fails, the whole transaction is rolled back.
     * Transactions are generally slower than batches.
 
 quasardb transactions are based on Multi-Version Concurrency Control and two-phase commit (2PC).
@@ -212,4 +212,4 @@ This is an API restriction only and may change in the future.
 Allowed operations
 ^^^^^^^^^^^^^^^^^^^^
 
-Transactions support the same operations than batches.
+Transactions support the same operations as batches.

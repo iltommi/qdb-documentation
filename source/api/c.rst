@@ -31,7 +31,7 @@ Most C functions, typedefs and enums are available in the ``include/qdb/client.h
 Connecting to a cluster
 -----------------------
 
-The first thing to do is to initialize a handle. A handle is an opaque structure that represents a client side instance.
+The first thing to do is to initialize a handle. A handle is an opaque structure that represents a client-side instance.
 It is initialized using the function :func:`qdb_open`:
 
 .. literalinclude:: ../../../../examples/c/connect.c
@@ -76,7 +76,7 @@ Note that we could have used the IP address instead:
 Connecting to multiple nodes within the same cluster
 ----------------------------------------------------
 
-Although quasardb is fault tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a URI string to :func:`qdb_connect` with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed.
+Although quasardb is fault-tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a URI string to :func:`qdb_connect` with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed.
 
 .. literalinclude:: ../../../../examples/c/connect_many.c
     :start-after: doc-start-connect
@@ -256,7 +256,7 @@ To remove a tag, use :func:`qdb_detach_tag`:
 It is an error to detach a non-existing tag.
 
 .. note::
-    The :func:`qdb_attach_tags` and :func:`qdb_detach_tags` take as the tags list an array of pointers to null terminated strings.
+    The :func:`qdb_attach_tags` and :func:`qdb_detach_tags` take as the tags list an array of pointers to null-terminated strings.
 
 To retrieve the entries matching a tag, there are two possibilities: fetch everything at once or iterate on the entries.
 
@@ -567,7 +567,7 @@ General
 .. doxygengroup:: client
   :content-only:
 
-Error codes 
+Error codes
 ^^^^^^^^^^^
 
 .. doxygengroup:: error
@@ -580,7 +580,7 @@ Blobs
 .. doxygengroup:: blob
   :content-only:
 
-Batches 
+Batches
 ^^^^^^^
 
 .. doxygengroup:: batch
