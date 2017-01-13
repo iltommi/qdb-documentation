@@ -28,7 +28,7 @@
         <briefdescription>
 <para>Inserts an element into the distributed hash set of the specified name. </para>        </briefdescription>
         <detaileddescription>
-<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>If the set does not exist, it will be created.</para><para>If the entry is already present in the hset, the function will return qdb_e_element_already_exists.</para><para><parameterlist kind="param"><parameteritem>
+<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>If the set does not exist, it will be created.</para><para>If the entry is already present in the hset, the function will return <computeroutput>qdb_e_element_already_exists</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -40,7 +40,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -57,7 +57,7 @@
 <para>The length of the buffer to insert into the set </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__hset_1ga7922b2dfddbe9df957cf594e87d27d1c" kindref="member">qdb_hset_erase</ref>, <ref refid="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" kindref="member">qdb_hset_contains</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
@@ -89,7 +89,7 @@
         <briefdescription>
 <para>Removes an element from the distributed hash set. </para>        </briefdescription>
         <detaileddescription>
-<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to remove an element from a non-existing set.</para><para>If you remove the last element from the set, the set will be empty but not removed from the database.</para><para>If the entry is not present in the hset, the function will return qdb_e_element_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to remove an element from a non-existing set.</para><para>If you remove the last element from the set, the set will be empty but not removed from the database.</para><para>If the entry is not present in the hset, the function will return <computeroutput>qdb_e_element_not_found</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -101,7 +101,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -118,7 +118,7 @@
 <para>The length of the buffer to remove from the set </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" kindref="member">qdb_hset_insert</ref>, <ref refid="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" kindref="member">qdb_hset_contains</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
@@ -150,7 +150,7 @@
         <briefdescription>
 <para>Tests for the existence of an element in the distributed hash set. </para>        </briefdescription>
         <detaileddescription>
-<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to look for an element in a non-existing set.</para><para>If the entry is not present in the hset, the function will return qdb_e_element_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to look for an element in a non-existing set.</para><para>If the entry is not present in the hset, the function will return <computeroutput>qdb_e_element_not_found</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -162,7 +162,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -179,7 +179,7 @@
 <para>The length of the buffer to remove from the set </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" kindref="member">qdb_hset_insert</ref>, <ref refid="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" kindref="member">qdb_hset_contains</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>

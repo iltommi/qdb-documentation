@@ -40,7 +40,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -57,7 +57,7 @@
 <para>An optional absolute expiry time expressed in UTC UNIX epoch. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__integer_1ga8adfbb676817447300db1f34f971ca7c" kindref="member">qdb_int_update</ref>, <ref refid="group__integer_1ga12a283f0b974a91433cb09054b94a10a" kindref="member">qdb_int_get</ref>, <ref refid="group__integer_1ga7335937383f6ab76b319924d83a968c7" kindref="member">qdb_int_add</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -88,7 +88,7 @@
         <briefdescription>
 <para>Creates or updates a signed 64-bit integer. </para>        </briefdescription>
         <detaileddescription>
-<para>Atomically updates an entry of the given alias to the provided value. If the entry doesn&apos;t exist, it will be created. If the entry is not an integer, the function will return qdb_e_incompatible_type.</para><para>You can specify an expiry time or use qdb_never_expires if you don&apos;t want the entry to expire.</para><para><parameterlist kind="param"><parameteritem>
+<para>Atomically updates an entry of the given alias to the provided value. If the entry doesn&apos;t exist, it will be created. If the entry is not an integer, the function will return <computeroutput>qdb_e_incompatible_type</computeroutput>.</para><para>You can specify an expiry time or use qdb_never_expires if you don&apos;t want the entry to expire.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -100,7 +100,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -117,7 +117,7 @@
 <para>An optional absolute expiry time expressed in UTC UNIX epoch. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__integer_1ga3ea1221d8023a5936c74c191da96ed10" kindref="member">qdb_int_put</ref>, <ref refid="group__integer_1ga12a283f0b974a91433cb09054b94a10a" kindref="member">qdb_int_get</ref>, <ref refid="group__integer_1ga7335937383f6ab76b319924d83a968c7" kindref="member">qdb_int_add</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -144,7 +144,7 @@
         <briefdescription>
 <para>Retrieves the value of a signed 64-bit integer. </para>        </briefdescription>
         <detaileddescription>
-<para>Atomically retrieves the value of an existing 64-bit integer.</para><para>If the entry is not an integer, the function will return qdb_e_incompatible_type.</para><para><parameterlist kind="param"><parameteritem>
+<para>Atomically retrieves the value of an existing 64-bit integer.</para><para>If the entry is not an integer, the function will return <computeroutput>qdb_e_incompatible_type</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -156,7 +156,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -166,7 +166,7 @@
 <para>A pointer to an integer that will receive the current value of the entry, if successful. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__integer_1ga3ea1221d8023a5936c74c191da96ed10" kindref="member">qdb_int_put</ref>, <ref refid="group__integer_1ga8adfbb676817447300db1f34f971ca7c" kindref="member">qdb_int_update</ref>, <ref refid="group__integer_1ga7335937383f6ab76b319924d83a968c7" kindref="member">qdb_int_add</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -199,7 +199,7 @@
         <detaileddescription>
 <para>The specified entry will be atomically increased (or decreased) according to the given addend value:<itemizedlist>
 <listitem><para>To increase the value, specify a positive addend</para></listitem><listitem><para>To decrease the value, specify a negative addend</para></listitem></itemizedlist>
-</para><para>The function return the result of the operation.</para><para>The entry must already exist. If the entry is not an integer, the function will return qdb_e_incompatible_type.</para><para><parameterlist kind="param"><parameteritem>
+</para><para>The function return the result of the operation.</para><para>The entry must already exist. If the entry is not an integer, the function will return <computeroutput>qdb_e_incompatible_type</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -211,7 +211,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -228,7 +228,7 @@
 <para>A pointer to an integer that will receive the current value of the entry, if successful. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__integer_1ga3ea1221d8023a5936c74c191da96ed10" kindref="member">qdb_int_put</ref>, <ref refid="group__integer_1ga8adfbb676817447300db1f34f971ca7c" kindref="member">qdb_int_update</ref>, <ref refid="group__integer_1ga12a283f0b974a91433cb09054b94a10a" kindref="member">qdb_int_get</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>

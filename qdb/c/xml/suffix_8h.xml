@@ -2,26 +2,22 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="suffix_8h" kind="file" language="C++">
     <compoundname>suffix.h</compoundname>
-    <includes refid="client_8h" local="no">qdb/client.h</includes>
+    <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
-      <node id="127">
-        <label>C:/sources/quasardb/api/include/qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-        <childnode refid="128" relation="include">
+      <node id="130">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
+      <node id="129">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="130" relation="include">
         </childnode>
-      </node>
-      <node id="133">
-        <label>stdint.h</label>
-      </node>
-      <node id="131">
-        <label>stddef.h</label>
       </node>
       <node id="128">
-        <label>qdb/client.h</label>
+        <label>client.h</label>
         <link refid="client_8h"/>
         <childnode refid="129" relation="include">
-        </childnode>
-        <childnode refid="130" relation="include">
         </childnode>
         <childnode refid="131" relation="include">
         </childnode>
@@ -30,18 +26,20 @@
         <childnode refid="133" relation="include">
         </childnode>
       </node>
-      <node id="130">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="129" relation="include">
-        </childnode>
+      <node id="133">
+        <label>stdint.h</label>
+      </node>
+      <node id="131">
+        <label>stddef.h</label>
       </node>
       <node id="132">
         <label>time.h</label>
       </node>
-      <node id="129">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
+      <node id="127">
+        <label>C:/sources/quasardb/api/include/qdb/suffix.h</label>
+        <link refid="suffix.h"/>
+        <childnode refid="128" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -85,7 +83,7 @@
 <parametername>suffix</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the desired suffix </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the desired suffix </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -109,7 +107,7 @@
 <para>A pointer to an integer giving the results count </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -158,7 +156,7 @@
 <codeline lineno="36"><highlight class="comment">*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
 <codeline lineno="37"><highlight class="comment">*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="client_8h" kindref="compound">qdb/client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="client_8h" kindref="compound">client.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>

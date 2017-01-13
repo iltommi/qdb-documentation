@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+  <compounddef id="structqdb__timespec__t" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_timespec_t</compoundname>
+    <includes local="no">client.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__timespec__t_1acf1768b50ccc8c67e846b63d07e1e4f3" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref></type>
+        <definition>qdb_time_t qdb_timespec_t::tv_sec</definition>
+        <argsstring></argsstring>
+        <name>tv_sec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="176" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="176" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__timespec__t_1af54f38ed5da4e50324b0518793e6eb7d" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref></type>
+        <definition>qdb_time_t qdb_timespec_t::tv_nsec</definition>
+        <argsstring></argsstring>
+        <name>tv_nsec</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="177" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="177" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A cross-platform timespec structure equivalent. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="C:/sources/quasardb/api/include/qdb/client.h" line="175" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="174" bodyend="178"/>
+    <listofallmembers>
+      <member refid="structqdb__timespec__t_1af54f38ed5da4e50324b0518793e6eb7d" prot="public" virt="non-virtual"><scope>qdb_timespec_t</scope><name>tv_nsec</name></member>
+      <member refid="structqdb__timespec__t_1acf1768b50ccc8c67e846b63d07e1e4f3" prot="public" virt="non-virtual"><scope>qdb_timespec_t</scope><name>tv_sec</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

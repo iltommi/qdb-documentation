@@ -2,29 +2,29 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="log_8h" kind="file" language="C++">
     <compoundname>log.h</compoundname>
-    <includes refid="error_8h" local="no">qdb/error.h</includes>
+    <includes refid="error_8h" local="yes">error.h</includes>
     <includes local="no">stddef.h</includes>
     <incdepgraph>
-      <node id="98">
-        <label>C:/sources/quasardb/api/include/qdb/log.h</label>
-        <link refid="log_8h"/>
-        <childnode refid="99" relation="include">
-        </childnode>
-        <childnode refid="101" relation="include">
+      <node id="100">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
+      <node id="99">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="100" relation="include">
         </childnode>
       </node>
       <node id="101">
         <label>stddef.h</label>
       </node>
-      <node id="99">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="100" relation="include">
+      <node id="98">
+        <label>C:/sources/quasardb/api/include/qdb/log.h</label>
+        <link refid="log.h"/>
+        <childnode refid="99" relation="include">
         </childnode>
-      </node>
-      <node id="100">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
+        <childnode refid="101" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
       <sectiondef kind="enum">
@@ -95,7 +95,7 @@
         <argsstring></argsstring>
         <name>qdb_log_level_t</name>
         <briefdescription>
-<para>A type alias for enum qdb_log_level. </para>        </briefdescription>
+<para>A type alias for enum <ref refid="group__log_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref>. </para>        </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
 </para>        </detaileddescription>
@@ -109,7 +109,7 @@
         <argsstring></argsstring>
         <name>qdb_log_callback_id</name>
         <briefdescription>
-<para>An unique callback identifier returned by qdb_log_add_callback. </para>        </briefdescription>
+<para>An unique callback identifier returned by <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>. </para>        </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
@@ -154,7 +154,7 @@
 <parametername>cb</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A callback of type qdb_log_callback. The callback will be called every time the API logs </para></parameterdescription>
+<para>A callback of type <ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>. The callback will be called every time the API logs </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -164,7 +164,7 @@
 <para>A pointer to an unique callback identifier that can be used to remove the callback </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -188,10 +188,10 @@
 <parametername>callback_id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The identifier set by qdb_log_add_callback that will determine which callback to remove </para></parameterdescription>
+<para>The identifier set by <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> that will determine which callback to remove </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -240,7 +240,7 @@
 <codeline lineno="36"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
 <codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="error_8h" kindref="compound">qdb/error.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="error_8h" kindref="compound">error.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;stddef.h&gt;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight></codeline>

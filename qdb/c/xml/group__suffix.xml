@@ -44,7 +44,7 @@
 <parametername>suffix</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the desired suffix </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the desired suffix </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -68,7 +68,7 @@
 <para>A pointer to an integer giving the results count </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>

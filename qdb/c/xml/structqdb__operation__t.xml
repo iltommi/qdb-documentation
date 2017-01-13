@@ -25,7 +25,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry. </para>        </detaileddescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="121" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="121" bodyend="-1"/>
@@ -38,7 +38,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>A qdb_error_t code indicating success or failure after the operation has been executed </para>        </detaileddescription>
+<para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure after the operation has been executed </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="125" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="125" bodyend="-1"/>
@@ -51,7 +51,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>A pointer to a null terminated UTF-8 string representing the tag to test for existence </para>        </detaileddescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag to test for existence </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="134" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="134" bodyend="-1"/>
@@ -298,7 +298,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>The optional expiration time. Use qdb_never_expires for no expiration. </para>        </detaileddescription>
+<para>The optional expiration time. Use <ref refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kindref="member">qdb_never_expires</ref> for no expiration. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="C:/sources/quasardb/api/include/qdb/batch.h" line="195" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/batch.h" bodystart="195" bodyend="-1"/>
@@ -400,22 +400,22 @@
     <detaileddescription>
 <para>You should initialize operations before usage with the <ref refid="group__batch_1ga8b3e3f28c66a4e9bb3826658e260041c" kindref="member">qdb_init_operations</ref> function. </para>    </detaileddescription>
     <collaborationgraph>
-      <node id="15">
+      <node id="16">
         <label>int_put_update_t</label>
         <link refid="structint__put__update__t"/>
       </node>
-      <node id="16">
+      <node id="17">
         <label>blob_put_update_t</label>
         <link refid="structblob__put__update__t"/>
       </node>
-      <node id="14">
+      <node id="15">
         <label>qdb_operation_t</label>
         <link refid="structqdb__operation__t"/>
-        <childnode refid="15" relation="usage">
+        <childnode refid="16" relation="usage">
           <edgelabel>int_update</edgelabel>
           <edgelabel>int_put</edgelabel>
         </childnode>
-        <childnode refid="16" relation="usage">
+        <childnode refid="17" relation="usage">
           <edgelabel>blob_put</edgelabel>
           <edgelabel>blob_update</edgelabel>
         </childnode>

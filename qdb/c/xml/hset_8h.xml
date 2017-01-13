@@ -2,20 +2,22 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="hset_8h" kind="file" language="C++">
     <compoundname>hset.h</compoundname>
-    <includes refid="client_8h" local="no">qdb/client.h</includes>
+    <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
-      <node id="80">
-        <label>stdint.h</label>
+      <node id="77">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
-      <node id="78">
-        <label>stddef.h</label>
+      <node id="76">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="77" relation="include">
+        </childnode>
       </node>
       <node id="75">
-        <label>qdb/client.h</label>
+        <label>client.h</label>
         <link refid="client_8h"/>
         <childnode refid="76" relation="include">
-        </childnode>
-        <childnode refid="77" relation="include">
         </childnode>
         <childnode refid="78" relation="include">
         </childnode>
@@ -24,24 +26,20 @@
         <childnode refid="80" relation="include">
         </childnode>
       </node>
+      <node id="80">
+        <label>stdint.h</label>
+      </node>
       <node id="74">
         <label>C:/sources/quasardb/api/include/qdb/hset.h</label>
-        <link refid="hset_8h"/>
+        <link refid="hset.h"/>
         <childnode refid="75" relation="include">
         </childnode>
       </node>
-      <node id="77">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="76" relation="include">
-        </childnode>
+      <node id="78">
+        <label>stddef.h</label>
       </node>
       <node id="79">
         <label>time.h</label>
-      </node>
-      <node id="76">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -69,7 +67,7 @@
         <briefdescription>
 <para>Inserts an element into the distributed hash set of the specified name. </para>        </briefdescription>
         <detaileddescription>
-<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>If the set does not exist, it will be created.</para><para>If the entry is already present in the hset, the function will return qdb_e_element_already_exists.</para><para><parameterlist kind="param"><parameteritem>
+<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>If the set does not exist, it will be created.</para><para>If the entry is already present in the hset, the function will return <computeroutput>qdb_e_element_already_exists</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -81,7 +79,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -98,7 +96,7 @@
 <para>The length of the buffer to insert into the set </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__hset_1ga7922b2dfddbe9df957cf594e87d27d1c" kindref="member">qdb_hset_erase</ref>, <ref refid="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" kindref="member">qdb_hset_contains</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
@@ -130,7 +128,7 @@
         <briefdescription>
 <para>Removes an element from the distributed hash set. </para>        </briefdescription>
         <detaileddescription>
-<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to remove an element from a non-existing set.</para><para>If you remove the last element from the set, the set will be empty but not removed from the database.</para><para>If the entry is not present in the hset, the function will return qdb_e_element_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to remove an element from a non-existing set.</para><para>If you remove the last element from the set, the set will be empty but not removed from the database.</para><para>If the entry is not present in the hset, the function will return <computeroutput>qdb_e_element_not_found</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -142,7 +140,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -159,7 +157,7 @@
 <para>The length of the buffer to remove from the set </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" kindref="member">qdb_hset_insert</ref>, <ref refid="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" kindref="member">qdb_hset_contains</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
@@ -191,7 +189,7 @@
         <briefdescription>
 <para>Tests for the existence of an element in the distributed hash set. </para>        </briefdescription>
         <detaileddescription>
-<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to look for an element in a non-existing set.</para><para>If the entry is not present in the hset, the function will return qdb_e_element_not_found.</para><para><parameterlist kind="param"><parameteritem>
+<para>A distributed hash set is transparently distributed over the nodes of the cluster. It does not have any limit on the number of entries.</para><para>The content must match bit for bit the inserted content to be considered equal.</para><para>It is an error to attempt to look for an element in a non-existing set.</para><para>If the entry is not present in the hset, the function will return <computeroutput>qdb_e_element_not_found</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -203,7 +201,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the hset. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -220,7 +218,7 @@
 <para>The length of the buffer to remove from the set </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" kindref="member">qdb_hset_insert</ref>, <ref refid="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" kindref="member">qdb_hset_contains</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
@@ -270,7 +268,7 @@
 <codeline lineno="37"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
 <codeline lineno="38"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="39"><highlight class="normal"></highlight></codeline>
-<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="client_8h" kindref="compound">qdb/client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="client_8h" kindref="compound">client.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>

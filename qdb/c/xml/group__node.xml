@@ -40,7 +40,7 @@
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the URI of node for which the status is requested. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of node for which the status is requested. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -57,7 +57,7 @@
 <para>A pointer to an integer representing the size of the API-allocated buffer.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -100,7 +100,7 @@
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the URI of the node for which the configuration is requested. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of the node for which the configuration is requested. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -117,7 +117,7 @@
 <para>A pointer to an integer representing the size of the API-allocated buffer.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -160,7 +160,7 @@
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the URI of node for which the topology is requested. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of node for which the topology is requested. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -177,7 +177,7 @@
 <para>A pointer to an integer representing the size of the API-allocated buffer.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -204,7 +204,7 @@
         <briefdescription>
 <para>Requests the node to gracefully stop. </para>        </briefdescription>
         <detaileddescription>
-<para>Use this function to remotely stop a node, the supplied reason will be displayed in the logs of the remote node.</para><para>By default cluster do not allow this operation and the function will return a qdb_e_operation_disabled error.</para><para><parameterlist kind="param"><parameteritem>
+<para>Use this function to remotely stop a node, the supplied reason will be displayed in the logs of the remote node.</para><para>By default cluster do not allow this operation and the function will return a <computeroutput>qdb_e_operation_disabled</computeroutput> error.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -216,17 +216,17 @@
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the URI of node to be stopped. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of node to be stopped. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>reason</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string of the reason for the stop.</para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string of the reason for the stop.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>

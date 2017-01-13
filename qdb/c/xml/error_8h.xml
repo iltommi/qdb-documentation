@@ -2,53 +2,33 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="error_8h" kind="file" language="C++">
     <compoundname>error.h</compoundname>
-    <includes refid="__attr_8h" local="no">qdb/_attr.h</includes>
-    <includedby refid="client_8h" local="no">C:/sources/quasardb/api/include/qdb/client.h</includedby>
-    <includedby refid="log_8h" local="no">C:/sources/quasardb/api/include/qdb/log.h</includedby>
+    <includes refid="__attr_8h" local="yes">_attr.h</includes>
+    <includedby refid="client_8h" local="yes">C:/sources/quasardb/api/include/qdb/client.h</includedby>
+    <includedby refid="log_8h" local="yes">C:/sources/quasardb/api/include/qdb/log.h</includedby>
     <incdepgraph>
+      <node id="59">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
       <node id="58">
         <label>C:/sources/quasardb/api/include/qdb/error.h</label>
-        <link refid="error_8h"/>
+        <link refid="error.h"/>
         <childnode refid="59" relation="include">
         </childnode>
       </node>
-      <node id="59">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
-      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="72">
-        <label>C:/sources/quasardb/api/include/qdb/tag.h</label>
-        <link refid="tag_8h"/>
-      </node>
-      <node id="62">
-        <label>C:/sources/quasardb/api/include/qdb/batch.h</label>
-        <link refid="batch_8h"/>
-      </node>
-      <node id="71">
-        <label>C:/sources/quasardb/api/include/qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-      </node>
       <node id="68">
         <label>C:/sources/quasardb/api/include/qdb/node.h</label>
         <link refid="node_8h"/>
       </node>
-      <node id="67">
-        <label>C:/sources/quasardb/api/include/qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
-      </node>
-      <node id="73">
-        <label>C:/sources/quasardb/api/include/qdb/log.h</label>
-        <link refid="log_8h"/>
-      </node>
-      <node id="69">
-        <label>C:/sources/quasardb/api/include/qdb/prefix.h</label>
-        <link refid="prefix_8h"/>
-      </node>
-      <node id="66">
-        <label>C:/sources/quasardb/api/include/qdb/integer.h</label>
-        <link refid="integer_8h"/>
+      <node id="60">
+        <label>C:/sources/quasardb/api/include/qdb/error.h</label>
+        <link refid="error.h"/>
+        <childnode refid="61" relation="include">
+        </childnode>
+        <childnode refid="73" relation="include">
+        </childnode>
       </node>
       <node id="61">
         <label>C:/sources/quasardb/api/include/qdb/client.h</label>
@@ -76,79 +56,99 @@
         <childnode refid="72" relation="include">
         </childnode>
       </node>
-      <node id="65">
-        <label>C:/sources/quasardb/api/include/qdb/hset.h</label>
-        <link refid="hset_8h"/>
+      <node id="66">
+        <label>C:/sources/quasardb/api/include/qdb/integer.h</label>
+        <link refid="integer_8h"/>
       </node>
-      <node id="60">
-        <label>C:/sources/quasardb/api/include/qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="61" relation="include">
-        </childnode>
-        <childnode refid="73" relation="include">
-        </childnode>
-      </node>
-      <node id="63">
-        <label>C:/sources/quasardb/api/include/qdb/blob.h</label>
-        <link refid="blob_8h"/>
-      </node>
-      <node id="64">
-        <label>C:/sources/quasardb/api/include/qdb/deque.h</label>
-        <link refid="deque_8h"/>
+      <node id="72">
+        <label>C:/sources/quasardb/api/include/qdb/tag.h</label>
+        <link refid="tag_8h"/>
       </node>
       <node id="70">
         <label>C:/sources/quasardb/api/include/qdb/stream.h</label>
         <link refid="stream_8h"/>
       </node>
+      <node id="65">
+        <label>C:/sources/quasardb/api/include/qdb/hset.h</label>
+        <link refid="hset_8h"/>
+      </node>
+      <node id="63">
+        <label>C:/sources/quasardb/api/include/qdb/blob.h</label>
+        <link refid="blob_8h"/>
+      </node>
+      <node id="69">
+        <label>C:/sources/quasardb/api/include/qdb/prefix.h</label>
+        <link refid="prefix_8h"/>
+      </node>
+      <node id="67">
+        <label>C:/sources/quasardb/api/include/qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
+      </node>
+      <node id="73">
+        <label>C:/sources/quasardb/api/include/qdb/log.h</label>
+        <link refid="log_8h"/>
+      </node>
+      <node id="71">
+        <label>C:/sources/quasardb/api/include/qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
+      </node>
+      <node id="62">
+        <label>C:/sources/quasardb/api/include/qdb/batch.h</label>
+        <link refid="batch_8h"/>
+      </node>
+      <node id="64">
+        <label>C:/sources/quasardb/api/include/qdb/deque.h</label>
+        <link refid="deque_8h"/>
+      </node>
     </invincdepgraph>
       <sectiondef kind="define">
-      <memberdef kind="define" id="group__error_1gaaa894d6e444f5ec375e9662b1ec26298" prot="public" static="no">
+      <memberdef kind="define" id="group__error_1ga9c4473d8d1f9a870925121d8b5085c3c" prot="public" static="no">
         <name>QDB_ERROR_ORIGIN</name>
         <param><defname>x</defname></param>
         <initializer>((int)((x) &amp; 0xf0000000))</initializer>
         <briefdescription>
-<para>Extracts the origin out of a qdb_error_t. </para>        </briefdescription>
+<para>Extracts the origin out of a <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="91" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="91" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="92" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="92" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="group__error_1gaaba48738c590182c24a1eb0046cca9ba" prot="public" static="no">
+      <memberdef kind="define" id="group__error_1ga988fa2631bf090c9c57ca4ef1df4875a" prot="public" static="no">
         <name>QDB_ERROR_SEVERITY</name>
         <param><defname>x</defname></param>
         <initializer>((x) &amp; 0x0f000000)</initializer>
         <briefdescription>
-<para>Extracts the severity out of a qdb_error_t. </para>        </briefdescription>
+<para>Extracts the severity out of a <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="109" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="109" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="110" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="110" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" prot="public" static="no">
+      <memberdef kind="define" id="group__error_1ga8c7fbec5c8f5da7e6ee37bb587273433" prot="public" static="no">
         <name>QDB_SUCCESS</name>
         <param><defname>x</defname></param>
-        <initializer>(!(x) || (<ref refid="group__error_1gaaba48738c590182c24a1eb0046cca9ba" kindref="member">QDB_ERROR_SEVERITY</ref>(x) == qdb_e_severity_info))</initializer>
+        <initializer>(!(x) || (<ref refid="group__error_1ga988fa2631bf090c9c57ca4ef1df4875a" kindref="member">QDB_ERROR_SEVERITY</ref>(x) == qdb_e_severity_info))</initializer>
         <briefdescription>
-<para>True if and only if the qdb_error_t indicates a success. </para>        </briefdescription>
+<para>True if and only if the <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> indicates a success. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="114" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="114" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="115" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="115" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="define" id="group__error_1ga8145df0d400f6811ba830c14789681b5" prot="public" static="no">
+      <memberdef kind="define" id="group__error_1ga4956ff9626cdf92f077a8327a7b08507" prot="public" static="no">
         <name>QDB_FAILURE</name>
         <param><defname>x</defname></param>
-        <initializer>(!<ref refid="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" kindref="member">QDB_SUCCESS</ref>(x))</initializer>
+        <initializer>(!<ref refid="group__error_1ga8c7fbec5c8f5da7e6ee37bb587273433" kindref="member">QDB_SUCCESS</ref>(x))</initializer>
         <briefdescription>
-<para>True if and only if the qdb_error_t indicates a failure. </para>        </briefdescription>
+<para>True if and only if the <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> indicates a failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="119" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="119" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="120" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="120" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -208,7 +208,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="79" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="78" bodyend="86"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="80" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="79" bodyend="87"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gaa48fc525bae5abec03a6e216128e5a76" prot="public" static="no">
         <name>qdb_err_severity</name>
@@ -250,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="99" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="98" bodyend="104"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="100" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="99" bodyend="105"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" prot="public" static="no">
         <name>qdb_err</name>
@@ -401,22 +401,6 @@
         <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5ce70ce7196a92317e086a53ea701e03" prot="public">
           <name>qdb_e_unstable_cluster</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x0012</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a3000668568a24e1520e36ec4f9d6d43e" prot="public">
-          <name>qdb_e_outdated_topology</name>
-          <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x0014</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a31739594ad9636c315f04a9bff01842d" prot="public">
-          <name>qdb_e_wrong_peer</name>
-          <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x0015</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
@@ -662,13 +646,21 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5d6825c7b32eeea83aeb6dad1787c6f6" prot="public">
+          <name>qdb_e_clock_skew</name>
+          <initializer>= qdb_e_origin_system_remote | qdb_e_severity_error         | 0x0036</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An error code indicating success or failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="127" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="126" bodyend="185"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="128" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="127" bodyend="185"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -683,7 +675,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="86" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="87" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1gabf6c4d9393dd881c3a517f8a28187193" prot="public" static="no">
         <type>enum <ref refid="group__error_1gaa48fc525bae5abec03a6e216128e5a76" kindref="member">qdb_err_severity</ref></type>
@@ -696,7 +688,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="104" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="105" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga352232196dc2f9b9a89d701f63916cec" prot="public" static="no">
         <type>enum <ref refid="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" kindref="member">qdb_err</ref></type>
@@ -717,12 +709,12 @@
         <argsstring></argsstring>
         <name>qdb_status_t</name>
         <briefdescription>
-<para>An alias for qdb_error_t. </para>        </briefdescription>
+<para>An alias for <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="192" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="192" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="194" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="194" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -743,14 +735,14 @@
 <parametername>error</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The qdb_error_t code outputted by another function</para></parameterdescription>
+<para>The <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code outputted by another function</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A static, null terminated string describing the error. The buffer is API managed and should not be freed or written to by the caller. </para></simplesect>
+<simplesect kind="return"><para>A static, null-terminated string describing the error. The buffer is API managed and should not be freed or written to by the caller. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="201" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="203" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -794,135 +786,137 @@
 <codeline lineno="36"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
 <codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="__attr_8h" kindref="compound">qdb/_attr.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="__attr_8h" kindref="compound">_attr.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
-<codeline lineno="41"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>clang-format<sp/>off<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="42"><highlight class="normal"></highlight></codeline>
-<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
-<codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Error<sp/>code<sp/>are<sp/>32<sp/>bit<sp/>integers<sp/>computed<sp/>as<sp/>follow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="44"><highlight class="normal"></highlight></codeline>
+<codeline lineno="45"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>Error<sp/>code<sp/>are<sp/>32<sp/>bit<sp/>integers<sp/>computed<sp/>as<sp/>follow</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="46"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>High<sp/>order<sp/>to<sp/>low<sp/>order</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="48"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>High<sp/>order<sp/>to<sp/>low<sp/>order</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>4-bit<sp/>-<sp/>origin</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="50"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>4-bit<sp/>-<sp/>origin</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1111<sp/>-<sp/>Remote<sp/>system</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1110<sp/>-<sp/>Local<sp/>system</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1101<sp/>-<sp/>Connection</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1100<sp/>-<sp/>Input</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1011<sp/>-<sp/>Entry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="51"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1111<sp/>-<sp/>Remote<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1110<sp/>-<sp/>Local<sp/>system</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1101<sp/>-<sp/>Connection</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1100<sp/>-<sp/>Input</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="55"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>1011<sp/>-<sp/>Entry</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="57"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>4-bit<sp/>-<sp/>severity</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="58"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>4-bit<sp/>-<sp/>severity</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0011<sp/>-<sp/>Unrecoverable</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0010<sp/>-<sp/>Error</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0001<sp/>-<sp/>Warning<sp/>-<sp/>Nothing<sp/>bad<sp/>but<sp/>you<sp/>might<sp/>not<sp/>have<sp/>the<sp/>result<sp/>you<sp/>want</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0000<sp/>-<sp/>Info</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>8-bit<sp/>-<sp/>Reserved</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>16-bit<sp/>-<sp/>Code<sp/>-<sp/>The<sp/>actual<sp/>error<sp/>code</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="69"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>are<sp/>highly<sp/>ENCOURAGED<sp/>to<sp/>use<sp/>macros<sp/>to<sp/>check<sp/>for<sp/>errors<sp/>as<sp/>in<sp/>the<sp/>future<sp/>error<sp/>handling<sp/>may<sp/>change</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="72"></codeline>
-<codeline lineno="78"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__error_1gaef8f2ffc9bd2ee1abe785a8aeb86c701" kindref="member">qdb_err_origin</ref></highlight></codeline>
-<codeline lineno="79"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_system_remote<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(int)<sp/>0xf0000000,</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_system_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>0xe0000000,</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(int)<sp/>0xd0000000,</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>0xc0000000,</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(int)<sp/>0xb0000000,</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>0xa0000000</highlight></codeline>
-<codeline lineno="86"><highlight class="normal">}<sp/><ref refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kindref="member">qdb_error_origin_t</ref>;</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="preprocessor">#define<sp/>QDB_ERROR_ORIGIN(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((int)((x)<sp/>&amp;<sp/>0xf0000000))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="92"><highlight class="normal"></highlight></codeline>
-<codeline lineno="98"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__error_1gaa48fc525bae5abec03a6e216128e5a76" kindref="member">qdb_err_severity</ref></highlight></codeline>
-<codeline lineno="99"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_unrecoverable<sp/><sp/><sp/><sp/>=<sp/>0x03000000,</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02000000,</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01000000,</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000000</highlight></codeline>
-<codeline lineno="104"><highlight class="normal">}<sp/><ref refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kindref="member">qdb_error_severity_t</ref>;</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"></highlight></codeline>
-<codeline lineno="109"><highlight class="preprocessor">#define<sp/>QDB_ERROR_SEVERITY(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>((x)<sp/>&amp;<sp/>0x0f000000)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="preprocessor">#define<sp/>QDB_SUCCESS(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(!(x)<sp/>||<sp/>(QDB_ERROR_SEVERITY(x)<sp/>==<sp/>qdb_e_severity_info))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="preprocessor">#define<sp/>QDB_FAILURE(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(!QDB_SUCCESS(x))</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="126"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" kindref="member">qdb_err</ref></highlight></codeline>
-<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="128"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_ok<sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="129"><highlight class="normal"></highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>------------------------------------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/>error<sp/>name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>origin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>severity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>code<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>------------------------------------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_uninitialized<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0xFFFF,</highlight></codeline>
-<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_alias_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0008,</highlight></codeline>
-<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_alias_already_exists<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0009,</highlight></codeline>
-<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_out_of_bounds<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0019,</highlight></codeline>
-<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_skipped<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0021,</highlight></codeline>
-<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_incompatible_type<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0022,</highlight></codeline>
-<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_container_empty<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0023,</highlight></codeline>
-<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_container_full<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0024,</highlight></codeline>
-<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_element_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0025,</highlight></codeline>
-<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_element_already_exists<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0026,</highlight></codeline>
-<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_overflow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0027,</highlight></codeline>
-<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_underflow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0028,</highlight></codeline>
-<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_tag_already_set<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0029,</highlight></codeline>
-<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_tag_not_set<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002a,</highlight></codeline>
-<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_timeout<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x000a,</highlight></codeline>
-<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_connection_refused<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x000e,</highlight></codeline>
-<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_connection_reset<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x000f,</highlight></codeline>
-<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_unstable_cluster<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0012,</highlight></codeline>
-<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_outdated_topology<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0014,</highlight></codeline>
-<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_wrong_peer<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0015,</highlight></codeline>
-<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_try_again<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0017,</highlight></codeline>
-<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_conflict<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001a,</highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_not_connected<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001b,</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_resource_locked<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002d,</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>check<sp/>errno<sp/>or<sp/>GetLastError()<sp/>for<sp/>actual<sp/>error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_system_remote<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0001,</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_system_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_local<sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0001,</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_internal_remote<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0002,</highlight></codeline>
-<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_internal_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_local<sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0002,</highlight></codeline>
-<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_no_memory_remote<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0003,</highlight></codeline>
-<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_no_memory_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_local<sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0003,</highlight></codeline>
-<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_protocol<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0004,</highlight></codeline>
-<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_host_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0005,</highlight></codeline>
-<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_buffer_too_small<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x000b,</highlight></codeline>
-<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_not_implemented<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0011,</highlight></codeline>
-<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_version<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0016,</highlight></codeline>
-<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_argument<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0018,</highlight></codeline>
-<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_handle<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001c,</highlight></codeline>
-<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_reserved_alias<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001d,</highlight></codeline>
-<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_unmatched_content<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001e,</highlight></codeline>
-<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_iterator<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001f,</highlight></codeline>
-<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_entry_too_large<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002b,</highlight></codeline>
-<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_transaction_partial_failure<sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002c,</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_operation_disabled<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002e,</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_operation_not_permitted<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002f,</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_iterator_end<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0030,</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_reply<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0031,</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_ok_created<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0032,</highlight></codeline>
-<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_no_space_left<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0033,</highlight></codeline>
-<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_quota_exceeded<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0034,</highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_alias_too_long<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0035</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0011<sp/>-<sp/>Unrecoverable</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="60"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0010<sp/>-<sp/>Error</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0001<sp/>-<sp/>Warning<sp/>-<sp/>Nothing<sp/>bad<sp/>but<sp/>you<sp/>might<sp/>not<sp/>have<sp/>the<sp/>result<sp/>you<sp/>want</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="62"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/><sp/><sp/><sp/><sp/>0000<sp/>-<sp/>Info</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="64"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>8-bit<sp/>-<sp/>Reserved</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="65"><highlight class="normal"></highlight><highlight class="comment">//<sp/><sp/>16-bit<sp/>-<sp/>Code<sp/>-<sp/>The<sp/>actual<sp/>error<sp/>code</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight><highlight class="comment">//</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight><highlight class="comment">//<sp/>You<sp/>are<sp/>highly<sp/>ENCOURAGED<sp/>to<sp/>use<sp/>macros<sp/>to<sp/>check<sp/>for<sp/>errors<sp/>as<sp/>in<sp/>the<sp/>future</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight><highlight class="comment">//<sp/>error<sp/>handling<sp/>may<sp/>change.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"></codeline>
+<codeline lineno="77"><highlight class="comment">/*<sp/>clang-format<sp/>off<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="78"><highlight class="normal"></highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__error_1gaef8f2ffc9bd2ee1abe785a8aeb86c701" kindref="member">qdb_err_origin</ref></highlight></codeline>
+<codeline lineno="80"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_system_remote<sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(int)<sp/>0xf0000000,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_system_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>0xe0000000,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(int)<sp/>0xd0000000,</highlight></codeline>
+<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>0xc0000000,</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(int)<sp/>0xb0000000,</highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>(</highlight><highlight class="keywordtype">int</highlight><highlight class="normal">)<sp/>0xa0000000</highlight></codeline>
+<codeline lineno="87"><highlight class="normal">}<sp/><ref refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kindref="member">qdb_error_origin_t</ref>;</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"></highlight></codeline>
+<codeline lineno="92"><highlight class="preprocessor">#define<sp/>QDB_ERROR_ORIGIN(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>((int)((x)<sp/>&amp;<sp/>0xf0000000))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__error_1gaa48fc525bae5abec03a6e216128e5a76" kindref="member">qdb_err_severity</ref></highlight></codeline>
+<codeline lineno="100"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_unrecoverable<sp/><sp/><sp/><sp/>=<sp/>0x03000000,</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x02000000,</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x01000000,</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>0x00000000</highlight></codeline>
+<codeline lineno="105"><highlight class="normal">}<sp/><ref refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kindref="member">qdb_error_severity_t</ref>;</highlight></codeline>
+<codeline lineno="106"><highlight class="normal"></highlight></codeline>
+<codeline lineno="110"><highlight class="preprocessor">#define<sp/>QDB_ERROR_SEVERITY(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/>((x)<sp/>&amp;<sp/>0x0f000000)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="111"><highlight class="normal"></highlight></codeline>
+<codeline lineno="115"><highlight class="preprocessor">#define<sp/>QDB_SUCCESS(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(!(x)<sp/>||<sp/>(QDB_ERROR_SEVERITY(x)<sp/>==<sp/>qdb_e_severity_info))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="116"><highlight class="normal"></highlight></codeline>
+<codeline lineno="120"><highlight class="preprocessor">#define<sp/>QDB_FAILURE(x)<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>(!QDB_SUCCESS(x))</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight></codeline>
+<codeline lineno="127"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" kindref="member">qdb_err</ref></highlight></codeline>
+<codeline lineno="128"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_ok<sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="130"><highlight class="normal"></highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>------------------------------------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/><sp/>error<sp/>name<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>origin<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>severity<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>code<sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>------------------------------------------------------------------------------------------------------<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_uninitialized<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0xFFFF,</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_alias_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0008,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_alias_already_exists<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0009,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_out_of_bounds<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0019,</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_skipped<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0021,</highlight></codeline>
+<codeline lineno="139"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_incompatible_type<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0022,</highlight></codeline>
+<codeline lineno="140"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_container_empty<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0023,</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_container_full<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0024,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_element_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0025,</highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_element_already_exists<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0026,</highlight></codeline>
+<codeline lineno="144"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_overflow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0027,</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_underflow<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0028,</highlight></codeline>
+<codeline lineno="146"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_tag_already_set<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0029,</highlight></codeline>
+<codeline lineno="147"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_tag_not_set<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002a,</highlight></codeline>
+<codeline lineno="148"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_timeout<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x000a,</highlight></codeline>
+<codeline lineno="149"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_connection_refused<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x000e,</highlight></codeline>
+<codeline lineno="150"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_connection_reset<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x000f,</highlight></codeline>
+<codeline lineno="151"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_unstable_cluster<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0012,</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_try_again<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0017,</highlight></codeline>
+<codeline lineno="153"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_conflict<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001a,</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_not_connected<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001b,</highlight></codeline>
+<codeline lineno="155"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_resource_locked<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002d,</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>check<sp/>errno<sp/>or<sp/>GetLastError()<sp/>for<sp/>actual<sp/>error<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_system_remote<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0001,</highlight></codeline>
+<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_system_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_local<sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0001,</highlight></codeline>
+<codeline lineno="159"><highlight class="normal"></highlight></codeline>
+<codeline lineno="160"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_internal_remote<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0002,</highlight></codeline>
+<codeline lineno="161"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_internal_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_local<sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0002,</highlight></codeline>
+<codeline lineno="162"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_no_memory_remote<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0003,</highlight></codeline>
+<codeline lineno="163"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_no_memory_local<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_local<sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0003,</highlight></codeline>
+<codeline lineno="164"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_protocol<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0004,</highlight></codeline>
+<codeline lineno="165"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_host_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_connection<sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0005,</highlight></codeline>
+<codeline lineno="166"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_buffer_too_small<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x000b,</highlight></codeline>
+<codeline lineno="167"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_not_implemented<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0011,</highlight></codeline>
+<codeline lineno="168"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_version<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0016,</highlight></codeline>
+<codeline lineno="169"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_argument<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0018,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_handle<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001c,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_reserved_alias<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001d,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_unmatched_content<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001e,</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_iterator<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x001f,</highlight></codeline>
+<codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_entry_too_large<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002b,</highlight></codeline>
+<codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_transaction_partial_failure<sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002c,</highlight></codeline>
+<codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_operation_disabled<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002e,</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_operation_not_permitted<sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x002f,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_iterator_end<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0030,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_reply<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_protocol<sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0031,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_ok_created<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_info<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0032,</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_no_space_left<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_unrecoverable<sp/>|<sp/>0x0033,</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_quota_exceeded<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0034,</highlight></codeline>
+<codeline lineno="183"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_alias_too_long<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0035,</highlight></codeline>
+<codeline lineno="184"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_clock_skew<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0036</highlight></codeline>
 <codeline lineno="185"><highlight class="normal">}<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>;</highlight></codeline>
 <codeline lineno="186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="192"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
-<codeline lineno="193"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
-<codeline lineno="202"><highlight class="normal"></highlight></codeline>
-<codeline lineno="203"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="204"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="206"><highlight class="normal"></highlight></codeline>
-<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_ERROR_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight><highlight class="comment">/*<sp/>clang-format<sp/>on<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="203"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
+<codeline lineno="204"><highlight class="normal"></highlight></codeline>
+<codeline lineno="205"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="206"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="207"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="208"><highlight class="normal"></highlight></codeline>
+<codeline lineno="209"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_ERROR_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="C:/sources/quasardb/api/include/qdb/error.h"/>
   </compounddef>

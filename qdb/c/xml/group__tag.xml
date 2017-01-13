@@ -37,17 +37,17 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry to which the tag must be added. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry to which the tag must be added. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the tag to add to the entry </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag to add to the entry </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaa8b8afc25faab9d31f181f01c0903369" kindref="member">qdb_attach_tags</ref>, <ref refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kindref="member">qdb_detach_tag</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -90,14 +90,14 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry to which the tags must be added. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry to which the tags must be added. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>tags</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array a null terminated UTF-8 strings representing the tags to add to the entry </para></parameterdescription>
+<para>A pointer to an array a null-terminated UTF-8 strings representing the tags to add to the entry </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -107,7 +107,7 @@
 <para>The count of tags to add to the entry. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga571507d1aa1ca6bfc7b75766963c7770" kindref="member">qdb_attach_tag</ref>, <ref refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kindref="member">qdb_detach_tags</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -146,17 +146,17 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry to which the tag must be tested. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry to which the tag must be tested. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the tag for which presence must be tested </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag for which presence must be tested </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -195,17 +195,17 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry to which the tag must be remove. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry to which the tag must be remove. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the tag to remove </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag to remove </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kindref="member">qdb_detach_tags</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -248,14 +248,14 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry to which the tags must be removed. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry to which the tags must be removed. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>tags</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array a null terminated UTF-8 strings representing the tags to remove </para></parameterdescription>
+<para>A pointer to an array a null-terminated UTF-8 strings representing the tags to remove </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -265,7 +265,7 @@
 <para>The count of tags to remove to the entry. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kindref="member">qdb_detach_tag</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -308,14 +308,14 @@
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the tag for which to search entries </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag for which to search entries </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>aliases</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array of null terminated UTF-8 string that will list the aliases of the entries having the requested tag. </para></parameterdescription>
+<para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries having the requested tag. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -325,7 +325,7 @@
 <para>A pointer to an integer that will receive the number of returned aliases. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref>, <ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -368,14 +368,14 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the entry to which the tag must be added. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry to which the tag must be added. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>tags</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array of null terminated UTF-8 string that will list the tags of the entry </para></parameterdescription>
+<para>A pointer to an array of null-terminated UTF-8 string that will list the tags of the entry </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -385,7 +385,7 @@
 <para>A pointer to an integer that will receive the number of returned tags. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -424,7 +424,7 @@
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the tag on which iteration is requested </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag on which iteration is requested </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -434,7 +434,7 @@
 <para>A pointer to an uninitialized <ref refid="structqdb__const__tag__iterator__t" kindref="compound">qdb_const_tag_iterator_t</ref></para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kindref="member">qdb_tag_iterator_next</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -461,7 +461,7 @@
 <para>A pointer to an initialized <ref refid="structqdb__const__tag__iterator__t" kindref="compound">qdb_const_tag_iterator_t</ref></para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -488,7 +488,7 @@
 <para>A pointer to an initialized <ref refid="structqdb__const__tag__iterator__t" kindref="compound">qdb_const_tag_iterator_t</ref></para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>

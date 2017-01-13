@@ -2,26 +2,22 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="batch_8h" kind="file" language="C++">
     <compoundname>batch.h</compoundname>
-    <includes refid="client_8h" local="no">qdb/client.h</includes>
+    <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
-      <node id="16">
-        <label>C:/sources/quasardb/api/include/qdb/batch.h</label>
-        <link refid="batch_8h"/>
-        <childnode refid="17" relation="include">
+      <node id="19">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
+      <node id="18">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="19" relation="include">
         </childnode>
-      </node>
-      <node id="22">
-        <label>stdint.h</label>
-      </node>
-      <node id="20">
-        <label>stddef.h</label>
       </node>
       <node id="17">
-        <label>qdb/client.h</label>
+        <label>client.h</label>
         <link refid="client_8h"/>
         <childnode refid="18" relation="include">
-        </childnode>
-        <childnode refid="19" relation="include">
         </childnode>
         <childnode refid="20" relation="include">
         </childnode>
@@ -30,18 +26,20 @@
         <childnode refid="22" relation="include">
         </childnode>
       </node>
-      <node id="19">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="18" relation="include">
-        </childnode>
+      <node id="22">
+        <label>stdint.h</label>
+      </node>
+      <node id="20">
+        <label>stddef.h</label>
       </node>
       <node id="21">
         <label>time.h</label>
       </node>
-      <node id="18">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
+      <node id="16">
+        <label>C:/sources/quasardb/api/include/qdb/batch.h</label>
+        <link refid="batch.h"/>
+        <childnode refid="17" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <innerclass refid="structint__put__update__t" prot="public">int_put_update_t</innerclass>
@@ -162,7 +160,7 @@
         <argsstring></argsstring>
         <name>qdb_operation_type_t</name>
         <briefdescription>
-<para>A type alias for enum qdb_operation_type. </para>        </briefdescription>
+<para>A type alias for enum <ref refid="group__batch_1ga76e411451eeda47e0cd972e4a634ea3d" kindref="member">qdb_operation_type</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -202,7 +200,7 @@
 <para>The number of elements in the array of operations </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -311,7 +309,7 @@
 <para>A pointer to the index of the first failed operation </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>, <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -360,7 +358,7 @@
 <para>The number of elements in the array of operations </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>, <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -409,7 +407,7 @@
 <codeline lineno="36"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
 <codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="client_8h" kindref="compound">qdb/client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="client_8h" kindref="compound">client.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>

@@ -36,7 +36,7 @@
         <argsstring></argsstring>
         <name>expiry_time</name>
         <briefdescription>
-<para>The optional expiration time. Use qdb_never_expires for no expiration. </para>        </briefdescription>
+<para>The optional expiration time. Use <ref refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kindref="member">qdb_never_expires</ref> for no expiration. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>

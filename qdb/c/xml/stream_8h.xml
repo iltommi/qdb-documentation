@@ -2,21 +2,23 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="stream_8h" kind="file" language="C++">
     <compoundname>stream.h</compoundname>
-    <includes refid="client_8h" local="no">qdb/client.h</includes>
+    <includes refid="client_8h" local="yes">client.h</includes>
     <includes local="no">stdint.h</includes>
     <incdepgraph>
-      <node id="125">
-        <label>stdint.h</label>
+      <node id="122">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
-      <node id="123">
-        <label>stddef.h</label>
+      <node id="121">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="122" relation="include">
+        </childnode>
       </node>
       <node id="120">
-        <label>qdb/client.h</label>
+        <label>client.h</label>
         <link refid="client_8h"/>
         <childnode refid="121" relation="include">
-        </childnode>
-        <childnode refid="122" relation="include">
         </childnode>
         <childnode refid="123" relation="include">
         </childnode>
@@ -25,26 +27,22 @@
         <childnode refid="125" relation="include">
         </childnode>
       </node>
-      <node id="122">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="121" relation="include">
-        </childnode>
-      </node>
-      <node id="124">
-        <label>time.h</label>
+      <node id="125">
+        <label>stdint.h</label>
       </node>
       <node id="119">
         <label>C:/sources/quasardb/api/include/qdb/stream.h</label>
-        <link refid="stream_8h"/>
+        <link refid="stream.h"/>
         <childnode refid="120" relation="include">
         </childnode>
         <childnode refid="125" relation="include">
         </childnode>
       </node>
-      <node id="121">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
+      <node id="123">
+        <label>stddef.h</label>
+      </node>
+      <node id="124">
+        <label>time.h</label>
       </node>
     </incdepgraph>
       <sectiondef kind="enum">
@@ -140,7 +138,7 @@
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null terminated UTF-8 string representing the alias of the stream to open. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the stream to open. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -157,7 +155,7 @@
 <para>A pointer to a stream handle that will be initialized if the function is successful </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1ga449b224e9375ada8221175b7c3565dcf" kindref="member">qdb_stream_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -184,7 +182,7 @@
 <para>A stream handle previously initialized with <ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -211,7 +209,7 @@
         <briefdescription>
 <para>Reads data from the stream. </para>        </briefdescription>
         <detaileddescription>
-<para>Stream are distributed over the nodes of the cluster and have no limit in size.</para><para>The function will read at most content_length bytes from the stream and update the user provided buffer accordingly.</para><para>The cursor will be positioned just after the last byte read.</para><para>If no data is available, content_length will be set to zero and no bytes will be read.</para><para>The user provided buffer must be large enough to receive content_length bytes</para><para><parameterlist kind="param"><parameteritem>
+<para>Stream are distributed over the nodes of the cluster and have no limit in size.</para><para>The function will read at most <computeroutput>content_length</computeroutput> bytes from the stream and update the user provided buffer accordingly.</para><para>The cursor will be positioned just after the last byte read.</para><para>If no data is available, <computeroutput>ontent_length</computeroutput> will be set to zero and no bytes will be read.</para><para>The user provided buffer must be large enough to receive <computeroutput>ontent_length</computeroutput> bytes</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>stream</parametername>
 </parameternamelist>
@@ -233,7 +231,7 @@
 <para>A pointer to an integer set by the caller to the desired amount of bytes to read from the stream. After the function complete, it will be updated by the number of bytes actually read from the stream. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -282,7 +280,7 @@
 <para>The size of the buffer, in bytes </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -320,7 +318,7 @@
 <para>A pointer to an integer that will receive the size of the stream, in bytes </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -358,7 +356,7 @@
 <para>A pointer to an integer that will receive the position of the cursor relative to the beginning of the stream. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -396,7 +394,7 @@
 <para>An integer specifying the new cursor value. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -434,7 +432,7 @@
 <para>An integer specifying the index at which the stream must be truncated. </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A qdb_error_t code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kindref="member">qdb_stream_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -483,7 +481,7 @@
 <codeline lineno="36"><highlight class="comment"><sp/>*<sp/>SOFTWARE,<sp/>EVEN<sp/>IF<sp/>ADVISED<sp/>OF<sp/>THE<sp/>POSSIBILITY<sp/>OF<sp/>SUCH<sp/>DAMAGE.</highlight></codeline>
 <codeline lineno="37"><highlight class="comment"><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="38"><highlight class="normal"></highlight></codeline>
-<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&lt;<ref refid="client_8h" kindref="compound">qdb/client.h</ref>&gt;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="39"><highlight class="normal"></highlight><highlight class="preprocessor">#include<sp/>&quot;<ref refid="client_8h" kindref="compound">client.h</ref>&quot;</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="40"><highlight class="normal"></highlight></codeline>
 <codeline lineno="41"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
