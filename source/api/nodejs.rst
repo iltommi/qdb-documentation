@@ -221,8 +221,6 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
 
       Sets blob's content but fails if the blob already exists. See also update().
 
-      Aliases beginning with "qdb" are reserved and cannot be used.
-
       :param Buffer content: A string representing the blob's content to be set.
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
@@ -230,8 +228,6 @@ Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org
   .. js:function:: Blob.update (Buffer content, [Date expiry_time], callback(err))
 
       Updates the content of the blob.
-
-      Aliases beginning with "qdb" are reserved and cannot be used. See also put().
 
       :param Buffer content: A Buffer representing the blob's content to be added.
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
@@ -463,15 +459,11 @@ You get an ``Integer`` instance by calling :func:`Cluster.integer`. Then you can
 
   .. js:function:: Integer.put (int value, [Date expiry_time], callback(err))
 
-      Adds an entry. Aliases beginning with "qdb" are reserved and cannot be used.
-
       :param int value: The value of the integer.
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.
       :param function callback(err): A callback or anonymous function with error parameter.
 
   .. js:function:: Integer.update (int value, [Date expiry_time], callback(err))
-
-      Updates an entry. Aliases beginning with "qdb" are reserved and cannot be used.
 
       :param int value: The value of the integer.
       :param Date expiry_time: An optional Date with the absolute time at which the entry should expire.

@@ -541,7 +541,7 @@ Reference
 
     .. cpp:function:: qdb_error_t blob_put(const char * alias, const char * content, qdb_size_t content_length, qdb_time_t expiry_time)
 
-        Adds an entry to the quasardb server. If the entry already exists the method will fail and will return ``qdb_e_alias_already_exists``. Keys beginning with the string "qdb" are reserved and cannot be added to the cluster.
+        Adds an entry to the quasardb server. If the entry already exists the method will fail and will return ``qdb_e_alias_already_exists``.
 
         The handle must be initialized and connected (see :cpp:func`connect).
 

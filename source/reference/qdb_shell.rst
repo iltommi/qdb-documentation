@@ -273,7 +273,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. _qdbsh_blob_put:
 .. option:: blob_put <alias> <content>
 
-    Add a new Blob to the cluster. The Blob must not already exist. Aliases beginning with the string "qdb" are reserved and cannot be added to the cluster.
+    Add a new Blob to the cluster. The Blob must not already exist.
 
     :param alias: *(string)* the alias of the Blob
     :param content: *(string)* the content of the Blob
@@ -450,7 +450,7 @@ A command generally requires one or several arguments. Each argument is separate
 .. _qdbsh_int_put:
 .. option:: int_put <alias> <value>
 
-    Add a new Integer to the cluster. The Integer must not already exist. Aliases beginning with the string "qdb" are reserved and cannot be added to the cluster.
+    Add a new Integer to the cluster. The Integer must not already exist.
 
     :param alias: *(string)* the alias of the Integer
     :param value: *(string)* the value of the Integer
