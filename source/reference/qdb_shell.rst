@@ -11,7 +11,7 @@ The shell can be used interactively and non-interactively.
 In :ref:`interactive mode <qdbsh-interactive-mode>`, the user enters commands to be executed on the node. Feedback is provided to indicate failure.
 In :ref:`non-interactive mode <qdbsh-noninteractive-mode>`, a single command - supplied as a parameter - is executed and the program exits.
 
-By default qdbsh will attempt to connect in interactive mode to a qdbd daemon running on 127.0.0.1:2836. If this is not the case - for example if your qdbd daemon runs on 192.168.1.1 and listens on the port 303 - you will need to pass the address and port as a qdb:// string, shown below::
+By default `qdbsh` will attempt to connect in interactive mode to a `qdbd` daemon running on 127.0.0.1:2836. If this is not the case - for example if your `qdbd` daemon runs on 192.168.1.1 and listens on the port 303 - you will need to pass the address and port as a ``qdb://`` URI string, shown below::
 
     qdbsh qdb://192.168.1.1:303
 
@@ -46,7 +46,7 @@ Commands
  :ref:`blob_put alias content <qdbsh_blob_put>`                                       create a new Blob; fails if Blob already exists
  :ref:`blob_remove_if alias comparand <qdbsh_blob_remove_if>`                         remove the Blob if the value matches the comparand
  :ref:`blob_update alias content <qdbsh_blob_update>`                                 update an existing Blob or creates a new Blob
- :ref:`cluster_purge <qdbsh_cluster_purge>`                                           remove ALL entries on the WHOLE cluster (Dangerous!)
+ :ref:`cluster_purge <qdbsh_cluster_purge>`                                           remove ALL entries on the WHOLE cluster (dangerous!)
  :ref:`cluster_trim <qdbsh_cluster_trim>`                                             remove unused versions of entries from the cluster
  :ref:`expires_at alias expiry <qdbsh_expires_at>`                                    set the absolute expiry time of the entry
  :ref:`expires_from_now alias delta <qdbsh_expires_from_now>`                         set the expiry time of the entry to seconds relative to now
@@ -88,13 +88,13 @@ Commands
 Interactive mode
 ================
 
-Use qdbsh interactive mode to enter as many commands as needed. The shell provides you with feedback upon success and failure or displays the content of retrieved entries.
+Use `qdbsh` interactive mode to enter as many commands as needed. The shell provides you with feedback upon success and failure or displays the content of retrieved entries.
 
-Unless otherwise specified, qdbsh assumes the daemon is running on localhost and on the port 2836.
+Unless otherwise specified, `qdbsh` assumes the daemon is running on localhost and on the port 2836.
 
-Once qdbsh has connected to a cluster, the following prompt is displayed::
+Once `qdbsh` has connected to a cluster, the following prompt is displayed::
 
-    qdbsh:ok >
+    qdbsh >
 
 This means the shell is ready to accept commands. Only one command at a time may be specified.
 
@@ -108,37 +108,37 @@ If the command is expected to output content on success (such as the get command
 
 If the previous command executes successfully, the prompt shows::
 
-    qdbsh:ok >
+    qdbsh >
 
 If the previous command fails, the prompt turns into::
 
-    qdbsh:ko >
+    qdbsh!>
 
-As of quasardb 2.0.0, qdb_shell's interactive mode supports tab completion and command history (using the up/down and pgup/pgdn keys).
+As of quasardb 2.0.0, `qdbsh` in interactive mode supports tab completion and command history (using the Up/Down and PgUp/PgDn keys).
 
 Examples
 --------
 
 Add a new Blob named "alias" whose content is "content" and print it::
 
-    qdbsh:ok > blob_put alias content
-    qdbsh:ok > blob_get alias
+    qdbsh > blob_put alias content
+    qdbsh > blob_get alias
     content
-    qdbsh:ok >
+    qdbsh >
 
 Remove an entry named "alias"::
 
-    qdbsh:ok > remove alias
-    qdbsh:ok >
+    qdbsh > remove alias
+    qdbsh >
 
 .. _qdbsh-noninteractive-mode:
 
 Non-interactive mode
 ====================
 
-Use qdbsh non-interactive mode to run one command without waiting for any input. Non-interactive mode supports standard input and output and can be integrated in a tool chain à la Unix. Performance-wise, non-interactive mode implies establishing and closing a connection to the quasardb cluster every time the qdbsh executable is run.
+Use `qdbsh` non-interactive mode to run one command without waiting for any input. Non-interactive mode supports standard input and output and can be integrated in a tool chain à la Unix. Performance-wise, non-interactive mode implies establishing and closing a connection to the quasardb cluster every time the `qdbsh` executable is run.
 
-The command to be executed is supplied as an argument to the -c parameter. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
+The command to be executed is supplied as an argument to the :option:`-c` parameter. For the list of supported commands, see :ref:`qdbsh-commands-reference`.
 
 When successful, the result of the command will be printed on the standard output stream and the shell will exit with the code 0. Most commands produce no output when successful (silent success).
 
@@ -147,7 +147,7 @@ In case of error, the shell will output an error message on the standard error o
 Examples
 --------
 
-Unless otherwise specified, qdbsh assumes the daemon is running on localhost and on the port 2836.
+Unless otherwise specified, `qdbsh` assumes the daemon is running on localhost and on the port 2836.
 
 Save the content of a Blob named "biography" in a text file named "biography.txt"::
 
@@ -184,7 +184,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         The command and required parameters for the command.
 
    Example
-        If the qdbd daemon is on localhost and listens on port 3001 and we want to add an entry::
+        If the `qdbd` daemon is on localhost and listens on port 3001 and we want to add an entry::
 
             qdbsh qdb://127.0.0.1:3001 -c blob_put title "There and Back Again: A Hobbit's Tale"
 
@@ -220,7 +220,7 @@ A command generally requires one or several arguments. Each argument is separate
 
     .. note::
         * The alias must not contain the space character and its length must be below 1024.
-        * The new content must only be printable characters. This is only a qdbsh restriction.
+        * The new content must only be printable characters. This is only a `qdbsh` restriction.
         * There must be one space and only one space between the comparand and the content.
         * There is no practical limit to the comparand length. All characters until the end of the input are used for the comparand, including space characters.
 
@@ -236,9 +236,9 @@ A command generally requires one or several arguments. Each argument is separate
     *Example*
         Retrive a Blob whose alias is "alias" and whose content is the string "content"::
 
-            qdbsh:ok > blob_get alias
+            qdbsh > blob_get alias
             content
-            qdbsh:ok >
+            qdbsh >
 
     .. note::
         * The alias must not contain the space character.

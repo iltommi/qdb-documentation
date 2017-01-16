@@ -6,7 +6,7 @@ Usage
 
 The software requires a valid, up to date license in order to operate properly. Some details of the license are reminded here, but the terms that apply to you are those you signed.
 
-Do not hesitate to contact us to request an evaluation license (see :doc:`contact`)!
+Do not hesitate to :doc:`contact us </contact>` to request an evaluation license!
 
 License file
 ------------
@@ -31,7 +31,7 @@ When your quasardb license expires:
  #. You are not eligible for upgrades or dedicated assistance.
  #. You may report bugs at `support@quasardb.net <support@quasardb.net>`_,
 
-Please contact your quasardb representative to renew your license (see :doc:`contact`).
+Please :doc:`contact your quasardb representative </contact>` to renew your license.
 
 Scope of the licensed rights
 ----------------------------
@@ -96,7 +96,7 @@ any of the proprietary rights notices of Quasardb and its suppliers appearing
 on the Software or Documentation and the Client agrees to reproduce all such
 notices on each copy he is permitted to make under this Agreement.
 
-If you have any doubt about the legitimacy of your usage, do not hesitate contact us (see :doc:`contact`).
+If you have any doubt about the legitimacy of your usage, do not hesitate to :doc:`contact us <contact>`.
 
 Interoperability
 ++++++++++++++++

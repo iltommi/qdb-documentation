@@ -7,7 +7,7 @@ quasardb web server
 Introduction
 ============
 
-The quasardb web server, qdb_httpd, provides two services:
+The quasardb web server, `qdb_httpd`, provides two services:
  * An HTML5 GUI that shows an overview of cluster and node activity
  * A RESTful API that can translate entries from the cluster into JSON or JSONP.
 
@@ -41,12 +41,12 @@ Quick Reference
  :option:`-t`, :option:`--threads`          number of threads to use      1
  =======================================   ============================= =================== ==============
 
-Launching the qdb_httpd daemon
-==============================
+Launching the `qdb_httpd` daemon
+================================
 
-The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured using either a configuration file or by command-line arguments. See :ref:`qdb_httpd-config-file-reference` and :ref:`qdb_httpd-parameters-reference`, respectively. A configuration file is recommended.
+The web server binary is `qdb_httpd` (`qdb_httpd.exe` on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured using either a configuration file or by command-line arguments. See :ref:`qdb_httpd-config-file-reference` and :ref:`qdb_httpd-parameters-reference`, respectively. A configuration file is recommended.
 
-In FreeBSD or Linux you can run the http daemon with::
+In FreeBSD or Linux you can run the HTTP daemon with::
 
     qdb_httpd -c qdb_httpd_config_file.json
 
@@ -57,12 +57,12 @@ or on Windows::
 The server does not require specific privileges to run (i.e. you don't need to run the server from an administrator account).
 
 
-Using the qdb_httpd HTML interface
-==================================
+Using the `qdb_httpd` HTML interface
+=====================================
 
-To view the qdb_httpd web interface, point a browser to the /view folder on the server's IP address and port. By default this URL is http://127.0.0.1:8080/view/index.html. If viewing from a remote machine, consult the qdb_httpd daemon's configuration file.
+To view the `qdb_httpd` web interface, point a browser to the /view folder on the server's IP address and port. By default this URL is http://127.0.0.1:8080/view/index.html. If viewing from a remote machine, consult the `qdb_httpd` daemon's configuration file.
 
-The web interface has two tabs, the "Your Cluster" tab, showing an overview of the cluster, and the "Node Data" tab, where you can drill down into a specific qdbd node. As of 1.1.3, the web interface can display up to 32 nodes in a cluster.
+The web interface has two tabs, the "Your Cluster" tab, showing an overview of the cluster, and the "Node Data" tab, where you can drill down into a specific `qdbd` node. As of 1.1.3, the web interface can display up to 32 nodes in a cluster.
 
 Your Cluster
 ~~~~~~~~~~~~
@@ -208,14 +208,14 @@ Hover over the black line on the graph to display detailed information about the
 Securing access to the console
 ==============================
 
-By default the console access is free to anyone who has network access. It is possible enable basic http authentication to secure access to the console.
+By default the console access is free to anyone who has network access. It is possible enable basic HTTP authentication to secure access to the console.
 
 Both the login name and the password can be configured to an arbitrary value.
 
 .. caution::
   The password is stored in clear in the configuration file. To properly secure your console, you must ensure that the web bridge configuration file is not accessible to anyone.
 
-  In addition, you may want to tunnel the traffic through TLS for increased security as basic http authentication does not securely transmits credentials.
+  In addition, you may want to tunnel the traffic through TLS for increased security as basic HTTP authentication does not securely transmits credentials.
 
 The configuration of the login and the password can be done from the command line::
 
@@ -223,8 +223,8 @@ The configuration of the login and the password can be done from the command lin
 
 This will require the login "admin" and the password "secret" to be entered when accessing the console. It is recommended to set the value of the password in the configuration file (see :ref:`qdb_httpd-config-file-reference`).
 
-Using the qdb_httpd JSON interface
-==================================
+Using the `qdb_httpd` JSON interface
+====================================
 
 The server only accepts specific URLs and will service JSON or JSONP data depending on the URL and its parameters. If the URL does not exist, the server will return a page not found (404) error.
 
@@ -251,7 +251,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: -v
 
-    Displays qdb_httpd version information.
+    Displays `qdb_httpd` version information.
 
 .. option:: --gen-config
 
@@ -322,7 +322,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --node <address>:<port>
 
-   Specifies the address and port of the node to which the http server will connect.
+   Specifies the address and port of the node to which the HTTP server will connect.
 
    Argument
         The address and port of a machine where a quasardb node is running. The string can be a host name or an IP address.
@@ -356,7 +356,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         A string representing a relative or absolute path to the dump file.
 
     Example
-        Dump to qdb_error_dump.txt::
+        Dump to `qdb_error_dump.txt`::
 
             qdb_httpd --log-dump=qdb_error_dump.txt
 
@@ -420,10 +420,10 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: --user=<user>
 
-    Specifies the user name required for basic http authentication. Both an user and a password must be specified for authentication to be active.
+    Specifies the user name required for basic HTTP authentication. Both an user and a password must be specified for authentication to be active.
 
     Argument
-      A string representing the user name to be used for basic http authentication.
+      A string representing the user name to be used for basic HTTP authentication.
 
     Default value
       Empty
@@ -433,14 +433,14 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_httpd --user=administrator
 
- .. option:: --password=<password>
+.. option:: --password=<password>
 
-    Specifies the password required for basic http authentication. Both an user and a password must be specified for authentication to be active.
-    
+    Specifies the password required for basic HTTP authentication. Both an user and a password must be specified for authentication to be active.
+
     It is not recommended to use the command line to specify the password, but to set the value into the configuration file.
 
     Argument
-      A string representing the password to be used for basic http authentication.
+      A string representing the password to be used for basic HTTP authentication.
 
     Default value
       Empty
@@ -457,7 +457,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 Config File Reference
 =====================
 
-As of quasardb version 1.1.3, the qdb_httpd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
+As of quasardb version 1.1.3, the `qdb_httpd` daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
 
 Some things to note when working with a configuration file:
 
@@ -491,7 +491,7 @@ The default configuration file is shown below::
 
 .. describe:: daemonize
 
-    A boolean value representing whether or not the qdb_httpd daemon should daemonize on launch.
+    A boolean value representing whether or not the `qdb_httpd` daemon should daemonize on launch.
 
 .. describe:: listen_on
 
@@ -499,7 +499,7 @@ The default configuration file is shown below::
 
 .. describe:: threads
 
-    An integer representing the number of listening threads qdb_httpd should use. Higher numbers of threads may increase qdb_httpd performance.
+    An integer representing the number of listening threads `qdb_httpd` should use. Higher numbers of threads may increase `qdb_httpd` performance.
 
 .. describe:: remote_node
 
@@ -518,7 +518,7 @@ The default configuration file is shown below::
 
 .. describe:: logger::flush_interval
 
-    An integer representing how frequently qdb_httpd log messages should be flushed to the log locations, in seconds.
+    An integer representing how frequently `qdb_httpd` log messages should be flushed to the log locations, in seconds.
 
 .. describe:: local::logger::log_directory
 
@@ -526,11 +526,11 @@ The default configuration file is shown below::
 
 .. describe:: logger::log_to_console
 
-    A boolean value representing whether or not the qdb_httpd daemon should log to the console it was spawned from.  This value is ignored if local::user::daemon is true.
+    A boolean value representing whether or not the `qdb_httpd` daemon should log to the console it was spawned from.  This value is ignored if local::user::daemon is true.
 
 .. describe:: logger::log_to_syslog
 
-    A boolean value representing whether or not the qdb_httpd daemon should log to the syslog.
+    A boolean value representing whether or not the `qdb_httpd` daemon should log to the syslog.
 
 .. describe:: user
 
@@ -1071,7 +1071,7 @@ qdb_httpd JSON/JSONP URL reference
 
             http://myserver.org:8080/global_status
 
-        JSONP output with a callback named "MyCallback" from the server myserver.org listening on the port 8080::
+        JSONP output with a callback named "MyCallback" from the server ``myserver.org`` listening on the port 8080::
 
             http://myserver.org:8080/global_status?callback=MyCallback
 

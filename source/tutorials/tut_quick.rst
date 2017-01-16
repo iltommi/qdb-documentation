@@ -59,7 +59,7 @@ With a configuration file
             "license_file": "qdb_license.txt"
         }
 
-   Providing an empty string "" runs qdbd in evaluation mode.
+   Providing an empty string "" runs `qdbd` in evaluation mode.
 
 #. Run the daemon from the command line.
 
@@ -71,15 +71,15 @@ With a configuration file
 Using the quasardb shell to test your quasardb installation
 ===========================================================
 
-The quasardb shell offers an interactive mode from which the user can enter commands. The name of the binary is qdbsh and it is included in the server package.
+The quasardb shell offers an interactive mode from which the user can enter commands. The name of the binary is `qdbsh` and it is included in the server package.
 
-#. Run qdbsh.
+#. Run `qdbsh`.
 
    The command is::
 
        qdbsh
 
-   By default qdbsh will connect to a quasardb daemon using the default settings of localhost, port 2836. If you have edited the qdbd configuration file already, for example to make the qdbd daemon run on 192.168.1.1 and listen on port 303 - you will run qdbsh as such::
+   By default `qdbsh` will connect to a quasardb daemon using the default settings of localhost, port 2836. If you have edited the `qdbd` configuration file already, for example to make the `qdbd` daemon run on 192.168.1.1 and listen on port 303 - you will run `qdbsh` as such::
 
        qdbsh qdb://192.168.1.1:303
 
@@ -97,7 +97,7 @@ Type `help` to get a list of available commands. See :doc:`../reference/qdb_shel
 Monitoring your installation from a web server
 ==============================================
 
-quasardb comes with a web bridge in the form of an HTTP daemon. This web bridge can be used to monitor your quasardb daemon remotely. It is updated in real time so the information displayed by the web server is as fresh as it can be. The name of the binary is qdb_httpd and it is included in the server package.
+quasardb comes with a web bridge in the form of an HTTP daemon. This web bridge can be used to monitor your quasardb daemon remotely. It is updated in real time so the information displayed by the web server is as fresh as it can be. The name of the binary is `qdb_httpd` and it is included in the server package.
 
 All information is available in both JSON and JSONP format.
 
@@ -121,7 +121,7 @@ All information is available in both JSON and JSONP format.
 
        http://127.0.0.1:8080/view/index.html
 
-   You can also access the statistics in JSON format. The global statistics URL is /global_status::
+   You can also access the statistics in JSON format. The global statistics URL is `/global_status`::
 
        http://127.0.0.1:8080/global_status
 

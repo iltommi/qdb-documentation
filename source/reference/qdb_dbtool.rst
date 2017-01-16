@@ -15,7 +15,7 @@ Quick Reference
                 Option                             Usage                Default
  ===================================== ============================ ==============
  :option:`-h`, :option:`--help`        display help
- :option:`-v`, `--version`             display qdb_dbtool version
+ :option:`-v`, :option:`--version`     display qdb_dbtool version
  :option:`--database`                  path to the database
  :option:`-a`, :option:`--analyze`     analyzes the database
  :option:`-r`, :option:`--repair`      repairs the database
@@ -53,7 +53,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
             qdb_dbtool --database=.
 
-        Work on a database in the /var/quasardb/db directory::
+        Work on a database in the `/var/quasardb/db directory`::
 
             qdb_dbtool --database=/var/quasardb/db directory
 
@@ -78,7 +78,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 
 .. option:: -b=<path>, --backup=<path>
 
-    Performs an incremental database backup. The daemon must not be running. 
+    Performs an incremental database backup. The daemon must not be running.
 
     Arguments
         A string representing the path to the backup, may be relative or absolute.
@@ -87,7 +87,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         None
 
     Example
-        Backup a database in /var/lib/db/qdb to /mnt/backups/qdb::
+        Backup a database in `/var/lib/db/qdb` to `/mnt/backups/qdb`::
 
             qdb_dbtool --database=/var/lib/db/qdb --backup=/mnt/backups/qdb
 
@@ -102,7 +102,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         None
 
     Example
-        Restore a backup in /var/lib/db/qdb to /mnt/backups/qdb:
+        Restore a backup in `/var/lib/db/qdb` to `/mnt/backups/qdb`::
 
             qdb_dbtool --database=/var/lib/db/qdb --restore=/mnt/backups/qdb
 
@@ -117,6 +117,6 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         None
 
     Example
-        Verify a backup in /mnt/backups/db:
+        Verify a backup in `/mnt/backups/db`::
 
             qdb_dbtool --verify_backup=/mnt/backups/qdb

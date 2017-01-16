@@ -70,7 +70,7 @@ An option that applies cluster-wide is said to be *global* whereas other options
 Network distribution
 --------------------
 
-qdbd distribution is peer-to-peer. This means:
+`qdbd` distribution is peer-to-peer. This means:
 
     * The unavailability of one server does not compromise the whole cluster
     * The memory load is automatically distributed amongst all instances within a cluster
@@ -82,7 +82,7 @@ Each server within one cluster needs:
 
 .. note::
     It's counter-productive to run several instances on the same node.
-    qdbd is hyper-scalar and will be able to use all the memory and processors of your server.
+    `qdbd` is hyper-scalar and will be able to use all the memory and processors of your server.
     The same remark applies for virtual machines: running quasardb multiple times in multiple virtual machines on a single physical server will not increase the performances.
 
 The daemon will automatically launch an appropriate number of threads to handle connection accepts and requests,
@@ -91,9 +91,9 @@ depending on the actual hardware configuration of your server.
 Logging
 -------
 
-By default, a non-daemonized qdbd will log to the console. If daemonized, logging is disabled unless configured to log to a file (:option:`-l`) or to the syslog (:option:`--log-syslog`) on Unix.
+By default, a non-daemonized `qdbd` will log to the console. If daemonized, logging is disabled unless configured to log to files (:option:`--log-directory`) or to the syslog (:option:`--log-syslog`) on Unix.
 
-There are six different log levels: `detailed`, `debug`, `info`, `warning`, `error` and `panic`. You can change the log level (:option:`--log-level`), it defaults to `info`.
+There are six different log levels: ``detailed``, ``debug``, ``info``, ``warning``, ``error`` and ``panic``. You can change the log level (:option:`--log-level`), it defaults to ``info``.
 
 You can also change the log flush interval (:option:`--log-flush-interval`), which defaults to three (3) seconds.
 
@@ -109,7 +109,7 @@ Entries are often kept resident in a write cache so the daemon can rapidly serve
 
 You can also disable data storage altogether, making quasardb a pure in-memory repository. In transient mode, entries will be lost on eviction or node shutdown and entries cannot be interated upon. See :option:`--transient` and `transient-mode`.
 
-It is possible to limit the amount of space a node will occupy with the "max_size" option. The writes to the node will fail when the disk usage reaches that limit, warnings being emitted before that point. The write ahead log is not accounted in the space usage meaning that the actual disk usage may be greater than the limit. Compression may also reduce the actual disk usage.
+It is possible to limit the amount of space a node will occupy with the "max_size" option. The writes to the node will fail when the disk usage reaches that limit, warnings being emitted before that point. The write-ahead log is not accounted in the space usage meaning that the actual disk usage may be greater than the limit. Compression may also reduce the actual disk usage.
 
 For more information, see :doc:`../concepts/data_storage` and :doc:`../concepts/data_transfer`.
 
@@ -192,7 +192,7 @@ Instance specific
 
 .. option:: -v, --version
 
-    Displays qdbd version information.
+    Displays `qdbd` version information.
 
 .. option:: --gen-config
 
@@ -355,7 +355,7 @@ Instance specific
 
         Set the node ID to a random value::
 
-            qdb --id=random
+            qdbd --id=random
 
         Set the node to the ideal value for the third node of a cluster totalling 8 nodes::
 
@@ -389,18 +389,18 @@ Instance specific
     Argument
         A string representing the amount of logging required. Must be one of:
 
-        * `detailed` (most output)
-        * `debug`
-        * `info`
-        * `warning`
-        * `error`
-        * `panic` (least output)
+        * ``detailed`` (most output)
+        * ``debug``
+        * ``info``
+        * ``warning``
+        * ``error``
+        * ``panic`` (least output)
 
     Default value
-        `info`
+        ``info``
 
     Example
-        Request a `debug` level logging::
+        Request a ``debug`` level logging::
 
             qdbd --log-level=debug
 
@@ -421,8 +421,8 @@ Instance specific
 
 .. option:: --max-depot-size=<size-in-bytes>
 
-    Sets the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
-    The write ahead log is not accounted in the disk usage.
+    Sets the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a ``qdb_e_system_remote`` error stating "disk full".
+    The write-ahead log is not accounted in the disk usage.
 
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
 
@@ -549,7 +549,7 @@ Global
 
 .. option:: --transient
 
-    Disable persistence. Evicted data is lost when qdbd is transient. For more information, see `transient-mode`.
+    Disable persistence. Evicted data is lost when `qdbd` is transient. For more information, see `transient-mode`.
 
 
 .. _qdbd-config-file-reference:
@@ -557,7 +557,7 @@ Global
 Config File Reference
 =====================
 
-As of quasardb version 1.1.3, the qdbd daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
+As of quasardb version 1.1.3, the `qdbd` daemon can read its parameters from a JSON configuration file provided by the :option:`-c` command-line argument. Using a configuration file is recommended.
 
 Some things to note when working with a configuration file:
 
@@ -633,19 +633,19 @@ The default configuration file is shown below::
 
 .. describe:: local::depot::sync_every_write
 
-    A boolean representing whether or not the node should sync to disk every write. This option has a hugh negative impact on performance, especially on high
+    A boolean representing whether or not the node should sync to disk every write. This option has a huge negative impact on performance, especially on high
     latency media and adds only marginal safety compared to the sync option. Disabled by default.
 
 .. describe:: local::depot::disable_wal
 
     A boolean repersenting whether or not the write-ahead log should be used. When you write data to quasardb, it is added in a buffer who is backed by a disk
-    file called the write ahead log. In case of failure, quasardb is able to recover by reading from the write ahead log. For applications that are looking for
+    file called the write-ahead log. In case of failure, quasardb is able to recover by reading from the write-ahead log. For applications that are looking for
     maximum write performance, you may want to disable the write-ahead log. However, disabling the write-ahead log means that you can lose data should a failure
     occur before the buffer is flushed into the database. Disabled by default (that is, by default, buffers are backed by disk).
 
 .. describe:: local::depot::max_total_wal_size
 
-    The maximum size, in bytes, of the write ahead log.
+    The maximum size, in bytes, of the write-ahead log.
 
 .. describe:: local::depot::root
 
@@ -653,7 +653,7 @@ The default configuration file is shown below::
 
 .. describe:: local::depot::max_bytes
 
-    An integer representing the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
+    An integer representing the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a ``qdb_e_system_remote`` error stating "disk full".
 
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
 

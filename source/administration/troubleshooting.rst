@@ -29,7 +29,7 @@ If you are experiencing a failure, make sure that:
 
 Generally when failure happens repeatedly on the same node this can be a hardware or system-related error. If the failure occurs on a random node within the cluster this can be a network problem or a quasardb bug.
 
-Although quasardb is extremely fast, it's always possible to have a workload larger than the cluster capabilities. That's why an important thing is to make sure that the system isn't over capacity. When the system is over capacity, this can result in denial of service (DoS) on certain nodes in the cluster, manifesting as random failures. 
+Although quasardb is extremely fast, it's always possible to have a workload larger than the cluster capabilities. That's why an important thing is to make sure that the system isn't over capacity. When the system is over capacity, this can result in denial of service (DoS) on certain nodes in the cluster, manifesting as random failures.
 
 .. _troubleshooting-disk-full:
 
@@ -44,7 +44,7 @@ In either case, other nodes should continue to function normally. However, if th
 
 To resolve a single node at disk capacity, shut the quasardb server down normally and audit the node. Once sufficient file system space has been cleared, restart the quasardb server and it should rejoin the network again in read-write mode.
 
-You may also want to enable the global --max-depot-size parameter for your cluster, which will limit the size of the quasardb database. For more information, see :doc:`../reference/qdbd`.
+You may also want to enable the global :option:`qdbd --max-depot-size` parameter for your cluster, which will limit the size of the quasardb database. For more information, see :doc:`../reference/qdbd`.
 
 
 
@@ -52,4 +52,4 @@ You may also want to enable the global --max-depot-size parameter for your clust
 Bugs
 ----
 
-Although we do our best to make sure our software is as reliable as possible, bugs are always possible. If you encounter a bug, please contact support (see :doc:`../contact`).
+Although we do our best to make sure our software is as reliable as possible, bugs are always possible. If you encounter a bug, :doc:`please contact support </contact>`.

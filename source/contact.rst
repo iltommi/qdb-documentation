@@ -10,7 +10,7 @@ Address:
     quasardb SAS - 24, rue Feydeau - 75002 Paris - France
 
 Website:
-    `http://www.quasardb.net/ <http://www.quasardb.net/>`_.
+    `https://www.quasardb.net/ <https://www.quasardb.net/>`_.
 
 Twitter:
     `https://twitter.com/quasardb <https://twitter.com/quasardb>`_.

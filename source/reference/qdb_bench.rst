@@ -7,7 +7,7 @@ quasardb benchmarking tool
 Introduction
 ============
 
-The quasardb benchmarking tool (qdb_bench) enables you to evaluate the performance of your quasardb cluster. To do so, it runs a script on the specified cluster and measures the time taken to process the commands as accurately as the operating systems allows it.
+The quasardb benchmarking tool (`qdb_bench`) enables you to evaluate the performance of your quasardb cluster. To do so, it runs a script on the specified cluster and measures the time taken to process the commands as accurately as the operating systems allows it.
 
 
 Quick Reference
@@ -49,7 +49,7 @@ Benchmark script
 
 Each benchmark is a script that runs operations in the given order.
 
-For example to put a one (1) kilobyte entry once and retrieve it ten (10) times, the script is::
+For example to put one-kilobyte (1024-byte) entry once and retrieve it ten (10) times, the script is::
 
     tests
     {
@@ -60,7 +60,7 @@ For example to put a one (1) kilobyte entry once and retrieve it ten (10) times,
         }
     }
 
-If you want to add another test, for example, if you want to put a one (1) byte entry and retrieving it one thousand (1,000) times, the script becomes::
+If you want to add another test, for example, if you want to put one-byte (1) entry and retrieve it thousand (1,000) times, the script becomes::
 
     tests
     {
@@ -86,8 +86,8 @@ The accepted commands are:
 
     * ``single_put_multiple_get``: adds one entry of *size* bytes and retrives it *count* times
     * ``single_put_multiple_update``: adds one entry of *size* bytes and updates it *count* times
-    * ``multiple_put``: puts *count* entry of *size* bytes and then deletes them all
-    * ``multiple_put_remain``: puts *count* entry of *size* bytes, but does not delete them
+    * ``multiple_put``: puts *count* entries of *size* bytes and then deletes them all
+    * ``multiple_put_remain``: puts *count* entries of *size* bytes, but does not delete them
     * ``multiple_put_get_delete``: adds an entry of *size* bytes, retrieves it and deletes it *count* times
     * ``multiple_put_get_update_delete``: adds an entry of *size* bytes, retrieves it, updates it and deletes it *count* times
 
@@ -105,7 +105,7 @@ Parameters reference
 
 .. option:: --cluster=<address>:<port>
 
-   Specifies the address and port of the quasardb daemon to which the benchmark tool must connect. The daemon must conform to the protocol specified by the ``protocol`` parameter.
+   Specifies the address and port of the quasardb daemon to which the benchmark tool must connect. The daemon must conform to the protocol specified by the :option:`--protocol` parameter.
 
    Argument
         The address and port of a machine where a daemon is running.
@@ -123,7 +123,7 @@ Parameters reference
     Specifies the protocol to use.
 
     Argument
-        A string representing the name of the protocol to use. Supported values are local, memcached, quasardb and redis.
+        A string representing the name of the protocol to use. Supported values are ``local``, ``memcached``, ``quasardb`` and ``redis``.
 
     Default value
         quasardb
@@ -135,7 +135,7 @@ Parameters reference
 
 .. option:: --threads=<threads>
 
-    Specifies the number of threads qdb_bench should use to run the test. Each thread will run the test script, duplicating its operations. This function is helpful to simulate multiple clients from a single test instance.
+    Specifies the number of threads `qdb_bench` should use to run the test. Each thread will run the test script, duplicating its operations. This function is helpful to simulate multiple clients from a single test instance.
 
     Argument
         An integer between 1 and 100 representing the number of threads to use.
