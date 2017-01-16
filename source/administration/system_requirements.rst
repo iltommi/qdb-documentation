@@ -67,12 +67,14 @@ Windows Requirements
 ^^^^^^^^^^^^^^^^^^^^
 
     * One of the following 32-bit or 64-bit operating systems:
-        * Windows XP (Requires Service Pack 3 or higher)
-        * Vista
-        * 7
-        * 8
-        * Server 2008
-        * Server 2012
+        * Windows Server 2008
+        * Windows Vista
+        * Windows 7
+        * Windows Server 2012
+        * Windows 8
+        * Windows 8.1
+        * Windows Server 2016
+        * Windows 10
     * Python 2.7.x (optional)
     * Java JDK (optional)
         * Oracle Java JDK SE 1.6
