@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="hset_8h" kind="file" language="C++">
     <compoundname>hset.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
@@ -30,8 +30,8 @@
         <label>stdint.h</label>
       </node>
       <node id="74">
-        <label>C:/sources/quasardb/api/include/qdb/hset.h</label>
-        <link refid="hset.h"/>
+        <label>D:/workspace/quasardb/api/include/qdb/hset.h</label>
+        <link refid="hset_8h"/>
         <childnode refid="75" relation="include">
         </childnode>
       </node>
@@ -102,7 +102,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/hset.h" line="69" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/hset.h" line="69" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga7922b2dfddbe9df957cf594e87d27d1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -163,7 +163,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/hset.h" line="102" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/hset.h" line="102" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__hset_1ga306f7411300d6d2e284ca2810353f1e5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -224,7 +224,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/hset.h" line="132" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/hset.h" line="132" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -295,6 +295,6 @@
 <codeline lineno="140"><highlight class="normal"></highlight></codeline>
 <codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="C:/sources/quasardb/api/include/qdb/hset.h"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/hset.h"/>
   </compounddef>
 </doxygen>

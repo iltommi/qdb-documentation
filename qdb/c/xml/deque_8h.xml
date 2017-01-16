@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="deque_8h" kind="file" language="C++">
     <compoundname>deque.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
@@ -36,8 +36,8 @@
         <label>time.h</label>
       </node>
       <node id="50">
-        <label>C:/sources/quasardb/api/include/qdb/deque.h</label>
-        <link refid="deque.h"/>
+        <label>D:/workspace/quasardb/api/include/qdb/deque.h</label>
+        <link refid="deque_8h"/>
         <childnode refid="51" relation="include">
         </childnode>
       </node>
@@ -90,7 +90,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="68" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="68" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gac64f3e6b2463c2f36d8edb6f85a8b136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -120,7 +120,7 @@
         <briefdescription>
 <para>Returns the element at the designated index. </para>        </briefdescription>
         <detaileddescription>
-<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>The index is 0 based starting at the first element (front) of the deque.</para><para>It is an error to call this function on a non existing deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>The index is zero-based starting at the first element (front) of the deque.</para><para>It is an error to call this function on a non existing deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -139,14 +139,14 @@
 <parametername>index</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The zero based index to the element of the deque </para></parameterdescription>
+<para>The zero-based index to the element of the deque </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer to a buffer that will be API allocated to receive the result of the operation, if successful </para></parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API-allocated to receive the result of the operation, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -161,7 +161,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="99" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="99" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga1f82de28b65550983ce7d9112527d844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -191,7 +191,7 @@
         <briefdescription>
 <para>Updates element at the designated index. </para>        </briefdescription>
         <detaileddescription>
-<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>There is no arbitrary limit to the size of an element within a deque.</para><para>The index is 0 based starting at the first element (front) of the deque.</para><para>It is an error to call this function on a non existing deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
+<para>A double ended queue is transparently distributed across the nodes and supports efficient insertion at the beginning and the end of the deque. Random access to the elements of the deque is also supported. Deques have no limit to the number of elements they may hold.</para><para>There is no arbitrary limit to the size of an element within a deque.</para><para>The index is zero-based starting at the first element (front) of the deque.</para><para>It is an error to call this function on a non existing deque.</para><para>The complexity of this function is constant.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -210,7 +210,7 @@
 <parametername>index</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The zero based index to the element of the deque </para></parameterdescription>
+<para>The zero-based index to the element of the deque </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -232,7 +232,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="133" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="133" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga9097a68764ab9e96f5c2849c44db3811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -292,7 +292,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="164" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="164" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaf1854a920646563935af1c921e3c8b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -352,7 +352,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="194" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="194" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga72d53de692f62d2179bd09dd7f2d54d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -397,7 +397,7 @@
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the first element, if successful </para></parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the first element, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -412,7 +412,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="227" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="227" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa8d4c4e5d3ad4d25ccf0df5c19268980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -457,7 +457,7 @@
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the last element, if successful </para></parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the last element, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -472,7 +472,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="260" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="260" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa87d20cc39c8c53158356e8c44e2c0eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -517,7 +517,7 @@
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the first element, if successful </para></parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the first element, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -532,7 +532,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="289" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="289" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga7c90633e28b95906e815a9317bc8d547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -577,7 +577,7 @@
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer to a buffer that will be API allocated to receive the content of the last element, if successful </para></parameterdescription>
+<para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the last element, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -592,7 +592,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="318" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="318" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -723,6 +723,6 @@
 <codeline lineno="328"><highlight class="normal"></highlight></codeline>
 <codeline lineno="329"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_DEQUE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="C:/sources/quasardb/api/include/qdb/deque.h"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/deque.h"/>
   </compounddef>
 </doxygen>

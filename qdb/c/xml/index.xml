@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.12">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
   <compound refid="structblob__put__update__t" kind="struct"><name>blob_put_update_t</name>
     <member refid="structblob__put__update__t_1acf495f7b69a76fdb31d079b08cefbb93" kind="variable"><name>content</name></member>
     <member refid="structblob__put__update__t_1ac2ee57e5b05bce4588d2359b2008c3d2" kind="variable"><name>content_size</name></member>
@@ -173,10 +173,10 @@
     <member refid="group__deque_1ga7c90633e28b95906e815a9317bc8d547" kind="function"><name>qdb_deque_back</name></member>
   </compound>
   <compound refid="error_8h" kind="file"><name>error.h</name>
-    <member refid="group__error_1ga9c4473d8d1f9a870925121d8b5085c3c" kind="define"><name>QDB_ERROR_ORIGIN</name></member>
-    <member refid="group__error_1ga988fa2631bf090c9c57ca4ef1df4875a" kind="define"><name>QDB_ERROR_SEVERITY</name></member>
-    <member refid="group__error_1ga8c7fbec5c8f5da7e6ee37bb587273433" kind="define"><name>QDB_SUCCESS</name></member>
-    <member refid="group__error_1ga4956ff9626cdf92f077a8327a7b08507" kind="define"><name>QDB_FAILURE</name></member>
+    <member refid="group__error_1gaaa894d6e444f5ec375e9662b1ec26298" kind="define"><name>QDB_ERROR_ORIGIN</name></member>
+    <member refid="group__error_1gaaba48738c590182c24a1eb0046cca9ba" kind="define"><name>QDB_ERROR_SEVERITY</name></member>
+    <member refid="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" kind="define"><name>QDB_SUCCESS</name></member>
+    <member refid="group__error_1ga8145df0d400f6811ba830c14789681b5" kind="define"><name>QDB_FAILURE</name></member>
     <member refid="group__error_1gaef8f2ffc9bd2ee1abe785a8aeb86c701" kind="enum"><name>qdb_err_origin</name></member>
     <member refid="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701aabeb79ba7024616cd1d1f0d28364479d" kind="enumvalue"><name>qdb_e_origin_system_remote</name></member>
     <member refid="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701a7bb5c5e7a8c4fca41c54d4cf1fb8ff6b" kind="enumvalue"><name>qdb_e_origin_system_local</name></member>
@@ -484,10 +484,10 @@
     <member refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kind="typedef"><name>qdb_error_severity_t</name></member>
     <member refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kind="typedef"><name>qdb_error_t</name></member>
     <member refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kind="typedef"><name>qdb_status_t</name></member>
-    <member refid="group__error_1ga9c4473d8d1f9a870925121d8b5085c3c" kind="define"><name>QDB_ERROR_ORIGIN</name></member>
-    <member refid="group__error_1ga988fa2631bf090c9c57ca4ef1df4875a" kind="define"><name>QDB_ERROR_SEVERITY</name></member>
-    <member refid="group__error_1ga8c7fbec5c8f5da7e6ee37bb587273433" kind="define"><name>QDB_SUCCESS</name></member>
-    <member refid="group__error_1ga4956ff9626cdf92f077a8327a7b08507" kind="define"><name>QDB_FAILURE</name></member>
+    <member refid="group__error_1gaaa894d6e444f5ec375e9662b1ec26298" kind="define"><name>QDB_ERROR_ORIGIN</name></member>
+    <member refid="group__error_1gaaba48738c590182c24a1eb0046cca9ba" kind="define"><name>QDB_ERROR_SEVERITY</name></member>
+    <member refid="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" kind="define"><name>QDB_SUCCESS</name></member>
+    <member refid="group__error_1ga8145df0d400f6811ba830c14789681b5" kind="define"><name>QDB_FAILURE</name></member>
   </compound>
   <compound refid="group__hset" kind="group"><name>hset</name>
     <member refid="group__hset_1ga494cd5988cc75d84f1106be36baa5f0b" kind="function"><name>qdb_hset_insert</name></member>
@@ -561,11 +561,11 @@
     <member refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kind="function"><name>qdb_tag_iterator_next</name></member>
     <member refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kind="function"><name>qdb_tag_iterator_close</name></member>
   </compound>
-  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>C:/sources/quasardb/api</name>
+  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>D:/workspace/quasardb/api</name>
   </compound>
-  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>C:/sources/quasardb/api/include</name>
+  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>D:/workspace/quasardb/api/include</name>
   </compound>
-  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>C:/sources/quasardb/api/include/qdb</name>
+  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>D:/workspace/quasardb/api/include/qdb</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

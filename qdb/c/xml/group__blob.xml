@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="group__blob" kind="group">
     <compoundname>blob</compoundname>
     <title>Binary large objects (blob) operations</title>
@@ -47,7 +47,7 @@
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an user allocated buffer that will receive the entry&apos;s content. </para></parameterdescription>
+<para>A pointer to a user-allocated buffer that will receive the entry&apos;s content. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -61,7 +61,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="70" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="70" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -120,7 +120,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="95" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="95" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -150,7 +150,7 @@
         <briefdescription>
 <para>Retrieves a part of an entry&apos;s content from the quasardb server. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range [offset, offset + *content_length).</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range <computeroutput>[</computeroutput><computeroutput>offset<computeroutput></computeroutput>, </computeroutput><computeroutput>offset<computeroutput></computeroutput> + *</computeroutput><computeroutput>content_length<computeroutput></computeroutput>)</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -190,7 +190,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="128" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="128" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gacccb11b84a007ec4f2036ec316060282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -249,7 +249,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="160" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="160" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga67db324cbeccb7f130f8006830468d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -279,7 +279,7 @@
         <briefdescription>
 <para>Creates a new entry and sets its content to the provided blob. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry already exists the function will fail and will return <computeroutput>qdb_e_alias_already_exists</computeroutput>.</para><para>Keys beginning with the string &quot;qdb&quot; are reserved and cannot be added to the cluster.</para><para>You can specify an expiry or use qdb_never_expires if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry already exists the function will fail and will return <computeroutput>qdb_e_alias_already_exists</computeroutput>.</para><para>You can specify an expiry or use <computeroutput>qdb_never_expires</computeroutput> if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -319,7 +319,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="190" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="187" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga79aafb696593432010c6d624f0894061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -349,7 +349,7 @@
         <briefdescription>
 <para>Creates or updates an entry and sets its content to the provided blob. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry already exists the function will create the entry.</para><para>Keys beginning with the string &quot;qdb&quot; are reserved and cannot be added to the cluster.</para><para>You can specify an expiry or use qdb_never_expires if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry already exists, the function will modify the entry.</para><para>You can specify an expiry or use <computeroutput>qdb_never_expires</computeroutput> if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -389,7 +389,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="220" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="214" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaef0400b3b58a23ebffe6085641581e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -467,7 +467,7 @@
 <parametername>truncate</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>1 the entry will be truncated at the end of the new buffer 0 the original content will be preserved </para></parameterdescription>
+<para>1 - the entry will be truncated at the end of the new buffer. 0 - the original content will be preserved. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -481,7 +481,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="242" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="236" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -573,7 +573,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="273" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="267" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -617,7 +617,7 @@
           <declname>original_value_length</declname>
         </param>
         <briefdescription>
-<para>Atomically compares the entry with comparand and updates it to new_value if, and only if, they match. </para>        </briefdescription>
+<para>Atomically compares the entry with comparand and updates it to <computeroutput>new_value</computeroutput> if, and only if, they match. </para>        </briefdescription>
         <detaileddescription>
 <para>The function returns the original value of the entry in case of a mismatch. When it matches, no content is returned.</para><para>The entry must already exist.</para><para>Update will occur if and only if the content of the entry matches bit for bit the content of the comparand buffer.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -687,7 +687,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="314" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="308" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -746,7 +746,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="353" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="347" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -828,7 +828,7 @@ The complexity of this function is linear in the number of entries.</para><para>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="378" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="372" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -900,7 +900,7 @@ The complexity of this function is linear in the number of entries.</para><para>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/blob.h" line="409" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/blob.h" line="403" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

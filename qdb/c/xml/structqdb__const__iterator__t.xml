@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structqdb__const__iterator__t" kind="struct" language="C++" prot="public">
     <compoundname>qdb_const_iterator_t</compoundname>
     <includes local="no">iterator.h</includes>
@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="55" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="55" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="55" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__iterator__t_1aae12cd8f75a5c54451a7ea659cc603e9" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="57" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="57" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="57" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__iterator__t_1a80b00b45e0c316e0c9b92b7b40978d89" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="60" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="60" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="60" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="60" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__iterator__t_1a459431039fadae36f0897219c4e5ca6f" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="62" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="62" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="62" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="62" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__iterator__t_1a4f11b17402cbcad7f3bce792c86a560b" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="65" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="65" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="65" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__iterator__t_1a1fe275c6a929d5abdd3c80b248bb7a6b" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="67" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="67" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="67" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__const__iterator__t_1a400dacc3a35ddd86e5cd6155aa470c39" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -93,14 +93,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="69" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="69" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="69" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="69" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>A read-only iterator on quasardb entries. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="53" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/iterator.h" bodystart="52" bodyend="70"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="53" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/iterator.h" bodystart="52" bodyend="70"/>
     <listofallmembers>
       <member refid="structqdb__const__iterator__t_1a4f11b17402cbcad7f3bce792c86a560b" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>alias</name></member>
       <member refid="structqdb__const__iterator__t_1a1fe275c6a929d5abdd3c80b248bb7a6b" prot="public" virt="non-virtual"><scope>qdb_const_iterator_t</scope><name>content</name></member>
