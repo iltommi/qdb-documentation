@@ -46,11 +46,10 @@ Adjust the "concurrent entries" and "transaction duration" settings to fit your 
 
 If a client requests a transaction ID that has been garbage collected, the cluster returns "not found".
 
-You may manually request garbage collection using the trim_all command.
+You may manually request garbage collection using the ``trim_all`` command.
 
 
 Batch or transaction
 --------------------
 
 Batch operations and Transactions are very similar. Prefer Transactions when order is important, or all operations must complete successfully, such as a data model update. Prefer Batch when order of operations is not important and when failure of a single operation is not critical, such as a view that updates its information regularly.
-

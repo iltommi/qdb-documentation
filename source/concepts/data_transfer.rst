@@ -124,7 +124,7 @@ Alternately, if the entry is intended to change regularly, like a value in a sto
 
 In either case, what was previously considered a conflict is now the expected behaviour.
 
-While this was a simple two-client example, the API also provides options for more complex scenarios, thanks to the get_and_update and compare_and_swap commands. get_and_update atomically gets the previous value of an entry and updates it to a new one. compare_and_swap updates the value if it matches and returns the old/unchanged value.  For more information, see the :doc:`../api/index`.
+While this was a simple two-client example, the API also provides options for more complex scenarios, thanks to the ``get_and_update`` and ``compare_and_swap`` commands. ``get_and_update`` atomically gets the previous value of an entry and updates it to a new one. ``compare_and_swap`` updates the value if it matches and returns the old/unchanged value.  For more information, see the :doc:`../api/index`.
 
 
 A more complex data conflict
@@ -136,7 +136,7 @@ We've seen a trivial example, but what about this one:
     * **Client A** *updates* an entry "motorbike" and sets it to "roadster"
     * **Client B** *gets* "car" and "motorbike" and checks that they match
 
-If Client B makes the query too early, the two entries do not match. While it's possible to resolve this using get_and_update and compare_and_swap, that can quickly become intricate and unmaintainable.
+If Client B makes the query too early, the two entries do not match. While it's possible to resolve this using ``get_and_update`` and ``compare_and_swap``, that can quickly become intricate and unmaintainable.
 
 Like above, this is a design usage problem on the client side.
 
@@ -157,7 +157,7 @@ Things to consider:
     * Clients are generally heterogeneous. Some clients update content while other only consume content. It is simpler to design each client according to its purpose rather than writing a *one size fits all* client.
     * There is always an update delay, no matter how powerful your nodes are or how big your cluster is. The question is, what delay can your business case tolerate? A high frequency trading automaton and a reservation system will have different latency requirements.
     * The problem is never the conflict in itself. The problem is clients operating without realizing that there was a conflict in the first place.
-    * The quasardb API provides ways to synchronize clients or detect concurrency issues. For example, "put" fails if the entry already exists, "update" always succeeds, and "compare_and_swap" can provide a conditional "put".
+    * The quasardb API provides ways to synchronize clients or detect concurrency issues. For example, ``put`` fails if the entry already exists, ``update`` always succeeds, and ``compare_and_swap`` can provide a conditional ``put``.
     * Last but not least, trying to squeeze a schema into a non-relational database will result in disaster. A non-relational system such as quasardb will likely require you to rethink your data model.
 
 

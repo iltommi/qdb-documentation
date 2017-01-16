@@ -154,7 +154,7 @@ Changes in this version
     * Daemon: added option to limit the persisted size
     * Daemon: fixed long log paths parsing
     * Web bridge: added network usage information
-    * Comparison tool: new "put only" command
+    * Comparison tool: new ``put`` (only) command
     * Comparison tool: added progress bar
     * Shell: fixed space related parsing bug
     * Upgraded to LevelDB 1.15
@@ -307,8 +307,8 @@ Changes in this version
     * New C++ API!
     * C and Java API: Added qdb_error to translate an error code into a meaningful message
     * C/C++ API: Can connect to multiple remote hosts at a time for increased client-side resilience
-    * Java API: Added support for get_update and compare_and_swap operations
-    * Console: Now display statistics for get_update and compare_and_swap operations
+    * Java API: Added support for ``get_update`` and ``compare_and_swap`` operations
+    * Console: Now display statistics for ``get_update`` and ``compare_and_swap`` operations
     * Daemon: Fixed invalid replication parameter logging
     * Daemon: Fixed invalid total size reporting
     * Daemon: Improved replication factor documentation
@@ -361,7 +361,7 @@ Changes in this version
 
     * Client API: New streaming API (C only)
     * Client API: New compare and swap operation (C only)
-    * Client API: "remove all" is no longer experimental
+    * Client API: ``remove_all`` is no longer experimental
     * Daemon: Faster lookup on clusters with more than 20 nodes
     * Daemon: Faster stabilization on clusters with more than 5 nodes
     * Daemon: Automatically detects the best memory eviction threshold (can be overriden)
@@ -378,8 +378,8 @@ Changes in this version
     * Client API: Major performance increase (up to 100%) for small entries (below 1 KiB)
     * Client API: Added more error codes
     * Client API: Added status query function
-    * Client API: Added new, atomic, "get and update" function
-    * Client API: Added experimental "remove all" function
+    * Client API: Added new, atomic, ``get_and_update`` function
+    * Client API: Added experimental ``remove_all`` function
     * Daemon: Greatly improved scalability for machines with more than 4 physical cores
     * Daemon: Removed obsolete options
     * Daemon: Improved Windows console logging performance
