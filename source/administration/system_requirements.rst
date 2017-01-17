@@ -68,7 +68,6 @@ Windows Requirements
 
     * One of the following 32-bit or 64-bit operating systems:
         * Windows Server 2008
-        * Windows Vista
         * Windows 7
         * Windows Server 2012
         * Windows 8
@@ -84,6 +83,8 @@ Windows Requirements
         * OpenJDK 6
         * OpenJDK 7u
 
+.. warning::
+    Prior to Windows 8 and Windows Server 2012, the operating system is not able to deliver highly accurate timestamps. This can result in a higher rate of transaction conflicts and less accurate entries metadata.
 
 All other required libraries are included in the quasardb installer.
 
