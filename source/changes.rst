@@ -1,7 +1,7 @@
 Change log
 **********
 
-2.0.0 - "Aristotle" - 12/15/2016
+2.0.0 - "Aristotle" - 01/17/2017
 ================================
 
 From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
