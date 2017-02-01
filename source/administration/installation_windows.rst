@@ -8,11 +8,11 @@ Software Installation
 ---------------------
 
  #. Verify your system meets the :ref:`sysreq-windows`.
- #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named ``setup-qdb-server-<ver>.exe``
+ #. Download quasardb server installer for Windows from `quasardb download site <https://www.quasardb.net/-Get->`_.
+     * Alternatively, you can directly download necessary files from https://download.quasardb.net/ (for experienced users).
  #. Run the setup executable.
 
-The setup program ensures all required libraries are installed. There is one setup program for Windows x86 and Windows x64; the setup will install the appropriate version.
+The setup program ensures that all required libraries are installed.
 
 Configuration
 -------------

@@ -6,12 +6,12 @@ Software Installation
 ---------------------
 
  #. Verify your system meets the :ref:`sysreq-linux`.
- #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named ``qdb-server-<ver>.x86_64.rpm``
+ #. Download quasardb server RPM for Linux from `quasardb download site <https://www.quasardb.net/-Get->`_.
+     * Alternatively, you can directly download necessary files from https://download.quasardb.net/ (for experienced users).
  #. Install the RPM using ``sudo rpm -i qdb-server-<ver>.x86_64.rpm``
- 
+
  The RPM package installs files as user qdb, group qdb, in the following locations:
- 
+
  ================= =================
   File Types        Path
  ================= =================

@@ -16,7 +16,7 @@ Installing a quasardb daemon in three steps
 Without a configuration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Download the appropriate **server** for your platform (FreeBSD, Linux or Windows) from quasardb download site. All download information is in your welcome e-mail.
+#. Download the appropriate **server** for your platform (FreeBSD, Linux or Windows) from `quasardb download site <https://www.quasardb.net/-Get->`_. All download information is in your welcome e-mail.
 
 #. Install the server
 
@@ -33,10 +33,13 @@ Without a configuration file
 
        qdbd --license-file=qdb_license.txt
 
+.. note::
+    On Windows, the installer creates and runs a quasardb service listening on the default port (2836) on the local address.
+
 With a configuration file
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Download the appropriate **server** for your platform (FreeBSD, Linux or Windows) from quasardb download site. All download information is in your welcome e-mail.
+#. Download the appropriate **server** for your platform (FreeBSD, Linux or Windows) from `quasardb download site <https://www.quasardb.net/-Get->`_. All download information is in your welcome e-mail.
 
 #. Install the server
 

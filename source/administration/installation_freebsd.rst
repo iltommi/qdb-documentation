@@ -7,7 +7,7 @@ Software Installation
 
  #. Verify your system meets the :ref:`sysreq-freebsd`.
  #. (optional) If your system does not have libc++ v1, install the sources and clang 3.2 (from the ports for example), and then do the following::
-      
+
       cd /usr/src/lib/libcxxrt
       make
       make install
@@ -15,8 +15,8 @@ Software Installation
       make CXX=clang++
       make install
 
- #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named ``qdb-server-<ver>-freebsd-64bit.tgz``.
+ #. Download quasardb server tarball for FreeBSD from `quasardb download site <https://www.quasardb.net/-Get->`_.
+     * Alternatively, you can directly download necessary files from https://download.quasardb.net/ (for experienced users).
  #. Extract the tarball.
  #. Change to the extracted directory.
 

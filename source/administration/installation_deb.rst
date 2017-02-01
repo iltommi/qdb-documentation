@@ -6,8 +6,8 @@ Software Installation
 ---------------------
 
  #. Verify your system meets the :ref:`sysreq-linux`.
- #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named ``qdb-server_<ver>.deb``
+ #. Download quasardb server Debian package for Linux from `quasardb download site <https://www.quasardb.net/-Get->`_.
+     * Alternatively, you can directly download necessary files from https://download.quasardb.net/ (for experienced users).
  #. Install the DEB using ``sudo dpkg -i qdb-server_<ver>.deb``
 
  The DEB package installs files as user qdb, group qdb, in the following locations:

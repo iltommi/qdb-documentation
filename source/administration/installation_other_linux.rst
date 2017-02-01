@@ -6,8 +6,8 @@ Software Installation
 ---------------------
 
  #. Verify your system meets the :ref:`sysreq-linux`.
- #. Log in to https://download.quasardb.net/ with your credentials.
- #. Download the file named ``qdb-server-<ver>-linux-64bit.tgz``
+ #. Download quasardb server tarball for Linux from `quasardb download site <https://www.quasardb.net/-Get->`_.
+     * Alternatively, you can directly download necessary files from https://download.quasardb.net/ (for experienced users).
  #. Extract the tarball.
  #. Change to the extracted directory.
 
