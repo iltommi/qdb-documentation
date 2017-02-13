@@ -133,6 +133,23 @@ This will print:
 
     2020-01-01
 
+Tags
+----
+
+To get the list of tags for an entry, use the `get_tags` method.
+
+.. testcode:: qdb
+
+    tags = b.get_tags()
+
+To find the list of items matching a tag, you create a tag object. For example, if you want to find all entries having the tag "my_tag". The `get_entries` method will then list the entries matching the tag.
+
+.. testcode:: qdb
+
+    c = qdb.Cluster("qdb://127.0.0.1:2836")
+    tag = c.tag("my_tag")
+    entries = tag.get_entries()
+
 Example Client
 --------------
 
