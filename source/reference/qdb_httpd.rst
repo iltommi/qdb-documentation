@@ -41,6 +41,7 @@ The server accepts specific URLs (See :ref:`qdb_httpd-url-reference`) and will s
 
 If the URL does not exists, the server will return a page not found (404) error.
 
+.. highlight:: shell
 .. _qdb_httpd-parameters-reference:
 
 Parameters reference
