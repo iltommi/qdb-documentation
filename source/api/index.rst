@@ -5,6 +5,7 @@ API Reference
    :maxdepth: 1
 
    common
+   queries
    c
    cpp
    python
