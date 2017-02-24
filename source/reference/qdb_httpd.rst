@@ -230,9 +230,7 @@ The server only accepts specific URLs and will service JSON or JSONP data depend
 
 A comprehensive list of URLs and parameters is listed below at :ref:`qdb_httpd-url-reference`.
 
-
 .. highlight:: shell
-
 .. _qdb_httpd-parameters-reference:
 
 Parameters Reference
