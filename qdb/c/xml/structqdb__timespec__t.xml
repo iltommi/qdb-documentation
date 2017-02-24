@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="178" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="178" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="182" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="182" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__timespec__t_1af54f38ed5da4e50324b0518793e6eb7d" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref></type>
@@ -28,14 +28,14 @@
 <para>rest of the elapsed time, represented as a number of nanoseconds, always less than one billion </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="181" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="181" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="185" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="185" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>A structure representing an elapsed time since epoch (cross-platform equivalent of timespec structure) </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="176" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="175" bodyend="182"/>
+    <location file="D:/sources/quasardb/api/include/qdb/client.h" line="180" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="179" bodyend="186"/>
     <listofallmembers>
       <member refid="structqdb__timespec__t_1af54f38ed5da4e50324b0518793e6eb7d" prot="public" virt="non-virtual"><scope>qdb_timespec_t</scope><name>tv_nsec</name></member>
       <member refid="structqdb__timespec__t_1acf1768b50ccc8c67e846b63d07e1e4f3" prot="public" virt="non-virtual"><scope>qdb_timespec_t</scope><name>tv_sec</name></member>

@@ -475,6 +475,18 @@ Actual iteration is done with :func:`qdb_iterator_next` and :func:`qdb_iterator_
 .. note::
     Although each entry is returned only once, the order in which entries are returned is undefined.
 
+Queries
+--------
+
+To run a query on quasardb, use the function :func:`qdb_query`. It will return a list of aliases that matches the specified query.
+
+.. literalinclude:: ../../../../examples/c/query.c
+    :start-after: doc-start-query
+    :end-before: doc-end-query
+    :dedent: 12
+
+Aliases returned by :func:`qdb_query` must be freed with :func:`qdb_free_results`. For more information about queries, see :doc:`../api/queries`.
+
 Streaming
 ---------
 
@@ -567,12 +579,18 @@ General
 .. doxygengroup:: client
   :content-only:
 
+
 Error codes
 ^^^^^^^^^^^
 
 .. doxygengroup:: error
   :content-only:
 
+Queries
+^^^^^^^^
+
+.. doxygengroup:: query
+  :content-only:
 
 Blobs
 ^^^^^^
@@ -621,4 +639,10 @@ Tags
 ^^^^
 
 .. doxygengroup:: tag
+  :content-only:
+
+Time series
+^^^^^^^^^^^
+
+.. doxygengroup:: ts
   :content-only:

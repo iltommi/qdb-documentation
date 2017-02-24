@@ -40,7 +40,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="106" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/log.h" line="106" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -67,7 +67,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="115" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/log.h" line="115" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -128,7 +128,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="56" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/log.h" bodystart="56" bodyend="69"/>
+        <location file="D:/sources/quasardb/api/include/qdb/log.h" line="56" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/log.h" bodystart="56" bodyend="69"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -144,7 +144,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="69" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/log.h" line="69" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__log_1ga6a72d356408c58332b03af73a52c84d6" prot="public" static="no">
         <type>size_t</type>
@@ -158,7 +158,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="76" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/log.h" bodystart="76" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/log.h" line="76" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/log.h" bodystart="76" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" prot="public" static="no">
         <type>void(*</type>
@@ -172,7 +172,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/log.h" line="83" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/log.h" bodystart="83" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/log.h" line="83" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/log.h" bodystart="83" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

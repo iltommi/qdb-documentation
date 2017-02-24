@@ -1,0 +1,70 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structqdb__ts__blob__point" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_blob_point</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__blob__point_1ad7cfac324d6a2b0144ac765d5bbd733e" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
+        <definition>qdb_timespec_t qdb_ts_blob_point::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="60" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="60" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__blob__point_1a7284372af52c9b1d5bf4f1677c2bacdd" prot="public" static="no" mutable="no">
+        <type>const void *</type>
+        <definition>const void* qdb_ts_blob_point::content</definition>
+        <argsstring></argsstring>
+        <name>content</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="61" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="61" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__blob__point_1a8b7f0e33ea33e43e272e281651d17ed8" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+        <definition>qdb_size_t qdb_ts_blob_point::content_length</definition>
+        <argsstring></argsstring>
+        <name>content_length</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="62" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="28">
+        <label>qdb_timespec_t</label>
+        <link refid="structqdb__timespec__t"/>
+      </node>
+      <node id="27">
+        <label>qdb_ts_blob_point</label>
+        <link refid="structqdb__ts__blob__point"/>
+        <childnode refid="28" relation="usage">
+          <edgelabel>timestamp</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="59" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="58" bodyend="63"/>
+    <listofallmembers>
+      <member refid="structqdb__ts__blob__point_1a7284372af52c9b1d5bf4f1677c2bacdd" prot="public" virt="non-virtual"><scope>qdb_ts_blob_point</scope><name>content</name></member>
+      <member refid="structqdb__ts__blob__point_1a8b7f0e33ea33e43e272e281651d17ed8" prot="public" virt="non-virtual"><scope>qdb_ts_blob_point</scope><name>content_length</name></member>
+      <member refid="structqdb__ts__blob__point_1ad7cfac324d6a2b0144ac765d5bbd733e" prot="public" virt="non-virtual"><scope>qdb_ts_blob_point</scope><name>timestamp</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,268 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="group__ts" kind="group">
+    <compoundname>ts</compoundname>
+    <title>Time series operations</title>
+    <innerclass refid="structqdb__ts__double__point" prot="public">qdb_ts_double_point</innerclass>
+    <innerclass refid="structqdb__ts__aggregation__t" prot="public">qdb_ts_aggregation_t</innerclass>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__ts_1ga8a56e3c0287944a3698e538c93763c1c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_ts_double_insert</definition>
+        <argsstring>(qdb_handle_t h, const char *alias, const qdb_ts_double_point *values, qdb_size_t count)</argsstring>
+        <name>qdb_ts_double_insert</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref> *</type>
+          <declname>values</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Inserts points in a time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>Time series are distributed across the cluster and support efficient insertion anywhere within the time series as well as efficient lookup based on time.</para><para>If the time series does not exist, it will be created.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array of data points to be inserted. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>size</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of data points to insert. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="111" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1gad42530563ca03ee4c8795ca0033eaea3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_ts_aggregate</definition>
+        <argsstring>(qdb_handle_t h, const char *alias, qdb_ts_aggregation_type_t type, qdb_ts_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
+        <name>qdb_ts_aggregate</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>qdb_ts_aggregation_type_t</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__ts__aggregation__t" kindref="compound">qdb_ts_aggregation_t</ref> *</type>
+          <declname>aggregations</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>aggregation_count</declname>
+        </param>
+        <briefdescription>
+<para>Aggregate a sub-part of the time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is an error to call this function on a non existing time-series.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="129" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga78eef9786a1279b82039db7601fc90a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_ts_blob_insert</definition>
+        <argsstring>(qdb_handle_t h, const char *alias, const qdb_ts_blob_point *values, qdb_size_t count)</argsstring>
+        <name>qdb_ts_blob_insert</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref> *</type>
+          <declname>values</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Inserts blob in a time series column. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is an error to call this function on a non existing time-series.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="147" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1gafed518173a8b704aa53b174fa237ec4b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_ts_blob_get_range</definition>
+        <argsstring>(qdb_handle_t h, const char *alias, const qdb_ts_range_t *ranges, qdb_size_t ranges_count, qdb_ts_blob_point **points, qdb_size_t *points_count)</argsstring>
+        <name>qdb_ts_blob_get_range</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref> *</type>
+          <declname>ranges</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>ranges_count</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref> **</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>points_count</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves blobs in the specified range of the time series column. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is an error to call this function on a non existing time-series.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="163" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga71a2cfedb6a9495bf9329401c0462fa4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_ts_free_blob_points</definition>
+        <argsstring>(qdb_handle_t h, qdb_ts_blob_point *points, qdb_size_t points_count)</argsstring>
+        <name>qdb_ts_free_blob_points</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>h</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref> *</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>points_count</declname>
+        </param>
+        <briefdescription>
+<para>Frees the memory allocated by qdb_ts_blob_get_range. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="180" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><simplesect kind="warning"><para>Time series are under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>

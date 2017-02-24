@@ -60,7 +60,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="77" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="76" bodyend="84"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="77" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="76" bodyend="84"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gaa48fc525bae5abec03a6e216128e5a76" prot="public" static="no">
         <name>qdb_err_severity</name>
@@ -102,7 +102,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="94" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="93" bodyend="99"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="94" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="93" bodyend="99"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" prot="public" static="no">
         <name>qdb_err</name>
@@ -506,13 +506,29 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7a6c957a31b0b5d4b61575f89f139681" prot="public">
+          <name>qdb_e_access_denied</name>
+          <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x0037</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ab0ec10e10f4dd148d34e01d47bdd8a0f" prot="public">
+          <name>qdb_e_login_failed</name>
+          <initializer>= qdb_e_origin_system_remote | qdb_e_severity_error         | 0x0038</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An error code indicating success or failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="119" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="118" bodyend="176"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="119" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="118" bodyend="178"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -527,7 +543,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="84" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="84" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1gabf6c4d9393dd881c3a517f8a28187193" prot="public" static="no">
         <type>enum <ref refid="group__error_1gaa48fc525bae5abec03a6e216128e5a76" kindref="member">qdb_err_severity</ref></type>
@@ -540,7 +556,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="99" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="99" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga352232196dc2f9b9a89d701f63916cec" prot="public" static="no">
         <type>enum <ref refid="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" kindref="member">qdb_err</ref></type>
@@ -553,7 +569,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="176" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="178" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga7f530850c85980b74be1119741da4bb0" prot="public" static="no">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -566,7 +582,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="182" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="182" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="184" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="184" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="define">
@@ -580,7 +596,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="89" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="89" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="89" column="9" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1gaaba48738c590182c24a1eb0046cca9ba" prot="public" static="no">
         <name>QDB_ERROR_SEVERITY</name>
@@ -592,7 +608,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="104" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="104" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="104" column="9" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" prot="public" static="no">
         <name>QDB_SUCCESS</name>
@@ -604,7 +620,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="109" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="109" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="109" column="9" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1ga8145df0d400f6811ba830c14789681b5" prot="public" static="no">
         <name>QDB_FAILURE</name>
@@ -616,7 +632,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="114" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="114" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="114" column="9" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="114" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

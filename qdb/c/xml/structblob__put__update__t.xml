@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="101" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="101" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="101" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="101" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structblob__put__update__t_1ac2ee57e5b05bce4588d2359b2008c3d2" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="103" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="103" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="103" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structblob__put__update__t_1a598967c3300a24672d0693eb3da3ea86" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref></type>
@@ -41,14 +41,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="105" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="105" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="105" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>The required parameters for a blob put or update operations within a batch. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="99" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="98" bodyend="106"/>
+    <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="99" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="98" bodyend="106"/>
     <listofallmembers>
       <member refid="structblob__put__update__t_1acf495f7b69a76fdb31d079b08cefbb93" prot="public" virt="non-virtual"><scope>blob_put_update_t</scope><name>content</name></member>
       <member refid="structblob__put__update__t_1ac2ee57e5b05bce4588d2359b2008c3d2" prot="public" virt="non-virtual"><scope>blob_put_update_t</scope><name>content_size</name></member>
