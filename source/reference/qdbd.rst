@@ -1,6 +1,8 @@
 quasardb daemon
 ***************
 
+.. program:: qdbd
+
 The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`cluster`.
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
@@ -13,8 +15,6 @@ The quasardb daemon does not require privileges (unless listening on a port unde
 
 Configuration
 =============
-
-.. program:: qdbd
 
 Cheat sheet
 -----------
@@ -533,44 +533,44 @@ Global
 .. option:: --max-depot-size=<size-in-bytes>
 
     Sets the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
-    
+
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
-    
+
     Argument
         An integer representing the maximum size of the database on disk in bytes.
-    
+
     Default value
         0 (disabled)
-    
+
     Example A
         To limit the database size on each node to 12 Terabytes:
-        
+
         .. math::
-            
+
             \text{Max Depot Size Value} &= \text{12 Terabytes} \: * \: \frac{1024^4 \: \text{Bytes}}{\text{1 Terabyte}}\\
                                         &= \text{13194139533312 Bytes}
-        
+
         And thus the command: ::
-        
+
             qdbd --max-depot-size=13194139533312
-        
+
         This database may expand out to approximately 14.4 Terabytes due to meta-data and uncompressed db entries.
-            
+
     Example B
         This example will limit the database size to ensure it fits within 1 Terabyte of free space. Since limiting to a specific overhead is important in this example, the filesystem cluster size is also taken into account; the default for most filesystems is 4096 bytes.
-        
+
         .. math::
-            
+
             \text{Max Depot Size Value} &= \text{1099511627776 Bytes} - \text{(1099511627776 Bytes} \: * \: 0.2 \text{)} - \text{Cluster Size of 4096} \\
                                         &= \text{1099511627776 Bytes} - \text{219902325555.2 Bytes} - \text{4096 Bytes} \\
                                         &= \text{879609298124.8 Bytes}
-        
+
         And thus the command, truncating down to an integer: ::
-        
+
             qdbd --max-depot-size=879609298124
-        
+
         This database should not exceed 1 Terabyte.
-    
+
 .. note::
      The --max-depot-size argument is only available with QuasarDB 1.1.2 or higher.
 
