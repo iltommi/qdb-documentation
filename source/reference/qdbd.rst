@@ -1,6 +1,8 @@
 quasardb daemon
 ***************
 
+.. program:: qdbd
+
 The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`cluster`.
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
@@ -13,8 +15,6 @@ The quasardb daemon does not require privileges (unless listening on a port unde
 
 Configuration
 =============
-
-.. program:: qdbd
 
 Cheat sheet
 -----------

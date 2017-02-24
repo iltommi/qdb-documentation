@@ -41,6 +41,7 @@ The server accepts specific URLs (See :ref:`qdb_httpd-url-reference`) and will s
 
 If the URL does not exists, the server will return a page not found (404) error.
 
+.. highlight:: shell
 .. _qdb_httpd-parameters-reference:
 
 Parameters reference
@@ -135,7 +136,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         A string representing one (or several) path(s) to the log file(s).
 
     Example
-        Log in /var/log/qdbd.log: ::
+        Log in /var/log/qdbd.log::
 
             qdb_httpd --log-file=/var/log/qdbd.log
 
