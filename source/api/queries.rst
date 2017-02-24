@@ -52,10 +52,10 @@ BNF Grammar
 By default, all types are selected, if one or more types is selected, only those types will be returned. Thus, the grammar does not allow you to exclude a type::
 
     <entry_types> ::= "blob" | "int" | "integer" | "hset" | "stream" | "deque" | "ts_double" | "ts_blob"
-    <quote_char> ::= "'" | '"'
-    <quoted_string> ::=  <quote_char> <utf8_string> <quote_char>
+    <quoted_string> ::= "\"" <utf8_string> "\"" | "'" <utf8_string> "'"
     <tag> ::= "tag=" <quoted_string>
-    <positive> ::= <tag> | <entry_types>
+    <type> ::= "type=" <entry_types>
+    <positive> ::= <tag> | <type>
     <negative> ::= "not" <tag>
     <statement> ::= <positive> | <negative>
     <query> ::= <statement> | <statement> "and" <query>
