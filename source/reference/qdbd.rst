@@ -1,6 +1,8 @@
 quasardb daemon
 ***************
 
+.. program:: qdbd
+
 The quasardb daemon is a highly scalable data :term:`repository` that handles requests from multiple clients.  The data is cached in memory and persisted on disk. It can be distributed on several servers to form a :term:`cluster`.
 
 The persistence layer is based on `LevelDB <http://code.google.com/p/leveldb/>`_ (c) LevelDB authors. All rights reserved.
@@ -14,37 +16,35 @@ The quasardb daemon does not require privileges (unless listening on a port unde
 Configuration
 =============
 
-.. program:: qdbd
-
 Cheat sheet
 -----------
 
  ===================================== ============================ =================== ============ ==============
                 Option                               Usage               Default           Global     Req. Version
  ===================================== ============================ =================== ============ ==============
- :option:`-h`                          display help                                         No       
+ :option:`-h`                          display help                                         No
  :option:`--gen-config`                generate default config file                         No        >=1.1.3
  :option:`-c`, `--config-file`         specify config file                                  No        >=1.1.3
- :option:`--license-file`              specify license              qdb_license.txt         No       
- :option:`-d`                          daemonize                                            No       
- :option:`-a`                          address to listen on         127.0.0.1:2836          No       
- :option:`-s`                          max client sessions          2000                    No       
- :option:`--partitions`                number of partitions         Variable                No       
- :option:`-r`                          persistence directory        ./db                    Yes      
- :option:`--id`                        set the node id              generated               No       
- :option:`--replication`               sets the replication factor  1                       Yes      
- :option:`--peer`                      one peer to form a cluster                           No       
- :option:`--transient`                 disable persistence                                  Yes      
- :option:`--sync`                      sync every disk write                                Yes      
- :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes      
- :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes      
+ :option:`--license-file`              specify license              qdb_license.txt         No
+ :option:`-d`                          daemonize                                            No
+ :option:`-a`                          address to listen on         127.0.0.1:2836          No
+ :option:`-s`                          max client sessions          2000                    No
+ :option:`--partitions`                number of partitions         Variable                No
+ :option:`-r`                          persistence directory        ./db                    Yes
+ :option:`--id`                        set the node id              generated               No
+ :option:`--replication`               sets the replication factor  1                       Yes
+ :option:`--peer`                      one peer to form a cluster                           No
+ :option:`--transient`                 disable persistence                                  Yes
+ :option:`--sync`                      sync every disk write                                Yes
+ :option:`--limiter-max-entries-count` max entries in cache         100000                  Yes
+ :option:`--limiter-max-bytes`         max bytes in cache           Automatic               Yes
  :option:`--max-depot-size`            max db size on node          0 (disabled)            Yes       >=1.1.3
- :option:`-o`                          log on console                                       No       
- :option:`-l`                          log on given file                                    No       
- :option:`--log-dump`                  dump file location           qdb_error_dump.txt      No       
- :option:`--log-syslog`                log on syslog                                        No       
- :option:`--log-level`                 change log level             info                    No       
- :option:`--log-flush-interval`        change log flush             3                       No       
+ :option:`-o`                          log on console                                       No
+ :option:`-l`                          log on given file                                    No
+ :option:`--log-dump`                  dump file location           qdb_error_dump.txt      No
+ :option:`--log-syslog`                log on syslog                                        No
+ :option:`--log-level`                 change log level             info                    No
+ :option:`--log-flush-interval`        change log flush             3                       No
  ===================================== ============================ =================== ============ ==============
 
 Global and local options
@@ -233,11 +233,11 @@ Instance specific
 .. option:: -c, --config-file
 
     Specifies a configuration file to use. See :ref:`qdbd-config-file-reference`.
-    
+
         * Any other command-line options will be ignored.
         * If an option is omitted in the config file, the default will be used.
         * If an option is malformed in the config file, it will be ignored.
-    
+
     Argument
         The path to a valid configuration file.
 
@@ -570,44 +570,44 @@ Global
 .. option:: --max-depot-size=<size-in-bytes>
 
     Sets the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
-    
+
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
-    
+
     Argument
         An integer representing the maximum size of the database on disk in bytes.
-    
+
     Default value
         0 (disabled)
-    
+
     Example A
         To limit the database size on each node to 12 Terabytes:
-        
+
         .. math::
-            
+
             \text{Max Depot Size Value} &= \text{12 Terabytes} \: * \: \frac{1024^4 \: \text{Bytes}}{\text{1 Terabyte}}\\
                                         &= \text{13194139533312 Bytes}
-        
+
         And thus the command: ::
-        
+
             qdbd --max-depot-size=13194139533312
-        
+
         This database may expand out to approximately 14.4 Terabytes due to meta-data and uncompressed db entries.
-            
+
     Example B
         This example will limit the database size to ensure it fits within 1 Terabyte of free space. Since limiting to a specific overhead is important in this example, the filesystem cluster size is also taken into account; the default for most filesystems is 4096 bytes.
-        
+
         .. math::
-            
+
             \text{Max Depot Size Value} &= \text{1099511627776 Bytes} - \text{(1099511627776 Bytes} \: * \: 0.2 \text{)} - \text{Cluster Size of 4096} \\
                                         &= \text{1099511627776 Bytes} - \text{219902325555.2 Bytes} - \text{4096 Bytes} \\
                                         &= \text{879609298124.8 Bytes}
-        
+
         And thus the command, truncating down to an integer: ::
-        
+
             qdbd --max-depot-size=879609298124
-        
+
         This database should not exceed 1 Terabyte.
-    
+
 .. note::
      The --max-depot-size argument is only available with QuasarDB 1.1.2 or higher.
 
@@ -684,9 +684,9 @@ The default configuration file is shown below::
 .. describe:: global::depot::max_bytes
 
     An integer representing the maximum amount of disk usage for each node's database in bytes. Any write operations that would overflow the database will return a qdb_e_system error stating "disk full".
-    
+
     Due to excessive meta-data or uncompressed db entries, the actual database size may exceed this set value by up to 20%.
-    
+
     See :option:`--max-depot-size` for more details and examples to calculate the max_bytes value.
 
 .. describe:: global::depot::replication_factor
@@ -712,7 +712,7 @@ The default configuration file is shown below::
 .. describe:: global::limiter::max_in_entries_count
 
     An integer representing the maximum number of entries that can be stored in memory. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the entry limit.
-    
+
 .. describe:: local::chord::bootstrapping_peers
 
     An array of strings representing other nodes in the cluster which will bootstrap this node upon startup. The string can be a host name or an IP address. Must have name or IP separated from port with a colon.
@@ -736,18 +736,18 @@ The default configuration file is shown below::
 .. describe:: local::logger::log_files
 
     An array of strings representing the relative or absolute paths to the quasardb log files.
-    
+
 .. describe:: local::logger::log_level
 
     An integer representing the verbosity of the log output. Acceptable values are::
-    
+
         0 = detailed (most output)
         1 = debug
         2 = info (default)
         3 = warning
         4 = error
         5 = panic (least output)
-    
+
 .. describe:: local::logger::log_to_console
 
     A boolean value representing whether or not the quasardb daemon should log to the console it was spawned from.
