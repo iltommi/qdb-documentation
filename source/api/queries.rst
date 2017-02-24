@@ -2,7 +2,7 @@ quasardb queries
 ======================
 
 .. cpp:namespace:: qdb
-.. highlight:: cpp
+.. highlight:: sql
 
 .. warning::
     The querying language is a feature under development.
@@ -28,32 +28,29 @@ All requests are transactional: they will not see updates that happen during the
 Examples
 ----------
 
-Find all entries that have the tag "stocks":
+Find all entries that have the tag "stocks"::
 
-.. code-block:: sql
     tag="stocks"
 
-Find all entries that have the tags "stocks", "euro", "industry":
+Find all entries that have the tags "stocks", "euro", "industry"::
 
-.. code-block:: sql
     tag="stocks" and tag="euro" and tag="industry"
 
-Find all entries that have the tags "stocks", "euro", "industry" but not "germany":
+Find all entries that have the tags "stocks", "euro", "industry" but not "germany"::
 
-.. code-block:: sql
     tag="stocks" and tag="euro" and tag="industry" and not tag="germany"
 
-Find all entries that have the tags "stocks", "euro", "industry" but not "germany", and are a double time series column:
+Find all entries that have the tags "stocks", "euro", "industry" but not "germany", and are a double time series column::
 
-.. code-block:: sql
     tag="stocks" and tag="euro" and tag="industry" and not tag="germany" and type=ts_double
 
 BNF Grammar
 -------------
 
-By default, all types are selected, if one or more types is selected, only those types will be returned. Thus, the grammar does not allow you to exclude a type.
+.. highlight:: bnf
 
-.. code-block:: bnf
+By default, all types are selected, if one or more types is selected, only those types will be returned. Thus, the grammar does not allow you to exclude a type::
+
     <entry_types> ::= "blob" | "int" | "integer" | "hset" | "stream" | "deque" | "ts_double" | "ts_blob"
     <quote_char> ::= "'" | '"'
     <quoted_string> ::=  <quote_char> <utf8_string> <quote_char>
