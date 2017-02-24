@@ -24,6 +24,8 @@ Launching the qdb_httpd daemon
 
 The web server binary is qdb_httpd (qdb_httpd.exe on Windows). By default it listens on the IPv4 localhost (127.0.0.1) and the port 8080. This can be configured using either a configuration file or by command-line arguments. See :ref:`qdb_httpd-config-file-reference` and :ref:`qdb_httpd-parameters-reference`, respectively. A configuration file is recommended.
 
+.. highlight:: shell
+
 In FreeBSD or Linux you can run the http daemon with::
 
     ./qdb_httpd -c qdb_httpd_config_file.json
@@ -56,19 +58,19 @@ The cluster stability and number of nodes are shown in the image to the left. Ea
 The table on the right shows live statistics from the cluster.
 
  * General Data
- 
+
    - Cluster Status: The overall status of the cluster.
    - Evictions Count: The number of entries that were rejected due to node or cluster limits.
- 
+
  * Aggregated Data
- 
+
    - Persisted Size: The size of all data stored on all disks across all nodes.
    - Resident Size: The size of data stored on RAM across all nodes.
    - Persisted Entries Count: The number of entries stored in disk across all nodes.
    - Resident Entries Count: The number of entries stored on RAM across all nodes.
- 
+
  * Aggregated operations statistics
- 
+
    - put: The number of put operations the cluster has received from clients.
    - get: The number of get operations the cluster has received from clients.
    - update: The number of get operations the cluster has received from clients.
@@ -112,12 +114,12 @@ The table on the right shows live statistics from the selected node.
 
  * Node ID: The unique hexadecimal node ID assigned as part of its configuration file or when it joined the cluster.
  * Machine Configuration
- 
+
    - OS: The operating system of the node.
    - CPU: The CPU model of the node.
- 
+
  * Node Data
- 
+
    - Uptime: The amount of time in hours and minutes the node has been online.
    - Virtual Memory: The total amount of memory in the node, including swap space.
    - Physical Memory: The total amount of physical memory in the node.
@@ -145,7 +147,7 @@ Node Operation Statistics
    - remove if: The number of remove if operations the cluster has received from clients.
 
 Sessions information by partition
- 
+
    - Each partition is shown with a number of available simultaneous connections out of its maximum simultaneous connections. The maximum number of connections is determined by your license file.
 
 
@@ -153,7 +155,7 @@ There are two download buttons beneath the operation statistics:
 
 .. image:: qdb_httpd_raw_json_data.png
     :align: center
-    
+
 .. image:: qdb_httpd_configuration_as_json.png
     :align: center
 
@@ -190,7 +192,7 @@ Using the qdb_httpd JSON interface
 
 The server only accepts specific URLs and will service JSON or JSONP data depending on the URL and its parameters. If the URL does not exist, the server will return a page not found (404) error.
 
-A comprehensive list of urls and parameters is listed below at :ref:`qdb_httpd-url-reference`. 
+A comprehensive list of urls and parameters is listed below at :ref:`qdb_httpd-url-reference`.
 
 
 
@@ -226,11 +228,11 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
 .. option:: -c, --config-file
 
     Specifies a configuration file to use. See :ref:`qdb_httpd-config-file-reference`.
-    
+
         * Any other command-line options will be ignored.
         * If an option is omitted in the config file, the default will be used.
         * If an option is malformed in the config file, it will be ignored.
-    
+
     Argument
         The path to a valid configuration file.
 
@@ -238,7 +240,7 @@ Parameters can be supplied in any order and are prefixed with ``--``. The argume
         To use a configuration file named "qdb_httpd_default_config.json", type: ::
 
             qdb_httpd --config-file=qdb_httpd_default_config.json
-        
+
 .. note::
      The --config-file argument is only available with QuasarDB 1.1.3 or higher.
 
@@ -424,7 +426,7 @@ The default configuration file is shown below::
 .. describe:: daemonize
 
     A boolean value representing whether or not the qdb_httpd daemon should daemonize on launch.
-    
+
 .. describe:: doc_root
 
     A string representing the relative or absolute path to the administration HTML files.
@@ -448,7 +450,7 @@ The default configuration file is shown below::
 .. describe:: log_config::log_level
 
     An integer representing the verbosity of the log output. Acceptable values are::
-    
+
         0 = detailed (most output)
         1 = debug
         2 = info (default)
