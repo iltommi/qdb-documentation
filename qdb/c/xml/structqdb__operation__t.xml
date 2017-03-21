@@ -207,7 +207,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>A pointer to the buffer containing the result of the blob operation, if any. This buffer is API-allocated and will be freed by a call to <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref></para><para>A pointer to the buffer containing the result of the blob operation This buffer is API-allocated and will be freed by a call to <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref> </para>        </detaileddescription>
+<para>A pointer to the buffer containing the result of the blob operation, if any. This buffer is API-allocated and will be freed by a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref></para><para>A pointer to the buffer containing the result of the blob operation This buffer is API-allocated and will be freed by a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="176" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="176" bodyend="-1"/>
@@ -324,7 +324,7 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>A pointer to the buffer containing the result of the blob operation This buffer is API-allocated and will be freed by a call to <ref refid="group__batch_1ga93345ffaa1f79909d09ede32158bd747" kindref="member">qdb_free_operations</ref> </para>        </detaileddescription>
+<para>A pointer to the buffer containing the result of the blob operation This buffer is API-allocated and will be freed by a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="205" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="205" bodyend="-1"/>

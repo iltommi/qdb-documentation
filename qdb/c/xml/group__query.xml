@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="group__query" kind="group">
+    <compoundname>query</compoundname>
+    <title>Query related functions</title>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__query_1ga461da75f216ca42c3e283448d007e861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_query</definition>
+        <argsstring>(qdb_handle_t handle, const char *query, const char ***aliases, size_t *alias_count)</argsstring>
+        <name>qdb_query</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>query</declname>
+        </param>
+        <param>
+          <type>const char ***</type>
+          <declname>aliases</declname>
+        </param>
+        <param>
+          <type>size_t *</type>
+          <declname>alias_count</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves all entries&apos; aliases that match the specified query. </para>        </briefdescription>
+        <detaileddescription>
+<para>For the complete grammar, please refer to the documentation.</para><para>Queries are transactional.</para><para>The complexity of this function is dependent on the complexity of the query.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the query to perform. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aliases</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the query. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the number of returned aliases. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/query.h" line="65" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+  </compounddef>
+</doxygen>

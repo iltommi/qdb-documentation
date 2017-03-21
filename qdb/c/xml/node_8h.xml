@@ -67,7 +67,7 @@
         <briefdescription>
 <para>Returns the status of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its status and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref>.</para><para>The status is JSON object and contains current information of the node state, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its status and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>.</para><para>The status is JSON object and contains current information of the node state, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -97,7 +97,7 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -127,7 +127,7 @@
         <briefdescription>
 <para>Returns the configuration of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its configuration and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref>.</para><para>The configuration is JSON object, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its configuration and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>.</para><para>The configuration is JSON object, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -157,7 +157,7 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
@@ -187,7 +187,7 @@
         <briefdescription>
 <para>Returns the topology of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its topology and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref>.</para><para>The topology is JSON object containing the node address, and the addresses of its successor and predecessor.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its topology and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>.</para><para>The topology is JSON object containing the node address, and the addresses of its successor and predecessor.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -217,7 +217,7 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>

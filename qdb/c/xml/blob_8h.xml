@@ -126,7 +126,7 @@
         <briefdescription>
 <para>Retrieves an entry&apos;s content from the quasardb server. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -189,7 +189,7 @@
         <briefdescription>
 <para>Retrieves a part of an entry&apos;s content from the quasardb server. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range <computeroutput>[</computeroutput><computeroutput>offset<computeroutput></computeroutput>, </computeroutput><computeroutput>offset<computeroutput></computeroutput> + *</computeroutput><computeroutput>content_length<computeroutput></computeroutput>)</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range <computeroutput>[</computeroutput><computeroutput>offset<computeroutput></computeroutput>, </computeroutput><computeroutput>offset<computeroutput></computeroutput> + *</computeroutput><computeroutput>content_length<computeroutput></computeroutput>)</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -255,7 +255,7 @@
         <briefdescription>
 <para>Atomically gets an entry from the quasardb server and removes it. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1gaeb74354a16fdeae3143b1d91e2935d32" kindref="member">qdb_free_buffer()</ref>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <computeroutput>qdb_e_buffer_too_small</computeroutput>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <computeroutput>qdb_e_buffer_too_small</computeroutput>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>

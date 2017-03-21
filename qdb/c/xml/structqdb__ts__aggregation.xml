@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
-  <compounddef id="structqdb__ts__aggregation__t" kind="struct" language="C++" prot="public">
-    <compoundname>qdb_ts_aggregation_t</compoundname>
+  <compounddef id="structqdb__ts__aggregation" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_aggregation</compoundname>
     <includes local="no">ts.h</includes>
       <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="structqdb__ts__aggregation__t_1ab7ef1a686ad0c0bf7db896671536c757" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structqdb__ts__aggregation_1a0f7310ecaf21736437a680dc3bde66e9" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref></type>
-        <definition>qdb_ts_range_t qdb_ts_aggregation_t::range</definition>
+        <definition>qdb_ts_range_t qdb_ts_aggregation::range</definition>
         <argsstring></argsstring>
         <name>range</name>
         <briefdescription>
@@ -17,9 +17,9 @@
         </inbodydescription>
         <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="75" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="75" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structqdb__ts__aggregation__t_1afdc8bc4216b747a48f37bb67f8d052e2" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structqdb__ts__aggregation_1aa8f165a239a028922ebe8a69737ea846" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
-        <definition>qdb_timespec_t qdb_ts_aggregation_t::result_timestamp</definition>
+        <definition>qdb_timespec_t qdb_ts_aggregation::result_timestamp</definition>
         <argsstring></argsstring>
         <name>result_timestamp</name>
         <briefdescription>
@@ -30,9 +30,9 @@
         </inbodydescription>
         <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="76" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="76" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structqdb__ts__aggregation__t_1addbf83c6fa535a1e65ea2382ef62f804" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="structqdb__ts__aggregation_1a0bb5daf78ebd42240ceb26ccd9dd7b90" prot="public" static="no" mutable="no">
         <type>double</type>
-        <definition>double qdb_ts_aggregation_t::result_value</definition>
+        <definition>double qdb_ts_aggregation::result_value</definition>
         <argsstring></argsstring>
         <name>result_value</name>
         <briefdescription>
@@ -50,8 +50,8 @@
     </detaileddescription>
     <collaborationgraph>
       <node id="23">
-        <label>qdb_ts_aggregation_t</label>
-        <link refid="structqdb__ts__aggregation__t"/>
+        <label>qdb_ts_aggregation</label>
+        <link refid="structqdb__ts__aggregation"/>
         <childnode refid="24" relation="usage">
           <edgelabel>result_timestamp</edgelabel>
         </childnode>
@@ -74,9 +74,9 @@
     </collaborationgraph>
     <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="74" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="73" bodyend="78"/>
     <listofallmembers>
-      <member refid="structqdb__ts__aggregation__t_1ab7ef1a686ad0c0bf7db896671536c757" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation_t</scope><name>range</name></member>
-      <member refid="structqdb__ts__aggregation__t_1afdc8bc4216b747a48f37bb67f8d052e2" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation_t</scope><name>result_timestamp</name></member>
-      <member refid="structqdb__ts__aggregation__t_1addbf83c6fa535a1e65ea2382ef62f804" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation_t</scope><name>result_value</name></member>
+      <member refid="structqdb__ts__aggregation_1a0f7310ecaf21736437a680dc3bde66e9" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation</scope><name>range</name></member>
+      <member refid="structqdb__ts__aggregation_1aa8f165a239a028922ebe8a69737ea846" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation</scope><name>result_timestamp</name></member>
+      <member refid="structqdb__ts__aggregation_1a0bb5daf78ebd42240ceb26ccd9dd7b90" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation</scope><name>result_value</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

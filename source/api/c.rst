@@ -121,7 +121,7 @@ The most convenient way to fetch an entry is :func:`qdb_blob_get`:
     :end-before: doc-end-blob_get
     :dedent: 12
 
-The function will allocate the buffer and update the length. You will need to release the memory later with :func:`qdb_free_buffer`:
+The function will allocate the buffer and update the length. You will need to release the memory later with :func:`qdb_release`:
 
 .. literalinclude:: ../../../../examples/c/blob_get.c
     :start-after: doc-start-free_buffer
@@ -161,11 +161,12 @@ When you are done working with a quasardb cluster, call :func:`qdb_close`:
     :end-before: doc-end-close
     :dedent: 4
 
-:func:`qdb_close` **does not guarantee** to release memory allocated by :func:`qdb_blob_get`. You will need to make appropriate calls to :func:`qdb_free_buffer` for each call to :func:`qdb_blob_get`.
+:func:`qdb_close` **does not guarantee** to release memory allocated by :func:`qdb_blob_get`. You will need to make appropriate calls to :func:`qdb_release` for each call to :func:`qdb_blob_get`.
 
 .. note ::
 
     Avoid opening and closing connections needlessly. A handle consumes very little memory and resources. It is safe to keep it open for the duration of your program.
+
 
 Timeout
 -------
@@ -268,7 +269,7 @@ If you think the number of returned entries will be reasonable (e.g. easily fits
     :dedent: 12
 
 .. note::
-    You must use :func:`qdb_free_results` on the aliases returned by :func:`qdb_get_tagged`.
+    You must use :func:`qdb_release` on the aliases returned by :func:`qdb_get_tagged`.
 
 If you suspect the number of results to be very high, you may want to iterate over the results:
 
@@ -291,7 +292,7 @@ Forward lookup is also supported. For any entry, you can test the existence of a
 :func:`qdb_has_tag` will return :cpp:enum:`qdb_e_tag_not_set` if the tag isn't set.
 
 .. note::
-    Tags returned by :func:`qdb_get_tags` must be freed with :func:`qdb_free_results`.
+    Tags returned by :func:`qdb_get_tags` must be freed with :func:`qdb_release`.
 
 Double-ended queues
 -------------------
@@ -329,7 +330,7 @@ It is possible to atomically update any entry within the deque with :func:`qdb_d
     :dedent: 12
 
 .. note::
-    You must call :func:`qdb_free_buffer` on entries returned by deque accessors.
+    You must call :func:`qdb_release` on entries returned by deque accessors.
 
 In addition to accessing entries, it is also possible to atomically remove and retrieve an entry with the :func:`qdb_deque_pop_front` and :func:`qdb_deque_pop_back` functions:
 
@@ -339,7 +340,7 @@ In addition to accessing entries, it is also possible to atomically remove and r
     :dedent: 12
 
 .. note::
-    You must call :func:`qdb_free_buffer` on entries returned by :func:`qdb_deque_pop_front`, :func:`qdb_deque_pop_back` and :func:`qdb_deque_get_at`.
+    You must call :func:`qdb_release` on entries returned by :func:`qdb_deque_pop_front`, :func:`qdb_deque_pop_back` and :func:`qdb_deque_get_at`.
 
 A deque can be empty. You can query the size of the deque with the :func:`qdb_deque_size` function:
 
@@ -448,12 +449,21 @@ And for the integer in result_value:
     :end-before: doc-end-results-int
     :dedent: 16
 
-Once you are finished with a series of batch operations, you must release the memory that the API allocated using :func:`qdb_free_operations`. The call releases all buffers at once:
+Once you are finished with a series of batch operations, you must release the memory that the API allocated using :func:`qdb_release`. The call releases all buffers at once:
 
 .. literalinclude:: ../../../../examples/c/batch.c
     :start-after: doc-start-free_operations
     :end-before: doc-end-free_operations
     :dedent: 16
+
+Memory management
+-----------------
+
+You may have noticed the :func:`qdb_release` function. It takes two parameters: a handle and a buffer. Internally, the quasardb API will track every buffer it allocated. When you pass a structure to the :func:`qdb_release` function it knows all the attached resources that must be freed.
+
+For example if you ran a batch, it may have resulted in client-side allocations. When passing the pointer to your batch array to the :func:`qdb_release`, every allocated buffer, if any, will be freed. There is no need to call the function for each item in the batch.
+
+To sum up: for every function that allocates memory, release the resource with :func:`qdb_release`.
 
 Iteration
 ---------
@@ -485,7 +495,7 @@ To run a query on quasardb, use the function :func:`qdb_query`. It will return a
     :end-before: doc-end-query
     :dedent: 12
 
-Aliases returned by :func:`qdb_query` must be freed with :func:`qdb_free_results`. For more information about queries, see :doc:`../api/queries`.
+Aliases returned by :func:`qdb_query` must be freed with :func:`qdb_release`. For more information about queries, see :doc:`../api/queries`.
 
 Streaming
 ---------
