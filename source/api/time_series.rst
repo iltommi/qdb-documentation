@@ -62,7 +62,7 @@ For I/O efficiency, a time interval can be sub-divided in smaller buckets on a s
 Bulk loading
 ^^^^^^^^^^^^
 
-Time series support value by value insertion, as well as efficient multi value insertions.
+Time series support value by value insertion, as well as efficient bulk loading. Inserting multiple lines in one call can yield significant performance improvements as it gives the opportunity for the database to optimize network traffic, memory allocations and disk writes.
 
 Look-up by time index is efficient with an amortized constant lookup complexity O(1). That means that fetching a sub-part of the time series is independent of the length of the time series.
 
@@ -99,6 +99,30 @@ For more information, see :doc:`../concepts/data_storage`.
 
 .. note::
     Lossless temporal compression of values and timestamps is planned for a future release.
+
+Supported server side functions
+-------------------------------
+
+All functions are transparently distributed over the cluster.
+
+ +---------------------+----------------+------------+------------+
+ | Operation           | Applies to     | Complexity | Vectorized |
+ +=====================+================+============+============+
+ | First element       | Double columns | Constant   | No         |
+ +---------------------+----------------+------------+------------+
+ | Last element        | Double columns | Constant   | No         |
+ +---------------------+----------------+------------+------------+
+ | Minimum element     | Double columns | Linear     | Yes        |
+ +---------------------+----------------+------------+------------+
+ | Maximum element     | Double columns | Linear     | Yes        |
+ +---------------------+----------------+------------+------------+
+ | Arithmetic mean     | Double columns | Linear     | Yes        |
+ +---------------------+----------------+------------+------------+
+ | Number of elements  | Any column     | Constant   | No         |
+ +---------------------+----------------+------------+------------+
+
+..note::
+    The following functions are planned in the short term: distinct values count, median, most frequent value, least frequent value, moving average, spread, standard deviation and percentile.
 
 Usage
 -------
