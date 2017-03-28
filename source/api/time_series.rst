@@ -7,6 +7,11 @@ Time series
 .. warning::
     Time series is a feature under development.
 
+.. testsetup:: *
+
+    import datetime
+    import quasardb
+
 Goal
 ------
 
@@ -127,10 +132,35 @@ All functions are transparently distributed over the cluster.
 Usage
 -------
 
+In the next example, we'll assume we want to work on the following time series, named "tick42" :
+
++-------------------------+-------+------+-----------+
+| Timestamp               | Price | Size | Exchange  |
++=========================+=======+======+===========+
+| 2016-11-28 14:28:32.213 |  243  | 100  |   P       |
++-------------------------+-------+------+-----------+
+| 2016-11-28 14:28:33.124 |  243  | 200  |   P       |
++-------------------------+-------+------+-----------+
+|   ...                   | ...   | ...  | ...       |
++-------------------------+-------+------+-----------+
+| 2016-11-28 15:12:33.024 |  300  | 400  |   T       |
++-------------------------+-------+------+-----------+
+
 Creation
 ^^^^^^^^
 
 A time series needs to be initially created, and column must be defined. The type of the column is fixed for the lifetime of the column. It is possible to insert, remove and rename columns after the time series has been created.
+
+For example, to create the following time series in Python:
+
+.. testcode:: quasardb
+
+    import quasardb
+
+    # assuming a node on the localhost
+    c = quasardb.Cluster('qdb://127.0.0.1:2836')
+    ts = c.ts("tick42")
+    cols = ts.create([quasardb.TimeSeries.DoubleColumnInfo("Price"), quasardb.TimeSeries.DoubleColumnInfo("Size"), , quasardb.TimeSeries.BlobColumnInfo("Exchange")])
 
 Insertion
 ^^^^^^^^^
@@ -141,6 +171,23 @@ It is not possible to insert in a non-existing time series or in a non-existing 
 
 .. warning::
     Not every API deliver nanosecond resolution for the timestamps during insertion and lookup. This can be due to the inherent limitation of the language. Internally, every value has a timestamp with nanosecond granularity regardless of the language and platform used.
+
+To insert the first line in our example:
+
+.. testcode:: quasardb
+
+    line_ts = datetime.datetime(2016, 11, 28, 14, 28, 32, 213000) 
+
+    cols[0].insert([(line_ts, 243)])
+    cols[1].insert([(line_ts, 100)])
+    cols[2].insert([(line_ts, "P")])
+
+If the timeseries was previously created, or one wish to work on a precisely identified column:
+
+.. testcode:: quasardb
+
+    col_price = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Price"))
+    col_price.insert([(line_ts, 243)])
 
 Time series lookup
 ^^^^^^^^^^^^^^^^^^
@@ -157,9 +204,25 @@ Values are obtained by time interval. The complexity of the operation is indepen
 .. warning::
     The number of returned values can be very large.
 
+To get all the prices of March, 25th 2016:
+
+.. testcode:: quasardb
+
+    col_price = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Price"))
+    all_prices = col_price.get_ranges([(datetime.datetime(2016,3,25,00,00,00), datetime.datetime(2016,3,25,23,59,59,999999))])
+
 Server-side aggregation
 ^^^^^^^^^^^^^^^^^^^^^^^
 
 Aggregations are done on ranges. A single aggregation will not be multithreaded on a single server, however, a server supports multiple aggregations on the same (or different) time series in parallel and these aggregations will occur in separate threads.
 
 Aggregations on floating-point values are done at 64-bit precision.
+
+If we wanted to have the total volume for March, 25th 2016:
+
+.. testcode:: quasardb
+
+    col_size = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Size"))
+
+    # volumes[0] will have the total volume
+    volumes = col_size.aggregate(quasardb.TimeSeries.Aggregation.sum, [(datetime.datetime(2016,3,25,00,00,00), datetime.datetime(2016,3,25,23,59,59,999999))])

@@ -7,14 +7,14 @@ Python
 .. testsetup:: *
 
     import datetime
-    import qdb
+    import quasardb
 
 Introduction
 --------------
 
-The `qdb` module contains multiple classes to make working with a quasardb cluster simple. Data is stored "as is" bit for bit, that is, strings are treated as binary data. 
+The `quasardb` module contains multiple classes to make working with a quasardb cluster simple. Data is stored "as is" bit for bit, that is, strings are treated as binary data. 
 
-The Python API is BSD licensed. You may download it from the quasardb site or from GitHub at `<https://github.com/bureau14/qdb-api-python>`_.
+The Python API is BSD licensed. You may download it from the quasardb site or from GitHub at `<https://github.com/bureau14/quasardb-api-python>`_.
 
 Requirements
 ------------------------
@@ -63,23 +63,23 @@ Once the installation is complete, you must be able to import quasardb without a
 
 .. testcode:: package
 
-    import qdb
+    import quasardb
 
 .. attention::
     If you built the extension from the sources, do not run the above command from the sources directory as it will attempt to load the local source code instead of the properly configured extension.
 
 If you have a server up and running, you must be able to add and access entries:
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
-    c = qdb.Cluster("qdb://127.0.0.1:2836")
+    c = quasardb.Cluster("quasardb://127.0.0.1:2836")
     b = c.blob("entry")
     b.put("content")
     print b.get()
 
 The execution of the above code snippet will output:
 
-.. testoutput:: qdb
+.. testoutput:: quasardb
 
     content
 
@@ -93,43 +93,43 @@ Expiry is either set at creation or through the `expires_at` and `expires_from_n
 
 To set the expiry time of an entry to 1 minute, relative to the call time:
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
     b.expires_from_now(60)
 
 To set the expiry time of an entry to January, 1st 2020:
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
     b.expires_at(datetime.datetime(year=2020, month=1, day=1))
 
 Or alternatively:
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
     b.update("content", datetime.datetime(year=2020, month=1, day=1))
 
 To prevent an entry from ever expiring:
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
     b.expires_at(None);
 
 By default, entries never expire. To obtain the expiry time of an existing entry as a :class:`datetime.datetime` object:
 
-.. doctest:: qdb
+.. doctest:: quasardb
     :hide:
 
     >>> b.expires_at(datetime.datetime(year=2020, month=1, day=1))
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
     expiry = b.get_expiry_time()
     print expiry.strftime("%Y-%m-%d")
 
 This will print:
 
-.. testoutput:: qdb
+.. testoutput:: quasardb
 
     2020-01-01
 
@@ -138,15 +138,15 @@ Tags
 
 To get the list of tags for an entry, use the `get_tags` method.
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
     tags = b.get_tags()
 
 To find the list of items matching a tag, you create a tag object. For example, if you want to find all entries having the tag "my_tag". The `get_entries` method will then list the entries matching the tag.
 
-.. testcode:: qdb
+.. testcode:: quasardb
 
-    c = qdb.Cluster("qdb://127.0.0.1:2836")
+    c = quasardb.Cluster("quasardb://127.0.0.1:2836")
     tag = c.tag("my_tag")
     entries = tag.get_entries()
 
@@ -161,7 +161,7 @@ This module creates a simple save() and load() wrapper around the API:
 Reference
 ---------
 
-.. automodule:: qdb
+.. automodule:: quasardb
     :members:
     :inherited-members:
     :show-inheritance:
