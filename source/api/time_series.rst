@@ -121,7 +121,7 @@ All functions are transparently distributed over the cluster.
  | Number of elements  | Any column     | Constant   | No         |
  +---------------------+----------------+------------+------------+
 
-..note::
+.. note::
     The following functions are planned in the short term: distinct values count, median, most frequent value, least frequent value, moving average, spread, standard deviation and percentile.
 
 Usage
