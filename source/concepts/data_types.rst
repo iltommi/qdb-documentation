@@ -37,6 +37,17 @@ Hash set elements are blobs and can be of any size. Values smaller than 64 bytes
 
 Hash sets are transparently distributed over several nodes and have no predefined length limit.
 
+Time series
+^^^^^^^^^^^^
 
+Time series are distributed, ordered in time collections with nanosecond granularity timestamps. They support efficient insertion at the end of the time series and insertion anywhere within the time series.
 
+Time series are column oriented and can have an arbitrary number of columns, each column has an unique name. Columns can be renamed, added and removed after the creation of the time series.
 
+Each time series bucket is efficiently stored on disk using temporal compression algorithms, if possible.
+
+Server-side aggregations on time series columns is supported and will use the enhanced instruction set of the processor for maximum throughput, if available. Aggregations are distributed transparently over the cluster.
+
+Time series buckets are transparently distributed over several nodes and have no predefined length limit.
+
+For more information, :doc:`../api/time_series`.

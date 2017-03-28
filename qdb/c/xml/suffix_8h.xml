@@ -114,10 +114,10 @@
         </inbodydescription>
         <location file="D:/sources/quasardb/api/include/qdb/suffix.h" line="64" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__prefix_1ga2a4d9d3830c65ff3c0c94693a5770517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__prefix_1ga1413f7d464526be9a7ccc885c0897b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_suffix_count</definition>
-        <argsstring>(qdb_handle_t handle, const char *prefix, qdb_uint_t *result_count)</argsstring>
+        <argsstring>(qdb_handle_t handle, const char *suffix, qdb_uint_t *result_count)</argsstring>
         <name>qdb_suffix_count</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -125,7 +125,7 @@
         </param>
         <param>
           <type>const char *</type>
-          <declname>prefix</declname>
+          <declname>suffix</declname>
         </param>
         <param>
           <type>qdb_uint_t *</type>
@@ -216,8 +216,8 @@
 <codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>***<sp/>results,</highlight></codeline>
 <codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/>*<sp/>result_count);</highlight></codeline>
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
-<codeline lineno="81"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__prefix_1ga2a4d9d3830c65ff3c0c94693a5770517" kindref="member">qdb_suffix_count</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>prefix,</highlight></codeline>
+<codeline lineno="81"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__prefix_1ga1413f7d464526be9a7ccc885c0897b61" kindref="member">qdb_suffix_count</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>suffix,</highlight></codeline>
 <codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_uint_t<sp/>*<sp/>result_count);</highlight></codeline>
 <codeline lineno="84"><highlight class="normal"></highlight></codeline>
 <codeline lineno="85"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>

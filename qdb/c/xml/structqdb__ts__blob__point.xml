@@ -48,14 +48,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="28">
+      <node id="29">
         <label>qdb_timespec_t</label>
         <link refid="structqdb__timespec__t"/>
       </node>
-      <node id="27">
+      <node id="28">
         <label>qdb_ts_blob_point</label>
         <link refid="structqdb__ts__blob__point"/>
-        <childnode refid="28" relation="usage">
+        <childnode refid="29" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>

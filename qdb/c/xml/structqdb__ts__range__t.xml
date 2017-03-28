@@ -35,14 +35,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="34">
+      <node id="37">
         <label>qdb_timespec_t</label>
         <link refid="structqdb__timespec__t"/>
       </node>
-      <node id="33">
+      <node id="36">
         <label>qdb_ts_range_t</label>
         <link refid="structqdb__ts__range__t"/>
-        <childnode refid="34" relation="usage">
+        <childnode refid="37" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>

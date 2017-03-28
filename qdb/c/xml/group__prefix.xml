@@ -123,10 +123,10 @@
         </inbodydescription>
         <location file="D:/sources/quasardb/api/include/qdb/prefix.h" line="81" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__prefix_1ga2a4d9d3830c65ff3c0c94693a5770517" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__prefix_1ga1413f7d464526be9a7ccc885c0897b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_suffix_count</definition>
-        <argsstring>(qdb_handle_t handle, const char *prefix, qdb_uint_t *result_count)</argsstring>
+        <argsstring>(qdb_handle_t handle, const char *suffix, qdb_uint_t *result_count)</argsstring>
         <name>qdb_suffix_count</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -134,7 +134,7 @@
         </param>
         <param>
           <type>const char *</type>
-          <declname>prefix</declname>
+          <declname>suffix</declname>
         </param>
         <param>
           <type>qdb_uint_t *</type>

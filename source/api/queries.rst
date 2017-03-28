@@ -40,9 +40,9 @@ Find all entries that have the tags "stocks", "euro", "industry" but not "german
 
     tag="stocks" and tag="euro" and tag="industry" and not tag="germany"
 
-Find all entries that have the tags "stocks", "euro", "industry" but not "germany", and are a double time series column::
+Find all entries that have the tags "stocks", "euro", "industry" but not "germany", and are a time series::
 
-    tag="stocks" and tag="euro" and tag="industry" and not tag="germany" and type=ts_double
+    tag="stocks" and tag="euro" and tag="industry" and not tag="germany" and type=ts
 
 BNF Grammar
 -------------
@@ -51,7 +51,7 @@ BNF Grammar
 
 By default, all types are selected, if one or more types is selected, only those types will be returned. Thus, the grammar does not allow you to exclude a type::
 
-    <entry_types> ::= "blob" | "int" | "integer" | "hset" | "stream" | "deque" | "ts_double" | "ts_blob"
+    <entry_types> ::= "blob" | "int" | "integer" | "hset" | "stream" | "deque" | "ts"
     <quoted_string> ::= "\"" <utf8_string> "\"" | "'" <utf8_string> "'"
     <tag> ::= "tag=" <quoted_string>
     <type> ::= "type=" <entry_types>

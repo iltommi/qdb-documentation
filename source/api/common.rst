@@ -96,8 +96,7 @@ The "current" state of the cluster is what is iterated upon. No "snapshot" is ma
 .. note::
 	Entries cannot be iterated if the cluster is in transient mode.
 
-
-Batch operations
+    Batch operations
 ----------------
 
 Introduction

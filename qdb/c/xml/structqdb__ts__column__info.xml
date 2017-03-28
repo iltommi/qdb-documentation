@@ -1,0 +1,43 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structqdb__ts__column__info" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_column_info</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__column__info_1ab99b4ee5ad8cefacf26cea674bbb254a" prot="public" static="no" mutable="no">
+        <type>const char *</type>
+        <definition>const char* qdb_ts_column_info::name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="97" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="97" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__column__info_1aecc01a31d6003c407071910d63e2e390" prot="public" static="no" mutable="no">
+        <type>qdb_ts_column_type_t</type>
+        <definition>qdb_ts_column_type_t qdb_ts_column_info::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="98" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="98" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="96" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="95" bodyend="99"/>
+    <listofallmembers>
+      <member refid="structqdb__ts__column__info_1ab99b4ee5ad8cefacf26cea674bbb254a" prot="public" virt="non-virtual"><scope>qdb_ts_column_info</scope><name>name</name></member>
+      <member refid="structqdb__ts__column__info_1aecc01a31d6003c407071910d63e2e390" prot="public" virt="non-virtual"><scope>qdb_ts_column_info</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

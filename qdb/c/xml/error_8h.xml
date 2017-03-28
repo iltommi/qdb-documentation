@@ -682,13 +682,21 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9346971364404dd0a1fce5eacf6bee17" prot="public">
+          <name>qdb_e_column_not_found</name>
+          <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0039</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An error code indicating success or failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="119" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="118" bodyend="178"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="119" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="118" bodyend="179"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -729,7 +737,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="178" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="179" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga7f530850c85980b74be1119741da4bb0" prot="public" static="no">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -742,7 +750,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="184" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="184" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="185" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/error.h" bodystart="185" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -770,7 +778,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="193" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="194" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -933,20 +941,21 @@
 <codeline lineno="174"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_alias_too_long<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0035,</highlight></codeline>
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_clock_skew<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0036,</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_access_denied<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0037,</highlight></codeline>
-<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_login_failed<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0038</highlight></codeline>
-<codeline lineno="178"><highlight class="normal">}<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>;</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"></highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="184"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"></highlight></codeline>
-<codeline lineno="193"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
-<codeline lineno="194"><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>QDB_API_ERROR_H</highlight></codeline>
+<codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_login_failed<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0038,</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_column_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0039</highlight></codeline>
+<codeline lineno="179"><highlight class="normal">}<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>;</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"></highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="185"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
+<codeline lineno="186"><highlight class="normal"></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>QDB_API_ERROR_H</highlight></codeline>
     </programlisting>
     <location file="D:/sources/quasardb/api/include/qdb/error.h"/>
   </compounddef>

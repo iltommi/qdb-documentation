@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="256" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="256" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="255" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="255" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__entry__metadata__t_1af1c3dd521b4f9cb05b60964e6a95f7d1" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1gaaa6272f78edda811822bfce05a07f944" kindref="member">qdb_entry_type_t</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="258" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="258" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="257" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="257" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__entry__metadata__t_1af3b15aeee1e584b9cb53b4e368efe36c" prot="public" static="no" mutable="no">
         <type>qdb_uint_t</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="260" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="260" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="259" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="259" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__entry__metadata__t_1a91100c5bf0aef19a269d6b1f402650ec" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
@@ -54,7 +54,7 @@
 <para>last time the entry was modified May not reflect the actual modification time for distributed containers such as deque and hset. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="265" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="265" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="264" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="264" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__entry__metadata__t_1a8b8156f36fc6a21a6c33eef584c22599" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="267" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="267" bodyend="-1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="266" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="266" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -95,7 +95,7 @@
         <link refid="structqdb__id__t"/>
       </node>
     </collaborationgraph>
-    <location file="D:/sources/quasardb/api/include/qdb/client.h" line="254" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="253" bodyend="268"/>
+    <location file="D:/sources/quasardb/api/include/qdb/client.h" line="253" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="252" bodyend="267"/>
     <listofallmembers>
       <member refid="structqdb__entry__metadata__t_1a8b8156f36fc6a21a6c33eef584c22599" prot="public" virt="non-virtual"><scope>qdb_entry_metadata_t</scope><name>expiry_time</name></member>
       <member refid="structqdb__entry__metadata__t_1a91100c5bf0aef19a269d6b1f402650ec" prot="public" virt="non-virtual"><scope>qdb_entry_metadata_t</scope><name>modification_time</name></member>

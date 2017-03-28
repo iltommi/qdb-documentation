@@ -36,14 +36,14 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="31">
+      <node id="34">
         <label>qdb_timespec_t</label>
         <link refid="structqdb__timespec__t"/>
       </node>
-      <node id="30">
+      <node id="33">
         <label>qdb_ts_double_point</label>
         <link refid="structqdb__ts__double__point"/>
-        <childnode refid="31" relation="usage">
+        <childnode refid="34" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>

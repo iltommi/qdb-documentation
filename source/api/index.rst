@@ -5,6 +5,7 @@ API Reference
    :maxdepth: 1
 
    common
+   time_series
    queries
    c
    cpp

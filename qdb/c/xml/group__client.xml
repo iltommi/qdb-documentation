@@ -23,7 +23,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="278" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="277" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga4057e6f052a167bf6206b465582f9e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -40,7 +40,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="286" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="285" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -78,7 +78,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="296" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="295" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -96,7 +96,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="304" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="303" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -134,7 +134,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="313" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="312" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -173,7 +173,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="327" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="326" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga76340764ecf54bcf726bb9ced7f33041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -214,7 +214,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="356" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="355" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -241,7 +241,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="371" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="370" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gad44ca490ccc6252718a67385646a2706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -301,7 +301,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="387" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="386" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -337,7 +337,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="410" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="409" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga20ff61aa14d5b7659e2e22c2798503ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -374,7 +374,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="428" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="427" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -424,7 +424,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="457" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="456" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -473,7 +473,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="482" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="481" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga089edb1764e8a5567c24dbd001a325db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -524,7 +524,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="504" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="503" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaa71923537cfe32018774ad55eacd246e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -573,7 +573,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="531" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="530" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -622,7 +622,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="549" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="548" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -670,7 +670,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="565" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="564" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga08f21b80163d0b36c03c9e80c2c5df25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -708,7 +708,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="590" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="589" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga871994aec633bde734dbe84a9011a615" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -746,7 +746,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="619" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="618" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gac19115af2f71978c584cfcee8059c7c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -772,7 +772,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="193" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/error.h" line="194" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga649bfb20c6c8f6b2495b1d2878633298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -955,19 +955,11 @@ expiration&quot; time value. </para>        </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="client_8h_1gabc708719df4e28cd85c743e1a4582661a79e8f42ba8748a597b55e84389cb2aef" prot="public">
-          <name>qdb_entry_ts_double</name>
+        <enumvalue id="client_8h_1gabc708719df4e28cd85c743e1a4582661a7f19bbb0e69b4eb2e263ef47a30e7869" prot="public">
+          <name>qdb_entry_ts</name>
           <initializer>= 6</initializer>
           <briefdescription>
 <para>A distributed time series. </para>          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="client_8h_1gabc708719df4e28cd85c743e1a4582661a40c2087c775e04248e5c67ec8fdf2f62" prot="public">
-          <name>qdb_entry_ts_blob</name>
-          <initializer>= 7</initializer>
-          <briefdescription>
-          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -977,7 +969,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="222" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="222" bodyend="240"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="222" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/client.h" bodystart="222" bodyend="239"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -1087,7 +1079,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="240" column="1"/>
+        <location file="D:/sources/quasardb/api/include/qdb/client.h" line="239" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
