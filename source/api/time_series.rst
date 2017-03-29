@@ -21,7 +21,7 @@ At quasardb, when we decided to implement time series, we did it with the follow
  - **Limitless**: It must be possible to record thousands of events every microsecond, for one hundred year, without ever removing a single line.
  - **Reliable**: Writes must be durable and reads consistent. Period.
  - **Flexible**:Although quasardb has server-side aggregations and computations, the user may manipulate the data with her own tools such as Python or R. Extracting a subset of a time series must be simple, fast, and efficient. When inserting data, the user must not have to define a complex schema and can change her mind afterwards.
- - **Interactive**: Transfers, computations and aggregations must be so fast that analytics can access quasardb directly, regardless of the amount of data stored, that the analyst can use the data interactively for maximum productivity.
+ - **Interactive**: Transfers, computations and aggregations must be so fast that analytics can access quasardb directly, regardless of the amount of data stored, to enable the analyst to work interactively.
  - **Transparent**: When a user wants to average the value of a column, it should not be her concern whether or not the time series resides on a single node or is distributed over a big cluster, and if 10,000 users are doing the same thing at the same time. The database must solve all the distribution, concurrence and reduction problems and present a naive interface to the user.
 
 Time series are available since quasardb 2.1.0.
