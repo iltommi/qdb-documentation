@@ -1,11 +1,10 @@
 Time series
 =================
 
-.. cpp:namespace:: qdb
 .. highlight:: python
 
 .. warning::
-    Time series is a feature under development.
+    Time series is a feature under development. Backward compatibility is not 100% guaranteed.
 
 .. testsetup:: *
 
@@ -22,7 +21,7 @@ At quasardb, when we decided to implement time series, we did it with the follow
  - **Limitless**: It must be possible to record thousands of events every microsecond, for one hundred year, without ever removing a single line.
  - **Reliable**: Writes must be durable and reads consistent. Period.
  - **Flexible**:Although quasardb has server-side aggregations and computations, the user may manipulate the data with her own tools such as Python or R. Extracting a subset of a time series must be simple, fast, and efficient. When inserting data, the user must not have to define a complex schema and can change her mind afterwards.
- - **Real-time**: Transfers, computations and aggregations must be so fast that real-time analytics can access quasardb directly, regardless of the amount of data stored.
+ - **Interactive**: Transfers, computations and aggregations must be so fast that analytics can access quasardb directly, regardless of the amount of data stored, that the analyst can use the data interactively for maximum productivity.
  - **Transparent**: When a user wants to average the value of a column, it should not be her concern whether or not the time series resides on a single node or is distributed over a big cluster, and if 10,000 users are doing the same thing at the same time. The database must solve all the distribution, concurrence and reduction problems and present a naive interface to the user.
 
 Time series are available since quasardb 2.1.0.
@@ -45,11 +44,11 @@ The I/O engine is capable of leveraging the `Messaging Accelerator (VMA) <http:/
 Columns
 ^^^^^^^
 
-Time series support an arbitrary number of columns, represented by an unique name.
+Each time series supports an arbitrary number of columns, represented by an unique name.
 
-A database may have an arbitrary number of time series, provided there is enough storage and each time series can be looked-up by its name or by one of its tags (see :doc:`queries`).
+A database may have as many time series as the storage allows. Each time series can be looked-up by its name or by one of its tags (see :doc:`queries`).
 
-For each column, the following types of data are currently supported:
+For each column, the following data types are currently supported:
 
  - Double precision (64-bit) floating point numbers
  - Binary large objects (blob) of any size
@@ -87,16 +86,18 @@ Each point in time is represented with a very-high precision 128-bit timestamp w
 Real-time aggregation
 ^^^^^^^^^^^^^^^^^^^^^
 
-Time series values are stored in continuous vector with cache-aware data structure. Aggregations are vectorized using the available enhanced instructions set of the processor.
+Time series values are stored in cache-aware data structures. Aggregations are vectorized using the available enhanced instructions set of the processor.
 
-For example, an `Intel Xeon E5-2670 <https://ark.intel.com/products/64595/Intel-Xeon-Processor-E5-2670-20M-Cache-2_60-GHz-8_00-GTs-Intel-QPI>`_ can deliver an aggregation speed in the region of 3 billions of rows per second per core thanks to the SSE 4.2 and AVX instruction sets.
+For example, an `Intel Xeon E5-2670 <https://ark.intel.com/products/64595/Intel-Xeon-Processor-E5-2670-20M-Cache-2_60-GHz-8_00-GTs-Intel-QPI>`_ can sum a column in the region of 3 billions of rows per second per core thanks to the SSE 4.2 and AVX instruction sets.
 
 When the time interval spans several nodes, the API will transparently distribute the computation over multiple nodes, and perform the adequate reductions.
 
 Efficient storage
 ^^^^^^^^^^^^^^^^^
 
-While preserving the 128-bit resolution of each timestamp, each bucket only stores the 64-bit index relative to its time interval and values are stored to disk using variadic encoding to minimize storage space.
+While preserving the 128-bit resolution of each timestamp, each bucket only stores the 64-bit index relative to its time interval. Values are stored to disk using variadic encoding to minimize storage space.
+
+When a time interval does not contain data, it does not use any space. Thus, discontinuous data is natively supported and there is no need to *"clean up"* the data before inserting it into quasardb.
 
 Blobs are compressed using `LZ4 <https://en.wikipedia.org/wiki/LZ4_(compression_algorithm)>`_.
 
@@ -176,18 +177,11 @@ To insert the first line in our example:
 
 .. testcode:: quasardb
 
-    line_ts = datetime.datetime(2016, 11, 28, 14, 28, 32, 213000) 
+    line_ts = datetime.datetime(2016, 11, 28, 14, 28, 32, 213000)
 
     cols[0].insert([(line_ts, 243)])
     cols[1].insert([(line_ts, 100)])
     cols[2].insert([(line_ts, "P")])
-
-If the timeseries was previously created, or one wish to work on a precisely identified column:
-
-.. testcode:: quasardb
-
-    col_price = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Price"))
-    col_price.insert([(line_ts, 243)])
 
 Time series lookup
 ^^^^^^^^^^^^^^^^^^
@@ -195,6 +189,17 @@ Time series lookup
 Time series can be discovered by key, by tag or by affix, like any other entry (see :doc:`queries`).
 
 It is possible to enumerate the columns of a time series at any time.
+
+In Python, to enumerate the columns of a time series:
+
+.. testcode:: quasardb
+
+    # columns will be returned in the order they were created
+    cols = ts.columns_info()
+
+    # it is also possible to access a specific column
+    col_price = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Price"))
+    col_price.insert([(line_ts, 243)])
 
 Fetching the values of time series
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -204,7 +209,7 @@ Values are obtained by time interval. The complexity of the operation is indepen
 .. warning::
     The number of returned values can be very large.
 
-To get all the prices of March, 25th 2016:
+For example, to get all the prices of March, 25th 2016:
 
 .. testcode:: quasardb
 
