@@ -8,11 +8,9 @@ Primer
 What is |quasardb|?
 -------------------
 
-|Quasardb| is an advanced data management system. At its heart, it is a transactional key/value store with indexing capabilities. It is fast scales up and out,
-handles concurrent accesses very well and is designed to manage large amounts of data at high-frequency. One can label |quasardb| as a
-`NoSQL database <https://en.wikipedia.org/wiki/NoSQL>`_.
+|Quasardb| is a column-oriented, distributed database with native time series support (see :doc:`api/time_series`).
 
-|Quasardb| is *limitless*. If the hardware can handle it, |quasardb| can handle it.
+It has been designed to reliably store large amounts of data, while delivering a performance level that enables analysts to work interactively.
 
 Where would you want to use |quasardb|? Here are a couple of use cases:
 
@@ -28,7 +26,7 @@ Shall we dance?
 
 To start a |quasardb| server, just run it! We provide packages for many platform, but you can always work in a local directory where you manually
 extracted your |quasardb| binaries. We also support docker and are available on
-`Microsoft Azure <https://azure.microsoft.com/en-us/marketplace/partners/quasardb/quasardb/>`_ and `Amazon EC2 <https://aws.amazon.com/marketplace/pp/B01FUR400S/?ref=_ptnr_qdb_doc>`_.
+`Microsoft Azure <https://azuremarketplace.microsoft.com/en-us/marketplace/partners/quasardb/quasardb/>`_ and `Amazon EC2 <https://aws.amazon.com/marketplace/pp/B01FUR400S/?ref=_ptnr_qdb_doc>`_.
 
 Let's assume we extracted the |quasardb| archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
 
@@ -89,8 +87,8 @@ When requesting |quasardb| through the API, integers are provided in a native fo
 In |quasardb| all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had thousands of shells doing "int_add"
 you are guaranteed that all operations are properly accounted.
 
-But, wait, there's more!
-------------------------
+Distributed containers
+----------------------
 
 Integers, blobs...
 
@@ -108,10 +106,10 @@ because at |quasardb|, we don't like limits::
 
 Every entry within the deque is a blob, of whatever size you fancy.
 
-But, wait, there's more!
-------------------------
+Distributed secondary indexes
+-----------------------------
 
-Now we'd like to show you one of the most exciting features of |quasardb|: tags. Since |quasardb| is a key/value store it provides you with an immediate
+Now we'd like to show you one exciting feature of |quasardb|: tags. Since |quasardb| is a key/value store it provides you with an immediate
 access to any entry within the cluster, if you have a key.
 
 What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
@@ -138,8 +136,8 @@ You never pay for tags if you don't need them and tags are designed to be distri
 when you have a lot of unstructured data or need a flexible model to work with. There is no background jobs that analyzes your data to create indexes so tags
 are very fast and inexpensive.
 
-But, wait, there is so much more!
----------------------------------
+Working with the API
+--------------------
 
 The shell tool is not always the right tool for the job and generally has a subset of all the features available in |quasardb|.
 
@@ -155,10 +153,10 @@ Here is a short Python code snippet:
 
 .. testcode:: primer
 
-    import qdb
+    import quasardb
 
     # connecting, default port is 2836
-    c = qdb.Cluster("qdb://127.0.0.1:2836")
+    c = quasardb.Cluster("qdb://127.0.0.1:2836")
     # adding an entry
     b = c.blob("my_entry")
     b.put("really amazing...")
@@ -172,6 +170,32 @@ Which will output the following when executed:
 .. testoutput:: primer
 
     really amazing...
+
+One more thing: time series
+---------------------------
+
+quasardb supports distributed time series with server side aggregations.
+
+Imagine you are storing all the temperatures of machines in a factory. Each machine would have its own time series identified by its name (e.g. machine1, machine2, etc.).
+
+What if you you would like to known the average temperature of yesterday? Here is how you would write in Python:
+
+.. testcode:: quasardb
+
+    # access a time series by name
+    ts = c.ts("machine42")
+
+    # get the temperature column
+    col_temp = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Temperature"))
+
+    # get the average temperature of yesterday
+    average = col_temp.aggregate(quasardb.TimeSeries.Aggregation.sum,
+                                 [(datetime.datetime.now() - datetime.timedelta(1), datetime.datetime.now())])[0]
+
+
+Computations occur in real-time, meaning that you don't really have to think in advance about how you will use your data. If you need averages per hour, minute or perform  different kind of computations, quasardb will do it on demand.
+
+For more information, see :doc:`api/time_series`.
 
 That demo is nice, but what happens when I go to production?
 ------------------------------------------------------------

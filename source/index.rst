@@ -8,7 +8,7 @@
 quasardb
 ********
 
-**quasardb** - a creation of  `quasardb SAS <http://www.quasardb.net>`_  - is a high-performance, non-relational database designed from the ground up for the most demanding environments.
+**quasardb** - a creation of  `quasardb SAS <http://www.quasardb.net>`_  - is a high-performance,column-oriented, distributed database with native time series support (see :doc:`api/time_series`).
 
 A wealth of languages are officially supported with open source APIs available on `GitHub <https://github.com/bureau14>`_.
 
