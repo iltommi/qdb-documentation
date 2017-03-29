@@ -195,7 +195,7 @@ In Python, to enumerate the columns of a time series:
 .. testcode:: quasardb
 
     # columns will be returned in the order they were created
-    cols = ts.columns_info()
+    cols = ts.columns()
 
     # it is also possible to access a specific column
     col_price = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Price"))
