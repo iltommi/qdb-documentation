@@ -161,7 +161,7 @@ For example, to create the following time series in Python:
     # assuming a node on the localhost
     c = quasardb.Cluster('qdb://127.0.0.1:2836')
     ts = c.ts("tick42")
-    cols = ts.create([quasardb.TimeSeries.DoubleColumnInfo("Price"), quasardb.TimeSeries.DoubleColumnInfo("Size"), , quasardb.TimeSeries.BlobColumnInfo("Exchange")])
+    cols = ts.create([quasardb.TimeSeries.DoubleColumnInfo("Price"), quasardb.TimeSeries.DoubleColumnInfo("Size"), quasardb.TimeSeries.BlobColumnInfo("Exchange")])
 
 Insertion
 ^^^^^^^^^
