@@ -8,10 +8,11 @@ Application Reference
 
 .. toctree::
    :maxdepth: 2
-   
+
    qdbd
    qdb_shell
    qdb_httpd
    qdb_dbtool
    qdb_bench
    qdb_generate_config
+   qdb_excel
