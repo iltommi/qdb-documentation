@@ -62,6 +62,8 @@ The following function returns an array, it should be used in an "array-formula"
 |                                            | The result is an array with two columns; the first contains the timestamp, the second contains the value |
 +--------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
+.. image:: qdb_excel_points.gif
+
 Ribbon buttons
 ==============
 
