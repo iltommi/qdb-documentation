@@ -71,3 +71,5 @@ Ribbon buttons
 
 1. The "Time Series" button opens a wizard to download time-series in the spreadsheet
 2. The "Find" button allows searching entries in the database
+
+.. image:: qdb_excel_ts_gui.gif
