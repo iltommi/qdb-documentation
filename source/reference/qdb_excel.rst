@@ -26,7 +26,7 @@ Two versions of the add-in are available:
 
 If you pick the wrong version, *quasardb for Excel* will refuse to install; so it's safe to try both versions if you don't know which version of Office is installed.
 
-
+.. image:: qdb_excel_setup.gif
 
 Speadsheet functions
 ====================
