@@ -36,19 +36,19 @@ The following functions return a single value, they can be use in any formula:
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | Function signature                          | Description                                                                                           |
 +=============================================+=======================================================================================================+
-| ``QDB.TS.AVERAGE(series,column,begin,end)`` | Returns the average value of the specified time-series in the interval ``[begin,end[``.               |
+| ``QDB.TS.AVERAGE(series,column,begin,end)`` | Returns the average value of the specified time-series in the interval ``[begin,end)``.               |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.COUNT(series,column,begin,end)``   | Returns the number of points that the specified time-series contains in the interval ``[begin,end[``. |
+| ``QDB.TS.COUNT(series,column,begin,end)``   | Returns the number of points that the specified time-series contains in the interval ``[begin,end)``. |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.FIRST(series,column,begin,end)``   | Returns the first value of the specified time-series in the interval ``[begin,end[``.                 |
+| ``QDB.TS.FIRST(series,column,begin,end)``   | Returns the first value of the specified time-series in the interval ``[begin,end)``.                 |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.MAX(series,column,begin,end)``     | Returns the maximum value of the specified time-series in the interval ``[begin,end[``.               |
+| ``QDB.TS.MAX(series,column,begin,end)``     | Returns the maximum value of the specified time-series in the interval ``[begin,end)``.               |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.MIN(series,column,begin,end)``     | Returns the minimum value of the specified time-series in the interval ``[begin,end[``.               |
+| ``QDB.TS.MIN(series,column,begin,end)``     | Returns the minimum value of the specified time-series in the interval ``[begin,end)``.               |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.LAST(series,column,begin,end)``    | Returns the last value of the specified time-series in the interval ``[begin,end[``.                  |
+| ``QDB.TS.LAST(series,column,begin,end)``    | Returns the last value of the specified time-series in the interval ``[begin,end)``.                  |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.SUM(series,column,begin,end)``     | Returns the sum of the specified time-series in the interval ``[begin,end[``.                         |
+| ``QDB.TS.SUM(series,column,begin,end)``     | Returns the sum of the specified time-series in the interval ``[begin,end)``.                         |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 .. image:: qdb_excel_sum.gif
@@ -58,7 +58,7 @@ The following function returns an array, it should be used in an "array-formula"
 +--------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | Function signature                         | Description                                                                                              |
 +============================================+==========================================================================================================+
-| ``QDB.TS.POINTS(series,column,begin,end)`` | Returns all the points the average value of the specified time-series in the interval ``[begin,end[``.   |
+| ``QDB.TS.POINTS(series,column,begin,end)`` | Returns all the points the average value of the specified time-series in the interval ``[begin,end)``.   |
 |                                            | The result is an array with two columns; the first contains the timestamp, the second contains the value |
 +--------------------------------------------+----------------------------------------------------------------------------------------------------------+
 
