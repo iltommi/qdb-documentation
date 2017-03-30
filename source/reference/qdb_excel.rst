@@ -51,6 +51,8 @@ The following functions return a single value, they can be use in any formula:
 | ``QDB.TS.SUM(series,column,begin,end)``     | Returns the sum of the specified time-series in the interval ``[begin,end[``.                         |
 +---------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
+.. image:: qdb_excel_sum.gif
+
 The following function returns an array, it should be used in an "array-formula" (Control+Shift+Enter):
 
 +--------------------------------------------+----------------------------------------------------------------------------------------------------------+
