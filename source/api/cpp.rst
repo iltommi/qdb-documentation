@@ -61,7 +61,7 @@ Quick Reference
   :c:type:`bool`                         :func:`const_reverse_iterator::valid`              |VOID_ARGS_CONST|
   :c:type:`void`                         :func:`const_reverse_iterator::close`              |VOID_ARGS|
   ..                                     :class:`handle`\ ``;``                             ..
-  :c:type:`qdb_error_t`                  :func:`handle::add_tag`                            ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
+  :c:type:`qdb_error_t`                  :func:`handle::attach_tag`                         ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
   :type:`const_iterator`                 :func:`handle::begin`                              |VOID_ARGS|
   :c:type:`qdb_error_t`                  :func:`handle::blob_put`                           ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length,`` :c:type:`qdb_time_t` ``expiry_time);``
   :c:type:`qdb_error_t`                  :func:`handle::blob_update`                        ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length,`` :c:type:`qdb_time_t` ``expiry_time);``
@@ -83,6 +83,7 @@ Quick Reference
   :c:type:`qdb_error_t`                  :func:`handle::deque_push_front`                   ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
   :c:type:`qdb_error_t`                  :func:`handle::deque_set_at`                       ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t` ``index,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
   :c:type:`qdb_error_t`                  :func:`handle::deque_size`                         ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_size_t *` ``size);``
+  :c:type:`qdb_error_t`                  :func:`handle::detach_tag`                         ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
   :type:`const_iterator`                 :func:`handle::end`                                |VOID_ARGS|
   :c:type:`qdb_error_t`                  :func:`handle::expires_at`                         ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_time_t` ``expiry_time);``
   :c:type:`qdb_error_t`                  :func:`handle::expires_from_now`                   ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_time_t` ``expiry_delta);``
@@ -106,7 +107,6 @@ Quick Reference
   :c:type:`qdb_error_t`                  :func:`handle::purge_all`                          |VOID_ARGS|
   :type:`const_reverse_iterator`         :func:`handle::rbegin`                             |VOID_ARGS|
   :c:type:`qdb_error_t`                  :func:`handle::remove`                             ``(``\ |CONST_CHAR_P| ``alias);``
-  :c:type:`qdb_error_t`                  :func:`handle::remove_tag`                         ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
   :type:`const_reverse_iterator`         :func:`handle::rend`                               |VOID_ARGS|
   :c:type:`qdb_size_t`                   :func:`handle::run_batch`                          ``(``:c:type:`qdb_operation_t *` ``operations,`` :c:type:`qdb_size_t` ``operation_count);``
   :type:`std::vector\<batch_result>`     :func:`handle::run_batch`                          ``(``:c:type:`const std::vector\<batch_request> &` ``requests,`` :c:type:`qdb_size_t` ``&`` ``success_count);``
@@ -948,7 +948,7 @@ Reference
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_error_t add_tag(const char * alias, const char * tag)
+    .. cpp:function:: qdb_error_t attach_tag(const char * alias, const char * tag)
 
         Assigns a tag to an entry. The tag is created if it does not exist.
 
@@ -966,7 +966,7 @@ Reference
 
         :returns: An error code of type :c:type:`qdb_error_t`
 
-    .. cpp:function:: qdb_error_t remove_tag(const char * alias, const char * tag)
+    .. cpp:function:: qdb_error_t detach_tag(const char * alias, const char * tag)
 
         Removes a tag assignment from an entry.
 

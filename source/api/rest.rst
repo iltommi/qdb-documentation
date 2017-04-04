@@ -57,7 +57,7 @@ Response
 Attaching a tag to an entry
 ---------------------------
 
-This is the equivalent of :c:func:`qdb_add_tag` in the C API.
+This is the equivalent of :c:func:`qdb_attach_tag` in the C API.
 
 Query
 """""
@@ -65,7 +65,7 @@ Query
 .. raw:: html
 
     <div class='highlight'>
-        <pre><span class='kd'>PATCH</span> /api/v1/entries/<span class='nx'>:alias</span>?action=addTag&tag=<span class='nx'>:tag</span></pre>
+        <pre><span class='kd'>PATCH</span> /api/v1/entries/<span class='nx'>:alias</span>?action=attachTag&tag=<span class='nx'>:tag</span></pre>
     </div>
 
 
@@ -76,13 +76,13 @@ The entry must exist. The entry can be a tag, in fact you can even attach a tag 
 Parameters
 """"""""""
 
-+------------+------------+-------------------------------------+
-| Name       | Type       | Description                         |
-+============+============+=====================================+
-| ``action`` | ``string`` | Type of operation, must be "addTag" |
-+------------+------------+-------------------------------------+
-| ``tag``    | ``string`` | The alias of the tag to attach      |
-+------------+------------+-------------------------------------+
++------------+------------+----------------------------------------+
+| Name       | Type       | Description                            |
++============+============+========================================+
+| ``action`` | ``string`` | Type of operation, must be "attachTag" |
++------------+------------+----------------------------------------+
+| ``tag``    | ``string`` | The alias of the tag to attach         |
++------------+------------+----------------------------------------+
 
 Response
 """"""""
@@ -107,7 +107,7 @@ Response
 Detaching a tag from an entry
 -----------------------------
 
-This is the equivalent of :c:func:`qdb_remove_tag` in the C API.
+This is the equivalent of :c:func:`qdb_detach_tag` in the C API.
 
 Query
 """""
@@ -115,7 +115,7 @@ Query
 .. raw:: html
 
     <div class='highlight'>
-        <pre><span class='kd'>PATCH</span> /api/v1/entries/<span class='nx'>:alias</span>?action=removeTag&tag=<span class='nx'>:tag</span></pre>
+        <pre><span class='kd'>PATCH</span> /api/v1/entries/<span class='nx'>:alias</span>?action=detachTag&tag=<span class='nx'>:tag</span></pre>
     </div>
 
 
@@ -127,7 +127,7 @@ Parameters
 +------------+------------+----------------------------------------+
 | Name       | Type       | Description                            |
 +============+============+========================================+
-| ``action`` | ``string`` | Type of operation, must be "removeTag" |
+| ``action`` | ``string`` | Type of operation, must be "detachTag" |
 +------------+------------+----------------------------------------+
 | ``tag``    | ``string`` | The alias of the tag to detach         |
 +------------+------------+----------------------------------------+

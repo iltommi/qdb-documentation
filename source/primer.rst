@@ -123,8 +123,8 @@ Let's see it in action::
     qdbsh> int_put client1_views 1000
     qdbsh> int_put client1_orders 500
 
-    qdbsh> add_tag client1_views client1
-    qdbsh> add_tag client1_orders client1
+    qdbsh> attach_tag client1_views client1
+    qdbsh> attach_tag client1_orders client1
 
     qdbsh> get_tagged client1
     client1_views, client1_orders
