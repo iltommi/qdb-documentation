@@ -70,14 +70,14 @@ Commands
  :ref:`deque_pop_front alias <qdbsh_deque_pop_front>`                                 remove and return the value from the front of the Deque
  :ref:`deque_push_back alias content <qdbsh_deque_push_back>`                         add a value to the back of the Deque
  :ref:`deque_push_front alias content <qdbsh_deque_push_front>`                       add a value to the front of the Deque
- :ref:`add_tag alias tag <qdbsh_add_tag>`                                             add a tag to an entry
+ :ref:`attach_tag alias tag <qdbsh_attach_tag>`                                       add a tag to an entry
+ :ref:`detach_tag alias tag <qdbsh_detach_tag>`                                       removes a tag from an entry
  :ref:`get_tagged tag <qdbsh_get_tagged>`                                             get entries with the given tag
  :ref:`has_tag alias tag <qdbsh_has_tag>`                                             returns true if the entry has the tag
  :ref:`stream_to_buffer alias <qdbsh_stream_to_buffer>`                               dumps the content of a stream
  :ref:`stream_from_buffer alias content <qdbsh_stream_from_buffer>`                   write content into a stream
  :ref:`stream_to_file alias file_path <qdbsh_stream_to_file>`                         dumps the content of a stream into a file
  :ref:`stream_from_file alias file_path <qdbsh_stream_from_file>`                     loads a file and adds it into a file
- :ref:`remove_tag alias tag <qdbsh_remove_tag>`                                       removes a tag from an entry
  :ref:`version <qdbsh_version>`                                                       display the quasardb version
 
  =================================================================================== =================================================================
@@ -555,8 +555,8 @@ A command generally requires one or several arguments. Each argument is separate
     :param content: *(string)* the value to add to the start of the Deque.
     :return: nothing if successful, an error message otherwise.
 
-.. _qdbsh_add_tag:
-.. option:: add_tag <alias> <tag>
+.. _qdbsh_attach_tag:
+.. option:: attach_tag <alias> <tag>
 
     Add a tag to the specified entry.
 
@@ -617,8 +617,8 @@ A command generally requires one or several arguments. Each argument is separate
     :param path: *(string)* the path to the file whose content will be written into the stream
     :return: nothing if successful, an error message otherwise.
 
-.. _qdbsh_remove_tag:
-.. option:: remove_tag <alias> <tag>
+.. _qdbsh_detach_tag:
+.. option:: detach_tag <alias> <tag>
 
     Remove a tag from the entry.
 

@@ -9,7 +9,7 @@ At the heart of quasardb design and technology decisions lies the desire to solv
 Server
 ^^^^^^
 
-quasardb is developed in C++11 and assembly with performance in mind. The qdbd daemon is organized in a network of mini-daemons that exchange messages. This allows it to ensure low latency while scaling with server resources. qdbd can serve as many concurrent requests as the operating system and underlying hardware permit.
+quasardb is developed in C++14 and assembly with performance in mind. The qdbd daemon is organized in a network of mini-daemons that exchange messages. This allows it to ensure low latency while scaling with server resources. qdbd can serve as many concurrent requests as the operating system and underlying hardware permit.
 
 Network I/O operations are done asynchronously for maximum performance. Most of the I/O framework is based on `Boost.Asio <http://www.boost.org/doc/libs/1_51_0/doc/html/boost_asio.html>`_.
 

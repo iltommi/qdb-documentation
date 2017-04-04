@@ -7,10 +7,10 @@ Tags are strings that you can apply to one or more entries. Any entry can be tag
     b = c.blob('myBlob')
 
     b.put('boom')
-    b.add_tag('myTag')
+    b.attach_tag('myTag')
     has_tag = b.has_tag('myTag')
     taglist = b.get_tags()
-    b.removeTag('myTag')
+    b.detachTag('myTag')
 
 
 You can also create a Tag instance by creating a Tag object from the cluster. Using the tag object, you can look up entries by their association with the tag or tag it with a meta-tag::
@@ -18,7 +18,7 @@ You can also create a Tag instance by creating a Tag object from the cluster. Us
     t = c.tag('myTag')
 
     entry_list = t.get_entries()
-    t.add_tag('is_tag')
+    t.attach_tag('is_tag')
 
     meta_tag = c.tag('is_tag')
     list_of_tags = meta_tag.get_entries()

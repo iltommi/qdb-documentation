@@ -225,9 +225,9 @@ Manipulating tags
 
 In quasardb, tags are strings that you can attach to entries. There are used as a kind of lightweight index.
 
-To add a tag to an entry, just call ``QdbEntry.addTag()``::
+To add a tag to an entry, just call ``QdbEntry.attachTag()``::
 
-    blob.addTag("name of the tag");
+    blob.attachTag("name of the tag");
 
 A tag is also an entry, that you can manipulate through an instance of ``QdbTag``::
 
@@ -237,19 +237,19 @@ From here, you can tag entries::
 
     tag.addEntry("name of the blob");
 
-which is exactly the same as calling ``QdbEntry.addTag()``.
+which is exactly the same as calling ``QdbEntry.attachTag()``.
 
 It was also possible to use the handles instead of the alias, like this::
 
     tag.addEntry(blob);
-    blob.addTag(tag);
+    blob.attachTag(tag);
 
 All of these constructions are synonym.
 
 Like adding a tag, there are four ways to remove a tag from an entry::
 
-    blob.removeTag("name of the tag");
-    blob.removeTag(tag);
+    blob.detachTag("name of the tag");
+    blob.detachTag(tag);
     tag.removeEntry("name of the blob");
     tag.removeEntry(blob);
 
@@ -263,7 +263,7 @@ And, from a ``QdbEntry``, you can enumerate all tags::
 
 Like any other entry, a tag can be tagged and be removed::
 
-    tag.addTag("name of another tag");
+    tag.attachTag("name of another tag");
     tag.remove();
 
 Manipulating streams
@@ -277,7 +277,7 @@ As for the other types of entry, you get a handle via the ``QdbCluster``::
 
 Then you can do the common things you do with other entries::
 
-    stream.addTag("name of the tag");
+    stream.attachTag("name of the tag");
     stream.remove();
 
 But when you want to write to the stream, you need to open it::
