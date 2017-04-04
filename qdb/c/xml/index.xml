@@ -337,7 +337,7 @@
   </compound>
   <compound refid="suffix_8h" kind="file"><name>suffix.h</name>
     <member refid="group__suffix_1gab96e2070e54f4d52ec966e627c06264a" kind="function"><name>qdb_suffix_get</name></member>
-    <member refid="group__prefix_1ga1413f7d464526be9a7ccc885c0897b61" kind="function"><name>qdb_suffix_count</name></member>
+    <member refid="group__suffix_1ga1413f7d464526be9a7ccc885c0897b61" kind="function"><name>qdb_suffix_count</name></member>
   </compound>
   <compound refid="tag_8h" kind="file"><name>tag.h</name>
     <member refid="group__tag_1ga571507d1aa1ca6bfc7b75766963c7770" kind="function"><name>qdb_attach_tag</name></member>
@@ -370,6 +370,7 @@
     <member refid="ts_8h_1ab75b2c387f82164d5c3e8df49f7caa52" kind="typedef"><name>qdb_ts_column_type_t</name></member>
     <member refid="ts_8h_1a28890c2130d08a225b4897b13ed15a44" kind="typedef"><name>qdb_ts_column_info_t</name></member>
     <member refid="ts_8h_1aac17fcebdab7642df1af740ba5e1c230" kind="function"><name>qdb_ts_create</name></member>
+    <member refid="ts_8h_1a13878bc89e413cf5996f41a57bf6afaa" kind="function"><name>qdb_ts_list_columns</name></member>
     <member refid="ts_8h_1a4ff4e4a328f5c1f0025ee16c8d5d013e" kind="function"><name>qdb_ts_insert_columns</name></member>
     <member refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kind="function"><name>qdb_ts_double_insert</name></member>
     <member refid="group__ts_1ga330f02be1b516c2f97d83601d18ff9ab" kind="function"><name>qdb_ts_double_get_range</name></member>
@@ -591,7 +592,6 @@
   <compound refid="group__prefix" kind="group"><name>prefix</name>
     <member refid="group__prefix_1gac09081ad9a6cde204ce7c2b9f83b26dd" kind="function"><name>qdb_prefix_get</name></member>
     <member refid="group__prefix_1ga10a79dd9549332e78713d01488bcce63" kind="function"><name>qdb_prefix_count</name></member>
-    <member refid="group__prefix_1ga1413f7d464526be9a7ccc885c0897b61" kind="function"><name>qdb_suffix_count</name></member>
   </compound>
   <compound refid="group__query" kind="group"><name>query</name>
     <member refid="group__query_1ga461da75f216ca42c3e283448d007e861" kind="function"><name>qdb_query</name></member>
@@ -613,6 +613,7 @@
   </compound>
   <compound refid="group__suffix" kind="group"><name>suffix</name>
     <member refid="group__suffix_1gab96e2070e54f4d52ec966e627c06264a" kind="function"><name>qdb_suffix_get</name></member>
+    <member refid="group__suffix_1ga1413f7d464526be9a7ccc885c0897b61" kind="function"><name>qdb_suffix_count</name></member>
   </compound>
   <compound refid="group__tag" kind="group"><name>tag</name>
     <member refid="group__tag_1ga571507d1aa1ca6bfc7b75766963c7770" kind="function"><name>qdb_attach_tag</name></member>
@@ -634,11 +635,11 @@
     <member refid="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" kind="function"><name>qdb_ts_blob_insert</name></member>
     <member refid="group__ts_1ga2388919946975baacb89e84d2345c2d8" kind="function"><name>qdb_ts_blob_get_range</name></member>
   </compound>
-  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>D:/sources/quasardb/api</name>
+  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>D:/workspace/quasardb/api</name>
   </compound>
-  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>D:/sources/quasardb/api/include</name>
+  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>D:/workspace/quasardb/api/include</name>
   </compound>
-  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>D:/sources/quasardb/api/include/qdb</name>
+  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>D:/workspace/quasardb/api/include/qdb</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

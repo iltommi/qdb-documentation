@@ -4,26 +4,14 @@
     <compoundname>iterator.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
-      <node id="98">
-        <label>error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="99" relation="include">
-        </childnode>
-      </node>
-      <node id="102">
-        <label>stdint.h</label>
-      </node>
       <node id="99">
         <label>_attr.h</label>
         <link refid="__attr_8h"/>
       </node>
-      <node id="100">
-        <label>stddef.h</label>
-      </node>
-      <node id="96">
-        <label>D:/sources/quasardb/api/include/qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
-        <childnode refid="97" relation="include">
+      <node id="98">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="99" relation="include">
         </childnode>
       </node>
       <node id="97">
@@ -38,8 +26,20 @@
         <childnode refid="102" relation="include">
         </childnode>
       </node>
+      <node id="102">
+        <label>stdint.h</label>
+      </node>
+      <node id="100">
+        <label>stddef.h</label>
+      </node>
       <node id="101">
         <label>time.h</label>
+      </node>
+      <node id="96">
+        <label>D:/workspace/quasardb/api/include/qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
+        <childnode refid="97" relation="include">
+        </childnode>
       </node>
     </incdepgraph>
     <innerclass refid="structqdb__const__iterator__t" prot="public">qdb_const_iterator_t</innerclass>
@@ -80,7 +80,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/iterator.h" line="105" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="105" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -118,7 +118,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/iterator.h" line="131" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="131" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -144,7 +144,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/iterator.h" line="145" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="145" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -170,7 +170,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/iterator.h" line="161" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="161" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -196,7 +196,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/iterator.h" line="168" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="168" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -218,7 +218,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/iterator.h" line="179" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/iterator.h" line="179" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -310,6 +310,6 @@
 <codeline lineno="185"><highlight class="normal"></highlight></codeline>
 <codeline lineno="186"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_ITERATOR_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="D:/sources/quasardb/api/include/qdb/iterator.h"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/iterator.h"/>
   </compounddef>
 </doxygen>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="118" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="118" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="118" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="118" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a118c83d65a06b70a2a854b22d5bb0464" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -28,7 +28,7 @@
 <para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="121" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="121" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="121" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="121" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a3e855ed132036e7609cba2b9e64d1ab4" prot="public" static="no" mutable="no">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -41,7 +41,7 @@
 <para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure after the operation has been executed </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="125" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="125" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="125" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="125" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a49503d8421ab8f4308905ea719158adb" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -54,7 +54,7 @@
 <para>A pointer to a null-terminated UTF-8 string representing the tag to test for existence </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="134" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="134" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="134" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="134" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a8588aa1a0dd0f844846199a701704174" prot="public" static="no" mutable="no">
         <type>struct qdb_operation_t::@0::@2</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="135" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="135" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a8df642283181ba3b5427f61ec9b7d7d5" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
@@ -80,7 +80,7 @@
 <para>The result of the integer get operation. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="141" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="141" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="141" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="141" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a99b700fac63aa8a76e49b3d40cd82fc1" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref></type>
@@ -93,7 +93,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="143" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="143" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="143" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="143" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a1896ca0db02b50887b745ceb5c2d6f71" prot="public" static="no" mutable="no">
         <type>struct qdb_operation_t::@0::@3</type>
@@ -106,7 +106,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="144" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="144" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1acaced12578ef76867aeb3d77e6588aa0" prot="public" static="no" mutable="no">
         <type>struct qdb_operation_t::@0::@4</type>
@@ -119,7 +119,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="151" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="151" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1af3f39ad24dc27d529b3b44dec39cd4d2" prot="public" static="no" mutable="no">
         <type><ref refid="structint__put__update__t" kindref="compound">int_put_update_t</ref></type>
@@ -132,7 +132,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="154" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="154" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="154" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="154" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1ad7712a6889f2724e65e15fed93ba3697" prot="public" static="no" mutable="no">
         <type><ref refid="structint__put__update__t" kindref="compound">int_put_update_t</ref></type>
@@ -145,7 +145,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="156" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="156" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="156" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="156" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a2d8f398edba694767fb7a707014ebde1" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1gaaa6272f78edda811822bfce05a07f944" kindref="member">qdb_entry_type_t</ref></type>
@@ -158,7 +158,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="161" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="161" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="161" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="161" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a5caff5fcd9f68fd280c6a17666673bd9" prot="public" static="no" mutable="no">
         <type>struct qdb_operation_t::@0::@5</type>
@@ -171,7 +171,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="162" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="162" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a40065fb079657463da6df7d48c4e9036" prot="public" static="no" mutable="no">
         <type><ref refid="structblob__put__update__t" kindref="compound">blob_put_update_t</ref></type>
@@ -184,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="165" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="165" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="165" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="165" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1ad3e1aaa2569e44d5c27696f180035baa" prot="public" static="no" mutable="no">
         <type><ref refid="structblob__put__update__t" kindref="compound">blob_put_update_t</ref></type>
@@ -197,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="167" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="167" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="167" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="167" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a70869cb72e4adb16482981c22f608247" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -210,7 +210,7 @@
 <para>A pointer to the buffer containing the result of the blob operation, if any. This buffer is API-allocated and will be freed by a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref></para><para>A pointer to the buffer containing the result of the blob operation This buffer is API-allocated and will be freed by a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="176" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="176" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="176" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="176" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a7ab84dc8652aa029953e3ac4f11a5c70" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -223,7 +223,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="178" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="178" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="178" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="178" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1aa82ac1b7a138a0a5a21f2b05b30c4030" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -236,7 +236,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="180" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="180" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="180" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="180" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1addcf7ede533e36ef238dfe56402d9cb0" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -249,7 +249,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="182" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="182" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="182" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="182" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1ac9f0b15106cdeea2943fd2a1b044718b" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -262,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="185" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="185" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="185" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="185" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1aebf68508b3e720b1e90250c22f2a8014" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -275,7 +275,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="187" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="187" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="187" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1ae59ced88d6bc367796132b0bd976f06a" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -288,7 +288,7 @@
 <para>Optional offset for the comparand. Leave to 0 if not needed. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="191" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="191" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="191" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="191" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1af2b73538b2c723d93fa46ffc43975805" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref></type>
@@ -301,7 +301,7 @@
 <para>The optional expiration time. Use <ref refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kindref="member">qdb_never_expires</ref> for no expiration. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="195" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="195" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="195" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="195" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a5c952323658156ed9ec387417013dce6" prot="public" static="no" mutable="no">
         <type>struct qdb_operation_t::@0::@6</type>
@@ -314,7 +314,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="196" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="196" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a6232073010ed9c3c2400053fc0a69511" prot="public" static="no" mutable="no">
         <type>const void *</type>
@@ -327,7 +327,7 @@
 <para>A pointer to the buffer containing the result of the blob operation This buffer is API-allocated and will be freed by a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="205" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="205" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="205" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="205" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a6ac5ccdbc957954df31ab412cecb49b2" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -340,7 +340,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="207" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="207" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="207" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="207" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1abc35f04b331a5974361960c34f6bcf30" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -353,7 +353,7 @@
 <para>Optional offset from which the content should be returned. Leave to 0 if not needed. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="211" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="211" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="211" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="211" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a37172739a0f17c5f047d7d32da8cbc4e" prot="public" static="no" mutable="no">
         <type>struct qdb_operation_t::@0::@7</type>
@@ -366,7 +366,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="212" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="212" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1ad333fe1e6340fdc08ea824b3f1161312" prot="public" static="no" mutable="no">
         <type>struct qdb_operation_t::@0::@8</type>
@@ -379,7 +379,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="233" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="233" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__operation__t_1a49f1cf6d45dc2a82c93a82e088f3e64c" prot="public" static="no" mutable="no">
         <type>union qdb_operation_t::@0</type>
@@ -392,7 +392,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="234" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="234" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -421,7 +421,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/sources/quasardb/api/include/qdb/batch.h" line="116" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/batch.h" bodystart="115" bodyend="235"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/batch.h" line="116" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/batch.h" bodystart="115" bodyend="235"/>
     <listofallmembers>
       <member refid="structqdb__operation__t_1a99b700fac63aa8a76e49b3d40cd82fc1" prot="public" virt="non-virtual"><scope>qdb_operation_t</scope><name>addend</name></member>
       <member refid="structqdb__operation__t_1a118c83d65a06b70a2a854b22d5bb0464" prot="public" virt="non-virtual"><scope>qdb_operation_t</scope><name>alias</name></member>

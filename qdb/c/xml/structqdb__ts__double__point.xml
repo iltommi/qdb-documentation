@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="54" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="54" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="54" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="54" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__double__point_1a05df56eb127d6b66d45b7569369656e3" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="55" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="55" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="55" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -48,7 +48,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/sources/quasardb/api/include/qdb/ts.h" line="53" column="1" bodyfile="D:/sources/quasardb/api/include/qdb/ts.h" bodystart="52" bodyend="56"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="53" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="52" bodyend="56"/>
     <listofallmembers>
       <member refid="structqdb__ts__double__point_1a9faab3dd638b5c4740ccbec931b83aa8" prot="public" virt="non-virtual"><scope>qdb_ts_double_point</scope><name>timestamp</name></member>
       <member refid="structqdb__ts__double__point_1a05df56eb127d6b66d45b7569369656e3" prot="public" virt="non-virtual"><scope>qdb_ts_double_point</scope><name>value</name></member>

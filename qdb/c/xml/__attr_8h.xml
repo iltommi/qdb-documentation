@@ -2,52 +2,28 @@
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="__attr_8h" kind="file" language="C++">
     <compoundname>_attr.h</compoundname>
-    <includedby refid="error_8h" local="yes">D:/sources/quasardb/api/include/qdb/error.h</includedby>
+    <includedby refid="error_8h" local="yes">D:/workspace/quasardb/api/include/qdb/error.h</includedby>
     <invincdepgraph>
+      <node id="1">
+        <label>D:/workspace/quasardb/api/include/qdb/_attr.h</label>
+        <link refid="__attr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>D:/workspace/quasardb/api/include/qdb/node.h</label>
+        <link refid="node_8h"/>
+      </node>
       <node id="2">
-        <label>D:/sources/quasardb/api/include/qdb/error.h</label>
+        <label>D:/workspace/quasardb/api/include/qdb/error.h</label>
         <link refid="error_8h"/>
         <childnode refid="3" relation="include">
         </childnode>
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="14">
-        <label>D:/sources/quasardb/api/include/qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-      </node>
-      <node id="17">
-        <label>D:/sources/quasardb/api/include/qdb/log.h</label>
-        <link refid="log_8h"/>
-      </node>
-      <node id="1">
-        <label>D:/sources/quasardb/api/include/qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="11">
-        <label>D:/sources/quasardb/api/include/qdb/prefix.h</label>
-        <link refid="prefix_8h"/>
-      </node>
-      <node id="9">
-        <label>D:/sources/quasardb/api/include/qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
-      </node>
-      <node id="5">
-        <label>D:/sources/quasardb/api/include/qdb/blob.h</label>
-        <link refid="blob_8h"/>
-      </node>
-      <node id="4">
-        <label>D:/sources/quasardb/api/include/qdb/batch.h</label>
-        <link refid="batch_8h"/>
-      </node>
-      <node id="16">
-        <label>D:/sources/quasardb/api/include/qdb/ts.h</label>
-        <link refid="ts_8h"/>
-      </node>
       <node id="3">
-        <label>D:/sources/quasardb/api/include/qdb/client.h</label>
+        <label>D:/workspace/quasardb/api/include/qdb/client.h</label>
         <link refid="client_8h"/>
         <childnode refid="4" relation="include">
         </childnode>
@@ -76,33 +52,57 @@
         <childnode refid="16" relation="include">
         </childnode>
       </node>
-      <node id="6">
-        <label>D:/sources/quasardb/api/include/qdb/deque.h</label>
-        <link refid="deque_8h"/>
-      </node>
       <node id="8">
-        <label>D:/sources/quasardb/api/include/qdb/integer.h</label>
+        <label>D:/workspace/quasardb/api/include/qdb/integer.h</label>
         <link refid="integer_8h"/>
       </node>
-      <node id="7">
-        <label>D:/sources/quasardb/api/include/qdb/hset.h</label>
-        <link refid="hset_8h"/>
-      </node>
-      <node id="12">
-        <label>D:/sources/quasardb/api/include/qdb/query.h</label>
-        <link refid="query_8h"/>
+      <node id="16">
+        <label>D:/workspace/quasardb/api/include/qdb/ts.h</label>
+        <link refid="ts_8h"/>
       </node>
       <node id="15">
-        <label>D:/sources/quasardb/api/include/qdb/tag.h</label>
+        <label>D:/workspace/quasardb/api/include/qdb/tag.h</label>
         <link refid="tag_8h"/>
       </node>
-      <node id="10">
-        <label>D:/sources/quasardb/api/include/qdb/node.h</label>
-        <link refid="node_8h"/>
-      </node>
       <node id="13">
-        <label>D:/sources/quasardb/api/include/qdb/stream.h</label>
+        <label>D:/workspace/quasardb/api/include/qdb/stream.h</label>
         <link refid="stream_8h"/>
+      </node>
+      <node id="7">
+        <label>D:/workspace/quasardb/api/include/qdb/hset.h</label>
+        <link refid="hset_8h"/>
+      </node>
+      <node id="5">
+        <label>D:/workspace/quasardb/api/include/qdb/blob.h</label>
+        <link refid="blob_8h"/>
+      </node>
+      <node id="12">
+        <label>D:/workspace/quasardb/api/include/qdb/query.h</label>
+        <link refid="query_8h"/>
+      </node>
+      <node id="11">
+        <label>D:/workspace/quasardb/api/include/qdb/prefix.h</label>
+        <link refid="prefix_8h"/>
+      </node>
+      <node id="9">
+        <label>D:/workspace/quasardb/api/include/qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
+      </node>
+      <node id="17">
+        <label>D:/workspace/quasardb/api/include/qdb/log.h</label>
+        <link refid="log_8h"/>
+      </node>
+      <node id="14">
+        <label>D:/workspace/quasardb/api/include/qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
+      </node>
+      <node id="4">
+        <label>D:/workspace/quasardb/api/include/qdb/batch.h</label>
+        <link refid="batch_8h"/>
+      </node>
+      <node id="6">
+        <label>D:/workspace/quasardb/api/include/qdb/deque.h</label>
+        <link refid="deque_8h"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -115,7 +115,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/_attr.h" line="48" column="11" bodyfile="D:/sources/quasardb/api/include/qdb/_attr.h" bodystart="48" bodyend="-1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/_attr.h" line="48" column="11" bodyfile="D:/workspace/quasardb/api/include/qdb/_attr.h" bodystart="48" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -186,6 +186,6 @@
 <codeline lineno="69"><highlight class="normal"></highlight></codeline>
 <codeline lineno="70"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_ATTR_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="D:/sources/quasardb/api/include/qdb/_attr.h"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/_attr.h"/>
   </compounddef>
 </doxygen>

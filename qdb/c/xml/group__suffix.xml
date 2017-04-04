@@ -73,7 +73,55 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/suffix.h" line="64" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/suffix.h" line="64" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__suffix_1ga1413f7d464526be9a7ccc885c0897b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_suffix_count</definition>
+        <argsstring>(qdb_handle_t handle, const char *suffix, qdb_uint_t *result_count)</argsstring>
+        <name>qdb_suffix_count</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>suffix</declname>
+        </param>
+        <param>
+          <type>qdb_uint_t *</type>
+          <declname>result_count</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves the count of all entries matching the provided suffix. </para>        </briefdescription>
+        <detaileddescription>
+<para>A suffix-based count counts all entries matching a provided suffix.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>suffix</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the desired suffix </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>result_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer giving the results count </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/suffix.h" line="81" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

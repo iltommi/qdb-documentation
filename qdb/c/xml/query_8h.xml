@@ -4,21 +4,15 @@
     <compoundname>query.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
+      <node id="128">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
       <node id="127">
         <label>error.h</label>
         <link refid="error_8h"/>
         <childnode refid="128" relation="include">
         </childnode>
-      </node>
-      <node id="131">
-        <label>stdint.h</label>
-      </node>
-      <node id="128">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
-      </node>
-      <node id="129">
-        <label>stddef.h</label>
       </node>
       <node id="126">
         <label>client.h</label>
@@ -32,14 +26,20 @@
         <childnode refid="131" relation="include">
         </childnode>
       </node>
-      <node id="130">
-        <label>time.h</label>
+      <node id="131">
+        <label>stdint.h</label>
+      </node>
+      <node id="129">
+        <label>stddef.h</label>
       </node>
       <node id="125">
-        <label>D:/sources/quasardb/api/include/qdb/query.h</label>
+        <label>D:/workspace/quasardb/api/include/qdb/query.h</label>
         <link refid="query_8h"/>
         <childnode refid="126" relation="include">
         </childnode>
+      </node>
+      <node id="130">
+        <label>time.h</label>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -101,7 +101,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/sources/quasardb/api/include/qdb/query.h" line="65" column="1"/>
+        <location file="D:/workspace/quasardb/api/include/qdb/query.h" line="65" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -162,6 +162,6 @@
 <codeline lineno="73"><highlight class="normal"></highlight></codeline>
 <codeline lineno="74"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_QUERY_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="D:/sources/quasardb/api/include/qdb/query.h"/>
+    <location file="D:/workspace/quasardb/api/include/qdb/query.h"/>
   </compounddef>
 </doxygen>
