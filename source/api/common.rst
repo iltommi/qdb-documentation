@@ -74,13 +74,13 @@ As of quasardb 1.2.0, if the cluster uses :ref:`data-replication`, read queries 
 Expiry
 ------
 
-Any entry within quasardb can have an expiry time. Once the expiry time is passed, the entry is removed and is no longer accessible. Through the API the expiry time precision is one second. Internally, quasardb clock resolution is operating system dependant, but often below 100 µs.
+Any entry within quasardb can have an expiry time. Once the expiry time is passed, the entry is removed and is no longer accessible. Through the API the expiry time precision is one millisecond. Internally, quasardb clock resolution is operating system dependant, but often below 100 µs.
 
-Expiry time can either be absolute (with the number of seconds relative to epoch) or relative (with the number of seconds relative to when the call is made). To prevent an entry from expiring, one provides a 0 absolute time. By default entries never expire. Specifying an expiry in the past results in the entry being removed.
+Expiry time can either be absolute (with the number of milliseconds relative to epoch) or relative (with the number of milliseconds relative to when the call is made). To prevent an entry from expiring, one provides the predefined "never expires" value. By default entries never expire. Specifying an expiry slightly in the past (couple of minutes) results in the entry being removed. If the expiry is more than a couple of minutes in the past, it is considered invalid.
 
 Modifying an entry in any way (via an update, removal, compare and swap operation...) resets the expiry to 0 unless otherwise specified.
 
-All absolute expiry time are UTC and 64-bit large, meaning there is no practical limit to an expiry time.
+All absolute expiry times are UTC and 64-bit large, meaning there is no practical limit to an expiry time.
 
 Iteration
 ---------
