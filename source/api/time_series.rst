@@ -3,8 +3,8 @@ Time series
 
 .. highlight:: python
 
-.. warning::
-    Time series is a feature under development. Backward compatibility is not 100% guaranteed.
+.. note::
+    Time series are available starting with quasardb 2.1.0.
 
 .. testsetup:: *
 
@@ -111,21 +111,31 @@ Supported server side functions
 
 All functions are transparently distributed over the cluster.
 
- +---------------------+----------------+------------+------------+
- | Operation           | Applies to     | Complexity | Vectorized |
- +=====================+================+============+============+
- | First element       | Double columns | Constant   | No         |
- +---------------------+----------------+------------+------------+
- | Last element        | Double columns | Constant   | No         |
- +---------------------+----------------+------------+------------+
- | Minimum element     | Double columns | Linear     | Yes        |
- +---------------------+----------------+------------+------------+
- | Maximum element     | Double columns | Linear     | Yes        |
- +---------------------+----------------+------------+------------+
- | Arithmetic mean     | Double columns | Linear     | Yes        |
- +---------------------+----------------+------------+------------+
- | Number of elements  | Any column     | Constant   | No         |
- +---------------------+----------------+------------+------------+
+ +-----------------------------------+----------------+------------+------------+
+ | Operation                         | Applies to     | Complexity | Vectorized |
+ +===================================+================+============+============+
+ | First element                     | Double columns | Constant   | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Last element                      | Double columns | Constant   | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Minimum element                   | Double columns | Linear     | Yes        |
+ +-----------------------------------+----------------+------------+------------+
+ | Minimum element (absolute values) | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Maximum element                   | Double columns | Linear     | Yes        |
+ +-----------------------------------+----------------+------------+------------+
+ | Maximum element (absolute values) | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Spread                            | Double columns | Linear     | Yes        |
+ +-----------------------------------+----------------+------------+------------+
+ | Variance                          | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Standard deviation                | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Arithmetic mean                   | Double columns | Linear     | Yes        |
+ +-----------------------------------+----------------+------------+------------+
+ | Number of elements                | Any column     | Constant   | No         |
+ +-----------------------------------+----------------+------------+------------+
 
 .. note::
     The following functions are planned in the short term: distinct values count, median, most frequent value, least frequent value, moving average, spread, standard deviation and percentile.
