@@ -22,8 +22,6 @@ By default, the quasardb daemon listens on the port 2836 on the local address. T
      * Set ``local::user::daemon`` to ``true`` to daemonize qdbd on startup.
      * Add node IP addresses to ``local::chord::bootstrapping_peers`` to connect the node to a cluster.
      * Set ``local::network::listen_on`` to change the IP address and port qdbd uses.
-     * Set other values as needed. See :ref:`qdbd-config-file-reference` for more information.
- #. Generate a qdbd configuration file using ``./bin/qdb_httpd --gen-config > ./bin/qdb_httpd.conf``.
  #. (optional) Edit the qdb_httpd configuration at ``./bin/qdb_httpd.conf``.
      * Set ``remote_node`` to the IP address of a node.
      * Set ``daemonize`` to ``true`` to daemonize qdb_httpd on startup.
