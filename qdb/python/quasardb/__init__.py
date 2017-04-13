@@ -35,11 +35,9 @@
 """
 
 import quasardb.impl as impl
-import cPickle as pickle
 import json
 import datetime
-import calendar
-import copy
+import time
 
 def __make_enum(type_name, prefix):
     """
@@ -103,6 +101,9 @@ def build():
 
 import inspect
 
+def _duration_to_timeout_ms(duration):
+    return duration.days * 24 * 3600 * 1000 + duration.seconds * 1000 + duration.microseconds / 1000
+
 def _api_buffer_to_string(buf):
     return None if buf is None else impl.api_buffer_ptr_as_string(buf)
 
@@ -126,37 +127,69 @@ class TimeZone(datetime.tzinfo):
 
 tz = TimeZone()
 
+def _time_to_unix_timestamp(t, tz_offset):
+    return long(time.mktime((t.year, t.month, t.day, t.hour, t.minute, t.second, -1, -1, 0))) - tz_offset
+
+def _time_to_qdb_timestamp(t, tz_offset):
+    return _time_to_unix_timestamp(t, tz_offset) * 1000 + (t.microsecond / 1000)
+
 def _convert_expiry_time(expiry_time):
-    return 1000 * long(calendar.timegm(expiry_time.timetuple())) if expiry_time != None else long(0)
-
-def _convert_time_to_qdb_timespec(user_time):
-    ts = impl.qdb_timespec_t()
-
-    ts.tv_sec = long(calendar.timegm(user_time.timetuple()))
-    ts.tv_nsec = user_time.microsecond * 1000
-
-    return ts
-
-def _convert_time_couple_to_qdb_range_t(time_couple):
-    r = impl.qdb_ts_range_t()
-    r.begin = _convert_time_to_qdb_timespec(time_couple[0])
-    r.end = _convert_time_to_qdb_timespec(time_couple[1])
-    return r
+    return _time_to_qdb_timestamp(expiry_time, time.timezone) if expiry_time != None else long(0)
 
 def _convert_time_couples_to_qdb_range_t_vector(time_couples):
-    return map(lambda x: _convert_time_couple_to_qdb_range_t(x), time_couples)
+    vec = impl.RangeVec()
+
+    c = len(time_couples)
+
+    vec.resize(c)
+
+    tz_offset = time.timezone
+
+    for i in range(0, c):
+        vec[i].begin.tv_sec = _time_to_unix_timestamp(time_couples[i][0], tz_offset)
+        vec[i].begin.tv_nsec = time_couples[i][0].microsecond * 1000
+        vec[i].end.tv_sec = _time_to_unix_timestamp(time_couples[i][1], tz_offset)
+        vec[i].end.tv_nsec = time_couples[i][1].microsecond * 1000
+
+    return vec
+
+def _convert_to_wrap_ts_blop_points_vector(tuples):
+    vec = impl.BlobPointVec()
+
+    c = len(tuples)
+
+    vec.resize(c)
+
+    tz_offset = time.timezone
+
+    for i in range(0, c):
+        vec[i].timestamp.tv_sec =  _time_to_unix_timestamp(tuples[i][0], tz_offset)
+        vec[i].timestamp.tv_nsec = tuples[i][0].microsecond * 1000
+        vec[i].data = tuples[i][1]
+
+    return vec
+
+def make_qdb_ts_double_point_vector(time_points):
+    vec = impl.DoublePointVec()
+
+    c = len(time_points)
+
+    vec.resize(c)
+
+    tz_offset = time.timezone
+
+    for i in range(0, c):
+        vec[i].timestamp.tv_sec = _time_to_unix_timestamp(time_points[i][0], tz_offset)
+        vec[i].timestamp.tv_nsec = time_points[i][0].microsecond * 1000
+        vec[i].value = time_points[i][1]
+
+    return vec
 
 def _convert_qdb_timespec_to_time(qdb_timespec):
     return datetime.datetime.fromtimestamp(qdb_timespec.tv_sec, tz) + datetime.timedelta(microseconds=qdb_timespec.tv_nsec / 1000)
 
 def _convert_qdb_range_t_to_time_couple(qdb_range):
     return (_convert_qdb_timespec_to_time(qdb_range.begin), _convert_qdb_timespec_to_time(qdb_range.end))
-
-def make_qdb_ts_double_point(time, value):
-    res = impl.qdb_ts_double_point()
-    res.timestamp = _convert_time_to_qdb_timespec(time)
-    res.value = value
-    return res
 
 def make_error_carrier():
     err = impl.error_carrier()
@@ -631,7 +664,7 @@ class TimeSeries(RemoveableEntry):
 
             :raises: QuasardbException
             """
-            err = super(TimeSeries.DoubleColumn, self).call_ts_fun(impl.ts_double_insert, map(lambda x: make_qdb_ts_double_point(x[0], x[1]), tuples))
+            err = super(TimeSeries.DoubleColumn, self).call_ts_fun(impl.ts_double_insert, make_qdb_ts_double_point_vector(tuples))
             if err != impl.error_ok:
                 raise QuasardbException(err)
 
@@ -669,9 +702,9 @@ class TimeSeries(RemoveableEntry):
 
             :raises: QuasardbException
             """
-            err = super(TimeSeries.BlobColumn, self).call_ts_fun(impl.ts_blob_insert, map(lambda x: impl.wrap_ts_blob_point(_convert_time_to_qdb_timespec(x[0]), x[1]), tuples))
+            err = super(TimeSeries.BlobColumn, self).call_ts_fun(impl.ts_blob_insert, _convert_to_wrap_ts_blop_points_vector(tuples))
             if err != impl.error_ok:
-                raise QuasardbException(err)           
+                raise QuasardbException(err)
 
         def get_ranges(self, intervals):
             """
@@ -736,7 +769,7 @@ class TimeSeries(RemoveableEntry):
         Returns all existing columns.
 
         :raises: QuasardbException
-        :returns: A list of all existing columns as TimeSeries.Column objects       
+        :returns: A list of all existing columns as TimeSeries.Column objects
         """
         return map(lambda x: self.column(x), self.columns_info())
 
@@ -745,7 +778,7 @@ class TimeSeries(RemoveableEntry):
         Returns all existing columns information.
 
         :raises: QuasardbException
-        :returns: A list of all existing columns as TimeSeries.ColumnInfo objects              
+        :returns: A list of all existing columns as TimeSeries.ColumnInfo objects
         """
         error_carrier = make_error_carrier()
         raw_cols = self.call_ts_fun(impl.ts_list_columns, error_carrier)
@@ -881,19 +914,26 @@ class Cluster(object):
     """
     """
 
-    def __init__(self, uri, *args, **kwargs):
+    def __init__(self, uri, timeout, *args, **kwargs):
         """ Creates the raw client.
         Connection is delayed until the client is actually used.
         If the client is not used for some time, the connection is dropped and reestablished at need.
 
             :param uri: The connection string
             :type uri: str
+            :param timeout: The connection timeout
+            :type timeout: datetime.timedelta
 
             :raises: QuasardbException
         """
         err = make_error_carrier()
+
+        timeout_value = _duration_to_timeout_ms(timeout)
+        if timeout_value == 0:
+            raise QuasardbException(impl.error_invalid_argument)
+
         self.handle = None
-        self.handle = impl.connect(uri, err)
+        self.handle = impl.connect(uri, timeout_value, err)
         if err.error != impl.error_ok:
             raise QuasardbException(err.error)
 
@@ -903,6 +943,24 @@ class Cluster(object):
         if self.handle != None:
             self.handle.close()
             self.handle = None
+
+    def set_timeout(self, duration):
+        """
+        Sets the timeout value for requests. Requests that take longer than timeout value will raise an exception.
+
+        The minimum timemout value is 1 ms.
+
+        :param duration: The timeout value
+        :type duration: datetime.timedelta
+
+        :raises: QuasardbException
+        """
+        timeout_value = _duration_to_timeout_ms(duration)
+        if timeout_value == 0:
+            raise QuasardbException(impl.error_invalid_argument)
+        err = self.handle.set_timeout(timeout_value)
+        if err != impl.error_ok:
+            raise QuasardbException(err)
 
     def blob(self, alias):
         """
@@ -973,27 +1031,27 @@ class Cluster(object):
     def purge_all(self, timeout):
         """ Removes all the entries from all nodes of the cluster.
 
-            :param timeout: Operation timeout, in milliseconds
-            :type timeout: long
+            :param timeout: Operation timeout
+            :type timeout: datetime.timedelta
 
             :raises: QuasardbException
 
             .. caution::
                 This method is intended for very specific usage scenarii. Use at your own risks.
         """
-        err = self.handle.purge_all(timeout)
+        err = self.handle.purge_all(_duration_to_timeout_ms(timeout))
         if err != impl.error_ok:
             raise QuasardbException(err)
 
     def trim_all(self, timeout):
         """ Trims all entries of all nodes of the cluster.
 
-            :param timeout: Operation timeout, in milliseconds
-            :type timeout: long
+            :param timeout: Operation timeout
+            :type timeout: datetime.timedelta
 
             :raises: QuasardbException
         """
-        err = self.handle.trim_all(timeout)
+        err = self.handle.trim_all(_duration_to_timeout_ms(timeout))
         if err != impl.error_ok:
             raise QuasardbException(err)
 

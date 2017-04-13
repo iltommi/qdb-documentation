@@ -72,7 +72,7 @@ If you have a server up and running, you must be able to add and access entries:
 
 .. testcode:: quasardb
 
-    c = quasardb.Cluster("quasardb://127.0.0.1:2836")
+    c = quasardb.Cluster("quasardb://127.0.0.1:2836", datetime.timedelta(minutes=1))
     b = c.blob("entry")
     b.put("content")
     print b.get()
@@ -146,7 +146,7 @@ To find the list of items matching a tag, you create a tag object. For example, 
 
 .. testcode:: quasardb
 
-    c = quasardb.Cluster("quasardb://127.0.0.1:2836")
+    c = quasardb.Cluster("quasardb://127.0.0.1:2836", datetime.timedelta(minutes=2))
     tag = c.tag("my_tag")
     entries = tag.get_entries()
 

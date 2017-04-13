@@ -156,7 +156,7 @@ Here is a short Python code snippet:
     import quasardb
 
     # connecting, default port is 2836
-    c = quasardb.Cluster("qdb://127.0.0.1:2836")
+    c = quasardb.Cluster("qdb://127.0.0.1:2836", datetime.timedelta(minutes=1))
     # adding an entry
     b = c.blob("my_entry")
     b.put("really amazing...")
@@ -203,15 +203,15 @@ That demo is nice, but what happens when I go to production?
 A fair question which has a simple answer: the size and configuration of the cluster has no impact on the client code. The only thing that may change is
 the connection string. For example if you have a cluster of four machines, your connection string can be::
 
-    c = qdb.Cluster("qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836,192.168.1.4:2836")
+    c = qdb.Cluster("qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836,192.168.1.4:2836", datetime.timedelta(minutes=1))
 
 or::
 
-    c = qdb.Cluster("qdb://192.168.1.1:2836,192.168.1.2:2836")
+    c = qdb.Cluster("qdb://192.168.1.1:2836,192.168.1.2:2836", datetime.timedelta(minutes=1))
 
 and even::
 
-    c = qdb.Cluster("qdb://192.168.1.1:2836")
+    c = qdb.Cluster("qdb://192.168.1.1:2836", datetime.timedelta(minutes=1))
 
 That's because |quasardb| protocol has built-in discovery! Just give any node in the cluster and we take care of the rest. The more nodes the better as we can
 try another node if the one provided is down at the moment of the connection.
