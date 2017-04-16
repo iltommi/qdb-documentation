@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="structqdb__ts__range__t" kind="struct" language="C++" prot="public">
     <compoundname>qdb_ts_range_t</compoundname>
       <sectiondef kind="public-attrib">
@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="67" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="67" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="67" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="67" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__range__t_1aa69a91c48ebcdfeff4b59598fca146f6" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="68" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="68" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="68" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="68" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -48,7 +48,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="66" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="65" bodyend="69"/>
+    <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="66" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="65" bodyend="69"/>
     <listofallmembers>
       <member refid="structqdb__ts__range__t_1aad01c2a049bec5e665a5dbb3a835eaf0" prot="public" virt="non-virtual"><scope>qdb_ts_range_t</scope><name>begin</name></member>
       <member refid="structqdb__ts__range__t_1aa69a91c48ebcdfeff4b59598fca146f6" prot="public" virt="non-virtual"><scope>qdb_ts_range_t</scope><name>end</name></member>

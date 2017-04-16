@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="group__stream" kind="group">
     <compoundname>stream</compoundname>
     <title>Stream operations</title>
@@ -62,7 +62,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="92" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="92" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga449b224e9375ada8221175b7c3565dcf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -89,7 +89,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="102" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="102" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga7049c1a51b92867ba7a57e503b9bc977" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -138,7 +138,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="130" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="130" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1gacece5db2db0d6282b39c3cd141014923" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -187,7 +187,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="148" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="148" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga6a61e49f5c35fde9eca4221045f9909b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -225,7 +225,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="160" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="160" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1gace0078f3bc035cc4e614eab161dd5028" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -263,7 +263,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="173" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="173" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga6d3fde3c308ceade76e8e501e2326b72" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -301,7 +301,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="186" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="186" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__stream_1ga30b851ac70222d9b55ce783a33a7782b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -339,7 +339,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="200" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="200" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -367,7 +367,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="63" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/stream.h" bodystart="63" bodyend="69"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="63" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/stream.h" bodystart="63" bodyend="69"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -382,7 +382,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="52" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/stream.h" bodystart="52" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="52" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/stream.h" bodystart="52" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__stream_1gaabc28f25030436673cff52fc4897589e" prot="public" static="no">
         <type>struct qdb_stream_internal *</type>
@@ -395,7 +395,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/stream.h" line="58" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/stream.h" bodystart="58" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/stream.h" line="58" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/stream.h" bodystart="58" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

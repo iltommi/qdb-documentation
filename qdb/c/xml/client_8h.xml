@@ -1,37 +1,33 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="client_8h" kind="file" language="C++">
     <compoundname>client.h</compoundname>
     <includes refid="error_8h" local="yes">error.h</includes>
     <includes local="no">stddef.h</includes>
     <includes local="no">time.h</includes>
     <includes local="no">stdint.h</includes>
-    <includedby refid="batch_8h" local="yes">D:/workspace/quasardb/api/include/qdb/batch.h</includedby>
-    <includedby refid="blob_8h" local="yes">D:/workspace/quasardb/api/include/qdb/blob.h</includedby>
-    <includedby refid="deque_8h" local="yes">D:/workspace/quasardb/api/include/qdb/deque.h</includedby>
-    <includedby refid="hset_8h" local="yes">D:/workspace/quasardb/api/include/qdb/hset.h</includedby>
-    <includedby refid="integer_8h" local="yes">D:/workspace/quasardb/api/include/qdb/integer.h</includedby>
-    <includedby refid="iterator_8h" local="yes">D:/workspace/quasardb/api/include/qdb/iterator.h</includedby>
-    <includedby refid="node_8h" local="yes">D:/workspace/quasardb/api/include/qdb/node.h</includedby>
-    <includedby refid="prefix_8h" local="yes">D:/workspace/quasardb/api/include/qdb/prefix.h</includedby>
-    <includedby refid="query_8h" local="yes">D:/workspace/quasardb/api/include/qdb/query.h</includedby>
-    <includedby refid="stream_8h" local="yes">D:/workspace/quasardb/api/include/qdb/stream.h</includedby>
-    <includedby refid="suffix_8h" local="yes">D:/workspace/quasardb/api/include/qdb/suffix.h</includedby>
-    <includedby refid="tag_8h" local="yes">D:/workspace/quasardb/api/include/qdb/tag.h</includedby>
-    <includedby refid="ts_8h" local="yes">D:/workspace/quasardb/api/include/qdb/ts.h</includedby>
+    <includedby refid="batch_8h" local="yes">C:/sources/quasardb/api/include/qdb/batch.h</includedby>
+    <includedby refid="blob_8h" local="yes">C:/sources/quasardb/api/include/qdb/blob.h</includedby>
+    <includedby refid="deque_8h" local="yes">C:/sources/quasardb/api/include/qdb/deque.h</includedby>
+    <includedby refid="hset_8h" local="yes">C:/sources/quasardb/api/include/qdb/hset.h</includedby>
+    <includedby refid="integer_8h" local="yes">C:/sources/quasardb/api/include/qdb/integer.h</includedby>
+    <includedby refid="iterator_8h" local="yes">C:/sources/quasardb/api/include/qdb/iterator.h</includedby>
+    <includedby refid="node_8h" local="yes">C:/sources/quasardb/api/include/qdb/node.h</includedby>
+    <includedby refid="prefix_8h" local="yes">C:/sources/quasardb/api/include/qdb/prefix.h</includedby>
+    <includedby refid="query_8h" local="yes">C:/sources/quasardb/api/include/qdb/query.h</includedby>
+    <includedby refid="stream_8h" local="yes">C:/sources/quasardb/api/include/qdb/stream.h</includedby>
+    <includedby refid="suffix_8h" local="yes">C:/sources/quasardb/api/include/qdb/suffix.h</includedby>
+    <includedby refid="tag_8h" local="yes">C:/sources/quasardb/api/include/qdb/tag.h</includedby>
+    <includedby refid="ts_8h" local="yes">C:/sources/quasardb/api/include/qdb/ts.h</includedby>
     <incdepgraph>
-      <node id="36">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
+      <node id="39">
+        <label>stdint.h</label>
       </node>
-      <node id="35">
-        <label>error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="36" relation="include">
-        </childnode>
+      <node id="37">
+        <label>stddef.h</label>
       </node>
       <node id="34">
-        <label>D:/workspace/quasardb/api/include/qdb/client.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/client.h</label>
         <link refid="client_8h"/>
         <childnode refid="35" relation="include">
         </childnode>
@@ -42,23 +38,55 @@
         <childnode refid="39" relation="include">
         </childnode>
       </node>
-      <node id="39">
-        <label>stdint.h</label>
-      </node>
-      <node id="37">
-        <label>stddef.h</label>
+      <node id="35">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="36" relation="include">
+        </childnode>
       </node>
       <node id="38">
         <label>time.h</label>
       </node>
+      <node id="36">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="52">
+        <label>C:/sources/quasardb/api/include/qdb/tag.h</label>
+        <link refid="tag_8h"/>
+      </node>
+      <node id="41">
+        <label>C:/sources/quasardb/api/include/qdb/batch.h</label>
+        <link refid="batch_8h"/>
+      </node>
+      <node id="51">
+        <label>C:/sources/quasardb/api/include/qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
+      </node>
       <node id="47">
-        <label>D:/workspace/quasardb/api/include/qdb/node.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/node.h</label>
         <link refid="node_8h"/>
       </node>
+      <node id="46">
+        <label>C:/sources/quasardb/api/include/qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
+      </node>
+      <node id="48">
+        <label>C:/sources/quasardb/api/include/qdb/prefix.h</label>
+        <link refid="prefix_8h"/>
+      </node>
+      <node id="45">
+        <label>C:/sources/quasardb/api/include/qdb/integer.h</label>
+        <link refid="integer_8h"/>
+      </node>
+      <node id="49">
+        <label>C:/sources/quasardb/api/include/qdb/query.h</label>
+        <link refid="query_8h"/>
+      </node>
       <node id="40">
-        <label>D:/workspace/quasardb/api/include/qdb/client.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/client.h</label>
         <link refid="client_8h"/>
         <childnode refid="41" relation="include">
         </childnode>
@@ -87,53 +115,25 @@
         <childnode refid="53" relation="include">
         </childnode>
       </node>
-      <node id="45">
-        <label>D:/workspace/quasardb/api/include/qdb/integer.h</label>
-        <link refid="integer_8h"/>
-      </node>
       <node id="53">
-        <label>D:/workspace/quasardb/api/include/qdb/ts.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/ts.h</label>
         <link refid="ts_8h"/>
       </node>
-      <node id="52">
-        <label>D:/workspace/quasardb/api/include/qdb/tag.h</label>
-        <link refid="tag_8h"/>
-      </node>
-      <node id="50">
-        <label>D:/workspace/quasardb/api/include/qdb/stream.h</label>
-        <link refid="stream_8h"/>
-      </node>
       <node id="44">
-        <label>D:/workspace/quasardb/api/include/qdb/hset.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/hset.h</label>
         <link refid="hset_8h"/>
       </node>
       <node id="42">
-        <label>D:/workspace/quasardb/api/include/qdb/blob.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/blob.h</label>
         <link refid="blob_8h"/>
       </node>
-      <node id="49">
-        <label>D:/workspace/quasardb/api/include/qdb/query.h</label>
-        <link refid="query_8h"/>
-      </node>
-      <node id="48">
-        <label>D:/workspace/quasardb/api/include/qdb/prefix.h</label>
-        <link refid="prefix_8h"/>
-      </node>
-      <node id="46">
-        <label>D:/workspace/quasardb/api/include/qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
-      </node>
-      <node id="51">
-        <label>D:/workspace/quasardb/api/include/qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-      </node>
-      <node id="41">
-        <label>D:/workspace/quasardb/api/include/qdb/batch.h</label>
-        <link refid="batch_8h"/>
-      </node>
       <node id="43">
-        <label>D:/workspace/quasardb/api/include/qdb/deque.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/deque.h</label>
         <link refid="deque_8h"/>
+      </node>
+      <node id="50">
+        <label>C:/sources/quasardb/api/include/qdb/stream.h</label>
+        <link refid="stream_8h"/>
       </node>
     </invincdepgraph>
     <innerclass refid="structqdb__timespec__t" prot="public">qdb_timespec_t</innerclass>
@@ -151,7 +151,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="110" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="110" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="110" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="110" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__client_1gacec73da0a3d7364196f4e6682f5fd522" prot="public" static="no">
         <name>qdb_preserve_expiration</name>
@@ -164,7 +164,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="116" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="116" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="116" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="116" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="client_8h_1a3b33bb239dd712bc12702e87b8c7ac9b" prot="public" static="no">
         <name>QDB_PLATFORM_32</name>
@@ -175,7 +175,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="193" column="10" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="193" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="193" column="10" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="193" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="client_8h_1aef0b5fbbdfe98da82aaec217d381a91a" prot="public" static="no">
         <name>QDB_PLATFORM_64</name>
@@ -186,7 +186,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="194" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="194" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="194" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="194" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -206,7 +206,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="125" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="125" bodyend="128"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="125" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="125" bodyend="128"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1ga2c0493e17b424c05b599b54ea641adba" prot="public" static="no">
         <name>qdb_compression</name>
@@ -241,7 +241,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="139" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="139" bodyend="148"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="139" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="139" bodyend="148"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1ga222536ecf11bc6ab9468946ba51a446a" prot="public" static="no">
         <name>qdb_protocol</name>
@@ -260,7 +260,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="159" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="159" bodyend="163"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="159" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="159" bodyend="163"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1gabc708719df4e28cd85c743e1a4582661" prot="public" static="no">
         <name>qdb_entry_type</name>
@@ -334,7 +334,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="222" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="222" bodyend="239"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="222" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="222" bodyend="239"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -351,7 +351,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="86" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="86" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="86" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="86" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga2b6f368592c49501d41ec2330b964147" prot="public" static="no">
         <type>size_t</type>
@@ -364,7 +364,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="92" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="92" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="92" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="92" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga17492cb84da5466d0c742f0561df6597" prot="public" static="no">
         <type>int64_t</type>
@@ -377,7 +377,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="102" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="102" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="102" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="102" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="client_8h_1a9e813e8fce153f42b09c1e470f2863ae" prot="public" static="no">
         <type>uint64_t</type>
@@ -390,7 +390,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="103" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="103" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="103" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="103" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1gab2ede040a754735a3f751a14acd8cf7f" prot="public" static="no">
         <type>enum <ref refid="group__client_1ga14ba3138099f3c7969f707eb4b16c35b" kindref="member">qdb_limits</ref></type>
@@ -403,7 +403,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="128" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="128" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga3b4ea526bf0468ff144305f011eb1793" prot="public" static="no">
         <type>enum <ref refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kindref="member">qdb_compression</ref></type>
@@ -417,7 +417,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="148" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="148" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" prot="public" static="no">
         <type>enum <ref refid="group__client_1ga222536ecf11bc6ab9468946ba51a446a" kindref="member">qdb_protocol</ref></type>
@@ -431,7 +431,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="163" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="163" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga720fb72da4197685cc354214e96796c1" prot="public" static="no">
         <type>struct qdb_handle_internal *</type>
@@ -444,7 +444,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="169" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="169" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="169" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/client.h" bodystart="169" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1gaaa6272f78edda811822bfce05a07f944" prot="public" static="no">
         <type>enum <ref refid="group__client_1gabc708719df4e28cd85c743e1a4582661" kindref="member">qdb_entry_type</ref></type>
@@ -457,7 +457,7 @@ expiration&quot; time value. </para>        </briefdescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="239" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="239" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -476,7 +476,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="277" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="277" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga4057e6f052a167bf6206b465582f9e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>const char *</type>
@@ -493,7 +493,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="285" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="285" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -531,7 +531,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="295" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="295" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -549,7 +549,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="303" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="303" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -587,7 +587,45 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="312" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="312" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_option_set_max_cardinality</definition>
+        <argsstring>(qdb_handle_t handle, qdb_uint_t max_cardinality)</argsstring>
+        <name>qdb_option_set_max_cardinality</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>qdb_uint_t</type>
+          <declname>max_cardinality</declname>
+        </param>
+        <briefdescription>
+<para>Sets the maximum allowed cardinality of a quasardb query. The default value is 500,119. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The qdb_handle_t that was initialized with <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_cardinality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum cardinality of a query. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="remark"><para>Improper usage of this function may cause a denial of service on the client. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="325" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -626,7 +664,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="326" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="338" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga76340764ecf54bcf726bb9ced7f33041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -667,7 +705,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="355" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="367" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -694,7 +732,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="370" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="382" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gad44ca490ccc6252718a67385646a2706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -754,7 +792,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="386" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="398" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type>void</type>
@@ -790,7 +828,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="409" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="421" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga20ff61aa14d5b7659e2e22c2798503ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -827,7 +865,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="427" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="439" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -877,7 +915,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="456" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="468" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -926,7 +964,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="481" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="493" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga089edb1764e8a5567c24dbd001a325db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -977,7 +1015,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="503" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="515" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaa71923537cfe32018774ad55eacd246e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -1026,7 +1064,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="530" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="542" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -1075,7 +1113,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="548" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="560" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -1123,7 +1161,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="564" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="576" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga08f21b80163d0b36c03c9e80c2c5df25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -1161,7 +1199,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="589" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="601" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga871994aec633bde734dbe84a9011a615" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -1199,7 +1237,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="618" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/client.h" line="630" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -1364,59 +1402,62 @@ expiration&quot; time value. </para>        </briefdescription>
 <codeline lineno="312"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kindref="member">qdb_option_set_timeout</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
 <codeline lineno="313"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_ms);</highlight></codeline>
 <codeline lineno="314"><highlight class="normal"></highlight></codeline>
-<codeline lineno="325"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="326"><highlight class="normal"><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref>(qdb_handle_t<sp/>handle,<sp/><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref><sp/>comp_level);</highlight></codeline>
-<codeline lineno="327"><highlight class="normal"></highlight></codeline>
-<codeline lineno="355"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kindref="member">qdb_connect</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>uri);</highlight></codeline>
-<codeline lineno="356"><highlight class="normal"></highlight></codeline>
-<codeline lineno="370"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" kindref="member">qdb_close</ref>(qdb_handle_t<sp/>handle);</highlight></codeline>
-<codeline lineno="371"><highlight class="normal"></highlight></codeline>
-<codeline lineno="386"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1gad44ca490ccc6252718a67385646a2706" kindref="member">qdb_copy_alloc_buffer</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
-<codeline lineno="387"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>source_buffer,</highlight></codeline>
-<codeline lineno="388"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_size_t<sp/>source_buffer_size,</highlight></codeline>
-<codeline lineno="389"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>dest_buffer);</highlight></codeline>
-<codeline lineno="390"><highlight class="normal"></highlight></codeline>
-<codeline lineno="409"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>buffer);</highlight></codeline>
-<codeline lineno="410"><highlight class="normal"></highlight></codeline>
-<codeline lineno="427"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga20ff61aa14d5b7659e2e22c2798503ec" kindref="member">qdb_remove</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias);</highlight></codeline>
-<codeline lineno="428"><highlight class="normal"></highlight></codeline>
-<codeline lineno="456"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
-<codeline lineno="457"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="458"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_time_t<sp/>expiry_time);</highlight></codeline>
-<codeline lineno="459"><highlight class="normal"></highlight></codeline>
-<codeline lineno="481"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
-<codeline lineno="482"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="483"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_time_t<sp/>expiry_delta);</highlight></codeline>
-<codeline lineno="484"><highlight class="normal"></highlight></codeline>
-<codeline lineno="502"><highlight class="normal"><ref refid="group__attr_1gaa465b14ec10488af72bffdb52265603c" kindref="member">QDB_DEPRECATED</ref>(</highlight><highlight class="stringliteral">&quot;use<sp/>qdb_get_metadata&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="503"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga089edb1764e8a5567c24dbd001a325db" kindref="member">qdb_get_expiry_time</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
-<codeline lineno="504"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="505"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_time_t<sp/>*<sp/>expiry_time);</highlight></codeline>
-<codeline lineno="506"><highlight class="normal"></highlight></codeline>
-<codeline lineno="530"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1gaa71923537cfe32018774ad55eacd246e" kindref="member">qdb_get_location</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
-<codeline lineno="531"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="532"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_remote_node_t<sp/>*<sp/>location);</highlight></codeline>
-<codeline lineno="533"><highlight class="normal"></highlight></codeline>
-<codeline lineno="547"><highlight class="normal"><ref refid="group__attr_1gaa465b14ec10488af72bffdb52265603c" kindref="member">QDB_DEPRECATED</ref>(</highlight><highlight class="stringliteral">&quot;use<sp/>qdb_get_metadata&quot;</highlight><highlight class="normal">)</highlight></codeline>
-<codeline lineno="548"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" kindref="member">qdb_get_type</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
-<codeline lineno="549"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="550"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1gaaa6272f78edda811822bfce05a07f944" kindref="member">qdb_entry_type_t</ref><sp/>*<sp/>entry_type);</highlight></codeline>
-<codeline lineno="551"><highlight class="normal"></highlight></codeline>
-<codeline lineno="563"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="564"><highlight class="normal"><ref refid="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" kindref="member">qdb_get_metadata</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
-<codeline lineno="565"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="566"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__entry__metadata__t" kindref="compound">qdb_entry_metadata_t</ref><sp/>*<sp/>entry_metadata);</highlight></codeline>
-<codeline lineno="567"><highlight class="normal"></highlight></codeline>
-<codeline lineno="589"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga08f21b80163d0b36c03c9e80c2c5df25" kindref="member">qdb_purge_all</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_ms);</highlight></codeline>
-<codeline lineno="590"><highlight class="normal"></highlight></codeline>
-<codeline lineno="618"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga871994aec633bde734dbe84a9011a615" kindref="member">qdb_trim_all</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_ms);</highlight></codeline>
-<codeline lineno="619"><highlight class="normal"></highlight></codeline>
-<codeline lineno="620"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="621"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="622"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="623"><highlight class="normal"></highlight></codeline>
-<codeline lineno="624"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_CLIENT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="324"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><ref refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kindref="member">qdb_option_set_max_cardinality</ref>(qdb_handle_t<sp/>handle,<sp/>qdb_uint_t<sp/>max_cardinality);</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"></highlight></codeline>
+<codeline lineno="337"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="338"><highlight class="normal"><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref>(qdb_handle_t<sp/>handle,<sp/><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref><sp/>comp_level);</highlight></codeline>
+<codeline lineno="339"><highlight class="normal"></highlight></codeline>
+<codeline lineno="367"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kindref="member">qdb_connect</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>uri);</highlight></codeline>
+<codeline lineno="368"><highlight class="normal"></highlight></codeline>
+<codeline lineno="382"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" kindref="member">qdb_close</ref>(qdb_handle_t<sp/>handle);</highlight></codeline>
+<codeline lineno="383"><highlight class="normal"></highlight></codeline>
+<codeline lineno="398"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1gad44ca490ccc6252718a67385646a2706" kindref="member">qdb_copy_alloc_buffer</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
+<codeline lineno="399"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>source_buffer,</highlight></codeline>
+<codeline lineno="400"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_size_t<sp/>source_buffer_size,</highlight></codeline>
+<codeline lineno="401"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>**<sp/>dest_buffer);</highlight></codeline>
+<codeline lineno="402"><highlight class="normal"></highlight></codeline>
+<codeline lineno="421"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>buffer);</highlight></codeline>
+<codeline lineno="422"><highlight class="normal"></highlight></codeline>
+<codeline lineno="439"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga20ff61aa14d5b7659e2e22c2798503ec" kindref="member">qdb_remove</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias);</highlight></codeline>
+<codeline lineno="440"><highlight class="normal"></highlight></codeline>
+<codeline lineno="468"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
+<codeline lineno="469"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="470"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_time_t<sp/>expiry_time);</highlight></codeline>
+<codeline lineno="471"><highlight class="normal"></highlight></codeline>
+<codeline lineno="493"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
+<codeline lineno="494"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="495"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_time_t<sp/>expiry_delta);</highlight></codeline>
+<codeline lineno="496"><highlight class="normal"></highlight></codeline>
+<codeline lineno="514"><highlight class="normal"><ref refid="group__attr_1gaa465b14ec10488af72bffdb52265603c" kindref="member">QDB_DEPRECATED</ref>(</highlight><highlight class="stringliteral">&quot;use<sp/>qdb_get_metadata&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="515"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga089edb1764e8a5567c24dbd001a325db" kindref="member">qdb_get_expiry_time</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
+<codeline lineno="516"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="517"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_time_t<sp/>*<sp/>expiry_time);</highlight></codeline>
+<codeline lineno="518"><highlight class="normal"></highlight></codeline>
+<codeline lineno="542"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1gaa71923537cfe32018774ad55eacd246e" kindref="member">qdb_get_location</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
+<codeline lineno="543"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="544"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>qdb_remote_node_t<sp/>*<sp/>location);</highlight></codeline>
+<codeline lineno="545"><highlight class="normal"></highlight></codeline>
+<codeline lineno="559"><highlight class="normal"><ref refid="group__attr_1gaa465b14ec10488af72bffdb52265603c" kindref="member">QDB_DEPRECATED</ref>(</highlight><highlight class="stringliteral">&quot;use<sp/>qdb_get_metadata&quot;</highlight><highlight class="normal">)</highlight></codeline>
+<codeline lineno="560"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" kindref="member">qdb_get_type</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
+<codeline lineno="561"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="562"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1gaaa6272f78edda811822bfce05a07f944" kindref="member">qdb_entry_type_t</ref><sp/>*<sp/>entry_type);</highlight></codeline>
+<codeline lineno="563"><highlight class="normal"></highlight></codeline>
+<codeline lineno="575"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="576"><highlight class="normal"><ref refid="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" kindref="member">qdb_get_metadata</ref>(qdb_handle_t<sp/>handle,</highlight></codeline>
+<codeline lineno="577"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="578"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__entry__metadata__t" kindref="compound">qdb_entry_metadata_t</ref><sp/>*<sp/>entry_metadata);</highlight></codeline>
+<codeline lineno="579"><highlight class="normal"></highlight></codeline>
+<codeline lineno="601"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga08f21b80163d0b36c03c9e80c2c5df25" kindref="member">qdb_purge_all</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_ms);</highlight></codeline>
+<codeline lineno="602"><highlight class="normal"></highlight></codeline>
+<codeline lineno="630"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga871994aec633bde734dbe84a9011a615" kindref="member">qdb_trim_all</ref>(qdb_handle_t<sp/>handle,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_ms);</highlight></codeline>
+<codeline lineno="631"><highlight class="normal"></highlight></codeline>
+<codeline lineno="632"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="633"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="634"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="635"><highlight class="normal"></highlight></codeline>
+<codeline lineno="636"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_CLIENT_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="D:/workspace/quasardb/api/include/qdb/client.h"/>
+    <location file="C:/sources/quasardb/api/include/qdb/client.h"/>
   </compounddef>
 </doxygen>

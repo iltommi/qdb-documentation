@@ -1,18 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="suffix_8h" kind="file" language="C++">
     <compoundname>suffix.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
-      <node id="144">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
-      </node>
-      <node id="143">
-        <label>error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="144" relation="include">
+      <node id="141">
+        <label>C:/sources/quasardb/api/include/qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
+        <childnode refid="142" relation="include">
         </childnode>
+      </node>
+      <node id="147">
+        <label>stdint.h</label>
+      </node>
+      <node id="145">
+        <label>stddef.h</label>
       </node>
       <node id="142">
         <label>client.h</label>
@@ -26,20 +28,18 @@
         <childnode refid="147" relation="include">
         </childnode>
       </node>
-      <node id="147">
-        <label>stdint.h</label>
-      </node>
-      <node id="145">
-        <label>stddef.h</label>
+      <node id="143">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="144" relation="include">
+        </childnode>
       </node>
       <node id="146">
         <label>time.h</label>
       </node>
-      <node id="141">
-        <label>D:/workspace/quasardb/api/include/qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-        <childnode refid="142" relation="include">
-        </childnode>
+      <node id="144">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -112,7 +112,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/suffix.h" line="64" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/suffix.h" line="64" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__suffix_1ga1413f7d464526be9a7ccc885c0897b61" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -160,7 +160,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/suffix.h" line="81" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/suffix.h" line="81" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -226,6 +226,6 @@
 <codeline lineno="88"><highlight class="normal"></highlight></codeline>
 <codeline lineno="89"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="D:/workspace/quasardb/api/include/qdb/suffix.h"/>
+    <location file="C:/sources/quasardb/api/include/qdb/suffix.h"/>
   </compounddef>
 </doxygen>

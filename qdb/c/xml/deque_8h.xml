@@ -1,18 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="deque_8h" kind="file" language="C++">
     <compoundname>deque.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
-      <node id="57">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
+      <node id="60">
+        <label>stdint.h</label>
       </node>
-      <node id="56">
-        <label>error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="57" relation="include">
-        </childnode>
+      <node id="58">
+        <label>stddef.h</label>
       </node>
       <node id="55">
         <label>client.h</label>
@@ -26,20 +22,24 @@
         <childnode refid="60" relation="include">
         </childnode>
       </node>
-      <node id="60">
-        <label>stdint.h</label>
-      </node>
-      <node id="58">
-        <label>stddef.h</label>
+      <node id="56">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="57" relation="include">
+        </childnode>
       </node>
       <node id="59">
         <label>time.h</label>
       </node>
       <node id="54">
-        <label>D:/workspace/quasardb/api/include/qdb/deque.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/deque.h</label>
         <link refid="deque_8h"/>
         <childnode refid="55" relation="include">
         </childnode>
+      </node>
+      <node id="57">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -90,7 +90,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="68" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="68" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gac64f3e6b2463c2f36d8edb6f85a8b136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -161,7 +161,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="99" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="99" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga1f82de28b65550983ce7d9112527d844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -232,7 +232,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="133" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="133" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga9097a68764ab9e96f5c2849c44db3811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -292,7 +292,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="164" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="164" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaf1854a920646563935af1c921e3c8b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -352,7 +352,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="194" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="194" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga72d53de692f62d2179bd09dd7f2d54d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -412,7 +412,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="227" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="227" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa8d4c4e5d3ad4d25ccf0df5c19268980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -472,7 +472,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="260" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="260" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa87d20cc39c8c53158356e8c44e2c0eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -532,7 +532,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="289" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="289" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga7c90633e28b95906e815a9317bc8d547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -592,7 +592,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/deque.h" line="318" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/deque.h" line="318" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -723,6 +723,6 @@
 <codeline lineno="328"><highlight class="normal"></highlight></codeline>
 <codeline lineno="329"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_DEQUE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="D:/workspace/quasardb/api/include/qdb/deque.h"/>
+    <location file="C:/sources/quasardb/api/include/qdb/deque.h"/>
   </compounddef>
 </doxygen>

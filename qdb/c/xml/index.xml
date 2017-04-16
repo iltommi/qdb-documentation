@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.12">
   <compound refid="structblob__put__update__t" kind="struct"><name>blob_put_update_t</name>
     <member refid="structblob__put__update__t_1acf495f7b69a76fdb31d079b08cefbb93" kind="variable"><name>content</name></member>
     <member refid="structblob__put__update__t_1ac2ee57e5b05bce4588d2359b2008c3d2" kind="variable"><name>content_size</name></member>
@@ -171,6 +171,7 @@
     <member refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kind="function"><name>qdb_open</name></member>
     <member refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kind="function"><name>qdb_open_tcp</name></member>
     <member refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kind="function"><name>qdb_option_set_timeout</name></member>
+    <member refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kind="function"><name>qdb_option_set_max_cardinality</name></member>
     <member refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kind="function"><name>qdb_option_set_compression</name></member>
     <member refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kind="function"><name>qdb_connect</name></member>
     <member refid="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" kind="function"><name>qdb_close</name></member>
@@ -268,6 +269,7 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7a6c957a31b0b5d4b61575f89f139681" kind="enumvalue"><name>qdb_e_access_denied</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ab0ec10e10f4dd148d34e01d47bdd8a0f" kind="enumvalue"><name>qdb_e_login_failed</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9346971364404dd0a1fce5eacf6bee17" kind="enumvalue"><name>qdb_e_column_not_found</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5ed1b63f41eaf84f085a23a879952daa" kind="enumvalue"><name>qdb_e_query_too_complex</name></member>
     <member refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kind="typedef"><name>qdb_error_origin_t</name></member>
     <member refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kind="typedef"><name>qdb_error_severity_t</name></member>
     <member refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kind="typedef"><name>qdb_error_t</name></member>
@@ -361,6 +363,11 @@
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a85023bb35b917048f813b02af4ff3e91" kind="enumvalue"><name>qdb_agg_average</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a9038ab2ea6314a26db058b117c0ebf58" kind="enumvalue"><name>qdb_agg_count</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a22bf32c12554c1f1bca6aec5a0314156" kind="enumvalue"><name>qdb_agg_sum</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911addeae9101aa5195e3ef25aa34ad85a4d" kind="enumvalue"><name>qdb_agg_spread</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a8ce9d6612eef099a3f7899d959072074" kind="enumvalue"><name>qdb_agg_variance</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a1ef81cc7bfba5c26f1742df93155054f" kind="enumvalue"><name>qdb_agg_stddev</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a016ed4d14c78aceac2b999ee7746e6e5" kind="enumvalue"><name>qdb_agg_abs_min</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a266963898510ea2052a6337f95ec399e" kind="enumvalue"><name>qdb_agg_abs_max</name></member>
     <member refid="ts_8h_1a34eafaf7122c885d69791f5509027c15" kind="enum"><name>qdb_ts_column_type</name></member>
     <member refid="ts_8h_1a34eafaf7122c885d69791f5509027c15a8a1436274989c2f916aedef75a87fbef" kind="enumvalue"><name>qdb_ts_column_uninitialized</name></member>
     <member refid="ts_8h_1a34eafaf7122c885d69791f5509027c15ab5036436d04c5dada5911cf3593bc375" kind="enumvalue"><name>qdb_ts_column_double</name></member>
@@ -373,10 +380,10 @@
     <member refid="ts_8h_1a13878bc89e413cf5996f41a57bf6afaa" kind="function"><name>qdb_ts_list_columns</name></member>
     <member refid="ts_8h_1a4ff4e4a328f5c1f0025ee16c8d5d013e" kind="function"><name>qdb_ts_insert_columns</name></member>
     <member refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kind="function"><name>qdb_ts_double_insert</name></member>
-    <member refid="group__ts_1ga330f02be1b516c2f97d83601d18ff9ab" kind="function"><name>qdb_ts_double_get_range</name></member>
+    <member refid="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" kind="function"><name>qdb_ts_double_get_ranges</name></member>
     <member refid="group__ts_1ga390a5586b88c0bedf9a7d087ba0edc51" kind="function"><name>qdb_ts_aggregate</name></member>
     <member refid="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" kind="function"><name>qdb_ts_blob_insert</name></member>
-    <member refid="group__ts_1ga2388919946975baacb89e84d2345c2d8" kind="function"><name>qdb_ts_blob_get_range</name></member>
+    <member refid="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" kind="function"><name>qdb_ts_blob_get_ranges</name></member>
   </compound>
   <compound refid="group__attr" kind="group"><name>attr</name>
     <member refid="group__attr_1gaa465b14ec10488af72bffdb52265603c" kind="define"><name>QDB_DEPRECATED</name></member>
@@ -419,6 +426,7 @@
     <member refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kind="function"><name>qdb_open</name></member>
     <member refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kind="function"><name>qdb_open_tcp</name></member>
     <member refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kind="function"><name>qdb_option_set_timeout</name></member>
+    <member refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kind="function"><name>qdb_option_set_max_cardinality</name></member>
     <member refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kind="function"><name>qdb_option_set_compression</name></member>
     <member refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kind="function"><name>qdb_connect</name></member>
     <member refid="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" kind="function"><name>qdb_close</name></member>
@@ -541,6 +549,7 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7a6c957a31b0b5d4b61575f89f139681" kind="enumvalue"><name>qdb_e_access_denied</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ab0ec10e10f4dd148d34e01d47bdd8a0f" kind="enumvalue"><name>qdb_e_login_failed</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9346971364404dd0a1fce5eacf6bee17" kind="enumvalue"><name>qdb_e_column_not_found</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5ed1b63f41eaf84f085a23a879952daa" kind="enumvalue"><name>qdb_e_query_too_complex</name></member>
     <member refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kind="typedef"><name>qdb_error_origin_t</name></member>
     <member refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kind="typedef"><name>qdb_error_severity_t</name></member>
     <member refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kind="typedef"><name>qdb_error_t</name></member>
@@ -630,16 +639,16 @@
   <compound refid="group__ts" kind="group"><name>ts</name>
     <member refid="group__ts_1ga4d5257c034e81247d3db62c037927346" kind="typedef"><name>qdb_ts_aggregation_t</name></member>
     <member refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kind="function"><name>qdb_ts_double_insert</name></member>
-    <member refid="group__ts_1ga330f02be1b516c2f97d83601d18ff9ab" kind="function"><name>qdb_ts_double_get_range</name></member>
+    <member refid="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" kind="function"><name>qdb_ts_double_get_ranges</name></member>
     <member refid="group__ts_1ga390a5586b88c0bedf9a7d087ba0edc51" kind="function"><name>qdb_ts_aggregate</name></member>
     <member refid="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" kind="function"><name>qdb_ts_blob_insert</name></member>
-    <member refid="group__ts_1ga2388919946975baacb89e84d2345c2d8" kind="function"><name>qdb_ts_blob_get_range</name></member>
+    <member refid="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" kind="function"><name>qdb_ts_blob_get_ranges</name></member>
   </compound>
-  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>D:/workspace/quasardb/api</name>
+  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>C:/sources/quasardb/api</name>
   </compound>
-  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>D:/workspace/quasardb/api/include</name>
+  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>C:/sources/quasardb/api/include</name>
   </compound>
-  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>D:/workspace/quasardb/api/include/qdb</name>
+  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>C:/sources/quasardb/api/include/qdb</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

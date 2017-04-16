@@ -490,14 +490,18 @@ Actual iteration is done with :func:`qdb_iterator_next` and :func:`qdb_iterator_
 Queries
 --------
 
-To run a query on quasardb, use the function :func:`qdb_query`. It will return a list of aliases that matches the specified query.
+To run a query on quasardb, use the function :func:`qdb_query`. The API transparently runs the query accross the cluster, and returns the list of aliases matching the query result.
 
 .. literalinclude:: ../../../../examples/c/query.c
     :start-after: doc-start-query
     :end-before: doc-end-query
     :dedent: 12
 
-Aliases returned by :func:`qdb_query` must be freed with :func:`qdb_release`. For more information about queries, see :doc:`../api/queries`.
+Aliases returned by :func:`qdb_query` must be freed with :func:`qdb_release`. 
+
+If the query exceeds the maximum allowed cardinality, an error :cpp:enum:`qdb_e_query_too_complex` will be returned. It is possible to increase the maximum cardinality with :func:`qdb_option_set_max_cardinality`.
+
+For more information about queries, see :doc:`../api/queries`.
 
 Streaming
 ---------

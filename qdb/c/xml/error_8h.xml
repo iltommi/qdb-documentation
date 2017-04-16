@@ -1,37 +1,61 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
   <compounddef id="error_8h" kind="file" language="C++">
     <compoundname>error.h</compoundname>
     <includes refid="__attr_8h" local="yes">_attr.h</includes>
-    <includedby refid="client_8h" local="yes">D:/workspace/quasardb/api/include/qdb/client.h</includedby>
-    <includedby refid="log_8h" local="yes">D:/workspace/quasardb/api/include/qdb/log.h</includedby>
+    <includedby refid="client_8h" local="yes">C:/sources/quasardb/api/include/qdb/client.h</includedby>
+    <includedby refid="log_8h" local="yes">C:/sources/quasardb/api/include/qdb/log.h</includedby>
     <incdepgraph>
-      <node id="63">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
-      </node>
       <node id="62">
-        <label>D:/workspace/quasardb/api/include/qdb/error.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/error.h</label>
         <link refid="error_8h"/>
         <childnode refid="63" relation="include">
         </childnode>
       </node>
+      <node id="63">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
     </incdepgraph>
     <invincdepgraph>
+      <node id="77">
+        <label>C:/sources/quasardb/api/include/qdb/tag.h</label>
+        <link refid="tag_8h"/>
+      </node>
+      <node id="66">
+        <label>C:/sources/quasardb/api/include/qdb/batch.h</label>
+        <link refid="batch_8h"/>
+      </node>
+      <node id="76">
+        <label>C:/sources/quasardb/api/include/qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
+      </node>
       <node id="72">
-        <label>D:/workspace/quasardb/api/include/qdb/node.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/node.h</label>
         <link refid="node_8h"/>
       </node>
-      <node id="64">
-        <label>D:/workspace/quasardb/api/include/qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="65" relation="include">
-        </childnode>
-        <childnode refid="79" relation="include">
-        </childnode>
+      <node id="71">
+        <label>C:/sources/quasardb/api/include/qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
+      </node>
+      <node id="79">
+        <label>C:/sources/quasardb/api/include/qdb/log.h</label>
+        <link refid="log_8h"/>
+      </node>
+      <node id="73">
+        <label>C:/sources/quasardb/api/include/qdb/prefix.h</label>
+        <link refid="prefix_8h"/>
+      </node>
+      <node id="70">
+        <label>C:/sources/quasardb/api/include/qdb/integer.h</label>
+        <link refid="integer_8h"/>
+      </node>
+      <node id="74">
+        <label>C:/sources/quasardb/api/include/qdb/query.h</label>
+        <link refid="query_8h"/>
       </node>
       <node id="65">
-        <label>D:/workspace/quasardb/api/include/qdb/client.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/client.h</label>
         <link refid="client_8h"/>
         <childnode refid="66" relation="include">
         </childnode>
@@ -60,57 +84,33 @@
         <childnode refid="78" relation="include">
         </childnode>
       </node>
-      <node id="70">
-        <label>D:/workspace/quasardb/api/include/qdb/integer.h</label>
-        <link refid="integer_8h"/>
-      </node>
       <node id="78">
-        <label>D:/workspace/quasardb/api/include/qdb/ts.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/ts.h</label>
         <link refid="ts_8h"/>
       </node>
-      <node id="77">
-        <label>D:/workspace/quasardb/api/include/qdb/tag.h</label>
-        <link refid="tag_8h"/>
-      </node>
-      <node id="75">
-        <label>D:/workspace/quasardb/api/include/qdb/stream.h</label>
-        <link refid="stream_8h"/>
-      </node>
       <node id="69">
-        <label>D:/workspace/quasardb/api/include/qdb/hset.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/hset.h</label>
         <link refid="hset_8h"/>
       </node>
+      <node id="64">
+        <label>C:/sources/quasardb/api/include/qdb/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="65" relation="include">
+        </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+      </node>
       <node id="67">
-        <label>D:/workspace/quasardb/api/include/qdb/blob.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/blob.h</label>
         <link refid="blob_8h"/>
       </node>
-      <node id="74">
-        <label>D:/workspace/quasardb/api/include/qdb/query.h</label>
-        <link refid="query_8h"/>
-      </node>
-      <node id="73">
-        <label>D:/workspace/quasardb/api/include/qdb/prefix.h</label>
-        <link refid="prefix_8h"/>
-      </node>
-      <node id="71">
-        <label>D:/workspace/quasardb/api/include/qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
-      </node>
-      <node id="79">
-        <label>D:/workspace/quasardb/api/include/qdb/log.h</label>
-        <link refid="log_8h"/>
-      </node>
-      <node id="76">
-        <label>D:/workspace/quasardb/api/include/qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-      </node>
-      <node id="66">
-        <label>D:/workspace/quasardb/api/include/qdb/batch.h</label>
-        <link refid="batch_8h"/>
-      </node>
       <node id="68">
-        <label>D:/workspace/quasardb/api/include/qdb/deque.h</label>
+        <label>C:/sources/quasardb/api/include/qdb/deque.h</label>
         <link refid="deque_8h"/>
+      </node>
+      <node id="75">
+        <label>C:/sources/quasardb/api/include/qdb/stream.h</label>
+        <link refid="stream_8h"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -124,7 +124,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="89" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="89" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="89" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1gaaba48738c590182c24a1eb0046cca9ba" prot="public" static="no">
         <name>QDB_ERROR_SEVERITY</name>
@@ -136,7 +136,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="104" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="104" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="104" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="104" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" prot="public" static="no">
         <name>QDB_SUCCESS</name>
@@ -148,7 +148,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="109" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="109" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="109" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="109" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1ga8145df0d400f6811ba830c14789681b5" prot="public" static="no">
         <name>QDB_FAILURE</name>
@@ -160,7 +160,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="114" column="9" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="114" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="114" column="9" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="114" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -220,7 +220,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="77" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="76" bodyend="84"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="77" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="76" bodyend="84"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gaa48fc525bae5abec03a6e216128e5a76" prot="public" static="no">
         <name>qdb_err_severity</name>
@@ -262,7 +262,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="94" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="93" bodyend="99"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="94" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="93" bodyend="99"/>
       </memberdef>
       <memberdef kind="enum" id="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" prot="public" static="no">
         <name>qdb_err</name>
@@ -690,13 +690,21 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5ed1b63f41eaf84f085a23a879952daa" prot="public">
+          <name>qdb_e_query_too_complex</name>
+          <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x0040</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An error code indicating success or failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="119" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="118" bodyend="179"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="119" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="118" bodyend="180"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -711,7 +719,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="84" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="84" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1gabf6c4d9393dd881c3a517f8a28187193" prot="public" static="no">
         <type>enum <ref refid="group__error_1gaa48fc525bae5abec03a6e216128e5a76" kindref="member">qdb_err_severity</ref></type>
@@ -724,7 +732,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="99" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="99" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga352232196dc2f9b9a89d701f63916cec" prot="public" static="no">
         <type>enum <ref refid="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" kindref="member">qdb_err</ref></type>
@@ -737,7 +745,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="179" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="180" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga7f530850c85980b74be1119741da4bb0" prot="public" static="no">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -750,7 +758,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="185" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/error.h" bodystart="185" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="186" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/error.h" bodystart="186" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -778,7 +786,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/error.h" line="194" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/error.h" line="195" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -942,21 +950,22 @@
 <codeline lineno="175"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_clock_skew<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0036,</highlight></codeline>
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_access_denied<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0037,</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_login_failed<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0038,</highlight></codeline>
-<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_column_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0039</highlight></codeline>
-<codeline lineno="179"><highlight class="normal">}<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>;</highlight></codeline>
-<codeline lineno="180"><highlight class="normal"></highlight></codeline>
-<codeline lineno="181"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight></codeline>
-<codeline lineno="185"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"></highlight></codeline>
-<codeline lineno="194"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
-<codeline lineno="195"><highlight class="normal"></highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>QDB_API_ERROR_H</highlight></codeline>
+<codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_column_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0039,</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_query_too_complex<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0040</highlight></codeline>
+<codeline lineno="180"><highlight class="normal">}<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>;</highlight></codeline>
+<codeline lineno="181"><highlight class="normal"></highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight></codeline>
+<codeline lineno="186"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
+<codeline lineno="187"><highlight class="normal"></highlight></codeline>
+<codeline lineno="195"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"></highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>QDB_API_ERROR_H</highlight></codeline>
     </programlisting>
-    <location file="D:/workspace/quasardb/api/include/qdb/error.h"/>
+    <location file="C:/sources/quasardb/api/include/qdb/error.h"/>
   </compounddef>
 </doxygen>
