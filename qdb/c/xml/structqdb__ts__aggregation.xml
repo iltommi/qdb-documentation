@@ -4,6 +4,19 @@
     <compoundname>qdb_ts_aggregation</compoundname>
     <includes local="no">ts.h</includes>
       <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__aggregation_1ab4104dc085c5600d87af8074908ff19e" prot="public" static="no" mutable="no">
+        <type>qdb_ts_aggregation_type_t</type>
+        <definition>qdb_ts_aggregation_type_t qdb_ts_aggregation::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="99" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="99" bodyend="-1"/>
+      </memberdef>
       <memberdef kind="variable" id="structqdb__ts__aggregation_1a0f7310ecaf21736437a680dc3bde66e9" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref></type>
         <definition>qdb_ts_range_t qdb_ts_aggregation::range</definition>
@@ -15,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="75" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="75" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="100" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="100" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__aggregation_1ac976ed20e7d58e6e7dd2e57a57d1084c" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref></type>
@@ -28,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="76" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="76" bodyend="-1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="101" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="101" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -66,10 +79,11 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="74" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="73" bodyend="77"/>
+    <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="98" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="97" bodyend="102"/>
     <listofallmembers>
       <member refid="structqdb__ts__aggregation_1a0f7310ecaf21736437a680dc3bde66e9" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation</scope><name>range</name></member>
       <member refid="structqdb__ts__aggregation_1ac976ed20e7d58e6e7dd2e57a57d1084c" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation</scope><name>result</name></member>
+      <member refid="structqdb__ts__aggregation_1ab4104dc085c5600d87af8074908ff19e" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation</scope><name>type</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

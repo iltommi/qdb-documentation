@@ -67,7 +67,7 @@ How it works
 
 Queries are parsed by the client API to produce an Abstract Syntax Tree (AST). The client api will then analyse the AST to determine the optimal execution order and which nodes should take part in the query execution.
 
-To compute the optimal execution order, an approximation of the cardinality of each part of the query is computed. Since estimating the cardinality can be extremely I/O intensive for very large subsets (hundres of millions of entries), the query planner has an internal safety to stop at a certain threshold (the default value is set at a very safe threshold of 500,119. It can be changed through one API call). When this threshold is exceeded, the query asumes the data set to be *large*.
+To compute the optimal execution order, an approximation of the cardinality of each part of the query is computed. Since estimating the cardinality can be extremely I/O intensive for very large subsets (hundres of millions of entries), the query planner has an internal safety to stop at a certain threshold (the default value is set at a very safe threshold of 10,007. It can be changed through one API call). When this threshold is exceeded, the query asumes the data set to be *large*.
 
 The client then sends to every node the appropriate part of the AST to be executed on the server. Only the appropriate sub-results are returned to the client that will collapse everything into the final answer.
 

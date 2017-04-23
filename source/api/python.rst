@@ -72,7 +72,7 @@ If you have a server up and running, you must be able to add and access entries:
 
 .. testcode:: quasardb
 
-    c = quasardb.Cluster("quasardb://127.0.0.1:2836", datetime.timedelta(minutes=1))
+    c = quasardb.Cluster("qdb://127.0.0.1:2836")
     b = c.blob("entry")
     b.put("content")
     print b.get()
@@ -82,6 +82,15 @@ The execution of the above code snippet will output:
 .. testoutput:: quasardb
 
     content
+
+Timeout
+-------
+
+The default timeout is one minute. To specify a different timeout, you must pass it as a parameter when constructing your quasardb Cluster object:
+
+.. testcode:: quasardb
+
+    c = quasardb.Cluster("qdb://127.0.0.1:2836", datetime.timedelta(minutes=2))
 
 Expiry
 ------
@@ -146,7 +155,7 @@ To find the list of items matching a tag, you create a tag object. For example, 
 
 .. testcode:: quasardb
 
-    c = quasardb.Cluster("quasardb://127.0.0.1:2836", datetime.timedelta(minutes=2))
+    c = quasardb.Cluster("qdb://127.0.0.1:2836")
     tag = c.tag("my_tag")
     entries = tag.get_entries()
 

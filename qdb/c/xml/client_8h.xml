@@ -603,7 +603,7 @@ expiration&quot; time value. </para>        </briefdescription>
           <declname>max_cardinality</declname>
         </param>
         <briefdescription>
-<para>Sets the maximum allowed cardinality of a quasardb query. The default value is 500,119. </para>        </briefdescription>
+<para>Sets the maximum allowed cardinality of a quasardb query. The default value is 10,007. The minimum allowed values is 1,000. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>

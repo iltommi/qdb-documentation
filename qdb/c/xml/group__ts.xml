@@ -17,7 +17,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="77" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="102" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -90,7 +90,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="145" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="155" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -184,12 +184,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="174" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="184" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga390a5586b88c0bedf9a7d087ba0edc51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__ts_1ga40e18b5514b55998a0d4af475568b4bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_ts_aggregate</definition>
-        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_aggregation_type_t type, qdb_ts_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
         <name>qdb_ts_aggregate</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -202,10 +202,6 @@
         <param>
           <type>const char *</type>
           <declname>column</declname>
-        </param>
-        <param>
-          <type>qdb_ts_aggregation_type_t</type>
-          <declname>type</declname>
         </param>
         <param>
           <type><ref refid="group__ts_1ga4d5257c034e81247d3db62c037927346" kindref="member">qdb_ts_aggregation_t</ref> *</type>
@@ -267,7 +263,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="202" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="212" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -338,7 +334,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="225" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="234" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -432,7 +428,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="253" column="1"/>
+        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="262" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

@@ -156,7 +156,7 @@ Here is a short Python code snippet:
     import quasardb
 
     # connecting, default port is 2836
-    c = quasardb.Cluster("qdb://127.0.0.1:2836", datetime.timedelta(minutes=1))
+    c = quasardb.Cluster("qdb://127.0.0.1:2836")
     # adding an entry
     b = c.blob("my_entry")
     b.put("really amazing...")

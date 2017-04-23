@@ -78,6 +78,7 @@
     <member refid="structqdb__timespec__t_1af54f38ed5da4e50324b0518793e6eb7d" kind="variable"><name>tv_nsec</name></member>
   </compound>
   <compound refid="structqdb__ts__aggregation" kind="struct"><name>qdb_ts_aggregation</name>
+    <member refid="structqdb__ts__aggregation_1ab4104dc085c5600d87af8074908ff19e" kind="variable"><name>type</name></member>
     <member refid="structqdb__ts__aggregation_1a0f7310ecaf21736437a680dc3bde66e9" kind="variable"><name>range</name></member>
     <member refid="structqdb__ts__aggregation_1ac976ed20e7d58e6e7dd2e57a57d1084c" kind="variable"><name>result</name></member>
   </compound>
@@ -360,20 +361,29 @@
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ab8c6be513176c3e99de766e9c6f90c38" kind="enumvalue"><name>qdb_agg_last</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a37e44d122eef5250608b4e6ffa892230" kind="enumvalue"><name>qdb_agg_min</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a5a9a7f8ddd4ffbcef01a98a71f6b7b3f" kind="enumvalue"><name>qdb_agg_max</name></member>
-    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a85023bb35b917048f813b02af4ff3e91" kind="enumvalue"><name>qdb_agg_average</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a72f09f70503813dc4368862bae17bceb" kind="enumvalue"><name>qdb_agg_arithmetic_mean</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ad1c607f22d73d1b086176da4cba6e1eb" kind="enumvalue"><name>qdb_agg_harmonic_mean</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ab9ace517dd79a62888d4b84fd8dd3e01" kind="enumvalue"><name>qdb_agg_geometric_mean</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a401a813be06519e0a569eae2fb0b6c1e" kind="enumvalue"><name>qdb_agg_quadratic_mean</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a9038ab2ea6314a26db058b117c0ebf58" kind="enumvalue"><name>qdb_agg_count</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a22bf32c12554c1f1bca6aec5a0314156" kind="enumvalue"><name>qdb_agg_sum</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a3ec54f2eb801e734ed5a6b63996fa5b3" kind="enumvalue"><name>qdb_agg_sum_of_squares</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911addeae9101aa5195e3ef25aa34ad85a4d" kind="enumvalue"><name>qdb_agg_spread</name></member>
-    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a8ce9d6612eef099a3f7899d959072074" kind="enumvalue"><name>qdb_agg_variance</name></member>
-    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a1ef81cc7bfba5c26f1742df93155054f" kind="enumvalue"><name>qdb_agg_stddev</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911af6731680bf9e6b31a8355232b5abd411" kind="enumvalue"><name>qdb_agg_sample_variance</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ae59eb1e7275800ec5840d36b9aee5fec" kind="enumvalue"><name>qdb_agg_sample_stddev</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a9d5f65fb88095568d4a1b62158f06d55" kind="enumvalue"><name>qdb_agg_population_variance</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a44aac27468cb53fa054ea47f897ce537" kind="enumvalue"><name>qdb_agg_population_stddev</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a016ed4d14c78aceac2b999ee7746e6e5" kind="enumvalue"><name>qdb_agg_abs_min</name></member>
     <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a266963898510ea2052a6337f95ec399e" kind="enumvalue"><name>qdb_agg_abs_max</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a6926ac31961c368dd693669dff7f92fc" kind="enumvalue"><name>qdb_agg_product</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911aec3dc5f3b0e56b4efd4d87a9d2e19eb3" kind="enumvalue"><name>qdb_agg_skewness</name></member>
+    <member refid="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a51e71be2c2e01de95a0ee927ded08e08" kind="enumvalue"><name>qdb_agg_kurtosis</name></member>
     <member refid="ts_8h_1a34eafaf7122c885d69791f5509027c15" kind="enum"><name>qdb_ts_column_type</name></member>
     <member refid="ts_8h_1a34eafaf7122c885d69791f5509027c15a8a1436274989c2f916aedef75a87fbef" kind="enumvalue"><name>qdb_ts_column_uninitialized</name></member>
     <member refid="ts_8h_1a34eafaf7122c885d69791f5509027c15ab5036436d04c5dada5911cf3593bc375" kind="enumvalue"><name>qdb_ts_column_double</name></member>
     <member refid="ts_8h_1a34eafaf7122c885d69791f5509027c15a4b2e696aafdc62b98bb5f3c9bd3b6152" kind="enumvalue"><name>qdb_ts_column_blob</name></member>
-    <member refid="group__ts_1ga4d5257c034e81247d3db62c037927346" kind="typedef"><name>qdb_ts_aggregation_t</name></member>
     <member refid="ts_8h_1a630e65f7396952b198be0410baad7126" kind="typedef"><name>qdb_ts_aggregation_type_t</name></member>
+    <member refid="group__ts_1ga4d5257c034e81247d3db62c037927346" kind="typedef"><name>qdb_ts_aggregation_t</name></member>
     <member refid="ts_8h_1ab75b2c387f82164d5c3e8df49f7caa52" kind="typedef"><name>qdb_ts_column_type_t</name></member>
     <member refid="ts_8h_1a28890c2130d08a225b4897b13ed15a44" kind="typedef"><name>qdb_ts_column_info_t</name></member>
     <member refid="ts_8h_1aac17fcebdab7642df1af740ba5e1c230" kind="function"><name>qdb_ts_create</name></member>
@@ -381,7 +391,7 @@
     <member refid="ts_8h_1a4ff4e4a328f5c1f0025ee16c8d5d013e" kind="function"><name>qdb_ts_insert_columns</name></member>
     <member refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kind="function"><name>qdb_ts_double_insert</name></member>
     <member refid="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" kind="function"><name>qdb_ts_double_get_ranges</name></member>
-    <member refid="group__ts_1ga390a5586b88c0bedf9a7d087ba0edc51" kind="function"><name>qdb_ts_aggregate</name></member>
+    <member refid="group__ts_1ga40e18b5514b55998a0d4af475568b4bd" kind="function"><name>qdb_ts_aggregate</name></member>
     <member refid="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" kind="function"><name>qdb_ts_blob_insert</name></member>
     <member refid="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" kind="function"><name>qdb_ts_blob_get_ranges</name></member>
   </compound>
@@ -640,7 +650,7 @@
     <member refid="group__ts_1ga4d5257c034e81247d3db62c037927346" kind="typedef"><name>qdb_ts_aggregation_t</name></member>
     <member refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kind="function"><name>qdb_ts_double_insert</name></member>
     <member refid="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" kind="function"><name>qdb_ts_double_get_ranges</name></member>
-    <member refid="group__ts_1ga390a5586b88c0bedf9a7d087ba0edc51" kind="function"><name>qdb_ts_aggregate</name></member>
+    <member refid="group__ts_1ga40e18b5514b55998a0d4af475568b4bd" kind="function"><name>qdb_ts_aggregate</name></member>
     <member refid="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" kind="function"><name>qdb_ts_blob_insert</name></member>
     <member refid="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" kind="function"><name>qdb_ts_blob_get_ranges</name></member>
   </compound>
