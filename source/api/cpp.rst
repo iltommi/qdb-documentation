@@ -103,7 +103,7 @@ Quick Reference
   :type:`std::string`                    :func:`handle::node_config`                        ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
   :type:`std::string`                    :func:`handle::node_status`                        ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
   :type:`std::string`                    :func:`handle::node_topology`                      ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
-  :c:type:`handle &`                     :func:`handle::operator=`                          ``(``\ :type:`handle` ``&& h) const;``
+  :c:type:`handle &`                     :func:`handle::operator=`                          ``(``\ :type:`handle` ``&& h);``
   :c:type:`qdb_error_t`                  :func:`handle::purge_all`                          |VOID_ARGS|
   :type:`const_reverse_iterator`         :func:`handle::rbegin`                             |VOID_ARGS|
   :c:type:`qdb_error_t`                  :func:`handle::remove`                             ``(``\ |CONST_CHAR_P| ``alias);``
