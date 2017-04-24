@@ -535,7 +535,7 @@ Reference
 
         Initialize all required resources and connect to a remote host.
 
-        :param host: A pointer to a null-terminated string in the format "qdb://host:port[,host:port]".
+        :param host: A pointer to a null-terminated string in the format ``qdb://host:port[,host:port]``.
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
 
@@ -885,7 +885,7 @@ Reference
 
         The handle must be initialized and connected (see :func:`connect`).
 
-        :param uri: A pointer to a null-terminated string in the format `qdb://host:port`.
+        :param uri: A pointer to a null-terminated string in the format ``qdb://host:port``.
         :param error: A reference to an error code that will be updated according to the success of the operation
 
         :returns: The status of the node as a JSON string.
@@ -896,7 +896,7 @@ Reference
 
         The handle must be initialized and connected (see :func:`connect`).
 
-        :param uri: A pointer to a null-terminated string in the format `qdb://host:port`.
+        :param uri: A pointer to a null-terminated string in the format ``qdb://host:port``.
         :param error: A reference to an error code that will be updated according to the success of the operation
 
         :returns: The configuration of the node as a JSON string.
@@ -907,7 +907,7 @@ Reference
 
         The handle must be initialized and connected (see :func:`connect`).
 
-        :param uri: A pointer to a null-terminated string in the format `qdb://host:port`.
+        :param uri: A pointer to a null-terminated string in the format ``qdb://host:port``.
         :param error: A reference to an error code that will be updated according to the success of the operation
 
         :returns: The topology of the node as a JSON string.
@@ -919,7 +919,7 @@ Reference
 
         The handle must be initialized and connected (see :func:`connect`).
 
-        :param node: A pointer to a null-terminated string in the format "qdb://host:port".
+        :param node: A pointer to a null-terminated string in the format ``qdb://host:port``.
         :param reason: A pointer to a null-terminated string detailling the reason for the stop that will appear in the remote node's log.
 
         :returns: An error code of type :cpp:type:`qdb_error_t`
