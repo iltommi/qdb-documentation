@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
-  <compounddef id="dir_632ff29478d52ad59079539d00d369ff" kind="dir">
-    <compoundname>qdb</compoundname>
+  <compounddef id="dir_1b5a39b76692a42b971e5a2561783652" kind="dir">
+    <compoundname>include/qdb</compoundname>
     <innerfile refid="__attr_8h">_attr.h</innerfile>
     <innerfile refid="batch_8h">batch.h</innerfile>
     <innerfile refid="blob_8h">blob.h</innerfile>
@@ -21,6 +21,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="qdb/"/>
+    <location file="include/qdb/"/>
   </compounddef>
 </doxygen>

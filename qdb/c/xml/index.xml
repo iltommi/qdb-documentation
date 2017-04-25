@@ -28,7 +28,7 @@
   <compound refid="structqdb__entry__metadata__t" kind="struct"><name>qdb_entry_metadata_t</name>
     <member refid="structqdb__entry__metadata__t_1a38fdb97e118a81e434a35a79084b7d8f" kind="variable"><name>reference</name></member>
     <member refid="structqdb__entry__metadata__t_1af1c3dd521b4f9cb05b60964e6a95f7d1" kind="variable"><name>type</name></member>
-    <member refid="structqdb__entry__metadata__t_1a10a79e4ba033cf2ffa3d5b92709219c3" kind="variable"><name>size</name></member>
+    <member refid="structqdb__entry__metadata__t_1af3b15aeee1e584b9cb53b4e368efe36c" kind="variable"><name>size</name></member>
     <member refid="structqdb__entry__metadata__t_1a91100c5bf0aef19a269d6b1f402650ec" kind="variable"><name>modification_time</name></member>
     <member refid="structqdb__entry__metadata__t_1a8b8156f36fc6a21a6c33eef584c22599" kind="variable"><name>expiry_time</name></member>
   </compound>
@@ -69,7 +69,9 @@
   </compound>
   <compound refid="structqdb__remote__node__t" kind="struct"><name>qdb_remote_node_t</name>
     <member refid="structqdb__remote__node__t_1a0d17da9467be3445198fe4151c0d932a" kind="variable"><name>address</name></member>
+    <member refid="structqdb__remote__node__t_1ab770f4f36df10c04a16ea59a085b3c4b" kind="variable"><name>_padding0</name></member>
     <member refid="structqdb__remote__node__t_1a8701b59cea4b7e358f2528c73f9e45b8" kind="variable"><name>port</name></member>
+    <member refid="structqdb__remote__node__t_1aa2b8fbc2d2df28b47beb5d2474e1f961" kind="variable"><name>_padding1</name></member>
   </compound>
   <compound refid="structqdb__timespec__t" kind="struct"><name>qdb_timespec_t</name>
     <member refid="structqdb__timespec__t_1acf1768b50ccc8c67e846b63d07e1e4f3" kind="variable"><name>tv_sec</name></member>
@@ -116,6 +118,8 @@
   <compound refid="client_8h" kind="file"><name>client.h</name>
     <member refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kind="define"><name>qdb_never_expires</name></member>
     <member refid="group__client_1gacec73da0a3d7364196f4e6682f5fd522" kind="define"><name>qdb_preserve_expiration</name></member>
+    <member refid="client_8h_1a3b33bb239dd712bc12702e87b8c7ac9b" kind="define"><name>QDB_PLATFORM_32</name></member>
+    <member refid="client_8h_1aef0b5fbbdfe98da82aaec217d381a91a" kind="define"><name>QDB_PLATFORM_64</name></member>
     <member refid="group__client_1ga14ba3138099f3c7969f707eb4b16c35b" kind="enum"><name>qdb_limits</name></member>
     <member refid="client_8h_1ga14ba3138099f3c7969f707eb4b16c35bada77b67d62cfd28f8f9131dc039dbf64" kind="enumvalue"><name>qdb_l_alias_max_length</name></member>
     <member refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kind="enum"><name>qdb_compression</name></member>
@@ -135,6 +139,7 @@
     <member refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kind="typedef"><name>qdb_time_t</name></member>
     <member refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kind="typedef"><name>qdb_size_t</name></member>
     <member refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kind="typedef"><name>qdb_int_t</name></member>
+    <member refid="client_8h_1a9e813e8fce153f42b09c1e470f2863ae" kind="typedef"><name>qdb_uint_t</name></member>
     <member refid="group__client_1gab2ede040a754735a3f751a14acd8cf7f" kind="typedef"><name>qdb_limits_t</name></member>
     <member refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kind="typedef"><name>qdb_compression_t</name></member>
     <member refid="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" kind="typedef"><name>qdb_protocol_t</name></member>
@@ -297,7 +302,7 @@
     <member refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kind="function"><name>qdb_stream_open</name></member>
     <member refid="group__stream_1ga449b224e9375ada8221175b7c3565dcf" kind="function"><name>qdb_stream_close</name></member>
     <member refid="group__stream_1ga7049c1a51b92867ba7a57e503b9bc977" kind="function"><name>qdb_stream_read</name></member>
-    <member refid="group__stream_1ga0d6c25a71270ae6779793249572fa5e9" kind="function"><name>qdb_stream_write</name></member>
+    <member refid="group__stream_1gacece5db2db0d6282b39c3cd141014923" kind="function"><name>qdb_stream_write</name></member>
     <member refid="group__stream_1ga6a61e49f5c35fde9eca4221045f9909b" kind="function"><name>qdb_stream_size</name></member>
     <member refid="group__stream_1gace0078f3bc035cc4e614eab161dd5028" kind="function"><name>qdb_stream_getpos</name></member>
     <member refid="group__stream_1ga6d3fde3c308ceade76e8e501e2326b72" kind="function"><name>qdb_stream_setpos</name></member>
@@ -535,7 +540,7 @@
     <member refid="group__stream_1gac5e6abb93fde65691e17f0b4989c1461" kind="function"><name>qdb_stream_open</name></member>
     <member refid="group__stream_1ga449b224e9375ada8221175b7c3565dcf" kind="function"><name>qdb_stream_close</name></member>
     <member refid="group__stream_1ga7049c1a51b92867ba7a57e503b9bc977" kind="function"><name>qdb_stream_read</name></member>
-    <member refid="group__stream_1ga0d6c25a71270ae6779793249572fa5e9" kind="function"><name>qdb_stream_write</name></member>
+    <member refid="group__stream_1gacece5db2db0d6282b39c3cd141014923" kind="function"><name>qdb_stream_write</name></member>
     <member refid="group__stream_1ga6a61e49f5c35fde9eca4221045f9909b" kind="function"><name>qdb_stream_size</name></member>
     <member refid="group__stream_1gace0078f3bc035cc4e614eab161dd5028" kind="function"><name>qdb_stream_getpos</name></member>
     <member refid="group__stream_1ga6d3fde3c308ceade76e8e501e2326b72" kind="function"><name>qdb_stream_setpos</name></member>
@@ -561,11 +566,7 @@
     <member refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kind="function"><name>qdb_tag_iterator_next</name></member>
     <member refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kind="function"><name>qdb_tag_iterator_close</name></member>
   </compound>
-  <compound refid="dir_0188a3e6da905bc60aceb35bf790b8c9" kind="dir"><name>D:/workspace/quasardb/api</name>
-  </compound>
-  <compound refid="dir_cf4c4a12eb9d2821032e40f1ddeaaf89" kind="dir"><name>D:/workspace/quasardb/api/include</name>
-  </compound>
-  <compound refid="dir_992125da0cacae4897794fec8cdf29d7" kind="dir"><name>D:/workspace/quasardb/api/include/qdb</name>
+  <compound refid="dir_632ff29478d52ad59079539d00d369ff" kind="dir"><name>qdb</name>
   </compound>
   <compound refid="indexpage" kind="page"><name>index</name>
   </compound>

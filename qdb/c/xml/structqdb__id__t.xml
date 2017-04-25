@@ -15,14 +15,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="225" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="225" bodyend="-1"/>
+        <location file="qdb/client.h" line="242" column="1" bodyfile="qdb/client.h" bodystart="242" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>A cluster-wide unique identifier. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/workspace/quasardb/api/include/qdb/client.h" line="224" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/client.h" bodystart="223" bodyend="226"/>
+    <location file="qdb/client.h" line="241" column="1" bodyfile="qdb/client.h" bodystart="240" bodyend="243"/>
     <listofallmembers>
       <member refid="structqdb__id__t_1abb5374c9dc6502879e2a0221caa44529" prot="public" virt="non-virtual"><scope>qdb_id_t</scope><name>data</name></member>
     </listofallmembers>
