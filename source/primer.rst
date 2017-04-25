@@ -28,7 +28,7 @@ Shall we dance?
 
 To start a |quasardb| server, just run it! We provide packages for many platform, but you can always work in a local directory where you manually
 extracted your |quasardb| binaries. We also support docker and are available on
-`Microsoft Azure <https://azure.microsoft.com/en-us/marketplace/partners/quasardb/quasardb/>`_ and `Amazon EC2 <https://aws.amazon.com/marketplace/pp/B01FUR400S/?ref=_ptnr_qdb_doc>`_.
+`Microsoft Azure <https://azuremarketplace.microsoft.com/en-us/marketplace/partners/quasardb/quasardb/>`_ and `Amazon EC2 <https://aws.amazon.com/marketplace/pp/B01FUR400S/?ref=_ptnr_qdb_doc>`_.
 
 Let's assume we extracted the |quasardb| archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
 
