@@ -31,29 +31,57 @@ If you pick the wrong version, *quasardb for Excel* will refuse to install; so i
 Speadsheet functions
 ====================
 
-The following functions return a single value, they can be use in any formula:
+The following functions return a single value, and operate on double columns:
 
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| Function signature                          | Description                                                                                           |
-+=============================================+=======================================================================================================+
-| ``QDB.TS.AVERAGE(series,column,begin,end)`` | Returns the average value of the specified time-series in the interval ``[begin,end)``.               |
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.COUNT(series,column,begin,end)``   | Returns the number of points that the specified time-series contains in the interval ``[begin,end)``. |
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.FIRST(series,column,begin,end)``   | Returns the first value of the specified time-series in the interval ``[begin,end)``.                 |
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.MAX(series,column,begin,end)``     | Returns the maximum value of the specified time-series in the interval ``[begin,end)``.               |
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.MIN(series,column,begin,end)``     | Returns the minimum value of the specified time-series in the interval ``[begin,end)``.               |
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.LAST(series,column,begin,end)``    | Returns the last value of the specified time-series in the interval ``[begin,end)``.                  |
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.SUM(series,column,begin,end)``     | Returns the sum of the specified time-series in the interval ``[begin,end)``.                         |
-+---------------------------------------------+-------------------------------------------------------------------------------------------------------+
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| Function signature                               | Description                                                                                           |
++==================================================+=======================================================================================================+
+| ``QDB.TS.ABS.MAX(series,column,begin,end)``      | Returns the maximum of absolute values of the interval ``[begin,end)``.                               |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.ABS.MIN(series,column,begin,end)``      | Returns the minimum of absolute values of the interval ``[begin,end)``.                               |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.AVERAGE(series,column,begin,end)``      | Returns the arithmetic mean of the values in the interval ``[begin,end)``.                            |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.COUNT(series,column,begin,end)``        | Returns the number of points in the interval ``[begin,end)``.                                         |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.FIRST(series,column,begin,end)``        | Returns the first value of the interval ``[begin,end)``.                                              |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.GEOMEAN(series,column,begin,end)``      | Returns the geometric mean of the values in the interval ``[begin,end)``.                             |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.HARMEAN(series,column,begin,end)``      | Returns the harmonic mean of the values in the interval ``[begin,end)``.                              |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.KURT(series,column,begin,end)``         | Returns the kurtosis of the values in the interval ``[begin,end)``.                                   |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.LAST(series,column,begin,end)``         | Returns the last value ofinterval ``[begin,end)``.                                                    |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.MAX(series,column,begin,end)``          | Returns the maximum of the interval ``[begin,end)``.                                                  |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.MIN(series,column,begin,end)``          | Returns the minimum of the interval ``[begin,end)``.                                                  |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.PRODUCT(series,column,begin,end)``      | Returns the product of the values in the interval ``[begin,end)``.                                    |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.QUADMEAN(series,column,begin,end)``     | Returns the quadratic mean (root mean square) of the values in the interval ``[begin,end)``.          |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.SKEW(series,column,begin,end)``         | Returns the skewness of the values in the interval ``[begin,end)``.                                   |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.SPREAD(series,column,begin,end)``       | Returns the difference between the maximum and the minimum in the interval ``[begin,end)``.           |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.STDDEV.P(series,column,begin,end)`      | Returns the population standard deviation of the values in the interval ``[begin,end)``.              |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.STDDEV.S(series,column,begin,end)``     | Returns the sample standard deviation of the values in the interval ``[begin,end)``.                  |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.SUM(series,column,begin,end)``          | Returns the sum of the values in the interval ``[begin,end)``.                                        |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.SUMSQ(series,column,begin,end)``        | Returns the sum of squares of the value in the interval ``[begin,end)``.                              |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.VAR.P(series,column,begin,end)``        | Returns the population variance of the values in the interval ``[begin,end)``.                        |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+| ``QDB.TS.VAR.S(series,column,begin,end)``        | Returns the sample variance of the values in the interval ``[begin,end)``.                            |
++--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 
 .. image:: qdb_excel_sum.gif
 
-The following function returns an array, it should be used in an "array-formula" (Control+Shift+Enter):
+The following function returns an array, and must be used in an "array-formula" (Control+Shift+Enter):
 
 +--------------------------------------------+----------------------------------------------------------------------------------------------------------+
 | Function signature                         | Description                                                                                              |
