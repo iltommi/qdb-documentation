@@ -66,7 +66,7 @@ The following functions return a single value, and operate on double columns:
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | ``QDB.TS.SPREAD(series,column,begin,end)``       | Returns the difference between the maximum and the minimum in the interval ``[begin,end)``.           |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
-| ``QDB.TS.STDDEV.P(series,column,begin,end)`      | Returns the population standard deviation of the values in the interval ``[begin,end)``.              |
+| ``QDB.TS.STDDEV.P(series,column,begin,end)``     | Returns the population standard deviation of the values in the interval ``[begin,end)``.              |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
 | ``QDB.TS.STDDEV.S(series,column,begin,end)``     | Returns the sample standard deviation of the values in the interval ``[begin,end)``.                  |
 +--------------------------------------------------+-------------------------------------------------------------------------------------------------------+
