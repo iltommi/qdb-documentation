@@ -128,17 +128,37 @@ All functions are transparently distributed over the cluster.
  +-----------------------------------+----------------+------------+------------+
  | Spread                            | Double columns | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Variance                          | Double columns | Linear     | No         |
+ | Population variance               | Double columns | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Standard deviation                | Double columns | Linear     | No         |
+ | Sample variance                   | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Population standard deviation     | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Sample standard deviation         | Double columns | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
  | Arithmetic mean                   | Double columns | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
+ | Harmonic mean                     | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Geometric mean                    | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Quadratic mean (root mean square) | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
  | Number of elements                | Any column     | Constant   | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Sum                               | Double columns | Linear     | Yes        |
+ +-----------------------------------+----------------+------------+------------+
+ | Sum of squares                    | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Product                           | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Skewness                          | Double columns | Linear     | No         |
+ +-----------------------------------+----------------+------------+------------+
+ | Kurtosis                          | Double columns | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
 
 .. note::
-    The following functions are planned in the short term: distinct values count, median, most frequent value, least frequent value, moving average, spread, standard deviation and percentile.
+    The following functions are planned in the short term: distinct values count, median, most frequent value, least frequent value, moving average and percentile.
 
 Usage
 -------
