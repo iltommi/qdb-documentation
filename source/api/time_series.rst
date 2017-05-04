@@ -114,9 +114,9 @@ All functions are transparently distributed over the cluster.
  +-----------------------------------+----------------+------------+------------+
  | Operation                         | Applies to     | Complexity | Vectorized |
  +===================================+================+============+============+
- | First element                     | Double columns | Constant   | No         |
+ | First element                     | Any column     | Constant   | No         |
  +-----------------------------------+----------------+------------+------------+
- | Last element                      | Double columns | Constant   | No         |
+ | Last element                      | Any column     | Constant   | No         |
  +-----------------------------------+----------------+------------+------------+
  | Minimum element                   | Double columns | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
