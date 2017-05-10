@@ -49,14 +49,14 @@ The amount of hard drive space required for a quasardb database on a given node 
 
 .. math::
 
-    \text{Space Required Per Node} = \tfrac{(\text{Total Size of Data in Cluster} \: * \: 3 \: * \: \text{Replication Factor})} {\text{Number of Nodes}}
+    \text{Space Required Per Node} = \tfrac{(\text{Total Size of Data in Cluster} \: * \: * \: \text{Replication Factor})} {\text{Number of Nodes}}
 
 For example, if you are storing 8 terabytes of data across 4 nodes with a Replication Factor of 2...
 
 .. math::
 
-    \text{Space Required Per Node} &= \tfrac{(\text{8 terabytes} \: * \: 3 \: * \: \text{Replication Factor of 2})} {\text{4 Nodes}} \\
-                                   &= \text{12 terabytes}
+    \text{Space Required Per Node} &= \tfrac{(\text{8 terabytes} \: * \: * \: \text{Replication Factor of 2})} {\text{4 Nodes}} \\
+                                   &= \text{4 terabytes}
 
 
 If you are using quasardb 1.1.2 or higher, you may also use the ``--max-depot-size`` command-line argument to forcefully limit the database size at a small performance cost. If enabled, write operations that would overflow the node will return with a qdb_e_system error. However, when using ``--max-depot-size`` you will also need to have a safeguard of 20% more disk space, should meta-data or uncompressed values overflow the setting.
@@ -65,9 +65,9 @@ Therefore, when using ``--max-depot-size`` and the example above, calculating th
 
 .. math::
 
-    \text{Space Required Per Node} &= \text{12 terabytes} \: + \: (\text{12 terabytes} * 0.2) \\
-                                   &= \text{12 terabytes} \: + \: (\text{2.4 terabytes}) \\
-                                   &= \text{14.4 terabytes}
+    \text{Space Required Per Node} &= \text{4 terabytes} \: + \: (\text{4 terabytes} * 0.2) \\
+                                   &= \text{4 terabytes} \: + \: (\text{0.8 terabytes}) \\
+                                   &= \text{4.8 terabytes}
 
 For more information on ``--max-depot-size``, see :doc:`../reference/qdbd`.
 
