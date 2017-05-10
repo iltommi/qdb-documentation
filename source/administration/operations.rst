@@ -49,13 +49,13 @@ The amount of hard drive space required for a quasardb database on a given node 
 
 .. math::
 
-    \text{Space Required Per Node} = \tfrac{(\text{Total Size of Data in Cluster} \: * \: * \: \text{Replication Factor})} {\text{Number of Nodes}}
+    \text{Space Required Per Node} = \tfrac{(\text{Total Size of Data in Cluster} \: * \: \text{Replication Factor})} {\text{Number of Nodes}}
 
 For example, if you are storing 8 terabytes of data across 4 nodes with a Replication Factor of 2...
 
 .. math::
 
-    \text{Space Required Per Node} &= \tfrac{(\text{8 terabytes} \: * \: * \: \text{Replication Factor of 2})} {\text{4 Nodes}} \\
+    \text{Space Required Per Node} &= \tfrac{(\text{8 terabytes} \: * \: \text{Replication Factor of 2})} {\text{4 Nodes}} \\
                                    &= \text{4 terabytes}
 
 
