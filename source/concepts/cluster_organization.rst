@@ -34,7 +34,7 @@ Adding a Node to a Cluster
 
    A fifth node is created and peered to the node at IP address 192.168.1.134. The fifth node connects, then downloads the configuration of the cluster, overwriting its global parameters with the cluster's global parameters. This ensures that global parameters are consistent across the cluster, which is important for options like replication and persistence, where disparate parameters between nodes could cause unwanted behavior or data loss.
 
-   Once the node has received and applied the global parameters, the cluster begins the two-step process of Stabilization, where nodes validate their position in the ring, then rearrange how and where data is distributed.
+   Once the node has received and applied the global parameters, the cluster begins the three-step process of Stabilization, where nodes validate their position in the ring, then rearrange how and where data is distributed.
 
    Note that in this example, the fifth node assigned itself the unique ID of 4. In a production environment, the IDs are randomized hashes. In the unlikely event that a new node assigns itself an ID that is already taken by another node in the cluster, the new node will abort the join and stabilization process. The cluster remains unchanged.
 
@@ -47,18 +47,23 @@ Adding a Node to a Cluster
 .. figure:: qdb_add_node_process/04_qdb_data_migration.png
    :scale: 50%
 
-   Once the node has a valid predecessor and successor, data is migrated based on the number of nodes and replication factor in order to load balance across the cluster. During this period, some nodes may be unavailable, namely the predecessor, the successor, and the node that was added.
+   Once the node has found a valid predecessor and successor, it will download the data for which it is responsible, without joining the cluster. From a resource point of view, this is equivalent to one client downloading a range of data from the cluster.
+
+.. tip::
+   Add nodes when activity is low to limit disruption.
+
+   During the period, the cluster is fully operational and clients are unaware that a node is joining the cluster. 
 
    For more information on data migration, see :ref:`data-migration`.
 
 .. figure:: qdb_add_node_process/05_qdb_cluster_at_end.png
    :scale: 50%
 
-   Once data migration is complete, stabilization is complete and the finished cluster has five nodes.
+   Once the download is complete, the node will join the cluster, and download additional data that may have been added since it started to join the cluster.
 
-.. tip::
-    Add nodes when the traffic is at its lowest point.
+   During this period, some nodes may be unavailable, namely the predecessor, the successor, and the node that was added. This hand-over rarely exceeds one minute.
 
+   After the node has joined the cluster, nodes may elect to remove data that has been migrated to the new node, according to the replication policy of the cluster.
 
 Removing a Node from a Cluster
 ------------------------------
