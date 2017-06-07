@@ -637,6 +637,18 @@ Integers
 .. doxygengroup:: integer
   :content-only:
 
+Iterators
+^^^^^^^^^
+
+.. doxygengroup:: iterator
+  :content-only:
+
+Log
+^^^
+
+.. doxygengroup:: log
+  :content-only:
+
 Prefix
 ^^^^^^
 
