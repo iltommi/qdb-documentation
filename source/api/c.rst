@@ -601,16 +601,16 @@ Error codes
 .. doxygengroup:: error
   :content-only:
 
-Blobs
-^^^^^^
-
-.. doxygengroup:: blob
-  :content-only:
-
 Batches
 ^^^^^^^
 
 .. doxygengroup:: batch
+  :content-only:
+
+Blobs
+^^^^^^
+
+.. doxygengroup:: blob
   :content-only:
 
 Cluster and nodes
@@ -625,16 +625,16 @@ Deques
 .. doxygengroup:: deque
   :content-only:
 
-Integers
-^^^^^^^^
-
-.. doxygengroup:: integer
-  :content-only:
-
 Hash sets
 ^^^^^^^^^
 
 .. doxygengroup:: hset
+  :content-only:
+
+Integers
+^^^^^^^^
+
+.. doxygengroup:: integer
   :content-only:
 
 Prefix
@@ -653,6 +653,12 @@ Streams
 ^^^^^^^
 
 .. doxygengroup:: stream
+  :content-only:
+
+Suffix
+^^^^^^
+
+.. doxygengroup:: suffix
   :content-only:
 
 Tags
