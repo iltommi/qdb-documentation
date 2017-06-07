@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structqdb__ts__double__point" kind="struct" language="C++" prot="public">
     <compoundname>qdb_ts_double_point</compoundname>
     <includes local="no">ts.h</includes>
@@ -10,12 +10,12 @@
         <argsstring></argsstring>
         <name>timestamp</name>
         <briefdescription>
-        </briefdescription>
+<para>Timestamp. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="54" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="54" bodyend="-1"/>
+        <location file="qdb/ts.h" line="55" column="1" bodyfile="qdb/ts.h" bodystart="55" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__double__point_1a05df56eb127d6b66d45b7569369656e3" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -23,32 +23,32 @@
         <argsstring></argsstring>
         <name>value</name>
         <briefdescription>
-        </briefdescription>
+<para>Numeric value. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="55" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="55" bodyend="-1"/>
+        <location file="qdb/ts.h" line="57" column="1" bodyfile="qdb/ts.h" bodystart="57" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>A timestamped data. </para>    </briefdescription>
+<para>A timestamped data with a numeric value. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="34">
+      <node id="39">
         <label>qdb_timespec_t</label>
         <link refid="structqdb__timespec__t"/>
       </node>
-      <node id="33">
+      <node id="38">
         <label>qdb_ts_double_point</label>
         <link refid="structqdb__ts__double__point"/>
-        <childnode refid="34" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="53" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="52" bodyend="56"/>
+    <location file="qdb/ts.h" line="53" column="1" bodyfile="qdb/ts.h" bodystart="52" bodyend="58"/>
     <listofallmembers>
       <member refid="structqdb__ts__double__point_1a9faab3dd638b5c4740ccbec931b83aa8" prot="public" virt="non-virtual"><scope>qdb_ts_double_point</scope><name>timestamp</name></member>
       <member refid="structqdb__ts__double__point_1a05df56eb127d6b66d45b7569369656e3" prot="public" virt="non-virtual"><scope>qdb_ts_double_point</scope><name>value</name></member>

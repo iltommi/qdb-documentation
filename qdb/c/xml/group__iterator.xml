@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="group__iterator" kind="group">
     <compoundname>iterator</compoundname>
     <title>Iteration-related operations</title>
@@ -41,7 +41,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="105" column="1"/>
+        <location file="qdb/iterator.h" line="105" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -79,7 +79,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="131" column="1"/>
+        <location file="qdb/iterator.h" line="131" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -105,7 +105,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="145" column="1"/>
+        <location file="qdb/iterator.h" line="145" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -131,7 +131,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="161" column="1"/>
+        <location file="qdb/iterator.h" line="161" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -157,7 +157,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="168" column="1"/>
+        <location file="qdb/iterator.h" line="168" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -179,7 +179,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/iterator.h" line="179" column="1"/>
+        <location file="qdb/iterator.h" line="179" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

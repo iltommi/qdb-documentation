@@ -1,20 +1,24 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="node_8h" kind="file" language="C++">
     <compoundname>node.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
+      <node id="112">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
       <node id="109">
-        <label>C:/sources/quasardb/api/include/qdb/node.h</label>
+        <label>qdb/node.h</label>
         <link refid="node_8h"/>
         <childnode refid="110" relation="include">
         </childnode>
       </node>
-      <node id="115">
-        <label>stdint.h</label>
-      </node>
-      <node id="113">
-        <label>stddef.h</label>
+      <node id="111">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="112" relation="include">
+        </childnode>
       </node>
       <node id="110">
         <label>client.h</label>
@@ -28,18 +32,14 @@
         <childnode refid="115" relation="include">
         </childnode>
       </node>
-      <node id="111">
-        <label>error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="112" relation="include">
-        </childnode>
+      <node id="115">
+        <label>stdint.h</label>
+      </node>
+      <node id="113">
+        <label>stddef.h</label>
       </node>
       <node id="114">
         <label>time.h</label>
-      </node>
-      <node id="112">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
       </node>
     </incdepgraph>
       <sectiondef kind="func">
@@ -101,7 +101,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/node.h" line="66" column="1"/>
+        <location file="qdb/node.h" line="66" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__node_1ga14c411ee3a3c3fec0e57ba48eba411b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -161,7 +161,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/node.h" line="91" column="1"/>
+        <location file="qdb/node.h" line="91" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__node_1gaa448d12338945be0e16f1ac63bb0eb92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -221,7 +221,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/node.h" line="117" column="1"/>
+        <location file="qdb/node.h" line="117" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__node_1ga0ee58acda04e9acb66e4a22b5ddf6c03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -269,7 +269,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/node.h" line="139" column="1"/>
+        <location file="qdb/node.h" line="139" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -344,6 +344,6 @@
 <codeline lineno="146"><highlight class="normal"></highlight></codeline>
 <codeline lineno="147"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_NODE_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
-    <location file="C:/sources/quasardb/api/include/qdb/node.h"/>
+    <location file="qdb/node.h"/>
   </compounddef>
 </doxygen>

@@ -1,14 +1,18 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="ts_8h" kind="file" language="C++">
     <compoundname>ts.h</compoundname>
     <includes refid="client_8h" local="yes">client.h</includes>
     <incdepgraph>
-      <node id="163">
-        <label>stdint.h</label>
+      <node id="160">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
       </node>
-      <node id="161">
-        <label>stddef.h</label>
+      <node id="159">
+        <label>error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="160" relation="include">
+        </childnode>
       </node>
       <node id="158">
         <label>client.h</label>
@@ -23,212 +27,209 @@
         </childnode>
       </node>
       <node id="157">
-        <label>C:/sources/quasardb/api/include/qdb/ts.h</label>
+        <label>qdb/ts.h</label>
         <link refid="ts_8h"/>
         <childnode refid="158" relation="include">
         </childnode>
       </node>
-      <node id="159">
-        <label>error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="160" relation="include">
-        </childnode>
+      <node id="163">
+        <label>stdint.h</label>
+      </node>
+      <node id="161">
+        <label>stddef.h</label>
       </node>
       <node id="162">
         <label>time.h</label>
-      </node>
-      <node id="160">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
       </node>
     </incdepgraph>
     <innerclass refid="structqdb__ts__double__point" prot="public">qdb_ts_double_point</innerclass>
     <innerclass refid="structqdb__ts__blob__point" prot="public">qdb_ts_blob_point</innerclass>
     <innerclass refid="structqdb__ts__range__t" prot="public">qdb_ts_range_t</innerclass>
-    <innerclass refid="structqdb__ts__aggregation" prot="public">qdb_ts_aggregation</innerclass>
+    <innerclass refid="structqdb__ts__double__aggregation" prot="public">qdb_ts_double_aggregation</innerclass>
+    <innerclass refid="structqdb__ts__blob__aggregation" prot="public">qdb_ts_blob_aggregation</innerclass>
     <innerclass refid="structqdb__ts__column__info" prot="public">qdb_ts_column_info</innerclass>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911" prot="public" static="no">
+      <memberdef kind="enum" id="group__ts_1ga5cb8d795fbfc0c56b6106a9fed339911" prot="public" static="no">
         <name>qdb_ts_aggregation_type</name>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a7b7619b684556dda1db52c0fac2175d7" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a7b7619b684556dda1db52c0fac2175d7" prot="public">
           <name>qdb_agg_first</name>
           <initializer>= 0</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The first (earliest) data point. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ab8c6be513176c3e99de766e9c6f90c38" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ab8c6be513176c3e99de766e9c6f90c38" prot="public">
           <name>qdb_agg_last</name>
           <initializer>= 1</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The last (latest) data point. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a37e44d122eef5250608b4e6ffa892230" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a37e44d122eef5250608b4e6ffa892230" prot="public">
           <name>qdb_agg_min</name>
           <initializer>= 2</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The data point with the smallest value. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a5a9a7f8ddd4ffbcef01a98a71f6b7b3f" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a5a9a7f8ddd4ffbcef01a98a71f6b7b3f" prot="public">
           <name>qdb_agg_max</name>
           <initializer>= 3</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The data point with the largest value. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a72f09f70503813dc4368862bae17bceb" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a72f09f70503813dc4368862bae17bceb" prot="public">
           <name>qdb_agg_arithmetic_mean</name>
           <initializer>= 4</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The arithmetic mean (average). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ad1c607f22d73d1b086176da4cba6e1eb" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ad1c607f22d73d1b086176da4cba6e1eb" prot="public">
           <name>qdb_agg_harmonic_mean</name>
           <initializer>= 5</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The harmonic mean. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ab9ace517dd79a62888d4b84fd8dd3e01" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ab9ace517dd79a62888d4b84fd8dd3e01" prot="public">
           <name>qdb_agg_geometric_mean</name>
           <initializer>= 6</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The geometric mean. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a401a813be06519e0a569eae2fb0b6c1e" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a401a813be06519e0a569eae2fb0b6c1e" prot="public">
           <name>qdb_agg_quadratic_mean</name>
           <initializer>= 7</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The quadratic mean (root mean squaer). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a9038ab2ea6314a26db058b117c0ebf58" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a9038ab2ea6314a26db058b117c0ebf58" prot="public">
           <name>qdb_agg_count</name>
           <initializer>= 8</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The number of data points. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a22bf32c12554c1f1bca6aec5a0314156" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a22bf32c12554c1f1bca6aec5a0314156" prot="public">
           <name>qdb_agg_sum</name>
           <initializer>= 9</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The sum of values. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a3ec54f2eb801e734ed5a6b63996fa5b3" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a3ec54f2eb801e734ed5a6b63996fa5b3" prot="public">
           <name>qdb_agg_sum_of_squares</name>
           <initializer>= 10</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The sum of squares of values. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911addeae9101aa5195e3ef25aa34ad85a4d" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911addeae9101aa5195e3ef25aa34ad85a4d" prot="public">
           <name>qdb_agg_spread</name>
           <initializer>= 11</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The difference between the maximum value and the minimum value. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911af6731680bf9e6b31a8355232b5abd411" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911af6731680bf9e6b31a8355232b5abd411" prot="public">
           <name>qdb_agg_sample_variance</name>
           <initializer>= 12</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The sample variance. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911ae59eb1e7275800ec5840d36b9aee5fec" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ae59eb1e7275800ec5840d36b9aee5fec" prot="public">
           <name>qdb_agg_sample_stddev</name>
           <initializer>= 13</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The sample standard deviation. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a9d5f65fb88095568d4a1b62158f06d55" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a9d5f65fb88095568d4a1b62158f06d55" prot="public">
           <name>qdb_agg_population_variance</name>
           <initializer>= 14</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The population variance. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a44aac27468cb53fa054ea47f897ce537" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a44aac27468cb53fa054ea47f897ce537" prot="public">
           <name>qdb_agg_population_stddev</name>
           <initializer>= 15</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The population standard deviation. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a016ed4d14c78aceac2b999ee7746e6e5" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a016ed4d14c78aceac2b999ee7746e6e5" prot="public">
           <name>qdb_agg_abs_min</name>
           <initializer>= 16</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The value with the smallest absolute value. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a266963898510ea2052a6337f95ec399e" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a266963898510ea2052a6337f95ec399e" prot="public">
           <name>qdb_agg_abs_max</name>
           <initializer>= 17</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The value with the largest absolute value. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a6926ac31961c368dd693669dff7f92fc" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a6926ac31961c368dd693669dff7f92fc" prot="public">
           <name>qdb_agg_product</name>
           <initializer>= 18</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The product. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911aec3dc5f3b0e56b4efd4d87a9d2e19eb3" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911aec3dc5f3b0e56b4efd4d87a9d2e19eb3" prot="public">
           <name>qdb_agg_skewness</name>
           <initializer>= 19</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The skewness (shape parameter). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a5cb8d795fbfc0c56b6106a9fed339911a51e71be2c2e01de95a0ee927ded08e08" prot="public">
+        <enumvalue id="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a51e71be2c2e01de95a0ee927ded08e08" prot="public">
           <name>qdb_agg_kurtosis</name>
           <initializer>= 20</initializer>
           <briefdescription>
-          </briefdescription>
+<para>The kurtosis (shape parameter). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-        </briefdescription>
+<para>Types of aggregations that can be computed on a time series. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="71" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="71" bodyend="93"/>
+        <location file="qdb/ts.h" line="84" column="1" bodyfile="qdb/ts.h" bodystart="84" bodyend="107"/>
       </memberdef>
-      <memberdef kind="enum" id="ts_8h_1a34eafaf7122c885d69791f5509027c15" prot="public" static="no">
+      <memberdef kind="enum" id="group__ts_1ga34eafaf7122c885d69791f5509027c15" prot="public" static="no">
         <name>qdb_ts_column_type</name>
-        <enumvalue id="ts_8h_1a34eafaf7122c885d69791f5509027c15a8a1436274989c2f916aedef75a87fbef" prot="public">
+        <enumvalue id="group__ts_1gga34eafaf7122c885d69791f5509027c15a8a1436274989c2f916aedef75a87fbef" prot="public">
           <name>qdb_ts_column_uninitialized</name>
           <initializer>= -1</initializer>
           <briefdescription>
@@ -236,87 +237,100 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a34eafaf7122c885d69791f5509027c15ab5036436d04c5dada5911cf3593bc375" prot="public">
+        <enumvalue id="group__ts_1gga34eafaf7122c885d69791f5509027c15ab5036436d04c5dada5911cf3593bc375" prot="public">
           <name>qdb_ts_column_double</name>
           <initializer>= 0</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Column of numeric values. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="ts_8h_1a34eafaf7122c885d69791f5509027c15a4b2e696aafdc62b98bb5f3c9bd3b6152" prot="public">
+        <enumvalue id="group__ts_1gga34eafaf7122c885d69791f5509027c15a4b2e696aafdc62b98bb5f3c9bd3b6152" prot="public">
           <name>qdb_ts_column_blob</name>
           <initializer>= 1</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Column of binary data. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-        </briefdescription>
+<para>Types of time series columns. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="104" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="104" bodyend="108"/>
+        <location file="qdb/ts.h" line="140" column="1" bodyfile="qdb/ts.h" bodystart="140" bodyend="144"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="ts_8h_1a630e65f7396952b198be0410baad7126" prot="public" static="no">
-        <type>enum qdb_ts_aggregation_type</type>
+      <memberdef kind="typedef" id="group__ts_1ga630e65f7396952b198be0410baad7126" prot="public" static="no">
+        <type>enum <ref refid="group__ts_1ga5cb8d795fbfc0c56b6106a9fed339911" kindref="member">qdb_ts_aggregation_type</ref></type>
         <definition>typedef enum qdb_ts_aggregation_type  qdb_ts_aggregation_type_t</definition>
         <argsstring></argsstring>
         <name>qdb_ts_aggregation_type_t</name>
         <briefdescription>
-        </briefdescription>
+<para>Types of aggregations that can be computed on a time series. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="93" column="1"/>
+        <location file="qdb/ts.h" line="107" column="1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__ts_1ga4d5257c034e81247d3db62c037927346" prot="public" static="no">
-        <type>struct <ref refid="structqdb__ts__aggregation" kindref="compound">qdb_ts_aggregation</ref></type>
-        <definition>typedef struct qdb_ts_aggregation  qdb_ts_aggregation_t</definition>
+      <memberdef kind="typedef" id="group__ts_1ga17fb5c6bdbdf04a27dc8de841585168e" prot="public" static="no">
+        <type>struct <ref refid="structqdb__ts__double__aggregation" kindref="compound">qdb_ts_double_aggregation</ref></type>
+        <definition>typedef struct qdb_ts_double_aggregation  qdb_ts_double_aggregation_t</definition>
         <argsstring></argsstring>
-        <name>qdb_ts_aggregation_t</name>
+        <name>qdb_ts_double_aggregation_t</name>
         <briefdescription>
-<para>Aggregation input and result. </para>        </briefdescription>
+<para>Aggregation input and result for columns of numeric values. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="102" column="1"/>
+        <location file="qdb/ts.h" line="122" column="1"/>
       </memberdef>
-      <memberdef kind="typedef" id="ts_8h_1ab75b2c387f82164d5c3e8df49f7caa52" prot="public" static="no">
-        <type>enum qdb_ts_column_type</type>
+      <memberdef kind="typedef" id="group__ts_1gac3dd05aa0292c3be0188ceb9a84ad16a" prot="public" static="no">
+        <type>struct <ref refid="structqdb__ts__blob__aggregation" kindref="compound">qdb_ts_blob_aggregation</ref></type>
+        <definition>typedef struct qdb_ts_blob_aggregation  qdb_ts_blob_aggregation_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_ts_blob_aggregation_t</name>
+        <briefdescription>
+<para>Aggregation input and result for columns of blobs. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="136" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__ts_1gab75b2c387f82164d5c3e8df49f7caa52" prot="public" static="no">
+        <type>enum <ref refid="group__ts_1ga34eafaf7122c885d69791f5509027c15" kindref="member">qdb_ts_column_type</ref></type>
         <definition>typedef enum qdb_ts_column_type  qdb_ts_column_type_t</definition>
         <argsstring></argsstring>
         <name>qdb_ts_column_type_t</name>
         <briefdescription>
-        </briefdescription>
+<para>Types of time series columns. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="108" column="1"/>
+        <location file="qdb/ts.h" line="144" column="1"/>
       </memberdef>
-      <memberdef kind="typedef" id="ts_8h_1a28890c2130d08a225b4897b13ed15a44" prot="public" static="no">
+      <memberdef kind="typedef" id="group__ts_1ga28890c2130d08a225b4897b13ed15a44" prot="public" static="no">
         <type>struct <ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info</ref></type>
         <definition>typedef struct qdb_ts_column_info  qdb_ts_column_info_t</definition>
         <argsstring></argsstring>
         <name>qdb_ts_column_info_t</name>
         <briefdescription>
-        </briefdescription>
+<para>Description of a time series column. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="114" column="1"/>
+        <location file="qdb/ts.h" line="155" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="ts_8h_1aac17fcebdab7642df1af740ba5e1c230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__ts_1gaac17fcebdab7642df1af740ba5e1c230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_ts_create</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const qdb_ts_column_info_t *columns, qdb_size_t column_count)</argsstring>
@@ -330,7 +344,7 @@
           <declname>alias</declname>
         </param>
         <param>
-          <type>const <ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref> *</type>
+          <type>const <ref refid="group__ts_1ga28890c2130d08a225b4897b13ed15a44" kindref="member">qdb_ts_column_info_t</ref> *</type>
           <declname>columns</declname>
         </param>
         <param>
@@ -338,14 +352,43 @@
           <declname>column_count</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Creates a time series. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array of column descriptions that are to be added to the time series. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of columns to add. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="118" column="1"/>
+        <location file="qdb/ts.h" line="169" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="ts_8h_1a13878bc89e413cf5996f41a57bf6afaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__ts_1ga13878bc89e413cf5996f41a57bf6afaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_ts_list_columns</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_ts_column_info_t **columns, qdb_size_t *column_count)</argsstring>
@@ -359,7 +402,7 @@
           <declname>alias</declname>
         </param>
         <param>
-          <type><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref> **</type>
+          <type><ref refid="group__ts_1ga28890c2130d08a225b4897b13ed15a44" kindref="member">qdb_ts_column_info_t</ref> **</type>
           <declname>columns</declname>
         </param>
         <param>
@@ -367,12 +410,43 @@
           <declname>column_count</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Returns all the columns of a time series. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array that will contain descriptions of columns present in the time series. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the number of columns. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="123" column="1"/>
+        <location file="qdb/ts.h" line="188" column="1"/>
       </memberdef>
       <memberdef kind="function" id="ts_8h_1a4ff4e4a328f5c1f0025ee16c8d5d013e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -388,7 +462,7 @@
           <declname>alias</declname>
         </param>
         <param>
-          <type>const <ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref> *</type>
+          <type>const <ref refid="group__ts_1ga28890c2130d08a225b4897b13ed15a44" kindref="member">qdb_ts_column_info_t</ref> *</type>
           <declname>columns</declname>
         </param>
         <param>
@@ -401,7 +475,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="129" column="1"/>
+        <location file="qdb/ts.h" line="194" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__ts_1gab6a77210b52971e73a373905dab2c191" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -431,7 +505,7 @@
         <briefdescription>
 <para>Inserts points in a time series. </para>        </briefdescription>
         <detaileddescription>
-<para>Time series are distributed across the cluster and support efficient insertion anywhere within the time series as well as efficient lookup based on time.</para><para>If the time series does not exist, it will be created.</para><para><parameterlist kind="param"><parameteritem>
+<para>Time series are distributed across the cluster and support efficient insertion anywhere within the time series as well as efficient lookup based on time.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -472,7 +546,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="155" column="1"/>
+        <location file="qdb/ts.h" line="218" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -566,13 +640,13 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="184" column="1"/>
+        <location file="qdb/ts.h" line="247" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga40e18b5514b55998a0d4af475568b4bd" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+      <memberdef kind="function" id="group__ts_1gad1458101da7b584d909cdb43f9cc5537" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_aggregate</definition>
-        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
-        <name>qdb_ts_aggregate</name>
+        <definition>qdb_error_t qdb_ts_double_aggregate</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_double_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
+        <name>qdb_ts_double_aggregate</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
           <declname>handle</declname>
@@ -586,7 +660,7 @@
           <declname>column</declname>
         </param>
         <param>
-          <type><ref refid="group__ts_1ga4d5257c034e81247d3db62c037927346" kindref="member">qdb_ts_aggregation_t</ref> *</type>
+          <type><ref refid="group__ts_1ga17fb5c6bdbdf04a27dc8de841585168e" kindref="member">qdb_ts_double_aggregation_t</ref> *</type>
           <declname>aggregations</declname>
         </param>
         <param>
@@ -594,7 +668,7 @@
           <declname>aggregation_count</declname>
         </param>
         <briefdescription>
-<para>Aggregate a sub-part of the time series. </para>        </briefdescription>
+<para>Aggregate a sub-part of the double column of the time series. </para>        </briefdescription>
         <detaileddescription>
 <para>It is an error to call this function on a non existing time-series.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
@@ -619,17 +693,10 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>type</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The type of aggretion to perform. </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
 <parametername>aggregations</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array of structures representing the aggregations to compute. </para></parameterdescription>
+<para>A pointer to an array of structures representing the aggregations to compute and their results. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -640,12 +707,85 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para>qdb_ts_aggregation_type_t </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__ts_1ga630e65f7396952b198be0410baad7126" kindref="member">qdb_ts_aggregation_type_t</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="212" column="1"/>
+        <location file="qdb/ts.h" line="274" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga32e66f66f79176e2435eab82671dd72b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_ts_blob_aggregate</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_blob_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
+        <name>qdb_ts_blob_aggregate</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type><ref refid="group__ts_1gac3dd05aa0292c3be0188ceb9a84ad16a" kindref="member">qdb_ts_blob_aggregation_t</ref> *</type>
+          <declname>aggregations</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>aggregation_count</declname>
+        </param>
+        <briefdescription>
+<para>Aggregate a sub-part of a blob column of the time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is an error to call this function on a non existing time-series.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aggregations</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array of structures representing the aggregations to compute and their results. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>aggregation_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of elements in the aggregations array. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__ts_1ga630e65f7396952b198be0410baad7126" kindref="member">qdb_ts_aggregation_type_t</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="300" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -716,7 +856,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="234" column="1"/>
+        <location file="qdb/ts.h" line="322" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -810,7 +950,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="262" column="1"/>
+        <location file="qdb/ts.h" line="350" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -865,127 +1005,143 @@
 <codeline lineno="49"><highlight class="normal"></highlight></codeline>
 <codeline lineno="52" refid="structqdb__ts__double__point" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="53"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>timestamp;</highlight></codeline>
-<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
-<codeline lineno="56"><highlight class="normal">}<sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref>;</highlight></codeline>
-<codeline lineno="57"><highlight class="normal"></highlight></codeline>
-<codeline lineno="58" refid="structqdb__ts__blob__point" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="59"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>timestamp;</highlight></codeline>
-<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content;</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length;</highlight></codeline>
-<codeline lineno="63"><highlight class="normal">}<sp/><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref>;</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"></highlight></codeline>
-<codeline lineno="65" refid="structqdb__ts__range__t" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="66"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>begin;</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>end;</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}<sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref>;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>qdb_ts_aggregation_type<sp/>{</highlight></codeline>
-<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_first<sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_last<sp/>=<sp/>1,</highlight></codeline>
-<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_min<sp/>=<sp/>2,</highlight></codeline>
-<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_max<sp/>=<sp/>3,</highlight></codeline>
-<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_arithmetic_mean<sp/>=<sp/>4,</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_harmonic_mean<sp/>=<sp/>5,</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_geometric_mean<sp/>=<sp/>6,</highlight></codeline>
-<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_quadratic_mean<sp/>=<sp/>7,</highlight></codeline>
-<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_count<sp/>=<sp/>8,</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_sum<sp/>=<sp/>9,</highlight></codeline>
-<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_sum_of_squares<sp/>=<sp/>10,</highlight></codeline>
-<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_spread<sp/>=<sp/>11,</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_sample_variance<sp/>=<sp/>12,</highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_sample_stddev<sp/>=<sp/>13,</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_population_variance<sp/>=<sp/>14,</highlight></codeline>
-<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_population_stddev<sp/>=<sp/>15,</highlight></codeline>
-<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_abs_min<sp/>=<sp/>16,</highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_abs_max<sp/>=<sp/>17,</highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_product<sp/>=<sp/>18,</highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_skewness<sp/>=<sp/>19,</highlight></codeline>
-<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_agg_kurtosis<sp/>=<sp/>20</highlight></codeline>
-<codeline lineno="93"><highlight class="normal">}<sp/>qdb_ts_aggregation_type_t;</highlight></codeline>
-<codeline lineno="94"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97" refid="structqdb__ts__aggregation" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqdb__ts__aggregation" kindref="compound">qdb_ts_aggregation</ref></highlight></codeline>
-<codeline lineno="98"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_ts_aggregation_type_t<sp/>type;</highlight></codeline>
-<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref><sp/>range;</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref><sp/>result;</highlight></codeline>
-<codeline lineno="102"><highlight class="normal">}<sp/><ref refid="group__ts_1ga4d5257c034e81247d3db62c037927346" kindref="member">qdb_ts_aggregation_t</ref>;</highlight></codeline>
-<codeline lineno="103"><highlight class="normal"></highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>qdb_ts_column_type<sp/>{</highlight></codeline>
-<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_ts_column_uninitialized<sp/>=<sp/>-1,</highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_ts_column_double<sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_ts_column_blob<sp/>=<sp/>1</highlight></codeline>
-<codeline lineno="108"><highlight class="normal">}<sp/>qdb_ts_column_type_t;</highlight></codeline>
-<codeline lineno="109"><highlight class="normal"></highlight></codeline>
-<codeline lineno="110" refid="structqdb__ts__column__info" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info</ref></highlight></codeline>
-<codeline lineno="111"><highlight class="normal">{</highlight></codeline>
-<codeline lineno="112"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name;</highlight></codeline>
-<codeline lineno="113"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_ts_column_type_t<sp/>type;</highlight></codeline>
-<codeline lineno="114"><highlight class="normal">}<sp/><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref>;</highlight></codeline>
-<codeline lineno="115"><highlight class="normal"></highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(pop)</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>qdb_ts_create(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="120"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref><sp/>*<sp/>columns,</highlight></codeline>
-<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>column_count);</highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>qdb_ts_list_columns(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="124"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="125"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref><sp/>**<sp/>columns,</highlight></codeline>
-<codeline lineno="126"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>column_count);</highlight></codeline>
-<codeline lineno="127"><highlight class="normal"></highlight></codeline>
-<codeline lineno="128"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="129"><highlight class="normal">qdb_ts_insert_columns(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="130"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref><sp/>*<sp/>columns,</highlight></codeline>
-<codeline lineno="132"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>column_count);</highlight></codeline>
-<codeline lineno="133"><highlight class="normal"></highlight></codeline>
-<codeline lineno="154"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="155"><highlight class="normal"><ref refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kindref="member">qdb_ts_double_insert</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="156"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="157"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
-<codeline lineno="158"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref><sp/>*<sp/>values,</highlight></codeline>
-<codeline lineno="159"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>count);</highlight></codeline>
-<codeline lineno="160"><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="184"><highlight class="normal"><ref refid="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" kindref="member">qdb_ts_double_get_ranges</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="185"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="186"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref><sp/>*<sp/>ranges,</highlight></codeline>
-<codeline lineno="188"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>range_count,</highlight></codeline>
-<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref><sp/>**<sp/>points,</highlight></codeline>
-<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>point_count);</highlight></codeline>
-<codeline lineno="191"><highlight class="normal"></highlight></codeline>
-<codeline lineno="211"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="212"><highlight class="normal"><ref refid="group__ts_1ga40e18b5514b55998a0d4af475568b4bd" kindref="member">qdb_ts_aggregate</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="213"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="214"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
-<codeline lineno="215"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__aggregation" kindref="compound">qdb_ts_aggregation_t</ref><sp/>*<sp/>aggregations,</highlight></codeline>
-<codeline lineno="216"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>aggregation_count);</highlight></codeline>
-<codeline lineno="217"><highlight class="normal"></highlight></codeline>
-<codeline lineno="234"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" kindref="member">qdb_ts_blob_insert</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="235"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="236"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
-<codeline lineno="237"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref><sp/>*<sp/>values,</highlight></codeline>
-<codeline lineno="238"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>count);</highlight></codeline>
-<codeline lineno="261"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="262"><highlight class="normal"><ref refid="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" kindref="member">qdb_ts_blob_get_ranges</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="263"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
-<codeline lineno="264"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
-<codeline lineno="265"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref><sp/>*<sp/>ranges,</highlight></codeline>
-<codeline lineno="266"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>range_count,</highlight></codeline>
-<codeline lineno="267"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref><sp/>**<sp/>points,</highlight></codeline>
-<codeline lineno="268"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>point_count);</highlight></codeline>
-<codeline lineno="269"><highlight class="normal"></highlight></codeline>
-<codeline lineno="270"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="271"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="272"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="273"><highlight class="normal"></highlight></codeline>
-<codeline lineno="274"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>timestamp;</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">double</highlight><highlight class="normal"><sp/>value;</highlight></codeline>
+<codeline lineno="58"><highlight class="normal">}<sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref>;</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"></highlight></codeline>
+<codeline lineno="62" refid="structqdb__ts__blob__point" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>timestamp;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/>*<sp/>content;</highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>content_length;</highlight></codeline>
+<codeline lineno="70"><highlight class="normal">}<sp/><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref>;</highlight></codeline>
+<codeline lineno="71"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74" refid="structqdb__ts__range__t" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>begin;</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref><sp/>end;</highlight></codeline>
+<codeline lineno="80"><highlight class="normal">}<sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref>;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"></highlight></codeline>
+<codeline lineno="84"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__ts_1ga5cb8d795fbfc0c56b6106a9fed339911" kindref="member">qdb_ts_aggregation_type</ref><sp/>{</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a7b7619b684556dda1db52c0fac2175d7" kindref="member">qdb_agg_first</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ab8c6be513176c3e99de766e9c6f90c38" kindref="member">qdb_agg_last</ref><sp/>=<sp/>1,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a37e44d122eef5250608b4e6ffa892230" kindref="member">qdb_agg_min</ref><sp/>=<sp/>2,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a5a9a7f8ddd4ffbcef01a98a71f6b7b3f" kindref="member">qdb_agg_max</ref><sp/>=<sp/>3,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a72f09f70503813dc4368862bae17bceb" kindref="member">qdb_agg_arithmetic_mean</ref><sp/>=<sp/>4,<sp/></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ad1c607f22d73d1b086176da4cba6e1eb" kindref="member">qdb_agg_harmonic_mean</ref><sp/>=<sp/>5,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ab9ace517dd79a62888d4b84fd8dd3e01" kindref="member">qdb_agg_geometric_mean</ref><sp/>=<sp/>6,<sp/><sp/></highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a401a813be06519e0a569eae2fb0b6c1e" kindref="member">qdb_agg_quadratic_mean</ref><sp/>=<sp/>7,<sp/><sp/></highlight></codeline>
+<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a9038ab2ea6314a26db058b117c0ebf58" kindref="member">qdb_agg_count</ref><sp/>=<sp/>8,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a22bf32c12554c1f1bca6aec5a0314156" kindref="member">qdb_agg_sum</ref><sp/>=<sp/>9,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="95"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a3ec54f2eb801e734ed5a6b63996fa5b3" kindref="member">qdb_agg_sum_of_squares</ref><sp/>=<sp/>10,<sp/></highlight></codeline>
+<codeline lineno="96"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911addeae9101aa5195e3ef25aa34ad85a4d" kindref="member">qdb_agg_spread</ref><sp/>=<sp/>11,</highlight></codeline>
+<codeline lineno="98"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911af6731680bf9e6b31a8355232b5abd411" kindref="member">qdb_agg_sample_variance</ref><sp/>=<sp/>12,<sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="99"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911ae59eb1e7275800ec5840d36b9aee5fec" kindref="member">qdb_agg_sample_stddev</ref><sp/>=<sp/>13,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a9d5f65fb88095568d4a1b62158f06d55" kindref="member">qdb_agg_population_variance</ref><sp/>=<sp/>14,<sp/></highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a44aac27468cb53fa054ea47f897ce537" kindref="member">qdb_agg_population_stddev</ref><sp/>=<sp/>15,<sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a016ed4d14c78aceac2b999ee7746e6e5" kindref="member">qdb_agg_abs_min</ref><sp/>=<sp/>16,<sp/><sp/></highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a266963898510ea2052a6337f95ec399e" kindref="member">qdb_agg_abs_max</ref><sp/>=<sp/>17,<sp/><sp/></highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a6926ac31961c368dd693669dff7f92fc" kindref="member">qdb_agg_product</ref><sp/>=<sp/>18,<sp/><sp/></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911aec3dc5f3b0e56b4efd4d87a9d2e19eb3" kindref="member">qdb_agg_skewness</ref><sp/>=<sp/>19,<sp/></highlight></codeline>
+<codeline lineno="106"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga5cb8d795fbfc0c56b6106a9fed339911a51e71be2c2e01de95a0ee927ded08e08" kindref="member">qdb_agg_kurtosis</ref><sp/>=<sp/>20<sp/><sp/></highlight></codeline>
+<codeline lineno="107"><highlight class="normal">}<sp/><ref refid="group__ts_1ga630e65f7396952b198be0410baad7126" kindref="member">qdb_ts_aggregation_type_t</ref>;</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="111" refid="structqdb__ts__double__aggregation" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqdb__ts__double__aggregation" kindref="compound">qdb_ts_double_aggregation</ref></highlight></codeline>
+<codeline lineno="112"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="114"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1ga630e65f7396952b198be0410baad7126" kindref="member">qdb_ts_aggregation_type_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1ab0374a58bd33be417737c632c76830d3" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1a17df839be077addce4fe2b682ebbff8f" kindref="member">range</ref>;</highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1a3bfbc0b40a70a0f0ec0d679523f316a4" kindref="member">count</ref>;</highlight></codeline>
+<codeline lineno="121"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref><sp/><ref refid="structqdb__ts__double__aggregation_1abfae82f699909d8e599d893b1d5308c7" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/><ref refid="group__ts_1ga17fb5c6bdbdf04a27dc8de841585168e" kindref="member">qdb_ts_double_aggregation_t</ref>;</highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126" refid="structqdb__ts__blob__aggregation" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqdb__ts__blob__aggregation" kindref="compound">qdb_ts_blob_aggregation</ref></highlight></codeline>
+<codeline lineno="127"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="129"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1ga630e65f7396952b198be0410baad7126" kindref="member">qdb_ts_aggregation_type_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1ab0374a58bd33be417737c632c76830d3" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="131"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1a17df839be077addce4fe2b682ebbff8f" kindref="member">range</ref>;</highlight></codeline>
+<codeline lineno="133"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1a3bfbc0b40a70a0f0ec0d679523f316a4" kindref="member">count</ref>;</highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref><sp/><ref refid="structqdb__ts__double__aggregation_1abfae82f699909d8e599d893b1d5308c7" kindref="member">result</ref>;</highlight></codeline>
+<codeline lineno="136"><highlight class="normal">}<sp/><ref refid="group__ts_1gac3dd05aa0292c3be0188ceb9a84ad16a" kindref="member">qdb_ts_blob_aggregation_t</ref>;</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__ts_1ga34eafaf7122c885d69791f5509027c15" kindref="member">qdb_ts_column_type</ref><sp/>{</highlight></codeline>
+<codeline lineno="141"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_ts_column_uninitialized<sp/>=<sp/>-1,</highlight></codeline>
+<codeline lineno="142"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga34eafaf7122c885d69791f5509027c15ab5036436d04c5dada5911cf3593bc375" kindref="member">qdb_ts_column_double</ref><sp/>=<sp/>0,<sp/></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gga34eafaf7122c885d69791f5509027c15a4b2e696aafdc62b98bb5f3c9bd3b6152" kindref="member">qdb_ts_column_blob</ref><sp/>=<sp/>1<sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="144"><highlight class="normal">}<sp/><ref refid="group__ts_1gab75b2c387f82164d5c3e8df49f7caa52" kindref="member">qdb_ts_column_type_t</ref>;</highlight></codeline>
+<codeline lineno="145"><highlight class="normal"></highlight></codeline>
+<codeline lineno="148" refid="structqdb__ts__column__info" refkind="compound"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">struct<sp/></highlight><highlight class="normal"><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info</ref></highlight></codeline>
+<codeline lineno="149"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="152"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>name;</highlight></codeline>
+<codeline lineno="154"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__ts_1gab75b2c387f82164d5c3e8df49f7caa52" kindref="member">qdb_ts_column_type_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1ab0374a58bd33be417737c632c76830d3" kindref="member">type</ref>;</highlight></codeline>
+<codeline lineno="155"><highlight class="normal">}<sp/><ref refid="group__ts_1ga28890c2130d08a225b4897b13ed15a44" kindref="member">qdb_ts_column_info_t</ref>;</highlight></codeline>
+<codeline lineno="156"><highlight class="normal"></highlight></codeline>
+<codeline lineno="157"><highlight class="normal"></highlight><highlight class="preprocessor">#pragma<sp/>pack(pop)</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="158"><highlight class="normal"></highlight></codeline>
+<codeline lineno="169"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__ts_1gaac17fcebdab7642df1af740ba5e1c230" kindref="member">qdb_ts_create</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="170"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="171"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref><sp/>*<sp/>columns,</highlight></codeline>
+<codeline lineno="172"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>column_count);</highlight></codeline>
+<codeline lineno="173"><highlight class="normal"></highlight></codeline>
+<codeline lineno="188"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__ts_1ga13878bc89e413cf5996f41a57bf6afaa" kindref="member">qdb_ts_list_columns</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="189"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="190"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref><sp/>**<sp/>columns,</highlight></codeline>
+<codeline lineno="191"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>column_count);</highlight></codeline>
+<codeline lineno="192"><highlight class="normal"></highlight></codeline>
+<codeline lineno="193"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="194"><highlight class="normal">qdb_ts_insert_columns(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="195"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="196"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info_t</ref><sp/>*<sp/>columns,</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>column_count);</highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight></codeline>
+<codeline lineno="217"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="218"><highlight class="normal"><ref refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kindref="member">qdb_ts_double_insert</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="219"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="220"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
+<codeline lineno="221"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref><sp/>*<sp/>values,</highlight></codeline>
+<codeline lineno="222"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/><ref refid="structqdb__ts__double__aggregation_1a3bfbc0b40a70a0f0ec0d679523f316a4" kindref="member">count</ref>);</highlight></codeline>
+<codeline lineno="223"><highlight class="normal"></highlight></codeline>
+<codeline lineno="246"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="247"><highlight class="normal"><ref refid="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" kindref="member">qdb_ts_double_get_ranges</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="248"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="249"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
+<codeline lineno="250"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref><sp/>*<sp/>ranges,</highlight></codeline>
+<codeline lineno="251"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>range_count,</highlight></codeline>
+<codeline lineno="252"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref><sp/>**<sp/>points,</highlight></codeline>
+<codeline lineno="253"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>point_count);</highlight></codeline>
+<codeline lineno="254"><highlight class="normal"></highlight></codeline>
+<codeline lineno="273"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="274"><highlight class="normal"><ref refid="group__ts_1gad1458101da7b584d909cdb43f9cc5537" kindref="member">qdb_ts_double_aggregate</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="275"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="276"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
+<codeline lineno="277"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__double__aggregation" kindref="compound">qdb_ts_double_aggregation_t</ref><sp/>*<sp/>aggregations,</highlight></codeline>
+<codeline lineno="278"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>aggregation_count);</highlight></codeline>
+<codeline lineno="279"><highlight class="normal"></highlight></codeline>
+<codeline lineno="299"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="300"><highlight class="normal"><ref refid="group__ts_1ga32e66f66f79176e2435eab82671dd72b" kindref="member">qdb_ts_blob_aggregate</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="301"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="302"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
+<codeline lineno="303"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__blob__aggregation" kindref="compound">qdb_ts_blob_aggregation_t</ref><sp/>*<sp/>aggregations,</highlight></codeline>
+<codeline lineno="304"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>aggregation_count);</highlight></codeline>
+<codeline lineno="305"><highlight class="normal"></highlight></codeline>
+<codeline lineno="322"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" kindref="member">qdb_ts_blob_insert</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="323"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="324"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
+<codeline lineno="325"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref><sp/>*<sp/>values,</highlight></codeline>
+<codeline lineno="326"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>count);</highlight></codeline>
+<codeline lineno="349"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="350"><highlight class="normal"><ref refid="group__ts_1gaa4ab0ef3331136f8e006afd37ca42c53" kindref="member">qdb_ts_blob_get_ranges</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="351"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>alias,</highlight></codeline>
+<codeline lineno="352"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>column,</highlight></codeline>
+<codeline lineno="353"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref><sp/>*<sp/>ranges,</highlight></codeline>
+<codeline lineno="354"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>range_count,</highlight></codeline>
+<codeline lineno="355"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref><sp/>**<sp/>points,</highlight></codeline>
+<codeline lineno="356"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref><sp/>*<sp/>point_count);</highlight></codeline>
+<codeline lineno="357"><highlight class="normal"></highlight></codeline>
+<codeline lineno="358"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="359"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="360"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="361"><highlight class="normal"></highlight></codeline>
+<codeline lineno="362"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight></codeline>
     </programlisting>
-    <location file="C:/sources/quasardb/api/include/qdb/ts.h"/>
+    <location file="qdb/ts.h"/>
   </compounddef>
 </doxygen>

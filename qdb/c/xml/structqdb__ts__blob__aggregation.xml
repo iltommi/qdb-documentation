@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structqdb__ts__blob__aggregation" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_blob_aggregation</compoundname>
+    <includes local="no">ts.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__blob__aggregation_1a565d794d67ca434ea63d43ec43a67cd7" prot="public" static="no" mutable="no">
+        <type><ref refid="group__ts_1ga630e65f7396952b198be0410baad7126" kindref="member">qdb_ts_aggregation_type_t</ref></type>
+        <definition>qdb_ts_aggregation_type_t qdb_ts_blob_aggregation::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+<para>The type of the aggregation to perform. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="129" column="1" bodyfile="qdb/ts.h" bodystart="129" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__blob__aggregation_1a654454bded057e0a0ceae550e7fe3228" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref></type>
+        <definition>qdb_ts_range_t qdb_ts_blob_aggregation::range</definition>
+        <argsstring></argsstring>
+        <name>range</name>
+        <briefdescription>
+<para>The time interval on which the aggregation should be executed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="131" column="1" bodyfile="qdb/ts.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__blob__aggregation_1acc38debc4b95f77a6290558289e2a827" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+        <definition>qdb_size_t qdb_ts_blob_aggregation::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+<para>If applicable, the number of datapoints on which aggregation has been computed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="133" column="1" bodyfile="qdb/ts.h" bodystart="133" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__blob__aggregation_1a05f23162ad62e44ab8d37a3e6499ac63" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref></type>
+        <definition>qdb_ts_blob_point qdb_ts_blob_aggregation::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+<para>The result of the aggregation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="135" column="1" bodyfile="qdb/ts.h" bodystart="135" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Aggregation input and result for columns of blobs. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="23">
+        <label>qdb_ts_blob_aggregation</label>
+        <link refid="structqdb__ts__blob__aggregation"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>result</edgelabel>
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>range</edgelabel>
+        </childnode>
+      </node>
+      <node id="25">
+        <label>qdb_timespec_t</label>
+        <link refid="structqdb__timespec__t"/>
+      </node>
+      <node id="26">
+        <label>qdb_ts_range_t</label>
+        <link refid="structqdb__ts__range__t"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>qdb_ts_blob_point</label>
+        <link refid="structqdb__ts__blob__point"/>
+        <childnode refid="25" relation="usage">
+          <edgelabel>timestamp</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="qdb/ts.h" line="127" column="1" bodyfile="qdb/ts.h" bodystart="126" bodyend="136"/>
+    <listofallmembers>
+      <member refid="structqdb__ts__blob__aggregation_1acc38debc4b95f77a6290558289e2a827" prot="public" virt="non-virtual"><scope>qdb_ts_blob_aggregation</scope><name>count</name></member>
+      <member refid="structqdb__ts__blob__aggregation_1a654454bded057e0a0ceae550e7fe3228" prot="public" virt="non-virtual"><scope>qdb_ts_blob_aggregation</scope><name>range</name></member>
+      <member refid="structqdb__ts__blob__aggregation_1a05f23162ad62e44ab8d37a3e6499ac63" prot="public" virt="non-virtual"><scope>qdb_ts_blob_aggregation</scope><name>result</name></member>
+      <member refid="structqdb__ts__blob__aggregation_1a565d794d67ca434ea63d43ec43a67cd7" prot="public" virt="non-virtual"><scope>qdb_ts_blob_aggregation</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

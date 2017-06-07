@@ -1,7 +1,8 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.12">
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
   <compounddef id="structqdb__ts__column__info" kind="struct" language="C++" prot="public">
     <compoundname>qdb_ts_column_info</compoundname>
+    <includes local="no">ts.h</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structqdb__ts__column__info_1ab99b4ee5ad8cefacf26cea674bbb254a" prot="public" static="no" mutable="no">
         <type>const char *</type>
@@ -9,32 +10,32 @@
         <argsstring></argsstring>
         <name>name</name>
         <briefdescription>
-        </briefdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="112" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="112" bodyend="-1"/>
+        <location file="qdb/ts.h" line="152" column="1" bodyfile="qdb/ts.h" bodystart="152" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__column__info_1aecc01a31d6003c407071910d63e2e390" prot="public" static="no" mutable="no">
-        <type>qdb_ts_column_type_t</type>
+        <type><ref refid="group__ts_1gab75b2c387f82164d5c3e8df49f7caa52" kindref="member">qdb_ts_column_type_t</ref></type>
         <definition>qdb_ts_column_type_t qdb_ts_column_info::type</definition>
         <argsstring></argsstring>
         <name>type</name>
         <briefdescription>
-        </briefdescription>
+<para>The type of the column. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="113" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="113" bodyend="-1"/>
+        <location file="qdb/ts.h" line="154" column="1" bodyfile="qdb/ts.h" bodystart="154" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-    </briefdescription>
+<para>Description of a time series column. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="C:/sources/quasardb/api/include/qdb/ts.h" line="111" column="1" bodyfile="C:/sources/quasardb/api/include/qdb/ts.h" bodystart="110" bodyend="114"/>
+    <location file="qdb/ts.h" line="149" column="1" bodyfile="qdb/ts.h" bodystart="148" bodyend="155"/>
     <listofallmembers>
       <member refid="structqdb__ts__column__info_1ab99b4ee5ad8cefacf26cea674bbb254a" prot="public" virt="non-virtual"><scope>qdb_ts_column_info</scope><name>name</name></member>
       <member refid="structqdb__ts__column__info_1aecc01a31d6003c407071910d63e2e390" prot="public" virt="non-virtual"><scope>qdb_ts_column_info</scope><name>type</name></member>
