@@ -497,7 +497,7 @@ To run a query on quasardb, use the function :func:`qdb_query`. The API transpar
     :end-before: doc-end-query
     :dedent: 12
 
-Aliases returned by :func:`qdb_query` must be freed with :func:`qdb_release`. 
+Aliases returned by :func:`qdb_query` must be freed with :func:`qdb_release`.
 
 If the query exceeds the maximum allowed cardinality, an error :cpp:enum:`qdb_e_query_too_complex` will be returned. It is possible to increase the maximum cardinality with :func:`qdb_option_set_max_cardinality`.
 
@@ -595,17 +595,10 @@ General
 .. doxygengroup:: client
   :content-only:
 
-
 Error codes
 ^^^^^^^^^^^
 
 .. doxygengroup:: error
-  :content-only:
-
-Queries
-^^^^^^^^
-
-.. doxygengroup:: query
   :content-only:
 
 Blobs
@@ -618,6 +611,12 @@ Batches
 ^^^^^^^
 
 .. doxygengroup:: batch
+  :content-only:
+
+Cluster and nodes
+^^^^^^^^^^^^^^^^^
+
+.. doxygengroup:: node
   :content-only:
 
 Deques
@@ -644,6 +643,11 @@ Prefix
 .. doxygengroup:: prefix
   :content-only:
 
+Queries
+^^^^^^^^
+
+.. doxygengroup:: query
+  :content-only:
 
 Streams
 ^^^^^^^
