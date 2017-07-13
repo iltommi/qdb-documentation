@@ -1,122 +1,25 @@
-quasardb database tool
+quasardb cluster key generator
 ******************************
 
-.. program:: qdb_dbtool
+.. program:: qdb_cluster_keygen
 
 Introduction
 ============
 
-The quasardb database tool enables you to analyze, dump, repair, backup, restore and verify backups of your quasardb node.
+The quasardb cluster key generator generates the long term private (secret) and public key of the cluster. These keys are required to secure communication between the nodes and between the nodes and the clients.
 
-Quick Reference
-===============
+Within a given cluster all nodes must share the same private key.
 
- ===================================== ============================ ==============
-                Option                             Usage                Default
- ===================================== ============================ ==============
- :option:`-h`, :option:`--help`        display help
- :option:`-v`, :option:`--version`     display qdb_dbtool version
- :option:`--database`                  path to the database
- :option:`-a`, :option:`--analyze`     analyzes the database
- :option:`-r`, :option:`--repair`      repairs the database
- :option:`-b`, :option:`--backup`      performs a database backup
- :option:`--restore`                   restores a database backup
- :option:`--verify_backup`             verifies database backups
- ===================================== ============================ ==============
+Usage
+=====
 
+The tool can output the keys in files or on the console. The private key file must be kept secure and must only be readable by the quasardb daemon.
 
-Parameters reference
-====================
+To output the keys in /etc/qdbd/cluster_public.key and /etc/qdbd/cluster_private.key::
 
-Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
+    qdb_cluster_keygen -p /etc/qdbd/cluster_public.key -s /etc/qdbd/cluster_private.key
 
-.. option:: -h, --help
+To output both keys on the console:
 
-    Displays basic usage information.
+    qdb_cluster_keygen -p - -s -
 
-.. option:: -v, --version
-
-    Displays the version of the quasardb database tool.
-
-.. option:: --database=<path>
-
-    Specifies the path to the database on which to work.
-
-    Arguments
-        A string representing the path to the database, may be relative or absolute.
-
-    Default value
-        None
-
-    Example
-        Work on a database in the current directory::
-
-            qdb_dbtool --database=.
-
-        Work on a database in the `/var/quasardb/db directory`::
-
-            qdb_dbtool --database=/var/quasardb/db directory
-
-.. option:: -a, --analyze
-
-    Requests an analysis of the database. A report will be printed to the standard output.
-
-    Example
-        Analyze the database in the current directory::
-
-            qdb_dbtool --database=. --analyze
-
-.. option:: -r, --repair
-
-    Attempts to repair the database. All data may not be recovered. Note that the :doc:`qdbd` daemon automatically attempts to repair the database if needed; this option is intended for offline operations.
-
-    Example
-        Repairs the database in the current directory::
-
-            qdb_dbtool --database=. --repair
-
-
-.. option:: -b=<path>, --backup=<path>
-
-    Performs an incremental database backup. The daemon must not be running.
-
-    Arguments
-        A string representing the path to the backup, may be relative or absolute.
-
-    Default value
-        None
-
-    Example
-        Backup a database in `/var/lib/db/qdb` to `/mnt/backups/qdb`::
-
-            qdb_dbtool --database=/var/lib/db/qdb --backup=/mnt/backups/qdb
-
-.. option:: --restore=<path>
-
-    Restores a database backup. The daemon must not be running. Data in the destination directory may be destroyed.
-
-    Arguments
-        A string representing the path to the backup from which do the restoration. May be relative or absolute.
-
-    Default value
-        None
-
-    Example
-        Restore a backup in `/var/lib/db/qdb` to `/mnt/backups/qdb`::
-
-            qdb_dbtool --database=/var/lib/db/qdb --restore=/mnt/backups/qdb
-
-.. option:: --verify_backup=<path>
-
-    Verifies a database backup.
-
-    Arguments
-        A string representing the path to the backup to verify. May be relative or absolute.
-
-    Default value
-        None
-
-    Example
-        Verify a backup in `/mnt/backups/db`::
-
-            qdb_dbtool --verify_backup=/mnt/backups/qdb

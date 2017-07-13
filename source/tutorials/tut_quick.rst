@@ -1,7 +1,7 @@
 An installation tutorial for people with very little time
 *********************************************************
 
-A minimal quasardb setup requires deploying the quasardb daemon on a single server and making sure that the client can access it.
+A minimal quasardb setup requires deploying the quasardb daemon on a single server and making sure that the client can access it. In this tutorial security will be not be enabled.
 
 .. important::
     This tutorial is based on a manual installation of quasardb, that is, we will expand an archive and configure manually the daemon. For many platform we
@@ -27,11 +27,11 @@ Without a configuration file
 
    The command is::
 
-       qdbd
+       qdbd --security=false
 
    If you have a licence file::
 
-       qdbd --license-file=qdb_license.txt
+       qdbd --license-file=qdb_license.txt --security=false
 
 .. note::
     On Windows, the installer creates and runs a quasardb service listening on the default port (2836) on the local address.
@@ -68,7 +68,7 @@ With a configuration file
 
    The command is::
 
-       qdbd -c qdbd_config.conf
+       qdbd -c qdbd_config.conf --security=false
 
 
 Using the quasardb shell to test your quasardb installation

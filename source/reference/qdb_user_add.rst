@@ -1,122 +1,51 @@
-quasardb database tool
+quasardb user adder
 ******************************
 
-.. program:: qdb_dbtool
+.. program:: qdb_user_add
 
 Introduction
 ============
 
-The quasardb database tool enables you to analyze, dump, repair, backup, restore and verify backups of your quasardb node.
+The server keeps a user list in a JSON format, which contais the list of authorized users.
 
-Quick Reference
-===============
+Example::
 
- ===================================== ============================ ==============
-                Option                             Usage                Default
- ===================================== ============================ ==============
- :option:`-h`, :option:`--help`        display help
- :option:`-v`, :option:`--version`     display qdb_dbtool version
- :option:`--database`                  path to the database
- :option:`-a`, :option:`--analyze`     analyzes the database
- :option:`-r`, :option:`--repair`      repairs the database
- :option:`-b`, :option:`--backup`      performs a database backup
- :option:`--restore`                   restores a database backup
- :option:`--verify_backup`             verifies database backups
- ===================================== ============================ ==============
+    {
+        "users": [
+            {
+                "username": "root",
+                "public_key": "PoCzwwX8Gdq7Mzz/RG6rH6vRhX84/RupFvVOjXauOEBM="
+            },
+            {
+                "username": "quant",
+                "public_key": "Pr0vI41GyHTjJX5ufc+ga0KDdzEfd5OZ6J6F5V42AHj4="
+            },
+            {
+                "username": "pnl",
+                "public_key": "PIsIvNyuiaNCQspxpz6LCDdUpP3AbKlFa3iOsj1QKgBQ="
+            }
+        ]
+    }
 
+The user list only contains public key. To connect to a cluster, an user will use it name and private key.
 
-Parameters reference
-====================
+The private key must only be known to the administrator and the authorized user.
 
-Parameters can be supplied in any order and are prefixed with ``--``. The arguments format is parameter dependent.
+The quasardb user adder tool enables you to authorize users to a quasardb secured cluster in generating the required public/private key pair and updating the users list file.
 
-.. option:: -h, --help
+Usage
+=====
 
-    Displays basic usage information.
+The user adder tool can write the information to files or on the standard output. If the provided output file for the public key already exists, the new user will be added to the existing file.
 
-.. option:: -v, --version
+To add an user named "alice" to the user files contained in /etc/qdbd/users.cfg and store the private key in the local file alice_private.key::
 
-    Displays the version of the quasardb database tool.
+    qdb_user_add -u alice -p /etc/qdbd/users.cfg -s alice_private.key
 
-.. option:: --database=<path>
+To add an user named "alice" to the user files contained in /etc/qdbd/users.cfg and output the private key to the console::
 
-    Specifies the path to the database on which to work.
+    qdb_user_add -u alice -p /etc/qdbd/users.cfg -s -
 
-    Arguments
-        A string representing the path to the database, may be relative or absolute.
+To generate a key pair for an user alice and output everything on the console::
 
-    Default value
-        None
-
-    Example
-        Work on a database in the current directory::
-
-            qdb_dbtool --database=.
-
-        Work on a database in the `/var/quasardb/db directory`::
-
-            qdb_dbtool --database=/var/quasardb/db directory
-
-.. option:: -a, --analyze
-
-    Requests an analysis of the database. A report will be printed to the standard output.
-
-    Example
-        Analyze the database in the current directory::
-
-            qdb_dbtool --database=. --analyze
-
-.. option:: -r, --repair
-
-    Attempts to repair the database. All data may not be recovered. Note that the :doc:`qdbd` daemon automatically attempts to repair the database if needed; this option is intended for offline operations.
-
-    Example
-        Repairs the database in the current directory::
-
-            qdb_dbtool --database=. --repair
-
-
-.. option:: -b=<path>, --backup=<path>
-
-    Performs an incremental database backup. The daemon must not be running.
-
-    Arguments
-        A string representing the path to the backup, may be relative or absolute.
-
-    Default value
-        None
-
-    Example
-        Backup a database in `/var/lib/db/qdb` to `/mnt/backups/qdb`::
-
-            qdb_dbtool --database=/var/lib/db/qdb --backup=/mnt/backups/qdb
-
-.. option:: --restore=<path>
-
-    Restores a database backup. The daemon must not be running. Data in the destination directory may be destroyed.
-
-    Arguments
-        A string representing the path to the backup from which do the restoration. May be relative or absolute.
-
-    Default value
-        None
-
-    Example
-        Restore a backup in `/var/lib/db/qdb` to `/mnt/backups/qdb`::
-
-            qdb_dbtool --database=/var/lib/db/qdb --restore=/mnt/backups/qdb
-
-.. option:: --verify_backup=<path>
-
-    Verifies a database backup.
-
-    Arguments
-        A string representing the path to the backup to verify. May be relative or absolute.
-
-    Default value
-        None
-
-    Example
-        Verify a backup in `/mnt/backups/db`::
-
-            qdb_dbtool --verify_backup=/mnt/backups/qdb
+    qdb_user_add -u alice -p - -s -

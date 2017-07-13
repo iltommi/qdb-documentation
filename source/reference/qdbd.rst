@@ -561,7 +561,15 @@ Instance specific
 
  .. option:: --user-list=<path>
 
- 
+    A path to the user lists containing the user names and their respective public key in JSON format.
+
+    Example
+        Use the file /etc/qdbd/users.cfg::
+
+            qdbd --user-list=/etc/qdbd/users.cfg
+
+    .. note::
+        A users list is required for security to work (see :doc:`../reference/qdb_user_add`).
 
 Global
 ----------
@@ -846,3 +854,15 @@ The default configuration file is shown below::
 .. describe:: global::security::enable_purge_all
 
     Allows the cluster to be remotely purged via an API call. False by default.
+
+.. describe:: global::security::enabled
+
+    Enables cluster security and authentication.
+
+.. describe:: global::security::cluster_private_file
+
+    Specifies the path to the cluster private key file (see :doc:`../reference/qdb_cluster_keygen`). This file must not be accessible to the daemon only.
+
+.. describe:: global::security::user_list
+
+    Specifies the path to the users list (see :doc:`../reference/qdb_user_add`). This file must be writable by the administrator only.
