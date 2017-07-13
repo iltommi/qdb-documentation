@@ -10,6 +10,8 @@ Application Reference
    :maxdepth: 2
 
    qdbd
+   qdb_cluster_keygen
+   qdb_user_add
    qdb_shell
    qdb_httpd
    qdb_dbtool

@@ -526,6 +526,43 @@ Instance specific
         Although this parameter is global, the directory refers to the local node of each instance.
 
 
+.. option:: --security=<boolean>
+
+    Enables or disables cluster security.
+
+    Argument
+        A boolean specifiying whether or not security should be enabled.
+
+    Default value
+        True
+
+    Example
+        To disable security completely::
+
+            qdbd --security=false
+
+    .. note::
+        To work, security needs a cluster private key and an users list.
+
+.. option:: --cluster-private-file=<path>
+
+    A path to the cluster private key file.
+
+    Argument
+        A string representing a full path to the cluster private key file.
+
+    Example
+        Use the file /etc/qdbd/cluster_private.key::
+
+            qdbd --cluster-private-file=/etc/qdbd/cluster_private.key
+
+    .. note::
+        A cluster private key file is required for security to work (see :doc:`../reference/qdb_cluster_keygen`).
+
+ .. option:: --user-list=<path>
+
+ 
+
 Global
 ----------
 
@@ -579,8 +616,8 @@ The default configuration file is shown below::
                 "write_buffer_size": 0,
                 "metadata_mem_budget": 268435456,
                 "data_cache": 134217728,
-                "threads": 2,
-                "hi_threads": 1,
+                "threads": 4,
+                "hi_threads": 2,
                 "max_open_files": 10000
             },
             "user": {
@@ -590,7 +627,8 @@ The default configuration file is shown below::
             },
             "limiter": {
                 "max_resident_entries": 0,
-                "max_bytes": 0
+                "max_bytes": 0,
+                "max_trim_queue_length": 10000000
             },
             "logger": {
                 "log_level": 2,
@@ -601,7 +639,7 @@ The default configuration file is shown below::
             },
             "network": {
                 "server_sessions": 20000,
-                "partitions_count": 1,
+                "partitions_count": 9,
                 "idle_timeout": 600,
                 "client_timeout": 60,
                 "listen_on": "127.0.0.1:2836"
@@ -624,10 +662,14 @@ The default configuration file is shown below::
             },
             "security": {
                 "enable_stop": false,
-                "enable_purge_all": false
+                "enable_purge_all": false,
+                "enabled": true,
+                "cluster_private_file": "",
+                "user_list": ""
             }
         }
     }
+
 
 .. describe:: local::depot::sync_every_write
 

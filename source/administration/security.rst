@@ -14,14 +14,23 @@ quasardb only needs the following privileges:
 For more information on how to change the quasardb daemon configuration for your environment, see :doc:`../reference/qdbd`.
 
 Authentication
-----------------
-There is no authentication mechanism of any sort; access to the server implies access to any entry, should the key be known.
+---------------
+QuasarDB has a built-in authentication mechanism based on asymetric cryptography, supports end-to-end strong encryption as well as message integrity.
 
-If the stored data is sensitive, it is strongly advised to cipher this data.
+..note::
+    The key exchange algorithm used is X25519, encryption is done with the XSalsa20 stream cipher, and authentication is made using Poly1305 MAC. The implementation is based on libsodium.
 
-quasardb is generally used within an internal network. It is strongly discouraged to expose a quasardb cluster directly to the public (for example on the Internet).
+When configuring a cluster, the administrator must generate a long-term cluster key pair that will be reused for the nodes within the cluster, the public key part will be used by the clients connecting to the cluster, whereas the secret key should only be kept on the server and must never be communicated to any client (see :doc:`../reference/qdb_cluster_keygen`).
 
-Should public write access be necessary, a better approach is to design a proxy client that will authenticate and sanitize requests before handing them over to quasardb.
+The admnistrator then must add users to the cluster. Each user has a long-term key pair made of a private (also known as secret) key and public key. The server will keep the public key of each user will keep the secret authentication information (see :doc:`../reference/qdb_user_add`).
+
+It is possible to completely disable security and authentication, for example for test clusters or clusters running in physically secure environments.
+
+Perfect forward secrecy
+-----------------------
+The QuasarDB security protocol provides perfect forward secrecy by default. This means that communications recorded in the past cannot be decoded should any of the long-term private key be compromised.
+
+Each client connecting to the cluster uses a two phase authentication where a temporary, short-term key pair is generated and exchanged using the long-term keys to generate a symmetric session key.
 
 Design
 -------
