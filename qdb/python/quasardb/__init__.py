@@ -1,4 +1,4 @@
-# pylint: disable=C0103,C0111,C0302
+# pylint: disable=C0103,C0111,C0302,R0903
 
 # Copyright (c) 2009-2017, quasardb SAS
 # All rights reserved.
@@ -59,7 +59,8 @@ def __make_enum(type_name, prefix):
 
     return type(type_name, (), members)
 
-Error = __make_enum('Error', 'error_')
+
+ErrorCode = __make_enum('ErrorCode', 'error_')
 Options = __make_enum('Option', 'option_')
 Operation = __make_enum('Operation', 'operation_')
 Protocol = __make_enum('Protocol', 'protocol_')
@@ -76,19 +77,62 @@ def make_error_string(error_code):
     return impl.make_error_string(error_code)
 
 
-class QuasardbException(Exception):
-    """The quasardb exception, based on the API error codes."""
+class Error(Exception):
+    """The quasardb database exception, based on the API error codes."""
 
     def __init__(self, error_code=0):
         assert isinstance(error_code, int)
         Exception.__init__(self)
-        self.error_code = error_code
+        self.code = error_code
+        self.origin = impl.error_origin(error_code)
+        self.severity = impl.error_severity(error_code)
+
+        self.error_code = self.code  # Deprecated. Use code.
 
     def __repr__(self):
         return "quasardb exception - code " + str(self.error_code)
 
     def __str__(self):
         return make_error_string(self.error_code)
+
+
+# Deprecated name. Please use Error.
+QuasardbException = Error
+
+
+class RemoteSystemError(Error):
+    pass
+
+
+class LocalSystemError(Error):
+    pass
+
+
+class ConnectionError(Error):
+    pass
+
+
+class InputError(Error):
+    pass
+
+
+class OperationError(Error):
+    pass
+
+
+class ProtocolError(Error):
+    pass
+
+
+def chooseError(error_code=0):
+    return {
+        impl.error_origin_system_remote: RemoteSystemError(error_code),
+        impl.error_origin_system_local: LocalSystemError(error_code),
+        impl.error_origin_connection: ConnectionError(error_code),
+        impl.error_origin_input: InputError(error_code),
+        impl.error_origin_operation: OperationError(error_code),
+        impl.error_origin_protocol: ProtocolError(error_code)
+    }.get(impl.error_origin(error_code), Error(error_code))
 
 
 def version():
@@ -108,7 +152,9 @@ def build():
 
 
 def _duration_to_timeout_ms(duration):
-    return long(duration.days * 24 * 3600 * 1000 + duration.seconds * 1000 + duration.microseconds / 1000)
+    seconds_in_day = 24L * 60L * 60L
+    return (duration.days * seconds_in_day + duration.seconds) * 1000L \
+        + (duration.microseconds / 1000L)
 
 
 def _api_buffer_to_string(buf):
@@ -134,17 +180,22 @@ class TimeZone(datetime.tzinfo):
     def dst(self, _):
         return datetime.timedelta(0)
 
+
 tz = TimeZone()
+
 
 def _time_to_unix_timestamp(t, tz_offset):
     return long(time.mktime((t.year, t.month, t.day, t.hour, t.minute, t.second, -1, -1, 0))) \
         - tz_offset
 
+
 def _time_to_qdb_timestamp(t, tz_offset):
-    return _time_to_unix_timestamp(t, tz_offset) * long(1000) + long(t.microsecond) / long(1000)
+    return _time_to_unix_timestamp(t, tz_offset) * 1000L + t.microsecond / 1000L
+
 
 def _convert_expiry_time(expiry_time):
-    return _time_to_qdb_timestamp(expiry_time, time.timezone) if expiry_time != None else long(0)
+    return _time_to_qdb_timestamp(expiry_time, time.timezone) if expiry_time != None else 0L
+
 
 def _convert_time_couples_to_qdb_range_t_vector(time_couples):
     vec = impl.RangeVec()
@@ -152,18 +203,11 @@ def _convert_time_couples_to_qdb_range_t_vector(time_couples):
     c = len(time_couples)
 
     vec.resize(c)
-
-    tz_offset = time.timezone
-
-    for i in range(0, c):
-        vec[i].begin.tv_sec = _time_to_unix_timestamp(
-            time_couples[i][0], tz_offset)
-        vec[i].begin.tv_nsec = long(time_couples[i][0].microsecond) * 1000
-        vec[i].end.tv_sec = _time_to_unix_timestamp(
-            time_couples[i][1], tz_offset)
-        vec[i].end.tv_nsec = long(time_couples[i][1].microsecond) * 1000
+    for i in xrange(c):
+        vec[i] = _convert_time_couple_to_qdb_range_t(time_couples[i])
 
     return vec
+
 
 def _convert_to_wrap_ts_blop_points_vector(tuples):
     vec = impl.BlobPointVec()
@@ -174,10 +218,10 @@ def _convert_to_wrap_ts_blop_points_vector(tuples):
 
     tz_offset = time.timezone
 
-    for i in range(0, c):
+    for i in xrange(c):
         vec[i].timestamp.tv_sec = _time_to_unix_timestamp(
             tuples[i][0], tz_offset)
-        vec[i].timestamp.tv_nsec = long(tuples[i][0].microsecond) * 1000
+        vec[i].timestamp.tv_nsec = tuples[i][0].microsecond * 1000L
         vec[i].data = tuples[i][1]
 
     return vec
@@ -192,10 +236,10 @@ def make_qdb_ts_double_point_vector(time_points):
 
     tz_offset = time.timezone
 
-    for i in range(0, c):
+    for i in xrange(c):
         vec[i].timestamp.tv_sec = _time_to_unix_timestamp(
             time_points[i][0], tz_offset)
-        vec[i].timestamp.tv_nsec = long(time_points[i][0].microsecond) * 1000
+        vec[i].timestamp.tv_nsec = time_points[i][0].microsecond * 1000L
         vec[i].value = time_points[i][1]
 
     return vec
@@ -211,10 +255,26 @@ def _convert_qdb_range_t_to_time_couple(qdb_range):
             _convert_qdb_timespec_to_time(qdb_range.end))
 
 
+def _convert_time_couple_to_qdb_range_t(time_couple):
+    tz_offset = time.timezone
+
+    rng = impl.qdb_ts_range_t()
+
+    rng.begin.tv_sec = _time_to_unix_timestamp(
+        time_couple[0], tz_offset)
+    rng.begin.tv_nsec = time_couple[0].microsecond * 1000L
+    rng.end.tv_sec = _time_to_unix_timestamp(
+        time_couple[1], tz_offset)
+    rng.end.tv_nsec = time_couple[1].microsecond * 1000L
+
+    return rng
+
+
 def make_error_carrier():
     err = impl.error_carrier()
     err.error = impl.error_uninitialized
     return err
+
 
 class Entry(object):
 
@@ -236,14 +296,14 @@ class Entry(object):
             :type tag: str
 
             :returns: True if the tag was successfully attached, False if it was already attached
-            :raises: QuasardbException
+            :raises: Error
         """
         err = self.handle.attach_tag(self.alias(), tag)
         if err == impl.error_tag_already_set:
             return False
 
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
         return True
 
@@ -255,7 +315,7 @@ class Entry(object):
             :type tag: str
 
             :returns: True if the tag was successfully detached, False if it was not attached
-            :raises: QuasardbException
+            :raises: Error
         """
         err = self.handle.detach_tag(self.alias(), tag)
 
@@ -263,7 +323,7 @@ class Entry(object):
             return False
 
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
         return True
 
@@ -272,12 +332,12 @@ class Entry(object):
             Returns the list of tags attached to the entry
 
             :returns: A list of alias (stings) of tags
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
         result = impl.get_tags(self.handle, self.alias(), err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return result
 
     def has_tag(self, tag):
@@ -287,17 +347,18 @@ class Entry(object):
             :param tag: The tag to test
             :type tag: str
 
-            :returns: True if the entry has the speciefied tag, False otherwise
-            :raises: QuasardbException
+            :returns: True if the entry has the specified tag, False otherwise
+            :raises: Error
         """
         err = self.handle.has_tag(self.alias(), tag)
         if err == impl.error_tag_not_set:
             return False
 
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
         return True
+
 
 class RemoveableEntry(Entry):
 
@@ -308,11 +369,12 @@ class RemoveableEntry(Entry):
         """
         Removes the given Entry from the repository. It is an error to remove a non-existing Entry.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.remove(self.alias())
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
+
 
 class ExpirableEntry(RemoveableEntry):
 
@@ -326,12 +388,12 @@ class ExpirableEntry(RemoveableEntry):
         :param expiry_time: The expiry time, must be offset aware
         :type expiry_time: datetime.datetime
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.expires_at(
             super(ExpirableEntry, self).alias(), _convert_expiry_time(expiry_time))
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def expires_from_now(self, expiry_delta):
         """
@@ -340,28 +402,29 @@ class ExpirableEntry(RemoveableEntry):
         :param expiry_delta: The expiry delta in milliseconds
         :type expiry_delta: long
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.expires_from_now(
             super(ExpirableEntry, self).alias(), long(expiry_delta))
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def get_expiry_time(self):
         """
         Returns the expiry time of the Entry.
 
         :returns: datetime.datetime -- The expiry time, offset aware
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         t = impl.get_expiry_time_wrapper(
             self.handle, super(ExpirableEntry, self).alias(), err)
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
 
         return datetime.datetime.fromtimestamp(t, tz)
+
 
 class Tag(Entry):
     """
@@ -374,13 +437,14 @@ class Tag(Entry):
     def get_entries(self):
         """
             Returns all entries with the tag
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
         result = impl.get_tagged(self.handle, self.alias(), err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return result
+
 
 class Integer(ExpirableEntry):
     """
@@ -397,12 +461,12 @@ class Integer(ExpirableEntry):
             Returns the current value of the entry, as an integer.
 
             :returns: The value of the entry as an integer
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
         res = impl.int_get(self.handle, super(Integer, self).alias(), err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return res
 
     def put(self, number, expiry_time=None):
@@ -414,13 +478,13 @@ class Integer(ExpirableEntry):
             :param expiry_time: The expiry time for the alias
             :type expiry_time: datetime.datetime
 
-            :raises: QuasardbException
+            :raises: Error
         """
-        assert isinstance(number, long) or isinstance(number, int)
+        assert isinstance(number, (int, long))
         err = self.handle.int_put(super(Integer, self).alias(
         ), number, _convert_expiry_time(expiry_time))
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def update(self, number, expiry_time=None):
         """
@@ -431,13 +495,13 @@ class Integer(ExpirableEntry):
             :param expiry_time: The expiry time for the alias
             :type expiry_time: datetime.datetime
 
-            :raises: QuasardbException
+            :raises: Error
         """
-        assert isinstance(number, long) or isinstance(number, int)
+        assert isinstance(number, (int, long))
         err = self.handle.int_update(
             super(Integer, self).alias(), number, _convert_expiry_time(expiry_time))
         if not ((err == impl.error_ok) or (err == impl.error_ok_created)):
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def add(self, addend):
         """
@@ -449,14 +513,14 @@ class Integer(ExpirableEntry):
             :type number: long
 
             :returns: The value of the entry post add
-            :raises: QuasardbException
+            :raises: Error
         """
-        assert isinstance(addend, long) or isinstance(addend, int)
+        assert isinstance(addend, (int, long))
         err = make_error_carrier()
         res = impl.int_add(self.handle, super(
             Integer, self).alias(), addend, err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return res
 
 
@@ -476,11 +540,11 @@ class Deque(RemoveableEntry):
         :param data: The content for the Entry
         :type data: str
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.deque_push_front(super(Deque, self).alias(), data)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def push_back(self, data):
         """
@@ -490,17 +554,17 @@ class Deque(RemoveableEntry):
         :param data: The content for the Entry
         :type data: str
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.deque_push_back(super(Deque, self).alias(), data)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def __deque_getter(self, f):
         err = make_error_carrier()
         buf = f(self.handle, super(Deque, self).alias(), err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return _api_buffer_to_string(buf)
 
     def pop_front(self):
@@ -508,7 +572,7 @@ class Deque(RemoveableEntry):
         Atomically returns and remove the first Entry of the deque.
         The deque must exist and must not be empty.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: The first Entry of the deque
         """
         return self.__deque_getter(impl.deque_pop_front)
@@ -518,7 +582,7 @@ class Deque(RemoveableEntry):
         Atomically returns and remove the last Entry of the deque.
         The deque must exist and must not be empty.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: The last Entry of the deque
         """
         return self.__deque_getter(impl.deque_pop_back)
@@ -528,7 +592,7 @@ class Deque(RemoveableEntry):
         Returns the first Entry of the deque.
         The deque must exist and must not be empty.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: The first Entry of the deque
         """
         return self.__deque_getter(impl.deque_front)
@@ -538,7 +602,7 @@ class Deque(RemoveableEntry):
         Returns the last Entry of the deque.
         The deque must exist and must not be empty.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: The last Entry of the deque
         """
         return self.__deque_getter(impl.deque_back)
@@ -547,10 +611,14 @@ class Deque(RemoveableEntry):
         """
         Returns the current size of the deque.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: The current size of the deque.
         """
-        raise QuasardbException(impl.error_not_implemented)
+        err = make_error_carrier()
+        res = impl.deque_size(self.handle, super(Deque, self).alias(), err)
+        if err.error != impl.error_ok:
+            raise chooseError(err.error)
+        return res
 
 
 class HSet(RemoveableEntry):
@@ -566,28 +634,28 @@ class HSet(RemoveableEntry):
         Inserts a new Entry into the hash set.
         If the hash set does not exist, it will be created.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.hset_insert(super(HSet, self).alias(), data)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def erase(self, data):
         """
         Erases an existing an Entry from an existing hash set.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.hset_erase(super(HSet, self).alias(), data)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def contains(self, data):
         """
         Tests if the Entry exists in the hash set.
         The hash set must exist.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: True if the Entry exists, false otherwise
         """
         err = self.handle.hset_contains(super(HSet, self).alias(), data)
@@ -596,18 +664,19 @@ class HSet(RemoveableEntry):
             return False
 
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
         return True
 
-    def size(self):
+    def size(self):  # pylint: disable=R0201
         """
         Returns the current size of the hash set.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: The current size of the hash set.
         """
-        raise QuasardbException(impl.error_not_implemented)
+        # TODO(marek): Implement.
+        raise chooseError(impl.error_not_implemented)
 
 
 class TimeSeries(RemoveableEntry):
@@ -619,25 +688,79 @@ class TimeSeries(RemoveableEntry):
     Aggregation = TSAggregation
     ColumnType = TSColumnType
 
-    class AggregationResult:
+    class BlobAggregationResult(object):
         """
         An aggregation result holding the range on which the aggregation was perfomed,
         the result value as well as the timestamp if it applies.
         """
 
-        def __init__(self, t, r, ts, value):
+        def __init__(self, t, r, ts, count, content, content_length):
             self.type = t
             self.range = r
             self.timestamp = ts
+            self.count = count
+            self.content = impl.api_content_as_string(content, content_length)
+            self.content_length = content_length
+
+    class DoubleAggregationResult(object):
+        """
+        An aggregation result holding the range on which the aggregation was perfomed,
+        the result value as well as the timestamp if it applies.
+        """
+
+        def __init__(self, t, r, ts, count, value):
+            self.type = t
+            self.range = r
+            self.timestamp = ts
+            self.count = count
             self.value = value
 
-    class DoubleAggregations:
-        """
-        A list of double aggregations
-        """
-
+    class BlobAggregations(object):
         def __init__(self, size=0):
-            self.__aggregations = impl.AggDoubleVec()
+            self.__aggregations = impl.BlobAggVec()
+            self.__aggregations.reserve(size)
+
+        def append(self, agg_type, time_couple):
+            """
+            Appends an aggregation
+
+            :param agg_type: the type of aggregation
+            :type agg_type: TimeSeries.Aggregation
+
+            :param time_couple: the interval on which to perform the aggregation
+            :type time_couple: a couple of datetime.datetime
+            """
+            agg = impl.qdb_ts_blob_aggregation_t()
+
+            agg.type = agg_type
+            agg.range = _convert_time_couple_to_qdb_range_t(time_couple)
+            agg.count = 0
+            agg.result.content_length = 0
+
+            self.__aggregations.push_back(agg)
+
+        def __getitem__(self, index):
+            if self.__aggregations.size() <= index:
+                raise IndexError()
+
+            agg = self.__aggregations[index]
+            return TimeSeries.BlobAggregationResult(
+                agg.type,
+                _convert_qdb_range_t_to_time_couple(agg.range),
+                _convert_qdb_timespec_to_time(agg.result.timestamp),
+                agg.count,
+                agg.result.content,
+                agg.result.content_length)
+
+        def __len__(self):
+            return self.__aggregations.size()
+
+        def cpp_struct(self):
+            return self.__aggregations
+
+    class DoubleAggregations(object):
+        def __init__(self, size=0):
+            self.__aggregations = impl.DoubleAggVec()
             self.__aggregations.reserve(size)
 
         def append(self, agg_type, time_couple):
@@ -652,15 +775,10 @@ class TimeSeries(RemoveableEntry):
             """
             agg = impl.qdb_ts_double_aggregation_t()
 
-            agg.result.value = 0.0
             agg.type = agg_type
-
-            tz_offset = time.timezone
-
-            agg.range.begin.tv_sec = _time_to_unix_timestamp(time_couple[0], tz_offset)
-            agg.range.begin.tv_nsec = long(time_couple[0].microsecond) * 1000
-            agg.range.end.tv_sec = _time_to_unix_timestamp(time_couple[1], tz_offset)
-            agg.range.end.tv_nsec = long(time_couple[1].microsecond) * 1000
+            agg.range = _convert_time_couple_to_qdb_range_t(time_couple)
+            agg.count = 0
+            agg.result.value = 0.0
 
             self.__aggregations.push_back(agg)
 
@@ -669,10 +787,12 @@ class TimeSeries(RemoveableEntry):
                 raise IndexError()
 
             agg = self.__aggregations[index]
-            return TimeSeries.AggregationResult(agg.type, 
-                _convert_qdb_range_t_to_time_couple(agg.range), 
+            return TimeSeries.DoubleAggregationResult(
+                agg.type,
+                _convert_qdb_range_t_to_time_couple(agg.range),
                 _convert_qdb_timespec_to_time(agg.result.timestamp),
-                 agg.result.value)
+                agg.count,
+                agg.result.value)
 
         def __len__(self):
             return self.__aggregations.size()
@@ -729,23 +849,23 @@ class TimeSeries(RemoveableEntry):
             """
             return self.__col_name
 
-        def aggregate(self, aggregations):
+        def aggregate(self, ts_func, aggregations):
             """
             Aggregates values over the given intervals
 
+            :param ts_func: Function to call
             :param aggregations: The aggregations to perform
-            :type aggregations: a list of datetime.datetime couples
 
-            :raises: QuasardbException
+            :raises: Error
             :returns: The list of aggregation results
             """
             error_carrier = make_error_carrier()
 
-            res = self.call_ts_fun(impl.ts_double_aggregation, aggregations.cpp_struct(),
-                                   error_carrier)
+            self.call_ts_fun(ts_func, aggregations.cpp_struct(),
+                             error_carrier)
 
             if error_carrier.error != impl.error_ok:
-                raise QuasardbException(error_carrier.error)
+                raise chooseError(error_carrier.error)
 
             return aggregations
 
@@ -754,9 +874,6 @@ class TimeSeries(RemoveableEntry):
         A column whose value are double precision floats
         """
 
-        def __init__(self, ts, col_name):
-            super(TimeSeries.DoubleColumn, self).__init__(ts, col_name)
-
         def insert(self, tuples):
             """
             Inserts values into the time series.
@@ -764,12 +881,12 @@ class TimeSeries(RemoveableEntry):
             :param tuples: The list of couples to insert into the time series
             :type tuples: list of datetime.datetime, float couples
 
-            :raises: QuasardbException
+            :raises: Error
             """
             err = super(TimeSeries.DoubleColumn, self).call_ts_fun(
                 impl.ts_double_insert, make_qdb_ts_double_point_vector(tuples))
             if err != impl.error_ok:
-                raise QuasardbException(err)
+                raise chooseError(err)
 
         def get_ranges(self, intervals):
             """
@@ -778,7 +895,7 @@ class TimeSeries(RemoveableEntry):
             :param intervals: The intervals for which the ranges should be returned
             :type intervals: A list of datetime.datetime couples
 
-            :raises: QuasardbException
+            :raises: Error
             :returns: A flattened list of datetime.datetime, float couples
             """
             error_carrier = make_error_carrier()
@@ -788,17 +905,27 @@ class TimeSeries(RemoveableEntry):
                 _convert_time_couples_to_qdb_range_t_vector(intervals),
                 error_carrier)
             if error_carrier.error != impl.error_ok:
-                raise QuasardbException(error_carrier.error)
+                raise chooseError(error_carrier.error)
 
             return [(_convert_qdb_timespec_to_time(x.timestamp), x.value) for x in res]
+
+        def aggregate(self, aggregations):  # pylint: disable=W0221
+            """
+            Aggregates values over the given intervals
+
+            :param aggregations: The aggregations to perform
+            :type aggregations: a list of datetime.datetime couples
+
+            :raises: Error
+            :returns: The list of aggregation results
+            """
+            return super(TimeSeries.DoubleColumn, self).aggregate(
+                impl.ts_double_aggregation, aggregations)
 
     class BlobColumn(Column):
         """
         A column whose values are blobs
         """
-
-        def __init__(self, ts, col_name):
-            super(TimeSeries.BlobColumn, self).__init__(ts, col_name)
 
         def insert(self, tuples):
             """
@@ -807,12 +934,12 @@ class TimeSeries(RemoveableEntry):
             :param tuples: The list of couples to insert into the time series
             :type tuples: list of datetime.datetime, str couples
 
-            :raises: QuasardbException
+            :raises: Error
             """
             err = super(TimeSeries.BlobColumn, self).call_ts_fun(
                 impl.ts_blob_insert, _convert_to_wrap_ts_blop_points_vector(tuples))
             if err != impl.error_ok:
-                raise QuasardbException(err)
+                raise chooseError(err)
 
         def get_ranges(self, intervals):
             """
@@ -821,7 +948,7 @@ class TimeSeries(RemoveableEntry):
             :param intervals: The intervals for which the ranges should be returned
             :type intervals: A list of datetime.datetime couples
 
-            :raises: QuasardbException
+            :raises: Error
             :returns: A flattened list of datetime.datetime, str couples
             """
             error_carrier = make_error_carrier()
@@ -831,9 +958,22 @@ class TimeSeries(RemoveableEntry):
                 _convert_time_couples_to_qdb_range_t_vector(intervals),
                 error_carrier)
             if error_carrier.error != impl.error_ok:
-                raise QuasardbException(error_carrier.error)
+                raise chooseError(error_carrier.error)
 
             return [(_convert_qdb_timespec_to_time(x.timestamp), x.data) for x in res]
+
+        def aggregate(self, aggregations):  # pylint: disable=W0221
+            """
+            Aggregates values over the given intervals
+
+            :param aggregations: The aggregations to perform
+            :type aggregations: a list of datetime.datetime couples
+
+            :raises: Error
+            :returns: The list of aggregation results
+            """
+            return super(TimeSeries.BlobColumn, self).aggregate(
+                impl.ts_blob_aggregation, aggregations)
 
     def __init__(self, handle, alias, *args, **kwargs):
         super(TimeSeries, self).__init__(handle, alias)
@@ -848,13 +988,13 @@ class TimeSeries(RemoveableEntry):
         :param columns: A list describing the columns to create
         :type columns: a list of TimeSeries.ColumnInfo
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: A list of columns matching the created columns
         """
         err = self.call_ts_fun(
             impl.ts_create, [impl.wrap_ts_column(x.name, x.type) for x in columns])
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
         return [self.column(x) for x in columns]
 
@@ -865,7 +1005,7 @@ class TimeSeries(RemoveableEntry):
         :param col_info: A description of the column to access
         :type col_info: TimeSeries.ColumnInfo
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: A TimeSeries.Column matching the provided information
         """
         if col_info.type == TimeSeries.ColumnType.blob:
@@ -874,13 +1014,13 @@ class TimeSeries(RemoveableEntry):
         if col_info.type == TimeSeries.ColumnType.double:
             return TimeSeries.DoubleColumn(self, col_info.name)
 
-        raise QuasardbException(Error.invalid_argument)
+        raise chooseError(ErrorCode.invalid_argument)
 
     def columns(self):
         """
         Returns all existing columns.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: A list of all existing columns as TimeSeries.Column objects
         """
         return [self.column(x) for x in self.columns_info()]
@@ -889,13 +1029,13 @@ class TimeSeries(RemoveableEntry):
         """
         Returns all existing columns information.
 
-        :raises: QuasardbException
+        :raises: Error
         :returns: A list of all existing columns as TimeSeries.ColumnInfo objects
         """
         error_carrier = make_error_carrier()
         raw_cols = self.call_ts_fun(impl.ts_list_columns, error_carrier)
         if error_carrier.error != impl.error_ok:
-            raise QuasardbException(error_carrier.error)
+            raise chooseError(error_carrier.error)
 
         return [TimeSeries.ColumnInfo(x.name, x.type) for x in raw_cols]
 
@@ -916,12 +1056,12 @@ class Blob(ExpirableEntry):
             :param expiry_time: The expiry time for the alias
             :type expiry_time: datetime.datetime
 
-            :raises: QuasardbException
+            :raises: Error
         """
         err = self.handle.blob_put(
             super(Blob, self).alias(), data, _convert_expiry_time(expiry_time))
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def update(self, data, expiry_time=None):
         """ Updates the given alias.
@@ -933,24 +1073,24 @@ class Blob(ExpirableEntry):
             :param expiry_time: The expiry time for the alias
             :type expiry_time: datetime.datetime
 
-            :raises: QuasardbException
+            :raises: Error
         """
         err = self.handle.blob_update(
             super(Blob, self).alias(), data, _convert_expiry_time(expiry_time))
         if not ((err == impl.error_ok) or (err == impl.error_ok_created)):
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def get(self):
         """ Gets the data for the given alias.
         It is an error to request a non-existing blob.
 
             :returns: str -- The associated content
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
         buf = impl.blob_get(self.handle, super(Blob, self).alias(), err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
 
         return _api_buffer_to_string(buf)
 
@@ -965,13 +1105,13 @@ class Blob(ExpirableEntry):
             :type expiry_time: datetime.datetime
 
             :returns: str -- The original content
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
         buf = impl.blob_get_and_update(self.handle, super(
             Blob, self).alias(), data, _convert_expiry_time(expiry_time), err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
 
         return _api_buffer_to_string(buf)
 
@@ -981,13 +1121,13 @@ class Blob(ExpirableEntry):
         If expiry_time is None, the entry never expires.
 
             :returns: str -- The associated content
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
         buf = impl.blob_get_and_remove(
             self.handle, super(Blob, self).alias(), err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
 
         return _api_buffer_to_string(buf)
 
@@ -1003,7 +1143,7 @@ class Blob(ExpirableEntry):
             :type expiry_time: datetime.datetime
 
             :returns: str -- The original content or None if it mached
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
         buf = impl.blob_compare_and_swap(self.handle, super(Blob, self).alias(
@@ -1012,7 +1152,7 @@ class Blob(ExpirableEntry):
             return _api_buffer_to_string(buf)
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
 
         return None
 
@@ -1023,11 +1163,11 @@ class Blob(ExpirableEntry):
             :param comparand: The content to compare to
             :type comparand: str
 
-            :raises: QuasardbException
+            :raises: Error
         """
         err = self.handle.blob_remove_if(super(Blob, self).alias(), comparand)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
 
 class Cluster(object):
@@ -1044,7 +1184,7 @@ class Cluster(object):
             :param timeout: The connection timeout
             :type timeout: datetime.timedelta
 
-            :raises: QuasardbException
+            :raises: Error
         """
         err = make_error_carrier()
 
@@ -1053,12 +1193,12 @@ class Cluster(object):
 
         timeout_value = _duration_to_timeout_ms(timeout)
         if timeout_value == 0:
-            raise QuasardbException(impl.error_invalid_argument)
+            raise chooseError(impl.error_invalid_argument)
 
         self.handle = None
         self.handle = impl.connect(uri, timeout_value, err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
 
     def __del__(self):
         """ On delete, the connection is closed. """
@@ -1075,11 +1215,15 @@ class Cluster(object):
         :param max_cardinality: The cardinality value
         :type max_cardinality: long
 
-        :raises: QuasardbException
+        :raises: Error
         """
-        err = self.handle.set_max_cardinality(long(max_cardinality))
+        long_max_cardinality = long(max_cardinality)
+        if long_max_cardinality < 0:
+            raise chooseError(impl.error_invalid_argument)
+
+        err = self.handle.set_max_cardinality(long_max_cardinality)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def set_timeout(self, duration):
         """
@@ -1091,14 +1235,14 @@ class Cluster(object):
         :param duration: The timeout value
         :type duration: datetime.timedelta
 
-        :raises: QuasardbException
+        :raises: Error
         """
         timeout_value = _duration_to_timeout_ms(duration)
         if timeout_value == 0:
-            raise QuasardbException(impl.error_invalid_argument)
+            raise chooseError(impl.error_invalid_argument)
         err = self.handle.set_timeout(timeout_value)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def blob(self, alias):
         """
@@ -1179,14 +1323,14 @@ class Cluster(object):
         :param timeout: Operation timeout
         :type timeout: datetime.timedelta
 
-        :raises: QuasardbException
+        :raises: Error
 
         .. caution::
             This method is intended for very specific usage scenarii. Use at your own risks.
         """
         err = self.handle.purge_all(_duration_to_timeout_ms(timeout))
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def trim_all(self, timeout):
         """
@@ -1195,11 +1339,11 @@ class Cluster(object):
         :param timeout: Operation timeout
         :type timeout: datetime.timedelta
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = self.handle.trim_all(_duration_to_timeout_ms(timeout))
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def stop_node(self, uri, reason):
         """
@@ -1210,14 +1354,14 @@ class Cluster(object):
         :param reason: A string describing the reason for the stop
         :type reason: str
 
-        :raises: QuasardbException
+        :raises: Error
 
         .. caution::
             This method is intended for very specific usage scenarii. Use at your own risks.
         """
         err = self.handle.stop_node(uri, reason)
         if err != impl.error_ok:
-            raise QuasardbException(err)
+            raise chooseError(err)
 
     def node_config(self, uri):
         """
@@ -1228,12 +1372,12 @@ class Cluster(object):
 
         :returns: dict -- The requested configuration
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         res = impl.node_config(self.handle, uri, err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return json.loads(res)
 
     def node_status(self, uri):
@@ -1245,12 +1389,12 @@ class Cluster(object):
 
         :returns: dict -- The requested status
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         res = impl.node_status(self.handle, uri, err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return json.loads(res)
 
     def node_topology(self, uri):
@@ -1262,12 +1406,12 @@ class Cluster(object):
 
         :returns: dict -- The requested topology
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         res = impl.node_topology(self.handle, uri, err)
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return json.loads(res)
 
     def query(self, q):
@@ -1279,13 +1423,13 @@ class Cluster(object):
 
         :returns: The list of matching aliases. If no match is found, returns an empty list.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         result = impl.run_query(self.handle, q, err)
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return result
 
     def prefix_get(self, prefix, max_count):
@@ -1300,7 +1444,7 @@ class Cluster(object):
 
         :returns: The list of matching aliases. If no match is found, returns an empty list.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         result = impl.prefix_get(self.handle, prefix, max_count, err)
@@ -1308,7 +1452,7 @@ class Cluster(object):
             return []
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return result
 
     def prefix_count(self, prefix):
@@ -1320,13 +1464,13 @@ class Cluster(object):
 
         :returns: The count of entries matching the provided prefix. 0 if there is no match.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         count = impl.prefix_count(self.handle, prefix, err)
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return count
 
     def suffix_get(self, suffix, max_count):
@@ -1341,7 +1485,7 @@ class Cluster(object):
 
         :returns: The list of matching aliases. If no match is found, returns an empty list.
 
-        :raises: QuasardbException
+        :raises: Error
 
         """
         err = make_error_carrier()
@@ -1350,7 +1494,7 @@ class Cluster(object):
             return []
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return result
 
     def suffix_count(self, suffix):
@@ -1362,13 +1506,13 @@ class Cluster(object):
 
         :returns: The count of entries matching the provided suffix. 0 if there is no match.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         count = impl.suffix_count(self.handle, suffix, err)
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return count
 
     def blob_scan(self, pattern, max_count):
@@ -1384,7 +1528,7 @@ class Cluster(object):
 
         :returns: The list of matching aliases. If no match is found, returns an empty list.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         result = impl.blob_scan(self.handle, pattern, max_count, err)
@@ -1392,7 +1536,7 @@ class Cluster(object):
             return []
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return result
 
     def blob_scan_regex(self, pattern, max_count):
@@ -1408,7 +1552,7 @@ class Cluster(object):
 
         :returns: The list of matching aliases. If no match is found, returns an empty list.
 
-        :raises: QuasardbException
+        :raises: Error
         """
         err = make_error_carrier()
         result = impl.blob_scan_regex(self.handle, pattern, max_count, err)
@@ -1416,5 +1560,5 @@ class Cluster(object):
             return []
 
         if err.error != impl.error_ok:
-            raise QuasardbException(err.error)
+            raise chooseError(err.error)
         return result
