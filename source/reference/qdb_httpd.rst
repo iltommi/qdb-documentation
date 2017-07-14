@@ -184,8 +184,6 @@ The buttons have the following effects:
  * The "Raw JSON data" button retrieves the raw status information of the node. See "global_status" in the :ref:`qdb_httpd-url-reference` below.
  * The "Configuration as JSON" button retrieves the configuration information of the node. See "config" in the :ref:`qdb_httpd-url-reference` below.
 
-
-
 The bottom half of the view shows six live graphs:
 
 .. image:: qdb_httpd_node_cpu_usage_graph.png
@@ -222,6 +220,13 @@ The configuration of the login and the password can be done from the command lin
   qdb_httpd --user=admin --password=secret
 
 This will require the login "admin" and the password "secret" to be entered when accessing the console. It is recommended to set the value of the password in the configuration file (see :ref:`qdb_httpd-config-file-reference`).
+
+Securing access from the web bridge to the cluster
+==================================================
+
+By default, connecting to a a cluster requires authentication and the web bridge is no exception. These parameters are set in the configuration file of the web bridge and you must specify the cluster public key as well as the user credentials file.
+
+It is recommended to have a dedicated user for the web bridge to connect (see :doc:`../tutorials/secured_cluster`).
 
 Using the `qdb_httpd` JSON interface
 ====================================
@@ -467,7 +472,7 @@ Some things to note when working with a configuration file:
 The default configuration file is shown below::
 
   {
-      "doc_root": "www",
+      "doc_root": "D:\\sources\\quasardb\\bin64\\www",
       "daemonize": false,
       "listen_on": "127.0.0.1:8080",
       "threads": 1,
@@ -478,9 +483,11 @@ The default configuration file is shown below::
           "log_directory": "",
           "log_to_console": false,
           "log_to_syslog": false
-      }
+      },
       "user": "",
-      "password": ""
+      "password": "",
+      "cluster_public_key_file": "",
+      "user_credentials_file": ""
   }
 
 .. describe:: doc_root
@@ -532,11 +539,19 @@ The default configuration file is shown below::
 
 .. describe:: user
 
-    A string representing the user name for authentication. Both the user and password must be set for authentication to be active.
+    A string representing the user name for authentication to the web bridge. Both the user and password must be set for authentication to the web bridge to be active.
 
 .. describe:: password
 
-    A string representing the password for authentication. Both the user and password must be set for authentication to be active.
+    A string representing the password for authentication to the web bridge. Both the user and password must be set for authentication to the web bridge to be active.
+
+.. describe:: cluster_public_key_file
+
+    A string representing the public key of the cluster for authentication to the cluster. Both the cluster public key and the user credentials must be set for authentication to the cluster to be active.
+
+.. describe:: user_credentials_file
+
+    A string representing the user credentials to authenticate to the cluster.  Both the cluster public key and the user credentials must be set for authentication to the cluster to be active.
 
 .. _qdb_httpd-url-reference:
 

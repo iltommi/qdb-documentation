@@ -13,6 +13,7 @@
     <innerfile refid="iterator_8h">iterator.h</innerfile>
     <innerfile refid="log_8h">log.h</innerfile>
     <innerfile refid="node_8h">node.h</innerfile>
+    <innerfile refid="option_8h">option.h</innerfile>
     <innerfile refid="prefix_8h">prefix.h</innerfile>
     <innerfile refid="query_8h">query.h</innerfile>
     <innerfile refid="stream_8h">stream.h</innerfile>

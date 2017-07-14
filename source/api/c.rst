@@ -46,7 +46,17 @@ We can also use the convenience function :func:`qdb_open_tcp`:
     :end-before: doc-end-open
     :dedent: 4
 
-Once the handle is initialized, it can be used to establish a connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function:
+Once the handle is initialized, you need to add credentials information before you can establish a connection, unless security is disabled on the cluster.
+
+For that you need to set the cluster public key, which will make sure you connect to the right cluster, and the user credentials which consist in the user name and the user private key and are necessary to authenticate the connection.
+These information are given to you by your administrator. You need to use :func:`qdb_option_set_cluster_public_key` and :func:`qdb_option_set_user_credentials`.
+
+.. literalinclude:: ../../../../examples/c/secure_connect.c
+    :start-after: doc-start-secure-connect
+    :end-before: doc-start-secure-connect
+    :dedent: 4
+
+You are now ready to establish the connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function:
 
 .. literalinclude:: ../../../../examples/c/connect.c
     :start-after: doc-start-connect

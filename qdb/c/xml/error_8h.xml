@@ -6,45 +6,57 @@
     <includedby refid="client_8h" local="yes">qdb/client.h</includedby>
     <includedby refid="log_8h" local="yes">qdb/log.h</includedby>
     <incdepgraph>
-      <node id="63">
+      <node id="68">
+        <label>qdb/error.h</label>
+        <link refid="error_8h"/>
+        <childnode refid="69" relation="include">
+        </childnode>
+      </node>
+      <node id="69">
         <label>_attr.h</label>
         <link refid="__attr_8h"/>
       </node>
-      <node id="62">
-        <label>qdb/error.h</label>
-        <link refid="error_8h"/>
-        <childnode refid="63" relation="include">
-        </childnode>
-      </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="72">
-        <label>qdb/node.h</label>
-        <link refid="node_8h"/>
-      </node>
-      <node id="64">
+      <node id="70">
         <label>qdb/error.h</label>
         <link refid="error_8h"/>
-        <childnode refid="65" relation="include">
-        </childnode>
-        <childnode refid="79" relation="include">
-        </childnode>
-      </node>
-      <node id="65">
-        <label>qdb/client.h</label>
-        <link refid="client_8h"/>
-        <childnode refid="66" relation="include">
-        </childnode>
-        <childnode refid="67" relation="include">
-        </childnode>
-        <childnode refid="68" relation="include">
-        </childnode>
-        <childnode refid="69" relation="include">
-        </childnode>
-        <childnode refid="70" relation="include">
-        </childnode>
         <childnode refid="71" relation="include">
         </childnode>
+        <childnode refid="86" relation="include">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
+      </node>
+      <node id="86">
+        <label>qdb/log.h</label>
+        <link refid="log_8h"/>
+      </node>
+      <node id="80">
+        <label>qdb/prefix.h</label>
+        <link refid="prefix_8h"/>
+      </node>
+      <node id="78">
+        <label>qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
+      </node>
+      <node id="74">
+        <label>qdb/blob.h</label>
+        <link refid="blob_8h"/>
+      </node>
+      <node id="72">
+        <label>qdb/batch.h</label>
+        <link refid="batch_8h"/>
+      </node>
+      <node id="85">
+        <label>qdb/ts.h</label>
+        <link refid="ts_8h"/>
+      </node>
+      <node id="71">
+        <label>qdb/client.h</label>
+        <link refid="client_8h"/>
         <childnode refid="72" relation="include">
         </childnode>
         <childnode refid="73" relation="include">
@@ -59,58 +71,54 @@
         </childnode>
         <childnode refid="78" relation="include">
         </childnode>
+        <childnode refid="79" relation="include">
+        </childnode>
+        <childnode refid="80" relation="include">
+        </childnode>
+        <childnode refid="81" relation="include">
+        </childnode>
+        <childnode refid="82" relation="include">
+        </childnode>
+        <childnode refid="83" relation="include">
+        </childnode>
+        <childnode refid="84" relation="include">
+        </childnode>
+        <childnode refid="85" relation="include">
+        </childnode>
       </node>
-      <node id="70">
+      <node id="75">
+        <label>qdb/deque.h</label>
+        <link refid="deque_8h"/>
+      </node>
+      <node id="77">
         <label>qdb/integer.h</label>
         <link refid="integer_8h"/>
       </node>
-      <node id="78">
-        <label>qdb/ts.h</label>
-        <link refid="ts_8h"/>
+      <node id="73">
+        <label>qdb/option.h</label>
+        <link refid="option_8h"/>
+        <childnode refid="71" relation="include">
+        </childnode>
       </node>
-      <node id="77">
-        <label>qdb/tag.h</label>
-        <link refid="tag_8h"/>
-      </node>
-      <node id="75">
-        <label>qdb/stream.h</label>
-        <link refid="stream_8h"/>
-      </node>
-      <node id="69">
+      <node id="76">
         <label>qdb/hset.h</label>
         <link refid="hset_8h"/>
       </node>
-      <node id="67">
-        <label>qdb/blob.h</label>
-        <link refid="blob_8h"/>
-      </node>
-      <node id="74">
+      <node id="81">
         <label>qdb/query.h</label>
         <link refid="query_8h"/>
       </node>
-      <node id="73">
-        <label>qdb/prefix.h</label>
-        <link refid="prefix_8h"/>
-      </node>
-      <node id="71">
-        <label>qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
+      <node id="84">
+        <label>qdb/tag.h</label>
+        <link refid="tag_8h"/>
       </node>
       <node id="79">
-        <label>qdb/log.h</label>
-        <link refid="log_8h"/>
+        <label>qdb/node.h</label>
+        <link refid="node_8h"/>
       </node>
-      <node id="76">
-        <label>qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-      </node>
-      <node id="66">
-        <label>qdb/batch.h</label>
-        <link refid="batch_8h"/>
-      </node>
-      <node id="68">
-        <label>qdb/deque.h</label>
-        <link refid="deque_8h"/>
+      <node id="82">
+        <label>qdb/stream.h</label>
+        <link refid="stream_8h"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">
@@ -698,13 +706,21 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0f91e40359fc8ba6391b5e65a34da950" prot="public">
+          <name>qdb_e_invalid_crypto_key</name>
+          <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x0041</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An error code indicating success or failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="119" column="1" bodyfile="qdb/error.h" bodystart="118" bodyend="180"/>
+        <location file="qdb/error.h" line="119" column="1" bodyfile="qdb/error.h" bodystart="118" bodyend="181"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -745,7 +761,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="180" column="1"/>
+        <location file="qdb/error.h" line="181" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga7f530850c85980b74be1119741da4bb0" prot="public" static="no">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -758,7 +774,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="186" column="1" bodyfile="qdb/error.h" bodystart="186" bodyend="-1"/>
+        <location file="qdb/error.h" line="187" column="1" bodyfile="qdb/error.h" bodystart="187" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
@@ -786,7 +802,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="195" column="1"/>
+        <location file="qdb/error.h" line="196" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -951,20 +967,21 @@
 <codeline lineno="176"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_access_denied<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0037,</highlight></codeline>
 <codeline lineno="177"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_login_failed<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_system_remote<sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0038,</highlight></codeline>
 <codeline lineno="178"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_column_not_found<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_warning<sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0039,</highlight></codeline>
-<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_query_too_complex<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0040</highlight></codeline>
-<codeline lineno="180"><highlight class="normal">}<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>;</highlight></codeline>
-<codeline lineno="181"><highlight class="normal"></highlight></codeline>
-<codeline lineno="182"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="183"><highlight class="normal"></highlight></codeline>
-<codeline lineno="186"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
-<codeline lineno="187"><highlight class="normal"></highlight></codeline>
-<codeline lineno="195"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
-<codeline lineno="196"><highlight class="normal"></highlight></codeline>
-<codeline lineno="197"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="198"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="199"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="200"><highlight class="normal"></highlight></codeline>
-<codeline lineno="201"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>QDB_API_ERROR_H</highlight></codeline>
+<codeline lineno="179"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_query_too_complex<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_operation<sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0040,</highlight></codeline>
+<codeline lineno="180"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_e_invalid_crypto_key<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>=<sp/>qdb_e_origin_input<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>qdb_e_severity_error<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>|<sp/>0x0041</highlight></codeline>
+<codeline lineno="181"><highlight class="normal">}<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>;</highlight></codeline>
+<codeline lineno="182"><highlight class="normal"></highlight></codeline>
+<codeline lineno="183"><highlight class="normal"></highlight><highlight class="comment">//<sp/>clang-format<sp/>on</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="184"><highlight class="normal"></highlight></codeline>
+<codeline lineno="187"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__error_1ga7f530850c85980b74be1119741da4bb0" kindref="member">qdb_status_t</ref>;</highlight></codeline>
+<codeline lineno="188"><highlight class="normal"></highlight></codeline>
+<codeline lineno="196"><highlight class="normal">QDB_API_LINKAGE<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/><ref refid="group__client_1gac19115af2f71978c584cfcee8059c7c2" kindref="member">qdb_error</ref>(<ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/>error);</highlight></codeline>
+<codeline lineno="197"><highlight class="normal"></highlight></codeline>
+<codeline lineno="198"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="199"><highlight class="normal">}<sp/></highlight><highlight class="comment">//<sp/>extern<sp/>&quot;C&quot;</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="200"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="201"><highlight class="normal"></highlight></codeline>
+<codeline lineno="202"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/>//<sp/>QDB_API_ERROR_H</highlight></codeline>
     </programlisting>
     <location file="qdb/error.h"/>
   </compounddef>

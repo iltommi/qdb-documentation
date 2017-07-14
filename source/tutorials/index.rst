@@ -11,3 +11,4 @@ Tutorials
    
    tut_quick
    one_ring
+   secured_cluster
