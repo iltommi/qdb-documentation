@@ -53,7 +53,7 @@ These information are given to you by your administrator. You need to use :func:
 
 .. literalinclude:: ../../../../examples/c/secure_connect.c
     :start-after: doc-start-secure-connect
-    :end-before: doc-start-secure-connect
+    :end-before: doc-end-secure-connect
     :dedent: 4
 
 You are now ready to establish the connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function:
