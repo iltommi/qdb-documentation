@@ -64,7 +64,7 @@ We now need to run the daemon with our updated configuration::
 
   qdbd -c /etc/qdb/qdbd.cfg
 
-When security is properly setup, the following lines should appear in the log:
+When security is properly setup, the following lines should appear in the log::
 
   11:12:08.989481000   24348      info    successfully loaded cluster private key from "/etc/qdb/cluster_private.key"
   11:12:08.989760100   24348      info    successfully loaded 2 users from "/etc/qdb/users.cfg"

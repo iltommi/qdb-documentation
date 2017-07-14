@@ -19,7 +19,7 @@ To output the keys in /etc/qdbd/cluster_public.key and /etc/qdbd/cluster_private
 
     qdb_cluster_keygen -p /etc/qdbd/cluster_public.key -s /etc/qdbd/cluster_private.key
 
-To output both keys on the console:
+To output both keys on the console::
 
     qdb_cluster_keygen -p - -s -
 
