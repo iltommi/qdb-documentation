@@ -83,13 +83,13 @@ You will see that the credential file contains both the private key and the user
 
 To securely connect as alice::
 
-  qdbshd.exe --cluster-public-key-file=/etc/qdb/cluster_public.key --user-credentials-file=alice_private.key
+  qdbsh --cluster-public-key-file=/etc/qdb/cluster_public.key --user-credentials-file=alice_private.key
 
 To securely connect as bob::
 
-  qdbshd.exe --cluster-public-key-file=/etc/qdb/cluster_public.key --user-credentials-file=bob_private.key
+  qdbsh --cluster-public-key-file=/etc/qdb/cluster_public.key --user-credentials-file=bob_private.key
 
-When succesfully connected, you should be greeted by the shell prompt:
+When succesfully connected, you should be greeted by the shell prompt::
 
   quasardb shell version 2.1.0 build d34dc0d3 2017-01-11 00:00:00 +0200
   Copyright (c) 2009-2017 quasardb. All rights reserved.
