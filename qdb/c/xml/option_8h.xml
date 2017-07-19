@@ -256,7 +256,7 @@
           <declname>max_cardinality</declname>
         </param>
         <briefdescription>
-<para>Sets the maximum allowed cardinality of a quasardb query. The default value is 10,007. The minimum allowed values is 1,000. </para>        </briefdescription>
+<para>Sets the maximum allowed cardinality of a quasardb query. The default value is 100&apos;003. The minimum allowed values is 1,000. </para>        </briefdescription>
         <detaileddescription>
 <para><parameterlist kind="param"><parameteritem>
 <parameternamelist>

@@ -362,6 +362,7 @@
     <member refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kind="function"><name>qdb_detach_tag</name></member>
     <member refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kind="function"><name>qdb_detach_tags</name></member>
     <member refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kind="function"><name>qdb_get_tagged</name></member>
+    <member refid="group__tag_1ga7550b762c8f51663933cdc8beba78476" kind="function"><name>qdb_get_tagged_count</name></member>
     <member refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kind="function"><name>qdb_get_tags</name></member>
     <member refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kind="function"><name>qdb_tag_iterator_begin</name></member>
     <member refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kind="function"><name>qdb_tag_iterator_next</name></member>
@@ -659,6 +660,7 @@
     <member refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kind="function"><name>qdb_detach_tag</name></member>
     <member refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kind="function"><name>qdb_detach_tags</name></member>
     <member refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kind="function"><name>qdb_get_tagged</name></member>
+    <member refid="group__tag_1ga7550b762c8f51663933cdc8beba78476" kind="function"><name>qdb_get_tagged_count</name></member>
     <member refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kind="function"><name>qdb_get_tags</name></member>
     <member refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kind="function"><name>qdb_tag_iterator_begin</name></member>
     <member refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kind="function"><name>qdb_tag_iterator_next</name></member>

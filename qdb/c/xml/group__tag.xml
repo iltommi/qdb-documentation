@@ -332,6 +332,55 @@
         </inbodydescription>
         <location file="qdb/tag.h" line="199" column="1"/>
       </memberdef>
+      <memberdef kind="function" id="group__tag_1ga7550b762c8f51663933cdc8beba78476" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <definition>qdb_error_t qdb_get_tagged_count</definition>
+        <argsstring>(qdb_handle_t handle, const char *tag, qdb_uint_t *count)</argsstring>
+        <name>qdb_get_tagged_count</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>tag</declname>
+        </param>
+        <param>
+          <type>qdb_uint_t *</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Computes the approximate count of all entries matching the specified tag, up to the configured max cardinality. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag for which to search entries. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the count of tags </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kindref="member">qdb_option_set_max_cardinality</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/tag.h" line="216" column="1"/>
+      </memberdef>
       <memberdef kind="function" id="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_get_tags</definition>
@@ -390,7 +439,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="223" column="1"/>
+        <location file="qdb/tag.h" line="239" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga94e7687010c7f78d9e678850691abb48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -439,7 +488,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="278" column="1"/>
+        <location file="qdb/tag.h" line="294" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -466,7 +515,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="302" column="1"/>
+        <location file="qdb/tag.h" line="318" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -493,7 +542,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="316" column="1"/>
+        <location file="qdb/tag.h" line="332" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
