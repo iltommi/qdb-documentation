@@ -91,10 +91,10 @@ class Error(Exception):
         self.error_code = self.code  # Deprecated. Use code.
 
     def __repr__(self):
-        return "quasardb exception - code " + str(self.error_code)
+        return "quasardb exception - code " + format(self.error_code, '#0x')
 
     def __str__(self):
-        return make_error_string(self.error_code)
+        return make_error_string(self.error_code) + ' (code ' + format(self.error_code, '#0x') + ')'
 
 
 # Deprecated name. Please use Error.
@@ -873,7 +873,7 @@ class TimeSeries(RemoveableEntry):
             :param aggregations: The aggregations to perform
 
             :raises: Error
-            :returns: The list of aggregation results
+            :returns: A list of aggregation results
             """
             error_carrier = make_error_carrier()
 
@@ -895,7 +895,7 @@ class TimeSeries(RemoveableEntry):
             Inserts values into the time series.
 
             :param tuples: The list of couples to insert into the time series
-            :type tuples: list of datetime.datetime, float couples
+            :type tuples: A list of (datetime.datetime, float) couples
 
             :raises: Error
             """
@@ -909,10 +909,10 @@ class TimeSeries(RemoveableEntry):
             Returns the ranges matching the provided intervals.
 
             :param intervals: The intervals for which the ranges should be returned
-            :type intervals: A list of datetime.datetime couples
+            :type intervals: A list of (datetime.datetime, datetime.datetime) couples
 
             :raises: Error
-            :returns: A flattened list of datetime.datetime, float couples
+            :returns: A flattened list of (datetime.datetime, float) couples
             """
             error_carrier = make_error_carrier()
 
@@ -930,7 +930,8 @@ class TimeSeries(RemoveableEntry):
             Aggregates values over the given intervals
 
             :param aggregations: The aggregations to perform
-            :type aggregations: a list of datetime.datetime couples
+            :type aggregations: The list of (quasardb.TimeSeries.Aggregation,
+                                (datetime.datetime, datetime.datetime)) couples
 
             :raises: Error
             :returns: The list of aggregation results
@@ -948,7 +949,7 @@ class TimeSeries(RemoveableEntry):
             Inserts values into the time series.
 
             :param tuples: The list of couples to insert into the time series
-            :type tuples: list of datetime.datetime, str couples
+            :type tuples: A list of (datetime.datetime, string) couples
 
             :raises: Error
             """
@@ -962,10 +963,10 @@ class TimeSeries(RemoveableEntry):
             Returns the ranges matching the provided intervals.
 
             :param intervals: The intervals for which the ranges should be returned
-            :type intervals: A list of datetime.datetime couples
+            :type intervals: A list of (datetime.datetime, datetime.datetime) couples
 
             :raises: Error
-            :returns: A flattened list of datetime.datetime, str couples
+            :returns: A flattened list of (datetime.datetime, string) couples
             """
             error_carrier = make_error_carrier()
 
@@ -983,7 +984,8 @@ class TimeSeries(RemoveableEntry):
             Aggregates values over the given intervals
 
             :param aggregations: The aggregations to perform
-            :type aggregations: a list of datetime.datetime couples
+            :type aggregations: A list of (quasardb.TimeSeries.Aggregation,
+                                (datetime.datetime, datetime.datetime)) couples
 
             :raises: Error
             :returns: The list of aggregation results
@@ -1188,7 +1190,10 @@ class Blob(ExpirableEntry):
 
 class Cluster(object):
 
-    def __init__(self, uri, timeout=None, *args, **kwargs):  # pylint: disable=W0613
+    def __init__(self, uri, timeout=None,
+                 user_name=None, user_private_key=None,
+                 cluster_public_key=None,
+                 *args, **kwargs):  # pylint: disable=W0613
         """
         Creates the raw client.
         If the client is not used for some time,
@@ -1201,7 +1206,7 @@ class Cluster(object):
 
             :raises: Error
         """
-        err = make_error_carrier()
+        self.handle = None
 
         if timeout is None:
             timeout = datetime.timedelta(minutes=1)
@@ -1210,10 +1215,21 @@ class Cluster(object):
         if timeout_value == 0:
             raise chooseError(impl.error_invalid_argument)
 
-        self.handle = None
-        self.handle = impl.connect(uri, timeout_value, err)
-        if err.error != impl.error_ok:
-            raise chooseError(err.error)
+        self.handle = impl.create_handle()
+
+        if not (user_name is None and user_private_key is None and cluster_public_key is None):
+            error = self.handle.set_user_credentials(
+                str(user_name), str(user_private_key))
+            if error != impl.error_ok:
+                raise chooseError(error)
+
+            error = self.handle.set_cluster_public_key(str(cluster_public_key))
+            if error != impl.error_ok:
+                raise chooseError(error)
+
+        error = impl.connect(self.handle, uri, timeout_value)
+        if error != impl.error_ok:
+            raise chooseError(error)
 
     def __del__(self):
         """ On delete, the connection is closed. """
