@@ -17,7 +17,7 @@ If you cannot generate at least 1,000 connections you have a serious operating s
 Measuring performance
 ---------------------
 
-The best way to test the performance of your cluster is to use our open source benchmarking tool (see :doc:`../reference/qdb_bench`).
+The best way to test the performance of your cluster is to use our open source benchmarking tool (see :doc:`../reference/qdb-benchmark`).
 
 
 Rules of thumb

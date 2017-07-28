@@ -15,6 +15,6 @@ Application Reference
    qdb_shell
    qdb_httpd
    qdb_dbtool
-   qdb_bench
+   qdb-benchmark
    qdb_generate_config
    qdb_excel

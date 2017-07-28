@@ -44,5 +44,5 @@ The qdbd and qdb_httpd daemons are started automatically after installation and 
 Test the Cluster
 ----------------
 
- #. Benchmark the cluster with ``qdb_bench``. See :doc:`../reference/qdb_bench` for more information.
+ #. Benchmark the cluster with ``qdb-benchmark``. See :doc:`../reference/qdb-benchmark` for more information.
 
