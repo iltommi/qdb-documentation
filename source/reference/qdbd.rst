@@ -611,89 +611,78 @@ Some things to note when working with a configuration file:
 
 The default configuration file is shown below::
 
-    {
-        "local": {
-            "depot": {
-                "sync_every_write": false,
-                "root": "db",
-                "max_bytes": 0,
-                "storage_warning_level": 90,
-                "storage_warning_interval": 3600,
-                "disable_wal": false,
-                "max_total_wal_size": 1073741824,
-                "write_buffer_size": 0,
-                "metadata_mem_budget": 268435456,
-                "data_cache": 134217728,
-                "threads": 4,
-                "hi_threads": 2,
-                "max_open_files": 10000
-            },
-            "user": {
-                "license_file": "",
-                "license_key": "",
-                "daemon": false
-            },
-            "limiter": {
-                "max_resident_entries": 0,
-                "max_bytes": 0,
-                "max_trim_queue_length": 10000000
-            },
-            "logger": {
-                "log_level": 2,
-                "flush_interval": 3,
-                "log_directory": "",
-                "log_to_console": false,
-                "log_to_syslog": false
-            },
-            "network": {
-                "server_sessions": 20000,
-                "partitions_count": 9,
-                "idle_timeout": 600,
-                "client_timeout": 60,
-                "listen_on": "127.0.0.1:2836"
-            },
-            "chord": {
-                "node_id": "0-0-0-0",
-                "no_stabilization": false,
-                "bootstrapping_peers": [],
-                "min_stabilization_interval": 100,
-                "max_stabilization_interval": 60000
-            }
+{
+    "local": {
+        "depot": {
+            "sync_every_write": false,
+            "root": "db",
+            "max_bytes": 0,
+            "storage_warning_level": 90,
+            "storage_warning_interval": 3600,
+            "disable_wal": false,
+            "direct_read": false,
+            "direct_write": false,
+            "max_total_wal_size": 1073741824,
+            "metadata_mem_budget": 268435456,
+            "data_cache": 134217728,
+            "threads": 4,
+            "hi_threads": 2,
+            "max_open_files": 10000
         },
-        "global": {
-            "cluster": {
-                "transient": false,
-                "history": true,
-                "replication_factor": 1,
-                "max_versions": 3,
-                "max_transaction_duration": 60
-            },
-            "security": {
-                "enable_stop": false,
-                "enable_purge_all": false,
-                "enabled": true,
-                "cluster_private_file": "",
-                "user_list": ""
-            }
+        "user": {
+            "license_file": "",
+            "license_key": "",
+            "daemon": false
+        },
+        "limiter": {
+            "max_resident_entries": 0,
+            "max_bytes": 0,
+            "max_trim_queue_length": 10000000
+        },
+        "logger": {
+            "log_level": 2,
+            "flush_interval": 3,
+            "log_directory": "",
+            "log_to_console": false,
+            "log_to_syslog": false
+        },
+        "network": {
+            "server_sessions": 20000,
+            "partitions_count": 13,
+            "idle_timeout": 600,
+            "client_timeout": 60,
+            "listen_on": "127.0.0.1:2836"
+        },
+        "chord": {
+            "node_id": "0-0-0-0",
+            "no_stabilization": false,
+            "bootstrapping_peers": [],
+            "min_stabilization_interval": 100,
+            "max_stabilization_interval": 60000
+        }
+    },
+    "global": {
+        "cluster": {
+            "transient": false,
+            "history": true,
+            "replication_factor": 1,
+            "max_versions": 3,
+            "max_transaction_duration": 60
+        },
+        "security": {
+            "enable_stop": false,
+            "enable_purge_all": false,
+            "enabled": true,
+            "cluster_private_file": "",
+            "user_list": ""
         }
     }
-
+}
 
 .. describe:: local::depot::sync_every_write
 
     A boolean representing whether or not the node should sync to disk every write. This option has a huge negative impact on performance, especially on high
     latency media and adds only marginal safety compared to the sync option. Disabled by default.
-
-.. describe:: local::depot::disable_wal
-
-    A boolean repersenting whether or not the write-ahead log should be used. When you write data to quasardb, it is added in a buffer who is backed by a disk
-    file called the write-ahead log. In case of failure, quasardb is able to recover by reading from the write-ahead log. For applications that are looking for
-    maximum write performance, you may want to disable the write-ahead log. However, disabling the write-ahead log means that you can lose data should a failure
-    occur before the buffer is flushed into the database. Disabled by default (that is, by default, buffers are backed by disk).
-
-.. describe:: local::depot::max_total_wal_size
-
-    The maximum size, in bytes, of the write-ahead log.
 
 .. describe:: local::depot::root
 
@@ -721,10 +710,25 @@ The default configuration file is shown below::
     An integer representing how often quasardb will emit a warning about depleting disk space, in seconds.
     See also |local__depot__storage_warning_level|_.
 
-.. describe:: local::depot::write_buffer_size
+.. describe:: local::depot::disable_wal
 
-    An integer representing a value for global write buffer. Quasardb has many internal write buffer, this is an additional write buffer shared by all entries.
-    It is generally not required and may actually degrade performances. By default the value is 0.
+    A boolean repersenting whether or not the write-ahead log should be used. When you write data to quasardb, it is added in a buffer who is backed by a disk
+    file called the write-ahead log. In case of failure, quasardb is able to recover by reading from the write-ahead log. For applications that are looking for
+    maximum write performance, you may want to disable the write-ahead log. However, disabling the write-ahead log means that you can lose data should a failure
+    occur before the buffer is flushed into the database. Disabled by default (that is, by default, buffers are backed by disk).
+
+.. describe:: local::depot::direct_read
+
+    A boolean repersenting whether or not reads from the disk should be direct (i.e. bypass OS buffers). This setting has an impact on performance and memory usage depending
+    on the hardware configuration. It is generally advised to not use direct reads with spinning disks.
+
+ .. describe:: local::depot::direct_write
+
+    This option currently does not have any effect.       
+
+.. describe:: local::depot::max_total_wal_size
+
+    The maximum size, in bytes, of the write-ahead log.
 
 .. describe:: local::depot::metadata_mem_budget
 
@@ -761,6 +765,10 @@ The default configuration file is shown below::
 .. describe:: local::limiter::max_bytes
 
     An integer representing the maximum amount of memory usage in bytes for each node's cache. Once this value is reached, the quasardb daemon will evict entries from memory to ensure it stays below the byte limit.
+
+.. describe:: local::limiter::max_trim_queue_length
+
+    An integer representing the total maximum number of updated entries that may be queued for asynchronous trimming. Trimming is a background process that optimizes disk space.
 
 .. describe:: local::logger::log_level
 
