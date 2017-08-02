@@ -673,6 +673,7 @@ The default configuration file is shown below::
             "enable_stop": false,
             "enable_purge_all": false,
             "enabled": true,
+            "encrypt_traffic": false,
             "cluster_private_file": "",
             "user_list": ""
         }
@@ -865,7 +866,11 @@ The default configuration file is shown below::
 
 .. describe:: global::security::enabled
 
-    Enables cluster security and authentication.
+    Require cryptographically strong authentication to connect to the cluster. True by default.
+
+.. describe:: global::security::encrypt_traffic
+
+    In addition to requiring authentication, encrypt all network traffic. This setting can have a significant performance impact. Requires a CPU with AES-NI. False by default.
 
 .. describe:: global::security::cluster_private_file
 

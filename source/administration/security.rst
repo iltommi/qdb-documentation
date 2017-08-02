@@ -15,16 +15,26 @@ For more information on how to change the quasardb daemon configuration for your
 
 Authentication
 ---------------
-QuasarDB has a built-in authentication mechanism based on asymetric cryptography, supports end-to-end strong encryption as well as message integrity.
+QuasarDB has a built-in authentication mechanism based on asymetric cryptography. The performance impact of authentication on performance is negligible for the great majority of use cases as it only generates the exchange of two packets between the client and the server at the establishment of the connection.
 
 ..note::
-    The key exchange algorithm used is X25519, encryption is done with the XSalsa20 stream cipher, and authentication is made using Poly1305 MAC. The implementation is based on libsodium.
+    The key exchange algorithm used is X25519. Authentication is made using Poly1305 MAC. The implementation is based on libsodium.
 
 When configuring a cluster, the administrator must generate a long-term cluster key pair that will be reused for the nodes within the cluster, the public key part will be used by the clients connecting to the cluster, whereas the secret key should only be kept on the server and must never be communicated to any client (see :doc:`../reference/qdb_cluster_keygen`).
 
 The admnistrator then must add users to the cluster. Each user has a long-term key pair made of a private (also known as secret) key and public key. The server will keep the public key of each user will keep the secret authentication information (see :doc:`../reference/qdb_user_add`).
 
 It is possible to completely disable security and authentication, for example for test clusters or clusters running in physically secure environments.
+
+Traffic encryption
+------------------
+
+QuasarDB has built-in support for full traffic encryption as well as message integrity. Traffic encryption requires authentication to be turned on.
+
+.. note::
+    Traffic is encrypted using AES GCM with a 256-bit key. It requires the AES-NI instructions.
+
+Because traffic encryption can have a significant performance impact, it is turned off by default.
 
 Perfect forward secrecy
 -----------------------

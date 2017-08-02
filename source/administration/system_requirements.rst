@@ -6,10 +6,10 @@ System Requirements
 Hardware Requirements
 ---------------------
 
-    * An x86 or x86_64 platform
+    * An Intel Westmere or better microarchitecture
     * End-to-end ECC memory (motherboard, CPU and memory)
-    * At least 1 GiB of RAM (the exact amount depends on your use case)
-    * At least 10 GiB of disk (the exact amount depends on your use case, see :ref:`operations-db-storage`)
+    * At least 1 GiB of RAM
+    * At least 10 GiB of disk
     * 1 Gbit ethernet port
 
 It is strongly advised to have a homogenous hardware configuration within a cluster.
