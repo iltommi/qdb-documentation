@@ -56,6 +56,13 @@ These information are given to you by your administrator. You need to use :func:
     :end-before: doc-end-secure-connect
     :dedent: 4
 
+If the server has full traffic encryption, you must enable it on the client side before establishing the connection:
+
+.. literalinclude:: ../../../../examples/c/secure_connect.c
+    :start-after: doc-start-set-encryption
+    :end-before: doc-end-set-encryption
+    :dedent: 4
+
 You are now ready to establish the connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function:
 
 .. literalinclude:: ../../../../examples/c/connect.c
