@@ -322,10 +322,15 @@
     <member refid="option_8h_1ga2c0493e17b424c05b599b54ea641adbaa4933efb6777664f0e19587b8be37f8d2" kind="enumvalue"><name>qdb_comp_none</name></member>
     <member refid="option_8h_1ga2c0493e17b424c05b599b54ea641adbaae779c527ad92b6adb5c979f5d0bf0569" kind="enumvalue"><name>qdb_comp_fast</name></member>
     <member refid="option_8h_1ga2c0493e17b424c05b599b54ea641adbaaa224c10b51af9f8da172e9b2aa6efcb3" kind="enumvalue"><name>qdb_comp_best</name></member>
+    <member refid="option_8h_1accca38696fc28ac6e8f6dd76973ad0e6" kind="enum"><name>qdb_encryption</name></member>
+    <member refid="option_8h_1accca38696fc28ac6e8f6dd76973ad0e6a9aeebebf657c4e6c022a1306f29ebc10" kind="enumvalue"><name>qdb_crypt_none</name></member>
+    <member refid="option_8h_1accca38696fc28ac6e8f6dd76973ad0e6a300ebe56b10a20747a7c04010b589315" kind="enumvalue"><name>qdb_crypt_aes_gcm_256</name></member>
     <member refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kind="typedef"><name>qdb_compression_t</name></member>
+    <member refid="option_8h_1a28498f6ba5f76b5dce513b7572f1b848" kind="typedef"><name>qdb_encryption_t</name></member>
     <member refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kind="function"><name>qdb_option_set_timeout</name></member>
     <member refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kind="function"><name>qdb_option_set_max_cardinality</name></member>
     <member refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kind="function"><name>qdb_option_set_compression</name></member>
+    <member refid="option_8h_1ac56f8ad360a8ee531854b2ff3447dca4" kind="function"><name>qdb_option_set_encryption</name></member>
     <member refid="option_8h_1aea380a3205e9a8e6b8258666c111ff36" kind="function"><name>qdb_option_set_cluster_public_key</name></member>
     <member refid="option_8h_1a0779433ef98101afab8e906a9219c189" kind="function"><name>qdb_option_set_user_credentials</name></member>
   </compound>
@@ -402,8 +407,8 @@
     <member refid="group__ts_1gab75b2c387f82164d5c3e8df49f7caa52" kind="typedef"><name>qdb_ts_column_type_t</name></member>
     <member refid="group__ts_1ga28890c2130d08a225b4897b13ed15a44" kind="typedef"><name>qdb_ts_column_info_t</name></member>
     <member refid="group__ts_1gaac17fcebdab7642df1af740ba5e1c230" kind="function"><name>qdb_ts_create</name></member>
-    <member refid="group__ts_1ga13878bc89e413cf5996f41a57bf6afaa" kind="function"><name>qdb_ts_list_columns</name></member>
     <member refid="ts_8h_1a4ff4e4a328f5c1f0025ee16c8d5d013e" kind="function"><name>qdb_ts_insert_columns</name></member>
+    <member refid="group__ts_1ga13878bc89e413cf5996f41a57bf6afaa" kind="function"><name>qdb_ts_list_columns</name></member>
     <member refid="group__ts_1gab6a77210b52971e73a373905dab2c191" kind="function"><name>qdb_ts_double_insert</name></member>
     <member refid="group__ts_1ga100a25ae65b355d7bbb148551dddc95a" kind="function"><name>qdb_ts_double_get_ranges</name></member>
     <member refid="group__ts_1gad1458101da7b584d909cdb43f9cc5537" kind="function"><name>qdb_ts_double_aggregate</name></member>
