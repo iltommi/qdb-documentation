@@ -1,6 +1,31 @@
 Change log
 **********
 
+2.1.0 - "Cleanthes" - 08/08/2017
+================================
+
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+    `Cleanthes, of Assos, <https://en.wikipedia.org/wiki/Cleanthes>` was a Greek Stoic philosopher and successor to Zeno of Citium as the second head (scholarch) of the Stoic school in Athens. Originally a boxer, he came to Athens where he took up philosophy, listening to Zeno's lectures. He supported himself by working as a water-carrier at night. [...] He originated new ideas in Stoic physics, and developed Stoicism in accordance with the principles of materialism and pantheism.
+
+Changes in this version
+-----------------------
+
+    * Protocol version 20
+    * This build now targets the Westmere micro-architecture
+    * Native support for distributed time series and server-side aggregation
+    * Cryptographically strong authentication (enabled by default)
+    * Full network traffic encryption using AES GCM 256 (disabled by default)
+    * New querying language with support for distributed joins over tags
+    * New API to count prefixes and suffixes
+    * Empty entries are now allowed in deques
+    * C API: Unified memory management functions for more convenience
+    * Improved web bridge error messages logging
+    * Improved performance for blob read operations
+    * Reduced the impact on cluster performance when a node joins the ring
+    * Improved eviction and trimming performance
+    * The qdbsh output is colored on terminals that support it
+
 2.0.0 - "Aristotle" - 01/17/2017
 ================================
 
