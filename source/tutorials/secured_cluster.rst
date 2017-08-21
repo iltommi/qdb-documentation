@@ -51,11 +51,15 @@ In this generated a configuration file, we need to update the security section o
         "enable_stop": false,
         "enable_purge_all": false,
         "enabled": true,
+        "encrypt_traffic": false,
         "cluster_private_file": "/etc/qdb/cluster_private.key",
         "user_list": "/etc/qdb/users.cfg"
     }
 
 We strongly recommend to use an absolute path for the cluster private file as well as the users list.
+
+.. note::
+  By default full traffic encryption is disabled for performance and compliance reasons. However, even with traffic encryption disabled, the authentication itself is cryptographically strong.
 
 Running the daemon with our secure setup
 ========================================
