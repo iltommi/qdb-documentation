@@ -6,7 +6,7 @@ System Requirements
 Hardware Requirements
 ---------------------
 
-    * An Intel Westmere or better microarchitecture
+    * An Intel Westmere or better microarchitecture (AMD Bulldozer or better)
     * End-to-end ECC memory (motherboard, CPU and memory)
     * At least 1 GiB of RAM
     * At least 10 GiB of disk
@@ -26,6 +26,7 @@ FreeBSD Requirements
 
     * FreeBSD 8 or 9, x86_64 (for quasardb < 1.1.5)
     * FreeBSD 10, x86_64 (for quasardb >= 1.1.5)
+    * FreeBSD 11, x86_64 (for quasardb >= 2.1.0)
     * libc++ v1
     * Python 2.7.x (optional)
     * Java JDK (optional)
@@ -36,9 +37,7 @@ FreeBSD Requirements
         * OpenJDK 6
         * OpenJDK 7u
 
-
 All other required libraries are included in the quasardb package.
-
 
 .. _sysreq-linux:
 
@@ -47,7 +46,7 @@ Linux Requirements
 
     * An x86_64 native distribution
     * Kernel 2.6 or higher
-    * libc 2.5 or higher
+    * libc 2.17 or higher
     * Python 2.7.x (optional)
     * Java JDK (optional)
         * Oracle Java JDK SE 1.6
@@ -59,7 +58,6 @@ Linux Requirements
 
 
 All other required libraries are included in the quasardb package.
-
 
 .. _sysreq-windows:
 
