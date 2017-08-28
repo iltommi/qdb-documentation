@@ -25,7 +25,7 @@ FreeBSD Requirements
 ^^^^^^^^^^^^^^^^^^^^
 
     * FreeBSD 8 or 9, x86_64 (for quasardb < 1.1.5)
-    * FreeBSD 10, x86_64 (for quasardb >= 1.1.5)
+    * FreeBSD 10, x86_64 (for quasardb >= 1.1.5 and <= 2.0.0)
     * FreeBSD 11, x86_64 (for quasardb >= 2.1.0)
     * libc++ v1
     * Python 2.7.x (optional)
