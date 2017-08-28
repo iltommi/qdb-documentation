@@ -17,8 +17,18 @@ If you cannot generate at least 1,000 connections you have a serious operating s
 Measuring performance
 ---------------------
 
-The best way to test the performance of your cluster is to use our open source benchmarking tool (see :doc:`../reference/qdb-benchmark`).
+The best way to test the performance of your cluster is to use our open source benchmarking tool (see :doc:`../reference/qdb-benchmark`). The Linux build of the daemon (see :doc:`../reference/qdbd`) also provides the user with probes that can be used with `system tap <https://sourceware.org/systemtap/>`_.
 
+The probes currently available are:
+
+    * ``request_received(void *)`` - Called as soon as a network request is received, the pointer being an unique opaque token that can be used to track the request. The token may be re-used between different requests.
+    * ``request_replied(void *, int)`` - Called as soon as the server replies to the request. The int being the error code of the request (0 for no error).
+    * ``process_carrier_start(void *)`` - Called just before a request is processed by the database. Not all requests end up in the database. The token is identical to the one in ``request_received``.
+    * ``process_carrier_end(void *)`` - Called just after a request has been processed by the database.
+    * ``entry_pagein()`` - Called every time an entry is paged in from disk.
+    * ``entry_pageout()`` - Called every time an entry is paged out to disk.
+    * ``entry_creation()`` - Called every time an entry is created. Because the database uses MVCC, this only happens when the first version of an entry is created.
+    * ``entry_removal()`` - Called every time an entry is removed. This only happens when all versions have expired or been cleaned-up.
 
 Rules of thumb
 --------------
