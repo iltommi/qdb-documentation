@@ -1,1 +1,0 @@
-The file qdb/__init__.py must be updated manually and commited in GIT
