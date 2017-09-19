@@ -611,74 +611,74 @@ Some things to note when working with a configuration file:
 
 The default configuration file is shown below::
 
-{
-    "local": {
-        "depot": {
-            "sync_every_write": false,
-            "root": "db",
-            "max_bytes": 0,
-            "storage_warning_level": 90,
-            "storage_warning_interval": 3600,
-            "disable_wal": false,
-            "direct_read": false,
-            "direct_write": false,
-            "max_total_wal_size": 1073741824,
-            "metadata_mem_budget": 268435456,
-            "data_cache": 134217728,
-            "threads": 4,
-            "hi_threads": 2,
-            "max_open_files": 10000
+    {
+        "local": {
+            "depot": {
+                "sync_every_write": false,
+                "root": "db",
+                "max_bytes": 0,
+                "storage_warning_level": 90,
+                "storage_warning_interval": 3600,
+                "disable_wal": false,
+                "direct_read": false,
+                "direct_write": false,
+                "max_total_wal_size": 1073741824,
+                "metadata_mem_budget": 268435456,
+                "data_cache": 134217728,
+                "threads": 4,
+                "hi_threads": 2,
+                "max_open_files": 10000
+            },
+            "user": {
+                "license_file": "",
+                "license_key": "",
+                "daemon": false
+            },
+            "limiter": {
+                "max_resident_entries": 0,
+                "max_bytes": 0,
+                "max_trim_queue_length": 10000000
+            },
+            "logger": {
+                "log_level": 2,
+                "flush_interval": 3,
+                "log_directory": "",
+                "log_to_console": false,
+                "log_to_syslog": false
+            },
+            "network": {
+                "server_sessions": 20000,
+                "partitions_count": 13,
+                "idle_timeout": 600,
+                "client_timeout": 60,
+                "listen_on": "127.0.0.1:2836"
+            },
+            "chord": {
+                "node_id": "0-0-0-0",
+                "no_stabilization": false,
+                "bootstrapping_peers": [],
+                "min_stabilization_interval": 100,
+                "max_stabilization_interval": 60000
+            }
         },
-        "user": {
-            "license_file": "",
-            "license_key": "",
-            "daemon": false
-        },
-        "limiter": {
-            "max_resident_entries": 0,
-            "max_bytes": 0,
-            "max_trim_queue_length": 10000000
-        },
-        "logger": {
-            "log_level": 2,
-            "flush_interval": 3,
-            "log_directory": "",
-            "log_to_console": false,
-            "log_to_syslog": false
-        },
-        "network": {
-            "server_sessions": 20000,
-            "partitions_count": 13,
-            "idle_timeout": 600,
-            "client_timeout": 60,
-            "listen_on": "127.0.0.1:2836"
-        },
-        "chord": {
-            "node_id": "0-0-0-0",
-            "no_stabilization": false,
-            "bootstrapping_peers": [],
-            "min_stabilization_interval": 100,
-            "max_stabilization_interval": 60000
-        }
-    },
-    "global": {
-        "cluster": {
-            "transient": false,
-            "history": true,
-            "replication_factor": 1,
-            "max_versions": 3,
-            "max_transaction_duration": 60
-        },
-        "security": {
-            "enable_stop": false,
-            "enable_purge_all": false,
-            "enabled": true,
-            "encrypt_traffic": false,
-            "cluster_private_file": "",
-            "user_list": ""
+        "global": {
+            "cluster": {
+                "transient": false,
+                "history": true,
+                "replication_factor": 1,
+                "max_versions": 3,
+                "max_transaction_duration": 60
+            },
+            "security": {
+                "enable_stop": false,
+                "enable_purge_all": false,
+                "enabled": true,
+                "encrypt_traffic": false,
+                "cluster_private_file": "",
+                "user_list": ""
+            }
         }
     }
-}
 
 .. describe:: local::depot::sync_every_write
 
@@ -725,7 +725,7 @@ The default configuration file is shown below::
 
  .. describe:: local::depot::direct_write
 
-    This option currently does not have any effect.       
+    This option currently does not have any effect.
 
 .. describe:: local::depot::max_total_wal_size
 
