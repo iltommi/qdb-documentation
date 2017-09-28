@@ -5,7 +5,7 @@
     <title>Distributed double-ended queues operations</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__deque_1ga754d6acdf6f648fa89023076143ab245" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_size</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_size_t *size)</argsstring>
         <name>qdb_deque_size</name>
@@ -40,21 +40,21 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>size</parametername>
+<parametername direction="out">size</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an integer that will receive the size of the deque. </para></parameterdescription>
+<para>A pointer to an integer that will receive the size of the deque.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="68" column="1"/>
+        <location file="qdb/deque.h" line="70" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gac64f3e6b2463c2f36d8edb6f85a8b136" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_get_at</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_int_t index, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_get_at</name>
@@ -104,28 +104,28 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer to a buffer that will be API-allocated to receive the result of the operation, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+<para>A pointer to the size of the API-allocated buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="99" column="1"/>
+        <location file="qdb/deque.h" line="103" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga1f82de28b65550983ce7d9112527d844" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_set_at</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_int_t index, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_set_at</name>
@@ -185,18 +185,18 @@
 <parametername>content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The size of the buffer </para></parameterdescription>
+<para>The size of the buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="133" column="1"/>
+        <location file="qdb/deque.h" line="139" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga9097a68764ab9e96f5c2849c44db3811" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_push_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_push_front</name>
@@ -245,18 +245,18 @@
 <parametername>content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The size of the buffer </para></parameterdescription>
+<para>The size of the buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="164" column="1"/>
+        <location file="qdb/deque.h" line="172" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaf1854a920646563935af1c921e3c8b2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_push_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_deque_push_back</name>
@@ -305,18 +305,18 @@
 <parametername>content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The size of the buffer </para></parameterdescription>
+<para>The size of the buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="194" column="1"/>
+        <location file="qdb/deque.h" line="204" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga72d53de692f62d2179bd09dd7f2d54d1" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_pop_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_pop_front</name>
@@ -355,28 +355,28 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the first element, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+<para>A pointer to the size of the API-allocated buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="227" column="1"/>
+        <location file="qdb/deque.h" line="239" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa8d4c4e5d3ad4d25ccf0df5c19268980" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_pop_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_pop_back</name>
@@ -408,14 +408,14 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>alias</parametername>
+<parametername direction="out">alias</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a null-terminated UTF-8 string representing the alias of the deque. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the last element, if successful </para></parameterdescription>
@@ -425,18 +425,18 @@
 <parametername>content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+<para>A pointer to the size of the API-allocated buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="260" column="1"/>
+        <location file="qdb/deque.h" line="274" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1gaa87d20cc39c8c53158356e8c44e2c0eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_front</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_front</name>
@@ -475,28 +475,28 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the first element, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+<para>A pointer to the size of the API-allocated buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="289" column="1"/>
+        <location file="qdb/deque.h" line="305" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__deque_1ga7c90633e28b95906e815a9317bc8d547" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_deque_back</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_deque_back</name>
@@ -535,25 +535,25 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer to a buffer that will be API-allocated to receive the content of the last element, if successful </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the size of the API-allocated buffer </para></parameterdescription>
+<para>A pointer to the size of the API-allocated buffer</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is experimental. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/deque.h" line="318" column="1"/>
+        <location file="qdb/deque.h" line="336" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

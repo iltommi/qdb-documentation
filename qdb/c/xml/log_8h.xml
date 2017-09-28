@@ -5,11 +5,18 @@
     <includes refid="error_8h" local="yes">error.h</includes>
     <includes local="no">stddef.h</includes>
     <incdepgraph>
+      <node id="116">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
       <node id="115">
         <label>error.h</label>
         <link refid="error_8h"/>
         <childnode refid="116" relation="include">
         </childnode>
+      </node>
+      <node id="117">
+        <label>stddef.h</label>
       </node>
       <node id="114">
         <label>qdb/log.h</label>
@@ -19,18 +26,11 @@
         <childnode refid="117" relation="include">
         </childnode>
       </node>
-      <node id="116">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
-      </node>
-      <node id="117">
-        <label>stddef.h</label>
-      </node>
     </incdepgraph>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="group__log_1ga8dc603a7bf83954b01043dcba99354fd" prot="public" static="no">
-        <name>qdb_log_level</name>
-        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" prot="public">
+      <memberdef kind="enum" id="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" prot="public" static="no">
+        <name>qdb_log_level_t</name>
+        <enumvalue id="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a2d904e792153b67d549a21feaa3d4c44" prot="public">
           <name>qdb_log_detailed</name>
           <initializer>= 100</initializer>
           <briefdescription>
@@ -38,7 +38,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" prot="public">
+        <enumvalue id="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6ad1008f1d0dcd305a098b86a27ee39f50" prot="public">
           <name>qdb_log_debug</name>
           <initializer>= 200</initializer>
           <briefdescription>
@@ -46,7 +46,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" prot="public">
+        <enumvalue id="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a7a09d97eaf9beb3725a7b267f5a5e2fb" prot="public">
           <name>qdb_log_info</name>
           <initializer>= 300</initializer>
           <briefdescription>
@@ -54,7 +54,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" prot="public">
+        <enumvalue id="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a293192e62cca3326d9df8aac91a1e027" prot="public">
           <name>qdb_log_warning</name>
           <initializer>= 400</initializer>
           <briefdescription>
@@ -62,7 +62,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" prot="public">
+        <enumvalue id="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6aad6c7f5bca14b2e27d8bf909eabc1bd3" prot="public">
           <name>qdb_log_error</name>
           <initializer>= 500</initializer>
           <briefdescription>
@@ -70,7 +70,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" prot="public">
+        <enumvalue id="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a2f06b74a0d684535fe526435f3849bf4" prot="public">
           <name>qdb_log_panic</name>
           <initializer>= 600</initializer>
           <briefdescription>
@@ -81,27 +81,27 @@
         <briefdescription>
 <para>An enumeration of log level. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="56" column="1" bodyfile="qdb/log.h" bodystart="56" bodyend="69"/>
+        <location file="qdb/log.h" line="53" column="1" bodyfile="qdb/log.h" bodystart="52" bodyend="66"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" prot="public" static="no">
-        <type>enum <ref refid="group__log_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref></type>
-        <definition>qdb_log_level_t</definition>
+      <memberdef kind="typedef" id="log_8h_1a4619dc761aad13c311881ad7bdb70100" prot="public" static="no">
+        <type>enum <ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref></type>
+        <definition>typedef enum qdb_log_level_t  qdb_log_level_t</definition>
         <argsstring></argsstring>
         <name>qdb_log_level_t</name>
         <briefdescription>
-<para>A type alias for enum <ref refid="group__log_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref>. </para>        </briefdescription>
+        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
-</para>        </detaileddescription>
+        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="69" column="1"/>
+        <location file="qdb/log.h" line="66" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__log_1ga6a72d356408c58332b03af73a52c84d6" prot="public" static="no">
         <type>size_t</type>
@@ -115,7 +115,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="76" column="1" bodyfile="qdb/log.h" bodystart="76" bodyend="-1"/>
+        <location file="qdb/log.h" line="73" column="1" bodyfile="qdb/log.h" bodystart="73" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" prot="public" static="no">
         <type>void(*</type>
@@ -129,12 +129,12 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="83" column="1" bodyfile="qdb/log.h" bodystart="83" bodyend="-1"/>
+        <location file="qdb/log.h" line="80" column="1" bodyfile="qdb/log.h" bodystart="80" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__log_1gaaedde07e4ca97105358685c6b31c8301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_log_add_callback</definition>
         <argsstring>(qdb_log_callback cb, qdb_log_callback_id *callback_id)</argsstring>
         <name>qdb_log_add_callback</name>
@@ -154,25 +154,25 @@
 <parametername>cb</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A callback of type <ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>. The callback will be called every time the API emits a log message </para></parameterdescription>
+<para>A callback of type <ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>. The callback will be called every time the API emits a log message. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>callback_id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an unique callback identifier that can be used to remove the callback </para></parameterdescription>
+<para>A pointer to an unique callback identifier that can be used to remove the callback.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="106" column="1"/>
+        <location file="qdb/log.h" line="107" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_log_remove_callback</definition>
         <argsstring>(qdb_log_callback_id callback_id)</argsstring>
         <name>qdb_log_remove_callback</name>
@@ -188,15 +188,15 @@
 <parametername>callback_id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The identifier set by <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> that will determine which callback to remove </para></parameterdescription>
+<para>The identifier set by <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> that will determine which callback to remove.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="115" column="1"/>
+        <location file="qdb/log.h" line="119" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -248,42 +248,43 @@
 <codeline lineno="44"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="45"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="46"><highlight class="normal"></highlight></codeline>
-<codeline lineno="51"></codeline>
-<codeline lineno="56"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__log_1ga8dc603a7bf83954b01043dcba99354fd" kindref="member">qdb_log_level</ref><sp/>{</highlight></codeline>
-<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2d904e792153b67d549a21feaa3d4c44" kindref="member">qdb_log_detailed</ref><sp/>=<sp/>100,</highlight></codeline>
-<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fdad1008f1d0dcd305a098b86a27ee39f50" kindref="member">qdb_log_debug</ref><sp/>=<sp/>200,</highlight></codeline>
-<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda7a09d97eaf9beb3725a7b267f5a5e2fb" kindref="member">qdb_log_info</ref><sp/>=<sp/>300,</highlight></codeline>
-<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda293192e62cca3326d9df8aac91a1e027" kindref="member">qdb_log_warning</ref><sp/>=<sp/>400,</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fdaad6c7f5bca14b2e27d8bf909eabc1bd3" kindref="member">qdb_log_error</ref><sp/>=<sp/>500,</highlight></codeline>
-<codeline lineno="68"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1ga8dc603a7bf83954b01043dcba99354fda2f06b74a0d684535fe526435f3849bf4" kindref="member">qdb_log_panic</ref><sp/>=<sp/>600</highlight></codeline>
-<codeline lineno="69"><highlight class="normal">}<sp/><ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>;</highlight></codeline>
-<codeline lineno="70"><highlight class="normal"></highlight></codeline>
-<codeline lineno="76"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__log_1ga6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref>;</highlight></codeline>
-<codeline lineno="77"><highlight class="normal"></highlight></codeline>
-<codeline lineno="83"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>)(</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>log<sp/>level<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="85"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="comment">/*<sp/>[year,<sp/>month,<sp/>day,<sp/>hours,</highlight></codeline>
-<codeline lineno="86"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minutes,<sp/>seconds]<sp/>(valid<sp/>only</highlight></codeline>
-<codeline lineno="87"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>context<sp/>of<sp/>the<sp/>callback)</highlight></codeline>
-<codeline lineno="88"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>process<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>thread<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>(valid<sp/>only<sp/>in<sp/>the</highlight></codeline>
-<codeline lineno="92"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/>of<sp/>the<sp/>callback)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="93"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="94"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
-<codeline lineno="95"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="106"><highlight class="normal"><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>(<ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref><sp/>cb,<sp/>qdb_log_callback_id<sp/>*<sp/>callback_id);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="115"><highlight class="normal"><ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref>(qdb_log_callback_id<sp/>callback_id);</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"></highlight></codeline>
-<codeline lineno="117"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="118"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="52"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref></highlight></codeline>
+<codeline lineno="53"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a2d904e792153b67d549a21feaa3d4c44" kindref="member">qdb_log_detailed</ref><sp/>=<sp/>100,</highlight></codeline>
+<codeline lineno="57"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6ad1008f1d0dcd305a098b86a27ee39f50" kindref="member">qdb_log_debug</ref><sp/>=<sp/>200,</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a7a09d97eaf9beb3725a7b267f5a5e2fb" kindref="member">qdb_log_info</ref><sp/>=<sp/>300,</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a293192e62cca3326d9df8aac91a1e027" kindref="member">qdb_log_warning</ref><sp/>=<sp/>400,</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6aad6c7f5bca14b2e27d8bf909eabc1bd3" kindref="member">qdb_log_error</ref><sp/>=<sp/>500,</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="log_8h_1gae0666863f2369cd07dbd9fdf350c8cd6a2f06b74a0d684535fe526435f3849bf4" kindref="member">qdb_log_panic</ref><sp/>=<sp/>600</highlight></codeline>
+<codeline lineno="66"><highlight class="normal">}<sp/><ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"></highlight></codeline>
+<codeline lineno="73"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><ref refid="group__log_1ga6a72d356408c58332b03af73a52c84d6" kindref="member">qdb_log_callback_id</ref>;</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"></highlight></codeline>
+<codeline lineno="80"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/>void<sp/>(*<ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>)(</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__log_1gae0666863f2369cd07dbd9fdf350c8cd6" kindref="member">qdb_log_level_t</ref>,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>log<sp/>level<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="82"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>*,<sp/></highlight><highlight class="comment">/*<sp/>[year,<sp/>month,<sp/>day,<sp/>hours,</highlight></codeline>
+<codeline lineno="83"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>minutes,<sp/>seconds]<sp/>(valid<sp/>only</highlight></codeline>
+<codeline lineno="84"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>in<sp/>the<sp/>context<sp/>of<sp/>the<sp/>callback)</highlight></codeline>
+<codeline lineno="85"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>process<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">unsigned</highlight><highlight class="normal"><sp/>long,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>thread<sp/>id<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*,<sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>(valid<sp/>only<sp/>in<sp/>the</highlight></codeline>
+<codeline lineno="89"><highlight class="comment"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>context<sp/>of<sp/>the<sp/>callback)<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">size_t</highlight><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="comment">/*<sp/>message<sp/>buffer<sp/>size<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/>);</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="normal"></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>(<ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref><sp/>cb,<sp/>qdb_log_callback_id<sp/>*<sp/>callback_id);</highlight></codeline>
+<codeline lineno="108"><highlight class="normal"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref>(qdb_log_callback_id<sp/>callback_id);</highlight></codeline>
 <codeline lineno="120"><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_LOG_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="122"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="124"><highlight class="normal"></highlight></codeline>
+<codeline lineno="125"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_LOG_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="qdb/log.h"/>
   </compounddef>

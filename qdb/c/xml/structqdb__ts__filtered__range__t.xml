@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structqdb__ts__filtered__range__t" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_filtered_range_t</compoundname>
+    <includes local="no">ts.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__filtered__range__t_1aec08ba3f10f83a6980c7b7b8e6cb4d9a" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref></type>
+        <definition>qdb_ts_range_t qdb_ts_filtered_range_t::range</definition>
+        <argsstring></argsstring>
+        <name>range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="131" column="1" bodyfile="qdb/ts.h" bodystart="131" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__filtered__range__t_1a7371502ab0a7b744f4d1ac24140aeef5" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__ts__filter__t" kindref="compound">qdb_ts_filter_t</ref></type>
+        <definition>qdb_ts_filter_t qdb_ts_filtered_range_t::filter</definition>
+        <argsstring></argsstring>
+        <name>filter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="132" column="1" bodyfile="qdb/ts.h" bodystart="132" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A filtered time interval. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="47">
+        <label>qdb_ts_filtered_range_t</label>
+        <link refid="structqdb__ts__filtered__range__t"/>
+        <childnode refid="48" relation="usage">
+          <edgelabel>filter</edgelabel>
+        </childnode>
+        <childnode refid="49" relation="usage">
+          <edgelabel>range</edgelabel>
+        </childnode>
+      </node>
+      <node id="50">
+        <label>qdb_timespec_t</label>
+        <link refid="structqdb__timespec__t"/>
+      </node>
+      <node id="49">
+        <label>qdb_ts_range_t</label>
+        <link refid="structqdb__ts__range__t"/>
+        <childnode refid="50" relation="usage">
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="48">
+        <label>qdb_ts_filter_t</label>
+        <link refid="structqdb__ts__filter__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="qdb/ts.h" line="130" column="1" bodyfile="qdb/ts.h" bodystart="129" bodyend="133"/>
+    <listofallmembers>
+      <member refid="structqdb__ts__filtered__range__t_1a7371502ab0a7b744f4d1ac24140aeef5" prot="public" virt="non-virtual"><scope>qdb_ts_filtered_range_t</scope><name>filter</name></member>
+      <member refid="structqdb__ts__filtered__range__t_1aec08ba3f10f83a6980c7b7b8e6cb4d9a" prot="public" virt="non-virtual"><scope>qdb_ts_filtered_range_t</scope><name>range</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -6,7 +6,7 @@
     <innerclass refid="structqdb__const__tag__iterator__t" prot="public">qdb_const_tag_iterator_t</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__tag_1ga571507d1aa1ca6bfc7b75766963c7770" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_attach_tag</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *tag)</argsstring>
         <name>qdb_attach_tag</name>
@@ -44,18 +44,18 @@
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the tag to add to the entry </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag to add to the entry</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaa8b8afc25faab9d31f181f01c0903369" kindref="member">qdb_attach_tags</ref>, <ref refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kindref="member">qdb_detach_tag</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="68" column="1"/>
+        <location file="qdb/tag.h" line="69" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1gaa8b8afc25faab9d31f181f01c0903369" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_attach_tags</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *const *tags, size_t tag_count)</argsstring>
         <name>qdb_attach_tags</name>
@@ -104,18 +104,18 @@
 <parametername>tag_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The count of tags to add to the entry. </para></parameterdescription>
+<para>The count of tags to add to the entry.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga571507d1aa1ca6bfc7b75766963c7770" kindref="member">qdb_attach_tag</ref>, <ref refid="group__tag_1ga68697989d68da597dac0a844c20c93a9" kindref="member">qdb_has_tag</ref>, <ref refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kindref="member">qdb_detach_tags</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="96" column="1"/>
+        <location file="qdb/tag.h" line="99" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga68697989d68da597dac0a844c20c93a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_has_tag</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *tag)</argsstring>
         <name>qdb_has_tag</name>
@@ -153,18 +153,18 @@
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the tag for which presence must be tested </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag for which presence must be tested</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="120" column="1"/>
+        <location file="qdb/tag.h" line="125" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_detach_tag</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *tag)</argsstring>
         <name>qdb_detach_tag</name>
@@ -202,18 +202,18 @@
 <parametername>tag</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the tag to remove </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the tag to remove.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" kindref="member">qdb_detach_tags</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="144" column="1"/>
+        <location file="qdb/tag.h" line="152" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga70e470be5ea3d34f350fa54642e2ba73" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_detach_tags</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *const *tags, size_t tag_count)</argsstring>
         <name>qdb_detach_tags</name>
@@ -262,18 +262,18 @@
 <parametername>tag_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The count of tags to remove to the entry. </para></parameterdescription>
+<para>The count of tags to remove to the entry.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaad01c16c785e989f7eb37075e9cd8602" kindref="member">qdb_detach_tag</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="169" column="1"/>
+        <location file="qdb/tag.h" line="179" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_get_tagged</definition>
         <argsstring>(qdb_handle_t handle, const char *tag, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_get_tagged</name>
@@ -312,28 +312,28 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>aliases</parametername>
+<parametername direction="out">aliases</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries having the requested tag. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>alias_count</parametername>
+<parametername direction="out">alias_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an integer that will receive the number of returned aliases. </para></parameterdescription>
+<para>A pointer to an integer that will receive the number of returned aliases.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref>, <ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="199" column="1"/>
+        <location file="qdb/tag.h" line="210" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga7550b762c8f51663933cdc8beba78476" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_get_tagged_count</definition>
         <argsstring>(qdb_handle_t handle, const char *tag, qdb_uint_t *count)</argsstring>
         <name>qdb_get_tagged_count</name>
@@ -368,21 +368,21 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>count</parametername>
+<parametername direction="out">count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an integer that will receive the count of tags </para></parameterdescription>
+<para>A pointer to an integer that will receive the count of tags</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" kindref="member">qdb_get_tags</ref>, <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kindref="member">qdb_option_set_max_cardinality</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="216" column="1"/>
+        <location file="qdb/tag.h" line="230" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga1b6dda98389694c3742159b58ea9aa5a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_get_tags</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char ***tags, size_t *tag_count)</argsstring>
         <name>qdb_get_tags</name>
@@ -421,28 +421,28 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>tags</parametername>
+<parametername direction="out">tags</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an array of null-terminated UTF-8 string that will list the tags of the entry </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>tag_count</parametername>
+<parametername direction="out">tag_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an integer that will receive the number of returned tags. </para></parameterdescription>
+<para>A pointer to an integer that will receive the number of returned tags.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="239" column="1"/>
+        <location file="qdb/tag.h" line="254" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga94e7687010c7f78d9e678850691abb48" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_tag_iterator_begin</definition>
         <argsstring>(qdb_handle_t handle, const char *tag, qdb_const_tag_iterator_t *iterator)</argsstring>
         <name>qdb_tag_iterator_begin</name>
@@ -477,21 +477,21 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>iterator</parametername>
+<parametername direction="out">iterator</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an uninitialized <ref refid="structqdb__const__tag__iterator__t" kindref="compound">qdb_const_tag_iterator_t</ref></para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" kindref="member">qdb_tag_iterator_next</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="294" column="1"/>
+        <location file="qdb/tag.h" line="311" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1gaf887410a606b2a723bc197bb03c7b79e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_tag_iterator_next</definition>
         <argsstring>(qdb_const_tag_iterator_t *iterator)</argsstring>
         <name>qdb_tag_iterator_next</name>
@@ -504,21 +504,21 @@
         <detaileddescription>
 <para>The order in which iteration occurs is unspecified, but entries matching a tag will never appear twice.</para><para>Only forward iteration is currently supported.</para><para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref></para><para>If you expect the number of entries to be very small, you might consider using <ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>iterator</parametername>
+<parametername direction="inout">iterator</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an initialized <ref refid="structqdb__const__tag__iterator__t" kindref="compound">qdb_const_tag_iterator_t</ref></para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1gaae4f52c9959107b0be0b15adc45260b9" kindref="member">qdb_get_tagged</ref>, <ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="318" column="1"/>
+        <location file="qdb/tag.h" line="337" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_tag_iterator_close</definition>
         <argsstring>(qdb_const_tag_iterator_t *iterator)</argsstring>
         <name>qdb_tag_iterator_close</name>
@@ -531,18 +531,18 @@
         <detaileddescription>
 <para>Once iteration terminates, the caller is responsible for releasing API-allocated resources with <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref></para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
-<parametername>iterator</parametername>
+<parametername direction="inout">iterator</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an initialized <ref refid="structqdb__const__tag__iterator__t" kindref="compound">qdb_const_tag_iterator_t</ref></para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="332" column="1"/>
+        <location file="qdb/tag.h" line="352" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

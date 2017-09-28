@@ -5,21 +5,15 @@
     <includes refid="client_8h" local="yes">client.h</includes>
     <includedby refid="client_8h" local="yes">qdb/client.h</includedby>
     <incdepgraph>
+      <node id="131">
+        <label>_attr.h</label>
+        <link refid="__attr_8h"/>
+      </node>
       <node id="130">
         <label>error.h</label>
         <link refid="error_8h"/>
         <childnode refid="131" relation="include">
         </childnode>
-      </node>
-      <node id="134">
-        <label>stdint.h</label>
-      </node>
-      <node id="131">
-        <label>_attr.h</label>
-        <link refid="__attr_8h"/>
-      </node>
-      <node id="132">
-        <label>stddef.h</label>
       </node>
       <node id="129">
         <label>client.h</label>
@@ -35,6 +29,12 @@
         <childnode refid="128" relation="include">
         </childnode>
       </node>
+      <node id="134">
+        <label>stdint.h</label>
+      </node>
+      <node id="132">
+        <label>stddef.h</label>
+      </node>
       <node id="128">
         <label>qdb/option.h</label>
         <link refid="option_8h"/>
@@ -46,29 +46,9 @@
       </node>
     </incdepgraph>
     <invincdepgraph>
-      <node id="147">
-        <label>qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-      </node>
-      <node id="144">
-        <label>qdb/prefix.h</label>
-        <link refid="prefix_8h"/>
-      </node>
-      <node id="142">
-        <label>qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
-      </node>
-      <node id="138">
-        <label>qdb/blob.h</label>
-        <link refid="blob_8h"/>
-      </node>
-      <node id="137">
-        <label>qdb/batch.h</label>
-        <link refid="batch_8h"/>
-      </node>
-      <node id="149">
-        <label>qdb/ts.h</label>
-        <link refid="ts_8h"/>
+      <node id="143">
+        <label>qdb/node.h</label>
+        <link refid="node_8h"/>
       </node>
       <node id="136">
         <label>qdb/client.h</label>
@@ -102,13 +82,33 @@
         <childnode refid="149" relation="include">
         </childnode>
       </node>
-      <node id="139">
-        <label>qdb/deque.h</label>
-        <link refid="deque_8h"/>
-      </node>
       <node id="141">
         <label>qdb/integer.h</label>
         <link refid="integer_8h"/>
+      </node>
+      <node id="149">
+        <label>qdb/ts.h</label>
+        <link refid="ts_8h"/>
+      </node>
+      <node id="148">
+        <label>qdb/tag.h</label>
+        <link refid="tag_8h"/>
+      </node>
+      <node id="146">
+        <label>qdb/stream.h</label>
+        <link refid="stream_8h"/>
+      </node>
+      <node id="140">
+        <label>qdb/hset.h</label>
+        <link refid="hset_8h"/>
+      </node>
+      <node id="138">
+        <label>qdb/blob.h</label>
+        <link refid="blob_8h"/>
+      </node>
+      <node id="145">
+        <label>qdb/query.h</label>
+        <link refid="query_8h"/>
       </node>
       <node id="135">
         <label>qdb/option.h</label>
@@ -116,44 +116,31 @@
         <childnode refid="136" relation="include">
         </childnode>
       </node>
-      <node id="140">
-        <label>qdb/hset.h</label>
-        <link refid="hset_8h"/>
+      <node id="144">
+        <label>qdb/prefix.h</label>
+        <link refid="prefix_8h"/>
       </node>
-      <node id="145">
-        <label>qdb/query.h</label>
-        <link refid="query_8h"/>
+      <node id="142">
+        <label>qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
       </node>
-      <node id="148">
-        <label>qdb/tag.h</label>
-        <link refid="tag_8h"/>
+      <node id="147">
+        <label>qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
       </node>
-      <node id="143">
-        <label>qdb/node.h</label>
-        <link refid="node_8h"/>
+      <node id="137">
+        <label>qdb/batch.h</label>
+        <link refid="batch_8h"/>
       </node>
-      <node id="146">
-        <label>qdb/stream.h</label>
-        <link refid="stream_8h"/>
+      <node id="139">
+        <label>qdb/deque.h</label>
+        <link refid="deque_8h"/>
       </node>
     </invincdepgraph>
-      <sectiondef kind="define">
-      <memberdef kind="define" id="option_8h_1a86dbabcb0665956189f7a724e9187336" prot="public" static="no">
-        <name>qdb_max_user_name_length</name>
-        <initializer>120</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="112" column="9" bodyfile="qdb/option.h" bodystart="112" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="group__client_1ga2c0493e17b424c05b599b54ea641adba" prot="public" static="no">
-        <name>qdb_compression</name>
-        <enumvalue id="option_8h_1ga2c0493e17b424c05b599b54ea641adbaa4933efb6777664f0e19587b8be37f8d2" prot="public">
+      <memberdef kind="enum" id="group__client_1ga3b4ea526bf0468ff144305f011eb1793" prot="public" static="no">
+        <name>qdb_compression_t</name>
+        <enumvalue id="group__client_1gga3b4ea526bf0468ff144305f011eb1793a4933efb6777664f0e19587b8be37f8d2" prot="public">
           <name>qdb_comp_none</name>
           <initializer>= 0</initializer>
           <briefdescription>
@@ -161,7 +148,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="option_8h_1ga2c0493e17b424c05b599b54ea641adbaae779c527ad92b6adb5c979f5d0bf0569" prot="public">
+        <enumvalue id="group__client_1gga3b4ea526bf0468ff144305f011eb1793ae779c527ad92b6adb5c979f5d0bf0569" prot="public">
           <name>qdb_comp_fast</name>
           <initializer>= 1</initializer>
           <briefdescription>
@@ -169,7 +156,7 @@
           <detaileddescription>
 <para>Maximum compression speed, potentially minimum compression ratio. This is currently the default. </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="option_8h_1ga2c0493e17b424c05b599b54ea641adbaaa224c10b51af9f8da172e9b2aa6efcb3" prot="public">
+        <enumvalue id="group__client_1gga3b4ea526bf0468ff144305f011eb1793aa224c10b51af9f8da172e9b2aa6efcb3" prot="public">
           <name>qdb_comp_best</name>
           <initializer>= 2</initializer>
           <briefdescription>
@@ -184,67 +171,69 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="76" column="1" bodyfile="qdb/option.h" bodystart="76" bodyend="85"/>
+        <location file="qdb/option.h" line="75" column="1" bodyfile="qdb/option.h" bodystart="74" bodyend="84"/>
       </memberdef>
-      <memberdef kind="enum" id="option_8h_1accca38696fc28ac6e8f6dd76973ad0e6" prot="public" static="no">
-        <name>qdb_encryption</name>
-        <enumvalue id="option_8h_1accca38696fc28ac6e8f6dd76973ad0e6a9aeebebf657c4e6c022a1306f29ebc10" prot="public">
+      <memberdef kind="enum" id="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" prot="public" static="no">
+        <name>qdb_encryption_t</name>
+        <enumvalue id="group__client_1gga9ff0d1b86a2becd6d71edbeffeb04750a9aeebebf657c4e6c022a1306f29ebc10" prot="public">
           <name>qdb_crypt_none</name>
           <initializer>= 0</initializer>
           <briefdescription>
-          </briefdescription>
+<para>No encryption. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="option_8h_1accca38696fc28ac6e8f6dd76973ad0e6a300ebe56b10a20747a7c04010b589315" prot="public">
+        <enumvalue id="group__client_1gga9ff0d1b86a2becd6d71edbeffeb04750a300ebe56b10a20747a7c04010b589315" prot="public">
           <name>qdb_crypt_aes_gcm_256</name>
           <initializer>= 1</initializer>
           <briefdescription>
-          </briefdescription>
+<para>AEC-GCM 256-bit encryption. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
         <briefdescription>
-        </briefdescription>
+<para>An enumeration of encryption parameters. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__client_1gac56f8ad360a8ee531854b2ff3447dca4" kindref="member">qdb_option_set_encryption</ref> </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="100" column="1" bodyfile="qdb/option.h" bodystart="100" bodyend="103"/>
+        <location file="qdb/option.h" line="106" column="1" bodyfile="qdb/option.h" bodystart="105" bodyend="109"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__client_1ga3b4ea526bf0468ff144305f011eb1793" prot="public" static="no">
-        <type>enum <ref refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kindref="member">qdb_compression</ref></type>
-        <definition>qdb_compression_t</definition>
+      <memberdef kind="typedef" id="group__client_1ga21a14451aa697e26a9a4055e6a4e4976" prot="public" static="no">
+        <type>enum <ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref></type>
+        <definition>typedef enum qdb_compression_t  qdb_compression_t</definition>
         <argsstring></argsstring>
         <name>qdb_compression_t</name>
         <briefdescription>
-<para>A type alias for enum <ref refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kindref="member">qdb_compression</ref>. </para>        </briefdescription>
+<para>An enumeration of compression parameters. </para>        </briefdescription>
         <detaileddescription>
 <para><simplesect kind="see"><para><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="85" column="1"/>
+        <location file="qdb/option.h" line="84" column="1"/>
       </memberdef>
-      <memberdef kind="typedef" id="option_8h_1a28498f6ba5f76b5dce513b7572f1b848" prot="public" static="no">
-        <type>enum qdb_encryption</type>
-        <definition>typedef enum qdb_encryption  qdb_encryption_t</definition>
+      <memberdef kind="typedef" id="group__client_1gab095442d0cac6163df91b2cfb8dc949f" prot="public" static="no">
+        <type>enum <ref refid="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref></type>
+        <definition>typedef enum qdb_encryption_t  qdb_encryption_t</definition>
         <argsstring></argsstring>
         <name>qdb_encryption_t</name>
         <briefdescription>
-        </briefdescription>
+<para>An enumeration of encryption parameters. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__client_1gac56f8ad360a8ee531854b2ff3447dca4" kindref="member">qdb_option_set_encryption</ref> </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="103" column="1"/>
+        <location file="qdb/option.h" line="109" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_timeout</definition>
         <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
         <name>qdb_option_set_timeout</name>
@@ -264,25 +253,25 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The qdb_handle_t that was initialized with <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref> </para></parameterdescription>
+<para>The qdb_handle_t that was initialized with <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>timeout_ms</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The timeout of network operation, in milliseconds. </para></parameterdescription>
+<para>The timeout of network operation, in milliseconds.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="remark"><para>The lower the timeout, the higher the risk of having timeout errors. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="52" column="1"/>
+        <location file="qdb/option.h" line="54" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_max_cardinality</definition>
         <argsstring>(qdb_handle_t handle, qdb_uint_t max_cardinality)</argsstring>
         <name>qdb_option_set_max_cardinality</name>
@@ -309,18 +298,18 @@
 <parametername>max_cardinality</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The maximum cardinality of a query. </para></parameterdescription>
+<para>The maximum cardinality of a query.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="remark"><para>Improper usage of this function may cause a denial of service on the client. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="65" column="1"/>
+        <location file="qdb/option.h" line="69" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_compression</definition>
         <argsstring>(qdb_handle_t handle, qdb_compression_t comp_level)</argsstring>
         <name>qdb_option_set_compression</name>
@@ -347,19 +336,19 @@
 <parametername>comp_level</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The compression level to use </para></parameterdescription>
+<para>The compression level to use</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref> </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga21a14451aa697e26a9a4055e6a4e4976" kindref="member">qdb_compression_t</ref> </para></simplesect>
 <simplesect kind="remark"><para>For better performance, consider disabling compression if your data is already compressed. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="98" column="1"/>
+        <location file="qdb/option.h" line="100" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="option_8h_1ac56f8ad360a8ee531854b2ff3447dca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+      <memberdef kind="function" id="group__client_1gac56f8ad360a8ee531854b2ff3447dca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_encryption</definition>
         <argsstring>(qdb_handle_t handle, qdb_encryption_t encryption)</argsstring>
         <name>qdb_option_set_encryption</name>
@@ -368,19 +357,21 @@
           <declname>handle</declname>
         </param>
         <param>
-          <type>qdb_encryption_t</type>
+          <type><ref refid="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref></type>
           <declname>encryption</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Set the encryption method for all future messages emitted by the specified handle. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__client_1gab095442d0cac6163df91b2cfb8dc949f" kindref="member">qdb_encryption_t</ref></para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="106" column="1"/>
+        <location file="qdb/option.h" line="119" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="option_8h_1aea380a3205e9a8e6b8258666c111ff36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+      <memberdef kind="function" id="group__client_1gaea380a3205e9a8e6b8258666c111ff36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_cluster_public_key</definition>
         <argsstring>(qdb_handle_t handle, const char *public_key)</argsstring>
         <name>qdb_option_set_cluster_public_key</name>
@@ -393,15 +384,16 @@
           <declname>public_key</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Set the public key of the cluster used for authentification of nodes on connection. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="109" column="1"/>
+        <location file="qdb/option.h" line="127" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="option_8h_1a0779433ef98101afab8e906a9219c189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+      <memberdef kind="function" id="group__client_1ga0779433ef98101afab8e906a9219c189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_option_set_user_credentials</definition>
         <argsstring>(qdb_handle_t handle, const char *user_name, const char *private_key)</argsstring>
         <name>qdb_option_set_user_credentials</name>
@@ -418,12 +410,13 @@
           <declname>private_key</declname>
         </param>
         <briefdescription>
-        </briefdescription>
+<para>Set the user credentials (name and private key) used for authentification of the user on connection. </para>        </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para><simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/option.h" line="115" column="1"/>
+        <location file="qdb/option.h" line="135" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -473,46 +466,44 @@
 <codeline lineno="42"><highlight class="normal"></highlight><highlight class="keyword">extern</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;C&quot;</highlight><highlight class="normal"><sp/>{</highlight></codeline>
 <codeline lineno="43"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
 <codeline lineno="44"><highlight class="normal"></highlight></codeline>
-<codeline lineno="52"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kindref="member">qdb_option_set_timeout</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_ms);</highlight></codeline>
-<codeline lineno="54"><highlight class="normal"></highlight></codeline>
-<codeline lineno="64"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="65"><highlight class="normal"><ref refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kindref="member">qdb_option_set_max_cardinality</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/>qdb_uint_t<sp/>max_cardinality);</highlight></codeline>
-<codeline lineno="66"><highlight class="normal"></highlight></codeline>
-<codeline lineno="71"></codeline>
-<codeline lineno="76"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__client_1ga2c0493e17b424c05b599b54ea641adba" kindref="member">qdb_compression</ref><sp/>{</highlight></codeline>
-<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="option_8h_1ga2c0493e17b424c05b599b54ea641adbaa4933efb6777664f0e19587b8be37f8d2" kindref="member">qdb_comp_none</ref><sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="option_8h_1ga2c0493e17b424c05b599b54ea641adbaae779c527ad92b6adb5c979f5d0bf0569" kindref="member">qdb_comp_fast</ref><sp/>=<sp/>1,</highlight></codeline>
-<codeline lineno="84"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="option_8h_1ga2c0493e17b424c05b599b54ea641adbaaa224c10b51af9f8da172e9b2aa6efcb3" kindref="member">qdb_comp_best</ref><sp/>=<sp/>2</highlight></codeline>
-<codeline lineno="85"><highlight class="normal">}<sp/><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref>;</highlight></codeline>
-<codeline lineno="86"><highlight class="normal"></highlight></codeline>
-<codeline lineno="97"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="98"><highlight class="normal"><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref><sp/>comp_level);</highlight></codeline>
-<codeline lineno="99"><highlight class="normal"></highlight></codeline>
-<codeline lineno="100"><highlight class="normal"></highlight><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/>qdb_encryption<sp/>{</highlight></codeline>
-<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_crypt_none<sp/>=<sp/>0,</highlight></codeline>
-<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_crypt_aes_gcm_256<sp/>=<sp/>1</highlight></codeline>
-<codeline lineno="103"><highlight class="normal">}<sp/>qdb_encryption_t;</highlight></codeline>
-<codeline lineno="104"><highlight class="normal"></highlight></codeline>
-<codeline lineno="105"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="106"><highlight class="normal">qdb_option_set_encryption(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/>qdb_encryption_t<sp/>encryption);</highlight></codeline>
-<codeline lineno="107"><highlight class="normal"></highlight></codeline>
-<codeline lineno="108"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="109"><highlight class="normal">qdb_option_set_cluster_public_key(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>public_key);</highlight></codeline>
+<codeline lineno="54"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref><sp/><ref refid="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" kindref="member">qdb_option_set_timeout</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="55"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>timeout_ms);</highlight></codeline>
+<codeline lineno="56"><highlight class="normal"></highlight></codeline>
+<codeline lineno="68"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="69"><highlight class="normal"><ref refid="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" kindref="member">qdb_option_set_max_cardinality</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/>qdb_uint_t<sp/>max_cardinality);</highlight></codeline>
+<codeline lineno="70"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref></highlight></codeline>
+<codeline lineno="75"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1gga3b4ea526bf0468ff144305f011eb1793a4933efb6777664f0e19587b8be37f8d2" kindref="member">qdb_comp_none</ref><sp/>=<sp/>0,</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1gga3b4ea526bf0468ff144305f011eb1793ae779c527ad92b6adb5c979f5d0bf0569" kindref="member">qdb_comp_fast</ref><sp/>=<sp/>1,</highlight></codeline>
+<codeline lineno="83"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1gga3b4ea526bf0468ff144305f011eb1793aa224c10b51af9f8da172e9b2aa6efcb3" kindref="member">qdb_comp_best</ref><sp/>=<sp/>2</highlight></codeline>
+<codeline lineno="84"><highlight class="normal">}<sp/><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref>;</highlight></codeline>
+<codeline lineno="85"><highlight class="normal"></highlight></codeline>
+<codeline lineno="99"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref><sp/>comp_level);</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"></highlight></codeline>
+<codeline lineno="105"><highlight class="keyword">typedef</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">enum</highlight><highlight class="normal"><sp/><ref refid="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref></highlight></codeline>
+<codeline lineno="106"><highlight class="normal">{</highlight></codeline>
+<codeline lineno="107"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1gga9ff0d1b86a2becd6d71edbeffeb04750a9aeebebf657c4e6c022a1306f29ebc10" kindref="member">qdb_crypt_none</ref><sp/>=<sp/>0,<sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight></codeline>
+<codeline lineno="108"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="group__client_1gga9ff0d1b86a2becd6d71edbeffeb04750a300ebe56b10a20747a7c04010b589315" kindref="member">qdb_crypt_aes_gcm_256</ref><sp/>=<sp/>1<sp/></highlight></codeline>
+<codeline lineno="109"><highlight class="normal">}<sp/><ref refid="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref>;</highlight></codeline>
 <codeline lineno="110"><highlight class="normal"></highlight></codeline>
-<codeline lineno="111"><highlight class="normal"></highlight><highlight class="comment">//<sp/>an<sp/>user<sp/>name<sp/>may<sp/>not<sp/>exceed<sp/>a<sp/>predefined<sp/>size</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="112"><highlight class="normal"></highlight><highlight class="preprocessor">#define<sp/>qdb_max_user_name_length<sp/>120</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="113"><highlight class="normal"></highlight></codeline>
-<codeline lineno="114"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></highlight></codeline>
-<codeline lineno="115"><highlight class="normal">qdb_option_set_user_credentials(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
-<codeline lineno="116"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>user_name,</highlight></codeline>
-<codeline lineno="117"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>private_key);</highlight></codeline>
-<codeline lineno="118"><highlight class="normal"></highlight></codeline>
-<codeline lineno="119"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="120"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="121"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
-<codeline lineno="122"><highlight class="normal"></highlight></codeline>
-<codeline lineno="123"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_OPTION_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
+<codeline lineno="118"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="119"><highlight class="normal"><ref refid="group__client_1gac56f8ad360a8ee531854b2ff3447dca4" kindref="member">qdb_option_set_encryption</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/><ref refid="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref><sp/>encryption);</highlight></codeline>
+<codeline lineno="120"><highlight class="normal"></highlight></codeline>
+<codeline lineno="126"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="127"><highlight class="normal"><ref refid="group__client_1gaea380a3205e9a8e6b8258666c111ff36" kindref="member">qdb_option_set_cluster_public_key</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,<sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>public_key);</highlight></codeline>
+<codeline lineno="128"><highlight class="normal"></highlight></codeline>
+<codeline lineno="134"><highlight class="normal">QDB_API_LINKAGE<sp/><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></highlight></codeline>
+<codeline lineno="135"><highlight class="normal"><ref refid="group__client_1ga0779433ef98101afab8e906a9219c189" kindref="member">qdb_option_set_user_credentials</ref>(<ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref><sp/>handle,</highlight></codeline>
+<codeline lineno="136"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>user_name,</highlight></codeline>
+<codeline lineno="137"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">const</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">char</highlight><highlight class="normal"><sp/>*<sp/>private_key);</highlight></codeline>
+<codeline lineno="138"><highlight class="normal"></highlight></codeline>
+<codeline lineno="139"><highlight class="normal"></highlight><highlight class="preprocessor">#ifdef<sp/>__cplusplus</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="140"><highlight class="normal">}<sp/></highlight><highlight class="comment">/*<sp/>extern<sp/>&quot;C&quot;<sp/>*/</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="141"><highlight class="normal"></highlight><highlight class="preprocessor">#endif</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="142"><highlight class="normal"></highlight></codeline>
+<codeline lineno="143"><highlight class="normal"></highlight><highlight class="preprocessor">#endif<sp/></highlight><highlight class="comment">/*<sp/>QDB_API_OPTION_H<sp/>*/</highlight><highlight class="preprocessor"></highlight></codeline>
     </programlisting>
     <location file="qdb/option.h"/>
   </compounddef>

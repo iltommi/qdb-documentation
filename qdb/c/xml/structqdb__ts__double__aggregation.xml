@@ -5,7 +5,7 @@
     <includes local="no">ts.h</includes>
       <sectiondef kind="public-attrib">
       <memberdef kind="variable" id="structqdb__ts__double__aggregation_1ab0374a58bd33be417737c632c76830d3" prot="public" static="no" mutable="no">
-        <type><ref refid="group__ts_1ga630e65f7396952b198be0410baad7126" kindref="member">qdb_ts_aggregation_type_t</ref></type>
+        <type><ref refid="group__ts_1gabe3dc4b6c33c26fd46ed16d30f07853a" kindref="member">qdb_ts_aggregation_type_t</ref></type>
         <definition>qdb_ts_aggregation_type_t qdb_ts_double_aggregation::type</definition>
         <argsstring></argsstring>
         <name>type</name>
@@ -15,20 +15,20 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="114" column="1" bodyfile="qdb/ts.h" bodystart="114" bodyend="-1"/>
+        <location file="qdb/ts.h" line="168" column="1" bodyfile="qdb/ts.h" bodystart="168" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="structqdb__ts__double__aggregation_1a17df839be077addce4fe2b682ebbff8f" prot="public" static="no" mutable="no">
-        <type><ref refid="structqdb__ts__range__t" kindref="compound">qdb_ts_range_t</ref></type>
-        <definition>qdb_ts_range_t qdb_ts_double_aggregation::range</definition>
+      <memberdef kind="variable" id="structqdb__ts__double__aggregation_1af52fb2cc567c0da9dd89c34555218a3d" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__ts__filtered__range__t" kindref="compound">qdb_ts_filtered_range_t</ref></type>
+        <definition>qdb_ts_filtered_range_t qdb_ts_double_aggregation::filtered_range</definition>
         <argsstring></argsstring>
-        <name>range</name>
+        <name>filtered_range</name>
         <briefdescription>
 <para>The time interval on which the aggregation should be executed. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="116" column="1" bodyfile="qdb/ts.h" bodystart="116" bodyend="-1"/>
+        <location file="qdb/ts.h" line="170" column="1" bodyfile="qdb/ts.h" bodystart="170" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__double__aggregation_1a3bfbc0b40a70a0f0ec0d679523f316a4" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="119" column="1" bodyfile="qdb/ts.h" bodystart="119" bodyend="-1"/>
+        <location file="qdb/ts.h" line="173" column="1" bodyfile="qdb/ts.h" bodystart="173" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__double__aggregation_1abfae82f699909d8e599d893b1d5308c7" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref></type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="121" column="1" bodyfile="qdb/ts.h" bodystart="121" bodyend="-1"/>
+        <location file="qdb/ts.h" line="175" column="1" bodyfile="qdb/ts.h" bodystart="175" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -62,40 +62,54 @@
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
-      <node id="33">
+      <node id="35">
         <label>qdb_ts_double_aggregation</label>
         <link refid="structqdb__ts__double__aggregation"/>
-        <childnode refid="34" relation="usage">
+        <childnode refid="36" relation="usage">
+          <edgelabel>filtered_range</edgelabel>
+        </childnode>
+        <childnode refid="40" relation="usage">
           <edgelabel>result</edgelabel>
         </childnode>
-        <childnode refid="36" relation="usage">
+      </node>
+      <node id="36">
+        <label>qdb_ts_filtered_range_t</label>
+        <link refid="structqdb__ts__filtered__range__t"/>
+        <childnode refid="37" relation="usage">
+          <edgelabel>filter</edgelabel>
+        </childnode>
+        <childnode refid="38" relation="usage">
           <edgelabel>range</edgelabel>
         </childnode>
       </node>
-      <node id="35">
+      <node id="39">
         <label>qdb_timespec_t</label>
         <link refid="structqdb__timespec__t"/>
       </node>
-      <node id="36">
+      <node id="38">
         <label>qdb_ts_range_t</label>
         <link refid="structqdb__ts__range__t"/>
-        <childnode refid="35" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>begin</edgelabel>
           <edgelabel>end</edgelabel>
         </childnode>
       </node>
-      <node id="34">
+      <node id="37">
+        <label>qdb_ts_filter_t</label>
+        <link refid="structqdb__ts__filter__t"/>
+      </node>
+      <node id="40">
         <label>qdb_ts_double_point</label>
         <link refid="structqdb__ts__double__point"/>
-        <childnode refid="35" relation="usage">
+        <childnode refid="39" relation="usage">
           <edgelabel>timestamp</edgelabel>
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="qdb/ts.h" line="112" column="1" bodyfile="qdb/ts.h" bodystart="111" bodyend="122"/>
+    <location file="qdb/ts.h" line="166" column="1" bodyfile="qdb/ts.h" bodystart="165" bodyend="176"/>
     <listofallmembers>
       <member refid="structqdb__ts__double__aggregation_1a3bfbc0b40a70a0f0ec0d679523f316a4" prot="public" virt="non-virtual"><scope>qdb_ts_double_aggregation</scope><name>count</name></member>
-      <member refid="structqdb__ts__double__aggregation_1a17df839be077addce4fe2b682ebbff8f" prot="public" virt="non-virtual"><scope>qdb_ts_double_aggregation</scope><name>range</name></member>
+      <member refid="structqdb__ts__double__aggregation_1af52fb2cc567c0da9dd89c34555218a3d" prot="public" virt="non-virtual"><scope>qdb_ts_double_aggregation</scope><name>filtered_range</name></member>
       <member refid="structqdb__ts__double__aggregation_1abfae82f699909d8e599d893b1d5308c7" prot="public" virt="non-virtual"><scope>qdb_ts_double_aggregation</scope><name>result</name></member>
       <member refid="structqdb__ts__double__aggregation_1ab0374a58bd33be417737c632c76830d3" prot="public" virt="non-virtual"><scope>qdb_ts_double_aggregation</scope><name>type</name></member>
     </listofallmembers>

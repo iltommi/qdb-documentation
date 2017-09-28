@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structqdb__ts__aggregation__t" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_aggregation_t</compoundname>
+    <includes local="no">ts.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__aggregation__t_1a1f2fe8d2fe7804f712fe50c55ad08313" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
+        <definition>qdb_timespec_t qdb_ts_aggregation_t::begin</definition>
+        <argsstring></argsstring>
+        <name>begin</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="62" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="62" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__aggregation__t_1a159bbd6aa1fa2ffdd50f449172c46928" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
+        <definition>qdb_timespec_t qdb_ts_aggregation_t::end</definition>
+        <argsstring></argsstring>
+        <name>end</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="63" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="63" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__aggregation__t_1afdc8bc4216b747a48f37bb67f8d052e2" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
+        <definition>qdb_timespec_t qdb_ts_aggregation_t::result_timestamp</definition>
+        <argsstring></argsstring>
+        <name>result_timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="65" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="65" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__aggregation__t_1addbf83c6fa535a1e65ea2382ef62f804" prot="public" static="no" mutable="no">
+        <type>double</type>
+        <definition>double qdb_ts_aggregation_t::result_value</definition>
+        <argsstring></argsstring>
+        <name>result_value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="66" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="66" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Aggregation input and result. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="23">
+        <label>qdb_ts_aggregation_t</label>
+        <link refid="structqdb__ts__aggregation__t"/>
+        <childnode refid="24" relation="usage">
+          <edgelabel>result_timestamp</edgelabel>
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="24">
+        <label>qdb_timespec_t</label>
+        <link refid="structqdb__timespec__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="D:/workspace/quasardb/api/include/qdb/ts.h" line="61" column="1" bodyfile="D:/workspace/quasardb/api/include/qdb/ts.h" bodystart="60" bodyend="67"/>
+    <listofallmembers>
+      <member refid="structqdb__ts__aggregation__t_1a1f2fe8d2fe7804f712fe50c55ad08313" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation_t</scope><name>begin</name></member>
+      <member refid="structqdb__ts__aggregation__t_1a159bbd6aa1fa2ffdd50f449172c46928" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation_t</scope><name>end</name></member>
+      <member refid="structqdb__ts__aggregation__t_1afdc8bc4216b747a48f37bb67f8d052e2" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation_t</scope><name>result_timestamp</name></member>
+      <member refid="structqdb__ts__aggregation__t_1addbf83c6fa535a1e65ea2382ef62f804" prot="public" virt="non-virtual"><scope>qdb_ts_aggregation_t</scope><name>result_value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

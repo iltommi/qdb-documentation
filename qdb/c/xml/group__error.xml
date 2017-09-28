@@ -4,9 +4,9 @@
     <compoundname>error</compoundname>
     <title>Error codes and error handling</title>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="group__error_1gaef8f2ffc9bd2ee1abe785a8aeb86c701" prot="public" static="no">
-        <name>qdb_err_origin</name>
-        <enumvalue id="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701aabeb79ba7024616cd1d1f0d28364479d" prot="public">
+      <memberdef kind="enum" id="group__error_1ga318ee7741483580e773c217452964811" prot="public" static="no">
+        <name>qdb_error_origin_t</name>
+        <enumvalue id="group__error_1gga318ee7741483580e773c217452964811aabeb79ba7024616cd1d1f0d28364479d" prot="public">
           <name>qdb_e_origin_system_remote</name>
           <initializer>= (int) 0xf0000000</initializer>
           <briefdescription>
@@ -14,7 +14,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701a7bb5c5e7a8c4fca41c54d4cf1fb8ff6b" prot="public">
+        <enumvalue id="group__error_1gga318ee7741483580e773c217452964811a7bb5c5e7a8c4fca41c54d4cf1fb8ff6b" prot="public">
           <name>qdb_e_origin_system_local</name>
           <initializer>= (int) 0xe0000000</initializer>
           <briefdescription>
@@ -22,7 +22,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701a508483294745d2b0fec2206853d1e60e" prot="public">
+        <enumvalue id="group__error_1gga318ee7741483580e773c217452964811a508483294745d2b0fec2206853d1e60e" prot="public">
           <name>qdb_e_origin_connection</name>
           <initializer>= (int) 0xd0000000</initializer>
           <briefdescription>
@@ -30,7 +30,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701a52dcca1e1e229da02cafb032f51eb2d1" prot="public">
+        <enumvalue id="group__error_1gga318ee7741483580e773c217452964811a52dcca1e1e229da02cafb032f51eb2d1" prot="public">
           <name>qdb_e_origin_input</name>
           <initializer>= (int) 0xc0000000</initializer>
           <briefdescription>
@@ -38,7 +38,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701a16b0ea00df897327033b5ee5844d3378" prot="public">
+        <enumvalue id="group__error_1gga318ee7741483580e773c217452964811a16b0ea00df897327033b5ee5844d3378" prot="public">
           <name>qdb_e_origin_operation</name>
           <initializer>= (int) 0xb0000000</initializer>
           <briefdescription>
@@ -46,7 +46,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaef8f2ffc9bd2ee1abe785a8aeb86c701afd9cab7f1f951b87c8ccb7b4a8fb0356" prot="public">
+        <enumvalue id="group__error_1gga318ee7741483580e773c217452964811afd9cab7f1f951b87c8ccb7b4a8fb0356" prot="public">
           <name>qdb_e_origin_protocol</name>
           <initializer>= (int) 0xa0000000</initializer>
           <briefdescription>
@@ -62,9 +62,9 @@
         </inbodydescription>
         <location file="qdb/error.h" line="77" column="1" bodyfile="qdb/error.h" bodystart="76" bodyend="84"/>
       </memberdef>
-      <memberdef kind="enum" id="group__error_1gaa48fc525bae5abec03a6e216128e5a76" prot="public" static="no">
-        <name>qdb_err_severity</name>
-        <enumvalue id="group__error_1ggaa48fc525bae5abec03a6e216128e5a76aed9b7c3b2eeadfcc716a01cee3bc5287" prot="public">
+      <memberdef kind="enum" id="group__error_1ga343486b649541b9ad4885eb7d1e6abc7" prot="public" static="no">
+        <name>qdb_error_severity_t</name>
+        <enumvalue id="group__error_1gga343486b649541b9ad4885eb7d1e6abc7aed9b7c3b2eeadfcc716a01cee3bc5287" prot="public">
           <name>qdb_e_severity_unrecoverable</name>
           <initializer>= 0x03000000</initializer>
           <briefdescription>
@@ -72,7 +72,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaa48fc525bae5abec03a6e216128e5a76a86018b2fd6e534e45e787d1006724ae0" prot="public">
+        <enumvalue id="group__error_1gga343486b649541b9ad4885eb7d1e6abc7a86018b2fd6e534e45e787d1006724ae0" prot="public">
           <name>qdb_e_severity_error</name>
           <initializer>= 0x02000000</initializer>
           <briefdescription>
@@ -80,7 +80,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaa48fc525bae5abec03a6e216128e5a76ab3f795b893cedcfa863a04085bc100b6" prot="public">
+        <enumvalue id="group__error_1gga343486b649541b9ad4885eb7d1e6abc7ab3f795b893cedcfa863a04085bc100b6" prot="public">
           <name>qdb_e_severity_warning</name>
           <initializer>= 0x01000000</initializer>
           <briefdescription>
@@ -88,7 +88,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggaa48fc525bae5abec03a6e216128e5a76adaca26a40fd7e3d40624e1cf286b4ba0" prot="public">
+        <enumvalue id="group__error_1gga343486b649541b9ad4885eb7d1e6abc7adaca26a40fd7e3d40624e1cf286b4ba0" prot="public">
           <name>qdb_e_severity_info</name>
           <initializer>= 0x00000000</initializer>
           <briefdescription>
@@ -104,445 +104,448 @@
         </inbodydescription>
         <location file="qdb/error.h" line="94" column="1" bodyfile="qdb/error.h" bodystart="93" bodyend="99"/>
       </memberdef>
-      <memberdef kind="enum" id="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" prot="public" static="no">
-        <name>qdb_err</name>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aad6d0d2fb89cdc604785b0d0b422b082" prot="public">
+      <memberdef kind="enum" id="group__error_1ga365e768c3ca0f6387d8798eb98c40443" prot="public" static="no">
+        <name>qdb_error_t</name>
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aad6d0d2fb89cdc604785b0d0b422b082" prot="public">
           <name>qdb_e_ok</name>
           <initializer>= 0</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Success. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a31a0261b123c4f5a026693e8c6ecaa32" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a31a0261b123c4f5a026693e8c6ecaa32" prot="public">
           <name>qdb_e_uninitialized</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_unrecoverable | 0xFFFF</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Uninitialized error. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a456aa075e4cacb7fdfa357aa7e8c5149" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" prot="public">
           <name>qdb_e_alias_not_found</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0008</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Entry alias/key was not found. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2afff73f65761b5b6acb3674f828facbe5" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443afff73f65761b5b6acb3674f828facbe5" prot="public">
           <name>qdb_e_alias_already_exists</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0009</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Entry alias/key already exists. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2abd0d6f428b64057d34d4c446bea0bee0" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443abd0d6f428b64057d34d4c446bea0bee0" prot="public">
           <name>qdb_e_out_of_bounds</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_warning       | 0x0019</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Index out of bounds. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a466caf1ded6909454fae88ea50bcc1ee" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a466caf1ded6909454fae88ea50bcc1ee" prot="public">
           <name>qdb_e_skipped</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0021</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Skipped operation. Used in batches and transactions. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a1ed20b3d0f469a2c89a88f2f62a435ab" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a1ed20b3d0f469a2c89a88f2f62a435ab" prot="public">
           <name>qdb_e_incompatible_type</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0022</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Entry or column is incompatible with the operation. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5736d7248e53e0f0ea2d9fcafb9c0c65" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a5736d7248e53e0f0ea2d9fcafb9c0c65" prot="public">
           <name>qdb_e_container_empty</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0023</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Container is empty. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a2fc39e8b4dd7d8314a6fa2b1d355b4dc" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a2fc39e8b4dd7d8314a6fa2b1d355b4dc" prot="public">
           <name>qdb_e_container_full</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0024</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Container is full. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aba6d6480be7386f9f6bcebf0258a7e7d" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aba6d6480be7386f9f6bcebf0258a7e7d" prot="public">
           <name>qdb_e_element_not_found</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x0025</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Element was not found. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a1da5958ef25eb11ac0d985402082d625" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a1da5958ef25eb11ac0d985402082d625" prot="public">
           <name>qdb_e_element_already_exists</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x0026</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Element already exists. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a61980d0d53cf673df21bbc8b35c6fe35" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a61980d0d53cf673df21bbc8b35c6fe35" prot="public">
           <name>qdb_e_overflow</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0027</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Arithmetic operation overflows. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a80050d893d1b453f3a75bc687cbbfcc0" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a80050d893d1b453f3a75bc687cbbfcc0" prot="public">
           <name>qdb_e_underflow</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0028</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Arithmetic operation underflows. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a98832a817610ede4bc61a2272260e4f0" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a98832a817610ede4bc61a2272260e4f0" prot="public">
           <name>qdb_e_tag_already_set</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x0029</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Tag is already set. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a420143a8f98d0bf4901c9befb3f1ddcb" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a420143a8f98d0bf4901c9befb3f1ddcb" prot="public">
           <name>qdb_e_tag_not_set</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x002a</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Tag is not set. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aca8346a92f93518bc85b6d6611b78c98" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aca8346a92f93518bc85b6d6611b78c98" prot="public">
           <name>qdb_e_timeout</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x000a</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Operation timed out. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2afdb26fd8ffcd27fd33007b9926b17afa" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443afdb26fd8ffcd27fd33007b9926b17afa" prot="public">
           <name>qdb_e_connection_refused</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_unrecoverable | 0x000e</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Connection was refused. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2af8f54dd25f26ef3263e6870750ae0fb6" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443af8f54dd25f26ef3263e6870750ae0fb6" prot="public">
           <name>qdb_e_connection_reset</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x000f</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Connection was reset. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5ce70ce7196a92317e086a53ea701e03" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a5ce70ce7196a92317e086a53ea701e03" prot="public">
           <name>qdb_e_unstable_cluster</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x0012</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Cluster is unstable. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a296eee769651471646db0dc4ae8da599" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a296eee769651471646db0dc4ae8da599" prot="public">
           <name>qdb_e_try_again</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x0017</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Please retry. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a1076c5a089a997480c5b696144c6a204" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a1076c5a089a997480c5b696144c6a204" prot="public">
           <name>qdb_e_conflict</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x001a</initializer>
           <briefdescription>
-          </briefdescription>
+<para>There is another ongoing conflicting operation. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a14fdd7a7d190d32e1a34a282bb7b760e" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a14fdd7a7d190d32e1a34a282bb7b760e" prot="public">
           <name>qdb_e_not_connected</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x001b</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Handle is not connected. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a09fe427c7b8cea6e287c6ddda75785da" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a09fe427c7b8cea6e287c6ddda75785da" prot="public">
           <name>qdb_e_resource_locked</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x002d</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Resource is locked. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7bf6eadc0309657e2a953b289190341e" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7bf6eadc0309657e2a953b289190341e" prot="public">
           <name>qdb_e_system_remote</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_unrecoverable | 0x0001</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>System error on remote node (server-side). Please check <computeroutput>errno</computeroutput> or <computeroutput>GetLastError()</computeroutput> for actual error. </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9b48bdd508132069c47c765ce8d69ab6" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a9b48bdd508132069c47c765ce8d69ab6" prot="public">
           <name>qdb_e_system_local</name>
           <initializer>= qdb_e_origin_system_local  | qdb_e_severity_unrecoverable | 0x0001</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>System error on local system (client-side). Please check <computeroutput>errno</computeroutput> or <computeroutput>GetLastError()</computeroutput> for actual error. </para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2af6ab690eccd240888b222d32dd8b0859" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443af6ab690eccd240888b222d32dd8b0859" prot="public">
           <name>qdb_e_internal_remote</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_unrecoverable | 0x0002</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Internal error on remote node (server-side). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a155fc6ecf0c5fb7e08661b2de7278e14" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a155fc6ecf0c5fb7e08661b2de7278e14" prot="public">
           <name>qdb_e_internal_local</name>
           <initializer>= qdb_e_origin_system_local  | qdb_e_severity_unrecoverable | 0x0002</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Internal error on local system (client-side). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a80bd91b61c176a8e371d88aac3cd0532" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a80bd91b61c176a8e371d88aac3cd0532" prot="public">
           <name>qdb_e_no_memory_remote</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_unrecoverable | 0x0003</initializer>
           <briefdescription>
-          </briefdescription>
+<para>No memory on remote node (server-side). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a8f8575076cea6f89bda86387dd862dc6" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a8f8575076cea6f89bda86387dd862dc6" prot="public">
           <name>qdb_e_no_memory_local</name>
           <initializer>= qdb_e_origin_system_local  | qdb_e_severity_unrecoverable | 0x0003</initializer>
           <briefdescription>
-          </briefdescription>
+<para>No memory on local system (client-side). </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa60d8ccf2fc347efd408331f072a15bd" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aa60d8ccf2fc347efd408331f072a15bd" prot="public">
           <name>qdb_e_invalid_protocol</name>
           <initializer>= qdb_e_origin_protocol      | qdb_e_severity_unrecoverable | 0x0004</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Protocol is invalid. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a222f8fa54b5ef5ac8c3b86aee685f746" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a222f8fa54b5ef5ac8c3b86aee685f746" prot="public">
           <name>qdb_e_host_not_found</name>
           <initializer>= qdb_e_origin_connection    | qdb_e_severity_error         | 0x0005</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Host was not found. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a13d942a5ac05a02071d2142beb559bea" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a13d942a5ac05a02071d2142beb559bea" prot="public">
           <name>qdb_e_buffer_too_small</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_warning       | 0x000b</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Buffer is too small. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a11764d6e4f4e9db55e0385fd866768ab" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a11764d6e4f4e9db55e0385fd866768ab" prot="public">
           <name>qdb_e_not_implemented</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_unrecoverable | 0x0011</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Operation is not implemented. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa04c0faf49159dd2cd66d8786bdaceef" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aa04c0faf49159dd2cd66d8786bdaceef" prot="public">
           <name>qdb_e_invalid_version</name>
           <initializer>= qdb_e_origin_protocol      | qdb_e_severity_unrecoverable | 0x0016</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Version is invalid. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9f2aa83ba8969f389f23a281bb8227a8" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a9f2aa83ba8969f389f23a281bb8227a8" prot="public">
           <name>qdb_e_invalid_argument</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x0018</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Argument is invalid. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0a1723dd0a90a9a60aa89d6fba1ad4cd" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a0a1723dd0a90a9a60aa89d6fba1ad4cd" prot="public">
           <name>qdb_e_invalid_handle</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x001c</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Handle is invalid. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2af256bc76e0056d99f464a5a8a1148d17" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443af256bc76e0056d99f464a5a8a1148d17" prot="public">
           <name>qdb_e_reserved_alias</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x001d</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Alias/key is reserved. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7869432989b33d483e510fc57d44a3c9" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7869432989b33d483e510fc57d44a3c9" prot="public">
           <name>qdb_e_unmatched_content</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x001e</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Content did not match. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7ebe635483bf1f50643cf05ddced1657" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7ebe635483bf1f50643cf05ddced1657" prot="public">
           <name>qdb_e_invalid_iterator</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x001f</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Iterator is invalid. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0bd6b455054bca46ab9bb7a23ff08087" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a0bd6b455054bca46ab9bb7a23ff08087" prot="public">
           <name>qdb_e_entry_too_large</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x002b</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Entry is too large. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aab992a221b85c5581acf4fd2e7bac617" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aab992a221b85c5581acf4fd2e7bac617" prot="public">
           <name>qdb_e_transaction_partial_failure</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x002c</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>Transaction failed partially. <simplesect kind="warning"><para>This may provoke failures until the transaction has not been rolled back. </para></simplesect>
+<simplesect kind="see"><para>Cluster configuration parameter <computeroutput>global/cluster/max_transaction_duration</computeroutput>. </para></simplesect>
+</para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5e3f7ff277511984a70139328714d839" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a5e3f7ff277511984a70139328714d839" prot="public">
           <name>qdb_e_operation_disabled</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x002e</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Operation has not been enabled in cluster configuration. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a1cd256fddf4fd12463e5aa9e453289c7" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a1cd256fddf4fd12463e5aa9e453289c7" prot="public">
           <name>qdb_e_operation_not_permitted</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x002f</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Operation is not permitted. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2af3d584049b45f2aacca139de8c34a20b" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443af3d584049b45f2aacca139de8c34a20b" prot="public">
           <name>qdb_e_iterator_end</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x0030</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Iterator reached the end. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0af9a802084f4c4c563aee0293a08ee7" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a0af9a802084f4c4c563aee0293a08ee7" prot="public">
           <name>qdb_e_invalid_reply</name>
           <initializer>= qdb_e_origin_protocol      | qdb_e_severity_unrecoverable | 0x0031</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Cluster sent an invalid reply. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a40e9d1f18501d50eef1fc8af06bfcc5f" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a40e9d1f18501d50eef1fc8af06bfcc5f" prot="public">
           <name>qdb_e_ok_created</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_info          | 0x0032</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Success. A new entry has been created. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aaaf8b9c3aaa7296118037aa41d552fd3" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aaaf8b9c3aaa7296118037aa41d552fd3" prot="public">
           <name>qdb_e_no_space_left</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_unrecoverable | 0x0033</initializer>
           <briefdescription>
-          </briefdescription>
+<para>No more space on disk. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9d43bc1ae8cbfeb3d068d1c91a138c8e" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a9d43bc1ae8cbfeb3d068d1c91a138c8e" prot="public">
           <name>qdb_e_quota_exceeded</name>
-          <initializer>= qdb_e_origin_system_remote | qdb_e_severity_error         | 0x0034</initializer>
+          <initializer>= qdb_e_origin_system_remote | qdb_e_severity_unrecoverable | 0x0034</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Disk space quota has been reached. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa13cf3a9f5ebc6d5795f53625a8a989d" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443aa13cf3a9f5ebc6d5795f53625a8a989d" prot="public">
           <name>qdb_e_alias_too_long</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x0035</initializer>
           <briefdescription>
           </briefdescription>
           <detaileddescription>
-          </detaileddescription>
+<para>Alias is too long. <simplesect kind="see"><para><ref refid="group__client_1gga14ba3138099f3c7969f707eb4b16c35ba5f7b5e1be562cf9e9bf141b7cba12fcf" kindref="member">qdb_l_max_alias_length</ref> </para></simplesect>
+</para>          </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5d6825c7b32eeea83aeb6dad1787c6f6" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a5d6825c7b32eeea83aeb6dad1787c6f6" prot="public">
           <name>qdb_e_clock_skew</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_error         | 0x0036</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Cluster nodes have important clock differences. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7a6c957a31b0b5d4b61575f89f139681" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7a6c957a31b0b5d4b61575f89f139681" prot="public">
           <name>qdb_e_access_denied</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x0037</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Access is denied. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ab0ec10e10f4dd148d34e01d47bdd8a0f" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443ab0ec10e10f4dd148d34e01d47bdd8a0f" prot="public">
           <name>qdb_e_login_failed</name>
           <initializer>= qdb_e_origin_system_remote | qdb_e_severity_error         | 0x0038</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Login failed. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9346971364404dd0a1fce5eacf6bee17" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a9346971364404dd0a1fce5eacf6bee17" prot="public">
           <name>qdb_e_column_not_found</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_warning       | 0x0039</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Column was not found. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5ed1b63f41eaf84f085a23a879952daa" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a5ed1b63f41eaf84f085a23a879952daa" prot="public">
           <name>qdb_e_query_too_complex</name>
           <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x0040</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Query is too complex. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a0f91e40359fc8ba6391b5e65a34da950" prot="public">
+        <enumvalue id="group__error_1gga365e768c3ca0f6387d8798eb98c40443a0f91e40359fc8ba6391b5e65a34da950" prot="public">
           <name>qdb_e_invalid_crypto_key</name>
           <initializer>= qdb_e_origin_input         | qdb_e_severity_error         | 0x0041</initializer>
           <briefdescription>
-          </briefdescription>
+<para>Security key is invalid. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -552,13 +555,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="119" column="1" bodyfile="qdb/error.h" bodystart="118" bodyend="181"/>
+        <location file="qdb/error.h" line="109" column="1" bodyfile="qdb/error.h" bodystart="108" bodyend="229"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
-      <memberdef kind="typedef" id="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" prot="public" static="no">
-        <type>enum <ref refid="group__error_1gaef8f2ffc9bd2ee1abe785a8aeb86c701" kindref="member">qdb_err_origin</ref></type>
-        <definition>typedef enum qdb_err_origin  qdb_error_origin_t</definition>
+      <memberdef kind="typedef" id="group__error_1ga28a9bf8f314d8db3b53958df9957997f" prot="public" static="no">
+        <type>enum <ref refid="group__error_1ga318ee7741483580e773c217452964811" kindref="member">qdb_error_origin_t</ref></type>
+        <definition>typedef enum qdb_error_origin_t  qdb_error_origin_t</definition>
         <argsstring></argsstring>
         <name>qdb_error_origin_t</name>
         <briefdescription>
@@ -569,9 +572,9 @@
         </inbodydescription>
         <location file="qdb/error.h" line="84" column="1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__error_1gabf6c4d9393dd881c3a517f8a28187193" prot="public" static="no">
-        <type>enum <ref refid="group__error_1gaa48fc525bae5abec03a6e216128e5a76" kindref="member">qdb_err_severity</ref></type>
-        <definition>typedef enum qdb_err_severity  qdb_error_severity_t</definition>
+      <memberdef kind="typedef" id="group__error_1ga310c0649a7da221251ed1e25e5388bd8" prot="public" static="no">
+        <type>enum <ref refid="group__error_1ga343486b649541b9ad4885eb7d1e6abc7" kindref="member">qdb_error_severity_t</ref></type>
+        <definition>typedef enum qdb_error_severity_t  qdb_error_severity_t</definition>
         <argsstring></argsstring>
         <name>qdb_error_severity_t</name>
         <briefdescription>
@@ -582,9 +585,9 @@
         </inbodydescription>
         <location file="qdb/error.h" line="99" column="1"/>
       </memberdef>
-      <memberdef kind="typedef" id="group__error_1ga352232196dc2f9b9a89d701f63916cec" prot="public" static="no">
-        <type>enum <ref refid="group__error_1gac9f692dca38030ff2da1f53b2b3dadc2" kindref="member">qdb_err</ref></type>
-        <definition>typedef enum qdb_err  qdb_error_t</definition>
+      <memberdef kind="typedef" id="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" prot="public" static="no">
+        <type>enum <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>typedef enum qdb_error_t  qdb_error_t</definition>
         <argsstring></argsstring>
         <name>qdb_error_t</name>
         <briefdescription>
@@ -593,29 +596,29 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="181" column="1"/>
+        <location file="qdb/error.h" line="229" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga7f530850c85980b74be1119741da4bb0" prot="public" static="no">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>typedef qdb_error_t qdb_status_t</definition>
         <argsstring></argsstring>
         <name>qdb_status_t</name>
         <briefdescription>
-<para>An alias for <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
+<para>An alias for <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="187" column="1" bodyfile="qdb/error.h" bodystart="187" bodyend="-1"/>
+        <location file="qdb/error.h" line="245" column="1" bodyfile="qdb/error.h" bodystart="245" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="define">
       <memberdef kind="define" id="group__error_1gaaa894d6e444f5ec375e9662b1ec26298" prot="public" static="no">
         <name>QDB_ERROR_ORIGIN</name>
         <param><defname>x</defname></param>
-        <initializer>((int)((x) &amp; 0xf0000000))</initializer>
+        <initializer>((x) &amp; (int)0xf0000000)</initializer>
         <briefdescription>
-<para>Extracts the origin out of a <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
+<para>Extracts the origin out of a <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -625,9 +628,9 @@
       <memberdef kind="define" id="group__error_1gaaba48738c590182c24a1eb0046cca9ba" prot="public" static="no">
         <name>QDB_ERROR_SEVERITY</name>
         <param><defname>x</defname></param>
-        <initializer>((x) &amp; 0x0f000000)</initializer>
+        <initializer>((x) &amp; (int)0x0f000000)</initializer>
         <briefdescription>
-<para>Extracts the severity out of a <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
+<para>Extracts the severity out of a <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref>. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
@@ -637,26 +640,26 @@
       <memberdef kind="define" id="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" prot="public" static="no">
         <name>QDB_SUCCESS</name>
         <param><defname>x</defname></param>
-        <initializer>(!(x) || (<ref refid="group__error_1gaaba48738c590182c24a1eb0046cca9ba" kindref="member">QDB_ERROR_SEVERITY</ref>(x) == qdb_e_severity_info))</initializer>
+        <initializer>((x == <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443aad6d0d2fb89cdc604785b0d0b422b082" kindref="member">qdb_e_ok</ref>) || (<ref refid="group__error_1gaaba48738c590182c24a1eb0046cca9ba" kindref="member">QDB_ERROR_SEVERITY</ref>(x) == qdb_e_severity_info))</initializer>
         <briefdescription>
-<para>True if and only if the <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> indicates a success. </para>        </briefdescription>
+<para>True if and only if the <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> indicates a success. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="109" column="9" bodyfile="qdb/error.h" bodystart="109" bodyend="-1"/>
+        <location file="qdb/error.h" line="236" column="9" bodyfile="qdb/error.h" bodystart="236" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__error_1ga8145df0d400f6811ba830c14789681b5" prot="public" static="no">
         <name>QDB_FAILURE</name>
         <param><defname>x</defname></param>
         <initializer>(!<ref refid="group__error_1gaed4db9ebe4d56a1e468354a4c7f8d187" kindref="member">QDB_SUCCESS</ref>(x))</initializer>
         <briefdescription>
-<para>True if and only if the <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> indicates a failure. </para>        </briefdescription>
+<para>True if and only if the <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> indicates a failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="114" column="9" bodyfile="qdb/error.h" bodystart="114" bodyend="-1"/>
+        <location file="qdb/error.h" line="241" column="9" bodyfile="qdb/error.h" bodystart="241" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

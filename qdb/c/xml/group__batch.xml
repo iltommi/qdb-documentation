@@ -8,7 +8,7 @@
     <innerclass refid="structqdb__operation__t" prot="public">qdb_operation_t</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__batch_1ga8b3e3f28c66a4e9bb3826658e260041c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_init_operations</definition>
         <argsstring>(qdb_operation_t *operations, size_t operation_count)</argsstring>
         <name>qdb_init_operations</name>
@@ -38,12 +38,12 @@
 <para>The number of elements in the array of operations </para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 <simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="254" column="1"/>
+        <location file="qdb/batch.h" line="251" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -84,18 +84,18 @@
 <parametername>operation_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of elements in the array of operations </para></parameterdescription>
+<para>The number of elements in the array of operations</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>The number of successful operations in the batch. </para></simplesect>
+<simplesect kind="return"><para>The number of successful operations in the batch.</para></simplesect>
 <simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref>, <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="290" column="1"/>
+        <location file="qdb/batch.h" line="289" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_run_transaction</definition>
         <argsstring>(qdb_handle_t handle, qdb_operation_t *operations, size_t operation_count, size_t *failed_index)</argsstring>
         <name>qdb_run_transaction</name>
@@ -144,21 +144,21 @@
 <parametername>failed_index</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the index of the first failed operation </para></parameterdescription>
+<para>A pointer to the index of the first failed operation</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>, <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="322" column="1"/>
+        <location file="qdb/batch.h" line="323" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
-      <memberdef kind="enum" id="group__batch_1ga76e411451eeda47e0cd972e4a634ea3d" prot="public" static="no">
-        <name>qdb_operation_type</name>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da7686302cd1ce6c94e2572a28817210fd" prot="public">
+      <memberdef kind="enum" id="group__batch_1gaaaebee34ad682f0ba961780f59d765d4" prot="public" static="no">
+        <name>qdb_operation_type_t</name>
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a7686302cd1ce6c94e2572a28817210fd" prot="public">
           <name>qdb_op_uninitialized</name>
           <initializer>= -1</initializer>
           <briefdescription>
@@ -166,7 +166,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4bed7978a8e7f058c919bb9785dc00e4" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a4bed7978a8e7f058c919bb9785dc00e4" prot="public">
           <name>qdb_op_blob_get</name>
           <initializer>= 0</initializer>
           <briefdescription>
@@ -174,7 +174,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3dad8f5b00a4eb6a100f0cf26d60be72d25" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4ad8f5b00a4eb6a100f0cf26d60be72d25" prot="public">
           <name>qdb_op_blob_put</name>
           <initializer>= 1</initializer>
           <briefdescription>
@@ -182,7 +182,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4ada68b172af41831bbcef735f1e11cd" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a4ada68b172af41831bbcef735f1e11cd" prot="public">
           <name>qdb_op_blob_update</name>
           <initializer>= 2</initializer>
           <briefdescription>
@@ -190,7 +190,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da7de4a75f77b198a6a0e0855058386239" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a7de4a75f77b198a6a0e0855058386239" prot="public">
           <name>qdb_op_blob_cas</name>
           <initializer>= 4</initializer>
           <briefdescription>
@@ -198,7 +198,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da89db036e3c5308ad4d8b19d197bc54b0" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a89db036e3c5308ad4d8b19d197bc54b0" prot="public">
           <name>qdb_op_blob_get_and_update</name>
           <initializer>= 5</initializer>
           <briefdescription>
@@ -206,7 +206,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da4411d4842c65bccf6877c7ceace9c025" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a4411d4842c65bccf6877c7ceace9c025" prot="public">
           <name>qdb_op_has_tag</name>
           <initializer>= 8</initializer>
           <briefdescription>
@@ -214,7 +214,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da925c976afb2896f99bdfa90359f5ff14" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a925c976afb2896f99bdfa90359f5ff14" prot="public">
           <name>qdb_op_int_put</name>
           <initializer>= 9</initializer>
           <briefdescription>
@@ -222,7 +222,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da69ce1cd8d4ffef775933a926ab98bcfb" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a69ce1cd8d4ffef775933a926ab98bcfb" prot="public">
           <name>qdb_op_int_update</name>
           <initializer>= 10</initializer>
           <briefdescription>
@@ -230,7 +230,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da153f096496c868cb5c79d450506bd998" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a153f096496c868cb5c79d450506bd998" prot="public">
           <name>qdb_op_int_get</name>
           <initializer>= 11</initializer>
           <briefdescription>
@@ -238,7 +238,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3da52e5c4f75dce3f2f85e87d82bb840ee1" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4a52e5c4f75dce3f2f85e87d82bb840ee1" prot="public">
           <name>qdb_op_int_add</name>
           <initializer>= 12</initializer>
           <briefdescription>
@@ -246,7 +246,7 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
-        <enumvalue id="batch_8h_1ga76e411451eeda47e0cd972e4a634ea3dab65f10ac39632bceb9bf27a308fcb553" prot="public">
+        <enumvalue id="batch_8h_1gaaaebee34ad682f0ba961780f59d765d4ab65f10ac39632bceb9bf27a308fcb553" prot="public">
           <name>qdb_op_get_entry_type</name>
           <initializer>= 13</initializer>
           <briefdescription>
@@ -260,7 +260,7 @@
 <para>Operations are used by batches and transactions. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="58" column="1" bodyfile="qdb/batch.h" bodystart="58" bodyend="83"/>
+        <location file="qdb/batch.h" line="55" column="1" bodyfile="qdb/batch.h" bodystart="54" bodyend="80"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

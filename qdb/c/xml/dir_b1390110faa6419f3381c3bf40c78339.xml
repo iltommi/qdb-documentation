@@ -1,8 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
-<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
-  <compounddef id="dir_992125da0cacae4897794fec8cdf29d7" kind="dir">
-    <compoundname>D:/workspace/quasardb/api/include/qdb</compoundname>
-    <innerfile refid="__attr_8h">_attr.h</innerfile>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
+  <compounddef id="dir_b1390110faa6419f3381c3bf40c78339" kind="dir">
+    <compoundname>D:/workspace/quasardb/qdb/api/include/qdb</compoundname>
     <innerfile refid="batch_8h">batch.h</innerfile>
     <innerfile refid="blob_8h">blob.h</innerfile>
     <innerfile refid="client_8h">client.h</innerfile>
@@ -10,19 +9,14 @@
     <innerfile refid="error_8h">error.h</innerfile>
     <innerfile refid="hset_8h">hset.h</innerfile>
     <innerfile refid="integer_8h">integer.h</innerfile>
-    <innerfile refid="iterator_8h">iterator.h</innerfile>
-    <innerfile refid="log_8h">log.h</innerfile>
-    <innerfile refid="node_8h">node.h</innerfile>
     <innerfile refid="prefix_8h">prefix.h</innerfile>
-    <innerfile refid="query_8h">query.h</innerfile>
     <innerfile refid="stream_8h">stream.h</innerfile>
     <innerfile refid="suffix_8h">suffix.h</innerfile>
     <innerfile refid="tag_8h">tag.h</innerfile>
-    <innerfile refid="ts_8h">ts.h</innerfile>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/workspace/quasardb/api/include/qdb/"/>
+    <location file="D:/workspace/quasardb/qdb/api/include/qdb/"/>
   </compounddef>
 </doxygen>

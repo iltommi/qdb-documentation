@@ -4,6 +4,16 @@
     <compoundname>_attr.h</compoundname>
     <includedby refid="error_8h" local="yes">qdb/error.h</includedby>
     <invincdepgraph>
+      <node id="1">
+        <label>qdb/_attr.h</label>
+        <link refid="__attr_8h"/>
+        <childnode refid="2" relation="include">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>qdb/node.h</label>
+        <link refid="node_8h"/>
+      </node>
       <node id="2">
         <label>qdb/error.h</label>
         <link refid="error_8h"/>
@@ -11,40 +21,6 @@
         </childnode>
         <childnode refid="18" relation="include">
         </childnode>
-      </node>
-      <node id="15">
-        <label>qdb/suffix.h</label>
-        <link refid="suffix_8h"/>
-      </node>
-      <node id="18">
-        <label>qdb/log.h</label>
-        <link refid="log_8h"/>
-      </node>
-      <node id="1">
-        <label>qdb/_attr.h</label>
-        <link refid="__attr_8h"/>
-        <childnode refid="2" relation="include">
-        </childnode>
-      </node>
-      <node id="12">
-        <label>qdb/prefix.h</label>
-        <link refid="prefix_8h"/>
-      </node>
-      <node id="10">
-        <label>qdb/iterator.h</label>
-        <link refid="iterator_8h"/>
-      </node>
-      <node id="6">
-        <label>qdb/blob.h</label>
-        <link refid="blob_8h"/>
-      </node>
-      <node id="4">
-        <label>qdb/batch.h</label>
-        <link refid="batch_8h"/>
-      </node>
-      <node id="17">
-        <label>qdb/ts.h</label>
-        <link refid="ts_8h"/>
       </node>
       <node id="3">
         <label>qdb/client.h</label>
@@ -78,13 +54,33 @@
         <childnode refid="17" relation="include">
         </childnode>
       </node>
-      <node id="7">
-        <label>qdb/deque.h</label>
-        <link refid="deque_8h"/>
-      </node>
       <node id="9">
         <label>qdb/integer.h</label>
         <link refid="integer_8h"/>
+      </node>
+      <node id="17">
+        <label>qdb/ts.h</label>
+        <link refid="ts_8h"/>
+      </node>
+      <node id="16">
+        <label>qdb/tag.h</label>
+        <link refid="tag_8h"/>
+      </node>
+      <node id="14">
+        <label>qdb/stream.h</label>
+        <link refid="stream_8h"/>
+      </node>
+      <node id="8">
+        <label>qdb/hset.h</label>
+        <link refid="hset_8h"/>
+      </node>
+      <node id="6">
+        <label>qdb/blob.h</label>
+        <link refid="blob_8h"/>
+      </node>
+      <node id="13">
+        <label>qdb/query.h</label>
+        <link refid="query_8h"/>
       </node>
       <node id="5">
         <label>qdb/option.h</label>
@@ -92,25 +88,29 @@
         <childnode refid="3" relation="include">
         </childnode>
       </node>
-      <node id="8">
-        <label>qdb/hset.h</label>
-        <link refid="hset_8h"/>
+      <node id="12">
+        <label>qdb/prefix.h</label>
+        <link refid="prefix_8h"/>
       </node>
-      <node id="13">
-        <label>qdb/query.h</label>
-        <link refid="query_8h"/>
+      <node id="10">
+        <label>qdb/iterator.h</label>
+        <link refid="iterator_8h"/>
       </node>
-      <node id="16">
-        <label>qdb/tag.h</label>
-        <link refid="tag_8h"/>
+      <node id="18">
+        <label>qdb/log.h</label>
+        <link refid="log_8h"/>
       </node>
-      <node id="11">
-        <label>qdb/node.h</label>
-        <link refid="node_8h"/>
+      <node id="15">
+        <label>qdb/suffix.h</label>
+        <link refid="suffix_8h"/>
       </node>
-      <node id="14">
-        <label>qdb/stream.h</label>
-        <link refid="stream_8h"/>
+      <node id="4">
+        <label>qdb/batch.h</label>
+        <link refid="batch_8h"/>
+      </node>
+      <node id="7">
+        <label>qdb/deque.h</label>
+        <link refid="deque_8h"/>
       </node>
     </invincdepgraph>
       <sectiondef kind="define">

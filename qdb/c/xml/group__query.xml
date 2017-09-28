@@ -5,7 +5,7 @@
     <title>Query related functions</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__query_1ga461da75f216ca42c3e283448d007e861" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_query</definition>
         <argsstring>(qdb_handle_t handle, const char *query, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_query</name>
@@ -44,25 +44,25 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>aliases</parametername>
+<parametername direction="out">aliases</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the query. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>alias_count</parametername>
+<parametername direction="out">alias_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an integer that will receive the number of returned aliases. </para></parameterdescription>
+<para>A pointer to an integer that will receive the number of returned aliases.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/query.h" line="65" column="1"/>
+        <location file="qdb/query.h" line="66" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

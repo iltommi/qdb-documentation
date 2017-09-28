@@ -6,7 +6,7 @@
     <innerclass refid="structqdb__const__iterator__t" prot="public">qdb_const_iterator_t</innerclass>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_begin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_begin</name>
@@ -21,7 +21,7 @@
         <briefdescription>
 <para>Creates an iterator that points to the &quot;first&quot; entry of the cluster. </para>        </briefdescription>
         <detaileddescription>
-<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return <computeroutput>qdb_e_iterator_end</computeroutput> and the user must call <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> to release client-allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443af3d584049b45f2aacca139de8c34a20b" kindref="member">qdb_e_iterator_end</ref> and the user must call <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> to release client-allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -36,7 +36,7 @@
 <para>A pointer to an uninitialized iterator structure that will be set to the first entry if successful</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
@@ -44,7 +44,7 @@
         <location file="qdb/iterator.h" line="105" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_rbegin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_rbegin</name>
@@ -74,15 +74,15 @@
 <para>A pointer to an uninitialized iterator structure that will be set to the last entry if successful</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="131" column="1"/>
+        <location file="qdb/iterator.h" line="133" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_next</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_next</name>
@@ -93,7 +93,7 @@
         <briefdescription>
 <para>Advances an iterator to the next entry, if any. </para>        </briefdescription>
         <detaileddescription>
-<para>Updates the iterator to point to the next available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no following entry or it is otherwise unavailable, the function will return <computeroutput>qdb_e_iterator_end</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Updates the iterator to point to the next available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no following entry or it is otherwise unavailable, the function will return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443af3d584049b45f2aacca139de8c34a20b" kindref="member">qdb_e_iterator_end</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>iterator</parametername>
 </parameternamelist>
@@ -105,10 +105,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="145" column="1"/>
+        <location file="qdb/iterator.h" line="147" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_previous</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_previous</name>
@@ -119,7 +119,7 @@
         <briefdescription>
 <para>Advances an iterator to the previous entry, if any. </para>        </briefdescription>
         <detaileddescription>
-<para>Updates the iterator to point to the previous available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no previous entry or it is otherwise unavailable, the function will return <computeroutput>qdb_e_iterator_end</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Updates the iterator to point to the previous available entry in the cluster. Although each entry is returned only once, the order in which entries are returned is undefined. If there is no previous entry or it is otherwise unavailable, the function will return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443af3d584049b45f2aacca139de8c34a20b" kindref="member">qdb_e_iterator_end</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>iterator</parametername>
 </parameternamelist>
@@ -131,10 +131,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="161" column="1"/>
+        <location file="qdb/iterator.h" line="163" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_close</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_close</name>
@@ -157,10 +157,10 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="168" column="1"/>
+        <location file="qdb/iterator.h" line="170" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_iterator_copy</definition>
         <argsstring>(const qdb_const_iterator_t *original, qdb_const_iterator_t *copy)</argsstring>
         <name>qdb_iterator_copy</name>
@@ -179,7 +179,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="179" column="1"/>
+        <location file="qdb/iterator.h" line="181" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

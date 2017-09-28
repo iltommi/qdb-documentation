@@ -5,7 +5,7 @@
     <title>Binary large objects (blob) operations</title>
       <sectiondef kind="func">
       <memberdef kind="function" id="group__blob_1ga815f319575a422331ed4d5eed0cc69bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get_noalloc</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, void *content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get_noalloc</name>
@@ -28,7 +28,7 @@
         <briefdescription>
 <para>Retrieves an entry&apos;s content from the quasardb server. The caller is responsible for allocating and freeing the provided buffer. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <computeroutput>qdb_e_buffer_too_small</computeroutput>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a13d942a5ac05a02071d2142beb559bea" kindref="member">qdb_e_buffer_too_small</ref>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -44,27 +44,27 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="inout">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a user-allocated buffer that will receive the entry&apos;s content. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> initialized with the length of the destination buffer, in bytes. It will be updated with the length of the retrieved content, even if the buffer is not large enough to hold all the data.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="70" column="1"/>
+        <location file="qdb/blob.h" line="69" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get</name>
@@ -87,7 +87,7 @@
         <briefdescription>
 <para>Retrieves an entry&apos;s content from the quasardb server. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -103,27 +103,27 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> that will be set to the content&apos;s size, in bytes.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="95" column="1"/>
+        <location file="qdb/blob.h" line="94" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_reserved_blob_get</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length, qdb_size_t offset)</argsstring>
         <name>qdb_reserved_blob_get</name>
@@ -150,7 +150,7 @@
         <briefdescription>
 <para>Retrieves a part of an entry&apos;s content from the quasardb server. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range <computeroutput>[</computeroutput><computeroutput>offset<computeroutput></computeroutput>, </computeroutput><computeroutput>offset<computeroutput></computeroutput> + *</computeroutput><computeroutput>content_length<computeroutput></computeroutput>)</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range <computeroutput>[</computeroutput><computeroutput>offset<computeroutput></computeroutput>, </computeroutput><computeroutput>offset<computeroutput></computeroutput> + *</computeroutput><computeroutput>content_length<computeroutput></computeroutput>)</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -166,14 +166,14 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> that holds the length of the requested content and that will be set to the returned content&apos;s size, in bytes. If content length is equal to zero or is greater than entry&apos;s length minus offset, then all the content from offset until the end will be returned. </para></parameterdescription>
@@ -186,14 +186,14 @@
 <para>Offset from which to get content, in bytes.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="128" column="1"/>
+        <location file="qdb/blob.h" line="127" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gacccb11b84a007ec4f2036ec316060282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get_and_remove</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get_and_remove</name>
@@ -216,7 +216,7 @@
         <briefdescription>
 <para>Atomically gets an entry from the quasardb server and removes it. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <computeroutput>qdb_e_alias_not_found</computeroutput>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <computeroutput>qdb_e_buffer_too_small</computeroutput>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a13d942a5ac05a02071d2142beb559bea" kindref="member">qdb_e_buffer_too_small</ref>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -232,27 +232,27 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content</parametername>
+<parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>content_length</parametername>
+<parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> that will be set to the content&apos;s size, in bytes.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="160" column="1"/>
+        <location file="qdb/blob.h" line="159" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga67db324cbeccb7f130f8006830468d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_put</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_time_t expiry_time)</argsstring>
         <name>qdb_blob_put</name>
@@ -279,7 +279,7 @@
         <briefdescription>
 <para>Creates a new entry and sets its content to the provided blob. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry already exists the function will fail and will return <computeroutput>qdb_e_alias_already_exists</computeroutput>.</para><para>You can specify an expiry or use <computeroutput>qdb_never_expires</computeroutput> if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry already exists the function will fail and will return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443afff73f65761b5b6acb3674f828facbe5" kindref="member">qdb_e_alias_already_exists</ref>.</para><para>You can specify an expiry or use <ref refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kindref="member">qdb_never_expires</ref> if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -315,14 +315,14 @@
 <para>An optional absolute expiry time expressed in UTC UNIX epoch.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="187" column="1"/>
+        <location file="qdb/blob.h" line="186" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga79aafb696593432010c6d624f0894061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_update</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_time_t expiry_time)</argsstring>
         <name>qdb_blob_update</name>
@@ -349,7 +349,7 @@
         <briefdescription>
 <para>Creates or updates an entry and sets its content to the provided blob. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry already exists, the function will modify the entry.</para><para>You can specify an expiry or use <computeroutput>qdb_never_expires</computeroutput> if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry already exists, the function will modify the entry.</para><para>You can specify an expiry or use <ref refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kindref="member">qdb_never_expires</ref> if you don&apos;t want the entry to expire.</para><para>There is no software-defined limit to the size of blobs. To operate on entries that do not fit in RAM, consider using streams.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
@@ -385,14 +385,14 @@
 <para>An optional absolute expiry time expressed in UTC UNIX epoch.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="214" column="1"/>
+        <location file="qdb/blob.h" line="213" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaef0400b3b58a23ebffe6085641581e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_reserved_blob_merge</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_size_t offset, int truncate, qdb_time_t expiry_time)</argsstring>
         <name>qdb_reserved_blob_merge</name>
@@ -477,14 +477,14 @@
 <para>An optional absolute expiry time expressed in UTC UNIX epoch.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="236" column="1"/>
+        <location file="qdb/blob.h" line="235" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_get_and_update</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *update_content, qdb_size_t update_content_length, qdb_time_t expiry_time, const void **get_content, qdb_size_t *get_content_length)</argsstring>
         <name>qdb_blob_get_and_update</name>
@@ -556,27 +556,27 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>get_content</parametername>
+<parametername direction="out">get_content</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer to an API-allocated buffer holding the entry content, before the update. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>get_content_length</parametername>
+<parametername direction="out">get_content_length</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> that will be set to the content&apos;s size, in bytes.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="267" column="1"/>
+        <location file="qdb/blob.h" line="264" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_compare_and_swap</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *new_value, qdb_size_t new_value_length, const void *comparand, qdb_size_t comparand_length, qdb_time_t expiry_time, const void **original_value, qdb_size_t *original_value_length)</argsstring>
         <name>qdb_blob_compare_and_swap</name>
@@ -670,27 +670,27 @@
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>original_value</parametername>
+<parametername direction="out">original_value</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s original content, before the update, if any. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>original_value_length</parametername>
+<parametername direction="out">original_value_length</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> that will be set to the content&apos;s size, in bytes.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="308" column="1"/>
+        <location file="qdb/blob.h" line="304" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_remove_if</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *comparand, qdb_size_t comparand_length)</argsstring>
         <name>qdb_blob_remove_if</name>
@@ -742,14 +742,14 @@
 <para>The length of the buffer, in bytes</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="347" column="1"/>
+        <location file="qdb/blob.h" line="343" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_scan</definition>
         <argsstring>(qdb_handle_t handle, const void *pattern, qdb_size_t pattern_length, qdb_int_t max_count, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_blob_scan</name>
@@ -811,27 +811,27 @@ The complexity of this function is linear in the number of entries.</para><para>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>aliases</parametername>
+<parametername direction="out">aliases</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the requested pattern. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>alias_count</parametername>
+<parametername direction="out">alias_count</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an integer that will receive the number of returned aliases.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="372" column="1"/>
+        <location file="qdb/blob.h" line="368" column="1"/>
       </memberdef>
       <memberdef kind="function" id="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
+        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
         <definition>qdb_error_t qdb_blob_scan_regex</definition>
         <argsstring>(qdb_handle_t handle, const char *pattern, qdb_int_t max_count, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_blob_scan_regex</name>
@@ -878,29 +878,29 @@ The complexity of this function is linear in the number of entries.</para><para>
 <parametername>max_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An integer limiting the number of results returned by the function </para></parameterdescription>
+<para>An integer limiting the number of results returned by the function. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>aliases</parametername>
+<parametername direction="out">aliases</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the requested pattern. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>alias_count</parametername>
+<parametername direction="out">alias_count</parametername>
 </parameternamelist>
 <parameterdescription>
 <para>A pointer to an integer that will receive the number of returned aliases.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ulink url="http://ecma-international.org/ecma-262/5.1/#sec-15.10">http://ecma-international.org/ecma-262/5.1/#sec-15.10</ulink> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="403" column="1"/>
+        <location file="qdb/blob.h" line="399" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

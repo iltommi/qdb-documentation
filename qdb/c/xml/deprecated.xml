@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="deprecated" kind="page">
+    <compoundname>deprecated</compoundname>
+    <title>Deprecated List</title>
+    <detaileddescription>
+<para><variablelist>
+<varlistentry><term><anchor id="deprecated_1_deprecated000001"/>Global <ref refid="group__client_1gga14ba3138099f3c7969f707eb4b16c35bada77b67d62cfd28f8f9131dc039dbf64" kindref="member">qdb_l_alias_max_length</ref>  </term></varlistentry>
+<listitem><para>Please use <ref refid="group__client_1gga14ba3138099f3c7969f707eb4b16c35ba5f7b5e1be562cf9e9bf141b7cba12fcf" kindref="member">qdb_l_max_alias_length</ref>.  </para></listitem>
+<varlistentry><term><anchor id="deprecated_1_deprecated000002"/>Global <ref refid="group__client_1gga14ba3138099f3c7969f707eb4b16c35ba65747a0c116aae149366cd8eb6ec05e7" kindref="member">qdb_max_user_name_length</ref>  </term></varlistentry>
+<listitem><para>Please use <ref refid="group__client_1gga14ba3138099f3c7969f707eb4b16c35bab0110b72ff3e263a9de652302b75ef2d" kindref="member">qdb_l_max_user_name_length</ref>. </para></listitem>
+</variablelist>
+</para>    </detaileddescription>
+  </compounddef>
+</doxygen>
