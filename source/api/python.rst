@@ -10,9 +10,9 @@ Python
     import quasardb
 
 Introduction
---------------
+------------
 
-The `quasardb` module contains multiple classes to make working with a quasardb cluster simple. Data is stored "as is" bit for bit, that is, strings are treated as binary data. 
+The `quasardb` module contains multiple classes to make working with a quasardb cluster simple. Data is stored "as is" bit for bit, that is, strings are treated as binary data.
 
 The Python API is BSD licensed. You may download it from the quasardb site or from GitHub at `<https://github.com/bureau14/qdb-api-python>`_.
 

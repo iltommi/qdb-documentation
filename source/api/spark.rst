@@ -5,12 +5,17 @@
 Spark connector
 ===================
 
-Official quasardb Spark connector. It extends quasardb's support to allow storing and retrieving data as Spark RDDs or DataFrames.
+Introduction
+------------
+
+Official |quasardb| Spark connector.
+It extends |quasardb|'s support to allow storing and retrieving data as `Spark RDDs <https://spark.apache.org/docs/latest/rdd-programming-guide.html#resilient-distributed-datasets-rdds>`_ or DataFrames.
+You may read and download the connector's code from GitHub at `<https://github.com/bureau14/qdb-spark-connector>`_.
 
 Querying |quasardb|
 -------------------
 
-Given a |quasardb| timeseries table `doubles_test` that looks as follows:
+Given a |quasardb| timeseries table ``doubles_test`` that looks as follows:
 
 +---------------------+-----------+
 | timestamp           | value     |
@@ -27,9 +32,9 @@ Given a |quasardb| timeseries table `doubles_test` that looks as follows:
 Querying using RDD
 ^^^^^^^^^^^^^^^^^^
 
-The `qdbDoubleColumn` is an implicit method on an RDD[(Timestamp, Double)],
-and the `qdbBlobColumn` is an implicit method on an RDD[(Timestamp, Array[Byte])).
-Both methods require explicitly passing a `qdbUri`, a `tableName`, a `columnName` and a `QdbTimeRangeCollection` as demonstrated below.
+The ``qdbDoubleColumn`` is an implicit method on an ``RDD[(Timestamp, Double)]``,
+and the ``qdbBlobColumn`` is an implicit method on an ``RDD[(Timestamp, Array[Byte]))``.
+Both methods require explicitly passing a ``qdbUri``, a ``tableName``, a ``columnName`` and a ``QdbTimeRangeCollection`` as demonstrated below.
 
 .. code-block:: scala
 
@@ -60,7 +65,7 @@ Both methods require explicitly passing a `qdbUri`, a `tableName`, a `columnName
 Querying using a DataFrame
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `qdbDoubleColumnAsDataFrame` and the `qdbBlobColumnAsDataFrame` allows querying data from |quasardb| directly as a DataFrame. It exposes a DataFrame with the columns `timestamp` and `value`, where the value corresponds to the value type of the data being queried (`Double` or `Array[Byte]`).
+The ``qdbDoubleColumnAsDataFrame`` and the ``qdbBlobColumnAsDataFrame`` allows querying data from |quasardb| directly as a DataFrame. It exposes a DataFrame with the columns ``timestamp`` and ``value``, where the value corresponds to the value type of the data being queried (``Double`` or ``Array[Byte]``).
 
 .. code-block:: scala
 
@@ -91,7 +96,10 @@ The `qdbDoubleColumnAsDataFrame` and the `qdbBlobColumnAsDataFrame` allows query
 Aggregating using an RDD
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-|Quasardb| exposes its native aggregation capabilities as RDD using the implicit methods `qdbAggregateDoubleColumn` and `qdbAggregateBlobColumn` that requires passing a `qdbUri`, `tableName`, `columnName` and a sequence of `AggregateQuery`. It returns exactly one result row for each `AggregateQuery` provided.
+|Quasardb| exposes its native aggregation capabilities as RDD using the implicit methods
+``qdbAggregateDoubleColumn`` and ``qdbAggregateBlobColumn`` that requires passing
+a ``qdbUri``, ``tableName``, ``columnName`` and a sequence of ``AggregateQuery``.
+It returns exactly one result row for each ``AggregateQuery`` provided.
 
 .. code-block:: scala
 
@@ -124,7 +132,10 @@ Aggregating using an RDD
 Aggregating using a DataFrame
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-|Quasardb| exposes its native aggregation capabilities as DataFrame using the implicit methods `qdbAggregateDoubleColumnAsDataFrame` and `qdbAggregateBlobColumnAsDataFrame` that requires passing a `qdbUri`, `tableName`, `columnName` and a sequence of `AggregateQuery`. It returns exactly one result row for each `AggregateQuery` provided.
+|Quasardb| exposes its native aggregation capabilities as DataFrame using the implicit methods
+``qdbAggregateDoubleColumnAsDataFrame`` and ``qdbAggregateBlobColumnAsDataFrame`` that requires passing
+a ``qdbUri``, ``tableName``, ``columnName`` and a sequence of ``AggregateQuery``.
+It returns exactly one result row for each ``AggregateQuery`` provided.
 
 .. code-block:: scala
 
@@ -184,9 +195,11 @@ Writing using an RDD
 Writing using a DataFrame
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The `qdbDoubleColumnAsDataFrame` and `qdbBlobColumnAsDataFrame` functions are available in the Spark SQLContext to allow storing data into |quasardb|. You must also pass a `qdbUri`, a `tableName` and a `columnName` to the function to store the data in the correct location.
+The ``qdbDoubleColumnAsDataFrame`` and ``qdbBlobColumnAsDataFrame`` functions are available
+in the Spark SQLContext to allow storing data into |quasardb|.
+You must also pass a ``qdbUri``, a ``tableName`` and a ``columnName`` to the function to store the data in the correct location.
 
-The code example below copies all the data from the `doubles_test` table into the `doubles_test_copy` table.
+The code example below copies all the data from the ``doubles_test`` table into the ``doubles_test_copy`` table.
 
 .. code-block:: scala
 
@@ -217,7 +230,7 @@ The code example below copies all the data from the `doubles_test` table into th
 Tests
 -----
 
-In order to run the tests, please download the latest quasardb-server and extract in a `qdb` subdirectory like this:
+In order to run the tests, please download the latest quasardb-server and extract in a ``qdb`` subdirectory like this:
 
 .. code-block:: shell
 
@@ -242,7 +255,8 @@ Unfortunately, due to static linking restrictions on macOS this can cause runtim
 
     dyld: Symbol not found: __ZTISt18bad_variant_access
 
-Until a fix is available for the |quasardb| client libraries, the best course of action is to download the llvm libraries and tell your shell where to find them:
+Until a fix is available for the |quasardb| client libraries,
+the best course of action is to download the libc++ libraries and tell your shell where to find them:
 
 .. code-block:: shell
 
