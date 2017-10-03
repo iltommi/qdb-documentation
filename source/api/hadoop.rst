@@ -1,4 +1,4 @@
-Hadoop Integration
+Hadoop integration
 ==================
 
 Introduction
@@ -105,18 +105,18 @@ Hadoop will locate the jar file that contains the provided class. Then you need 
 
 	job.setInputFormatClass(QuasardbInputFormat.class);
 
-.. note:: 
+.. note::
 	- Key type for InputFormat must be a plain text (see org.apache.hadoop.io.Text)
 	- Value type can be anything you want
 
 Then you need to specify the output type::
-	
+
 	job.setOutputFormatClass(QuasardbOutputFormat.class);
 
 .. note::
 	- Key type for OutputFormat must be a plain text (see org.apache.hadoop.io.Text)
 	- Value type can be anything you want
-	
+
 Mapper, Reducer and Combiner Classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -156,25 +156,25 @@ Example Code::
 			ProvidedKeysGenerator providedKeysGenerator = new ProvidedKeysGenerator();
 			providedKeysGenerator.init("hamlet");
 			conf = QuasardbJobConf.setKeysGenerator(conf, providedKeysGenerator);
-			
+
 			Job job = Job.getInstance(getConf(), "StartsWithCount") ;
 			job.setJarByClass(getClass());
-			
+
 			// configure output and input source
 			job.setInputFormatClass(QuasardbInputFormat.class);
-			
+
 			// configure mapper and reducer
 			job.setMapperClass(StartsWithCountMapper.class);
 			job.setCombinerClass(StartsWithCountReducer.class);
-			job.setReducerClass(StartsWithCountReducer.class);	
-		
+			job.setReducerClass(StartsWithCountReducer.class);
+
 			// configure output
 			job.setOutputFormatClass(QuasardbOutputFormat.class);
 			job.setOutputKeyClass(Text.class);
 			job.setOutputValueClass(IntWritable.class);
 			return job.waitForCompletion(true) ? 0 : 1;
 		}
-		
+
 		public static void main(String[] args) throws Exception {
 			int exitCode = ToolRunner.run(new StartsWithCountJob(), args);
 			System.exit(exitCode);
@@ -184,7 +184,7 @@ Example Code::
 
 Implement Mapper Class
 ^^^^^^^^^^^^^^^^^^^^^^
-	
+
 Class has 4 Java Generics parameters
 	* (1) input key (2) input value (3) output key (4) output value
 	* Input and output utilizes hadoop's IO framework
@@ -202,7 +202,7 @@ Example Code::
 	public class StartsWithCountMapper extends Mapper<Text, Text, Text, IntWritable> {
 		private final static IntWritable countOne = new IntWritable(1);
 		private final Text reusableText = new Text();
-		
+
 		@Override
 		protected void map(Text key, Text value, Context context) throws IOException, InterruptedException {
 			StringTokenizer tokenizer = new StringTokenizer(value.toString());

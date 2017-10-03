@@ -1,4 +1,4 @@
-quasardb queries
+Queries
 ======================
 
 .. cpp:namespace:: qdb

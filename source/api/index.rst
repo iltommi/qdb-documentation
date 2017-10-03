@@ -10,11 +10,11 @@ API Reference
    queries
    c
    cpp
-   python
-   java
    hadoop
+   java
+   net
    nodejs
+   php
+   python
    rest
    spark
-   6.9. PHP <https://doc.quasardb.net/php/>
-   6.10. .NET (C#, VisualBasic...) <https://doc.quasardb.net/dotnet/>
