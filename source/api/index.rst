@@ -15,5 +15,6 @@ API Reference
    hadoop
    nodejs
    rest
+   spark
    6.9. PHP <https://doc.quasardb.net/php/>
    6.10. .NET (C#, VisualBasic...) <https://doc.quasardb.net/dotnet/>

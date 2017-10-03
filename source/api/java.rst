@@ -49,7 +49,6 @@ Or, if you use Gradle, your ``build.gradle`` should look like:
 
 .. code-block:: groovy
 
-
     apply plugin: 'java'
 
     repositories {
