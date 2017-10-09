@@ -10,32 +10,28 @@ Hardware Requirements
     * End-to-end ECC memory (motherboard, CPU and memory)
     * At least 1 GiB of RAM
     * At least 10 GiB of disk
-    * 1 Gbit ethernet port
+    * 1 Gbit ethernet port or better
 
 It is strongly advised to have a homogenous hardware configuration within a cluster.
 
 Software Requirements
 ---------------------
 
-All nodes must be time-synchronized. NTP can deliver a satisfactory time synchronization level for most use cases. For the most demanding use case, timing PCIe cards may be required.
+All nodes must be time-synchronized. NTP may deliver a satisfactory time synchronization level, however PTP is recommended. For the most demanding use case, timing PCIe cards may be required.
 
 .. _sysreq-freebsd:
 
 FreeBSD Requirements
 ^^^^^^^^^^^^^^^^^^^^
 
-    * FreeBSD 8 or 9, x86_64 (for quasardb < 1.1.5)
-    * FreeBSD 10, x86_64 (for quasardb >= 1.1.5 and <= 2.0.0)
-    * FreeBSD 11, x86_64 (for quasardb >= 2.1.0)
+    * FreeBSD 11, x86_64
     * libc++ v1
     * Python 2.7.x (optional)
     * Java JDK (optional)
-        * Oracle Java JDK SE 1.6
-        * Oracle Java JDK EE 1.6
-        * Oracle Java JDK SE 1.7
-        * Oracle Java JDK EE 1.7
-        * OpenJDK 6
-        * OpenJDK 7u
+        * Oracle Java JDK EE 8
+        * Oracle Java JDK EE 9
+        * OpenJDK 8
+        * OpenJDK 9
 
 All other required libraries are included in the quasardb package.
 
@@ -49,12 +45,10 @@ Linux Requirements
     * libc 2.17 or higher
     * Python 2.7.x (optional)
     * Java JDK (optional)
-        * Oracle Java JDK SE 1.6
-        * Oracle Java JDK EE 1.6
-        * Oracle Java JDK SE 1.7
-        * Oracle Java JDK EE 1.7
-        * OpenJDK 6
-        * OpenJDK 7u
+        * Oracle Java JDK EE 8
+        * Oracle Java JDK EE 9
+        * OpenJDK 8
+        * OpenJDK 9
 
 
 All other required libraries are included in the quasardb package.
@@ -74,12 +68,10 @@ Windows Requirements
         * Windows 10
     * Python 2.7.x (optional)
     * Java JDK (optional)
-        * Oracle Java JDK SE 1.6
-        * Oracle Java JDK EE 1.6
-        * Oracle Java JDK SE 1.7
-        * Oracle Java JDK EE 1.7
-        * OpenJDK 6
-        * OpenJDK 7u
+        * Oracle Java JDK EE 8
+        * Oracle Java JDK EE 9
+        * OpenJDK 8
+        * OpenJDK 9
 
 .. warning::
     Prior to Windows 8 and Windows Server 2012, the operating system is not able to deliver highly accurate timestamps. This can result in a higher rate of transaction conflicts and less accurate entries metadata.
