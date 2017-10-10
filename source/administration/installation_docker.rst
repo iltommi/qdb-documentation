@@ -2,6 +2,29 @@
 Docker Installation
 ====================
 
+Docker is currently not recommended for production.
+
+Available docker images
+-----------------------
+
+We currently offer the following images:
+
+ * `qdb <https://hub.docker.com/r/bureau14/qdb/>`_ - The quasardb daemon
+ * `qdb-http <https://hub.docker.com/r/bureau14/qdb-http/>`_ - The quasardb web console
+ * `qdb-dev <https://hub.docker.com/r/bureau14/qdb-dev/>`_ - A daemon with the quasardb API for development purposes
+ * `qdb-dev-python <https://hub.docker.com/r/bureau14/qdb-dev-python/>`_ - A daemon with the Python API and pre-installed tools
+
+Tags
+----
+
+The following tags are used:
+
+ * lts: Long term service release
+ * latest: The latest release
+ * nightly: the nightly build
+
+Every release is also tagged with its version number. For example, 2.0.1 has the following tags: lts, 2, 2.0 and 2.0.1.
+
 Software Installation
 ---------------------
 
