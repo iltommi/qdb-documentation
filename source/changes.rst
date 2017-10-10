@@ -1,6 +1,24 @@
 Change log
 **********
 
+2.0.1 - "Aristotle" - 10/15/2017
+================================
+
+This is a maintenance release only.
+
+Changes in this version
+-----------------------
+
+    * Protocol version 20
+    * Transparent reconnection: the API will try to repair a connection at least once before returning an error
+    * Iteration no longer skips entries without content
+    * Fixed a backward/forward compatibility in configurations to make the 2.0 line forward compatible with the 2.1 line
+    * Deques now allow empty blobs
+    * Added dedicaded error code for authentication failures
+    * Error messages in the web bridge now includes the text, not just the code
+    * A node will update its ring interval and migrate the data before joining a ring
+    * Support for colors in the shell
+
 2.0.0 - "Aristotle" - 01/17/2017
 ================================
 
@@ -28,8 +46,6 @@ Changes in this version
     * Performance level: ludicrous
     * And so much more!
 
-Changes in the version
-----------------------
 
 1.2.1 - "Anaximander" - 05/05/2015
 ==================================
