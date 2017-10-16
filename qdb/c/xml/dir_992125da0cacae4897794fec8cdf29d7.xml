@@ -21,6 +21,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/workspace/quasardb-master/api/include/qdb/"/>
+    <location file="qdb/"/>
   </compounddef>
 </doxygen>

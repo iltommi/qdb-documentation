@@ -506,13 +506,29 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7a6c957a31b0b5d4b61575f89f139681" prot="public">
+          <name>qdb_e_access_denied</name>
+          <initializer>= qdb_e_origin_operation     | qdb_e_severity_error         | 0x0037</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ab0ec10e10f4dd148d34e01d47bdd8a0f" prot="public">
+          <name>qdb_e_login_failed</name>
+          <initializer>= qdb_e_origin_system_remote | qdb_e_severity_error         | 0x0038</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>An error code indicating success or failure. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="119" column="1" bodyfile="qdb/error.h" bodystart="118" bodyend="176"/>
+        <location file="qdb/error.h" line="119" column="1" bodyfile="qdb/error.h" bodystart="118" bodyend="178"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -553,7 +569,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="176" column="1"/>
+        <location file="qdb/error.h" line="178" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__error_1ga7f530850c85980b74be1119741da4bb0" prot="public" static="no">
         <type><ref refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kindref="member">qdb_error_t</ref></type>
@@ -566,7 +582,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="182" column="1" bodyfile="qdb/error.h" bodystart="182" bodyend="-1"/>
+        <location file="qdb/error.h" line="184" column="1" bodyfile="qdb/error.h" bodystart="184" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="define">

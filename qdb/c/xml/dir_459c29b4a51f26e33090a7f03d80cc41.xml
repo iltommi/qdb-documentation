@@ -1,12 +1,12 @@
 <?xml version='1.0' encoding='UTF-8' standalone='no'?>
 <doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.11">
   <compounddef id="dir_459c29b4a51f26e33090a7f03d80cc41" kind="dir">
-    <compoundname>D:/workspace/quasardb-master/qdb/api/include</compoundname>
-    <innerdir refid="dir_b1390110faa6419f3381c3bf40c78339">D:/workspace/quasardb-master/qdb/api/include/qdb</innerdir>
+    <compoundname>include</compoundname>
+    <innerdir refid="dir_b1390110faa6419f3381c3bf40c78339">include/qdb</innerdir>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="D:/workspace/quasardb-master/qdb/api/include/"/>
+    <location file="include/"/>
   </compounddef>
 </doxygen>

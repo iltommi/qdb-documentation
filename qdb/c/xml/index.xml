@@ -245,6 +245,8 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9d43bc1ae8cbfeb3d068d1c91a138c8e" kind="enumvalue"><name>qdb_e_quota_exceeded</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa13cf3a9f5ebc6d5795f53625a8a989d" kind="enumvalue"><name>qdb_e_alias_too_long</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5d6825c7b32eeea83aeb6dad1787c6f6" kind="enumvalue"><name>qdb_e_clock_skew</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7a6c957a31b0b5d4b61575f89f139681" kind="enumvalue"><name>qdb_e_access_denied</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ab0ec10e10f4dd148d34e01d47bdd8a0f" kind="enumvalue"><name>qdb_e_login_failed</name></member>
     <member refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kind="typedef"><name>qdb_error_origin_t</name></member>
     <member refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kind="typedef"><name>qdb_error_severity_t</name></member>
     <member refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kind="typedef"><name>qdb_error_t</name></member>
@@ -485,6 +487,8 @@
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a9d43bc1ae8cbfeb3d068d1c91a138c8e" kind="enumvalue"><name>qdb_e_quota_exceeded</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2aa13cf3a9f5ebc6d5795f53625a8a989d" kind="enumvalue"><name>qdb_e_alias_too_long</name></member>
     <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a5d6825c7b32eeea83aeb6dad1787c6f6" kind="enumvalue"><name>qdb_e_clock_skew</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2a7a6c957a31b0b5d4b61575f89f139681" kind="enumvalue"><name>qdb_e_access_denied</name></member>
+    <member refid="group__error_1ggac9f692dca38030ff2da1f53b2b3dadc2ab0ec10e10f4dd148d34e01d47bdd8a0f" kind="enumvalue"><name>qdb_e_login_failed</name></member>
     <member refid="group__error_1ga33bc9d13dc27c2c413af864a6f0afc7c" kind="typedef"><name>qdb_error_origin_t</name></member>
     <member refid="group__error_1gabf6c4d9393dd881c3a517f8a28187193" kind="typedef"><name>qdb_error_severity_t</name></member>
     <member refid="group__error_1ga352232196dc2f9b9a89d701f63916cec" kind="typedef"><name>qdb_error_t</name></member>
