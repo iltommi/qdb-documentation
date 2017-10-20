@@ -13,7 +13,7 @@ Changes in this version
 
     * Protocol version 20
     * This build now targets the Westmere micro-architecture
-    * Native support for distributed time series and server-side aggregation
+    * Native support for distributed time series and server-side aggregation (with AVX support when available)
     * Cryptographically strong authentication (enabled by default)
     * Full network traffic encryption using AES GCM 256 (disabled by default)
     * New querying language with support for distributed joins over tags
@@ -25,6 +25,7 @@ Changes in this version
     * Reduced the impact on cluster performance when a node joins the ring
     * Improved eviction and trimming performance
     * The qdbsh output is colored on terminals that support it
+    * New API calls: cluster_purge_cache and cluster_wait_for_stabilization
 
 2.0.0 - "Aristotle" - 01/17/2017
 ================================
