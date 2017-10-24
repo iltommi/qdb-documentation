@@ -8,25 +8,23 @@ Primer
 What is |quasardb|?
 -------------------
 
-|Quasardb| is a column-oriented, distributed database with native time series support (see :doc:`api/time_series`).
+|Quasardb| is a column-oriented, distributed timeseries database (see :doc:`api/time_series`).
 
 It has been designed to reliably store large amounts of data, while delivering a performance level that enables analysts to work interactively.
 
 Where would you want to use |quasardb|? Here are a couple of use cases:
 
-    * Trading market data store
-    * Apache Spark backend
-    * Heavy traffic web site
-    * Multiplayer game dynamic elements depot
-    * Distributed computing common data store
-    * Relational database cache
+    * Market data store for back testing and analysis
+    * Trades store for compliance
+    * Time deviation database for compliance
+    * Sensors data repository for predictive maintenance
+    * Monitoring database for large deployments
 
 Shall we dance?
 ---------------
 
-To start a |quasardb| server, just run it! We provide packages for many platform, but you can always work in a local directory where you manually
-extracted your |quasardb| binaries. We also support docker and are available on
-`Microsoft Azure <https://azuremarketplace.microsoft.com/en-us/marketplace/partners/quasardb/quasardb/>`_ and `Amazon EC2 <https://aws.amazon.com/marketplace/pp/B01FUR400S/?ref=_ptnr_qdb_doc>`_.
+To start a |quasardb| server, just run it! We provide packages for many platforms, but you can always work in a local directory where you manually
+extracted your |quasardb| binaries. We also support docker for your convenience.
 
 Let's assume we extracted the |quasardb| archive in a local directory. The default configuration listens on the localhost, port 2836. If you type::
 
@@ -34,122 +32,14 @@ Let's assume we extracted the |quasardb| archive in a local directory. The defau
 
 You will have after a couple of seconds the daemon log on the console that it is ready to accept incoming requests.
 
-There is no limit to what you can store into |quasardb|. Images, videos, JSON, XML, text... |quasardb| will automatically optimize storage for you.
+|quasardb| is typically used via its multi-language API. For the purpose of this introduction, we will restrict ourselves to the Python API (see :doc:`api/python`) and the shell (see :doc:`reference/qdb_shell`).
 
-Let's fire up the shell and run a couple of commands::
+Inserting timeseries data
+-------------------------
 
-    qdbsh
+We're going to create a single-column timeseries and insert data. The name of the timeseries will be *stocks* and the name of its unique column will be *close*. The type of the data we will insert in the column is 64-bit floating point numbers.
 
-Will start the shell and the following prompt should be displayed. Keep in mind you must keep the daemon running::
-
-    qdbsh>
-
-Let's start simple. The example below uses :doc:`reference/qdb_shell`: to give the key "entry" a value of "amazing..."::
-
-    qdbsh> blob_put entry amazing...
-    qdbsh> blob_get entry
-    amazing...
-
-Wait, what is a blob?
-
-A blob is a "binary large object" and should be your go-to type when unsure. Using blob for text is perfectly fine
-and actually optimal. A blob is stored bit-for-bit and our low-level protocols make sure no non-sense is added to your data. There is no limit to the size of
-blobs.
-
-When you use the blob_put command, |quasardb| will return an error if the entry already exists::
-
-    qdbsh> blob_put entry other_value
-    An entry matching the provided alias already exists.
-
-To update a value, you have the blob_update command, which creates the entry when it doesn't exist::
-
-    qdbsh> blob_update entry other_value
-
-Beyond blobs
-------------
-
-There are other types of entries in |quasardb|, such as integers::
-
-    qdbsh> int_put my_value 10
-    qdbsh> int_get my_value
-    10
-
-Of course you could store the string "10" into a blob, but with integers you have cross-platform 64-bit signed integer available at your finger tips,
-which enables you to do things such as::
-
-    qdbsh> int_add my_value 5
-    15
-
-The power of arithmetics compels you!
-
-When requesting |quasardb| through the API, integers are provided in a native format understood by the programming language you are using.
-
-In |quasardb| all operations, unless otherwise noted, are atomic, concurrent and server-side validated. Which means if you had thousands of shells doing "int_add"
-you are guaranteed that all operations are properly accounted.
-
-Distributed containers
-----------------------
-
-Integers, blobs...
-
-What about "a list of stuff"?
-
-Lists in |quasardb| are named "deques" and stand for "double-ended queues". They support concurrent and scalable insertions at the beginning and the end and O(1)
-random access to any element within the deque. Deques are automatically scaled across all the nodes of your cluster and have absolutely no limit,
-because at |quasardb|, we don't like limits::
-
-    qdbsh> deque_push_back my_list entry_one
-    qdbsh> deque_push_back my_list entry_two
-
-    qdbsh> deque_pop_front my_list
-    entry_one
-
-Every entry within the deque is a blob, of whatever size you fancy.
-
-Distributed secondary indexes
------------------------------
-
-Now we'd like to show you one exciting feature of |quasardb|: tags. Since |quasardb| is a key/value store it provides you with an immediate
-access to any entry within the cluster, if you have a key.
-
-What if you don't have a key? What if you want to look-up the data differently? This is why we introduced tags. If you'd like to be able to lookup an entry via
-a different value than the key, you can use tags. There is no limit to the number of tags you can have for a key and no limit to the number of keys you can have
-for a tag.
-
-Let's see it in action::
-
-    qdbsh> int_put client1_views 1000
-    qdbsh> int_put client1_orders 500
-
-    qdbsh> attach_tag client1_views client1
-    qdbsh> attach_tag client1_orders client1
-
-    qdbsh> get_tagged client1
-    client1_views, client1_orders
-
-    qdbsh> get_tags client1_views
-    client1
-
-You can see tags as manual secondary indexes.
-
-You never pay for tags if you don't need them and tags are designed to be distributed and scalable. Tags are ideal
-when you have a lot of unstructured data or need a flexible model to work with. There is no background jobs that analyzes your data to create indexes so tags
-are very fast and inexpensive.
-
-Working with the API
---------------------
-
-The shell tool is not always the right tool for the job and generally has a subset of all the features available in |quasardb|.
-
-If you have your own application, you may find it cumbersome to run a third-party program every time you want to access the database.
-
-That's why we have APIs! We currently support :doc:`api/c`, :doc:`api/cpp`, :doc:`api/java`, `PHP <https://doc.quasardb.net/php/>`_, `.NET <https://doc.quasardb.net/dotnet/>`_,
-:doc:`api/nodejs` and :doc:`api/python`.
-
-You can either fetch a binary package or build the API from source (BSD License). You will find them on `GitHub <https://github.com/bureau14>`_. Our APIs do their
-best to be simple and straightforward.
-
-Here is a short Python code snippet:
+This is the code you need to write:
 
 .. testcode:: primer
 
@@ -157,51 +47,133 @@ Here is a short Python code snippet:
 
     # connecting, default port is 2836
     c = quasardb.Cluster("qdb://127.0.0.1:2836")
-    # adding an entry
-    b = c.blob("my_entry")
-    b.put("really amazing...")
-    # getting and printing the content
-    print b.get()
-    # closing connection
-    del c
+    # creating a timeseries object
+    my_ts = c.ts("stocks")
+    # creating the timeseries in the database
+    # it will return a list of created columns that we don't need here
+    # and throw an error if the timeseries already exist
+    ts.create([quasardb.TimeSeries.DoubleColumnInfo("close")])
 
-Which will output the following when executed:
+You create the timeseries only once, like you create a table in a SQL database only once. If you wish to delete (drop) the whole timeseries, you do the following.
 
-.. testoutput:: primer
+.. testcode:: primer
 
-    really amazing...
+    c = quasardb.Cluster("qdb://127.0.0.1:2836")
+    my_ts = c.ts("stocks")
+    # remove the whole timeseries, in one call
+    ts.remove()
 
-One more thing: time series
----------------------------
+.. note::
+    Operations performed on timeseries are transactional. |quasardb| uses MVCC and 2PC to provide you with a high level of reliability.
 
-quasardb supports distributed time series with server side aggregations.
+Let's add 3 values into our timeseries:
 
-Imagine you are storing all the temperatures of machines in a factory. Each machine would have its own time series identified by its name (e.g. machine1, machine2, etc.).
+.. testcode:: primer
 
-What if you you would like to known the average temperature of yesterday? Here is how you would write in Python:
-
-.. testcode:: quasardb
-
-    # access a time series by name
-    ts = c.ts("machine42")
-
-    # get the temperature column
-    col_temp = ts.column(quasardb.TimeSeries.DoubleColumnInfo("Temperature"))
-
-    # get the average temperature of yesterday
-    average = col_temp.aggregate(quasardb.TimeSeries.Aggregation.sum,
-                                 [(datetime.datetime.now() - datetime.timedelta(1), datetime.datetime.now())])[0]
+    c = quasardb.Cluster("qdb://127.0.0.1:2836")
+    # we don't create the timeseries again, we access the existing column
+    close = ts.column(quasardb.TimeSeries.DoubleColumnInfo("close"))
+    # this is not the most efficient way to insert data into a time series
+    # but it's very convenient
+    close.insert([(datetime.datetime(2017, 1, 1), 1.0),
+                  (datetime.datetime(2017, 1, 2), 2.0),
+                  (datetime.datetime(2017, 1, 3), 3.0)])
 
 
-Computations occur in real-time, meaning that you don't really have to think in advance about how you will use your data. If you need averages per hour, minute or perform  different kind of computations, quasardb will do it on demand.
+In this example we added 3 points, 1 point per day, for simplicity sake. In the examples directory of the Python API, you will find several examples showcasing the different ways you can insert data into a quasardb cluster.
 
-For more information, see :doc:`api/time_series`.
+Working with the data
+---------------------
+
+The data we inserted with the Python API has been normalized and is now accessible from all other APIs. We can also use our shell to visualize it:
+
+.. note::
+    Everything we do with the shell can be done via the API of your choice.
+
+The following command::
+
+    qdbsh
+
+Will start the shell and the following prompt should be displayed. Keep in mind you must have the daemon running on the localhost,
+as by default the shell will attempt to connect to the localhost::
+
+    qdbsh >
+
+Let's first check that our timeseries exists::
+
+    qdbsh > ts_show stocks
+    2 columns
+
+     0. timestamp - nanosecond timestamp
+     1. close - 64-bit double
+
+We can also dump the content of our timeseries::
+
+    qdbsh > ts_select 2017-01-01T00:00:00 2017-01-10T00:00:00 stocks
+    timestamp                      close
+    --------------------------------------------
+    2017-01-01T00:00:00.000000000Z 1.000000
+    2017-01-02T00:00:00.000000000Z 2.000000
+    2017-01-03T00:00:00.000000000Z 3.000000
+
+    Returned 3 rows in 585 us (Shell limit 1,000)
+
+As you can see the timestamp allows for nanosecond precision.
+
+The database is also able to perform server-side aggregations for maximum performance. For example, you can ask for the average value of a timeseries, without having to retrieve all the data. Aggregations are able to leverage the enhanced instruction set of your CPU, when available.
+
+For example, we can request the arithmetic mean of our stocks for the same interval::
+
+    qdbsh > ts_aggregate  2017-01-01T00:00:00 2017-01-10T00:00:00 arithmetic_mean(stocks, close)
+    arithmetic_mean(stocks, close) =       2.000000 - 3 row(s) in 507 us (5,917 rows/sec)
+
+Of course with only 3 rows, don't expect peak performance!
+
+.. note::
+    For a list of supported functions, see :doc:`api/time_series`.
+
+Organizing your data
+--------------------
+
+When you start to have a lot of timeseries, you probably want to find them based on criteria different than the name.
+
+Out of the box, all timeseries are searchable by prefix and suffix::
+
+    qdbsh > prefix_get sto 100
+    1. stocks
+
+This will return the 100 first matches for the entries starting with the name "sto".
+
+However, sometimes you want to organize your timeseries according to arbitraty criteria. For example, for our stocks, we may want to say that it comes from the NYSE and that the currency is USD.
+
+|quasardb| has a powerful feature named "tags" that enables you to tag timeseries and do reverse lookups based on those tags::
+
+    qdbsh > attach_tag stocks nyq
+
+    qdbsh > attach_tag stocks usd
+
+Then you can look up based on those tags::
+
+    qdbsh > get_tagged nyq
+    1. stocks - timeseries
+
+    qdbsh > get_tagged usd
+    1. stocks - timeseries
+
+It's also possible to ask more complex questions, such as *"give me everything that is tagged with 'usd' but not 'nyq'"*::
+
+    qdbsh > query "tag='usd' and not tag='nyq'"
+    An entry matching the provided alias cannot be found.
+
+Which is, in our case, the correct answer!
+
 
 That demo is nice, but what happens when I go to production?
 ------------------------------------------------------------
 
-A fair question which has a simple answer: the size and configuration of the cluster has no impact on the client code. The only thing that may change is
-the connection string. For example if you have a cluster of four machines, your connection string can be::
+A fair question which has a simple answer: the size and configuration of the cluster has no impact on the client code. |quasardb| will take care of the sharding and distribution of the data transparently, whether you are writing to and reading from the database.
+
+The only thing that may change is the connection string. For example if you have a cluster of four machines, your connection string can be::
 
     c = qdb.Cluster("qdb://192.168.1.1:2836,192.168.1.2:2836,192.168.1.3:2836,192.168.1.4:2836", datetime.timedelta(minutes=1))
 
@@ -213,7 +185,7 @@ and even::
 
     c = qdb.Cluster("qdb://192.168.1.1:2836", datetime.timedelta(minutes=1))
 
-That's because |quasardb| protocol has built-in discovery! Just give any node in the cluster and we take care of the rest. The more nodes the better as we can
+That's because the |quasardb| protocol has built-in discovery! Just give any node in the cluster and we take care of the rest. The more nodes the better as we can
 try another node if the one provided is down at the moment of the connection.
 
 Going further
@@ -236,6 +208,7 @@ Things to remember about |quasardb|:
     * Multi-platform: FreeBSD, Linux 2.6+, OS X and Windows (32-bit and 64-bit)
     * Peer-to-peer network distribution
     * Transparent persistence
+    * Native timeseries support
     * Distributed transactions
     * Rich typing
     * Tag-based search
