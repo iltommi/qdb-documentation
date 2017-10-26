@@ -16,6 +16,7 @@ Changes in this version
     * Native support for distributed time series and server-side aggregation (with AVX support when available)
     * Cryptographically strong authentication (enabled by default)
     * Full network traffic encryption using AES GCM 256 (disabled by default)
+    * Levyx Helium persistence layer for high performance storage
     * New querying language with support for distributed joins over tags
     * New API to count prefixes and suffixes
     * Empty entries are now allowed in deques

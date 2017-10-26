@@ -46,13 +46,20 @@ Each node saves its data in its "root" directory, determined by its configuratio
 .. caution::
     Never save other files in this directory; they might be deleted or modified by the daemon.
 
-quasardb's persistence layer is built using `RocksDB <https://github.com/facebook/rocksdb>`_. All software that is RocksDB compatible can process the quasardb database file.
+quasardb has three persistence modes:
+
+ * Transient: data is not stored on disk and will be lost if the node shuts down
+ * `RocksDB <http://rocksdb.org/>`_: an open source LSM-Tree store written by Facebook and based on LevelDB. Any software that is RocksDB compatible can process the quasardb database file.
+ * `Helium <http://www.levyx.com/helium>`_: a high performance persistence layer that uses an innovative data structure to avoid write stalls due to compactions. This is the recommended persistence layer for maximum performance.
 
 Entries are usually stored "as is", unmodified within the database. Data may be compressed for efficiency purposes, but this is transparent to the client and is never done to the detriment of performance.
 
 Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaneous requests. When a user adds or updates an entry on the cluster the entry's value may not be synced to the disk immediately. However, quasardb guarantees the data is consistent at all times, even in case of hardware or software failure.
 
 If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true. Disabling the write cache may have an impact on performance.
+
+.. note::
+    With the Helium persistence layer, an entry may not exceed 256 MiB in size.
 
 .. _transient-mode:
 
@@ -155,7 +162,7 @@ Formally put, this means that quasardb may choose to sacrifice *Availability* fo
 .. _data-replication-reliability-impact:
 
 Impact on reliability
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 For an entry x to become unavailable, all replicas must *simultaneously* fail.
 
@@ -170,7 +177,7 @@ This formula assumes that failures are unrelated, which is never completely the 
     A replication factor of two is a good compromise between reliability and memory usage as it gives a quadratic increase on reliablity while increasing memory usage by a factor two.
 
 Impact on performance
-^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 All add and update ("write") operations are :math:`\tau` slower when replication is active. Read-only queries are automatically load-balanced across nodes containing replicated entries. Depending on cluster load and network topology, read operations may be faster using data replication.
 

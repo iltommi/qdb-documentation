@@ -102,15 +102,61 @@ Data Storage
 .. note::
     Data storage options are global for any given ring.
 
-Each node saves its data in its "root" directory, determined by its configuration file or the global parameter received from the cluster. By default this is the /db directory under the qusardb daemon's working directory.
+Each node saves its data locally using one of the two persistence technologies available:
+
+ * `RocksDB <http://rocksdb.org/>`_
+ * `Helium <http://www.levyx.com/helium>`_
 
 Entries are often kept resident in a write cache so the daemon can rapidly serve a large amount of simultaenous requests. Data may not be synced to the disk at all times. If you need to guarantee that every cluster write is synced to disk immediately, disable the write cache by setting the "sync" configuration option to true.
 
 You can also disable data storage altogether, making quasardb a pure in-memory repository. In transient mode, entries will be lost on eviction or node shutdown and entries cannot be interated upon. See :option:`--transient` and `transient-mode`.
 
+For more information, see :doc:`../concepts/data_storage` and :doc:`../concepts/data_transfer`.
+
+RocksDB
+^^^^^^^
+
+RocksDB is an open-source, persistent, key-value store for fast storage environments. It is based on LevelDB and uses LSM trees.
+
+To enable RocksDB, one sets the "root" configuration parameter. QuasarDB will then write the data under this directory using our tuned RocksDB implementation. The data stored is 100% compatible with RocksDB and can be used via the RocksDB API, if needed.
+
+The directory can be absolute or relative, for production we recommend using absolute directory.
+
 It is possible to limit the amount of space a node will occupy with the "max_size" option. The writes to the node will fail when the disk usage reaches that limit, warnings being emitted before that point. The write-ahead log is not accounted in the space usage meaning that the actual disk usage may be greater than the limit. Compression may also reduce the actual disk usage.
 
-For more information, see :doc:`../concepts/data_storage` and :doc:`../concepts/data_transfer`.
+Levyx Helium
+^^^^^^^^^^^^
+
+Helium is a high performance persistence technology that uses innovative data structures to avoid write stalls due to compaction. It is highly optimized for flash storage and can deliver outstanding performance. It is the recommended persistence layer for maximum performance.
+
+.. note::
+    With the Helium persistence layer, a single entry may not exceed 256 MiB in size.
+
+Helium uses a URL scheme for specifying the path to a volume.
+
+A URL starts with ``he://``. Here are some examples:
+
+ * Mounting ``/dev/sda1``: ``he://./dev/sda1``
+ * Mounting ``/home/user/my_file``: ``he://./home/user/my_file``
+ * Mounting ``d:\temp\test.data``: ``he://./d:/temp/test.dat``
+
+Helium can also span multiple volumes, for example ``he://./dev/sda,/dev/sdb`` will span the two volumes ``sda`` and ``sdb``.
+
+In Unix-like environments, block devices are listed under the /dev directory (e.g., /dev/sda). Note that a partition on a raw device is considered a raw device as well (e.g., /dev/sda1).
+
+If you don't want to, or cannot, mount a volume directly, you can use a sparse file.
+
+To create a 10 GiB sparse file on Linux::
+
+    $ truncate -s 10G sparse_file.img
+
+On Windows::
+
+    FSUtil File CreateNew sparse_file.img 104857600
+    FSUtil Sparse SetFlag sparse_file.img
+
+.. note::
+    Helium is currently only supported in Linux and Windows 64-bit.
 
 Partitions
 ----------
@@ -616,6 +662,7 @@ The default configuration file is shown below::
             "depot": {
                 "sync_every_write": false,
                 "root": "db",
+                "helium_url": "",
                 "max_bytes": 0,
                 "storage_warning_level": 90,
                 "storage_warning_interval": 3600,
@@ -648,7 +695,7 @@ The default configuration file is shown below::
             },
             "network": {
                 "server_sessions": 20000,
-                "partitions_count": 13,
+                "partitions_count": 9,
                 "idle_timeout": 600,
                 "client_timeout": 60,
                 "listen_on": "127.0.0.1:2836"
@@ -683,11 +730,15 @@ The default configuration file is shown below::
 .. describe:: local::depot::sync_every_write
 
     A boolean representing whether or not the node should sync to disk every write. This option has a huge negative impact on performance, especially on high
-    latency media and adds only marginal safety compared to the sync option. Disabled by default.
+    latency media and adds only marginal safety compared to the sync option. Disabled by default. This setting only applies to RocksDB.
 
 .. describe:: local::depot::root
 
-    A string representing the relative or absolute path to the directory where data will be stored.
+    A string representing the relative or absolute path to the directory where data will be stored. Specifying this string will enable RocksDB as the persistence layer.
+
+.. describe:: local::depot::helium_url
+
+    A string representing the URL to be used by the persistence layer. Specifying this string will enable Levyx Helium as the persistence layer.
 
 .. describe:: local::depot::max_bytes
 
@@ -721,7 +772,7 @@ The default configuration file is shown below::
 .. describe:: local::depot::direct_read
 
     A boolean repersenting whether or not reads from the disk should be direct (i.e. bypass OS buffers). This setting has an impact on performance and memory usage depending
-    on the hardware configuration. It is generally advised to not use direct reads with spinning disks.
+    on the hardware configuration. It is generally advised to not use direct reads with spinning disks. This setting only applies to RocksDB.
 
  .. describe:: local::depot::direct_write
 
@@ -729,27 +780,27 @@ The default configuration file is shown below::
 
 .. describe:: local::depot::max_total_wal_size
 
-    The maximum size, in bytes, of the write-ahead log.
+    The maximum size, in bytes, of the write-ahead log. This setting only applies to RocksDB.
 
 .. describe:: local::depot::metadata_mem_budget
 
-    An integer representing the approximate amount of memory (RAM) that should be dedicated to the management of metadata.
+    An integer representing the approximate amount of memory (RAM) that should be dedicated to the management of metadata. This setting only applies to RocksDB.
 
 .. describe:: local::depot::data_cache
 
-    An integer representing the apporximate amount of memory (RAM) that should be used for caching data blocks.
+    An integer representing the apporximate amount of memory (RAM) that should be used for caching data blocks. This setting only applies to RocksDB.
 
 .. describe:: local::depot::threads
 
-    An integer representing the number of threads dedicated to the persistence layer.
+    An integer representing the number of threads dedicated to the persistence layer. This setting only applies to RocksDB.
 
 .. describe:: local::depot::hi_threads
 
-    An integer representing the number of high-priority threads dedicated to the persistence layer, in addition to the normal priority threads.
+    An integer representing the number of high-priority threads dedicated to the persistence layer, in addition to the normal priority threads. This setting only applies to RocksDB.
 
 .. describe:: local::depot::max_open_files
 
-    An integer representing the maximum number of files to keep open at a time.
+    An integer representing the maximum number of files to keep open at a time. This setting only applies to RocksDB.
 
 .. describe:: local::user::license_file
 
