@@ -132,17 +132,15 @@ Helium is a high performance persistence technology that uses innovative data st
 .. note::
     With the Helium persistence layer, a single entry may not exceed 256 MiB in size.
 
-Helium uses a URL scheme for specifying the path to a volume.
+Helium uses a URL scheme for specifying the path to a volume. In Unix-like environments, block devices are listed under the /dev directory (e.g., ``/dev/sda``). Note that a partition on a raw device is considered a raw device as well (e.g., ``/dev/sda1``).
 
 A URL starts with ``he://``. Here are some examples:
 
- * Mounting ``/dev/sda1``: ``he://./dev/sda1``
- * Mounting ``/home/user/my_file``: ``he://./home/user/my_file``
- * Mounting ``d:\temp\test.data``: ``he://./d:/temp/test.dat``
+ * To use the whole volume ``/dev/sda1``, write the following URL: ``he://./dev/sda1``
+ * To use the file ``/home/user/my_file``, write the following URL: ``he://./home/user/my_file``
+ * To use the file ``d:\temp\test.data``, write the following URL: ``he://./d:/temp/test.dat``
 
 Helium can also span multiple volumes, for example ``he://./dev/sda,/dev/sdb`` will span the two volumes ``sda`` and ``sdb``.
-
-In Unix-like environments, block devices are listed under the /dev directory (e.g., /dev/sda). Note that a partition on a raw device is considered a raw device as well (e.g., /dev/sda1).
 
 If you don't want to, or cannot, mount a volume directly, you can use a sparse file.
 
