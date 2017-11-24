@@ -2,14 +2,17 @@
 <html lang="en-US">
     <head>
         <meta charset="UTF-8">
-        <meta http-equiv="refresh" content="0;url=$LATEST/">
+        <meta http-equiv="refresh" content="0; url=$LATEST/">
         <script type="text/javascript">
-            window.location.href = window.location.origin + "/$LATEST/"
+            var current_location = window.location.origin
+            if ((current_location !== null) && !current_location.startsWith("file://")) {
+                window.location.href = current_location + "/$LATEST/"
+            }
         </script>
         <title>Page Redirection</title>
     </head>
     <body>
         <!-- Note: don't tell people to `click` the link, just tell them that it is a link. -->
-        If you are not redirected automatically, follow the <a href="$LATEST">link to the quasardb documentation.</a>
+        If you are not redirected automatically, follow the <a href="$LATEST/">link to the quasardb documentation.</a>
     </body>
 </html>
