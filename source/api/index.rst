@@ -10,6 +10,7 @@ API Reference
    queries
    c
    cpp
+   go
    hadoop
    java
    net
