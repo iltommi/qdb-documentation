@@ -94,6 +94,10 @@ The following command::
 
     qdbsh
 
+If you fancy some color, and your terminal supports it, you may want to try::
+
+    qdbsh --color-output=yes
+
 Will start the shell and the following prompt should be displayed. Keep in mind you must have the daemon running on the localhost,
 as by default the shell will attempt to connect to the localhost::
 
@@ -101,7 +105,7 @@ as by default the shell will attempt to connect to the localhost::
 
 Let's first check that our timeseries exists::
 
-    qdbsh > ts_show stocks
+    qdbsh > show stocks
     2 columns
 
      0. timestamp - nanosecond timestamp
@@ -109,25 +113,36 @@ Let's first check that our timeseries exists::
 
 We can also dump the content of our timeseries::
 
-    qdbsh > ts_select 2017-01-01T00:00:00 2017-01-10T00:00:00 stocks
+    qdbsh > select * from stocks in range(2017-01-01, 2017-01-10)
     timestamp                      close
     --------------------------------------------
     2017-01-01T00:00:00.000000000Z 1.000000
     2017-01-02T00:00:00.000000000Z 2.000000
     2017-01-03T00:00:00.000000000Z 3.000000
 
-    Returned 3 rows in 585 us (Shell limit 1,000)
+As you can see the timestamp allows for nanosecond precision. Time definition syntax in quasardb is very flexible::
 
-As you can see the timestamp allows for nanosecond precision.
+    qdbsh > select * from stocks in range(2017, +10d)
+    timestamp                      close
+    --------------------------------------------
+    2017-01-01T00:00:00.000000000Z 1.000000
+    2017-01-02T00:00:00.000000000Z 2.000000
+    2017-01-03T00:00:00.000000000Z 3.000000
 
 The database is also able to perform server-side aggregations for maximum performance. For example, you can ask for the average value of a timeseries, without having to retrieve all the data. Aggregations are able to leverage the enhanced instruction set of your CPU, when available.
 
 For example, we can request the arithmetic mean of our stocks for the same interval::
 
-    qdbsh > ts_aggregate  2017-01-01T00:00:00 2017-01-10T00:00:00 arithmetic_mean(stocks, close)
-    arithmetic_mean(stocks, close) =       2.000000 - 3 row(s) in 507 us (5,917 rows/sec)
+    qdbsh > select arithmetic_mean(close) from stocks in range(2017, +10d)
+    timestamp                      arithmetic_mean(close)
+    ------------------------------------------------------
+    1970-01-01T00:00:00.000000000Z 2.00
 
-Of course with only 3 rows, don't expect peak performance!
+Here are some queries you can try for yourself:
+
+    * Display the open and close of two different time series: ``select open, close from stocks_A, stocks_B in range(2017, +10d)``
+    * Daily averages over a year: ``select arithmetic_mean(close) from stocks in range(2017, +1y) group by day``
+    * Display the last known value of a timeseries with respect to the timestamps of another: ``select close from stocks_A in range(2017, +1d) asof(stocks_B)``
 
 .. note::
     For a list of supported functions, see :doc:`api/time_series`.
