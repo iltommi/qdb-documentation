@@ -38,39 +38,18 @@
 from builtins import range as xrange, int as long  # pylint: disable=W0622
 import json
 import datetime
-import time
+import numbers
 import quasardb.impl as impl  # pylint: disable=C0413,E0401
-import pytz
-import calendar
-from tzlocal import get_localzone
+import quasardb.qdb_convert
 
-def __make_enum(type_name, prefix):
-    """
-    Builds an enum from ints present whose prefix matches
-    """
-    members = dict()
+from quasardb.qdb_enum import Compression, Encryption, ErrorCode, Operation, Options, Protocol, TSAggregation, TSColumnType, TSFilter
 
-    prefix_len = len(prefix)
+tz = qdb_convert.tz
 
-    for x in dir(impl):
-        if not x.startswith(prefix):
-            continue
-
-        v = getattr(impl, x)
-        if isinstance(v, long):
-            members[x[prefix_len:]] = v
-
-    return type(type_name, (), members)
-
-
-ErrorCode = __make_enum('ErrorCode', 'error_')
-Options = __make_enum('Option', 'option_')
-Operation = __make_enum('Operation', 'operation_')
-Protocol = __make_enum('Protocol', 'protocol_')
-TSAggregation = __make_enum('Aggregation', 'aggregation_')
-TSColumnType = __make_enum('ColumnType', 'column_')
-Compression = __make_enum('Compression', 'compression_')
-Encryption = __make_enum('Encryption', 'encryption_')
+DoublePointsVector = quasardb.qdb_convert.DoublePointsVector
+BlobPointsVector = quasardb.qdb_convert.BlobPointsVector
+Int64PointsVector = quasardb.qdb_convert.Int64PointsVector
+TimestampPointsVector = quasardb.qdb_convert.TimestampPointsVector
 
 def make_error_string(error_code):
     """ Returns a meaningful error message corresponding to the quasardb error code.
@@ -103,23 +82,30 @@ class Error(Exception):
 # Deprecated name. Please use Error.
 QuasardbException = Error
 
+
 class RemoteSystemError(Error):
     pass
+
 
 class LocalSystemError(Error):
     pass
 
+
 class ConnectionError(Error):
     pass
+
 
 class InputError(Error):
     pass
 
+
 class OperationError(Error):
     pass
 
+
 class ProtocolError(Error):
     pass
+
 
 def chooseError(error_code=0):
     return {
@@ -139,121 +125,13 @@ def version():
     """
     return impl.version()
 
+
 def build():
     """ Returns the build tag and build date as a string
 
     :returns: str -- The API build tag
     """
     return impl.build()
-
-def _duration_to_timeout_ms(duration):
-    seconds_in_day = long(24) * long(60) * long(60)
-    return ((duration.days * seconds_in_day + duration.seconds) * long(1000)
-            + (duration.microseconds // long(1000)))
-
-def _api_buffer_to_string(buf):
-    return None if buf is None else impl.api_buffer_ptr_as_string(buf)
-
-def _string_to_api_buffer(h, s):
-    """
-    Converts a string to an internal qdb::api_buffer_ptr
-    """
-    return None if s is None else impl.make_api_buffer_ptr_from_string(h, s)
-
-tz = pytz.UTC
-
-try:
-    local_tz = get_localzone()
-except:
-    local_tz = tz
-
-_epoch = datetime.datetime(1970, 1, 1, tzinfo=pytz.UTC)
-
-# don't use timetuple because of tz
-def _time_to_unix_timestamp(t):
-    if t.tzinfo:
-        return (t - _epoch).total_seconds()
-    else:
-        return long(time.mktime((t.year, t.month, t.day, t.hour, t.minute, t.second, -1, -1, -1))) + long(local_tz.utcoffset(t).total_seconds())
-
-def _time_to_qdb_timestamp(t):
-    return _time_to_unix_timestamp(t) * long(1000) + t.microsecond / long(1000)
-
-def _convert_expiry_time(expiry_time):
-    return _time_to_qdb_timestamp(expiry_time) if expiry_time != None else long(0)
-
-
-def _convert_time_couples_to_qdb_range_t_vector(time_couples):
-    vec = impl.RangeVec()
-
-    c = len(time_couples)
-
-    vec.resize(c)
-    for i in xrange(c):
-        vec[i] = _convert_time_couple_to_qdb_range_t(time_couples[i])
-
-    return vec
-
-
-def _convert_to_wrap_ts_blop_points_vector(tuples):
-    vec = impl.BlobPointVec()
-
-    c = len(tuples)
-
-    vec.resize(c)
-
-    for i in xrange(c):
-        vec[i].timestamp.tv_sec = _time_to_unix_timestamp(
-            tuples[i][0])
-        vec[i].timestamp.tv_nsec = tuples[i][0].microsecond * long(1000)
-        vec[i].data = tuples[i][1]
-
-    return vec
-
-
-def make_qdb_ts_double_point_vector(time_points):
-    vec = impl.DoublePointVec()
-
-    c = len(time_points)
-
-    vec.resize(c)
-
-    for i in xrange(c):
-        vec[i].timestamp.tv_sec = _time_to_unix_timestamp(
-            time_points[i][0])
-        vec[i].timestamp.tv_nsec = time_points[i][0].microsecond * long(1000)
-        vec[i].value = time_points[i][1]
-
-    return vec
-
-
-def _convert_qdb_timespec_to_time(qdb_timespec):
-    return datetime.datetime.fromtimestamp(qdb_timespec.tv_sec, tz) \
-        + datetime.timedelta(microseconds=qdb_timespec.tv_nsec / 1000)
-
-
-def _convert_qdb_range_t_to_time_couple(qdb_range):
-    return (_convert_qdb_timespec_to_time(qdb_range.begin),
-            _convert_qdb_timespec_to_time(qdb_range.end))
-
-
-def _convert_time_couple_to_qdb_range_t(time_couple):
-    rng = impl.qdb_ts_range_t()
-
-    rng.begin.tv_sec = _time_to_unix_timestamp(
-        time_couple[0])
-    rng.begin.tv_nsec = time_couple[0].microsecond * long(1000)
-    rng.end.tv_sec = _time_to_unix_timestamp(
-        time_couple[1])
-    rng.end.tv_nsec = time_couple[1].microsecond * long(1000)
-
-    return rng
-
-
-def make_error_carrier():
-    err = impl.error_carrier()
-    err.error = impl.error_uninitialized
-    return err
 
 
 class Entry(object):
@@ -314,7 +192,7 @@ class Entry(object):
             :returns: A list of alias (stings) of tags
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.get_tags(self.handle, self.alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -371,7 +249,7 @@ class ExpirableEntry(RemoveableEntry):
         :raises: Error
         """
         err = self.handle.expires_at(
-            super(ExpirableEntry, self).alias(), _convert_expiry_time(expiry_time))
+            super(ExpirableEntry, self).alias(), qdb_convert.convert_expiry_time(expiry_time))
         if err != impl.error_ok:
             raise chooseError(err)
 
@@ -396,7 +274,7 @@ class ExpirableEntry(RemoveableEntry):
         :returns: datetime.datetime -- The expiry time, offset aware
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         t = impl.get_expiry_time_wrapper(
             self.handle, super(ExpirableEntry, self).alias(), err)
 
@@ -421,7 +299,7 @@ class Tag(Entry):
             :returns: The list of entries aliases tagged
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.get_tagged(self.handle, self.alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -435,11 +313,12 @@ class Tag(Entry):
             :returns: The approximative count of entries tagged
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.get_tagged_count(self.handle, self.alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
         return result
+
 
 class Integer(ExpirableEntry):
     """
@@ -458,7 +337,7 @@ class Integer(ExpirableEntry):
             :returns: The value of the entry as an integer
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         res = impl.int_get(self.handle, super(Integer, self).alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -477,7 +356,7 @@ class Integer(ExpirableEntry):
         """
         assert isinstance(number, long)
         err = self.handle.int_put(super(Integer, self).alias(
-        ), number, _convert_expiry_time(expiry_time))
+        ), number, qdb_convert.convert_expiry_time(expiry_time))
         if err != impl.error_ok:
             raise chooseError(err)
 
@@ -494,7 +373,7 @@ class Integer(ExpirableEntry):
         """
         assert isinstance(number, long)
         err = self.handle.int_update(
-            super(Integer, self).alias(), number, _convert_expiry_time(expiry_time))
+            super(Integer, self).alias(), number, qdb_convert.convert_expiry_time(expiry_time))
         if not ((err == impl.error_ok) or (err == impl.error_ok_created)):
             raise chooseError(err)
 
@@ -511,7 +390,7 @@ class Integer(ExpirableEntry):
             :raises: Error
         """
         assert isinstance(addend, long)
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         res = impl.int_add(self.handle, super(
             Integer, self).alias(), addend, err)
         if err.error != impl.error_ok:
@@ -556,11 +435,11 @@ class Deque(RemoveableEntry):
             raise chooseError(err)
 
     def __deque_getter(self, f):
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         buf = f(self.handle, super(Deque, self).alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
-        return _api_buffer_to_string(buf)
+        return qdb_convert.api_buffer_to_string(buf)
 
     def pop_front(self):
         """
@@ -609,7 +488,7 @@ class Deque(RemoveableEntry):
         :raises: Error
         :returns: The current size of the deque.
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         res = impl.deque_size(self.handle, super(Deque, self).alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -682,6 +561,114 @@ class TimeSeries(RemoveableEntry):
 
     Aggregation = TSAggregation
     ColumnType = TSColumnType
+    Filter = TSFilter
+
+    class LocalTable(object):
+        """
+        A local table object that enables row by row bulk inserts.
+        """
+
+        def __init__(self, ts, columns=None):
+            """
+            Creates a local table bound to a time series object. If columns is None, the
+            LocalTable will match all existing columns.
+
+            :param ts: The time series object to which the local table must be bound
+            :type ts: quasardb.TimeSeries
+            :param columns: A list of columns to build the LocalTable
+            :type columns: A list of quasardb.ColumnInfo
+
+            :raises: Error
+            """
+            self.__ts = ts
+
+            error_carrier = qdb_convert.make_error_carrier()
+
+            if columns == None:
+                self.__table_handle = impl.ts_make_local_table(self.__ts.handle,
+                                                               super(
+                                                                   TimeSeries, self.__ts).alias(),
+                                                               error_carrier)
+            else:
+                self.__table_handle = impl.ts_make_local_table_with_columns(self.__ts.handle,
+                                                                            super(
+                                                                                TimeSeries, self.__ts).alias(),
+                                                                            [impl.wrap_ts_column(
+                                                                                x.name, x.type) for x in columns],
+                                                                            error_carrier)
+
+            if error_carrier.error != impl.error_ok:
+                raise chooseError(error_carrier.error)
+
+        def __del__(self):
+            """ On delete, the object is released. """
+            if self.__table_handle != None:
+                impl.ts_release_local_table(
+                    self.__ts.handle, self.__table_handle)
+                self.__table_handle = None
+
+        def fast_append_row(self, timestamp, *args):
+            """
+            Appends a row to the local table. The content will not be sent to the cluster until push is called
+
+            :param timestamp: The timestamp at which to add the row
+            :type timestamp: qdb_timespec_t
+
+            :param args: The columns of the row, to skip a column, use None
+            :type args: floating points or blobs or None
+
+            :raises: Error
+            :returns: The current row index
+            """
+            col_index = 0
+
+            for arg in args:
+                if arg != None:
+                    if isinstance(arg, numbers.Real):
+                        err = impl.ts_row_set_double(
+                            self.__table_handle, col_index, float(arg))
+                    else:
+                        err = impl.ts_row_set_blob(
+                            self.__table_handle, col_index, str(arg))
+
+                    if err != impl.error_ok:
+                        raise chooseError(err)
+
+                col_index += 1
+
+            error_carrier = qdb_convert.make_error_carrier()
+            row_index = impl.ts_table_row_append(
+                self.__table_handle, timestamp, error_carrier)
+            if error_carrier.error != impl.error_ok:
+                raise chooseError(error_carrier.error)
+
+            return row_index
+
+        def append_row(self, timestamp, *args):
+            """
+            Appens a row to the local table. The content will not be sent to the cluster until push is called
+
+            :param timestamp: The timestamp at which to add the row
+            :type timestamp: datetime.datetime
+
+            :param args: The columns of the row, to skip a column, use None
+            :type args: floating points or blobs or None
+
+            :raises: Error
+            :returns: The current row index
+            """
+            return self.fast_append_row(qdb_convert.convert_time_to_qdb_timespec(timestamp), *args)
+
+        def push(self):
+            """
+            Pushes the content of the local table to the remote cluster.
+
+            :raises: Error
+            """
+            err = impl.ts_push(self.__table_handle)
+
+            if err != impl.error_ok:
+                raise chooseError(err)
 
     class BlobAggregationResult(object):
         """
@@ -691,7 +678,7 @@ class TimeSeries(RemoveableEntry):
 
         def __init__(self, t, r, ts, count, content, content_length):
             self.type = t
-            self.range = r
+            self.filtered_range = r
             self.timestamp = ts
             self.count = count
             self.content = impl.api_content_as_string(content, content_length)
@@ -705,7 +692,7 @@ class TimeSeries(RemoveableEntry):
 
         def __init__(self, t, r, ts, count, value):
             self.type = t
-            self.range = r
+            self.filtered_range = r
             self.timestamp = ts
             self.count = count
             self.value = value
@@ -728,7 +715,8 @@ class TimeSeries(RemoveableEntry):
             agg = impl.qdb_ts_blob_aggregation_t()
 
             agg.type = agg_type
-            agg.range = _convert_time_couple_to_qdb_range_t(time_couple)
+            agg.filtered_range = qdb_convert.convert_time_couple_to_qdb_filtered_range_t(
+                time_couple)
             agg.count = 0
             agg.result.content_length = 0
 
@@ -741,8 +729,9 @@ class TimeSeries(RemoveableEntry):
             agg = self.__aggregations[index]
             return TimeSeries.BlobAggregationResult(
                 agg.type,
-                _convert_qdb_range_t_to_time_couple(agg.range),
-                _convert_qdb_timespec_to_time(agg.result.timestamp),
+                qdb_convert.convert_qdb_filtered_range_t_to_time_couple(
+                    agg.filtered_range),
+                qdb_convert.convert_qdb_timespec_to_time(agg.result.timestamp),
                 agg.count,
                 agg.result.content,
                 agg.result.content_length)
@@ -771,7 +760,8 @@ class TimeSeries(RemoveableEntry):
             agg = impl.qdb_ts_double_aggregation_t()
 
             agg.type = agg_type
-            agg.range = _convert_time_couple_to_qdb_range_t(time_couple)
+            agg.filtered_range = qdb_convert.convert_time_couple_to_qdb_filtered_range_t(
+                time_couple)
             agg.count = 0
             agg.result.value = 0.0
 
@@ -784,8 +774,9 @@ class TimeSeries(RemoveableEntry):
             agg = self.__aggregations[index]
             return TimeSeries.DoubleAggregationResult(
                 agg.type,
-                _convert_qdb_range_t_to_time_couple(agg.range),
-                _convert_qdb_timespec_to_time(agg.result.timestamp),
+                qdb_convert.convert_qdb_filtered_range_t_to_time_couple(
+                    agg.filtered_range),
+                qdb_convert.convert_qdb_timespec_to_time(agg.result.timestamp),
                 agg.count,
                 agg.result.value)
 
@@ -817,6 +808,18 @@ class TimeSeries(RemoveableEntry):
         def __init__(self, col_name):
             TimeSeries.ColumnInfo.__init__(
                 self, col_name, TimeSeries.ColumnType.double)
+
+    class Int64ColumnInfo(ColumnInfo):
+
+        def __init__(self, col_name):
+            TimeSeries.ColumnInfo.__init__(
+                self, col_name, TimeSeries.ColumnType.int64)
+
+    class TimestampColumnInfo(ColumnInfo):
+
+        def __init__(self, col_name):
+            TimeSeries.ColumnInfo.__init__(
+                self, col_name, TimeSeries.ColumnType.timestamp)
 
     class BlobColumnInfo(ColumnInfo):
 
@@ -854,7 +857,7 @@ class TimeSeries(RemoveableEntry):
             :raises: Error
             :returns: A list of aggregation results
             """
-            error_carrier = make_error_carrier()
+            error_carrier = qdb_convert.make_error_carrier()
 
             self.call_ts_fun(ts_func, aggregations.cpp_struct(),
                              error_carrier)
@@ -864,10 +867,47 @@ class TimeSeries(RemoveableEntry):
 
             return aggregations
 
+        def erase_ranges(self, intervals):
+            """
+            Erase points within the specified intervals, left inclusive.
+
+            :param intervals: The intervals for which the ranges should be erased
+            :type intervals: A list of (datetime.datetime, datetime.datetime) couples
+
+            :raises: Error
+            :returns: The number of erased points
+            """
+            error_carrier = qdb_convert.make_error_carrier()
+
+            erased_count = self.call_ts_fun(
+                impl.ts_erase_ranges,
+                qdb_convert.convert_time_couples_to_qdb_filtered_range_t_vector(
+                    intervals),
+                error_carrier)
+
+            if error_carrier.error != impl.error_ok:
+                raise chooseError(error_carrier.error)
+
+            return erased_count
+
     class DoubleColumn(Column):
         """
         A column whose value are double precision floats
         """
+
+        def fast_insert(self, vector):
+            """
+            Inserts value into the time series.
+
+            :param vector: A vector of double points
+            :type vector: quasardb.DoublePointsVector
+
+            :raises: Error
+            """
+            err = super(TimeSeries.DoubleColumn, self).call_ts_fun(
+                impl.ts_double_insert, vector)
+            if err != impl.error_ok:
+                raise chooseError(err)
 
         def insert(self, tuples):
             """
@@ -878,14 +918,12 @@ class TimeSeries(RemoveableEntry):
 
             :raises: Error
             """
-            err = super(TimeSeries.DoubleColumn, self).call_ts_fun(
-                impl.ts_double_insert, make_qdb_ts_double_point_vector(tuples))
-            if err != impl.error_ok:
-                raise chooseError(err)
+            self.fast_insert(
+                qdb_convert.make_qdb_ts_double_point_vector(tuples))
 
         def get_ranges(self, intervals):
             """
-            Returns the ranges matching the provided intervals.
+            Returns the ranges matching the provided intervals, left inclusive.
 
             :param intervals: The intervals for which the ranges should be returned
             :type intervals: A list of (datetime.datetime, datetime.datetime) couples
@@ -893,16 +931,17 @@ class TimeSeries(RemoveableEntry):
             :raises: Error
             :returns: A flattened list of (datetime.datetime, float) couples
             """
-            error_carrier = make_error_carrier()
+            error_carrier = qdb_convert.make_error_carrier()
 
             res = super(TimeSeries.DoubleColumn, self).call_ts_fun(
                 impl.ts_double_get_ranges,
-                _convert_time_couples_to_qdb_range_t_vector(intervals),
+                qdb_convert.convert_time_couples_to_qdb_filtered_range_t_vector(
+                    intervals),
                 error_carrier)
             if error_carrier.error != impl.error_ok:
                 raise chooseError(error_carrier.error)
 
-            return [(_convert_qdb_timespec_to_time(x.timestamp), x.value) for x in res]
+            return [(qdb_convert.convert_qdb_timespec_to_time(x.timestamp), x.value) for x in res]
 
         def aggregate(self, aggregations):  # pylint: disable=W0221
             """
@@ -918,10 +957,131 @@ class TimeSeries(RemoveableEntry):
             return super(TimeSeries.DoubleColumn, self).aggregate(
                 impl.ts_double_aggregation, aggregations)
 
+    class Int64Column(Column):
+        """
+        A column whose value are signed 64-bit integers
+        """
+
+        def fast_insert(self, vector):
+            """
+            Inserts value into the time series.
+
+            :param vector: A vector of int64 points
+            :type vector: quasardb.Int64PointsVector
+
+            :raises: Error
+            """
+            err = super(TimeSeries.Int64Column, self).call_ts_fun(
+                impl.ts_int64_insert, vector)
+            if err != impl.error_ok:
+                raise chooseError(err)
+
+        def insert(self, tuples):
+            """
+            Inserts values into the time series.
+
+            :param tuples: The list of couples to insert into the time series
+            :type tuples: A list of (datetime.datetime, float) couples
+
+            :raises: Error
+            """
+            self.fast_insert(
+                qdb_convert.make_qdb_ts_int64_point_vector(tuples))
+
+        def get_ranges(self, intervals):
+            """
+            Returns the ranges matching the provided intervals, left inclusive.
+
+            :param intervals: The intervals for which the ranges should be returned
+            :type intervals: A list of (datetime.datetime, datetime.datetime) couples
+
+            :raises: Error
+            :returns: A flattened list of (datetime.datetime, float) couples
+            """
+            error_carrier = qdb_convert.make_error_carrier()
+
+            res = super(TimeSeries.Int64Column, self).call_ts_fun(
+                impl.ts_int64_get_ranges,
+                qdb_convert.convert_time_couples_to_qdb_filtered_range_t_vector(
+                    intervals),
+                error_carrier)
+            if error_carrier.error != impl.error_ok:
+                raise chooseError(error_carrier.error)
+
+            return [(qdb_convert.convert_qdb_timespec_to_time(x.timestamp), x.value) for x in res]
+
+    class TimestampColumn(Column):
+        """
+        A column whose value are nanosecond-precise timestamps
+        """
+
+        def fast_insert(self, vector):
+            """
+            Inserts value into the time series.
+
+            :param vector: A vector of nanosecond-precise timestamps
+            :type vector: quasardb.TimestampPointsVector
+
+            :raises: Error
+            """
+            err = super(TimeSeries.TimestampColumn, self).call_ts_fun(
+                impl.ts_timestamp_insert, vector)
+            if err != impl.error_ok:
+                raise chooseError(err)
+
+        def insert(self, tuples):
+            """
+            Inserts values into the time series.
+
+            :param tuples: The list of couples to insert into the time series
+            :type tuples: A list of (datetime.datetime, datetime.datetime) couples
+
+            :raises: Error
+            """
+            self.fast_insert(
+                qdb_convert.make_qdb_ts_timestamp_point_vector(tuples))
+
+        def get_ranges(self, intervals):
+            """
+            Returns the ranges matching the provided intervals, left inclusive.
+
+            :param intervals: The intervals for which the ranges should be returned
+            :type intervals: A list of (datetime.datetime, datetime.datetime) couples
+
+            :raises: Error
+            :returns: A flattened list of (datetime.datetime, datetime.datetime) couples
+            """
+            error_carrier = qdb_convert.make_error_carrier()
+
+            res = super(TimeSeries.TimestampColumn, self).call_ts_fun(
+                impl.ts_timestamp_get_ranges,
+                qdb_convert.convert_time_couples_to_qdb_filtered_range_t_vector(
+                    intervals),
+                error_carrier)
+            if error_carrier.error != impl.error_ok:
+                raise chooseError(error_carrier.error)
+
+            return [(qdb_convert.convert_qdb_timespec_to_time(x.timestamp),
+                qdb_convert.convert_qdb_timespec_to_time(x.value)) for x in res]
+
     class BlobColumn(Column):
         """
         A column whose values are blobs
         """
+
+        def fast_insert(self, vector):
+            """
+            Inserts value into the time series.
+
+            :param vector: A vector of blob points
+            :type vector: quasardb.BlobPointsVector
+
+            :raises: Error
+            """
+            err = super(TimeSeries.BlobColumn, self).call_ts_fun(
+                impl.ts_blob_insert, vector)
+            if err != impl.error_ok:
+                raise chooseError(err)
 
         def insert(self, tuples):
             """
@@ -932,10 +1092,8 @@ class TimeSeries(RemoveableEntry):
 
             :raises: Error
             """
-            err = super(TimeSeries.BlobColumn, self).call_ts_fun(
-                impl.ts_blob_insert, _convert_to_wrap_ts_blop_points_vector(tuples))
-            if err != impl.error_ok:
-                raise chooseError(err)
+            self.fast_insert(
+                qdb_convert.convert_to_wrap_ts_blop_points_vector(tuples))
 
         def get_ranges(self, intervals):
             """
@@ -947,16 +1105,17 @@ class TimeSeries(RemoveableEntry):
             :raises: Error
             :returns: A flattened list of (datetime.datetime, string) couples
             """
-            error_carrier = make_error_carrier()
+            error_carrier = qdb_convert.make_error_carrier()
 
             res = super(TimeSeries.BlobColumn, self).call_ts_fun(
                 impl.ts_blob_get_ranges,
-                _convert_time_couples_to_qdb_range_t_vector(intervals),
+                qdb_convert.convert_time_couples_to_qdb_filtered_range_t_vector(
+                    intervals),
                 error_carrier)
             if error_carrier.error != impl.error_ok:
                 raise chooseError(error_carrier.error)
 
-            return [(_convert_qdb_timespec_to_time(x.timestamp), x.data) for x in res]
+            return [(qdb_convert.convert_qdb_timespec_to_time(x.timestamp), x.data) for x in res]
 
         def aggregate(self, aggregations):  # pylint: disable=W0221
             """
@@ -978,18 +1137,25 @@ class TimeSeries(RemoveableEntry):
     def call_ts_fun(self, ts_func, *args, **kwargs):
         return ts_func(self.handle, super(TimeSeries, self).alias(), *args, **kwargs)
 
-    def create(self, columns):
+    def create(self, columns,
+               shard_size=datetime.timedelta(milliseconds=impl.duration_default_shard_size)):
         """
         Creates a time series with the provided columns information
 
         :param columns: A list describing the columns to create
         :type columns: a list of TimeSeries.ColumnInfo
 
+        :param shard_size: The length of a single timeseries shard (bucket).
+        :type shard_size: datetime.timedelta
+
         :raises: Error
         :returns: A list of columns matching the created columns
         """
+        millis = 1000 * shard_size.total_seconds() + shard_size.microseconds / 1000
         err = self.call_ts_fun(
-            impl.ts_create, [impl.wrap_ts_column(x.name, x.type) for x in columns])
+            impl.ts_create,
+            [impl.wrap_ts_column(x.name, x.type) for x in columns],
+            long(millis * impl.duration_millisecond))
         if err != impl.error_ok:
             raise chooseError(err)
 
@@ -1011,6 +1177,12 @@ class TimeSeries(RemoveableEntry):
         if col_info.type == TimeSeries.ColumnType.double:
             return TimeSeries.DoubleColumn(self, col_info.name)
 
+        if col_info.type == TimeSeries.ColumnType.int64:
+            return TimeSeries.Int64Column(self, col_info.name)
+
+        if col_info.type == TimeSeries.ColumnType.timestamp:
+            return TimeSeries.TimestampColumn(self, col_info.name)
+
         raise chooseError(ErrorCode.invalid_argument)
 
     def columns(self):
@@ -1029,12 +1201,24 @@ class TimeSeries(RemoveableEntry):
         :raises: Error
         :returns: A list of all existing columns as TimeSeries.ColumnInfo objects
         """
-        error_carrier = make_error_carrier()
+        error_carrier = qdb_convert.make_error_carrier()
         raw_cols = self.call_ts_fun(impl.ts_list_columns, error_carrier)
         if error_carrier.error != impl.error_ok:
             raise chooseError(error_carrier.error)
 
         return [TimeSeries.ColumnInfo(x.name, x.type) for x in raw_cols]
+
+    def local_table(self, columns=None):
+        """
+        Returns a LocalTable matching the provided columns or the full time series if None.
+
+        :param columns: A list of columns to build the LocalTable
+        :type columns: A list of quasardb.ColumnInfo
+
+        :raises: Error
+        :returns: A list quasardb.LocalTable initialized
+        """
+        return TimeSeries.LocalTable(self, columns)
 
 
 class Blob(ExpirableEntry):
@@ -1056,7 +1240,7 @@ class Blob(ExpirableEntry):
             :raises: Error
         """
         err = self.handle.blob_put(
-            super(Blob, self).alias(), data, _convert_expiry_time(expiry_time))
+            super(Blob, self).alias(), data, qdb_convert.convert_expiry_time(expiry_time))
         if err != impl.error_ok:
             raise chooseError(err)
 
@@ -1073,7 +1257,7 @@ class Blob(ExpirableEntry):
             :raises: Error
         """
         err = self.handle.blob_update(
-            super(Blob, self).alias(), data, _convert_expiry_time(expiry_time))
+            super(Blob, self).alias(), data, qdb_convert.convert_expiry_time(expiry_time))
         if not ((err == impl.error_ok) or (err == impl.error_ok_created)):
             raise chooseError(err)
 
@@ -1084,12 +1268,12 @@ class Blob(ExpirableEntry):
             :returns: str -- The associated content
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         buf = impl.blob_get(self.handle, super(Blob, self).alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
 
-        return _api_buffer_to_string(buf)
+        return qdb_convert.api_buffer_to_string(buf)
 
     def get_and_update(self, data, expiry_time=None):
         """ Updates the blob and returns the previous value.
@@ -1104,13 +1288,13 @@ class Blob(ExpirableEntry):
             :returns: str -- The original content
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         buf = impl.blob_get_and_update(self.handle, super(
-            Blob, self).alias(), data, _convert_expiry_time(expiry_time), err)
+            Blob, self).alias(), data, qdb_convert.convert_expiry_time(expiry_time), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
 
-        return _api_buffer_to_string(buf)
+        return qdb_convert.api_buffer_to_string(buf)
 
     def get_and_remove(self):
         """ Atomically gets the data from the blob and removes it.
@@ -1120,13 +1304,13 @@ class Blob(ExpirableEntry):
             :returns: str -- The associated content
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         buf = impl.blob_get_and_remove(
             self.handle, super(Blob, self).alias(), err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
 
-        return _api_buffer_to_string(buf)
+        return qdb_convert.api_buffer_to_string(buf)
 
     def compare_and_swap(self, new_data, comparand, expiry_time=None):
         """ Atomically compares the blob with comparand and replaces it with new_data if it matches.
@@ -1142,11 +1326,11 @@ class Blob(ExpirableEntry):
             :returns: str -- The original content or None if it mached
             :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         buf = impl.blob_compare_and_swap(self.handle, super(Blob, self).alias(
-        ), new_data, comparand, _convert_expiry_time(expiry_time), err)
+        ), new_data, comparand, qdb_convert.convert_expiry_time(expiry_time), err)
         if err.error == impl.error_unmatched_content:
-            return _api_buffer_to_string(buf)
+            return qdb_convert.api_buffer_to_string(buf)
 
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -1199,7 +1383,7 @@ class Cluster(object):
         if timeout is None:
             timeout = datetime.timedelta(minutes=1)
 
-        timeout_value = _duration_to_timeout_ms(timeout)
+        timeout_value = qdb_convert.duration_to_timeout_ms(timeout)
         if timeout_value == 0:
             raise chooseError(impl.error_invalid_argument)
 
@@ -1274,12 +1458,24 @@ class Cluster(object):
 
         :raises: Error
         """
-        timeout_value = _duration_to_timeout_ms(duration)
+        timeout_value = qdb_convert.duration_to_timeout_ms(duration)
         if timeout_value == 0:
             raise chooseError(impl.error_invalid_argument)
         err = self.handle.set_timeout(timeout_value)
         if err != impl.error_ok:
             raise chooseError(err)
+
+    def get_timeout(self):
+        """
+        Gets the timeout value for requests in ms.
+
+        :raises: Error
+        """
+        err = qdb_convert.make_error_carrier()
+        timeout = impl.get_timeout_wrapper(self.handle, err)
+        if err.error != impl.error_ok:
+            raise chooseError(err.error)
+        return timeout
 
     def blob(self, alias):
         """
@@ -1365,7 +1561,8 @@ class Cluster(object):
         .. caution::
             This method is intended for very specific usage scenarii. Use at your own risks.
         """
-        err = self.handle.purge_all(_duration_to_timeout_ms(timeout))
+        err = self.handle.purge_all(
+            qdb_convert.duration_to_timeout_ms(timeout))
         if err != impl.error_ok:
             raise chooseError(err)
 
@@ -1378,7 +1575,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = self.handle.trim_all(_duration_to_timeout_ms(timeout))
+        err = self.handle.trim_all(qdb_convert.duration_to_timeout_ms(timeout))
         if err != impl.error_ok:
             raise chooseError(err)
 
@@ -1411,7 +1608,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         res = impl.node_config(self.handle, uri, err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -1428,7 +1625,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         res = impl.node_status(self.handle, uri, err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -1445,7 +1642,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         res = impl.node_topology(self.handle, uri, err)
         if err.error != impl.error_ok:
             raise chooseError(err.error)
@@ -1462,7 +1659,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.run_query(self.handle, q, err)
 
         if err.error != impl.error_ok:
@@ -1483,7 +1680,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.prefix_get(self.handle, prefix, max_count, err)
         if err.error == impl.error_alias_not_found:
             return []
@@ -1503,7 +1700,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         count = impl.prefix_count(self.handle, prefix, err)
 
         if err.error != impl.error_ok:
@@ -1525,7 +1722,7 @@ class Cluster(object):
         :raises: Error
 
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.suffix_get(self.handle, suffix, max_count, err)
         if err.error == impl.error_alias_not_found:
             return []
@@ -1545,7 +1742,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         count = impl.suffix_count(self.handle, suffix, err)
 
         if err.error != impl.error_ok:
@@ -1567,7 +1764,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.blob_scan(self.handle, pattern, max_count, err)
         if err.error == impl.error_alias_not_found:
             return []
@@ -1591,7 +1788,7 @@ class Cluster(object):
 
         :raises: Error
         """
-        err = make_error_carrier()
+        err = qdb_convert.make_error_carrier()
         result = impl.blob_scan_regex(self.handle, pattern, max_count, err)
         if err.error == impl.error_alias_not_found:
             return []
