@@ -1,7 +1,7 @@
 Change log
 **********
 
-2.1.0 - "Cleanthes" - 08/08/2017
+2.1.0 - "Cleanthes" - 11/01/2017
 ================================
 
 From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
