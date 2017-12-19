@@ -1,12 +1,38 @@
 Change log
 **********
 
-2.1.0 - "Cleanthes" - 08/08/2017
+2.2.0 - "Chrysippus" - 12/21/2017
+=================================
+
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+    `Chrysippus of Soli <https://en.wikipedia.org/wiki/Chrysippus>`_ was a Greek Stoic philosopher. He was a native of Soli, Cilicia, but moved to Athens as a young man, where he became a pupil of Cleanthes in the Stoic school. When Cleanthes died, around 230 BC, Chrysippus became the third head of the school. A prolific writer, Chrysippus expanded the fundamental doctrines of Zeno of Citium, the founder of the school, which earned him the title of Second Founder of Stoicism.
+
+Changes in this version
+-----------------------
+
+    * Protocol version 20
+    * Brand new query language! Available as a preview in the shell. Try ``select arithmetic_mean(volume) from stocks in range(now(), -1d) group by hour`` now! :-)
+    * Two new timeseries column types are supported: signed 64-bit integers and nanosecond timestamps
+    * Increased memory limit of the community edition from 2 GiB to 4 GiB
+    * Greatly improved timeseries insertion speed when data is interleaved
+    * Fixed bug in kurtosis computation
+    * Fixed a bug where erasing an empty range could result in an uncommitted transaction
+    * [api] Support for row-level bulk get and insertion
+    * [api] Transparently retry connection on asynchronous requests
+    * [api] Make it possible to query the currently configured timeout
+    * [shell] Persists command history
+    * [shell] Support for syntax highlighting and better completion
+    * [shell] Added command for suffix get
+    * [persistence] Mounting a Helium volume will now be significantly faster on Windows
+
+
+2.1.0 - "Cleanthes" - 11/01/2017
 ================================
 
 From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
 
-    `Cleanthes, of Assos, <https://en.wikipedia.org/wiki/Cleanthes>` was a Greek Stoic philosopher and successor to Zeno of Citium as the second head (scholarch) of the Stoic school in Athens. Originally a boxer, he came to Athens where he took up philosophy, listening to Zeno's lectures. He supported himself by working as a water-carrier at night. [...] He originated new ideas in Stoic physics, and developed Stoicism in accordance with the principles of materialism and pantheism.
+    `Cleanthes, of Assos, <https://en.wikipedia.org/wiki/Cleanthes>`_ was a Greek Stoic philosopher and successor to Zeno of Citium as the second head (scholarch) of the Stoic school in Athens. Originally a boxer, he came to Athens where he took up philosophy, listening to Zeno's lectures. He supported himself by working as a water-carrier at night. [...] He originated new ideas in Stoic physics, and developed Stoicism in accordance with the principles of materialism and pantheism.
 
 Changes in this version
 -----------------------
