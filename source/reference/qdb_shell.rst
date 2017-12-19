@@ -201,12 +201,25 @@ A command generally requires one or several arguments. Each argument is separate
 
     Display basic usage information and lists all available commands.
 
-
 .. _qdbsh_exit:
 .. option:: exit
 
     Exit the shell.
 
+.. _qdbsh_cls:
+.. option:: cls
+
+    Clears the screen.
+
+.. _qdbsh_show:
+.. option:: show
+
+    Display the content of a time series table.
+
+.. _qdbsh_select:
+.. option:: select
+
+    Run a select query on the database.
 
 .. _qdbsh_blob_compare_and_swap:
 .. option:: blob_compare_and_swap <alias> <content> <comparand>

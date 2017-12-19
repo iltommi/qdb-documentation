@@ -103,7 +103,9 @@ as by default the shell will attempt to connect to the localhost::
 
     qdbsh >
 
-Let's first check that our timeseries exists::
+Let's first check that our timeseries exists:
+
+.. code-block:: sql
 
     qdbsh > show stocks
     2 columns
@@ -111,7 +113,9 @@ Let's first check that our timeseries exists::
      0. timestamp - nanosecond timestamp
      1. close - 64-bit double
 
-We can also dump the content of our timeseries::
+We can also dump the content of our timeseries:
+
+.. code-block:: sql
 
     qdbsh > select * from stocks in range(2017-01-01, 2017-01-10)
     timestamp                      close
@@ -120,7 +124,9 @@ We can also dump the content of our timeseries::
     2017-01-02T00:00:00.000000000Z 2.000000
     2017-01-03T00:00:00.000000000Z 3.000000
 
-As you can see the timestamp allows for nanosecond precision. Time definition syntax in quasardb is very flexible::
+As you can see the timestamp allows for nanosecond precision. Time definition syntax in quasardb is very flexible:
+
+.. code-block:: sql
 
     qdbsh > select * from stocks in range(2017, +10d)
     timestamp                      close
@@ -131,18 +137,21 @@ As you can see the timestamp allows for nanosecond precision. Time definition sy
 
 The database is also able to perform server-side aggregations for maximum performance. For example, you can ask for the average value of a timeseries, without having to retrieve all the data. Aggregations are able to leverage the enhanced instruction set of your CPU, when available.
 
-For example, we can request the arithmetic mean of our stocks for the same interval::
+For example, we can request the arithmetic mean of our stocks for the same interval:
+
+.. code-block:: sql
 
     qdbsh > select arithmetic_mean(close) from stocks in range(2017, +10d)
     timestamp                      arithmetic_mean(close)
     ------------------------------------------------------
-    1970-01-01T00:00:00.000000000Z 2.00
+    2017-01-01T00:00:00.000000000Z 2.00
 
 Here are some queries you can try for yourself:
 
+    * Show the minimum and maximum open value for the last 20 years: ``select min(open), max(open) from stocks_A in range(now(), -20y)``
     * Display the open and close of two different time series: ``select open, close from stocks_A, stocks_B in range(2017, +10d)``
     * Daily averages over a year: ``select arithmetic_mean(close) from stocks in range(2017, +1y) group by day``
-    * Display the last known value of a timeseries with respect to the timestamps of another: ``select close from stocks_A in range(2017, +1d) asof(stocks_B)``
+    * Display the last known value of a timeseries with respect to the timestamps of another: ``select value from bids in range(2017, +1d) asof(trades)``
 
 .. note::
     For a list of supported functions, see :doc:`api/time_series`.
@@ -157,7 +166,10 @@ Out of the box, all timeseries are searchable by prefix and suffix::
     qdbsh > prefix_get sto 100
     1. stocks
 
-This will return the 100 first matches for the entries starting with the name "sto".
+    qdbsh > suffix_get cks 100
+    1. stocks
+
+This will return the 100 first matches for entries starting with "sto", and the 100 first matches for entries ending with "cks".
 
 However, sometimes you want to organize your timeseries according to arbitraty criteria. For example, for our stocks, we may want to say that it comes from the NYSE and that the currency is USD.
 
@@ -181,7 +193,6 @@ It's also possible to ask more complex questions, such as *"give me everything t
     An entry matching the provided alias cannot be found.
 
 Which is, in our case, the correct answer!
-
 
 That demo is nice, but what happens when I go to production?
 ------------------------------------------------------------

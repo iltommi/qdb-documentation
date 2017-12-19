@@ -52,16 +52,13 @@ For each column, the following data types are currently supported:
 
  - Double precision (64-bit) floating point numbers
  - Binary large objects (blob) of any size
-
-.. note::
-    64-bit signed integers values will be made available in a future release.
+ - 64-bit signed integers
+ - Nanosecond timestamps
 
 Distribution
 ^^^^^^^^^^^^
 
-Time series are distributed over the cluster transparently. Each node in the cluster is responsible for a certain time interval for any given time series. This time interval is currently not configurable.
-
-For I/O efficiency, a time interval can be sub-divided in smaller buckets on a single node. This is done transparently.
+Time series are distributed over the cluster transparently. Each node in the cluster is responsible for a certain time interval for any given time series. This time interval is set when you create the time series, and can be different for every time series. By default, in most API, it is set to 24 hours (one day).
 
 Bulk loading
 ^^^^^^^^^^^^
