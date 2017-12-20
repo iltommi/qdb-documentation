@@ -1,0 +1,58 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structqdb__ts__timestamp__point" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_timestamp_point</compoundname>
+    <includes local="no">ts.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__timestamp__point_1a0a45bf06828a417d2b1eccf19c48a8b9" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
+        <definition>qdb_timespec_t qdb_ts_timestamp_point::timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+<para>Timestamp. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="88" column="1" bodyfile="qdb/ts.h" bodystart="88" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__timestamp__point_1abca09a71749f8aafe02d4d2d4dd2583a" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref></type>
+        <definition>qdb_timespec_t qdb_ts_timestamp_point::value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+<para>Numeric value. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="90" column="1" bodyfile="qdb/ts.h" bodystart="90" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>A timestamped data with a signed 64-bit integer value. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="72">
+        <label>qdb_ts_timestamp_point</label>
+        <link refid="structqdb__ts__timestamp__point"/>
+        <childnode refid="73" relation="usage">
+          <edgelabel>value</edgelabel>
+          <edgelabel>timestamp</edgelabel>
+        </childnode>
+      </node>
+      <node id="73">
+        <label>qdb_timespec_t</label>
+        <link refid="structqdb__timespec__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="qdb/ts.h" line="86" column="1" bodyfile="qdb/ts.h" bodystart="85" bodyend="91"/>
+    <listofallmembers>
+      <member refid="structqdb__ts__timestamp__point_1a0a45bf06828a417d2b1eccf19c48a8b9" prot="public" virt="non-virtual"><scope>qdb_ts_timestamp_point</scope><name>timestamp</name></member>
+      <member refid="structqdb__ts__timestamp__point_1abca09a71749f8aafe02d4d2d4dd2583a" prot="public" virt="non-virtual"><scope>qdb_ts_timestamp_point</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

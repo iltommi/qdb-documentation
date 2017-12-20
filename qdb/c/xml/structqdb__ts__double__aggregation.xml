@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="168" column="1" bodyfile="qdb/ts.h" bodystart="168" bodyend="-1"/>
+        <location file="qdb/ts.h" line="204" column="1" bodyfile="qdb/ts.h" bodystart="204" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__double__aggregation_1af52fb2cc567c0da9dd89c34555218a3d" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__filtered__range__t" kindref="compound">qdb_ts_filtered_range_t</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="170" column="1" bodyfile="qdb/ts.h" bodystart="170" bodyend="-1"/>
+        <location file="qdb/ts.h" line="206" column="1" bodyfile="qdb/ts.h" bodystart="206" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__double__aggregation_1a3bfbc0b40a70a0f0ec0d679523f316a4" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="173" column="1" bodyfile="qdb/ts.h" bodystart="173" bodyend="-1"/>
+        <location file="qdb/ts.h" line="209" column="1" bodyfile="qdb/ts.h" bodystart="209" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__double__aggregation_1abfae82f699909d8e599d893b1d5308c7" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__double__point" kindref="compound">qdb_ts_double_point</ref></type>
@@ -54,11 +54,11 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="175" column="1" bodyfile="qdb/ts.h" bodystart="175" bodyend="-1"/>
+        <location file="qdb/ts.h" line="211" column="1" bodyfile="qdb/ts.h" bodystart="211" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
-<para>Aggregation input and result for columns of numeric values. </para>    </briefdescription>
+<para>Aggregation input and result for columns of numeric floating-point values. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
     <collaborationgraph>
@@ -106,7 +106,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="qdb/ts.h" line="166" column="1" bodyfile="qdb/ts.h" bodystart="165" bodyend="176"/>
+    <location file="qdb/ts.h" line="202" column="1" bodyfile="qdb/ts.h" bodystart="201" bodyend="212"/>
     <listofallmembers>
       <member refid="structqdb__ts__double__aggregation_1a3bfbc0b40a70a0f0ec0d679523f316a4" prot="public" virt="non-virtual"><scope>qdb_ts_double_aggregation</scope><name>count</name></member>
       <member refid="structqdb__ts__double__aggregation_1af52fb2cc567c0da9dd89c34555218a3d" prot="public" virt="non-virtual"><scope>qdb_ts_double_aggregation</scope><name>filtered_range</name></member>

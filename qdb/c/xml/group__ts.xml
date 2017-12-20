@@ -5,11 +5,15 @@
     <title>Time series operations</title>
     <innerclass refid="structqdb__ts__double__point" prot="public">qdb_ts_double_point</innerclass>
     <innerclass refid="structqdb__ts__blob__point" prot="public">qdb_ts_blob_point</innerclass>
+    <innerclass refid="structqdb__ts__int64__point" prot="public">qdb_ts_int64_point</innerclass>
+    <innerclass refid="structqdb__ts__timestamp__point" prot="public">qdb_ts_timestamp_point</innerclass>
     <innerclass refid="structqdb__ts__range__t" prot="public">qdb_ts_range_t</innerclass>
     <innerclass refid="structqdb__ts__filter__t" prot="public">qdb_ts_filter_t</innerclass>
     <innerclass refid="structqdb__ts__filtered__range__t" prot="public">qdb_ts_filtered_range_t</innerclass>
-    <innerclass refid="structqdb__ts__double__aggregation" prot="public">qdb_ts_double_aggregation</innerclass>
     <innerclass refid="structqdb__ts__blob__aggregation" prot="public">qdb_ts_blob_aggregation</innerclass>
+    <innerclass refid="structqdb__ts__double__aggregation" prot="public">qdb_ts_double_aggregation</innerclass>
+    <innerclass refid="structqdb__ts__int64__aggregation" prot="public">qdb_ts_int64_aggregation</innerclass>
+    <innerclass refid="structqdb__ts__timestamp__aggregation" prot="public">qdb_ts_timestamp_aggregation</innerclass>
     <innerclass refid="structqdb__ts__column__info" prot="public">qdb_ts_column_info</innerclass>
       <sectiondef kind="enum">
       <memberdef kind="enum" id="group__ts_1gab68bb5907ec6bf787fa199e72cd6dfd6" prot="public" static="no">
@@ -64,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="85" column="1" bodyfile="qdb/ts.h" bodystart="84" bodyend="100"/>
+        <location file="qdb/ts.h" line="106" column="1" bodyfile="qdb/ts.h" bodystart="105" bodyend="121"/>
       </memberdef>
       <memberdef kind="enum" id="group__ts_1gabe3dc4b6c33c26fd46ed16d30f07853a" prot="public" static="no">
         <name>qdb_ts_aggregation_type_t</name>
@@ -242,7 +246,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="138" column="1" bodyfile="qdb/ts.h" bodystart="137" bodyend="161"/>
+        <location file="qdb/ts.h" line="159" column="1" bodyfile="qdb/ts.h" bodystart="158" bodyend="182"/>
       </memberdef>
       <memberdef kind="enum" id="group__ts_1ga41fb56b664063f5d5e2d944cf564157f" prot="public" static="no">
         <name>qdb_ts_column_type_t</name>
@@ -258,7 +262,7 @@
           <name>qdb_ts_column_double</name>
           <initializer>= 0</initializer>
           <briefdescription>
-<para>Column of numeric values. </para>          </briefdescription>
+<para>Column of floating point values. </para>          </briefdescription>
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
@@ -270,13 +274,29 @@
           <detaileddescription>
           </detaileddescription>
         </enumvalue>
+        <enumvalue id="group__ts_1gga41fb56b664063f5d5e2d944cf564157fa4648e6b5ae7d888d90839a595175b23b" prot="public">
+          <name>qdb_ts_column_int64</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+<para>Column of signed 64-bit integer values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__ts_1gga41fb56b664063f5d5e2d944cf564157fa3704a7f0ea41c39eae7568aba3746c47" prot="public">
+          <name>qdb_ts_column_timestamp</name>
+          <initializer>= 3</initializer>
+          <briefdescription>
+<para>Column of signed 64-bit integer values. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
         <briefdescription>
 <para>Types of time series columns. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="195" column="1" bodyfile="qdb/ts.h" bodystart="194" bodyend="199"/>
+        <location file="qdb/ts.h" line="249" column="1" bodyfile="qdb/ts.h" bodystart="248" bodyend="255"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -291,7 +311,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="100" column="1"/>
+        <location file="qdb/ts.h" line="121" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__ts_1gaad602268432f54dad7f267888b4206b5" prot="public" static="no">
         <type>enum <ref refid="group__ts_1gabe3dc4b6c33c26fd46ed16d30f07853a" kindref="member">qdb_ts_aggregation_type_t</ref></type>
@@ -304,20 +324,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="161" column="1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__ts_1ga17fb5c6bdbdf04a27dc8de841585168e" prot="public" static="no">
-        <type>struct <ref refid="structqdb__ts__double__aggregation" kindref="compound">qdb_ts_double_aggregation</ref></type>
-        <definition>typedef struct qdb_ts_double_aggregation  qdb_ts_double_aggregation_t</definition>
-        <argsstring></argsstring>
-        <name>qdb_ts_double_aggregation_t</name>
-        <briefdescription>
-<para>Aggregation input and result for columns of numeric values. </para>        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/ts.h" line="176" column="1"/>
+        <location file="qdb/ts.h" line="182" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__ts_1gac3dd05aa0292c3be0188ceb9a84ad16a" prot="public" static="no">
         <type>struct <ref refid="structqdb__ts__blob__aggregation" kindref="compound">qdb_ts_blob_aggregation</ref></type>
@@ -330,7 +337,46 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="190" column="1"/>
+        <location file="qdb/ts.h" line="196" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__ts_1ga17fb5c6bdbdf04a27dc8de841585168e" prot="public" static="no">
+        <type>struct <ref refid="structqdb__ts__double__aggregation" kindref="compound">qdb_ts_double_aggregation</ref></type>
+        <definition>typedef struct qdb_ts_double_aggregation  qdb_ts_double_aggregation_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_ts_double_aggregation_t</name>
+        <briefdescription>
+<para>Aggregation input and result for columns of numeric floating-point values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="212" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__ts_1ga38af0730e402755421ed7ab9d6888939" prot="public" static="no">
+        <type>struct <ref refid="structqdb__ts__int64__aggregation" kindref="compound">qdb_ts_int64_aggregation</ref></type>
+        <definition>typedef struct qdb_ts_int64_aggregation  qdb_ts_int64_aggregation_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_ts_int64_aggregation_t</name>
+        <briefdescription>
+<para>Aggregation input and result for columns of numeric integer values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="228" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__ts_1ga235d825aed0a5f770199f6b60f1e8217" prot="public" static="no">
+        <type>struct <ref refid="structqdb__ts__timestamp__aggregation" kindref="compound">qdb_ts_timestamp_aggregation</ref></type>
+        <definition>typedef struct qdb_ts_timestamp_aggregation  qdb_ts_timestamp_aggregation_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_ts_timestamp_aggregation_t</name>
+        <briefdescription>
+<para>Aggregation input and result for columns of numeric integer values. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="244" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__ts_1ga2365cac733833eb1dff7dc9f70f46f05" prot="public" static="no">
         <type>enum <ref refid="group__ts_1ga41fb56b664063f5d5e2d944cf564157f" kindref="member">qdb_ts_column_type_t</ref></type>
@@ -343,7 +389,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="199" column="1"/>
+        <location file="qdb/ts.h" line="255" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__ts_1ga28890c2130d08a225b4897b13ed15a44" prot="public" static="no">
         <type>struct <ref refid="structqdb__ts__column__info" kindref="compound">qdb_ts_column_info</ref></type>
@@ -356,7 +402,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="210" column="1"/>
+        <location file="qdb/ts.h" line="266" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__ts_1gaa0b1898390e6f7323dd6dff5522c2ac7" prot="public" static="no">
         <type>struct qdb_local_table_internal *</type>
@@ -369,14 +415,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="460" column="1" bodyfile="qdb/ts.h" bodystart="460" bodyend="-1"/>
+        <location file="qdb/ts.h" line="743" column="1" bodyfile="qdb/ts.h" bodystart="743" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__ts_1gaac17fcebdab7642df1af740ba5e1c230" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_create</definition>
-        <argsstring>(qdb_handle_t handle, const char *alias, const qdb_ts_column_info_t *columns, qdb_size_t column_count)</argsstring>
+      <memberdef kind="function" id="group__ts_1ga9db3112d413bb846d5bfa8e620e14d58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_create</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, qdb_uint_t shard_size_ms, const qdb_ts_column_info_t *columns, qdb_size_t column_count)</argsstring>
         <name>qdb_ts_create</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
@@ -385,6 +431,10 @@
         <param>
           <type>const char *</type>
           <declname>alias</declname>
+        </param>
+        <param>
+          <type>qdb_uint_t</type>
+          <declname>shard_size_ms</declname>
         </param>
         <param>
           <type>const <ref refid="group__ts_1ga28890c2130d08a225b4897b13ed15a44" kindref="member">qdb_ts_column_info_t</ref> *</type>
@@ -402,38 +452,107 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shard_size_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A duration representing the time-span of a single shard (bucket) of the time series, in milliseconds.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>columns</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of column descriptions that are to be added to the time series. </para></parameterdescription>
+<para>An array of column descriptions that are to be added to the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of columns to add. </para></parameterdescription>
+<para>The number of columns to add.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="224" column="1"/>
+        <location file="qdb/ts.h" line="304" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga13878bc89e413cf5996f41a57bf6afaa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_list_columns</definition>
+      <memberdef kind="function" id="group__ts_1ga776c4c275c32a9ca4f504b8843ce63cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_insert_columns</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const qdb_ts_column_info_t *columns, qdb_size_t column_count)</argsstring>
+        <name>qdb_ts_insert_columns</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const <ref refid="group__ts_1ga28890c2130d08a225b4897b13ed15a44" kindref="member">qdb_ts_column_info_t</ref> *</type>
+          <declname>columns</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>column_count</declname>
+        </param>
+        <briefdescription>
+<para>Appends columns to an existing time series. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of column descriptions that are to be added to the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of columns to append.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="329" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1gad6085fdd759741f521481fb8772f37f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_list_columns</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_ts_column_info_t **columns, qdb_size_t *column_count)</argsstring>
         <name>qdb_ts_list_columns</name>
         <param>
@@ -460,21 +579,21 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">columns</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array that will contain descriptions of columns present in the time series. </para></parameterdescription>
+<para>A pointer to an array that will contain descriptions of columns present in the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -489,11 +608,82 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="251" column="1"/>
+        <location file="qdb/ts.h" line="354" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1gab6a77210b52971e73a373905dab2c191" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_double_insert</definition>
+      <memberdef kind="function" id="group__ts_1ga2182b037ebb3477df1cccf042d842f17" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_blob_insert</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_blob_point *values, qdb_size_t count)</argsstring>
+        <name>qdb_ts_blob_insert</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref> *</type>
+          <declname>values</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Inserts blob points in a time series column. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is an error to call this function on a non existing time series.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of data points to be inserted.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of data points to insert.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="382" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1gade390b0878d819e4de4669af58db04bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_double_insert</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_double_point *values, qdb_size_t count)</argsstring>
         <name>qdb_ts_double_insert</name>
         <param>
@@ -517,35 +707,35 @@
           <declname>count</declname>
         </param>
         <briefdescription>
-<para>Inserts points in a time series. </para>        </briefdescription>
+<para>Inserts double points in a time series. </para>        </briefdescription>
         <detaileddescription>
 <para>Time series are distributed across the cluster and support efficient insertion anywhere within the time series as well as efficient lookup based on time.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>values</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of data points to be inserted. </para></parameterdescription>
+<para>An array of data points to be inserted.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -560,11 +750,153 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="277" column="1"/>
+        <location file="qdb/ts.h" line="413" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga4decb6e15cf11dfa970825d21a1e5334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_double_get_ranges</definition>
+      <memberdef kind="function" id="group__ts_1ga499757aa0cad9d870975dbe5444b4f44" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_int64_insert</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_int64_point *values, qdb_size_t count)</argsstring>
+        <name>qdb_ts_int64_insert</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__int64__point" kindref="compound">qdb_ts_int64_point</ref> *</type>
+          <declname>values</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Inserts int64 points in a time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>Time series are distributed across the cluster and support efficient insertion anywhere within the time series as well as efficient lookup based on time.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of data points to be inserted.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of data points to insert.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="444" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1gac625cd3b255c1b8dad3a13fa5653e976" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_timestamp_insert</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_timestamp_point *values, qdb_size_t count)</argsstring>
+        <name>qdb_ts_timestamp_insert</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__timestamp__point" kindref="compound">qdb_ts_timestamp_point</ref> *</type>
+          <declname>values</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+<para>Inserts timestamp points in a time series. </para>        </briefdescription>
+        <detaileddescription>
+<para>Time series are distributed across the cluster and support efficient insertion anywhere within the time series as well as efficient lookup based on time.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>values</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of data points to be inserted.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of data points to insert.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="475" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga5ef2195c11cc20d14fef791ff04ea6ac" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_double_get_ranges</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_filtered_range_t *ranges, qdb_size_t range_count, qdb_ts_double_point **points, qdb_size_t *point_count)</argsstring>
         <name>qdb_ts_double_get_ranges</name>
         <param>
@@ -603,42 +935,42 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>ranges</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of ranges (intervals) for which data should be retrieved. </para></parameterdescription>
+<para>An array of ranges (intervals) for which data should be retrieved.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>range_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of ranges. </para></parameterdescription>
+<para>The number of ranges.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">points</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array that will contain data points from all given ranges. </para></parameterdescription>
+<para>A pointer to an array that will contain data points from all given ranges.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -650,17 +982,17 @@
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="308" column="1"/>
+        <location file="qdb/ts.h" line="513" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1gad1458101da7b584d909cdb43f9cc5537" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_double_aggregate</definition>
-        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_double_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
-        <name>qdb_ts_double_aggregate</name>
+      <memberdef kind="function" id="group__ts_1gaba92f2f50033c7467d5ba63cb0067589" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_int64_get_ranges</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_filtered_range_t *ranges, qdb_size_t range_count, qdb_ts_int64_point **points, qdb_size_t *point_count)</argsstring>
+        <name>qdb_ts_int64_get_ranges</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
           <declname>handle</declname>
@@ -674,63 +1006,179 @@
           <declname>column</declname>
         </param>
         <param>
-          <type><ref refid="group__ts_1ga17fb5c6bdbdf04a27dc8de841585168e" kindref="member">qdb_ts_double_aggregation_t</ref> *</type>
-          <declname>aggregations</declname>
+          <type>const <ref refid="structqdb__ts__filtered__range__t" kindref="compound">qdb_ts_filtered_range_t</ref> *</type>
+          <declname>ranges</declname>
         </param>
         <param>
           <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
-          <declname>aggregation_count</declname>
+          <declname>range_count</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__ts__int64__point" kindref="compound">qdb_ts_int64_point</ref> **</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>point_count</declname>
         </param>
         <briefdescription>
-<para>Aggregate a sub-part of the double column of the time series. </para>        </briefdescription>
+<para>Retrieves 64-bit integers in the specified range of the time series column. </para>        </briefdescription>
         <detaileddescription>
 <para>It is an error to call this function on a non existing time series.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername direction="inout">aggregations</parametername>
+<parametername>ranges</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of structures representing the aggregations to compute and their results. </para></parameterdescription>
+<para>An array of ranges (intervals) for which data should be retrieved.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>aggregation_count</parametername>
+<parametername>range_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of elements in the aggregations array.</para></parameterdescription>
+<para>The number of ranges.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array that will contain data points from all given ranges.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">point_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the number of returned points.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__ts_1gaad602268432f54dad7f267888b4206b5" kindref="member">qdb_ts_aggregation_type_t</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="337" column="1"/>
+        <location file="qdb/ts.h" line="553" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga32e66f66f79176e2435eab82671dd72b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_blob_aggregate</definition>
+      <memberdef kind="function" id="group__ts_1ga75b17d9fc78721a5328c156eb24934a9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_timestamp_get_ranges</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_filtered_range_t *ranges, qdb_size_t range_count, qdb_ts_timestamp_point **points, qdb_size_t *point_count)</argsstring>
+        <name>qdb_ts_timestamp_get_ranges</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__filtered__range__t" kindref="compound">qdb_ts_filtered_range_t</ref> *</type>
+          <declname>ranges</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>range_count</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__ts__timestamp__point" kindref="compound">qdb_ts_timestamp_point</ref> **</type>
+          <declname>points</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>point_count</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves timestamps in the specified range of the time series column. </para>        </briefdescription>
+        <detaileddescription>
+<para>It is an error to call this function on a non existing time series.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ranges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of ranges (intervals) for which data should be retrieved.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>range_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of ranges.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">points</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an array that will contain data points from all given ranges.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">point_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to an integer that will receive the number of returned points.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="593" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga3e072c37b24603dc987caaba3b5d7cfb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_blob_aggregate</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_blob_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
         <name>qdb_ts_blob_aggregate</name>
         <param>
@@ -761,28 +1209,28 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="inout">aggregations</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of structures representing the aggregations to compute and their results. </para></parameterdescription>
+<para>An array of structures representing the aggregations to compute and their results.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -794,18 +1242,18 @@
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="see"><para><ref refid="group__ts_1gaad602268432f54dad7f267888b4206b5" kindref="member">qdb_ts_aggregation_type_t</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="365" column="1"/>
+        <location file="qdb/ts.h" line="628" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga9c1162b91fb651a3c93fd7bc6f5a315f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_blob_insert</definition>
-        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_blob_point *values, qdb_size_t count)</argsstring>
-        <name>qdb_ts_blob_insert</name>
+      <memberdef kind="function" id="group__ts_1gadbb525c694498a2a225e7451cdd5aa33" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_double_aggregate</definition>
+        <argsstring>(qdb_handle_t handle, const char *alias, const char *column, qdb_ts_double_aggregation_t *aggregations, qdb_size_t aggregation_count)</argsstring>
+        <name>qdb_ts_double_aggregate</name>
         <param>
           <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
           <declname>handle</declname>
@@ -819,62 +1267,63 @@
           <declname>column</declname>
         </param>
         <param>
-          <type>const <ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref> *</type>
-          <declname>values</declname>
+          <type><ref refid="group__ts_1ga17fb5c6bdbdf04a27dc8de841585168e" kindref="member">qdb_ts_double_aggregation_t</ref> *</type>
+          <declname>aggregations</declname>
         </param>
         <param>
           <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
-          <declname>count</declname>
+          <declname>aggregation_count</declname>
         </param>
         <briefdescription>
-<para>Inserts blob in a time series column. </para>        </briefdescription>
+<para>Aggregate a sub-part of the double column of the time series. </para>        </briefdescription>
         <detaileddescription>
 <para>It is an error to call this function on a non existing time series.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>values</parametername>
+<parametername direction="inout">aggregations</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of data points to be inserted. </para></parameterdescription>
+<para>An array of structures representing the aggregations to compute and their results.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
-<parametername>count</parametername>
+<parametername>aggregation_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of data points to insert.</para></parameterdescription>
+<para>The number of elements in the aggregations array.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="see"><para><ref refid="group__ts_1gaad602268432f54dad7f267888b4206b5" kindref="member">qdb_ts_aggregation_type_t</ref> </para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="389" column="1"/>
+        <location file="qdb/ts.h" line="660" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga62d3bf4a8c22f46ff2b1e6dae250e30b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_blob_get_ranges</definition>
+      <memberdef kind="function" id="group__ts_1ga0029554e16afe0f5cd488d3c6a5c7aa5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_blob_get_ranges</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_filtered_range_t *ranges, qdb_size_t range_count, qdb_ts_blob_point **points, qdb_size_t *point_count)</argsstring>
         <name>qdb_ts_blob_get_ranges</name>
         <param>
@@ -913,42 +1362,42 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>ranges</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of ranges (intervals) for which data should be retrieved. </para></parameterdescription>
+<para>An array of ranges (intervals) for which data should be retrieved.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>range_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of ranges. </para></parameterdescription>
+<para>The number of ranges.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">points</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array that will contain data points from all given ranges. </para></parameterdescription>
+<para>A pointer to an array that will contain data points from all given ranges.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -960,15 +1409,15 @@
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="419" column="1"/>
+        <location file="qdb/ts.h" line="697" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga35bb0b579c319a2b6031b87eacb034f6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_erase_ranges</definition>
+      <memberdef kind="function" id="group__ts_1ga72c3cf9a7a75422062b20368557c225a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_erase_ranges</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const char *column, const qdb_ts_filtered_range_t *ranges, qdb_size_t range_count, qdb_uint_t *erased_count)</argsstring>
         <name>qdb_ts_erase_ranges</name>
         <param>
@@ -1003,35 +1452,35 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the name of the column to work on.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>ranges</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of ranges (intervals) for which data should be erased. </para></parameterdescription>
+<para>An array of ranges (intervals) for which data should be erased.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>range_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of ranges. </para></parameterdescription>
+<para>The number of ranges.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1043,15 +1492,15 @@
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="450" column="1"/>
+        <location file="qdb/ts.h" line="733" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga6157e8288499273982a6ef5588e00c74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_local_table_init</definition>
+      <memberdef kind="function" id="group__ts_1ga09bc190a33f969348e8d8844768aaec6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_local_table_init</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const qdb_ts_column_info_t *columns, qdb_size_t column_count, qdb_local_table_t *table)</argsstring>
         <name>qdb_ts_local_table_init</name>
         <param>
@@ -1082,28 +1531,28 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the time series.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>columns</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An array of column descriptions to which data will be inserted. </para></parameterdescription>
+<para>An array of column descriptions to which data will be inserted.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of columns. </para></parameterdescription>
+<para>The number of columns.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1115,15 +1564,15 @@
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="483" column="1"/>
+        <location file="qdb/ts.h" line="770" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga5d749daf98b647651f4e16d5ddbafa16" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_row_set_double</definition>
+      <memberdef kind="function" id="group__ts_1ga2bae4fef28102f6f24dbc93a5c42bc50" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_row_set_double</definition>
         <argsstring>(qdb_local_table_t table, qdb_size_t column_index, double value)</argsstring>
         <name>qdb_ts_row_set_double</name>
         <param>
@@ -1146,14 +1595,14 @@
 <parametername>table</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid local table previously initialized by <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref>. </para></parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column_index</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A zero-based index of the column in which the value should be set. The index is based on the order of columns in the call to <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref> used to initialize table. </para></parameterdescription>
+<para>A zero-based index of the column in which the value should be set. The index is based on the order of columns in the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> used to initialize table.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1168,11 +1617,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="505" column="1"/>
+        <location file="qdb/ts.h" line="794" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga36a1f593d2e14a135f88939cfa2e2f37" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_row_set_blob</definition>
+      <memberdef kind="function" id="group__ts_1ga67469ef7590f30e9ad9aeb7568d6c5d6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_row_set_blob</definition>
         <argsstring>(qdb_local_table_t table, qdb_size_t column_index, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_ts_row_set_blob</name>
         <param>
@@ -1194,26 +1643,26 @@
         <briefdescription>
 <para>Set a value in the current row in a column of blobs indicated by the given index, copy data. </para>        </briefdescription>
         <detaileddescription>
-<para>The data will be copied and kept alive until the following <ref refid="group__ts_1gad6ee9a822c878e1270330732a52ac7cb" kindref="member">qdb_ts_push</ref> call returns.</para><para><parameterlist kind="param"><parameteritem>
+<para>The data will be copied and kept alive until the following <ref refid="group__ts_1ga545b4d89465838d13fd7d861f1a20f74" kindref="member">qdb_ts_push</ref> call returns.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>table</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid local table previously initialized by <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref>. </para></parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column_index</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A zero-based index of the column in which the value should be set. The index is based on the order of columns in the call to <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref> used to initialize table. </para></parameterdescription>
+<para>A zero-based index of the column in which the value should be set. The index is based on the order of columns in the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> used to initialize table.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the data to be set in the chosen column in the current row. </para></parameterdescription>
+<para>A pointer to the data to be set in the chosen column in the current row.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1228,11 +1677,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="530" column="1"/>
+        <location file="qdb/ts.h" line="822" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga7291977f074e74136308246efc0e4859" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_row_set_blob_no_copy</definition>
+      <memberdef kind="function" id="group__ts_1ga4179f3c9ad1b23b69553e1c63ed8d00a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_row_set_blob_no_copy</definition>
         <argsstring>(qdb_local_table_t table, qdb_size_t column_index, const void *content, qdb_size_t content_length)</argsstring>
         <name>qdb_ts_row_set_blob_no_copy</name>
         <param>
@@ -1254,26 +1703,26 @@
         <briefdescription>
 <para>Set a value in the current row in a column of blobs indicated by the given index without copying data. </para>        </briefdescription>
         <detaileddescription>
-<para>The data will NOT be copied and the user must ensure that the buffer pointed by <computeroutput>content</computeroutput> is kept alive until the end of the corresponding call to <ref refid="group__ts_1gad6ee9a822c878e1270330732a52ac7cb" kindref="member">qdb_ts_push</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>The data will NOT be copied and the user must ensure that the buffer pointed by <computeroutput>content</computeroutput> is kept alive until the end of the corresponding call to <ref refid="group__ts_1ga545b4d89465838d13fd7d861f1a20f74" kindref="member">qdb_ts_push</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>table</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid local table previously initialized by <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref>. </para></parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>column_index</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A zero-based index of the column in which the value should be set. The index is based on the order of columns in the call to <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref> used to initialize table. </para></parameterdescription>
+<para>A zero-based index of the column in which the value should be set. The index is based on the order of columns in the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> used to initialize table.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the data to be set in the chosen column in the current row. The pointed data must be kept alive until the following <ref refid="group__ts_1gad6ee9a822c878e1270330732a52ac7cb" kindref="member">qdb_ts_push</ref> call returns. </para></parameterdescription>
+<para>A pointer to the data to be set in the chosen column in the current row. The pointed data must be kept alive until the following <ref refid="group__ts_1ga545b4d89465838d13fd7d861f1a20f74" kindref="member">qdb_ts_push</ref> call returns.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1284,16 +1733,16 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="note"><para>The data pointed to by <computeroutput>content</computeroutput> must be kept alive until the following <ref refid="group__ts_1gad6ee9a822c878e1270330732a52ac7cb" kindref="member">qdb_ts_push</ref> call returns.</para></simplesect>
+<simplesect kind="note"><para>The data pointed to by <computeroutput>content</computeroutput> must be kept alive until the following <ref refid="group__ts_1ga545b4d89465838d13fd7d861f1a20f74" kindref="member">qdb_ts_push</ref> call returns.</para></simplesect>
 <simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="562" column="1"/>
+        <location file="qdb/ts.h" line="857" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1ga5557bb8c0b72bb737cc0e6bc4baf7107" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_table_row_append</definition>
+      <memberdef kind="function" id="group__ts_1gaf2290e980a4eb3db66b220f8df3dce04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_table_row_append</definition>
         <argsstring>(qdb_local_table_t table, const qdb_timespec_t *timestamp, qdb_size_t *row_index)</argsstring>
         <name>qdb_ts_table_row_append</name>
         <param>
@@ -1316,21 +1765,21 @@
 <parametername>table</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid local table previously initialized by <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref>. </para></parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>timestamp</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The timestamp of all data points in the row to append. </para></parameterdescription>
+<para>The timestamp of all data points in the row to append.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">row_index</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an integer that will receive the index of the currently appended row. The index is counted since the call to <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref>. The pointer may be null.</para></parameterdescription>
+<para>A pointer to an integer that will receive the index of the currently appended row. The index is counted since the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>. The pointer may be null.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
@@ -1338,11 +1787,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="582" column="1"/>
+        <location file="qdb/ts.h" line="879" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__ts_1gad6ee9a822c878e1270330732a52ac7cb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_ts_push</definition>
+      <memberdef kind="function" id="group__ts_1ga545b4d89465838d13fd7d861f1a20f74" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_push</definition>
         <argsstring>(qdb_local_table_t table)</argsstring>
         <name>qdb_ts_push</name>
         <param>
@@ -1352,12 +1801,12 @@
         <briefdescription>
 <para>Push all the appended rows to the database. </para>        </briefdescription>
         <detaileddescription>
-<para>All the rows that were appended using qdb_ts_table_row_append since the last call to <ref refid="group__ts_1gad6ee9a822c878e1270330732a52ac7cb" kindref="member">qdb_ts_push</ref> or <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref> will be pushed.</para><para><parameterlist kind="param"><parameteritem>
+<para>All the rows that were appended using qdb_ts_table_row_append since the last call to <ref refid="group__ts_1ga545b4d89465838d13fd7d861f1a20f74" kindref="member">qdb_ts_push</ref> or <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> will be pushed.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>table</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid local table previously initialized by <ref refid="group__ts_1ga6157e8288499273982a6ef5588e00c74" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
@@ -1365,7 +1814,302 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="599" column="1"/>
+        <location file="qdb/ts.h" line="897" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga185b4cc0a15273c3d66097630a0fbb96" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_row_get_blob</definition>
+        <argsstring>(qdb_local_table_t table, qdb_size_t column_index, const void **content, qdb_size_t *content_length)</argsstring>
+        <name>qdb_ts_row_get_blob</name>
+        <param>
+          <type><ref refid="group__ts_1gaa0b1898390e6f7323dd6dff5522c2ac7" kindref="member">qdb_local_table_t</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>column_index</declname>
+        </param>
+        <param>
+          <type>const void **</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> *</type>
+          <declname>content_length</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves blob data from the current row at the specified column. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A zero-based index of the column from which the value should be retrieved. The index is based on the order of columns in the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> used to initialize table.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. Returns <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7ebe635483bf1f50643cf05ddced1657" kindref="member">qdb_e_invalid_iterator</ref> when <ref refid="group__ts_1ga8b04711d5bf1d3953ee1f8fa1b6a0d82" kindref="member">qdb_ts_table_get_ranges</ref> has not been called before calling this function.</para></simplesect>
+<parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername direction="out">content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non-null pointer to a variable that will hold the retrieved data.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">content_length</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non-null pointer to a variable that will hold the size of the retrieved data.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="923" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga37d9417446473ecc24cf1199eeea8bdb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_row_get_double</definition>
+        <argsstring>(qdb_local_table_t table, qdb_size_t column_index, double *value)</argsstring>
+        <name>qdb_ts_row_get_double</name>
+        <param>
+          <type><ref refid="group__ts_1gaa0b1898390e6f7323dd6dff5522c2ac7" kindref="member">qdb_local_table_t</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>column_index</declname>
+        </param>
+        <param>
+          <type>double *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves double value from the current row at the specified column. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A zero-based index of the column from which the value should be retrieved. The index is based on the order of columns in the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> used to initialize table.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non-null pointer to a double that will hold the retrieved value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. Returns <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7ebe635483bf1f50643cf05ddced1657" kindref="member">qdb_e_invalid_iterator</ref> when <ref refid="group__ts_1ga8b04711d5bf1d3953ee1f8fa1b6a0d82" kindref="member">qdb_ts_table_get_ranges</ref> has not been called before calling this function.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="948" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga7fe97196ac97c17ae8fa956b993c5913" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_row_get_int64</definition>
+        <argsstring>(qdb_local_table_t table, qdb_size_t column_index, qdb_int_t *value)</argsstring>
+        <name>qdb_ts_row_get_int64</name>
+        <param>
+          <type><ref refid="group__ts_1gaa0b1898390e6f7323dd6dff5522c2ac7" kindref="member">qdb_local_table_t</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>column_index</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga17492cb84da5466d0c742f0561df6597" kindref="member">qdb_int_t</ref> *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves signed 64-bit integer value from the current row at the specified column. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A zero-based index of the column from which the value should be retrieved. The index is based on the order of columns in the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> used to initialize table.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non-null pointer to a signed 64-bit integer that will hold the retrieved value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. Returns <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7ebe635483bf1f50643cf05ddced1657" kindref="member">qdb_e_invalid_iterator</ref> when <ref refid="group__ts_1ga8b04711d5bf1d3953ee1f8fa1b6a0d82" kindref="member">qdb_ts_table_get_ranges</ref> has not been called before calling this function.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="973" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga5dfe7e5bdd4badb592133016ace16808" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_row_get_timestamp</definition>
+        <argsstring>(qdb_local_table_t table, qdb_size_t column_index, qdb_timespec_t *value)</argsstring>
+        <name>qdb_ts_row_get_timestamp</name>
+        <param>
+          <type><ref refid="group__ts_1gaa0b1898390e6f7323dd6dff5522c2ac7" kindref="member">qdb_local_table_t</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>column_index</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref> *</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+<para>Retrieves timestamp value from the current row at the specified column. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>column_index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A zero-based index of the column from which the value should be retrieved. The index is based on the order of columns in the call to <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref> used to initialize table.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">value</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non-null pointer to a timestamp that will hold the retrieved value.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. Returns <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a7ebe635483bf1f50643cf05ddced1657" kindref="member">qdb_e_invalid_iterator</ref> when <ref refid="group__ts_1ga8b04711d5bf1d3953ee1f8fa1b6a0d82" kindref="member">qdb_ts_table_get_ranges</ref> has not been called before calling this function.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="998" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga34c87bdde6525cbfaca5b0a7735b6031" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_table_next_row</definition>
+        <argsstring>(qdb_local_table_t table, qdb_timespec_t *timestamp)</argsstring>
+        <name>qdb_ts_table_next_row</name>
+        <param>
+          <type><ref refid="group__ts_1gaa0b1898390e6f7323dd6dff5522c2ac7" kindref="member">qdb_local_table_t</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="structqdb__timespec__t" kindref="compound">qdb_timespec_t</ref> *</type>
+          <declname>timestamp</declname>
+        </param>
+        <briefdescription>
+<para>Fetch data and advance to the next row. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">timestamp</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A non-null pointer to a variable that will hold a timestamp for the fetched row.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="1016" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__ts_1ga8b04711d5bf1d3953ee1f8fa1b6a0d82" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_ts_table_get_ranges</definition>
+        <argsstring>(qdb_local_table_t table, const qdb_ts_filtered_range_t *ranges, qdb_size_t range_count)</argsstring>
+        <name>qdb_ts_table_get_ranges</name>
+        <param>
+          <type><ref refid="group__ts_1gaa0b1898390e6f7323dd6dff5522c2ac7" kindref="member">qdb_local_table_t</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>const <ref refid="structqdb__ts__filtered__range__t" kindref="compound">qdb_ts_filtered_range_t</ref> *</type>
+          <declname>ranges</declname>
+        </param>
+        <param>
+          <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+          <declname>range_count</declname>
+        </param>
+        <briefdescription>
+<para>Retrieve all the specified rows from the database. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid local table previously initialized by <ref refid="group__ts_1ga09bc190a33f969348e8d8844768aaec6" kindref="member">qdb_ts_local_table_init</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ranges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An array of ranges (intervals) for which data should be retrieved.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>range_count</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The number of ranges.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. Returns <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443af3d584049b45f2aacca139de8c34a20b" kindref="member">qdb_e_iterator_end</ref> when there are no more rows in the specified ranges.</para></simplesect>
+<simplesect kind="warning"><para>This function is still under development. Performance and compatibility are not guaranteed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="1036" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

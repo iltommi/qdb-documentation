@@ -1,0 +1,118 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="structqdb__ts__timestamp__aggregation" kind="struct" language="C++" prot="public">
+    <compoundname>qdb_ts_timestamp_aggregation</compoundname>
+    <includes local="no">ts.h</includes>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="structqdb__ts__timestamp__aggregation_1a5e53c9174994abe973cfeb9d7e3fc410" prot="public" static="no" mutable="no">
+        <type><ref refid="group__ts_1gabe3dc4b6c33c26fd46ed16d30f07853a" kindref="member">qdb_ts_aggregation_type_t</ref></type>
+        <definition>qdb_ts_aggregation_type_t qdb_ts_timestamp_aggregation::type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+<para>The type of the aggregation to perform. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="236" column="1" bodyfile="qdb/ts.h" bodystart="236" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__timestamp__aggregation_1a5480f4fc2165389a8d0a28f1c2e66f97" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__ts__filtered__range__t" kindref="compound">qdb_ts_filtered_range_t</ref></type>
+        <definition>qdb_ts_filtered_range_t qdb_ts_timestamp_aggregation::filtered_range</definition>
+        <argsstring></argsstring>
+        <name>filtered_range</name>
+        <briefdescription>
+<para>The time interval on which the aggregation should be executed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="238" column="1" bodyfile="qdb/ts.h" bodystart="238" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__timestamp__aggregation_1aca3b9124e47cd2689d771d13f354a921" prot="public" static="no" mutable="no">
+        <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
+        <definition>qdb_size_t qdb_ts_timestamp_aggregation::count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+<para>If applicable, the number of datapoints on which aggregation has been computed. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="241" column="1" bodyfile="qdb/ts.h" bodystart="241" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="structqdb__ts__timestamp__aggregation_1ac812587c1e4a68b822bcd018f631492e" prot="public" static="no" mutable="no">
+        <type><ref refid="structqdb__ts__timestamp__point" kindref="compound">qdb_ts_timestamp_point</ref></type>
+        <definition>qdb_ts_timestamp_point qdb_ts_timestamp_aggregation::result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+<para>The result of the aggregation. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/ts.h" line="243" column="1" bodyfile="qdb/ts.h" bodystart="243" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+<para>Aggregation input and result for columns of numeric integer values. </para>    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="70">
+        <label>qdb_ts_timestamp_point</label>
+        <link refid="structqdb__ts__timestamp__point"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>value</edgelabel>
+          <edgelabel>timestamp</edgelabel>
+        </childnode>
+      </node>
+      <node id="66">
+        <label>qdb_ts_filtered_range_t</label>
+        <link refid="structqdb__ts__filtered__range__t"/>
+        <childnode refid="67" relation="usage">
+          <edgelabel>filter</edgelabel>
+        </childnode>
+        <childnode refid="68" relation="usage">
+          <edgelabel>range</edgelabel>
+        </childnode>
+      </node>
+      <node id="69">
+        <label>qdb_timespec_t</label>
+        <link refid="structqdb__timespec__t"/>
+      </node>
+      <node id="65">
+        <label>qdb_ts_timestamp_aggregation</label>
+        <link refid="structqdb__ts__timestamp__aggregation"/>
+        <childnode refid="66" relation="usage">
+          <edgelabel>filtered_range</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>result</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>qdb_ts_range_t</label>
+        <link refid="structqdb__ts__range__t"/>
+        <childnode refid="69" relation="usage">
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="67">
+        <label>qdb_ts_filter_t</label>
+        <link refid="structqdb__ts__filter__t"/>
+      </node>
+    </collaborationgraph>
+    <location file="qdb/ts.h" line="234" column="1" bodyfile="qdb/ts.h" bodystart="233" bodyend="244"/>
+    <listofallmembers>
+      <member refid="structqdb__ts__timestamp__aggregation_1aca3b9124e47cd2689d771d13f354a921" prot="public" virt="non-virtual"><scope>qdb_ts_timestamp_aggregation</scope><name>count</name></member>
+      <member refid="structqdb__ts__timestamp__aggregation_1a5480f4fc2165389a8d0a28f1c2e66f97" prot="public" virt="non-virtual"><scope>qdb_ts_timestamp_aggregation</scope><name>filtered_range</name></member>
+      <member refid="structqdb__ts__timestamp__aggregation_1ac812587c1e4a68b822bcd018f631492e" prot="public" virt="non-virtual"><scope>qdb_ts_timestamp_aggregation</scope><name>result</name></member>
+      <member refid="structqdb__ts__timestamp__aggregation_1a5e53c9174994abe973cfeb9d7e3fc410" prot="public" virt="non-virtual"><scope>qdb_ts_timestamp_aggregation</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

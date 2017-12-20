@@ -4,9 +4,9 @@
     <compoundname>blob</compoundname>
     <title>Binary large objects (blob) operations</title>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__blob_1ga815f319575a422331ed4d5eed0cc69bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_get_noalloc</definition>
+      <memberdef kind="function" id="group__blob_1gab97cf9972c4cbb79e3ed0ed4afc8c3b0" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_get_noalloc</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, void *content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get_noalloc</name>
         <param>
@@ -33,21 +33,21 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="inout">content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a user-allocated buffer that will receive the entry&apos;s content. </para></parameterdescription>
+<para>A pointer to a user-allocated buffer that will receive the entry&apos;s content.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -61,11 +61,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="69" column="1"/>
+        <location file="qdb/blob.h" line="74" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_get</definition>
+      <memberdef kind="function" id="group__blob_1ga79619e400997cf67c7f213fbcccd88c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_get</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get</name>
         <param>
@@ -87,26 +87,26 @@
         <briefdescription>
 <para>Retrieves an entry&apos;s content from the quasardb server. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release()</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content. </para></parameterdescription>
+<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -120,11 +120,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="94" column="1"/>
+        <location file="qdb/blob.h" line="102" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1ga77e17132c7c3ce3d333d1d560060e3bf" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_reserved_blob_get</definition>
+      <memberdef kind="function" id="group__blob_1gae0728c2ce44b1e2eae29ac4edabfc091" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_reserved_blob_get</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length, qdb_size_t offset)</argsstring>
         <name>qdb_reserved_blob_get</name>
         <param>
@@ -150,33 +150,33 @@
         <briefdescription>
 <para>Retrieves a part of an entry&apos;s content from the quasardb server. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range <computeroutput>[</computeroutput><computeroutput>offset<computeroutput></computeroutput>, </computeroutput><computeroutput>offset<computeroutput></computeroutput> + *</computeroutput><computeroutput>content_length<computeroutput></computeroutput>)</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release()</ref>.</para><para>The returned content will be a subset of the entry&apos;s data in the range <computeroutput>[</computeroutput><computeroutput>offset<computeroutput></computeroutput>, </computeroutput><computeroutput>offset<computeroutput></computeroutput> + *</computeroutput><computeroutput>content_length<computeroutput></computeroutput>)</computeroutput>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content. </para></parameterdescription>
+<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> that holds the length of the requested content and that will be set to the returned content&apos;s size, in bytes. If content length is equal to zero or is greater than entry&apos;s length minus offset, then all the content from offset until the end will be returned. </para></parameterdescription>
+<para>A pointer to a <ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref> that holds the length of the requested content and that will be set to the returned content&apos;s size, in bytes. If content length is equal to zero or is greater than entry&apos;s length minus offset, then all the content from offset until the end will be returned.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -190,11 +190,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="127" column="1"/>
+        <location file="qdb/blob.h" line="140" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1gacccb11b84a007ec4f2036ec316060282" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_get_and_remove</definition>
+      <memberdef kind="function" id="group__blob_1gae57e1e36681a5326e36b4c93f5542d88" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_get_and_remove</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_blob_get_and_remove</name>
         <param>
@@ -216,26 +216,26 @@
         <briefdescription>
 <para>Atomically gets an entry from the quasardb server and removes it. </para>        </briefdescription>
         <detaileddescription>
-<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release()</ref>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a13d942a5ac05a02071d2142beb559bea" kindref="member">qdb_e_buffer_too_small</ref>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
+<para>If the entry does not exist, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a456aa075e4cacb7fdfa357aa7e8c5149" kindref="member">qdb_e_alias_not_found</ref>.</para><para>The function will allocate a buffer large enough to hold the entry&apos;s content. This buffer must be released by the caller with a call to <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release()</ref>.</para><para>If the buffer is not large enough to hold the data, the function will fail and return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443a13d942a5ac05a02071d2142beb559bea" kindref="member">qdb_e_buffer_too_small</ref>. <computeroutput>content_length</computeroutput> will nevertheless be updated with entry size so that the caller may resize its buffer and try again.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content. </para></parameterdescription>
+<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s content.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -249,11 +249,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="159" column="1"/>
+        <location file="qdb/blob.h" line="175" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1ga67db324cbeccb7f130f8006830468d12" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_put</definition>
+      <memberdef kind="function" id="group__blob_1ga582970df269731ad63f475762cace662" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_put</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_time_t expiry_time)</argsstring>
         <name>qdb_blob_put</name>
         <param>
@@ -284,28 +284,28 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the buffer with the blob content </para></parameterdescription>
+<para>A pointer to the buffer with the blob content</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The length of the buffer, in bytes </para></parameterdescription>
+<para>The length of the buffer, in bytes</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -319,11 +319,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="186" column="1"/>
+        <location file="qdb/blob.h" line="206" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1ga79aafb696593432010c6d624f0894061" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_update</definition>
+      <memberdef kind="function" id="group__blob_1gaa8f0eb0d63f51d7c945626a41cb984c8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_update</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_time_t expiry_time)</argsstring>
         <name>qdb_blob_update</name>
         <param>
@@ -354,28 +354,28 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the buffer with the blob content </para></parameterdescription>
+<para>A pointer to the buffer with the blob content</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The length of the buffer, in bytes </para></parameterdescription>
+<para>The length of the buffer, in bytes</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -389,11 +389,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="213" column="1"/>
+        <location file="qdb/blob.h" line="238" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1gaef0400b3b58a23ebffe6085641581e53" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_reserved_blob_merge</definition>
+      <memberdef kind="function" id="group__blob_1ga21ee155ef354810816c3bc2387d8664e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_reserved_blob_merge</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *content, qdb_size_t content_length, qdb_size_t offset, int truncate, qdb_time_t expiry_time)</argsstring>
         <name>qdb_reserved_blob_merge</name>
         <param>
@@ -432,42 +432,42 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the content to merge </para></parameterdescription>
+<para>A pointer to the content to merge</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The length of the buffer, in bytes </para></parameterdescription>
+<para>The length of the buffer, in bytes</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>offset</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Offset at which merge content </para></parameterdescription>
+<para>Offset at which merge content</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>truncate</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>1 - the entry will be truncated at the end of the new buffer. 0 - the original content will be preserved. </para></parameterdescription>
+<para>1 - the entry will be truncated at the end of the new buffer. 0 - the original content will be preserved.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -481,11 +481,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="235" column="1"/>
+        <location file="qdb/blob.h" line="269" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_get_and_update</definition>
+      <memberdef kind="function" id="group__blob_1gad2ac5b09a51722c08bda77eaff228e9d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_get_and_update</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *update_content, qdb_size_t update_content_length, qdb_time_t expiry_time, const void **get_content, qdb_size_t *get_content_length)</argsstring>
         <name>qdb_blob_get_and_update</name>
         <param>
@@ -524,42 +524,42 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>update_content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the buffer with the new blob content </para></parameterdescription>
+<para>A pointer to the buffer with the new blob content</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>update_content_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The length of the buffer, in bytes </para></parameterdescription>
+<para>The length of the buffer, in bytes</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>expiry_time</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An optional absolute expiry time expressed in UTC UNIX epoch. </para></parameterdescription>
+<para>An optional absolute expiry time expressed in UTC UNIX epoch.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">get_content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer to an API-allocated buffer holding the entry content, before the update. </para></parameterdescription>
+<para>A pointer to a pointer to an API-allocated buffer holding the entry content, before the update.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -573,11 +573,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="264" column="1"/>
+        <location file="qdb/blob.h" line="304" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_compare_and_swap</definition>
+      <memberdef kind="function" id="group__blob_1gac15e696f07b3099e8390fdf7acb3352f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_compare_and_swap</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *new_value, qdb_size_t new_value_length, const void *comparand, qdb_size_t comparand_length, qdb_time_t expiry_time, const void **original_value, qdb_size_t *original_value_length)</argsstring>
         <name>qdb_blob_compare_and_swap</name>
         <param>
@@ -624,56 +624,56 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>new_value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a buffer that represents the entry&apos;s content to be updated to the server in case of match. </para></parameterdescription>
+<para>A pointer to a buffer that represents the entry&apos;s content to be updated to the server in case of match.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>new_value_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The length of the buffer, in bytes </para></parameterdescription>
+<para>The length of the buffer, in bytes</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>comparand</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a buffer that represents the entry&apos;s content to be compared to. </para></parameterdescription>
+<para>A pointer to a buffer that represents the entry&apos;s content to be compared to.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>comparand_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The length of the buffer, in bytes </para></parameterdescription>
+<para>The length of the buffer, in bytes</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>expiry_time</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An optional absolute expiry time expressed in UTC UNIX epoch. </para></parameterdescription>
+<para>An optional absolute expiry time expressed in UTC UNIX epoch.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">original_value</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s original content, before the update, if any. </para></parameterdescription>
+<para>A pointer to a pointer that will be set to a function-allocated buffer holding the entry&apos;s original content, before the update, if any.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -687,11 +687,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="304" column="1"/>
+        <location file="qdb/blob.h" line="352" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1ga0303a1e097c5aef81136f6f0252bc573" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_remove_if</definition>
+      <memberdef kind="function" id="group__blob_1gaeefdb8cfb156ed9fdf3a9859a8bfb8cc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_remove_if</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, const void *comparand, qdb_size_t comparand_length)</argsstring>
         <name>qdb_blob_remove_if</name>
         <param>
@@ -718,21 +718,21 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>comparand</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a buffer to use a comparand </para></parameterdescription>
+<para>A pointer to a buffer to use a comparand</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -746,11 +746,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="343" column="1"/>
+        <location file="qdb/blob.h" line="395" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1ga1552f780cb8ea2101813caa9aa15e4b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_scan</definition>
+      <memberdef kind="function" id="group__blob_1ga9d927748d1bd751d902d9eecf51dff20" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_scan</definition>
         <argsstring>(qdb_handle_t handle, const void *pattern, qdb_size_t pattern_length, qdb_int_t max_count, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_blob_scan</name>
         <param>
@@ -786,35 +786,35 @@ The complexity of this function is linear in the number of entries.</para><para>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>pattern</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the pattern buffer to search for </para></parameterdescription>
+<para>A pointer to the pattern buffer to search for</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>pattern_length</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The length of the pattern buffer, in bytes </para></parameterdescription>
+<para>The length of the pattern buffer, in bytes</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>max_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An integer limiting the number of results returned by the function </para></parameterdescription>
+<para>An integer limiting the number of results returned by the function</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">aliases</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the requested pattern. </para></parameterdescription>
+<para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the requested pattern.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -828,11 +828,11 @@ The complexity of this function is linear in the number of entries.</para><para>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="368" column="1"/>
+        <location file="qdb/blob.h" line="426" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__blob_1ga9db99edb1d990b22d87702e2e7a494f5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_blob_scan_regex</definition>
+      <memberdef kind="function" id="group__blob_1ga3767e45cf765b8533bf217a934f872ab" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_blob_scan_regex</definition>
         <argsstring>(qdb_handle_t handle, const char *pattern, qdb_int_t max_count, const char ***aliases, size_t *alias_count)</argsstring>
         <name>qdb_blob_scan_regex</name>
         <param>
@@ -864,28 +864,28 @@ The complexity of this function is linear in the number of entries.</para><para>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>pattern</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the regular expression to search for. The regex syntax is defined by ECMA-262 grammar. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the regular expression to search for. The regex syntax is defined by ECMA-262 grammar.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>max_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>An integer limiting the number of results returned by the function. </para></parameterdescription>
+<para>An integer limiting the number of results returned by the function.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">aliases</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the requested pattern. </para></parameterdescription>
+<para>A pointer to an array of null-terminated UTF-8 string that will list the aliases of the entries matching the requested pattern.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -900,7 +900,7 @@ The complexity of this function is linear in the number of entries.</para><para>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/blob.h" line="399" column="1"/>
+        <location file="qdb/blob.h" line="461" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

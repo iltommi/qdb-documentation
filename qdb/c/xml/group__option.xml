@@ -3,6 +3,325 @@
   <compounddef id="group__option" kind="group">
     <compoundname>option</compoundname>
     <title>Options</title>
+      <sectiondef kind="enum">
+      <memberdef kind="enum" id="group__option_1ga3b4ea526bf0468ff144305f011eb1793" prot="public" static="no">
+        <name>qdb_compression_t</name>
+        <enumvalue id="group__option_1gga3b4ea526bf0468ff144305f011eb1793a4933efb6777664f0e19587b8be37f8d2" prot="public">
+          <name>qdb_comp_none</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No compression. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__option_1gga3b4ea526bf0468ff144305f011eb1793ae779c527ad92b6adb5c979f5d0bf0569" prot="public">
+          <name>qdb_comp_fast</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Maximum compression speed, potentially minimum compression ratio. This is currently the default. </para>          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__option_1gga3b4ea526bf0468ff144305f011eb1793aa224c10b51af9f8da172e9b2aa6efcb3" prot="public">
+          <name>qdb_comp_best</name>
+          <initializer>= 2</initializer>
+          <briefdescription>
+          </briefdescription>
+          <detaileddescription>
+<para>Maximum compression ratio, potentially minimum compression speed. This is currently not implemented. </para>          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>An enumeration of compression parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__option_1gaec243774077e7b323dd5b57c99d00e2d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="95" column="1" bodyfile="qdb/option.h" bodystart="94" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="enum" id="group__option_1ga9ff0d1b86a2becd6d71edbeffeb04750" prot="public" static="no">
+        <name>qdb_encryption_t</name>
+        <enumvalue id="group__option_1gga9ff0d1b86a2becd6d71edbeffeb04750a9aeebebf657c4e6c022a1306f29ebc10" prot="public">
+          <name>qdb_crypt_none</name>
+          <initializer>= 0</initializer>
+          <briefdescription>
+<para>No encryption. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <enumvalue id="group__option_1gga9ff0d1b86a2becd6d71edbeffeb04750a300ebe56b10a20747a7c04010b589315" prot="public">
+          <name>qdb_crypt_aes_gcm_256</name>
+          <initializer>= 1</initializer>
+          <briefdescription>
+<para>AEC-GCM 256-bit encryption. </para>          </briefdescription>
+          <detaileddescription>
+          </detaileddescription>
+        </enumvalue>
+        <briefdescription>
+<para>An enumeration of encryption parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__option_1gab4a2ec3ca51b4f4c5b5f30f4c3f6bafb" kindref="member">qdb_option_set_encryption</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="128" column="1" bodyfile="qdb/option.h" bodystart="127" bodyend="131"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="typedef">
+      <memberdef kind="typedef" id="group__option_1ga21a14451aa697e26a9a4055e6a4e4976" prot="public" static="no">
+        <type>enum <ref refid="group__option_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref></type>
+        <definition>typedef enum qdb_compression_t  qdb_compression_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_compression_t</name>
+        <briefdescription>
+<para>An enumeration of compression parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__option_1gaec243774077e7b323dd5b57c99d00e2d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="104" column="1"/>
+      </memberdef>
+      <memberdef kind="typedef" id="group__option_1gab095442d0cac6163df91b2cfb8dc949f" prot="public" static="no">
+        <type>enum <ref refid="group__option_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref></type>
+        <definition>typedef enum qdb_encryption_t  qdb_encryption_t</definition>
+        <argsstring></argsstring>
+        <name>qdb_encryption_t</name>
+        <briefdescription>
+<para>An enumeration of encryption parameters. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__option_1gab4a2ec3ca51b4f4c5b5f30f4c3f6bafb" kindref="member">qdb_option_set_encryption</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="131" column="1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="func">
+      <memberdef kind="function" id="group__option_1gae3e829dc03d7c340a29205577aedaa69" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_timeout</definition>
+        <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
+        <name>qdb_option_set_timeout</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_ms</declname>
+        </param>
+        <briefdescription>
+<para>Sets the timeout of all network operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The qdb_handle_t that was initialized with <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout of network operation, in milliseconds.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="remark"><para>The lower the timeout, the higher the risk of having timeout errors. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="58" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__option_1gaab185202d902d64e9bc3e36bf3e3bf80" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_get_timeout</definition>
+        <argsstring>(qdb_handle_t handle, int *timeout_ms)</argsstring>
+        <name>qdb_option_get_timeout</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>int *</type>
+          <declname>timeout_ms</declname>
+        </param>
+        <briefdescription>
+<para>Gets the timeout of all network operations. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The qdb_handle_t that was initialized with <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername direction="out">timeout_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A pointer to the variable that will receive the timeout value, in milliseconds.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="71" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__option_1ga0b5e2310b0da98faa332d11f1100ddd7" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_max_cardinality</definition>
+        <argsstring>(qdb_handle_t handle, qdb_uint_t max_cardinality)</argsstring>
+        <name>qdb_option_set_max_cardinality</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>qdb_uint_t</type>
+          <declname>max_cardinality</declname>
+        </param>
+        <briefdescription>
+<para>Sets the maximum allowed cardinality of a quasardb query. The default value is 100&apos;003. The minimum allowed value is 100. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The qdb_handle_t that was initialized with <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref></para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>max_cardinality</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The maximum cardinality of a query.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="remark"><para>Improper usage of this function may cause a denial of service on the client. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="88" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__option_1gaec243774077e7b323dd5b57c99d00e2d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_compression</definition>
+        <argsstring>(qdb_handle_t handle, qdb_compression_t comp_level)</argsstring>
+        <name>qdb_option_set_compression</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="group__option_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref></type>
+          <declname>comp_level</declname>
+        </param>
+        <briefdescription>
+<para>Set the compression level for all future messages emitted by the specified handle. Regardless of this parameter, the API will be able to read whatever compression the server uses. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The handle on which to set the compression level</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comp_level</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The compression level to use</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
+<simplesect kind="see"><para><ref refid="group__option_1ga21a14451aa697e26a9a4055e6a4e4976" kindref="member">qdb_compression_t</ref> </para></simplesect>
+<simplesect kind="remark"><para>For better performance, consider disabling compression if your data is already compressed. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="121" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__option_1gab4a2ec3ca51b4f4c5b5f30f4c3f6bafb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_encryption</definition>
+        <argsstring>(qdb_handle_t handle, qdb_encryption_t encryption)</argsstring>
+        <name>qdb_option_set_encryption</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type><ref refid="group__option_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref></type>
+          <declname>encryption</declname>
+        </param>
+        <briefdescription>
+<para>Set the encryption method for all future messages emitted by the specified handle. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="see"><para><ref refid="group__option_1gab095442d0cac6163df91b2cfb8dc949f" kindref="member">qdb_encryption_t</ref></para></simplesect>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="141" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__option_1ga4c46be04e2c582b08528dac771353c8b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_cluster_public_key</definition>
+        <argsstring>(qdb_handle_t handle, const char *public_key)</argsstring>
+        <name>qdb_option_set_cluster_public_key</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>public_key</declname>
+        </param>
+        <briefdescription>
+<para>Set the public key of the cluster used for authentification of nodes on connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="149" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__option_1gaaba446fa3435d3cba66ef840f71f84b9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_option_set_user_credentials</definition>
+        <argsstring>(qdb_handle_t handle, const char *user_name, const char *private_key)</argsstring>
+        <name>qdb_option_set_user_credentials</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>user_name</declname>
+        </param>
+        <param>
+          <type>const char *</type>
+          <declname>private_key</declname>
+        </param>
+        <briefdescription>
+<para>Set the user credentials (name and private key) used for authentification of the user on connection. </para>        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/option.h" line="158" column="1"/>
+      </memberdef>
+      </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>

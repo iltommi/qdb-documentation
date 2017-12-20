@@ -4,9 +4,9 @@
     <compoundname>node</compoundname>
     <title>Node- and cluster-related operations</title>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__node_1gad25f0db2db8eb2cb7285f3d65c070c41" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_node_status</definition>
+      <memberdef kind="function" id="group__node_1ga9e206a7e7c1423fea3164104c27c11c6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_status</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_status</name>
         <param>
@@ -28,26 +28,26 @@
         <briefdescription>
 <para>Returns the status of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its status and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>.</para><para>The status is JSON object and contains current information of the node state, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its status and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref>.</para><para>The status is JSON object and contains current information of the node state, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the URI of node for which the status is requested. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of node for which the status is requested.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the pointer of an API-allocated buffer holding the node status. </para></parameterdescription>
+<para>A pointer to the pointer of an API-allocated buffer holding the node status.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -58,15 +58,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/node.h" line="67" column="1"/>
+        <location file="qdb/node.h" line="71" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__node_1ga14c411ee3a3c3fec0e57ba48eba411b6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_node_config</definition>
+      <memberdef kind="function" id="group__node_1ga5276d38715650cb3102ce3f1f22a4945" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_config</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_config</name>
         <param>
@@ -88,26 +88,26 @@
         <briefdescription>
 <para>Returns the configuration of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its configuration and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>.</para><para>The configuration is JSON object, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its configuration and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref>.</para><para>The configuration is JSON object, as described in the documentation.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the URI of the node for which the configuration is requested. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of the node for which the configuration is requested.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the pointer of an API-allocated buffer holding the node configuration. </para></parameterdescription>
+<para>A pointer to the pointer of an API-allocated buffer holding the node configuration.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -118,15 +118,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/node.h" line="93" column="1"/>
+        <location file="qdb/node.h" line="100" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__node_1gaa448d12338945be0e16f1ac63bb0eb92" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_node_topology</definition>
+      <memberdef kind="function" id="group__node_1ga0f18055deb3c22c89e6391595b85a4aa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_topology</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char **content, qdb_size_t *content_length)</argsstring>
         <name>qdb_node_topology</name>
         <param>
@@ -148,26 +148,26 @@
         <briefdescription>
 <para>Returns the topology of a node. </para>        </briefdescription>
         <detaileddescription>
-<para>The API will request the node for its topology and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>.</para><para>The topology is JSON object containing the node address, and the addresses of its successor and predecessor.</para><para><parameterlist kind="param"><parameteritem>
+<para>The API will request the node for its topology and allocate a buffer of the appropriate size, which will later have to be released using <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref>.</para><para>The topology is JSON object containing the node address, and the addresses of its successor and predecessor.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the URI of node for which the topology is requested. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of node for which the topology is requested.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername direction="out">content</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to the pointer of an API-allocated buffer holding the node topology. </para></parameterdescription>
+<para>A pointer to the pointer of an API-allocated buffer holding the node topology.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -178,15 +178,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/node.h" line="120" column="1"/>
+        <location file="qdb/node.h" line="130" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__node_1ga0ee58acda04e9acb66e4a22b5ddf6c03" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_node_stop</definition>
+      <memberdef kind="function" id="group__node_1gab7c73a18d1c3efff80b73a542d192d83" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_node_stop</definition>
         <argsstring>(qdb_handle_t handle, const char *uri, const char *reason)</argsstring>
         <name>qdb_node_stop</name>
         <param>
@@ -209,14 +209,14 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>uri</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the URI of node to be stopped. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the URI of node to be stopped.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -230,7 +230,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/node.h" line="142" column="1"/>
+        <location file="qdb/node.h" line="154" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

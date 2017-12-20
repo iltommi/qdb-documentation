@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="183" column="1" bodyfile="qdb/ts.h" bodystart="183" bodyend="-1"/>
+        <location file="qdb/ts.h" line="189" column="1" bodyfile="qdb/ts.h" bodystart="189" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__blob__aggregation_1a37c36374d7d2f8737d482019fbb301c1" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__filtered__range__t" kindref="compound">qdb_ts_filtered_range_t</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="185" column="1" bodyfile="qdb/ts.h" bodystart="185" bodyend="-1"/>
+        <location file="qdb/ts.h" line="191" column="1" bodyfile="qdb/ts.h" bodystart="191" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__blob__aggregation_1acc38debc4b95f77a6290558289e2a827" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="187" column="1" bodyfile="qdb/ts.h" bodystart="187" bodyend="-1"/>
+        <location file="qdb/ts.h" line="193" column="1" bodyfile="qdb/ts.h" bodystart="193" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__blob__aggregation_1a05f23162ad62e44ab8d37a3e6499ac63" prot="public" static="no" mutable="no">
         <type><ref refid="structqdb__ts__blob__point" kindref="compound">qdb_ts_blob_point</ref></type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="189" column="1" bodyfile="qdb/ts.h" bodystart="189" bodyend="-1"/>
+        <location file="qdb/ts.h" line="195" column="1" bodyfile="qdb/ts.h" bodystart="195" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -106,7 +106,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="qdb/ts.h" line="181" column="1" bodyfile="qdb/ts.h" bodystart="180" bodyend="190"/>
+    <location file="qdb/ts.h" line="187" column="1" bodyfile="qdb/ts.h" bodystart="186" bodyend="196"/>
     <listofallmembers>
       <member refid="structqdb__ts__blob__aggregation_1acc38debc4b95f77a6290558289e2a827" prot="public" virt="non-virtual"><scope>qdb_ts_blob_aggregation</scope><name>count</name></member>
       <member refid="structqdb__ts__blob__aggregation_1a37c36374d7d2f8737d482019fbb301c1" prot="public" virt="non-virtual"><scope>qdb_ts_blob_aggregation</scope><name>filtered_range</name></member>

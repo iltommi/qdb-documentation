@@ -5,9 +5,9 @@
     <title>Iteration-related operations</title>
     <innerclass refid="structqdb__const__iterator__t" prot="public">qdb_const_iterator_t</innerclass>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_iterator_begin</definition>
+      <memberdef kind="function" id="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_begin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_begin</name>
         <param>
@@ -21,12 +21,12 @@
         <briefdescription>
 <para>Creates an iterator that points to the &quot;first&quot; entry of the cluster. </para>        </briefdescription>
         <detaileddescription>
-<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443af3d584049b45f2aacca139de8c34a20b" kindref="member">qdb_e_iterator_end</ref> and the user must call <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> to release client-allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>The iteration occurs at a fixed point in time, operations occurring after the iterator has been created will not be visible.</para><para>Call <ref refid="group__iterator_1ga33c4a95b80034c417b92a5fb4afb70d8" kindref="member">qdb_iterator_next</ref> to go to the next available entry, if any.</para><para>When iteration completes the function will return <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443af3d584049b45f2aacca139de8c34a20b" kindref="member">qdb_e_iterator_end</ref> and the user must call <ref refid="group__iterator_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> to release client-allocated resources for the iteration.</para><para>Iteration does not allocate any resource on the server.</para><para>Whole cluster iteration is intended for some very specific use case. It is greatly advised to use tags to work on subgroup of entries.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -37,15 +37,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga33c4a95b80034c417b92a5fb4afb70d8" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gab7a14f035da4003117b815466c226715" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="105" column="1"/>
+        <location file="qdb/iterator.h" line="107" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_iterator_rbegin</definition>
+      <memberdef kind="function" id="group__iterator_1ga20f363c2e7bdaa7ffaedc835dd08b34f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_rbegin</definition>
         <argsstring>(qdb_handle_t handle, qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_rbegin</name>
         <param>
@@ -59,12 +59,12 @@
         <briefdescription>
 <para>Creates an iterator that points to the &quot;last&quot; entry of the cluster. </para>        </briefdescription>
         <detaileddescription>
-<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>This works exactly like <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, excepts it starts at the &quot;end&quot; of the cluster.</para><para>Call <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref> to go to the previous available entry, if any.</para><para>See <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
+<para>This function enables you to iterate on all the entries of a cluster. Keep in mind that there is no guarantee regarding the order of entries.</para><para>This works exactly like <ref refid="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref>, excepts it starts at the &quot;end&quot; of the cluster.</para><para>Call <ref refid="group__iterator_1gab7a14f035da4003117b815466c226715" kindref="member">qdb_iterator_previous</ref> to go to the previous available entry, if any.</para><para>See <ref refid="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> for more information.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -75,15 +75,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga33c4a95b80034c417b92a5fb4afb70d8" kindref="member">qdb_iterator_next</ref>, <ref refid="group__iterator_1gab7a14f035da4003117b815466c226715" kindref="member">qdb_iterator_previous</ref>, <ref refid="group__iterator_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="133" column="1"/>
+        <location file="qdb/iterator.h" line="135" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__iterator_1ga5e45817b99939b2543feb5b48d53a3e4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_iterator_next</definition>
+      <memberdef kind="function" id="group__iterator_1ga33c4a95b80034c417b92a5fb4afb70d8" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_next</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_next</name>
         <param>
@@ -101,15 +101,15 @@
 <para>A pointer to a previously initialized iterator.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="147" column="1"/>
+        <location file="qdb/iterator.h" line="150" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__iterator_1gaedb4d21b23eede0ae7523094a2c65d01" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_iterator_previous</definition>
+      <memberdef kind="function" id="group__iterator_1gab7a14f035da4003117b815466c226715" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_previous</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_previous</name>
         <param>
@@ -127,15 +127,15 @@
 <para>A pointer to a previously initialized iterator.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="163" column="1"/>
+        <location file="qdb/iterator.h" line="165" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_iterator_close</definition>
+      <memberdef kind="function" id="group__iterator_1ga61e0ede851d11ec7fa4dce54bf26434f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_close</definition>
         <argsstring>(qdb_const_iterator_t *iterator)</argsstring>
         <name>qdb_iterator_close</name>
         <param>
@@ -150,18 +150,18 @@
 <parametername>iterator</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a previously initialized iterator. </para></parameterdescription>
+<para>A pointer to a previously initialized iterator.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
-<simplesect kind="see"><para><ref refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__iterator_1ga20f363c2e7bdaa7ffaedc835dd08b34f" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="170" column="1"/>
+        <location file="qdb/iterator.h" line="175" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__iterator_1ga7aa1e11e0422f5fef47a9f3da31cf5d9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_iterator_copy</definition>
+      <memberdef kind="function" id="group__iterator_1gac0ad474e9a8360e23c049266f2b6b402" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_iterator_copy</definition>
         <argsstring>(const qdb_const_iterator_t *original, qdb_const_iterator_t *copy)</argsstring>
         <name>qdb_iterator_copy</name>
         <param>
@@ -175,11 +175,11 @@
         <briefdescription>
 <para>Clones a previously initialized iterator. </para>        </briefdescription>
         <detaileddescription>
-<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__iterator_1ga683cbf388cebd5af505f68ed4b3f5ed3" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1ga7b3d0943c32e7f47921663d47829fa9c" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga2541bc5fdbdebb6e1da3c4af3caef48b" kindref="member">qdb_iterator_close</ref> </para></simplesect>
+<para>Copies the state of the original iterator to a new iterator. Both iterators can afterward be independently operated. The cloned iterator will have to be closed with <ref refid="group__iterator_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref>.</para><para><simplesect kind="see"><para><ref refid="group__iterator_1ga20f363c2e7bdaa7ffaedc835dd08b34f" kindref="member">qdb_iterator_rbegin</ref>, <ref refid="group__iterator_1gace34bf9fc974a2b7ad1525d0ca120920" kindref="member">qdb_iterator_begin</ref>, <ref refid="group__iterator_1ga61e0ede851d11ec7fa4dce54bf26434f" kindref="member">qdb_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/iterator.h" line="181" column="1"/>
+        <location file="qdb/iterator.h" line="187" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

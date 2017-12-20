@@ -48,69 +48,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="122" column="1" bodyfile="qdb/client.h" bodystart="121" bodyend="131"/>
-      </memberdef>
-      <memberdef kind="enum" id="group__client_1ga3b4ea526bf0468ff144305f011eb1793" prot="public" static="no">
-        <name>qdb_compression_t</name>
-        <enumvalue id="group__client_1gga3b4ea526bf0468ff144305f011eb1793a4933efb6777664f0e19587b8be37f8d2" prot="public">
-          <name>qdb_comp_none</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-<para>No compression. </para>          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__client_1gga3b4ea526bf0468ff144305f011eb1793ae779c527ad92b6adb5c979f5d0bf0569" prot="public">
-          <name>qdb_comp_fast</name>
-          <initializer>= 1</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Maximum compression speed, potentially minimum compression ratio. This is currently the default. </para>          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__client_1gga3b4ea526bf0468ff144305f011eb1793aa224c10b51af9f8da172e9b2aa6efcb3" prot="public">
-          <name>qdb_comp_best</name>
-          <initializer>= 2</initializer>
-          <briefdescription>
-          </briefdescription>
-          <detaileddescription>
-<para>Maximum compression ratio, potentially minimum compression speed. This is currently not implemented. </para>          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>An enumeration of compression parameters. </para>        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="75" column="1" bodyfile="qdb/option.h" bodystart="74" bodyend="84"/>
-      </memberdef>
-      <memberdef kind="enum" id="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" prot="public" static="no">
-        <name>qdb_encryption_t</name>
-        <enumvalue id="group__client_1gga9ff0d1b86a2becd6d71edbeffeb04750a9aeebebf657c4e6c022a1306f29ebc10" prot="public">
-          <name>qdb_crypt_none</name>
-          <initializer>= 0</initializer>
-          <briefdescription>
-<para>No encryption. </para>          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <enumvalue id="group__client_1gga9ff0d1b86a2becd6d71edbeffeb04750a300ebe56b10a20747a7c04010b589315" prot="public">
-          <name>qdb_crypt_aes_gcm_256</name>
-          <initializer>= 1</initializer>
-          <briefdescription>
-<para>AEC-GCM 256-bit encryption. </para>          </briefdescription>
-          <detaileddescription>
-          </detaileddescription>
-        </enumvalue>
-        <briefdescription>
-<para>An enumeration of encryption parameters. </para>        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gac56f8ad360a8ee531854b2ff3447dca4" kindref="member">qdb_option_set_encryption</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="106" column="1" bodyfile="qdb/option.h" bodystart="105" bodyend="109"/>
+        <location file="qdb/client.h" line="127" column="1" bodyfile="qdb/client.h" bodystart="126" bodyend="136"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" prot="public" static="no">
         <name>qdb_protocol_t</name>
@@ -125,11 +63,11 @@
         <briefdescription>
 <para>An enumeration of allowed network protocols. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="138" column="1" bodyfile="qdb/client.h" bodystart="137" bodyend="142"/>
+        <location file="qdb/client.h" line="143" column="1" bodyfile="qdb/client.h" bodystart="142" bodyend="147"/>
       </memberdef>
       <memberdef kind="enum" id="group__client_1gaaa6272f78edda811822bfce05a07f944" prot="public" static="no">
         <name>qdb_entry_type_t</name>
@@ -203,7 +141,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="198" column="1" bodyfile="qdb/client.h" bodystart="197" bodyend="215"/>
+        <location file="qdb/client.h" line="215" column="1" bodyfile="qdb/client.h" bodystart="214" bodyend="232"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -218,35 +156,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="131" column="1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__client_1ga21a14451aa697e26a9a4055e6a4e4976" prot="public" static="no">
-        <type>enum <ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref></type>
-        <definition>typedef enum qdb_compression_t  qdb_compression_t</definition>
-        <argsstring></argsstring>
-        <name>qdb_compression_t</name>
-        <briefdescription>
-<para>An enumeration of compression parameters. </para>        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" kindref="member">qdb_option_set_compression</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="84" column="1"/>
-      </memberdef>
-      <memberdef kind="typedef" id="group__client_1gab095442d0cac6163df91b2cfb8dc949f" prot="public" static="no">
-        <type>enum <ref refid="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref></type>
-        <definition>typedef enum qdb_encryption_t  qdb_encryption_t</definition>
-        <argsstring></argsstring>
-        <name>qdb_encryption_t</name>
-        <briefdescription>
-<para>An enumeration of encryption parameters. </para>        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gac56f8ad360a8ee531854b2ff3447dca4" kindref="member">qdb_option_set_encryption</ref> </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="109" column="1"/>
+        <location file="qdb/client.h" line="136" column="1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga4745ed10b405291a321ec7150368a4b1" prot="public" static="no">
         <type>time_t</type>
@@ -256,12 +166,12 @@
         <briefdescription>
 <para>A cross-platform type that represents a time value. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref> </para></simplesect>
 <simplesect kind="remark"><para><ref refid="group__client_1ga4745ed10b405291a321ec7150368a4b1" kindref="member">qdb_time_t</ref> MUST be 64-bit large. The API will probably not link otherwise. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="87" column="1" bodyfile="qdb/client.h" bodystart="87" bodyend="-1"/>
+        <location file="qdb/client.h" line="89" column="1" bodyfile="qdb/client.h" bodystart="89" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga2b6f368592c49501d41ec2330b964147" prot="public" static="no">
         <type>size_t</type>
@@ -274,7 +184,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="93" column="1" bodyfile="qdb/client.h" bodystart="93" bodyend="-1"/>
+        <location file="qdb/client.h" line="95" column="1" bodyfile="qdb/client.h" bodystart="95" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga17492cb84da5466d0c742f0561df6597" prot="public" static="no">
         <type>int64_t</type>
@@ -287,7 +197,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="103" column="1" bodyfile="qdb/client.h" bodystart="103" bodyend="-1"/>
+        <location file="qdb/client.h" line="105" column="1" bodyfile="qdb/client.h" bodystart="105" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__client_1ga720fb72da4197685cc354214e96796c1" prot="public" static="no">
         <type>struct qdb_handle_internal *</type>
@@ -300,13 +210,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="148" column="1" bodyfile="qdb/client.h" bodystart="148" bodyend="-1"/>
+        <location file="qdb/client.h" line="153" column="1" bodyfile="qdb/client.h" bodystart="153" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__client_1ga49d1a4e7a20ad93207402c701b57643b" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const char *</type>
-        <definition>const char* qdb_version</definition>
+      <memberdef kind="function" id="group__client_1gab0ffd6b2788132113bf3152d2d8bb329" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> const char *</type>
+        <definition>QDB_API_LINKAGE const char* qdb_version</definition>
         <argsstring>(void)</argsstring>
         <name>qdb_version</name>
         <param>
@@ -319,11 +229,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="253" column="1"/>
+        <location file="qdb/client.h" line="271" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga4057e6f052a167bf6206b465582f9e5c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const char *</type>
-        <definition>const char* qdb_build</definition>
+      <memberdef kind="function" id="group__client_1ga9be759a55d51e1d1407150985ff1397e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> const char *</type>
+        <definition>QDB_API_LINKAGE const char* qdb_build</definition>
         <argsstring>(void)</argsstring>
         <name>qdb_build</name>
         <param>
@@ -336,11 +246,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="261" column="1"/>
+        <location file="qdb/client.h" line="279" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_open</definition>
+      <memberdef kind="function" id="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_open</definition>
         <argsstring>(qdb_handle_t *handle, qdb_protocol_t proto)</argsstring>
         <name>qdb_open</name>
         <param>
@@ -359,7 +269,7 @@
 <parametername direction="out">handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a <ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref> that will be ready to connect to a cluster. </para></parameterdescription>
+<para>A pointer to a <ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref> that will be ready to connect to a cluster.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -370,15 +280,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kindref="member">qdb_connect</ref>, <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>, <ref refid="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" kindref="member">qdb_protocol_t</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gab10eb8485f7e3088c91800b0dd254b71" kindref="member">qdb_connect</ref>, <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>, <ref refid="group__client_1gabbff9df8f8af25c6bdf97cabd157910b" kindref="member">qdb_protocol_t</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="272" column="1"/>
+        <location file="qdb/client.h" line="292" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-        <definition>qdb_handle_t qdb_open_tcp</definition>
+      <memberdef kind="function" id="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_handle_t qdb_open_tcp</definition>
         <argsstring>(void)</argsstring>
         <name>qdb_open_tcp</name>
         <param>
@@ -388,15 +298,15 @@
 <para>Creates a TCP/IP qdb_handle_t. No connection will be established. </para>        </briefdescription>
         <detaileddescription>
 <para><simplesect kind="return"><para>An initialized qdb_handle_t, ready to connect, in case of success, NULL in case of failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga76340764ecf54bcf726bb9ced7f33041" kindref="member">qdb_connect</ref>, <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gab10eb8485f7e3088c91800b0dd254b71" kindref="member">qdb_connect</ref>, <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="282" column="1"/>
+        <location file="qdb/client.h" line="302" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga76340764ecf54bcf726bb9ced7f33041" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_connect</definition>
+      <memberdef kind="function" id="group__client_1gab10eb8485f7e3088c91800b0dd254b71" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_connect</definition>
         <argsstring>(qdb_handle_t handle, const char *uri)</argsstring>
         <name>qdb_connect</name>
         <param>
@@ -417,7 +327,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -428,16 +338,16 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref>, <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref>, <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref> </para></simplesect>
 <simplesect kind="attention"><para>Make sure all the addresses in the URI belong to the same cluster </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="313" column="1"/>
+        <location file="qdb/client.h" line="335" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga50a3474bfa64110ec9c25eb07710f5fc" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_close</definition>
+      <memberdef kind="function" id="group__client_1gadbacfb13356c82e1cf54896ed4d8fb58" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_close</definition>
         <argsstring>(qdb_handle_t handle)</argsstring>
         <name>qdb_close</name>
         <param>
@@ -445,26 +355,26 @@
           <declname>handle</declname>
         </param>
         <briefdescription>
-<para>Closes the handle previously opened with <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para>        </briefdescription>
+<para>Closes the handle previously opened with <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>. </para>        </briefdescription>
         <detaileddescription>
 <para>This results in terminating all connections and releasing all internal buffers, including buffers which may have been allocated as or a result of batch operations or get operations.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="attention"><para>API-allocated buffers may be released by this call. For example, the buffer allocated by <ref refid="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" kindref="member">qdb_blob_get</ref> may be released by this call. </para></simplesect>
+<simplesect kind="attention"><para>API-allocated buffers may be released by this call. For example, the buffer allocated by <ref refid="group__blob_1ga79619e400997cf67c7f213fbcccd88c4" kindref="member">qdb_blob_get</ref> may be released by this call. </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="330" column="1"/>
+        <location file="qdb/client.h" line="355" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gad44ca490ccc6252718a67385646a2706" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_copy_alloc_buffer</definition>
+      <memberdef kind="function" id="group__client_1gac730e57a2af51766f07acf092bdd6e22" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_copy_alloc_buffer</definition>
         <argsstring>(qdb_handle_t handle, const void *source_buffer, qdb_size_t source_buffer_size, const void **dest_buffer)</argsstring>
         <name>qdb_copy_alloc_buffer</name>
         <param>
@@ -486,26 +396,26 @@
         <briefdescription>
 <para>Creates a clone of a buffer using API&apos;s high-performance memory allocator. </para>        </briefdescription>
         <detaileddescription>
-<para>The allocated buffer has to be released later with <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>The allocated buffer has to be released later with <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>source_buffer</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a buffer to clone </para></parameterdescription>
+<para>A pointer to a buffer to clone</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>source_buffer_size</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The size of the buffer to clone </para></parameterdescription>
+<para>The size of the buffer to clone</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -516,15 +426,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="348" column="1"/>
+        <location file="qdb/client.h" line="377" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>void</type>
-        <definition>void qdb_release</definition>
+      <memberdef kind="function" id="group__client_1ga31b15fb83e60b9cb16504618616f29f3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> void</type>
+        <definition>QDB_API_LINKAGE void qdb_release</definition>
         <argsstring>(qdb_handle_t handle, const void *buffer)</argsstring>
         <name>qdb_release</name>
         <param>
@@ -538,12 +448,12 @@
         <briefdescription>
 <para>Releases an API-allocated buffer. </para>        </briefdescription>
         <detaileddescription>
-<para>Failure to properly call this function may result in excessive memory usage. Most operations that return a content (e.g. batch operations, <ref refid="group__blob_1ga10abefd0569be23dbd028ba8e0959aed" kindref="member">qdb_blob_get</ref>, <ref refid="group__blob_1gafcacceb55e4a3886c29d5040e078e8fc" kindref="member">qdb_blob_get_and_update</ref>, <ref refid="group__blob_1gaf89199d6ad29f155f4fe0d0a4ae26e92" kindref="member">qdb_blob_compare_and_swap</ref>...) will allocate a buffer for the content and will not release the allocated buffer until you either call this function or close the handle.</para><para>The function will be able to release any kind of buffer allocated by a quasardb API call, whether it&apos;s a single buffer, an array or an array of buffers.</para><para><parameterlist kind="param"><parameteritem>
+<para>Failure to properly call this function may result in excessive memory usage. Most operations that return a content (e.g. batch operations, <ref refid="group__blob_1ga79619e400997cf67c7f213fbcccd88c4" kindref="member">qdb_blob_get</ref>, <ref refid="group__blob_1gad2ac5b09a51722c08bda77eaff228e9d" kindref="member">qdb_blob_get_and_update</ref>, <ref refid="group__blob_1gac15e696f07b3099e8390fdf7acb3352f" kindref="member">qdb_blob_compare_and_swap</ref>...) will allocate a buffer for the content and will not release the allocated buffer until you either call this function or close the handle.</para><para>The function will be able to release any kind of buffer allocated by a quasardb API call, whether it&apos;s a single buffer, an array or an array of buffers.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -556,11 +466,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="371" column="1"/>
+        <location file="qdb/client.h" line="401" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga20ff61aa14d5b7659e2e22c2798503ec" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_remove</definition>
+      <memberdef kind="function" id="group__client_1gae2e11082ceb8cb647680482b9056a2a2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_remove</definition>
         <argsstring>(qdb_handle_t handle, const char *alias)</argsstring>
         <name>qdb_remove</name>
         <param>
@@ -579,7 +489,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -593,11 +503,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="390" column="1"/>
+        <location file="qdb/client.h" line="421" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_expires_at</definition>
+      <memberdef kind="function" id="group__client_1gad9d32d4869c9950803f7cde8893de1fa" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_expires_at</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t expiry_time)</argsstring>
         <name>qdb_expires_at</name>
         <param>
@@ -615,19 +525,19 @@
         <briefdescription>
 <para>Sets the absolute expiration time of an entry, if the type supports expiration. </para>        </briefdescription>
         <detaileddescription>
-<para>Blobs and integers can have an expiration time and will be automatically removed by the cluster when they expire.</para><para>The absolute expiration time is the Unix epoch, that is, the number of milliseconds since 1 January 1970, 00:00:00 UTC. To use a relative expiration time (that is expiration relative to the time of the call), use <ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref>.</para><para>To remove the expiration time of an entry, specify the value <ref refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kindref="member">qdb_never_expires</ref> as <computeroutput>expiry_time</computeroutput> parameter.</para><para>Values in the past are refused, but the cluster will have a certain tolerance to account for clock skews.</para><para><parameterlist kind="param"><parameteritem>
+<para>Blobs and integers can have an expiration time and will be automatically removed by the cluster when they expire.</para><para>The absolute expiration time is the Unix epoch, that is, the number of milliseconds since 1 January 1970, 00:00:00 UTC. To use a relative expiration time (that is expiration relative to the time of the call), use <ref refid="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" kindref="member">qdb_expires_from_now</ref>.</para><para>To remove the expiration time of an entry, specify the value <ref refid="group__client_1gad64f32e3ffa0f7c4ebe486c178dd297d" kindref="member">qdb_never_expires</ref> as <computeroutput>expiry_time</computeroutput> parameter.</para><para>Values in the past are refused, but the cluster will have a certain tolerance to account for clock skews.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -639,15 +549,15 @@
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
 <simplesect kind="attention"><para>It is an error to specify an expiration in the past, although the cluster has a certain tolerance to account for clock synchronization </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="421" column="1"/>
+        <location file="qdb/client.h" line="455" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_expires_from_now</definition>
+      <memberdef kind="function" id="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_expires_from_now</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t expiry_delta)</argsstring>
         <name>qdb_expires_from_now</name>
         <param>
@@ -665,19 +575,19 @@
         <briefdescription>
 <para>Sets the expiration time of an entry, relative to the current time of the client, if the type supports expiration. </para>        </briefdescription>
         <detaileddescription>
-<para>Blobs and integers can have an expiration time and will automatically be removed by the cluster when they expire.</para><para>The expiration is relative to the current time of the machine.</para><para>To remove the expiration time of an entry or to use an absolute expiration time use <ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Blobs and integers can have an expiration time and will automatically be removed by the cluster when they expire.</para><para>The expiration is relative to the current time of the machine.</para><para>To remove the expiration time of an entry or to use an absolute expiration time use <ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -688,15 +598,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="447" column="1"/>
+        <location file="qdb/client.h" line="483" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga089edb1764e8a5567c24dbd001a325db" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_get_expiry_time</definition>
+      <memberdef kind="function" id="group__client_1ga596f19e470bf460cd552db37530961e6" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_expiry_time</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_time_t *expiry_time)</argsstring>
         <name>qdb_get_expiry_time</name>
         <param>
@@ -719,14 +629,14 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -737,17 +647,17 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga578ba6706bb16bab0265a98331fbcd4c" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga643c4d96535d8c0d57479bd948d7bd45" kindref="member">qdb_expires_at</ref> </para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" kindref="member">qdb_get_metadata</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gae3cd85f8720077bf2345e8c294f8b4b2" kindref="member">qdb_expires_from_now</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gad9d32d4869c9950803f7cde8893de1fa" kindref="member">qdb_expires_at</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gae2647bb54f4ba01dbad2fd09255d875d" kindref="member">qdb_get_metadata</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="469" column="1"/>
+        <location file="qdb/client.h" line="507" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gaa71923537cfe32018774ad55eacd246e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_get_location</definition>
+      <memberdef kind="function" id="group__client_1ga00e927042f6f031e2b07bc8b2ea579f9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_location</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_remote_node_t *location)</argsstring>
         <name>qdb_get_location</name>
         <param>
@@ -770,14 +680,14 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -788,15 +698,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="496" column="1"/>
+        <location file="qdb/client.h" line="537" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gaa6ca7a0eaac8c9545b02aee7d9bbac3f" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_get_type</definition>
+      <memberdef kind="function" id="group__client_1ga6446b0628a8ee9639e1fa0da3c6c8527" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_type</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_entry_type_t *entry_type)</argsstring>
         <name>qdb_get_type</name>
         <param>
@@ -819,14 +729,14 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -837,15 +747,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" kindref="member">qdb_get_metadata</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__client_1gae2647bb54f4ba01dbad2fd09255d875d" kindref="member">qdb_get_metadata</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="514" column="1"/>
+        <location file="qdb/client.h" line="557" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga0ee02c34c3189e8ad4e621117e1788c5" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_get_metadata</definition>
+      <memberdef kind="function" id="group__client_1gae2647bb54f4ba01dbad2fd09255d875d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_get_metadata</definition>
         <argsstring>(qdb_handle_t handle, const char *alias, qdb_entry_metadata_t *entry_metadata)</argsstring>
         <name>qdb_get_metadata</name>
         <param>
@@ -868,14 +778,14 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>alias</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry. </para></parameterdescription>
+<para>A pointer to a null-terminated UTF-8 string representing the alias of the entry.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -889,11 +799,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="530" column="1"/>
+        <location file="qdb/client.h" line="575" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga08f21b80163d0b36c03c9e80c2c5df25" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_purge_all</definition>
+      <memberdef kind="function" id="group__client_1ga13f319e5668ebfe2e915a41a1a860013" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_purge_all</definition>
         <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
         <name>qdb_purge_all</name>
         <param>
@@ -912,7 +822,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -927,11 +837,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="556" column="1"/>
+        <location file="qdb/client.h" line="601" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga871994aec633bde734dbe84a9011a615" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_trim_all</definition>
+      <memberdef kind="function" id="group__client_1ga731f547a21f4578d65e4b64515f6b264" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_trim_all</definition>
         <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
         <name>qdb_trim_all</name>
         <param>
@@ -950,7 +860,7 @@
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -965,11 +875,85 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="586" column="1"/>
+        <location file="qdb/client.h" line="631" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1gac19115af2f71978c584cfcee8059c7c2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type>const char *</type>
-        <definition>const char* qdb_error</definition>
+      <memberdef kind="function" id="group__client_1gae171ad6b88f7108682caefc280fe9e6d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_purge_cache</definition>
+        <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
+        <name>qdb_purge_cache</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_ms</declname>
+        </param>
+        <briefdescription>
+<para>Removes all cached data from all the nodes of the cluster. </para>        </briefdescription>
+        <detaileddescription>
+<para>This function is disabled on a transient cluster. Prefer purge_all in this case.</para><para>This call is not atomic: if the command cannot be dispatched on the whole cluster, it will be dispatched on as many nodes as possible and the function will return with a <ref refid="group__error_1gga365e768c3ca0f6387d8798eb98c40443aad6d0d2fb89cdc604785b0d0b422b082" kindref="member">qdb_e_ok</ref> code.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A timeout value, in milliseconds.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/client.h" line="650" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__client_1ga2cb8462f6902667420894701d588dea2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_wait_for_stabilization</definition>
+        <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
+        <name>qdb_wait_for_stabilization</name>
+        <param>
+          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
+          <declname>handle</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>timeout_ms</declname>
+        </param>
+        <briefdescription>
+<para>Wait for all nodes of the cluster to be stabilized. </para>        </briefdescription>
+        <detaileddescription>
+<para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>handle</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>timeout_ms</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A timeout value, in milliseconds.</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/client.h" line="662" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="group__client_1ga8aaf6c6f60163c385d79a2043a9ed199" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> const char *</type>
+        <definition>QDB_API_LINKAGE const char* qdb_error</definition>
         <argsstring>(qdb_error_t error)</argsstring>
         <name>qdb_error</name>
         <param>
@@ -991,197 +975,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/error.h" line="254" column="1"/>
+        <location file="qdb/error.h" line="257" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__client_1ga157132ce9cbf79a2246a6b3ff4d646f2" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_option_set_timeout</definition>
-        <argsstring>(qdb_handle_t handle, int timeout_ms)</argsstring>
-        <name>qdb_option_set_timeout</name>
-        <param>
-          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-          <declname>handle</declname>
-        </param>
-        <param>
-          <type>int</type>
-          <declname>timeout_ms</declname>
-        </param>
-        <briefdescription>
-<para>Sets the timeout of all network operations. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>handle</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The qdb_handle_t that was initialized with <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>timeout_ms</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The timeout of network operation, in milliseconds.</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="remark"><para>The lower the timeout, the higher the risk of having timeout errors. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="54" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="group__client_1ga93e3260f26d94cb29f27aee661f7b2a3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_option_set_max_cardinality</definition>
-        <argsstring>(qdb_handle_t handle, qdb_uint_t max_cardinality)</argsstring>
-        <name>qdb_option_set_max_cardinality</name>
-        <param>
-          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-          <declname>handle</declname>
-        </param>
-        <param>
-          <type>qdb_uint_t</type>
-          <declname>max_cardinality</declname>
-        </param>
-        <briefdescription>
-<para>Sets the maximum allowed cardinality of a quasardb query. The default value is 100&apos;003. The minimum allowed values is 1,000. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>handle</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The qdb_handle_t that was initialized with <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref> </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>max_cardinality</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The maximum cardinality of a query.</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="remark"><para>Improper usage of this function may cause a denial of service on the client. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="69" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="group__client_1gaaaa07f1cc3be9252f9381fc65ebed43d" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_option_set_compression</definition>
-        <argsstring>(qdb_handle_t handle, qdb_compression_t comp_level)</argsstring>
-        <name>qdb_option_set_compression</name>
-        <param>
-          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-          <declname>handle</declname>
-        </param>
-        <param>
-          <type><ref refid="group__client_1ga3b4ea526bf0468ff144305f011eb1793" kindref="member">qdb_compression_t</ref></type>
-          <declname>comp_level</declname>
-        </param>
-        <briefdescription>
-<para>Set the compression level for all future messages emitted by the specified handle. Regardless of this parameter, the API will be able to read whatever compression the server uses. </para>        </briefdescription>
-        <detaileddescription>
-<para><parameterlist kind="param"><parameteritem>
-<parameternamelist>
-<parametername>handle</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The handle on which to set the compression level </para></parameterdescription>
-</parameteritem>
-<parameteritem>
-<parameternamelist>
-<parametername>comp_level</parametername>
-</parameternamelist>
-<parameterdescription>
-<para>The compression level to use</para></parameterdescription>
-</parameteritem>
-</parameterlist>
-<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__client_1ga21a14451aa697e26a9a4055e6a4e4976" kindref="member">qdb_compression_t</ref> </para></simplesect>
-<simplesect kind="remark"><para>For better performance, consider disabling compression if your data is already compressed. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="100" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="group__client_1gac56f8ad360a8ee531854b2ff3447dca4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_option_set_encryption</definition>
-        <argsstring>(qdb_handle_t handle, qdb_encryption_t encryption)</argsstring>
-        <name>qdb_option_set_encryption</name>
-        <param>
-          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-          <declname>handle</declname>
-        </param>
-        <param>
-          <type><ref refid="group__client_1ga9ff0d1b86a2becd6d71edbeffeb04750" kindref="member">qdb_encryption_t</ref></type>
-          <declname>encryption</declname>
-        </param>
-        <briefdescription>
-<para>Set the encryption method for all future messages emitted by the specified handle. </para>        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1gab095442d0cac6163df91b2cfb8dc949f" kindref="member">qdb_encryption_t</ref></para></simplesect>
-<simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="119" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="group__client_1gaea380a3205e9a8e6b8258666c111ff36" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_option_set_cluster_public_key</definition>
-        <argsstring>(qdb_handle_t handle, const char *public_key)</argsstring>
-        <name>qdb_option_set_cluster_public_key</name>
-        <param>
-          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-          <declname>handle</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>public_key</declname>
-        </param>
-        <briefdescription>
-<para>Set the public key of the cluster used for authentification of nodes on connection. </para>        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="127" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="group__client_1ga0779433ef98101afab8e906a9219c189" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_option_set_user_credentials</definition>
-        <argsstring>(qdb_handle_t handle, const char *user_name, const char *private_key)</argsstring>
-        <name>qdb_option_set_user_credentials</name>
-        <param>
-          <type><ref refid="group__client_1ga720fb72da4197685cc354214e96796c1" kindref="member">qdb_handle_t</ref></type>
-          <declname>handle</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>user_name</declname>
-        </param>
-        <param>
-          <type>const char *</type>
-          <declname>private_key</declname>
-        </param>
-        <briefdescription>
-<para>Set the user credentials (name and private key) used for authentification of the user on connection. </para>        </briefdescription>
-        <detaileddescription>
-<para><simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
-</para>        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="qdb/option.h" line="135" column="1"/>
-      </memberdef>
-      <memberdef kind="function" id="group__client_1ga649bfb20c6c8f6b2495b1d2878633298" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_tag_iterator_copy</definition>
+      <memberdef kind="function" id="group__client_1ga5381c438bbdf8f637e9257793679344a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_tag_iterator_copy</definition>
         <argsstring>(const qdb_const_tag_iterator_t *original, qdb_const_tag_iterator_t *copy)</argsstring>
         <name>qdb_tag_iterator_copy</name>
         <param>
@@ -1195,12 +993,12 @@
         <briefdescription>
 <para>Clones a previously initialized tag iterator. </para>        </briefdescription>
         <detaileddescription>
-<para>Copies the state of the original iterator to a new iterator. Both iterators can be independently operated afterwards. The cloned iterator will have to be closed with <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>Copies the state of the original iterator to a new iterator. Both iterators can be independently operated afterwards. The cloned iterator will have to be closed with <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>original</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The original iterator to copy, source. </para></parameterdescription>
+<para>The original iterator to copy, source.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -1211,11 +1009,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__tag_1ga94e7687010c7f78d9e678850691abb48" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga5ae5c155e3917c7606fc85dcb18e02f8" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__tag_1ga0f668af01c9168d82226f5e22c9c64f1" kindref="member">qdb_tag_iterator_begin</ref>, <ref refid="group__tag_1ga984b421bc7c89bfbd62a1ceeb8fa61e1" kindref="member">qdb_tag_iterator_close</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/tag.h" line="368" column="1"/>
+        <location file="qdb/tag.h" line="392" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="define">
@@ -1229,7 +1027,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="111" column="9" bodyfile="qdb/client.h" bodystart="111" bodyend="-1"/>
+        <location file="qdb/client.h" line="113" column="9" bodyfile="qdb/client.h" bodystart="113" bodyend="-1"/>
       </memberdef>
       <memberdef kind="define" id="group__client_1gacec73da0a3d7364196f4e6682f5fd522" prot="public" static="no">
         <name>qdb_preserve_expiration</name>
@@ -1242,7 +1040,7 @@ expiration&quot; time value. </para>        </briefdescription>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/client.h" line="117" column="9" bodyfile="qdb/client.h" bodystart="117" bodyend="-1"/>
+        <location file="qdb/client.h" line="119" column="9" bodyfile="qdb/client.h" bodystart="119" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

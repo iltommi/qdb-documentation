@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="107" column="1" bodyfile="qdb/ts.h" bodystart="107" bodyend="-1"/>
+        <location file="qdb/ts.h" line="128" column="1" bodyfile="qdb/ts.h" bodystart="128" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__filter__t_1af15a15fa96242ea569252a7b6cf30d47" prot="public" static="no" mutable="no">
         <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="114" column="1" bodyfile="qdb/ts.h" bodystart="114" bodyend="-1"/>
+        <location file="qdb/ts.h" line="135" column="1" bodyfile="qdb/ts.h" bodystart="135" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__filter__t_1a398bd4f2cadf8aab18f45dbe49f361e1" prot="public" static="no" mutable="no">
         <type>struct qdb_ts_filter_t::@9::@10</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="115" column="1"/>
+        <location file="qdb/ts.h" line="136" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__filter__t_1a533b21c37523c940baa7f5a7868b9b29" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -54,7 +54,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="119" column="1" bodyfile="qdb/ts.h" bodystart="119" bodyend="-1"/>
+        <location file="qdb/ts.h" line="140" column="1" bodyfile="qdb/ts.h" bodystart="140" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__filter__t_1a15bcbb50928020d9fdd5420e2d01e3d4" prot="public" static="no" mutable="no">
         <type>double</type>
@@ -67,7 +67,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="120" column="1" bodyfile="qdb/ts.h" bodystart="120" bodyend="-1"/>
+        <location file="qdb/ts.h" line="141" column="1" bodyfile="qdb/ts.h" bodystart="141" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__filter__t_1aa589f61c19a4cfe0b29dede281768f47" prot="public" static="no" mutable="no">
         <type>struct qdb_ts_filter_t::@9::@11</type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="121" column="1"/>
+        <location file="qdb/ts.h" line="142" column="1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__filter__t_1a4748c39bc52782430b16b4c2649ce1c4" prot="public" static="no" mutable="no">
         <type>union qdb_ts_filter_t::@9</type>
@@ -93,14 +93,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="123" column="1"/>
+        <location file="qdb/ts.h" line="144" column="1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>A filter. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="qdb/ts.h" line="105" column="1" bodyfile="qdb/ts.h" bodystart="104" bodyend="125"/>
+    <location file="qdb/ts.h" line="126" column="1" bodyfile="qdb/ts.h" bodystart="125" bodyend="146"/>
     <listofallmembers>
       <member refid="structqdb__ts__filter__t_1aa589f61c19a4cfe0b29dede281768f47" prot="public" virt="non-virtual"><scope>qdb_ts_filter_t</scope><name>double_range</name></member>
       <member refid="structqdb__ts__filter__t_1a15bcbb50928020d9fdd5420e2d01e3d4" prot="public" virt="non-virtual"><scope>qdb_ts_filter_t</scope><name>max</name></member>

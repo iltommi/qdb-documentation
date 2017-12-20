@@ -118,12 +118,22 @@
         <name>QDB_DEPRECATED</name>
         <param><defname>msg</defname></param>
         <briefdescription>
-<para>Mark a funtion as deprecated. </para>        </briefdescription>
+<para>Mark a function as deprecated. </para>        </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
         <location file="qdb/_attr.h" line="48" column="11" bodyfile="qdb/_attr.h" bodystart="48" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="define" id="group__attr_1ga008cbf050a89152ec67d33e534cd3012" prot="public" static="no">
+        <name>QDB_API_LINKAGE</name>
+        <briefdescription>
+<para>Linking parameters for the API functions. </para>        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="qdb/_attr.h" line="65" column="11" bodyfile="qdb/_attr.h" bodystart="65" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

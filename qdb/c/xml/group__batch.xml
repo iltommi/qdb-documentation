@@ -7,9 +7,9 @@
     <innerclass refid="structblob__put__update__t" prot="public">blob_put_update_t</innerclass>
     <innerclass refid="structqdb__operation__t" prot="public">qdb_operation_t</innerclass>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__batch_1ga8b3e3f28c66a4e9bb3826658e260041c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_init_operations</definition>
+      <memberdef kind="function" id="group__batch_1ga0df145ef58f67af59b88553dd3d8ed70" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_init_operations</definition>
         <argsstring>(qdb_operation_t *operations, size_t operation_count)</argsstring>
         <name>qdb_init_operations</name>
         <param>
@@ -28,14 +28,14 @@
 <parametername>operations</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to an array of operations </para></parameterdescription>
+<para>A pointer to an array of operations</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>operation_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of elements in the array of operations </para></parameterdescription>
+<para>The number of elements in the array of operations</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure. </para></simplesect>
@@ -43,11 +43,11 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="251" column="1"/>
+        <location file="qdb/batch.h" line="257" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__client_1ga2b6f368592c49501d41ec2330b964147" kindref="member">qdb_size_t</ref></type>
-        <definition>qdb_size_t qdb_run_batch</definition>
+      <memberdef kind="function" id="group__batch_1gab7b2123fa8843971ce325573c224fd7a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> size_t</type>
+        <definition>QDB_API_LINKAGE size_t qdb_run_batch</definition>
         <argsstring>(qdb_handle_t handle, qdb_operation_t *operations, size_t operation_count)</argsstring>
         <name>qdb_run_batch</name>
         <param>
@@ -65,19 +65,19 @@
         <briefdescription>
 <para>Runs the operations in batch. </para>        </briefdescription>
         <detaileddescription>
-<para>When operations are run in batch the order of execution is optimized for speed and each operation is run independently.</para><para>Running operations is batch is generally the best way to achieve a very high level of performance, especially for bulk loading of data. That&apos;s because batches minimize network communication and organize the order of execution for maximum throughput.</para><para>If one or several operations within the batch fail, the rest of the batch isn&apos;t affected.</para><para>If one or several operations within the batch is ill-formed, the whole batch will be aborted. An ill formed operation is for example an operation missing a parameter.</para><para>Each operation will result a result according to its type.</para><para>After a batch has been run (successful or not), the user must call <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> on the operations pointer to release all API-allocated buffers.</para><para>For an ordered, transactional &quot;all or nothing&quot; behavior use <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref>.</para><para><parameterlist kind="param"><parameteritem>
+<para>When operations are run in batch the order of execution is optimized for speed and each operation is run independently.</para><para>Running operations is batch is generally the best way to achieve a very high level of performance, especially for bulk loading of data. That&apos;s because batches minimize network communication and organize the order of execution for maximum throughput.</para><para>If one or several operations within the batch fail, the rest of the batch isn&apos;t affected.</para><para>If one or several operations within the batch is ill-formed, the whole batch will be aborted. An ill formed operation is for example an operation missing a parameter.</para><para>Each operation will result a result according to its type.</para><para>After a batch has been run (successful or not), the user must call <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> on the operations pointer to release all API-allocated buffers.</para><para>For an ordered, transactional &quot;all or nothing&quot; behavior use <ref refid="group__batch_1ga563bf54b6bafcd0cc984850feb595448" kindref="member">qdb_run_transaction</ref>.</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>operations</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a correctly constructed array of operations </para></parameterdescription>
+<para>A pointer to a correctly constructed array of operations</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -88,15 +88,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>The number of successful operations in the batch.</para></simplesect>
-<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" kindref="member">qdb_run_transaction</ref>, <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1ga563bf54b6bafcd0cc984850feb595448" kindref="member">qdb_run_transaction</ref>, <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="289" column="1"/>
+        <location file="qdb/batch.h" line="298" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__batch_1ga38a35bd96e0aaf5487f9cfcb0a3e4f0a" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_run_transaction</definition>
+      <memberdef kind="function" id="group__batch_1ga563bf54b6bafcd0cc984850feb595448" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_run_transaction</definition>
         <argsstring>(qdb_handle_t handle, qdb_operation_t *operations, size_t operation_count, size_t *failed_index)</argsstring>
         <name>qdb_run_transaction</name>
         <param>
@@ -118,26 +118,26 @@
         <briefdescription>
 <para>Runs the operations in a single transaction. </para>        </briefdescription>
         <detaileddescription>
-<para>Operations that run in a transaction will be executed ordered to preserve the logic of the transaction and if an error occurred the previously executed operations will be rolled back.</para><para>The operation is committed if and only if all operations have been successful.</para><para>The result of the transaction is not visible by other clients until it has been committed.</para><para>After a transaction has been run (successful or not), the user must call <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> on operations to release all API-allocated buffers.</para><para>Use transactions when integrity and order is paramount. For maximum performances consider using batches (<ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>).</para><para><parameterlist kind="param"><parameteritem>
+<para>Operations that run in a transaction will be executed ordered to preserve the logic of the transaction and if an error occurred the previously executed operations will be rolled back.</para><para>The operation is committed if and only if all operations have been successful.</para><para>The result of the transaction is not visible by other clients until it has been committed.</para><para>After a transaction has been run (successful or not), the user must call <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> on operations to release all API-allocated buffers.</para><para>Use transactions when integrity and order is paramount. For maximum performances consider using batches (<ref refid="group__batch_1gab7b2123fa8843971ce325573c224fd7a" kindref="member">qdb_run_batch</ref>).</para><para><parameterlist kind="param"><parameteritem>
 <parameternamelist>
 <parametername>handle</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A valid handle previously initialized by <ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> or <ref refid="group__client_1gaf7587c548b4113bfe9f085e6d70cf455" kindref="member">qdb_open_tcp</ref>. </para></parameterdescription>
+<para>A valid handle previously initialized by <ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> or <ref refid="group__client_1gab7a783a4a0cc73211ad96b9685f2c67e" kindref="member">qdb_open_tcp</ref>.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>operations</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A pointer to a correctly constructed array of operations </para></parameterdescription>
+<para>A pointer to a correctly constructed array of operations</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
 <parametername>operation_count</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The number of elements in the array of operations </para></parameterdescription>
+<para>The number of elements in the array of operations</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -148,11 +148,11 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1gaf4ec1210f34668881bc26b5fb02f2d04" kindref="member">qdb_run_batch</ref>, <ref refid="group__client_1ga1e2d2e5c6a3df4c3067c128d581d42eb" kindref="member">qdb_release</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="structqdb__operation__t" kindref="compound">qdb_operation_t</ref>, <ref refid="group__batch_1gab7b2123fa8843971ce325573c224fd7a" kindref="member">qdb_run_batch</ref>, <ref refid="group__client_1ga31b15fb83e60b9cb16504618616f29f3" kindref="member">qdb_release</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="323" column="1"/>
+        <location file="qdb/batch.h" line="336" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -260,7 +260,7 @@
 <para>Operations are used by batches and transactions. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/batch.h" line="55" column="1" bodyfile="qdb/batch.h" bodystart="54" bodyend="80"/>
+        <location file="qdb/batch.h" line="56" column="1" bodyfile="qdb/batch.h" bodystart="55" bodyend="81"/>
       </memberdef>
       </sectiondef>
     <briefdescription>

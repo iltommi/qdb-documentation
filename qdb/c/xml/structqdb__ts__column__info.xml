@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="207" column="1" bodyfile="qdb/ts.h" bodystart="207" bodyend="-1"/>
+        <location file="qdb/ts.h" line="263" column="1" bodyfile="qdb/ts.h" bodystart="263" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="structqdb__ts__column__info_1aecc01a31d6003c407071910d63e2e390" prot="public" static="no" mutable="no">
         <type><ref refid="group__ts_1ga41fb56b664063f5d5e2d944cf564157f" kindref="member">qdb_ts_column_type_t</ref></type>
@@ -28,14 +28,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/ts.h" line="209" column="1" bodyfile="qdb/ts.h" bodystart="209" bodyend="-1"/>
+        <location file="qdb/ts.h" line="265" column="1" bodyfile="qdb/ts.h" bodystart="265" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
 <para>Description of a time series column. </para>    </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="qdb/ts.h" line="204" column="1" bodyfile="qdb/ts.h" bodystart="203" bodyend="210"/>
+    <location file="qdb/ts.h" line="260" column="1" bodyfile="qdb/ts.h" bodystart="259" bodyend="266"/>
     <listofallmembers>
       <member refid="structqdb__ts__column__info_1ab99b4ee5ad8cefacf26cea674bbb254a" prot="public" virt="non-virtual"><scope>qdb_ts_column_info</scope><name>name</name></member>
       <member refid="structqdb__ts__column__info_1aecc01a31d6003c407071910d63e2e390" prot="public" virt="non-virtual"><scope>qdb_ts_column_info</scope><name>type</name></member>

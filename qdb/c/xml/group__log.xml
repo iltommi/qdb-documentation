@@ -4,9 +4,9 @@
     <compoundname>log</compoundname>
     <title>Logging-related operations</title>
       <sectiondef kind="func">
-      <memberdef kind="function" id="group__log_1gaaedde07e4ca97105358685c6b31c8301" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_log_add_callback</definition>
+      <memberdef kind="function" id="group__log_1gaf028af10a73cc15f971101ca007bb7c4" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_log_add_callback</definition>
         <argsstring>(qdb_log_callback cb, qdb_log_callback_id *callback_id)</argsstring>
         <name>qdb_log_add_callback</name>
         <param>
@@ -25,7 +25,7 @@
 <parametername>cb</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>A callback of type <ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>. The callback will be called every time the API emits a log message. </para></parameterdescription>
+<para>A callback of type <ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>. The callback will be called every time the API emits a log message.</para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -36,15 +36,15 @@
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gaa1404d7ab69eee1c3db61a35fc5b7ba9" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="107" column="1"/>
+        <location file="qdb/log.h" line="110" column="1"/>
       </memberdef>
-      <memberdef kind="function" id="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
-        <type><ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
-        <definition>qdb_error_t qdb_log_remove_callback</definition>
+      <memberdef kind="function" id="group__log_1gaa1404d7ab69eee1c3db61a35fc5b7ba9" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type><ref refid="group__attr_1ga008cbf050a89152ec67d33e534cd3012" kindref="member">QDB_API_LINKAGE</ref> <ref refid="group__error_1ga365e768c3ca0f6387d8798eb98c40443" kindref="member">qdb_error_t</ref></type>
+        <definition>QDB_API_LINKAGE qdb_error_t qdb_log_remove_callback</definition>
         <argsstring>(qdb_log_callback_id callback_id)</argsstring>
         <name>qdb_log_remove_callback</name>
         <param>
@@ -59,15 +59,15 @@
 <parametername>callback_id</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>The identifier set by <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> that will determine which callback to remove.</para></parameterdescription>
+<para>The identifier set by <ref refid="group__log_1gaf028af10a73cc15f971101ca007bb7c4" kindref="member">qdb_log_add_callback</ref> that will determine which callback to remove.</para></parameterdescription>
 </parameteritem>
 </parameterlist>
 <simplesect kind="return"><para>A <ref refid="group__error_1gab1b09622035af18ab20ed4fd3b61dd46" kindref="member">qdb_error_t</ref> code indicating success or failure.</para></simplesect>
-<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref>, <ref refid="group__log_1gaf028af10a73cc15f971101ca007bb7c4" kindref="member">qdb_log_add_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="119" column="1"/>
+        <location file="qdb/log.h" line="123" column="1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="enum">
@@ -124,12 +124,12 @@
         <briefdescription>
 <para>An enumeration of log level. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__client_1ga13578ad42536a5176f3fd2c3a9d53a51" kindref="member">qdb_open</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__client_1gaa86900c81459a8d60b9b7b042371fa1e" kindref="member">qdb_open</ref> </para></simplesect>
 <simplesect kind="see"><para><ref refid="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" kindref="member">qdb_log_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="53" column="1" bodyfile="qdb/log.h" bodystart="52" bodyend="66"/>
+        <location file="qdb/log.h" line="54" column="1" bodyfile="qdb/log.h" bodystart="53" bodyend="67"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="typedef">
@@ -139,13 +139,13 @@
         <argsstring></argsstring>
         <name>qdb_log_callback_id</name>
         <briefdescription>
-<para>An unique callback identifier returned by <ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>. </para>        </briefdescription>
+<para>An unique callback identifier returned by <ref refid="group__log_1gaf028af10a73cc15f971101ca007bb7c4" kindref="member">qdb_log_add_callback</ref>. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__log_1gaf028af10a73cc15f971101ca007bb7c4" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gaa1404d7ab69eee1c3db61a35fc5b7ba9" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="73" column="1" bodyfile="qdb/log.h" bodystart="73" bodyend="-1"/>
+        <location file="qdb/log.h" line="75" column="1" bodyfile="qdb/log.h" bodystart="75" bodyend="-1"/>
       </memberdef>
       <memberdef kind="typedef" id="group__log_1ga27259bcef89d32c184a9e03fc0f157ce" prot="public" static="no">
         <type>void(*</type>
@@ -155,11 +155,11 @@
         <briefdescription>
 <para>A typedef representing a log callback. </para>        </briefdescription>
         <detaileddescription>
-<para><simplesect kind="see"><para><ref refid="group__log_1gaaedde07e4ca97105358685c6b31c8301" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gadd4e2284dfa7a452b2a3d5820e17c582" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
+<para><simplesect kind="see"><para><ref refid="group__log_1gaf028af10a73cc15f971101ca007bb7c4" kindref="member">qdb_log_add_callback</ref>, <ref refid="group__log_1gaa1404d7ab69eee1c3db61a35fc5b7ba9" kindref="member">qdb_log_remove_callback</ref> </para></simplesect>
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="qdb/log.h" line="80" column="1" bodyfile="qdb/log.h" bodystart="80" bodyend="-1"/>
+        <location file="qdb/log.h" line="82" column="1" bodyfile="qdb/log.h" bodystart="82" bodyend="-1"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
