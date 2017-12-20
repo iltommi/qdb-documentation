@@ -33,7 +33,7 @@ help:
 	@echo "By default, all versions are built. To build a specific version, pass VER=foldername, where foldername is a folder in source/."
 
 
-html dirhtml singlehtml :
+html dirhtml singlehtml:
 	@mkdir -p $(BUILDDIR)/$@
 	@install -m 644 source/index.html $(BUILDDIR)/$@/index.html
 
@@ -49,8 +49,8 @@ html dirhtml singlehtml :
 	@for VERSION in $(VER); do \
 		echo "##teamcity[blockOpened name='Build $$VERSION']" ;\
 		\
-		sed -i='' "s;html_static_path = .*;html_static_path = \[\'../../shared/_static\'\];" source/$$VERSION/source/conf.py ;\
-		sed -i='' "s;templates_path = .*;templates_path = \[\'../../shared/_templates\'\];" source/$$VERSION/source/conf.py ;\
+		sed -i '' -e "s;html_static_path = .*;html_static_path = \[\'../../shared/_static\'\];" source/$$VERSION/source/conf.py ;\
+		sed -i '' -e "s;templates_path = .*;templates_path = \[\'../../shared/_templates\'\];" source/$$VERSION/source/conf.py ;\
 		\
 		$(MAKE) -C "source/$$VERSION" $@ ;\
 		\
@@ -59,7 +59,7 @@ html dirhtml singlehtml :
 		\
 		command -v git >/dev/null 2>&1 || git -C "source/$$VERSION" checkout -- source/conf.py ;\
 		\
-		sed -i='' "s;https://doc.quasardb.net/[0-9].[0-9].*/\";https://doc.quasardb.net/$$VERSION/\";" $(BUILDDIR)/$@/index.html ;\
+		sed -i '' -e "s;https://doc.quasardb.net/[0-9].[0-9].*/\";https://doc.quasardb.net/$$VERSION/\";" $(BUILDDIR)/$@/index.html ;\
 		\
 		echo "##teamcity[blockClosed name='Build $$VERSION']" ;\
 	done
@@ -68,7 +68,7 @@ html dirhtml singlehtml :
 	@echo "Build finished. The files in $(BUILDDIR)/$@."
 
 
-pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest :
+pickle json htmlhelp qthelp devhelp epub latex latexpdf text man changes linkcheck doctest:
 	@mkdir -p $(BUILDDIR)/$@
 
 	# For each version...
