@@ -5,7 +5,7 @@ cd $(dirname $0)
 git fetch
 
 ORIGIN=$(git config --get remote.origin.url)
-BRANCHES=$(git branch --list --sort=version:refname --remotes origin/* | grep -E '^\s*origin/[0-9]+.[0-9]+.[0-9]$' | sed 's|origin/||')
+BRANCHES=$(git branch --list --sort=version:refname --remotes origin/* | grep -E '^\s*origin/(master|[0-9]+.[0-9]+.[0-9])$' | sed 's|origin/||')
 
 if [[ $# -ge 1 ]] ; then
     ADDITIONAL_BRANCH=$1
