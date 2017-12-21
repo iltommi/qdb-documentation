@@ -57,7 +57,19 @@ Parameters reference
 
     Displays tool version information.
 
-.. option:: --cluster=<address>:<port>
+.. option:: --show-tests
+
+    Displays all available tests.
+
+.. option:: -n, --dry-run
+
+    Displays tests to be executed and exit
+
+.. option:: --no-cleanup
+
+    Turn off cleaning up after each test
+
+.. option:: -c=<address>:<port>, --cluster=<address>:<port>
 
    Specifies the address and port of the quasardb cluster to which the benchmark tool must connect.
 
@@ -73,6 +85,36 @@ Parameters reference
 
             qdb-benchmark --cluster=qdb://localhost:5009
 
+.. option:: -p, --pause=<pause_duration>
+
+    Specifies the time waited between tests (in seconds).
+
+    Argument
+        A positive integer.
+
+    Default value
+        1
+
+    Example
+        Make a 10 seconds pause between two tests::
+
+            qdb-benchmark --pause=10
+
+.. option:: --duration=<duration>
+
+    Specifies the duration of each test (in seconds).
+
+    Argument
+        A positive integer.
+
+    Default value
+        4
+
+    Example
+        Make the tests last 60 seconds each::
+
+            qdb-benchmark --duration=60
+
 .. option:: --threads=<threads>
 
     Specifies the number of threads that `qdb-benchmark` should use to run the test.
@@ -85,6 +127,68 @@ Parameters reference
         1,2,4
 
     Example
-        Run the test two times, once in one thread and once in two threads::
+        Run each test two times, once in one thread and once in two threads::
 
             qdb-benchmark --threads=1,2
+
+.. option:: --sizes=<sizes>
+
+    Specifies the sizes of the content elements (in bytes).
+
+    Argument
+        A list of positive integers representing the content sizes.
+        You can use the following literals: k, M, G
+
+    Default value
+        1,1K,1M
+
+    Example
+        Run each test three times, once with each size::
+
+            qdb-benchmark --sizes=128,2k,2M
+            
+.. option:: --user-credentials-file=<user-credentials-file>
+
+    Specifies the user credential file to use while authenticating to the server.
+
+    Argument
+        The path of the user credentials.
+
+    Default value
+        ""
+
+    Example
+        Connect to a secured server::
+
+            qdb-benchmark --user-credentials-file=user_private.key --cluster-public-file=cluster_public.key
+
+.. option:: --cluster-public-file=<cluster-public-file>
+
+    Specifies the cluster public key file to use while authenticating to the server.
+
+    Argument
+        The path of the cluster public key.
+
+    Default value
+        ""
+
+    Example
+        Connect to a secured server::
+
+            qdb-benchmark --user-credentials-file=user_private.key --cluster-public-file=cluster_public.key
+
+.. option:: --tests=<tests_regex>
+
+    Specifies which tests to run. It accepts wildcard at start and end of input.
+
+
+    Argument
+        The tests needed.
+
+    Default value
+        All tests.
+
+    Example
+        Run specific tests::
+
+            qdb-benchmark --tests=qdb_blob_*
