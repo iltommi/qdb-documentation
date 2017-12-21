@@ -11,6 +11,9 @@
     // For each of the versions in var all_versions...
     $.each(all_versions, function (idx, version) {
       var branch = all_branches[idx];
+      if (branch == null) {
+        branch = version;
+      }
 
       // Create a new option using the url string as the
       new_select_tag.push('<option value="' + branch + '"');
