@@ -83,7 +83,7 @@ Starting the Daemons
 
     qdbd -c 192.168.1.3.conf
 
-As nodes come online, they will stabilize themselves by self-organizing into a ring and determining storage locations for data. For more information, see :ref:`stabilization`.
+As nodes come online, they will stabilize themselves by self-organizing into a ring and determining storage locations for data. For more information, see :ref:`stabilization <cluster.stabilization>`.
 
 For more information about quasardb arguments and configuration parameters, see :doc:`../reference/qdbd`.
 

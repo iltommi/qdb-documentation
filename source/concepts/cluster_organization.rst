@@ -8,14 +8,14 @@ Each server running a :doc:`../reference/qdbd` is called a node. By itself, a no
 
 However, the real power of a quasardb installation comes when multiple nodes are linked together into a cluster. A cluster is a peer-to-peer distributed hash table based on `Chord <https://github.com/sit/dht/wiki>`_. In a cluster, quasardb nodes self-organize to share data and handle client requests, providing a scalable, concurrent, and fault tolerant database.
 
-.. _stabilization:
+.. _cluster.stabilization:
 
 Stabilization
 -------------
 
 Stabilization is the process during which nodes agree on their position in the cluster. Stabilization happens when bootstrapping a cluster, in case of failure, or when adding nodes. It is transparent and does not require any intervention. A cluster is considered stable when all nodes are ordered in the ring by their respective ids.
 
-In most clusters, the time required to stabilize is extremely short and does not result in any modification of order of nodes in the ring. However, if one or several nodes fail or if new nodes join the cluster, stabilization also redistributes the data between the nodes (see :ref:`data-migration`). Thus the stabilization duration can vary depending on the amount of data to migrate, if any.
+In most clusters, the time required to stabilize is extremely short and does not result in any modification of order of nodes in the ring. However, if one or several nodes fail or if new nodes join the cluster, stabilization also redistributes the data between the nodes (see :ref:`data.migration`). Thus the stabilization duration can vary depending on the amount of data to migrate, if any.
 
 Nodes periodically verify their location in the cluster to determine if the cluster is stable. This interval can vary anywhere from 1 second up to 2 minutes. When a node determines the cluster is stable, it will increase the duration between each stabilization check. On the contrary, when the cluster is determined to be unstable, the duration between stabilization checks is reduced.
 
@@ -52,9 +52,9 @@ Adding a Node to a Cluster
 .. tip::
    Add nodes when activity is low to limit disruption.
 
-   During the period, the cluster is fully operational and clients are unaware that a node is joining the cluster. 
+   During the period, the cluster is fully operational and clients are unaware that a node is joining the cluster.
 
-   For more information on data migration, see :ref:`data-migration`.
+   For more information on data migration, see :ref:`data.migration`.
 
 .. figure:: qdb_add_node_process/05_qdb_cluster_at_end.png
    :scale: 50%

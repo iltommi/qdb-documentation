@@ -620,7 +620,7 @@ Global
 
 .. option:: --replication=<factor>
 
-    Specifies the replication factor (global parameter). For more information, see :ref:`data-replication`.
+    Specifies the replication factor (global parameter). For more information, see :ref:`data.replication`.
 
     Argument
         A positive integer between 1 and 4 (inclusive) specifying the replication factor. If the integer is higher than the number of nodes in the cluster, it will be automatically reduced to the cluster size.

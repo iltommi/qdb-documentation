@@ -1,7 +1,7 @@
 Data Storage
 ============
 
-.. _data-storage-in-cluster:
+.. _data.storage-in-cluster:
 
 Where are Entries Stored in the Cluster?
 ----------------------------------------
@@ -26,14 +26,14 @@ quasardb compares the UUIDs of each node to the UUID for the new entity. Because
 .. figure:: qdb_entry_storage/04_data_replicated.png
    :scale: 50%
 
-If the cluster is configured with a :ref:`data-replication` value of 2, a copy of the file is also stored on the b4b80e node. If the cluster is configured with a data replication value of 3, a copy of the file is stored on each node.
+If the cluster is configured with a :ref:`data.replication` value of 2, a copy of the file is also stored on the b4b80e node. If the cluster is configured with a data replication value of 3, a copy of the file is stored on each node.
 
-When nodes are added to the cluster, this adds new node UUIDs. Data is automatically migrated to the new successor during stabilization. For more information, see :ref:`data-migration` and :ref:`stabilization`.
+When nodes are added to the cluster, this adds new node UUIDs. Data is automatically migrated to the new successor during stabilization. For more information, see :ref:`migration <data.migration>` and :ref:`stabilization <cluster.stabilization>`.
 
 Since the location of the entry depends on the order of nodes in the ring, exact control of the entry's location can be done by setting each node's ID in its configuration file. However, it is recommended to let quasardb set the node ID in order to prevent collisions.
 
 
-.. _data-storage-in-node:
+.. _data.storage-in-node:
 
 Where are Entries Stored in a Node?
 -----------------------------------
@@ -81,12 +81,12 @@ But:
     * Entries cannot be iterated upon
 
 
-.. _data-migration:
+.. _data.migration:
 
 Data Migration
 --------------
 
-Data migration is the process of transferring entries from one node to another for the purpose of load balancing. Not to be confused with :ref:`data-replication`.
+Data migration is the process of transferring entries from one node to another for the purpose of load balancing. Not to be confused with :ref:`data.replication`.
 
 .. note::
     Data migration is always enabled.
@@ -99,7 +99,7 @@ Data migration only occurs when a new node joins the cluster. Nodes may join a c
 
 Migration Process
 ^^^^^^^^^^^^^^^^^
-At the end of each :ref:`stabilization` cycle, each node requests entries that belong to it from its successor and its predecessor.
+At the end of each :ref:`stabilization <cluster.stabilization>` cycle, each node requests entries that belong to it from its successor and its predecessor.
 
 For example:
 
@@ -126,12 +126,12 @@ Entry E will only be unavailable for the duration of the migration and does not 
     To reduce the chance of unavailable data due to data migration, add nodes when cluster traffic is at its lowest point.
 
 
-.. _data-replication:
+.. _data.replication:
 
 Data replication
 -----------------
 
-Data replication is the process of duplicating entries across multiple nodes for the purpose of fault tolerance. Data replication greatly reduces the odds of functional failures at the cost of increased disk and memory usage, as well as reduced performance when adding or updating entries. Not to be confused with :ref:`data-migration`.
+Data replication is the process of duplicating entries across multiple nodes for the purpose of fault tolerance. Data replication greatly reduces the odds of functional failures at the cost of increased disk and memory usage, as well as reduced performance when adding or updating entries. Not to be confused with :ref:`data.migration`.
 
 .. note::
     Replication is optional and disabled by default, but is highly recommended for production environments (see :doc:`../reference/qdbd`).
@@ -143,12 +143,12 @@ Data is replicated on a node's successors. For example, with a factor two replic
 
 Replication is done synchronously as data is added or updated. The call will not successfully return until the data has been stored and fully replicated across the appropriate nodes.
 
-When a node fails or when entries are otherwise unavailable, client requests will be served by the successor nodes containing the duplicate data. In order for an entry to become unavailable, all nodes containing the duplicate data need to fail simultaneously. For more information, see :ref:`data-replication-reliability-impact`.
+When a node fails or when entries are otherwise unavailable, client requests will be served by the successor nodes containing the duplicate data. In order for an entry to become unavailable, all nodes containing the duplicate data need to fail simultaneously. For more information, see :ref:`data.replication-reliability-impact`.
 
 How replication works with migration
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When a new node joins a ring, data is migrated (see :ref:`data-migration`) to its new host node. When replication is in place, the migration phase also includes a replication phase that consists in copying entries to the new successors. Thus, replication increases the migration duration. However, during this period, if the original entry is unavailable, the successor node will respond to client requests with the duplicate data.
+When a new node joins a ring, data is migrated (see :ref:`data.migration`) to its new host node. When replication is in place, the migration phase also includes a replication phase that consists in copying entries to the new successors. Thus, replication increases the migration duration. However, during this period, if the original entry is unavailable, the successor node will respond to client requests with the duplicate data.
 
 Conflict resolution
 ^^^^^^^^^^^^^^^^^^^^^
@@ -159,7 +159,7 @@ When the original is unavailable due to data migration and the client sends a re
 
 Formally put, this means that quasardb may choose to sacrifice *Availability* for *Consistency* and *Partitionability* during short periods of time.
 
-.. _data-replication-reliability-impact:
+.. _data.replication-reliability-impact:
 
 Impact on reliability
 ^^^^^^^^^^^^^^^^^^^^^

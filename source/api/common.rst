@@ -15,7 +15,7 @@ Connecting to a single node is more simple and suitable for non-critical clients
 
 Once the connection is established, the client will lazily explore the ring as requests are made.
 
-.. _aliases:
+.. _common.aliases:
 
 Aliases
 -------
@@ -69,7 +69,7 @@ If the language supports exceptions, like .NET, Python, and Java, errors are tra
 Automatic Load Balancing
 ------------------------
 
-As of quasardb 1.2.0, if the cluster uses :ref:`data-replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup speed.
+As of quasardb 1.2.0, if the cluster uses :ref:`data.replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup speed.
 
 Expiry
 ------
