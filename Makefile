@@ -49,8 +49,17 @@ html dirhtml singlehtml:
 	@for VERSION in $(VER); do \
 		echo "##teamcity[blockOpened name='Build $$VERSION']" ;\
 		\
-		sed -i '' -e "s;html_static_path = .*;html_static_path = \[\'../../shared/_static\'\];" source/$$VERSION/source/conf.py ;\
-		sed -i '' -e "s;templates_path = .*;templates_path = \[\'../../shared/_templates\'\];" source/$$VERSION/source/conf.py ;\
+		case $$(uname) in \
+			FreeBSD | Darwin ) \
+				SED_INPLACE="sed -i ''" \
+				;;\
+			* ) \
+				SED_INPLACE="sed -i''" \
+				;;\
+		esac ;\
+		\
+		eval "$${SED_INPLACE} -e \"s;html_static_path = .*;html_static_path = \[\'../../shared/_static\'\];\" source/$$VERSION/source/conf.py" ;\
+		eval "$${SED_INPLACE} -e \"s;templates_path = .*;templates_path = \[\'../../shared/_templates\'\];\" source/$$VERSION/source/conf.py" ;\
 		\
 		$(MAKE) -C "source/$$VERSION" $@ ;\
 		\
@@ -59,7 +68,7 @@ html dirhtml singlehtml:
 		\
 		command -v git >/dev/null 2>&1 || git -C "source/$$VERSION" checkout -- source/conf.py ;\
 		\
-		sed -i '' -e "s;https://doc.quasardb.net/[0-9].[0-9].*/\";https://doc.quasardb.net/$$VERSION/\";" $(BUILDDIR)/$@/index.html ;\
+		eval "$${SED_INPLACE} -e \"s;https://doc.quasardb.net/[0-9].[0-9].*/\\\";https://doc.quasardb.net/$$VERSION/\\\";\" $(BUILDDIR)/$@/index.html" ;\
 		\
 		echo "##teamcity[blockClosed name='Build $$VERSION']" ;\
 	done
