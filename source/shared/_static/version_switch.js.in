@@ -1,29 +1,27 @@
 (function () {
   'use strict';
 
-  var all_versions = "$BRANCHES".split(" ");
+  var all_branches = "$BRANCHES".split(" ");
+  var all_versions = "$BRANCHNAMES".split(" ");
 
   // Builds a <select> tag with options from each of the all_versions variable above.
-  //
-  //
-  function build_select(version_number) {
+  function build_select(current_version) {
     var new_select_tag = ['<select>'];
 
     // For each of the versions in var all_versions...
     $.each(all_versions, function (idx, version) {
+      var branch = all_branches[idx];
 
       // Create a new option using the url string as the
-      new_select_tag.push('<option value="' + version + '"');
+      new_select_tag.push('<option value="' + branch + '"');
 
       // If the all_versions item we're on matches the SPHINX Documentation version,
       // set the combo box to display it as the selected item.
       // Also, replace the var all_versions display name with SPHINX Documentation full version number.
-      if (version == version_number) {
-        new_select_tag.push(' selected="selected">' + version_number + '</option>');
+      if (version == current_version) {
+        new_select_tag.push(' selected="selected"');
       }
-      else {
-        new_select_tag.push('>' + version + '</option>');
-      }
+      new_select_tag.push('>' + version + '</option>');
     });
 
     new_select_tag.push('</select>');
@@ -32,7 +30,6 @@
   }
 
   function patch_url(url, new_version) {
-
     // Find url instances like:
     //   .net/1/
     //   .net/1.0/
@@ -40,22 +37,23 @@
     //   .net/2.7.6*/
     //
     // Test at http://regexpal.com/ by removing the first and last forward slashes.
-    //
     var url_regex = /\.net\/(\d|(\d\.\d[\w\d\.]*))\//;
 
     // Replace the part of the url that matched the regex with '.net/version/
     var new_url = url.replace(url_regex, '.net/' + new_version + '/');
-
-    // If the regex changed the incoming string, use that.
     if (new_url != url) {
       return new_url;
     }
-    else {
-      // Otherwise hard-replace '.net/' with '.net/version/'.
-      return url.replace(/\.net\//, '.net/' + new_version + '/');
-    }
-  }
 
+    // Otherwise hard-replace '.net/' with '.net/version/'.
+    new_url = url.replace(/\.net\//, '.net/' + new_version + '/');
+    if (new_url != url) {
+      return new_url;
+    }
+
+    // Otherwise hard-replace 'html/*/' with 'html/version/'.
+    return url.replace(/\html\/[^\/]*\//, 'html/' + new_version + '/');
+  }
 
   function on_switch() {
     // Get the variable the user chose.
@@ -67,19 +65,20 @@
     var new_url = patch_url(url, selected);
 
     // So long as the patched URL doesn't match our existing URL... (e.g. user clicked same version)
-    if (new_url != url) {
-
-      // Ensure the patched URL exists before loading it, otherwise redirect to version's start page
-      $.ajax({
-        url: new_url,
-        success: function () {
-          window.location.href = new_url;
-        },
-        error: function () {
-          window.location.href = 'https://doc.quasardb.net/' + selected;
-        }
-      });
+    if (new_url === url) {
+      return;
     }
+
+    // Ensure the patched URL exists before loading it, otherwise redirect to version's start page
+    $.ajax({
+      url: new_url,
+      success: function () {
+        window.location.href = new_url;
+      },
+      error: function () {
+        window.location.href = 'https://doc.quasardb.net/' + selected;
+      }
+    });
   }
 
   // When the document is ready...

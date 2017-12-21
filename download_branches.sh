@@ -2,8 +2,10 @@
 
 cd $(dirname $0)
 
+echo "Fetching..."
 git fetch
 
+echo "Getting branches..."
 ORIGIN=$(git config --get remote.origin.url)
 BRANCHES=$(git branch --list --sort=version:refname --remotes origin/* | grep -E '^\s*origin/(master|[0-9]+.[0-9]+.[0-9])$' | sed 's|origin/||')
 
@@ -19,10 +21,10 @@ echo 'Branches:' $BRANCHES
 declare -a BRANCH_NAMES
 for BRANCH in $BRANCHES; do
     if [ -e "source/$BRANCH/.git" ]; then
-        echo "Pulling branch $BRANCH"
+        echo "Pulling branch $BRANCH..."
         git -C "source/$BRANCH" pull --quiet
     else
-        echo "Cloning branch $BRANCH"
+        echo "Cloning branch $BRANCH..."
         git clone --quiet --depth 1 --branch $BRANCH $ORIGIN "source/$BRANCH"
     fi
 
@@ -36,12 +38,13 @@ done
 
 (
     # Do not use underscores in variables passed to envsubst!
-    export BRANCHES=$(echo ${BRANCH_NAMES[*]})
+    export BRANCHNAMES=$(echo ${BRANCH_NAMES[*]})
+    export BRANCHES=$(echo ${BRANCHES[*]})
     export LATEST
 
-    echo "Generate index.html"
+    echo "Generating index.html..."
     envsubst \$LATEST <source/index.html.in >source/index.html
 
-    echo "Generate version_switch.html"
-    envsubst \$BRANCHES <source/shared/_static/version_switch.js.in >source/shared/_static/version_switch.js
+    echo "Generating version_switch.html..."
+    envsubst '$BRANCHES $BRANCHNAMES' <source/shared/_static/version_switch.js.in >source/shared/_static/version_switch.js
 )
