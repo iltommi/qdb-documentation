@@ -105,7 +105,7 @@ If the same address/port pair is present multiple times within the string, only 
 Adding entries
 --------------
 
-Each entry is identified by a unique alias. See :ref:`aliases` for more information.
+Each entry is identified by a unique alias. See :ref:`aliases <common.aliases>` for more information.
 
 The content is a buffer containing arbitrary data. You need to specify the size of the content buffer. There is no built-in limit on the content's size; you just need to ensure you have enough free memory to allocate it at least once on the client side and on the server side.
 
@@ -509,7 +509,7 @@ Queries
 
 To run a query on quasardb, use the function :func:`qdb_query`. The API transparently runs the query accross the cluster, and returns the list of aliases matching the query result.
 
-.. literalinclude:: ../../../../examples/c/query.c
+.. literalinclude:: ../../../../examples/c/run_query.c
     :start-after: doc-start-query
     :end-before: doc-end-query
     :dedent: 12

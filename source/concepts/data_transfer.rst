@@ -20,7 +20,7 @@ The cluster will make sure that requests do not conflict with each other.
  * Multiple clients can simultaneously read the same entry.
  * Multiple clients can simultaneously read and write to multiple, unique entries.
 
-Since quasardb version 1.2.0, if the cluster uses :ref:`data-replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup times.
+Since quasardb version 1.2.0, if the cluster uses :ref:`data.replication`, read queries are automatically load-balanced. Nodes containing replicated entries may respond instead of the original node to provide faster lookup times.
 
 quasardb automatically scales its multi-threading engine to the underlying hardware. No user intervention is required. Running several instances on the same node is counter-productive.
 
@@ -50,7 +50,7 @@ Guarantees
 The Transfer Process
 --------------------
 
-Once a cluster has completed :ref:`stabilization`, a client only needs to connect to a single node in the cluster. The client can then send data requests for entries stored across the cluster.
+Once a cluster has completed :ref:`stabilization <cluster.stabilization>`, a client only needs to connect to a single node in the cluster. The client can then send data requests for entries stored across the cluster.
 
 When you store an entry in a cluster:
 
@@ -70,7 +70,7 @@ Failure Cases
 Cluster Unstable
 ^^^^^^^^^^^^^^^^
 
-If the cluster is unstable (see :ref:`stabilization`) because of node failure or reorganization, client requests may temporarily fail. A node searching for its predecessor or successor will return an "unstable" error code. When this occurs, clients attempt to find another node on the ring with a replicated entry. If no replicated entry can be found, the client will return an error to the user.
+If the cluster is unstable (see :ref:`stabilization <cluster.stabilization>`) because of node failure or reorganization, client requests may temporarily fail. A node searching for its predecessor or successor will return an "unstable" error code. When this occurs, clients attempt to find another node on the ring with a replicated entry. If no replicated entry can be found, the client will return an error to the user.
 
 Topology Changed
 ^^^^^^^^^^^^^^^^

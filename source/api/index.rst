@@ -5,6 +5,7 @@ API Reference
    :maxdepth: 1
 
    common
+
    streams
    time_series
    queries
