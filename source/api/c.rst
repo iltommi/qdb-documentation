@@ -545,6 +545,204 @@ To get the current size of the stream, in bytes, there is :func:`qdb_stream_size
     :end-before: doc-end-stream_size
     :dedent: 8
 
+Timeseries
+----------
+
+We will first get around the basics, creating and listing columns in a timeseries.
+Then we will move forward to inserting data in different manners depending on your scenario.
+Then getting and aggregating the inserted points.
+
+To create a timeseries in quasardb, use the function :func:`qdb_ts_create`.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_create
+    :end-before: doc-end-ts_create
+    :dedent: 12
+
+You can also add columns with :func:`qdb_ts_insert_columns`.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_insert_columns
+    :end-before: doc-end-ts_insert_columns
+    :dedent: 12
+
+You can list all columns of a timseries :func:`qdb_ts_list_columns`:
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_list_columns
+    :end-before: doc-end-ts_list_columns
+    :dedent: 16
+
+Don't forget to release memory afterward.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_list_columns-release
+    :end-before: doc-end-ts_list_columns-release
+    :dedent: 16
+
+As a helper, we may use the following columns as shortcuts:
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_column_helpers
+    :end-before: doc-end-ts_column_helpers
+    :dedent: 12
+
+1.1 - Inserting data
+^^^^^^^^^^^^^^^^^^^^
+
+Let's say you use quasardb as a database for IOT without any filter or cache between your device and the server.
+You will need to insert the points as they come, as in one-by-one, and column-by-column.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_double_insert-single
+    :end-before: doc-end-ts_double_insert-single
+    :dedent: 16
+
+Assuming you now have some kind of cache that gets data from a SINGLE device.
+You're still stuck with column-by-column but you can begin to insert in a more efficient manner.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_double_insert-multiple
+    :end-before: doc-end-ts_double_insert-multiple
+    :dedent: 16
+
+You can insert blobs the same way with :func:`qdb_ts_blob_insert`.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_blob_insert
+    :end-before: doc-end-ts_blob_insert
+    :dedent: 16
+
+The same operations are available for int64s :func:`qdb_ts_int64_insert` and timestamps :func:`qdb_ts_timestamp_insert` since 2.2.0.
+
+1.2 - Bulk insert
+^^^^^^^^^^^^^^^^^
+Now you have some kind of super technology that collects measures from multiple devices.
+And you would want the most efficient way to insert them...
+I present you the row-by-row bulk API!
+
+First you need to initialize a table to store your information as a row.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-bulk-push-ts_local_table_init
+    :end-before: doc-end-bulk-push-ts_local_table_init
+    :dedent: 16
+
+Then you can set each values corresponding to the specified columns of your local table.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-bulk-push-ts_row_set
+    :end-before: doc-end-bulk-push-ts_row_set
+    :dedent: 16
+
+Once set, you can append this row with :func:`qdb_ts_table_row_append`
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-bulk-push-ts_append_row
+    :end-before: doc-end-bulk-push-ts_append_row
+    :dedent: 16
+
+You can finally push your data when you're done appending rows.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-bulk-push-ts_push
+    :end-before: doc-end-bulk-push-ts_push
+    :dedent: 16
+
+2.1 - Getting data
+^^^^^^^^^^^^^^^^^^
+
+Now that we have data inserted, it would be useful to retrieve results.
+You can either get ranges of values associated with timestamps, for this purpose we will use the :func:`qdb_ts_double_get_ranges`
+As you may have guessed the following calls are also possible :func:`qdb_ts_blob_get_ranges`, :func:`qdb_ts_int64_get_ranges` and :func:`qdb_ts_timestamp_get_ranges`.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_double_get_ranges
+    :end-before: doc-end-ts_double_get_ranges
+    :dedent: 16
+
+Don't forget to release the memory after usage:
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_double_get_ranges-release
+    :end-before: doc-end-ts_double_get_ranges-release
+    :dedent: 16
+
+
+2.2 - Bulk get
+^^^^^^^^^^^^^^
+
+Since 2.2.0 it is now possible to get results as a row, in a similar way as what you are used to in sql.
+First you need to initialize a local table, the same way you did for a bulk push.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-bulk-get-ts_local_table_init
+    :end-before: doc-end-bulk-get-ts_local_table_init
+    :dedent: 16
+
+Set the range that you want to get with :func:`qdb_ts_table_get_ranges`
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-bulk-get-ts_table_get_ranges
+    :end-before: doc-end-bulk-get-ts_table_get_ranges
+    :dedent: 16
+
+Then you can fetch each row, and read the data column-by-column:
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-bulk-get-fetching
+    :end-before: doc-end-bulk-get-fetching
+    :dedent: 20
+
+3 - Aggregating data
+^^^^^^^^^^^^^^^^^^^^
+
+Going further you may want to get aggregated results. Like average, min, max or first in a range.
+This is possible with :func:`qdb_ts_blob_aggregate`.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_double_aggregate
+    :end-before: doc-end-ts_double_aggregate
+    :dedent: 16
+
+To print the result:
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_double_aggregate-printf
+    :end-before: doc-end-ts_double_aggregate-printf
+    :dedent: 20
+
+The same can be done for blobs:
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_blob_aggregate
+    :end-before: doc-end-ts_blob_aggregate
+    :dedent: 16
+
+Again, print the result with printf
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_blob_aggregate-printf
+    :end-before: doc-end-ts_blob_aggregate-printf
+    :dedent: 20
+
+4 - Deleting data
+^^^^^^^^^^^^^^^^^
+It's possible to remove a range or multiple ranges of data within a timeseries column via :func:`qdb_ts_erase_ranges`.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_erase_ranges
+    :end-before: doc-end-ts_erase_ranges
+    :dedent: 16
+
+
+Finally, you may want to delete the timeseries, it's done the same way as any entry in quasardb, using :func:`qdb_remove`.
+
+.. literalinclude:: ../../../../examples/c/timeseries.c
+    :start-after: doc-start-ts_remove
+    :end-before: doc-end-ts_remove
+    :dedent: 12
+
 Logging
 -------
 
