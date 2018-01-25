@@ -70,7 +70,7 @@ Get the first 10 days of 2007 for "stocks.apple"::
 
     select * from stocks.apple in range(2007, +10d)
 
-Get the last second of 2017 for "stocks.apple"::
+Get the last second of 2016 for "stocks.apple"::
 
     select * from stocks.apple in range(2017, -1s)
 
