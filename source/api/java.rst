@@ -383,6 +383,259 @@ So, in a nutshell:
 1. don't keep the result of ``QdbBuffer.toByteBuffer()``
 2. call ``QdbBuffer.close()`` as soon as possible
 
+See Also (References):
+----------------------
+
+Aggregation
+^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbAggregation
+	:project: qdb_java_api
+	:members:
+
+Batch
+^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBatch
+	:project: qdb_java_api
+	:members:
+
+BatchBlob
+^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBatchBlob
+	:project: qdb_java_api
+	:members:
+
+BatchEntry
+^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBatchEntry
+	:project: qdb_java_api
+	:members:
+
+BatchFuture
+^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBatchFuture
+	:project: qdb_java_api
+	:members:
+
+BatchOperation
+^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBatchOperation
+	:project: qdb_java_api
+	:members:
+
+
+Cluster
+^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbCluster
+	:project: qdb_java_api
+	:members:
+
+Blobs
+^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBlob
+	:project: qdb_java_api
+	:members:
+
+BlobAggregation
+^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBlobAggregation
+	:project: qdb_java_api
+	:members:
+
+BlobAggregationCollection
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBlobAggregationCollection
+	:project: qdb_java_api
+	:members:
+
+Blob Column Collection
+^^^^^^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBlobColumnCollection
+	:project: qdb_java_api
+	:members:
+
+Blob Column Value
+^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbBlobColumnValue
+	:project: qdb_java_api
+	:members:
+
+Column Collection
+^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbColumnCollection
+	:project: qdb_java_api
+	:members:
+
+
+Column Definition
+^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbColumnDefinition
+	:project: qdb_java_api
+	:members:
+
+Column Value
+^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbColumnValue
+	:project: qdb_java_api
+	:members:
+
+Deque
+^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbDeque
+	:project: qdb_java_api
+	:members:
+
+Double Aggregation
+^^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbDoubleAggregation
+	:project: qdb_java_api
+	:members:
+
+Double Aggregation Collection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbDoubleAggregationCollection
+	:project: qdb_java_api
+	:members:
+
+	
+Double Column Collection
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbDoubleColumnCollection
+	:project: qdb_java_api
+	:members:
+
+Double Column Value
+^^^^^^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbDoubleColumnValue
+	:project: qdb_java_api
+	:members:
+
+Entry
+^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbEntry
+	:project: qdb_java_api
+	:members:
+
+Entry Factory
+^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbEntryFactory
+	:project: qdb_java_api
+	:members:
+
+Entry Metadata
+^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbEntryMetadata
+	:project: qdb_java_api
+	:members:
+
+Entry Tags
+^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbEntryTags
+	:project: qdb_java_api
+	:members:
+	
+Expirable Entry
+^^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbExpirableEntry
+	:project: qdb_java_api
+	:members:
+
+Expiry Time
+^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbExpiryTime
+	:project: qdb_java_api
+	:members:
+
+HashSet
+^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbHashSet
+	:project: qdb_java_api
+	:members:
+
+Id
+^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbId
+	:project: qdb_java_api
+	:members:
+
+Integer
+^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbInteger
+	:project: qdb_java_api
+	:members:
+
+Node
+^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbNode
+	:project: qdb_java_api
+	:members:
+
+Stream
+^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbStream
+	:project: qdb_java_api
+	:members:
+
+Stream Channel
+^^^^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbStreamChannel
+	:project: qdb_java_api
+	:members:
+
+Tag
+^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbTag
+	:project: qdb_java_api
+	:members:
+
+Tag Entries
+^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbTagEntries
+	:project: qdb_java_api
+	:members:
+
+Time Series
+^^^^^^^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::QdbTimeSeries
+	:project: qdb_java_api
+	:members:
+
+
+
 Appendix A: entry class hierarchy
 ---------------------------------
 
