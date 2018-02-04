@@ -1,23 +1,17 @@
-Java (Legacy API)
-=================
+Java
+====
 
-.. default-domain:: java-legacy
-.. highlight:: java-legacy
+.. default-domain:: java
+.. highlight:: java
 
 Introduction
 ------------
 
-.. warning:: **You're looking at our deprecated, legacy Java API**
+This document is an introduction to the quasardb Java API. It is primarily focused on
+timeseries, and will guide you through the various ways you can interact with the
+QuasarDB backend.
 
-             This documment is about our deprecated Java API that is for customers
-             that were on our old, < 2.2.0 API. Please see our :doc:`java` documentation.
-
-This document is an introduction to the quasardb Java API.
-
-You can see this code in action in this sample project:
-https://github.com/bureau14/qdb-api-java-example
-
-For more detail, please refer to the Javadoc.
+For a more comprehensive reference, please refer directly to our Javadoc_.
 
 Installation
 ------------
@@ -44,8 +38,8 @@ For example, if you're using Maven, your ``pom.xml`` should look like:
       <dependencies>
         <dependency>
           <groupId>net.quasardb</groupId>
-          <artifactId>qdb</artifactId>
-          <version>2.0.0rc5</version>
+          <artifactId>jni</artifactId>
+          <version>2.2.0</version>
         </dependency>
       </dependencies>
     </project>
@@ -128,7 +122,7 @@ There are four other operations for blobs:
 - ``getAndUpdate()``
 - ``removeIf()``
 
-You'll find the details in the Javadoc.
+You'll find the details in the Javadoc_.
 
 Manipulating "deques"
 ---------------------
@@ -715,7 +709,4 @@ Appendix B: exception class hierarchy
 
       * ``QdbRemoteSystemException``
 
-Reference
----------
-
-* `Javadoc website <https://doc.quasardb.net/java/>`_
+.. _Javadoc: https://doc.quasardb.net/java/

@@ -14,6 +14,7 @@ API Reference
    go
    hadoop
    java
+   java-legacy
    net
    nodejs
    php
