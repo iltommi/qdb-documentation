@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_f59efa5425cef977443935985a794b1d" kind="dir">
+    <compoundname>exceptions/system</compoundname>
+    <innerdir refid="dir_a05b128dfb8d1c09848dd351fb1455d8">exceptions/system/local</innerdir>
+    <innerdir refid="dir_12ea17d74e66059492f4eaa4aa1f6676">exceptions/system/remote</innerdir>
+    <innerfile refid="_system_exception_8java">SystemException.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exceptions/system/"/>
+  </compounddef>
+</doxygen>

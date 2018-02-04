@@ -1,0 +1,90 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::InputException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.Exception</basecompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.InvalidArgumentException</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_out_of_bounds_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OutOfBoundsException</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.ReservedAliasException</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception_1ad5b6e09fc8b66e9fbec208904b47a93d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.InputException.InputException</definition>
+        <argsstring>(String message)</argsstring>
+        <name>InputException</name>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/input/InputException.java" line="8" column="1" bodyfile="exceptions/input/InputException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the input of a command caused an error. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="180">
+        <label>net.quasardb.qdb.exception.OutOfBoundsException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_out_of_bounds_exception"/>
+        <childnode refid="176" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="181">
+        <label>net.quasardb.qdb.exception.ReservedAliasException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception"/>
+        <childnode refid="176" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="178">
+        <label>RuntimeException</label>
+      </node>
+      <node id="176">
+        <label>net.quasardb.qdb.exception.InputException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception"/>
+        <childnode refid="177" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="177">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="178" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="179">
+        <label>net.quasardb.qdb.exception.InvalidArgumentException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception"/>
+        <childnode refid="176" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="184">
+        <label>RuntimeException</label>
+      </node>
+      <node id="182">
+        <label>net.quasardb.qdb.exception.InputException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception"/>
+        <childnode refid="183" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="183">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="184" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exceptions/input/InputException.java" line="6" column="1" bodyfile="exceptions/input/InputException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InputException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception_1ad5b6e09fc8b66e9fbec208904b47a93d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InputException</scope><name>InputException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

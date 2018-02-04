@@ -1,0 +1,336 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Writer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AutoCloseable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Flushable</basecompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" prot="public" virt="non-virtual">net.quasardb.qdb.ts.AutoFlushWriter</derivedcompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af59be70444f929e001da089d9c7ffa63" prot="package" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+        <definition>Session net.quasardb.qdb.ts.Writer.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="23" column="1" bodyfile="ts/Writer.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1adfe1e19376d8dc94edee037f0c16c55f" prot="package" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+        <definition>Table net.quasardb.qdb.ts.Writer.table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="24" column="1" bodyfile="ts/Writer.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af521870896ff566da2f8562b9cba1b3d" prot="package" static="no" mutable="no">
+        <type>Long</type>
+        <definition>Long net.quasardb.qdb.ts.Writer.localTable</definition>
+        <argsstring></argsstring>
+        <name>localTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="25" column="1" bodyfile="ts/Writer.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a75340be8ea4088c3c212014da2cb83b8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Writer.Writer</definition>
+        <argsstring>(Session session, Table table)</argsstring>
+        <name>Writer</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="27" column="1" bodyfile="ts/Writer.java" bodystart="27" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1acf869ddeea644676e679d23a0e45bf90" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Writer.finalize</definition>
+        <argsstring>()</argsstring>
+        <name>finalize</name>
+        <exceptions> throws Throwable </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleans up the internal representation of the local table. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="49" column="1" bodyfile="ts/Writer.java" bodystart="49" bodyend="55"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1afcb45c19cfc4d73901424010aefcd0fa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+        <definition>Table net.quasardb.qdb.ts.Writer.getTable</definition>
+        <argsstring>()</argsstring>
+        <name>getTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the underlying table that is being written to. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="41" column="1" bodyfile="ts/Writer.java" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a906f2b5a90d00876d2dc125e44a1c26c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Writer.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closes the timeseries table and local cache so that memory can be reclaimed. Flushes all remaining output. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="61" column="1" bodyfile="ts/Writer.java" bodystart="61" bodyend="66"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Writer.flush</definition>
+        <argsstring>()</argsstring>
+        <name>flush</name>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Flush current local cache to server. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="71" column="1" bodyfile="ts/Writer.java" bodystart="71" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a40f682f8ac6cb4aa3d1a5d70241f54a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Writer.append</definition>
+        <argsstring>(Row row)</argsstring>
+        <name>append</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref></type>
+          <declname>row</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Append a new row to the local table cache. Should be periodically flushed, unless an <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref> is used. <simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" kindref="member">flush</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ab6326323e1090cf527f3066bef5b69c8" kindref="member">Table::autoFlushWriter</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="82" column="1" bodyfile="ts/Writer.java" bodystart="82" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a49e252d9f73202ba81941b2d0d09b536" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Writer.append</definition>
+        <argsstring>(Timespec timestamp, Value[] value)</argsstring>
+        <name>append</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Append a new row to the local table cache. Should be periodically flushed, unless an <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref> is used. <simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" kindref="member">flush</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ab6326323e1090cf527f3066bef5b69c8" kindref="member">Table::autoFlushWriter</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="93" column="1" bodyfile="ts/Writer.java" bodystart="93" bodyend="95"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a7c36c5d76de7335563b6035c2f1cec15" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Writer.append</definition>
+        <argsstring>(LocalDateTime timestamp, Value[] value)</argsstring>
+        <name>append</name>
+        <param>
+          <type>LocalDateTime</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Append a new row to the local table cache. Should be periodically flushed, unless an <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref> is used. <simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" kindref="member">flush</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ab6326323e1090cf527f3066bef5b69c8" kindref="member">Table::autoFlushWriter</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="103" column="1" bodyfile="ts/Writer.java" bodystart="103" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a2980fcb53f005ad1c180dd1f73bc6b80" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Writer.append</definition>
+        <argsstring>(Timestamp timestamp, Value[] value)</argsstring>
+        <name>append</name>
+        <param>
+          <type>Timestamp</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Append a new row to the local table cache. Should be periodically flushed, unless an <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref> is used. <simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" kindref="member">flush</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ab6326323e1090cf527f3066bef5b69c8" kindref="member">Table::autoFlushWriter</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Writer.java" line="113" column="1" bodyfile="ts/Writer.java" bodystart="113" bodyend="115"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>High-performance bulk writer for a QuasarDB timeseries table.</para><para>Do not construct this class directly, but rather using <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a25b622f32c44d2fa6481f1a65bedd8c7" kindref="member">Table#writer</ref>. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="405">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="404">
+        <label>net.quasardb.qdb.ts.Writer</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer"/>
+        <childnode refid="405" relation="public-inheritance">
+        </childnode>
+        <childnode refid="406" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="407">
+        <label>net.quasardb.qdb.ts.AutoFlushWriter</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer"/>
+        <childnode refid="404" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="406">
+        <label>Flushable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="418">
+        <label>net.quasardb.qdb.Session</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_session"/>
+      </node>
+      <node id="413">
+        <label>net.quasardb.qdb.ts.Column</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column"/>
+        <childnode refid="414" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="409">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="414">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="412" relation="public-inheritance">
+        </childnode>
+        <childnode refid="415" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="416" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="417" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="417">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="412">
+        <label>Serializable</label>
+      </node>
+      <node id="408">
+        <label>net.quasardb.qdb.ts.Writer</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer"/>
+        <childnode refid="409" relation="public-inheritance">
+        </childnode>
+        <childnode refid="410" relation="public-inheritance">
+        </childnode>
+        <childnode refid="411" relation="usage">
+          <edgelabel>table</edgelabel>
+        </childnode>
+        <childnode refid="418" relation="usage">
+          <edgelabel>session</edgelabel>
+        </childnode>
+      </node>
+      <node id="411">
+        <label>net.quasardb.qdb.ts.Table</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table"/>
+        <childnode refid="412" relation="public-inheritance">
+        </childnode>
+        <childnode refid="413" relation="usage">
+          <edgelabel>columns</edgelabel>
+        </childnode>
+      </node>
+      <node id="410">
+        <label>Flushable</label>
+      </node>
+      <node id="416">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="412" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="415">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="ts/Writer.java" line="22" column="1" bodyfile="ts/Writer.java" bodystart="22" bodyend="116"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a40f682f8ac6cb4aa3d1a5d70241f54a6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a49e252d9f73202ba81941b2d0d09b536" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a7c36c5d76de7335563b6035c2f1cec15" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a2980fcb53f005ad1c180dd1f73bc6b80" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a906f2b5a90d00876d2dc125e44a1c26c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1acf869ddeea644676e679d23a0e45bf90" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>finalize</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>flush</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1afcb45c19cfc4d73901424010aefcd0fa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>getTable</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af521870896ff566da2f8562b9cba1b3d" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>localTable</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af59be70444f929e001da089d9c7ffa63" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1adfe1e19376d8dc94edee037f0c16c55f" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>table</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a75340be8ea4088c3c212014da2cb83b8" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Writer</scope><name>Writer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

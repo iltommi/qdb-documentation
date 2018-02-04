@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::BatchAlreadyRunException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OperationException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception_1a9e7a8da7b645b0bcea323c3652dc087e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.BatchAlreadyRunException.BatchAlreadyRunException</definition>
+        <argsstring>()</argsstring>
+        <name>BatchAlreadyRunException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/operation/BatchAlreadyRunException.java" line="8" column="1" bodyfile="exceptions/operation/BatchAlreadyRunException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when modifying a batch that has already been run. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="32">
+        <label>net.quasardb.qdb.exception.BatchAlreadyRunException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception"/>
+        <childnode refid="33" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="35">
+        <label>RuntimeException</label>
+      </node>
+      <node id="33">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="34" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="34">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="35" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="36">
+        <label>net.quasardb.qdb.exception.BatchAlreadyRunException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception"/>
+        <childnode refid="37" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="39">
+        <label>RuntimeException</label>
+      </node>
+      <node id="37">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="38">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="39" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exceptions/operation/BatchAlreadyRunException.java" line="6" column="1" bodyfile="exceptions/operation/BatchAlreadyRunException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception_1a9e7a8da7b645b0bcea323c3652dc087e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchAlreadyRunException</scope><name>BatchAlreadyRunException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchAlreadyRunException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchAlreadyRunException</scope><name>OperationException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

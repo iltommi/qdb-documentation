@@ -1,0 +1,157 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::FilteredRange</compoundname>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a0f6e5714862f38ed65260cf2fbc3e4c5" prot="package" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref></type>
+        <definition>TimeRange net.quasardb.qdb.ts.FilteredRange.range</definition>
+        <argsstring></argsstring>
+        <name>range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/FilteredRange.java" line="11" column="1" bodyfile="ts/FilteredRange.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a77ac9670fffef28ef86290615cbc832c" prot="package" static="no" mutable="no">
+        <type>qdb_ts_filter</type>
+        <definition>qdb_ts_filter net.quasardb.qdb.ts.FilteredRange.filter</definition>
+        <argsstring></argsstring>
+        <name>filter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/FilteredRange.java" line="12" column="1" bodyfile="ts/FilteredRange.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a43a20874ba40041de509bc1563d3b713" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.FilteredRange.FilteredRange</definition>
+        <argsstring>(TimeRange range)</argsstring>
+        <name>FilteredRange</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref></type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Wraps a <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref> without applying any filters. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/FilteredRange.java" line="17" column="1" bodyfile="ts/FilteredRange.java" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1ad2a0aef2fb7f2b89d650976230391b66" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref></type>
+        <definition>TimeRange net.quasardb.qdb.ts.FilteredRange.getRange</definition>
+        <argsstring>()</argsstring>
+        <name>getRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access to the underlying <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref>. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/FilteredRange.java" line="29" column="1" bodyfile="ts/FilteredRange.java" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a08fd1a07a555060202fc04d8d300599c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.FilteredRange.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/FilteredRange.java" line="37" column="1" bodyfile="ts/FilteredRange.java" bodystart="37" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a3e545d8122149b81912ddbcc1689d8b8" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.FilteredRange.FilteredRange</definition>
+        <argsstring>(TimeRange range, qdb_ts_filter filter)</argsstring>
+        <name>FilteredRange</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref></type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>qdb_ts_filter</type>
+          <declname>filter</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/FilteredRange.java" line="21" column="1" bodyfile="ts/FilteredRange.java" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a6cab702c1c8460541f75fb492908001f" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_ts_filter</type>
+        <definition>qdb_ts_filter net.quasardb.qdb.ts.FilteredRange.getFilter</definition>
+        <argsstring>()</argsstring>
+        <name>getFilter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/FilteredRange.java" line="33" column="1" bodyfile="ts/FilteredRange.java" bodystart="33" bodyend="35"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents a time range with additional filters applied.</para><para>Currently serves as a placeholder class, as no filters are supported yet. </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="157">
+        <label>net.quasardb.qdb.ts.TimeRange</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range"/>
+        <childnode refid="158" relation="public-inheritance">
+        </childnode>
+        <childnode refid="159" relation="usage">
+          <edgelabel>begin</edgelabel>
+          <edgelabel>end</edgelabel>
+        </childnode>
+      </node>
+      <node id="156">
+        <label>net.quasardb.qdb.ts.FilteredRange</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range"/>
+        <childnode refid="157" relation="usage">
+          <edgelabel>range</edgelabel>
+        </childnode>
+      </node>
+      <node id="158">
+        <label>Serializable</label>
+      </node>
+      <node id="159">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="158" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ts/FilteredRange.java" line="10" column="1" bodyfile="ts/FilteredRange.java" bodystart="10" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a77ac9670fffef28ef86290615cbc832c" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>filter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a43a20874ba40041de509bc1563d3b713" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>FilteredRange</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a3e545d8122149b81912ddbcc1689d8b8" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>FilteredRange</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a6cab702c1c8460541f75fb492908001f" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>getFilter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1ad2a0aef2fb7f2b89d650976230391b66" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>getRange</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a0f6e5714862f38ed65260cf2fbc3e4c5" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>range</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a08fd1a07a555060202fc04d8d300599c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

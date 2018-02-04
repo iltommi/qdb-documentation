@@ -1,0 +1,217 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::Exception</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">RuntimeException</basecompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.ConnectionException</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.InputException</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OperationException</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.ProtocolException</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.SystemException</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.Exception.Exception</definition>
+        <argsstring>(String message)</argsstring>
+        <name>Exception</name>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/Exception.java" line="8" column="1" bodyfile="exceptions/Exception.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when an entry cannot be found in the database </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="140">
+        <label>net.quasardb.qdb.exception.IncompatibleTypeException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_incompatible_type_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="134">
+        <label>net.quasardb.qdb.exception.AliasNotFoundException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="143">
+        <label>net.quasardb.qdb.exception.OverflowException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="139">
+        <label>net.quasardb.qdb.exception.ClusterClosedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_cluster_closed_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="148">
+        <label>net.quasardb.qdb.exception.SystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="144">
+        <label>net.quasardb.qdb.exception.ResourceLockedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="136">
+        <label>net.quasardb.qdb.exception.BatchClosedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="145">
+        <label>net.quasardb.qdb.exception.UnderflowException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_underflow_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="147">
+        <label>net.quasardb.qdb.exception.InvalidReplyException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception"/>
+        <childnode refid="146" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="146">
+        <label>net.quasardb.qdb.exception.ProtocolException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="127">
+        <label>net.quasardb.qdb.exception.HostNotFoundException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="135">
+        <label>net.quasardb.qdb.exception.BatchAlreadyRunException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>net.quasardb.qdb.exception.OutOfBoundsException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_out_of_bounds_exception"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="150">
+        <label>net.quasardb.qdb.exception.RemoteSystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="142">
+        <label>net.quasardb.qdb.exception.OperationDisabledException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_disabled_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="131">
+        <label>net.quasardb.qdb.exception.ReservedAliasException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="124">
+        <label>RuntimeException</label>
+      </node>
+      <node id="137">
+        <label>net.quasardb.qdb.exception.BatchNotRunException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_not_run_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="125">
+        <label>net.quasardb.qdb.exception.ConnectionException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>net.quasardb.qdb.exception.ConnectionRefusedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>net.quasardb.qdb.exception.LocalSystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception"/>
+        <childnode refid="148" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="138">
+        <label>net.quasardb.qdb.exception.BufferClosedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_buffer_closed_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="128">
+        <label>net.quasardb.qdb.exception.InputException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="133">
+        <label>net.quasardb.qdb.exception.AliasAlreadyExistsException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="124" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="141">
+        <label>net.quasardb.qdb.exception.InvalidIteratorException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_iterator_exception"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="129">
+        <label>net.quasardb.qdb.exception.InvalidArgumentException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception"/>
+        <childnode refid="128" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="152">
+        <label>RuntimeException</label>
+      </node>
+      <node id="151">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="152" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exceptions/Exception.java" line="6" column="1" bodyfile="exceptions/Exception.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::Exception</scope><name>Exception</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

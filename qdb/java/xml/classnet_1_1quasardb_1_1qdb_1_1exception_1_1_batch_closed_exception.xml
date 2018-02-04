@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::BatchClosedException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OperationException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception_1a384f2dc44c61e79cf7a5432bbed9bc7e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.BatchClosedException.BatchClosedException</definition>
+        <argsstring>()</argsstring>
+        <name>BatchClosedException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/operation/BatchClosedException.java" line="8" column="1" bodyfile="exceptions/operation/BatchClosedException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when using a closed batch. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="40">
+        <label>net.quasardb.qdb.exception.BatchClosedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception"/>
+        <childnode refid="41" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="43">
+        <label>RuntimeException</label>
+      </node>
+      <node id="41">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="42" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="42">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="43" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="44">
+        <label>net.quasardb.qdb.exception.BatchClosedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception"/>
+        <childnode refid="45" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="47">
+        <label>RuntimeException</label>
+      </node>
+      <node id="45">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="46">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="47" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exceptions/operation/BatchClosedException.java" line="6" column="1" bodyfile="exceptions/operation/BatchClosedException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception_1a384f2dc44c61e79cf7a5432bbed9bc7e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchClosedException</scope><name>BatchClosedException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchClosedException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchClosedException</scope><name>OperationException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

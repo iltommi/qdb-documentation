@@ -1,0 +1,311 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Reader</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AutoCloseable</basecompoundref>
+    <basecompoundref prot="public" virt="non-virtual">Iterator&lt; Row &gt;</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1ac0cf741ede3f7406ff1572ece07120e8" prot="package" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+        <definition>Session net.quasardb.qdb.ts.Reader.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="23" column="1" bodyfile="ts/Reader.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1af60408cd76aef30e287b07cca2ee329b" prot="package" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+        <definition>Table net.quasardb.qdb.ts.Reader.table</definition>
+        <argsstring></argsstring>
+        <name>table</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="24" column="1" bodyfile="ts/Reader.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9495fabf5a3cf08bc2c8f501ab7867b5" prot="package" static="no" mutable="no">
+        <type>Long</type>
+        <definition>Long net.quasardb.qdb.ts.Reader.localTable</definition>
+        <argsstring></argsstring>
+        <name>localTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="25" column="1" bodyfile="ts/Reader.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a3403caad2a3ecadc45f484c3b5439880" prot="package" static="no" mutable="no">
+        <type>Reference&lt; <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref> &gt;</type>
+        <definition>Reference&lt;Row&gt; net.quasardb.qdb.ts.Reader.next</definition>
+        <argsstring></argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="26" column="1" bodyfile="ts/Reader.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1abb0ee2f55fe02ea4525f05b83e25eac5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Reader.Reader</definition>
+        <argsstring>(Session session, Table table, FilteredRange[] ranges)</argsstring>
+        <name>Reader</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range" kindref="compound">FilteredRange</ref> []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="28" column="1" bodyfile="ts/Reader.java" bodystart="28" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a74f99713e847f42d14c6798110887cdf" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Reader.finalize</definition>
+        <argsstring>()</argsstring>
+        <name>finalize</name>
+        <exceptions> throws Throwable </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Cleans up the internal representation of the local table. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="58" column="1" bodyfile="ts/Reader.java" bodystart="58" bodyend="64"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a6ac57796369ae728209a7df22d8b1ee4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+        <definition>Table net.quasardb.qdb.ts.Reader.getTable</definition>
+        <argsstring>()</argsstring>
+        <name>getTable</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para><simplesect kind="return"><para>The underlying table that is being written to. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="50" column="1" bodyfile="ts/Reader.java" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a07be3a508107317fc6291e74a33ff4bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Reader.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closes the timeseries table and local cache so that memory can be reclaimed. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="87" column="1" bodyfile="ts/Reader.java" bodystart="87" bodyend="90"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1aaa0e833b20271aecfd1ca2baa6d9f4af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.ts.Reader.hasNext</definition>
+        <argsstring>()</argsstring>
+        <name>hasNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check whether there is another row available for reading or not. When this function returns true, it is safe to call <ref refid="" kindref="compound">next</ref>.</para><para><simplesect kind="return"><para>Returns true when another row is available for reading. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="98" column="1" bodyfile="ts/Reader.java" bodystart="98" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9240baf8b992815d26ed0533960a9d78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref></type>
+        <definition>Row net.quasardb.qdb.ts.Reader.next</definition>
+        <argsstring>()</argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Modifies internal state to move forward to the next row. Make sure to check whether it is safe to read the next row using <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1aaa0e833b20271aecfd1ca2baa6d9f4af" kindref="member">hasNext</ref>.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>InvalidIteratorException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Thrown when the iterator has reached the end and no next row is available. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The next row. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="112" column="1" bodyfile="ts/Reader.java" bodystart="112" bodyend="120"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a367c1353862c1f5214eb4f6e3f911b41" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Reader.readNext</definition>
+        <argsstring>()</argsstring>
+        <name>readNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the next row from local table. Transparently updates the local reference to the internal row. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="70" column="1" bodyfile="ts/Reader.java" bodystart="70" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a5d0f1fab80e742a3f30270eaf6707bbc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Reader.maybeReadNext</definition>
+        <argsstring>()</argsstring>
+        <name>maybeReadNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the next row from local table when appropriate. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="78" column="1" bodyfile="ts/Reader.java" bodystart="78" bodyend="82"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>High-performance bulk reader for a QuasarDB timeseries table. This class follows the general Iterator pattern, and allows you to scan entire timeseries tables in bulk. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="285">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="286">
+        <label>Iterator&lt; Row &gt;</label>
+      </node>
+      <node id="284">
+        <label>net.quasardb.qdb.ts.Reader</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader"/>
+        <childnode refid="285" relation="public-inheritance">
+        </childnode>
+        <childnode refid="286" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="298">
+        <label>net.quasardb.qdb.Session</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_session"/>
+      </node>
+      <node id="290">
+        <label>Reference&lt; net.quasardb.qdb.ts.Row &gt;</label>
+      </node>
+      <node id="293">
+        <label>net.quasardb.qdb.ts.Column</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column"/>
+        <childnode refid="294" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="288">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="294">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="292" relation="public-inheritance">
+        </childnode>
+        <childnode refid="295" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="296" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="297" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="297">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="292">
+        <label>Serializable</label>
+      </node>
+      <node id="289">
+        <label>Iterator&lt; Row &gt;</label>
+      </node>
+      <node id="287">
+        <label>net.quasardb.qdb.ts.Reader</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader"/>
+        <childnode refid="288" relation="public-inheritance">
+        </childnode>
+        <childnode refid="289" relation="public-inheritance">
+        </childnode>
+        <childnode refid="290" relation="usage">
+          <edgelabel>next</edgelabel>
+        </childnode>
+        <childnode refid="291" relation="usage">
+          <edgelabel>table</edgelabel>
+        </childnode>
+        <childnode refid="298" relation="usage">
+          <edgelabel>session</edgelabel>
+        </childnode>
+      </node>
+      <node id="291">
+        <label>net.quasardb.qdb.ts.Table</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table"/>
+        <childnode refid="292" relation="public-inheritance">
+        </childnode>
+        <childnode refid="293" relation="usage">
+          <edgelabel>columns</edgelabel>
+        </childnode>
+      </node>
+      <node id="296">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="292" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="295">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="ts/Reader.java" line="22" column="1" bodyfile="ts/Reader.java" bodystart="22" bodyend="121"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a07be3a508107317fc6291e74a33ff4bc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a74f99713e847f42d14c6798110887cdf" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>finalize</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a6ac57796369ae728209a7df22d8b1ee4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>getTable</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1aaa0e833b20271aecfd1ca2baa6d9f4af" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>hasNext</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9495fabf5a3cf08bc2c8f501ab7867b5" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>localTable</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a5d0f1fab80e742a3f30270eaf6707bbc" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>maybeReadNext</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a3403caad2a3ecadc45f484c3b5439880" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>next</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9240baf8b992815d26ed0533960a9d78" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>next</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1abb0ee2f55fe02ea4525f05b83e25eac5" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>Reader</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a367c1353862c1f5214eb4f6e3f911b41" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>readNext</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1ac0cf741ede3f7406ff1572ece07120e8" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1af60408cd76aef30e287b07cca2ee329b" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>table</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

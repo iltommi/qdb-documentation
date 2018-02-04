@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_timestamp" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Column::Timestamp</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" prot="public" virt="non-virtual">net.quasardb.qdb.ts.Column</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_timestamp_1a56ab9096e9ecf47470afc6ea8230ecaa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Column.Timestamp.Timestamp</definition>
+        <argsstring>(String name)</argsstring>
+        <name>Timestamp</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Column.java" line="48" column="1" bodyfile="ts/Column.java" bodystart="48" bodyend="50"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A timestamp column. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="379">
+        <label>net.quasardb.qdb.ts.Column</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column"/>
+      </node>
+      <node id="378">
+        <label>net.quasardb.qdb.ts.Column.Timestamp</label>
+        <childnode refid="379" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="381">
+        <label>net.quasardb.qdb.ts.Column</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column"/>
+        <childnode refid="382" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="382">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="383" relation="public-inheritance">
+        </childnode>
+        <childnode refid="384" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="385" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="386" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="386">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="383">
+        <label>Serializable</label>
+      </node>
+      <node id="380">
+        <label>net.quasardb.qdb.ts.Column.Timestamp</label>
+        <childnode refid="381" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="385">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="383" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="384">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="ts/Column.java" line="47" column="1" bodyfile="ts/Column.java" bodystart="47" bodyend="51"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a8bf67fce23e22bc0636551f5922ecd70" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>Column</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a7463513eb63296a7350e91a9280a9dce" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>Column</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1afa3e1282b3c7e0161d803aeb1c5cfd9f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a16f9d727790a97db52cdba6cb6db6d17" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>getName</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a31bb70aebda5290cd47131c69ddc8c2b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>getType</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1ad23ebffcdc97cbc601f7aeebd4baeefe" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>name</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_timestamp_1a56ab9096e9ecf47470afc6ea8230ecaa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>Timestamp</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a6cdb9a8d96c6b355706ced28b7d092f4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a9e7fa0b4a4bf64df3b3de2ab8f25d501" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Timestamp</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

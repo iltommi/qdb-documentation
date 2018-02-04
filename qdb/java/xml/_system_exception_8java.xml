@@ -1,0 +1,23 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_system_exception_8java" kind="file" language="Java">
+    <compoundname>SystemException.java</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" prot="public">net::quasardb::qdb::exception::SystemException</innerclass>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb_1_1exception">net::quasardb::qdb::exception</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">net.quasardb.qdb.exception;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="6" refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" kindref="compound">SystemException</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref><sp/>{</highlight></codeline>
+<codeline lineno="7"><highlight class="normal"></highlight></codeline>
+<codeline lineno="8"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" kindref="compound">SystemException</ref>(String<sp/>message)<sp/>{</highlight></codeline>
+<codeline lineno="9"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(message);</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="11"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="exceptions/system/SystemException.java"/>
+  </compounddef>
+</doxygen>

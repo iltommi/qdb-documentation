@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::InvalidReplyException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.ProtocolException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1abab983eabeb7409b423ceae9df8fd8e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.InvalidReplyException.InvalidReplyException</definition>
+        <argsstring>()</argsstring>
+        <name>InvalidReplyException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/protocol/InvalidReplyException.java" line="8" column="1" bodyfile="exceptions/protocol/InvalidReplyException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1a5b9a5fe68515b8921f27c82131479e2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.InvalidReplyException.InvalidReplyException</definition>
+        <argsstring>(String message)</argsstring>
+        <name>InvalidReplyException</name>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/protocol/InvalidReplyException.java" line="12" column="1" bodyfile="exceptions/protocol/InvalidReplyException.java" bodystart="12" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown the response from a remote host cannot be treated. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="210">
+        <label>net.quasardb.qdb.exception.InvalidReplyException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception"/>
+        <childnode refid="211" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="211">
+        <label>net.quasardb.qdb.exception.ProtocolException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception"/>
+        <childnode refid="212" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="213">
+        <label>RuntimeException</label>
+      </node>
+      <node id="212">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="213" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="214">
+        <label>net.quasardb.qdb.exception.InvalidReplyException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception"/>
+        <childnode refid="215" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="215">
+        <label>net.quasardb.qdb.exception.ProtocolException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception"/>
+        <childnode refid="216" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="217">
+        <label>RuntimeException</label>
+      </node>
+      <node id="216">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="217" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exceptions/protocol/InvalidReplyException.java" line="6" column="1" bodyfile="exceptions/protocol/InvalidReplyException.java" bodystart="6" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidReplyException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1abab983eabeb7409b423ceae9df8fd8e6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidReplyException</scope><name>InvalidReplyException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1a5b9a5fe68515b8921f27c82131479e2f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidReplyException</scope><name>InvalidReplyException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception_1ae7df6f31a98013ab3c5aca7c7b013261" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidReplyException</scope><name>ProtocolException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

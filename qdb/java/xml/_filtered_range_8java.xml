@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_filtered_range_8java" kind="file" language="Java">
+    <compoundname>FilteredRange.java</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range" prot="public">net::quasardb::qdb::ts::FilteredRange</innerclass>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb_1_1ts">net::quasardb::qdb::ts</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">net.quasardb.qdb.ts;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacenet" kindref="compound">net</ref>.<ref refid="namespacenet_1_1quasardb" kindref="compound">quasardb</ref>.<ref refid="namespacenet_1_1quasardb_1_1qdb" kindref="compound">qdb</ref>.jni.*;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range" kindref="compound">FilteredRange</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref><sp/>range;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/>qdb_ts_filter<sp/>filter;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"></highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a43a20874ba40041de509bc1563d3b713" kindref="member">FilteredRange</ref>(<ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref><sp/>range){</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">this</highlight><highlight class="normal">(range,<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>qdb_ts_no_filter());</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"></highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a43a20874ba40041de509bc1563d3b713" kindref="member">FilteredRange</ref>(<ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref><sp/>range,<sp/>qdb_ts_filter<sp/>filter)<sp/>{</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.range<sp/>=<sp/>range;</highlight></codeline>
+<codeline lineno="23"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.filter<sp/>=<sp/>filter;</highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"></highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1ad2a0aef2fb7f2b89d650976230391b66" kindref="member">getRange</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this.range;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="33"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/>qdb_ts_filter<sp/>getFilter()<sp/>{</highlight></codeline>
+<codeline lineno="34"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this.filter;</highlight></codeline>
+<codeline lineno="35"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="36"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/>toString()<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="stringliteral">&quot;FilteredRange(range:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>this.range.toString()<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;,<sp/>filter:<sp/>&quot;</highlight><highlight class="normal"><sp/>+<sp/>this.filter.toString()<sp/>+<sp/><sp/></highlight><highlight class="stringliteral">&quot;)&quot;</highlight><highlight class="normal">;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="ts/FilteredRange.java"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception" kind="class"><name>net::quasardb::qdb::exception::AliasAlreadyExistsException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception_1a2d6be7baa2083cf529eef9815848905f" kind="function"><name>AliasAlreadyExistsException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception" kind="class"><name>net::quasardb::qdb::exception::AliasNotFoundException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception_1a450a1207fcb1bfde7c5d976af9ab7ed9" kind="function"><name>AliasNotFoundException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kind="class"><name>net::quasardb::qdb::ts::AutoFlushWriter</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a5a60f431bcddf116d3ce97ef9323633b" kind="variable"><name>counter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a56d2875fd7ae7697cf7b616fa3bace45" kind="variable"><name>threshold</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a46506e6d44d1fa0d4320226a0128f08d" kind="function"><name>AutoFlushWriter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a1a1248efddb7913666b6a7700a9a6f07" kind="function"><name>AutoFlushWriter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1ad057d49068a15fc60b4b5cb167a2392c" kind="function"><name>append</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception" kind="class"><name>net::quasardb::qdb::exception::BatchAlreadyRunException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception_1a9e7a8da7b645b0bcea323c3652dc087e" kind="function"><name>BatchAlreadyRunException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception" kind="class"><name>net::quasardb::qdb::exception::BatchClosedException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception_1a384f2dc44c61e79cf7a5432bbed9bc7e" kind="function"><name>BatchClosedException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_not_run_exception" kind="class"><name>net::quasardb::qdb::exception::BatchNotRunException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_not_run_exception_1aef7eed6d5f8b99e533cf7f1ffe58751d" kind="function"><name>BatchNotRunException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_blob" kind="class"><name>net::quasardb::qdb::ts::Column::Blob</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_blob_1a9651bd8e1d2bfbb65179c06cb6884bed" kind="function"><name>Blob</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_buffer" kind="class"><name>net::quasardb::qdb::Buffer</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a246e0d5dfe36f50f1a00b21538008947" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a062f9463660cdc2eb3b231897d165603" kind="variable"><name>buffer</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae47a181a6a5559ab23eb49e7b0f99f3b" kind="function"><name>Buffer</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a89bb51ca25b5a72af1942c99801332a7" kind="function"><name>finalize</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1abf49dd29690dc31bdc4224156d97c8a0" kind="function"><name>wrap</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a811ceb0114de090d1e94d777ad69d216" kind="function"><name>wrap</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1af8f6a70c46f0c834cbce59bbb936023a" kind="function"><name>close</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae48d09084c3ff18cabf486a0fff8c975" kind="function"><name>toByteBuffer</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a7ae7cb354801ac4e1a9040f723c4418b" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae6b4240f3a05e1b33a0ba1f44699109b" kind="function"><name>throwIfClosed</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_buffer_closed_exception" kind="class"><name>net::quasardb::qdb::exception::BufferClosedException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_buffer_closed_exception_1ababeb6d5068255f410ff6a062f2bb7e9" kind="function"><name>BufferClosedException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_cluster_closed_exception" kind="class"><name>net::quasardb::qdb::exception::ClusterClosedException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_cluster_closed_exception_1af8ac54e5cb2ac492c58e46b2913edd47" kind="function"><name>ClusterClosedException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" kind="class"><name>net::quasardb::qdb::ts::Column</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1ad23ebffcdc97cbc601f7aeebd4baeefe" kind="variable"><name>name</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a9e7fa0b4a4bf64df3b3de2ab8f25d501" kind="variable"><name>type</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a8bf67fce23e22bc0636551f5922ecd70" kind="function"><name>Column</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a16f9d727790a97db52cdba6cb6db6d17" kind="function"><name>getName</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a31bb70aebda5290cd47131c69ddc8c2b" kind="function"><name>getType</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1afa3e1282b3c7e0161d803aeb1c5cfd9f" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a6cdb9a8d96c6b355706ced28b7d092f4" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a7463513eb63296a7350e91a9280a9dce" kind="function"><name>Column</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception" kind="class"><name>net::quasardb::qdb::exception::ConnectionException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception_1a894e0925a895f2fc8eec9fbf5b80669c" kind="function"><name>ConnectionException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception" kind="class"><name>net::quasardb::qdb::exception::ConnectionRefusedException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception_1ad75da3bb10569ef5f9a2e2d9736fc52e" kind="function"><name>ConnectionRefusedException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_double" kind="class"><name>net::quasardb::qdb::ts::Column::Double</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_double_1a642a21a046cb8e4718ff79d391320330" kind="function"><name>Double</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kind="class"><name>net::quasardb::qdb::exception::Exception</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" kind="function"><name>Exception</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_factory" kind="class"><name>net::quasardb::qdb::exception::ExceptionFactory</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_factory_1aa677cfb7c1a0249d7e90f4451b7e81f7" kind="function"><name>throwIfError</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_factory_1a85916f182f3910a0a0824ee21345e5c7" kind="function"><name>createException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range" kind="class"><name>net::quasardb::qdb::ts::FilteredRange</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a0f6e5714862f38ed65260cf2fbc3e4c5" kind="variable"><name>range</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a77ac9670fffef28ef86290615cbc832c" kind="variable"><name>filter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a43a20874ba40041de509bc1563d3b713" kind="function"><name>FilteredRange</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1ad2a0aef2fb7f2b89d650976230391b66" kind="function"><name>getRange</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a08fd1a07a555060202fc04d8d300599c" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a3e545d8122149b81912ddbcc1689d8b8" kind="function"><name>FilteredRange</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a6cab702c1c8460541f75fb492908001f" kind="function"><name>getFilter</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception" kind="class"><name>net::quasardb::qdb::exception::HostNotFoundException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception_1a2d5d3c6bf75e246cc181ad221c469a08" kind="function"><name>HostNotFoundException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_incompatible_type_exception" kind="class"><name>net::quasardb::qdb::exception::IncompatibleTypeException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_incompatible_type_exception_1a2c87c55e8d752d147f1700c7716b78a8" kind="function"><name>IncompatibleTypeException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception" kind="class"><name>net::quasardb::qdb::exception::InputException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception_1ad5b6e09fc8b66e9fbec208904b47a93d" kind="function"><name>InputException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_int64" kind="class"><name>net::quasardb::qdb::ts::Column::Int64</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_int64_1add889170431be06f4d4f9fdb78a8208d" kind="function"><name>Int64</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception" kind="class"><name>net::quasardb::qdb::exception::InvalidArgumentException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception_1a96eb0e4bdb94fdde49f75d6b402655e1" kind="function"><name>InvalidArgumentException</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception_1a4408dead94c2f7082bcb1016945844ea" kind="function"><name>InvalidArgumentException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_iterator_exception" kind="class"><name>net::quasardb::qdb::exception::InvalidIteratorException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_iterator_exception_1afd05668b4a8e35dea1bb53bf58ec5f08" kind="function"><name>InvalidIteratorException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception" kind="class"><name>net::quasardb::qdb::exception::InvalidReplyException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1abab983eabeb7409b423ceae9df8fd8e6" kind="function"><name>InvalidReplyException</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1a5b9a5fe68515b8921f27c82131479e2f" kind="function"><name>InvalidReplyException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception" kind="class"><name>net::quasardb::qdb::exception::LocalSystemException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception_1a4be777e99f2c50f870b6290dae890be7" kind="function"><name>LocalSystemException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock" kind="class"><name>net::quasardb::qdb::ts::NanoClock</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a3eac7e36fc26c68f05fd8ba6ba6fcae3" kind="variable"><name>clock</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ac60a45c7d927e2db908df411e25205d6" kind="variable"><name>initialNanos</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aee716cfd3c6cfc4ad9c5503ebc0decdf" kind="variable"><name>initialInstant</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a0ec6432e6ec6410836959c36a1006714" kind="function"><name>NanoClock</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aae09122ee04813f8c352399155d96d37" kind="function"><name>NanoClock</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a628521cd1a9fb8d75dcbad7e4783d5ae" kind="function"><name>getZone</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ad6163fd8355a48f71213ea6648d35dac" kind="function"><name>instant</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aa82535ede89b1bf77c937c41fcd29e5c" kind="function"><name>withZone</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a83f0658dd7442af717d7c88401ed4f6d" kind="function"><name>getSystemNanos</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_disabled_exception" kind="class"><name>net::quasardb::qdb::exception::OperationDisabledException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_disabled_exception_1ae384a41f049ccb581a959f0b1f26fae7" kind="function"><name>OperationDisabledException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" kind="class"><name>net::quasardb::qdb::exception::OperationException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" kind="function"><name>OperationException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_out_of_bounds_exception" kind="class"><name>net::quasardb::qdb::exception::OutOfBoundsException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_out_of_bounds_exception_1ae53643ee72498c497c26e0d89db8d5a0" kind="function"><name>OutOfBoundsException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception" kind="class"><name>net::quasardb::qdb::exception::OverflowException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception_1a939dee6df26cdb959cbc156bec248359" kind="function"><name>OverflowException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception" kind="class"><name>net::quasardb::qdb::exception::ProtocolException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception_1ae7df6f31a98013ab3c5aca7c7b013261" kind="function"><name>ProtocolException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query" kind="class"><name>net::quasardb::qdb::ts::Query</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1a0304c78118407bcb7cdc750cd289ad0d" kind="variable"><name>query</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ab410f82a310c62ac73908a7c4e7e4948" kind="function"><name>Query</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1abdbfeb701a311423041c5b5736e8b687" kind="function"><name>Query</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ad5f4610408c12c46ccd94b9a6f66bc3f" kind="function"><name>create</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ab531147e707fb2a6a91e506c0ac1bf73" kind="function"><name>of</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1aed49713ecfc5607d15d7eec033c8e99f" kind="function"><name>execute</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder" kind="class"><name>net::quasardb::qdb::ts::QueryBuilder</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1ab91489389c115e3162b337ff51d3f42c" kind="variable"><name>query</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a3215ec5e313a0a60d066c8acc4b1e29b" kind="function"><name>QueryBuilder</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a076826b7361e4c0738fc08aad0acfbca" kind="function"><name>add</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a685323ae4190fcbc523395378b2997e7" kind="function"><name>in</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1aa99f5a91ebdc08a41ccc5e8e7cfc6515" kind="function"><name>asQuery</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a8b56da0062f2642321bcf064f538a4e5" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1afee738b53ad453f0fdc30250826fffc9" kind="function"><name>QueryBuilder</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader" kind="class"><name>net::quasardb::qdb::ts::Reader</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1ac0cf741ede3f7406ff1572ece07120e8" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1af60408cd76aef30e287b07cca2ee329b" kind="variable"><name>table</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9495fabf5a3cf08bc2c8f501ab7867b5" kind="variable"><name>localTable</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a3403caad2a3ecadc45f484c3b5439880" kind="variable"><name>next</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1abb0ee2f55fe02ea4525f05b83e25eac5" kind="function"><name>Reader</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a74f99713e847f42d14c6798110887cdf" kind="function"><name>finalize</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a6ac57796369ae728209a7df22d8b1ee4" kind="function"><name>getTable</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a07be3a508107317fc6291e74a33ff4bc" kind="function"><name>close</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1aaa0e833b20271aecfd1ca2baa6d9f4af" kind="function"><name>hasNext</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9240baf8b992815d26ed0533960a9d78" kind="function"><name>next</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a367c1353862c1f5214eb4f6e3f911b41" kind="function"><name>readNext</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a5d0f1fab80e742a3f30270eaf6707bbc" kind="function"><name>maybeReadNext</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception" kind="class"><name>net::quasardb::qdb::exception::RemoteSystemException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception_1ab51b0eb441c793d7a065f40fc70b2537" kind="function"><name>RemoteSystemException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception" kind="class"><name>net::quasardb::qdb::exception::ReservedAliasException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception_1a1ad26eb697833537b03c300cf4020ce5" kind="function"><name>ReservedAliasException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception" kind="class"><name>net::quasardb::qdb::exception::ResourceLockedException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception_1a3ae3940abcb841f6ba9f168ed1e2a697" kind="function"><name>ResourceLockedException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result" kind="class"><name>net::quasardb::qdb::ts::Result</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1a15310f6a299548f4569afb663769f381" kind="variable"><name>tables</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1ac42f90dd3b5b985d251bc7712d3864c2" kind="function"><name>Result</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1aee013a156e3a36a8f9fdb8bddaabb7e8" kind="function"><name>Result</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1a5a0631cd81cd030807d76a1ce788d49b" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kind="class"><name>net::quasardb::qdb::ts::Row</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ab4fe9860d306f4ca8cb0f007982e45f9" kind="variable"><name>timestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1a7cd3f5d432b785ff830edbabc222adc5" kind="variable"><name>values</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ac55407576ef80ee8bbc11c67c845ef37" kind="function"><name>Row</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1a34aaf409b3f107cdf64cfd09a1ef788e" kind="function"><name>Row</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1aa67b87d6cad9963cd191570c00eb2a43" kind="function"><name>Row</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1acdbdc9e7c5a6ea94af71ba6117c772dc" kind="function"><name>getTimestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ad91f0f9fc1ac1e1f5a5a327f033c961a" kind="function"><name>getValues</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1af4c8e3dcf16cbc899a7ebfc43b07eddb" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1af7f2412d6a4bfd4cb991766f42b3539c" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options" kind="class"><name>net::quasardb::qdb::Session::SecurityOptions</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af154e5dfe2bfd1fdf48693b9404b5fe6" kind="variable"><name>userName</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a2e18ee51ba58b12c5256985fceec689c" kind="variable"><name>userPrivateKey</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af9872aea6a401863bfc73a8cb8bce152" kind="variable"><name>clusterPublicKey</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a0c897ec7aa186e0c3f47e81332b642ec" kind="function"><name>SecurityOptions</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a03a032a8ab2d3d06ff54eb70caacf4cc" kind="function"><name>toNative</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_session" kind="class"><name>net::quasardb::qdb::Session</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a5366c50028697c77382157a9734659f6" kind="variable"><name>handle</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ae2fe28ef2548b167ac4a445760fe42f7" kind="variable"><name>securityOptions</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a761917a9a86021378691e71816dc72fb" kind="function"><name>Session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ab569d260522a54581ef42c9d0da724d1" kind="function"><name>Session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ab5283c3fa26aa7c0f2a3ed2add0bbe6f" kind="function"><name>connect</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a7e5d5fb2d9785d2bb5bf966443b9033b" kind="function"><name>close</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1acf4f4e322804a32db94f86d3ac81f928" kind="function"><name>isClosed</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a8c12e8a38b29056760cdfde5ef634b59" kind="function"><name>throwIfClosed</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1acebea1c7cff503819c8c884d28a0a8b6" kind="function"><name>handle</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ad124ec391a6a6ac6aa6d443cff004836" kind="function"><name>finalize</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" kind="class"><name>net::quasardb::qdb::exception::SystemException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception_1aca492c590628ea1834a845eede6eefe2" kind="function"><name>SystemException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kind="class"><name>net::quasardb::qdb::ts::Table</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1abf2495a20d8e6362fa0c0686f467732f" kind="variable"><name>name</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a14fac7b88ccea48eb1170dfe00feaf16" kind="variable"><name>columns</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aa953f51882ce6dde64730d1063ae34d4" kind="variable"><name>columnOffsets</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a46485132db6d165cae12cc69266b334a" kind="function"><name>Table</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a25b622f32c44d2fa6481f1a65bedd8c7" kind="function"><name>writer</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ab6326323e1090cf527f3066bef5b69c8" kind="function"><name>autoFlushWriter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aa78fb256e0caaf4891bee0c1cc07fe03" kind="function"><name>autoFlushWriter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a8383e5948b62cc7d39165761d9f0aea4" kind="function"><name>reader</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a22a38bfca2c3b7fb1b23ff0b39fc7591" kind="function"><name>reader</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a5fee81c8ddc4d0e0a6a8dd9ffed0ca0d" kind="function"><name>getName</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a2ea0f236609bce311a57c8d92e5c5edb" kind="function"><name>getColumnInfo</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a33828ee88d69fb8d3f21403c092733e6" kind="function"><name>columnIndexById</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table" kind="class"><name>net::quasardb::qdb::ts::Result::Table</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a70893c34a6321c630c6b85a2e439f0c0" kind="variable"><name>name</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a4cb226079815e334761f3add31bffaf9" kind="variable"><name>columns</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a07efff918d75e8250a91f72b0af13f24" kind="variable"><name>rows</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1ad02abf4ed0d9838d0bc46566754d10eb" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kind="class"><name>net::quasardb::qdb::ts::TimeRange</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1af2d697aca448cc16e6a616004e5b39fc" kind="variable"><name>begin</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1a9313da13abc0765c72ab2f4550e3060b" kind="variable"><name>end</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1a9562035b76221d31d7f9147bfbc92067" kind="function"><name>TimeRange</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1a98bd22a220b3609e9ba0c0e9cee0a700" kind="function"><name>getBegin</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1a21bcc71c501bcb68f9b87bc4ab93f8dd" kind="function"><name>withBegin</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1a3bd7ceb2515dc9e92a6f3aded56491a4" kind="function"><name>getEnd</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1a07fd2edd380d58435998fe2c912241d6" kind="function"><name>withEnd</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range_1ac60a42f310f5c88400aac579889a6911" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kind="class"><name>net::quasardb::qdb::ts::Timespec</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a722ff58f5728678504bc91dc19d6ba4f" kind="variable"><name>clock</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a140be48d3f11c43ec49b157d945428ad" kind="variable"><name>sec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1af48bc6201a64aa1cb745d702393fff4a" kind="variable"><name>nsec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a3a6f22bf7e068ae77b210b71d7b196af" kind="function"><name>Timespec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ab68fde11c45ef754eb43451ca7b715d2" kind="function"><name>Timespec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a88ec741726f7d607c052ebb793b85a17" kind="function"><name>Timespec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1acce55406c130c83e90aadc16fc4e4448" kind="function"><name>Timespec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a423d3bf28da00b7ddc248cec350b76a2" kind="function"><name>Timespec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a4a0fad684f8d6b9ebefee8023b635c7d" kind="function"><name>getSec</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ab6e9589717ad652ffd87f19d85c0ea34" kind="function"><name>getNano</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1aff8af9bdcd66c2b8cfce7d47cd983b16" kind="function"><name>plusSeconds</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a4abef42ceaa3e1d62df4f920b04136d4" kind="function"><name>plusNanos</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a825647a2769be64265e93b97a25e1c3c" kind="function"><name>asInstant</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a584c47e125d6ec6da28010ffa71c55bd" kind="function"><name>asLocalDateTime</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a661f065bdcb3b76d5abd3cad9341841d" kind="function"><name>asTimestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1aaa12b8c30b2dbec29883705c8468148a" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a787c8a57415727bf95ac58b5657dec8b" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ac91d638faef16fc7efae401148fff050" kind="function"><name>now</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a1db6d6154852fe9ce7be22783e15a46e" kind="function"><name>now</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_timestamp" kind="class"><name>net::quasardb::qdb::ts::Column::Timestamp</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_timestamp_1a56ab9096e9ecf47470afc6ea8230ecaa" kind="function"><name>Timestamp</name></member>
+  </compound>
+  <compound refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type" kind="enum"><name>net::quasardb::qdb::ts::Value::Type</name>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1ab81f0a4f247c7e5ac41cb1e1cadf2fba" kind="variable"><name>UNINITIALIZED</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1af3625c3f9edb0db8bb51dbbdf6a6ecea" kind="variable"><name>DOUBLE</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a22fb03ce4afa0a5b1e069639505ea2be" kind="variable"><name>BLOB</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1acac67e4bc1fe9870f138a5fd2caa2e79" kind="variable"><name>INT64</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a5a2bdc66ea0ab972f1008623b2b1b593" kind="variable"><name>TIMESTAMP</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a7db81757413f2a32a6544b9ea1869791" kind="variable"><name>value</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1ab3ada7dc255c05b3e293a14956786c9c" kind="function"><name>Type</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a4d90255112c345fccd885f36b41cfaed" kind="function"><name>asInt</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a3d5ef7841610cba9293295677dfc2944" kind="function"><name>fromInt</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_underflow_exception" kind="class"><name>net::quasardb::qdb::exception::UnderflowException</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_underflow_exception_1aaf33169aabc3c53fe0f5eb719aac9365" kind="function"><name>UnderflowException</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kind="class"><name>net::quasardb::qdb::ts::Value</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1afb90d5a839b3523cf91fd78fb679bf8a" kind="variable"><name>hexArray</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5c69924335ed97197f81105e06baf104" kind="variable"><name>type</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5d523ae893bb54b635850c120304e164" kind="variable"><name>int64Value</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0a806421cbdad685d0c6eb0ad5710309" kind="variable"><name>doubleValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae59e2d0b630c1e14ef05f8c2b39695bf" kind="variable"><name>timestampValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aabea8e2921a73e24c66c376842f4a3b1" kind="variable"><name>blobValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aac071d1feec5521fbf7405cc9b0ad417" kind="function"><name>Value</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a4b891abe900ea064567982741103b9e4" kind="function"><name>setNull</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aae1d4ca5248f39ac6ccc9d178d5cb52d" kind="function"><name>setInt64</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a344ba9095f0e3004d029fcddebc92169" kind="function"><name>setDouble</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7d2a93d25bd1ad066b8a159792a6de4e" kind="function"><name>setTimestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6af7416923c5b80c60c7b4e833b69920" kind="function"><name>setBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1acd0265bb27d4c57a5ab898aae25735a1" kind="function"><name>setBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a3d7e38b3e2038352479991eb5aa4f438" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6fdfd849aff4d6872814e780c9fc6a7d" kind="function"><name>getType</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6600492022fa9be1f0d56f09ef9081ce" kind="function"><name>getInt64</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a31078dc93f4595ce71c132a1e76c838f" kind="function"><name>getDouble</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a32ddf392be750c2ce4edeec2cd19be8d" kind="function"><name>getTimestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae9a55f5bb96f2094d8ffdcb650700a9d" kind="function"><name>getBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a743b4bdf83199c949961319b038b823d" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae17cece4b7640ca872d6c45b527f83d6" kind="function"><name>Value</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a89d8f51e80359f67dad553ca3bb10419" kind="function"><name>createNull</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1af01afcf3f4a2a752c2008151cc829501" kind="function"><name>createInt64</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7e387e1798a83a3002f7bb33f3e05d6f" kind="function"><name>createDouble</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ad9558e2c059e37e0bb81bdb1ed695071" kind="function"><name>createTimestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a40557c06ad80a831fc085d96685f75e9" kind="function"><name>createBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0f75a2704bddef927bca9b745fb8576f" kind="function"><name>createBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aaea48197075483221250201454e153f8" kind="function"><name>createSafeBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a85a6ed04a0154e4c6666950fd23c8856" kind="function"><name>createSafeBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aae35b456e65013c5ca10df722d494f12" kind="function"><name>bytesToHex</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a028381b5b95abaa7cd999c20b2e76719" kind="function"><name>writeBlobValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a4a4ccdd21d710250df630c2f4aee6317" kind="function"><name>writeObject</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aa5ae7c7b92d92d384f03b5035acb2f27" kind="function"><name>readObject</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7373f4e9b98dafa4c9185d1f32ee425d" kind="function"><name>readBlobValue</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer" kind="class"><name>net::quasardb::qdb::ts::Writer</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af59be70444f929e001da089d9c7ffa63" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1adfe1e19376d8dc94edee037f0c16c55f" kind="variable"><name>table</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af521870896ff566da2f8562b9cba1b3d" kind="variable"><name>localTable</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a75340be8ea4088c3c212014da2cb83b8" kind="function"><name>Writer</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1acf869ddeea644676e679d23a0e45bf90" kind="function"><name>finalize</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1afcb45c19cfc4d73901424010aefcd0fa" kind="function"><name>getTable</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a906f2b5a90d00876d2dc125e44a1c26c" kind="function"><name>close</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" kind="function"><name>flush</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a40f682f8ac6cb4aa3d1a5d70241f54a6" kind="function"><name>append</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a49e252d9f73202ba81941b2d0d09b536" kind="function"><name>append</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a7c36c5d76de7335563b6035c2f1cec15" kind="function"><name>append</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a2980fcb53f005ad1c180dd1f73bc6b80" kind="function"><name>append</name></member>
+  </compound>
+  <compound refid="namespacejava_1_1io" kind="namespace"><name>java::io</name>
+  </compound>
+  <compound refid="namespacejava_1_1util" kind="namespace"><name>java::util</name>
+  </compound>
+  <compound refid="namespacenet" kind="namespace"><name>net</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb" kind="namespace"><name>net::quasardb</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb" kind="namespace"><name>net::quasardb::qdb</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb_1_1exception" kind="namespace"><name>net::quasardb::qdb::exception</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb_1_1jni" kind="namespace"><name>net::quasardb::qdb::jni</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb_1_1ts" kind="namespace"><name>net::quasardb::qdb::ts</name>
+  </compound>
+  <compound refid="_buffer_8java" kind="file"><name>Buffer.java</name>
+  </compound>
+  <compound refid="_session_8java" kind="file"><name>Session.java</name>
+  </compound>
+  <compound refid="_connection_exception_8java" kind="file"><name>ConnectionException.java</name>
+  </compound>
+  <compound refid="_connection_refused_exception_8java" kind="file"><name>ConnectionRefusedException.java</name>
+  </compound>
+  <compound refid="_host_not_found_exception_8java" kind="file"><name>HostNotFoundException.java</name>
+  </compound>
+  <compound refid="_exception_8java" kind="file"><name>Exception.java</name>
+  </compound>
+  <compound refid="_exception_factory_8java" kind="file"><name>ExceptionFactory.java</name>
+  </compound>
+  <compound refid="_input_exception_8java" kind="file"><name>InputException.java</name>
+  </compound>
+  <compound refid="_invalid_argument_exception_8java" kind="file"><name>InvalidArgumentException.java</name>
+  </compound>
+  <compound refid="_out_of_bounds_exception_8java" kind="file"><name>OutOfBoundsException.java</name>
+  </compound>
+  <compound refid="_reserved_alias_exception_8java" kind="file"><name>ReservedAliasException.java</name>
+  </compound>
+  <compound refid="_alias_already_exists_exception_8java" kind="file"><name>AliasAlreadyExistsException.java</name>
+  </compound>
+  <compound refid="_alias_not_found_exception_8java" kind="file"><name>AliasNotFoundException.java</name>
+  </compound>
+  <compound refid="_batch_already_run_exception_8java" kind="file"><name>BatchAlreadyRunException.java</name>
+  </compound>
+  <compound refid="_batch_closed_exception_8java" kind="file"><name>BatchClosedException.java</name>
+  </compound>
+  <compound refid="_batch_not_run_exception_8java" kind="file"><name>BatchNotRunException.java</name>
+  </compound>
+  <compound refid="_buffer_closed_exception_8java" kind="file"><name>BufferClosedException.java</name>
+  </compound>
+  <compound refid="_cluster_closed_exception_8java" kind="file"><name>ClusterClosedException.java</name>
+  </compound>
+  <compound refid="_incompatible_type_exception_8java" kind="file"><name>IncompatibleTypeException.java</name>
+  </compound>
+  <compound refid="_invalid_iterator_exception_8java" kind="file"><name>InvalidIteratorException.java</name>
+  </compound>
+  <compound refid="_operation_disabled_exception_8java" kind="file"><name>OperationDisabledException.java</name>
+  </compound>
+  <compound refid="_operation_exception_8java" kind="file"><name>OperationException.java</name>
+  </compound>
+  <compound refid="_overflow_exception_8java" kind="file"><name>OverflowException.java</name>
+  </compound>
+  <compound refid="_resource_locked_exception_8java" kind="file"><name>ResourceLockedException.java</name>
+  </compound>
+  <compound refid="_underflow_exception_8java" kind="file"><name>UnderflowException.java</name>
+  </compound>
+  <compound refid="_invalid_reply_exception_8java" kind="file"><name>InvalidReplyException.java</name>
+  </compound>
+  <compound refid="_protocol_exception_8java" kind="file"><name>ProtocolException.java</name>
+  </compound>
+  <compound refid="_local_system_exception_8java" kind="file"><name>LocalSystemException.java</name>
+  </compound>
+  <compound refid="_remote_system_exception_8java" kind="file"><name>RemoteSystemException.java</name>
+  </compound>
+  <compound refid="_system_exception_8java" kind="file"><name>SystemException.java</name>
+  </compound>
+  <compound refid="_auto_flush_writer_8java" kind="file"><name>AutoFlushWriter.java</name>
+  </compound>
+  <compound refid="_column_8java" kind="file"><name>Column.java</name>
+  </compound>
+  <compound refid="_filtered_range_8java" kind="file"><name>FilteredRange.java</name>
+  </compound>
+  <compound refid="_nano_clock_8java" kind="file"><name>NanoClock.java</name>
+  </compound>
+  <compound refid="_query_8java" kind="file"><name>Query.java</name>
+  </compound>
+  <compound refid="_query_builder_8java" kind="file"><name>QueryBuilder.java</name>
+  </compound>
+  <compound refid="_reader_8java" kind="file"><name>Reader.java</name>
+  </compound>
+  <compound refid="_result_8java" kind="file"><name>Result.java</name>
+  </compound>
+  <compound refid="_row_8java" kind="file"><name>Row.java</name>
+  </compound>
+  <compound refid="_table_8java" kind="file"><name>Table.java</name>
+  </compound>
+  <compound refid="_time_range_8java" kind="file"><name>TimeRange.java</name>
+  </compound>
+  <compound refid="_timespec_8java" kind="file"><name>Timespec.java</name>
+  </compound>
+  <compound refid="_value_8java" kind="file"><name>Value.java</name>
+  </compound>
+  <compound refid="_writer_8java" kind="file"><name>Writer.java</name>
+  </compound>
+  <compound refid="dir_c89fe45d927910af9d1871e75255b348" kind="dir"><name>connection</name>
+  </compound>
+  <compound refid="dir_698825783587b16916b0560ada2ef092" kind="dir"><name>exceptions/connection</name>
+  </compound>
+  <compound refid="dir_fceced95d8215eeebebd9df6aa39e1a5" kind="dir"><name>exceptions</name>
+  </compound>
+  <compound refid="dir_c12e2c22e0f501a06a9a9b88a151b3ca" kind="dir"><name>exceptions/input</name>
+  </compound>
+  <compound refid="dir_a05b128dfb8d1c09848dd351fb1455d8" kind="dir"><name>exceptions/system/local</name>
+  </compound>
+  <compound refid="dir_1965c03869e13dfc9585115a2f12f20e" kind="dir"><name>exceptions/operation</name>
+  </compound>
+  <compound refid="dir_d2daa16d5033dbdb1a8e6499850bafd2" kind="dir"><name>exceptions/protocol</name>
+  </compound>
+  <compound refid="dir_12ea17d74e66059492f4eaa4aa1f6676" kind="dir"><name>exceptions/system/remote</name>
+  </compound>
+  <compound refid="dir_f59efa5425cef977443935985a794b1d" kind="dir"><name>exceptions/system</name>
+  </compound>
+  <compound refid="dir_e5bdf6bcb353eef476ed7a66082b6a34" kind="dir"><name>ts</name>
+  </compound>
+</doxygenindex>

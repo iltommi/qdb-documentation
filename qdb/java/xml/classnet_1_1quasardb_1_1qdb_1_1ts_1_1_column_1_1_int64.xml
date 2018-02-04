@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_int64" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Column::Int64</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" prot="public" virt="non-virtual">net.quasardb.qdb.ts.Column</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_int64_1add889170431be06f4d4f9fdb78a8208d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Column.Int64.Int64</definition>
+        <argsstring>(String name)</argsstring>
+        <name>Int64</name>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Column.java" line="38" column="1" bodyfile="ts/Column.java" bodystart="38" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A 64 bit integer column. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="186">
+        <label>net.quasardb.qdb.ts.Column</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column"/>
+      </node>
+      <node id="185">
+        <label>net.quasardb.qdb.ts.Column.Int64</label>
+        <childnode refid="186" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="188">
+        <label>net.quasardb.qdb.ts.Column</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column"/>
+        <childnode refid="189" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="189">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+        <childnode refid="191" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="192" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="193" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="193">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="190">
+        <label>Serializable</label>
+      </node>
+      <node id="192">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="190" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="191">
+        <label>ByteBuffer</label>
+      </node>
+      <node id="187">
+        <label>net.quasardb.qdb.ts.Column.Int64</label>
+        <childnode refid="188" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ts/Column.java" line="37" column="1" bodyfile="ts/Column.java" bodystart="37" bodyend="41"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a8bf67fce23e22bc0636551f5922ecd70" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>Column</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a7463513eb63296a7350e91a9280a9dce" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>Column</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1afa3e1282b3c7e0161d803aeb1c5cfd9f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a16f9d727790a97db52cdba6cb6db6d17" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>getName</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a31bb70aebda5290cd47131c69ddc8c2b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>getType</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1_1_int64_1add889170431be06f4d4f9fdb78a8208d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>Int64</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1ad23ebffcdc97cbc601f7aeebd4baeefe" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>name</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a6cdb9a8d96c6b355706ced28b7d092f4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column_1a9e7fa0b4a4bf64df3b3de2ab8f25d501" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Column::Int64</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

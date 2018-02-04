@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_698825783587b16916b0560ada2ef092" kind="dir">
+    <compoundname>exceptions/connection</compoundname>
+    <innerfile refid="_connection_exception_8java">ConnectionException.java</innerfile>
+    <innerfile refid="_connection_refused_exception_8java">ConnectionRefusedException.java</innerfile>
+    <innerfile refid="_host_not_found_exception_8java">HostNotFoundException.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exceptions/connection/"/>
+  </compounddef>
+</doxygen>

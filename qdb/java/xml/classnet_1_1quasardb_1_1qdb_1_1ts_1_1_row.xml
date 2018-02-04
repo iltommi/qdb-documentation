@@ -1,0 +1,228 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Row</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Serializable</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ab4fe9860d306f4ca8cb0f007982e45f9" prot="protected" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
+        <definition>Timespec net.quasardb.qdb.ts.Row.timestamp</definition>
+        <argsstring></argsstring>
+        <name>timestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="18" column="1" bodyfile="ts/Row.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1a7cd3f5d432b785ff830edbabc222adc5" prot="protected" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+        <definition>Value [] net.quasardb.qdb.ts.Row.values</definition>
+        <argsstring></argsstring>
+        <name>values</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="19" column="1" bodyfile="ts/Row.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ac55407576ef80ee8bbc11c67c845ef37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Row.Row</definition>
+        <argsstring>(Timespec timestamp, Value[] values)</argsstring>
+        <name>Row</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="21" column="1" bodyfile="ts/Row.java" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1a34aaf409b3f107cdf64cfd09a1ef788e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Row.Row</definition>
+        <argsstring>(LocalDateTime timestamp, Value[] values)</argsstring>
+        <name>Row</name>
+        <param>
+          <type>LocalDateTime</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="26" column="1" bodyfile="ts/Row.java" bodystart="26" bodyend="28"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1aa67b87d6cad9963cd191570c00eb2a43" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Row.Row</definition>
+        <argsstring>(Timestamp timestamp, Value[] values)</argsstring>
+        <name>Row</name>
+        <param>
+          <type>Timestamp</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+          <declname>values</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="30" column="1" bodyfile="ts/Row.java" bodystart="30" bodyend="32"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1acdbdc9e7c5a6ea94af71ba6117c772dc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
+        <definition>Timespec net.quasardb.qdb.ts.Row.getTimestamp</definition>
+        <argsstring>()</argsstring>
+        <name>getTimestamp</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="34" column="1" bodyfile="ts/Row.java" bodystart="34" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ad91f0f9fc1ac1e1f5a5a327f033c961a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> []</type>
+        <definition>Value [] net.quasardb.qdb.ts.Row.getValues</definition>
+        <argsstring>()</argsstring>
+        <name>getValues</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="38" column="1" bodyfile="ts/Row.java" bodystart="38" bodyend="40"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1af4c8e3dcf16cbc899a7ebfc43b07eddb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.ts.Row.equals</definition>
+        <argsstring>(Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="43" column="1" bodyfile="ts/Row.java" bodystart="43" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1af7f2412d6a4bfd4cb991766f42b3539c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.Row.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Row.java" line="52" column="1" bodyfile="ts/Row.java" bodystart="52" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents a timeseries row. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="332">
+        <label>Serializable</label>
+      </node>
+      <node id="331">
+        <label>net.quasardb.qdb.ts.Row</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row"/>
+        <childnode refid="332" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="335">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="334" relation="public-inheritance">
+        </childnode>
+        <childnode refid="336" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="337" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="338" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="338">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="334">
+        <label>Serializable</label>
+      </node>
+      <node id="333">
+        <label>net.quasardb.qdb.ts.Row</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row"/>
+        <childnode refid="334" relation="public-inheritance">
+        </childnode>
+        <childnode refid="335" relation="usage">
+          <edgelabel>values</edgelabel>
+        </childnode>
+        <childnode refid="337" relation="usage">
+          <edgelabel>timestamp</edgelabel>
+        </childnode>
+      </node>
+      <node id="337">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="334" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="336">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="ts/Row.java" line="16" column="1" bodyfile="ts/Row.java" bodystart="16" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1af4c8e3dcf16cbc899a7ebfc43b07eddb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1acdbdc9e7c5a6ea94af71ba6117c772dc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>getTimestamp</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ad91f0f9fc1ac1e1f5a5a327f033c961a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>getValues</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ac55407576ef80ee8bbc11c67c845ef37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>Row</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1a34aaf409b3f107cdf64cfd09a1ef788e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>Row</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1aa67b87d6cad9963cd191570c00eb2a43" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>Row</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1ab4fe9860d306f4ca8cb0f007982e45f9" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>timestamp</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1af7f2412d6a4bfd4cb991766f42b3539c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row_1a7cd3f5d432b785ff830edbabc222adc5" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Row</scope><name>values</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

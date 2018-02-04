@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::HostNotFoundException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.ConnectionException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception_1a2d5d3c6bf75e246cc181ad221c469a08" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.HostNotFoundException.HostNotFoundException</definition>
+        <argsstring>()</argsstring>
+        <name>HostNotFoundException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/connection/HostNotFoundException.java" line="8" column="1" bodyfile="exceptions/connection/HostNotFoundException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the host name resolution fails. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="160">
+        <label>net.quasardb.qdb.exception.HostNotFoundException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception"/>
+        <childnode refid="161" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="163">
+        <label>RuntimeException</label>
+      </node>
+      <node id="161">
+        <label>net.quasardb.qdb.exception.ConnectionException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception"/>
+        <childnode refid="162" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="162">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="163" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="164">
+        <label>net.quasardb.qdb.exception.HostNotFoundException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception"/>
+        <childnode refid="165" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="167">
+        <label>RuntimeException</label>
+      </node>
+      <node id="165">
+        <label>net.quasardb.qdb.exception.ConnectionException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception"/>
+        <childnode refid="166" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="166">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="167" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exceptions/connection/HostNotFoundException.java" line="6" column="1" bodyfile="exceptions/connection/HostNotFoundException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception_1a894e0925a895f2fc8eec9fbf5b80669c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::HostNotFoundException</scope><name>ConnectionException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::HostNotFoundException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception_1a2d5d3c6bf75e246cc181ad221c469a08" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::HostNotFoundException</scope><name>HostNotFoundException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

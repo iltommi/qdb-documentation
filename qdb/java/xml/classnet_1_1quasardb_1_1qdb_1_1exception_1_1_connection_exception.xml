@@ -1,0 +1,83 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::ConnectionException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.Exception</basecompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.ConnectionRefusedException</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.HostNotFoundException</derivedcompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception_1a894e0925a895f2fc8eec9fbf5b80669c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.ConnectionException.ConnectionException</definition>
+        <argsstring>(String message)</argsstring>
+        <name>ConnectionException</name>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exceptions/connection/ConnectionException.java" line="8" column="1" bodyfile="exceptions/connection/ConnectionException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the connection to the database caused an error </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="102">
+        <label>net.quasardb.qdb.exception.HostNotFoundException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception"/>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="100">
+        <label>RuntimeException</label>
+      </node>
+      <node id="98">
+        <label>net.quasardb.qdb.exception.ConnectionException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception"/>
+        <childnode refid="99" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="101">
+        <label>net.quasardb.qdb.exception.ConnectionRefusedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception"/>
+        <childnode refid="98" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="99">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="100" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="105">
+        <label>RuntimeException</label>
+      </node>
+      <node id="103">
+        <label>net.quasardb.qdb.exception.ConnectionException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exceptions/connection/ConnectionException.java" line="6" column="1" bodyfile="exceptions/connection/ConnectionException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception_1a894e0925a895f2fc8eec9fbf5b80669c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ConnectionException</scope><name>ConnectionException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ConnectionException</scope><name>Exception</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
