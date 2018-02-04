@@ -37,7 +37,9 @@ extensions = [
 ]
 
 breathe_projects = {
-    "qdb_capi": "../qdb/c/xml"
+    "qdb_capi": "../qdb/c/xml",
+    "qdb_java_api": "../qdb/java/xml",
+    "qdb_java_legacy_api": "../qdb/java-legacy/xml"
 }
 
 breathe_default_project = "qdb_capi"
