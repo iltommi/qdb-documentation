@@ -1,0 +1,140 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbDoubleAggregation</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation" prot="public" virt="non-virtual">net.quasardb.qdb.QdbAggregation&lt; QdbDoubleColumnValue &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a43e45fbd7d7e5d5927256eb01ffe4b44" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleAggregation.QdbDoubleAggregation</definition>
+        <argsstring>(Type type, TimeRange range)</argsstring>
+        <name>QdbDoubleAggregation</name>
+        <param>
+          <type>Type</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>TimeRange</type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleAggregation.java" line="14" column="1" bodyfile="QdbDoubleAggregation.java" bodystart="14" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a58733958c0947951779379c42e32e8aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleAggregation.QdbDoubleAggregation</definition>
+        <argsstring>(Type type, TimeRange range, long count, QdbDoubleColumnValue value)</argsstring>
+        <name>QdbDoubleAggregation</name>
+        <param>
+          <type>Type</type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>TimeRange</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value" kindref="compound">QdbDoubleColumnValue</ref></type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleAggregation.java" line="18" column="1" bodyfile="QdbDoubleAggregation.java" bodystart="18" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a27c17a0f0e75f6f7a538caa7a1148a67" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_ts_double_aggregation</type>
+        <definition>static qdb_ts_double_aggregation net.quasardb.qdb.QdbDoubleAggregation.toNative</definition>
+        <argsstring>(QdbDoubleAggregation input)</argsstring>
+        <name>toNative</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation" kindref="compound">QdbDoubleAggregation</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Converts this object to JNI-compatible representation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleAggregation.java" line="25" column="1" bodyfile="QdbDoubleAggregation.java" bodystart="25" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a341d0f88b6c97d6c58286df24a8e2554" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation" kindref="compound">QdbDoubleAggregation</ref></type>
+        <definition>static QdbDoubleAggregation net.quasardb.qdb.QdbDoubleAggregation.fromNative</definition>
+        <argsstring>(qdb_ts_double_aggregation input)</argsstring>
+        <name>fromNative</name>
+        <param>
+          <type>qdb_ts_double_aggregation</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates this object from JNI-compatible representation. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleAggregation.java" line="36" column="1" bodyfile="QdbDoubleAggregation.java" bodystart="36" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="67">
+        <label>net.quasardb.qdb.QdbDoubleAggregation</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="68">
+        <label>net.quasardb.qdb.QdbAggregation&lt; QdbDoubleColumnValue &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="69">
+        <label>net.quasardb.qdb.QdbDoubleAggregation</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation"/>
+        <childnode refid="70" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="70">
+        <label>net.quasardb.qdb.QdbAggregation&lt; QdbDoubleColumnValue &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation"/>
+      </node>
+    </collaborationgraph>
+    <location file="QdbDoubleAggregation.java" line="12" column="1" bodyfile="QdbDoubleAggregation.java" bodystart="12" bodyend="42"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1af7ce75cfea931996cd2bee0127a43ca2" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>count</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a341d0f88b6c97d6c58286df24a8e2554" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>fromNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a5994b3b0640c0c89b2bdbd8264da75e2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>getCount</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a9d91848d90df1cab69ddb71d2dab043b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>getRange</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1aa84ea4e87bb2887cafad8063b3539bc1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>getResult</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a430bfda9afc182490d2319ab3858e888" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>getType</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a23e657b2efede34d0dd74c080ad9c184" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>QdbAggregation</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a43e45fbd7d7e5d5927256eb01ffe4b44" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>QdbDoubleAggregation</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a58733958c0947951779379c42e32e8aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>QdbDoubleAggregation</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1ab51726df7922606ea34f9646292e0684" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>range</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a33a537fbcf5dca8d9d9f15e428cea072" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>result</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a27c17a0f0e75f6f7a538caa7a1148a67" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>toNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a78290802ce36de47efa749508c0eda91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a783cae0adfc77344c2a3cb38c8f31a7b" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregation</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kind="interface" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbFuture</compoundname>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future" prot="public" virt="non-virtual">net.quasardb.qdb.QdbBatchFuture&lt; T &gt;</derivedcompoundref>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future_1a130edec9b18ccab234814391da6aad8e" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>T</type>
+        <definition>T net.quasardb.qdb.QdbFuture&lt; T &gt;.get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <reimplementedby refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future_1a68fffed1472495bb1d15528f6d406c21">get</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbFuture.java" line="4" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future_1ac2efefe56fa02dfefea7b77ad1ccc334" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbFuture&lt; T &gt;.success</definition>
+        <argsstring>()</argsstring>
+        <name>success</name>
+        <reimplementedby refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future_1aaa89a55f005f5b6bf934f88c8e6952e7">success</reimplementedby>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbFuture.java" line="5" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="113">
+        <label>net::quasardb::qdb::QdbBatchFuture&lt; T &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>net.quasardb.qdb.QdbFuture&lt; T &gt;</label>
+        <link refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future"/>
+      </node>
+    </inheritancegraph>
+    <location file="QdbFuture.java" line="3" column="1" bodyfile="QdbFuture.java" bodystart="3" bodyend="6"/>
+    <listofallmembers>
+      <member refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future_1a130edec9b18ccab234814391da6aad8e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbFuture</scope><name>get</name></member>
+      <member refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future_1ac2efefe56fa02dfefea7b77ad1ccc334" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbFuture</scope><name>success</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

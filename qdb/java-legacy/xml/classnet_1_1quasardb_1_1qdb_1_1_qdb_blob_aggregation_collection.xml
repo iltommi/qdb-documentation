@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbBlobAggregationCollection</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">java::util::ArrayList&lt; QdbBlobAggregation &gt;</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection_1a47bd1ef22a8c4f5982209a5ac267a7a2" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_ts_blob_aggregation []</type>
+        <definition>static qdb_ts_blob_aggregation [] net.quasardb.qdb.QdbBlobAggregationCollection.toNative</definition>
+        <argsstring>(QdbBlobAggregationCollection input)</argsstring>
+        <name>toNative</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection" kindref="compound">QdbBlobAggregationCollection</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobAggregationCollection.java" line="12" column="1" bodyfile="QdbBlobAggregationCollection.java" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection_1a09b950d5368f433e2e7b8b5fde8e6782" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection" kindref="compound">QdbBlobAggregationCollection</ref></type>
+        <definition>static QdbBlobAggregationCollection net.quasardb.qdb.QdbBlobAggregationCollection.fromNative</definition>
+        <argsstring>(qdb_ts_blob_aggregation[] input)</argsstring>
+        <name>fromNative</name>
+        <param>
+          <type>qdb_ts_blob_aggregation []</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobAggregationCollection.java" line="19" column="1" bodyfile="QdbBlobAggregationCollection.java" bodystart="19" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="38">
+        <label>java::util::ArrayList&lt; QdbBlobAggregation &gt;</label>
+      </node>
+      <node id="37">
+        <label>net.quasardb.qdb.QdbBlobAggregationCollection</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection"/>
+        <childnode refid="38" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="40">
+        <label>java::util::ArrayList&lt; QdbBlobAggregation &gt;</label>
+      </node>
+      <node id="39">
+        <label>net.quasardb.qdb.QdbBlobAggregationCollection</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection"/>
+        <childnode refid="40" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbBlobAggregationCollection.java" line="10" column="1" bodyfile="QdbBlobAggregationCollection.java" bodystart="10" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection_1a09b950d5368f433e2e7b8b5fde8e6782" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobAggregationCollection</scope><name>fromNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection_1a47bd1ef22a8c4f5982209a5ac267a7a2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobAggregationCollection</scope><name>toNative</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

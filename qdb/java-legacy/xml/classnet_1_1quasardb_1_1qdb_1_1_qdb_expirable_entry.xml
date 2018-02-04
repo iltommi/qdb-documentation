@@ -1,0 +1,173 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbExpirableEntry</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" prot="public" virt="non-virtual">net.quasardb.qdb.QdbEntry</basecompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob" prot="public" virt="non-virtual">net.quasardb.qdb.QdbBlob</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" prot="public" virt="non-virtual">net.quasardb.qdb.QdbInteger</derivedcompoundref>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1ad7fcfdddc2908c7b8842383d1cbdf2be" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbExpirableEntry.QdbExpirableEntry</definition>
+        <argsstring>(Session session, String alias)</argsstring>
+        <name>QdbExpirableEntry</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpirableEntry.java" line="11" column="1" bodyfile="QdbExpirableEntry.java" bodystart="11" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a477a82e0324a7a1ebdc102b8a6e71dd8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbExpirableEntry.expiryTime</definition>
+        <argsstring>(QdbExpiryTime expiryTime)</argsstring>
+        <name>expiryTime</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Sets the expiry time of an existing entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new expiry time of the entry. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the entry does not exist. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the expiry time is in the past (with a certain tolerance) </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpirableEntry.java" line="23" column="1" bodyfile="QdbExpirableEntry.java" bodystart="23" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a8c644748552b475069a95227c80830d9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>QdbExpiryTime net.quasardb.qdb.QdbExpirableEntry.expiryTime</definition>
+        <argsstring>()</argsstring>
+        <name>expiryTime</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the expiry time of the entry. A value of zero means the entry never expires.</para><para><simplesect kind="return"><para>The expiry time of the entry. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the entry does not exist. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpirableEntry.java" line="36" column="1" bodyfile="QdbExpirableEntry.java" bodystart="36" bodyend="42"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An entry that has the ability to expire. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="107">
+        <label>net.quasardb.qdb.QdbInteger</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="105">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="106">
+        <label>net.quasardb.qdb.QdbBlob</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob"/>
+        <childnode refid="104" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="104">
+        <label>net.quasardb.qdb.QdbExpirableEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry"/>
+        <childnode refid="105" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="109">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="108">
+        <label>net.quasardb.qdb.QdbExpirableEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry"/>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbExpirableEntry.java" line="10" column="1" bodyfile="QdbExpirableEntry.java" bodystart="10" bodyend="43"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a477a82e0324a7a1ebdc102b8a6e71dd8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>expiryTime</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a8c644748552b475069a95227c80830d9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>expiryTime</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>metadata</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>node</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>QdbEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1ad7fcfdddc2908c7b8842383d1cbdf2be" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>QdbExpirableEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>remove</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpirableEntry</scope><name>tags</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

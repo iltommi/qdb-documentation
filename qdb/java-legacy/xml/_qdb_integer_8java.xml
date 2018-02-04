@@ -1,0 +1,63 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_qdb_integer_8java" kind="file" language="Java">
+    <compoundname>QdbInteger.java</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" prot="public">net::quasardb::qdb::QdbInteger</innerclass>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb">net::quasardb::qdb</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">net.quasardb.qdb;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacenet" kindref="compound">net</ref>.<ref refid="namespacenet_1_1quasardb" kindref="compound">quasardb</ref>.<ref refid="namespacenet_1_1quasardb_1_1qdb" kindref="compound">qdb</ref>.jni.*;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacenet" kindref="compound">net</ref>.<ref refid="namespacenet_1_1quasardb" kindref="compound">quasardb</ref>.<ref refid="namespacenet_1_1quasardb_1_1qdb" kindref="compound">qdb</ref>.exception.*;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" kindref="compound">QdbInteger</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry" kindref="compound">QdbExpirableEntry</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Protected<sp/>constructor.<sp/>Call<sp/>QdbCluster.integer()<sp/>to<sp/>get<sp/>an<sp/>instance.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" kindref="compound">QdbInteger</ref>(Session<sp/>session,<sp/>String<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(session,<sp/>alias);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a6b825fdeff6e199523ff9c8ac26f8b40" kindref="member">add</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>delta)<sp/>{</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reference&lt;Long&gt;<sp/>result<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Reference&lt;Long&gt;();</highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.int_add(session.handle(),<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>,<sp/>delta,<sp/>result);</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>result.value;</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="32"><highlight class="normal"></highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">()<sp/>{</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="44"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reference&lt;Long&gt;<sp/>value<sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Reference&lt;Long&gt;();</highlight></codeline>
+<codeline lineno="45"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.int_get(session.handle(),<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>,<sp/>value);</highlight></codeline>
+<codeline lineno="46"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>value.value;</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"></highlight></codeline>
+<codeline lineno="58"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a3176bce17c24dca8423bfa8b451794ef" kindref="member">put</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>initialValue)<sp/>{</highlight></codeline>
+<codeline lineno="59"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.<ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a3176bce17c24dca8423bfa8b451794ef" kindref="member">put</ref>(initialValue,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref>.NEVER_EXPIRES);</highlight></codeline>
+<codeline lineno="60"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="61"><highlight class="normal"></highlight></codeline>
+<codeline lineno="71"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a3176bce17c24dca8423bfa8b451794ef" kindref="member">put</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>initialValue,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a8c644748552b475069a95227c80830d9" kindref="member">expiryTime</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="72"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="73"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.int_put(session.handle(),<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>,<sp/>initialValue,<sp/>expiryTime.toMillisSinceEpoch());</highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a4bcce6278d4c1615c2e77c9f1a1f6459" kindref="member">update</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>newValue)<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a4bcce6278d4c1615c2e77c9f1a1f6459" kindref="member">update</ref>(newValue,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref>.PRESERVE_EXPIRATION);</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"></highlight></codeline>
+<codeline lineno="100"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a4bcce6278d4c1615c2e77c9f1a1f6459" kindref="member">update</ref>(</highlight><highlight class="keywordtype">long</highlight><highlight class="normal"><sp/>newValue,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref><sp/>expiryTime)<sp/>{</highlight></codeline>
+<codeline lineno="101"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="102"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.int_update(session.handle(),<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>,<sp/>newValue,<sp/>expiryTime.toMillisSinceEpoch());</highlight></codeline>
+<codeline lineno="103"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="104"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err<sp/>==<sp/>qdb_error.ok_created;</highlight></codeline>
+<codeline lineno="105"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="106"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="QdbInteger.java"/>
+  </compounddef>
+</doxygen>

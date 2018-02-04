@@ -1,0 +1,243 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel" kind="class" language="Java" prot="package">
+    <compoundname>net::quasardb::qdb::QdbStreamChannel</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">SeekableByteChannel</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae98fad35adcb2d80c2b9feecbee83810" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbStreamChannel.handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="10" column="1" bodyfile="QdbStreamChannel.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae267d27670a283ea993b8b6554523505" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbStreamChannel.QdbStreamChannel</definition>
+        <argsstring>(long handle)</argsstring>
+        <name>QdbStreamChannel</name>
+        <param>
+          <type>long</type>
+          <declname>handle</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="12" column="1" bodyfile="QdbStreamChannel.java" bodystart="12" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a4abdd12dd2866c61ce1f767185bda6eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbStreamChannel.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="16" column="1" bodyfile="QdbStreamChannel.java" bodystart="16" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a97fe55eba63a8d7a666d8c77302958c8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbStreamChannel.isOpen</definition>
+        <argsstring>()</argsstring>
+        <name>isOpen</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="24" column="1" bodyfile="QdbStreamChannel.java" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1af569974b6d615a04f93d95c8bb7f15c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbStreamChannel.position</definition>
+        <argsstring>()</argsstring>
+        <name>position</name>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="28" column="1" bodyfile="QdbStreamChannel.java" bodystart="28" bodyend="34"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ab0b893bad14b0bfdc5c5c8fe1ad26880" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SeekableByteChannel</type>
+        <definition>SeekableByteChannel net.quasardb.qdb.QdbStreamChannel.position</definition>
+        <argsstring>(long newPosition)</argsstring>
+        <name>position</name>
+        <param>
+          <type>long</type>
+          <declname>newPosition</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="36" column="1" bodyfile="QdbStreamChannel.java" bodystart="36" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a856348bd12a8795ad10350d10c472322" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbStreamChannel.read</definition>
+        <argsstring>(ByteBuffer dst)</argsstring>
+        <name>read</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>dst</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="46" column="1" bodyfile="QdbStreamChannel.java" bodystart="46" bodyend="65"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a71c3b4cb2e063df4b334c2031fae6a26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbStreamChannel.size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="67" column="1" bodyfile="QdbStreamChannel.java" bodystart="67" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a424ac6e3caa159b58d4030a4f344b214" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SeekableByteChannel</type>
+        <definition>SeekableByteChannel net.quasardb.qdb.QdbStreamChannel.truncate</definition>
+        <argsstring>(long size)</argsstring>
+        <name>truncate</name>
+        <param>
+          <type>long</type>
+          <declname>size</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="75" column="1" bodyfile="QdbStreamChannel.java" bodystart="75" bodyend="87"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a5cf7ecc39ad1ff8fc4eaeab173726eff" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbStreamChannel.write</definition>
+        <argsstring>(ByteBuffer src)</argsstring>
+        <name>write</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>src</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="89" column="1" bodyfile="QdbStreamChannel.java" bodystart="89" bodyend="102"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae1653deee183a41c5709b28706e8d9c1" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbStreamChannel.throwIfClosed</definition>
+        <argsstring>()</argsstring>
+        <name>throwIfClosed</name>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="104" column="1" bodyfile="QdbStreamChannel.java" bodystart="104" bodyend="107"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ad80a1741eb544f7e94e87ac0f47232ba" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbStreamChannel.throwIfError</definition>
+        <argsstring>(int err)</argsstring>
+        <name>throwIfError</name>
+        <param>
+          <type>int</type>
+          <declname>err</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStreamChannel.java" line="109" column="1" bodyfile="QdbStreamChannel.java" bodystart="109" bodyend="113"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="134">
+        <label>SeekableByteChannel</label>
+      </node>
+      <node id="133">
+        <label>net.quasardb.qdb.QdbStreamChannel</label>
+        <childnode refid="134" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="136">
+        <label>SeekableByteChannel</label>
+      </node>
+      <node id="135">
+        <label>net.quasardb.qdb.QdbStreamChannel</label>
+        <childnode refid="136" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbStreamChannel.java" line="9" column="1" bodyfile="QdbStreamChannel.java" bodystart="9" bodyend="114"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a4abdd12dd2866c61ce1f767185bda6eb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae98fad35adcb2d80c2b9feecbee83810" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>handle</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a97fe55eba63a8d7a666d8c77302958c8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>isOpen</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1af569974b6d615a04f93d95c8bb7f15c2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>position</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ab0b893bad14b0bfdc5c5c8fe1ad26880" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>position</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae267d27670a283ea993b8b6554523505" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>QdbStreamChannel</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a856348bd12a8795ad10350d10c472322" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>read</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a71c3b4cb2e063df4b334c2031fae6a26" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>size</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae1653deee183a41c5709b28706e8d9c1" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>throwIfClosed</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ad80a1741eb544f7e94e87ac0f47232ba" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>throwIfError</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a424ac6e3caa159b58d4030a4f344b214" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>truncate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a5cf7ecc39ad1ff8fc4eaeab173726eff" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStreamChannel</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

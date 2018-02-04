@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_id" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbId</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a50cff11f9281e3422517d50a9c5695a9" prot="private" static="no" mutable="no">
+        <type>final long</type>
+        <definition>final long net.quasardb.qdb.QdbId.data[]</definition>
+        <argsstring>[]</argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbId.java" line="7" column="1" bodyfile="QdbId.java" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1ac06ea9f2776ab25785d3deec79502341" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbId.QdbId</definition>
+        <argsstring>(long a, long b, long c, long d)</argsstring>
+        <name>QdbId</name>
+        <param>
+          <type>long</type>
+          <declname>a</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>b</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>c</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>d</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbId.java" line="9" column="1" bodyfile="QdbId.java" bodystart="9" bodyend="11"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1ab8f186329a56326ea68072c729c6c8b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long []</type>
+        <definition>long [] net.quasardb.qdb.QdbId.data</definition>
+        <argsstring>()</argsstring>
+        <name>data</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbId.java" line="13" column="1" bodyfile="QdbId.java" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a436973a2788c17a5a4eb43522a7d51d8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbId.equals</definition>
+        <argsstring>(Object other)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>Object</type>
+          <declname>other</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbId.java" line="17" column="1" bodyfile="QdbId.java" bodystart="17" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a88fc38f6086da24cb091cf27804b0ad8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbId.hashCode</definition>
+        <argsstring>()</argsstring>
+        <name>hashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbId.java" line="27" column="1" bodyfile="QdbId.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1aeba88116da78d3100a29892a8ed32897" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbId.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbId.java" line="31" column="1" bodyfile="QdbId.java" bodystart="31" bodyend="34"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="QdbId.java" line="6" column="1" bodyfile="QdbId.java" bodystart="6" bodyend="35"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a50cff11f9281e3422517d50a9c5695a9" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbId</scope><name>data</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1ab8f186329a56326ea68072c729c6c8b0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbId</scope><name>data</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a436973a2788c17a5a4eb43522a7d51d8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbId</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a88fc38f6086da24cb091cf27804b0ad8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbId</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1ac06ea9f2776ab25785d3deec79502341" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbId</scope><name>QdbId</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1aeba88116da78d3100a29892a8ed32897" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbId</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbColumnCollection</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">java::util::ArrayList&lt; T &gt;</basecompoundref>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+        <typeconstraint><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" kindref="compound">QdbColumnValue</ref></typeconstraint>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7f62bac1f0e459e2f617c40799f19690" prot="package" static="no" mutable="no">
+        <type>Column</type>
+        <definition>Column net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;.column</definition>
+        <argsstring></argsstring>
+        <name>column</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbColumnCollection.java" line="10" column="1" bodyfile="QdbColumnCollection.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a32a49c540e616b3177c943eebbcd286a" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;.QdbColumnCollection</definition>
+        <argsstring>(Column column)</argsstring>
+        <name>QdbColumnCollection</name>
+        <param>
+          <type>Column</type>
+          <declname>column</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbColumnCollection.java" line="12" column="1" bodyfile="QdbColumnCollection.java" bodystart="12" bodyend="15"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7ab684c1f0c42abe932f503f3318d54e" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Column</type>
+        <definition>Column net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;.getColumn</definition>
+        <argsstring>()</argsstring>
+        <name>getColumn</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbColumnCollection.java" line="17" column="1" bodyfile="QdbColumnCollection.java" bodystart="17" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a8fba027e82cbd6cc49a84da6833e72a4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TimeRange</type>
+        <definition>TimeRange net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;.range</definition>
+        <argsstring>()</argsstring>
+        <name>range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the interval that contains all values within this column. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbColumnCollection.java" line="24" column="1" bodyfile="QdbColumnCollection.java" bodystart="24" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1af7dcece96a372c6aff95d5e4cbd316fe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;.equals</definition>
+        <argsstring>(Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbColumnCollection.java" line="45" column="1" bodyfile="QdbColumnCollection.java" bodystart="45" bodyend="50"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a0d5ae1a12b37027acd897a1634dd255a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbColumnCollection.java" line="52" column="1" bodyfile="QdbColumnCollection.java" bodystart="52" bodyend="54"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="54">
+        <label>java::util::ArrayList&lt; T &gt;</label>
+      </node>
+      <node id="53">
+        <label>net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection"/>
+        <childnode refid="54" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="57">
+        <label>Column</label>
+      </node>
+      <node id="56">
+        <label>java::util::ArrayList&lt; T &gt;</label>
+      </node>
+      <node id="55">
+        <label>net.quasardb.qdb.QdbColumnCollection&lt; T extends QdbColumnValue &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection"/>
+        <childnode refid="56" relation="public-inheritance">
+        </childnode>
+        <childnode refid="57" relation="usage">
+          <edgelabel>column</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbColumnCollection.java" line="9" column="1" bodyfile="QdbColumnCollection.java" bodystart="9" bodyend="55"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7f62bac1f0e459e2f617c40799f19690" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbColumnCollection</scope><name>column</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1af7dcece96a372c6aff95d5e4cbd316fe" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbColumnCollection</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7ab684c1f0c42abe932f503f3318d54e" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbColumnCollection</scope><name>getColumn</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a32a49c540e616b3177c943eebbcd286a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbColumnCollection</scope><name>QdbColumnCollection</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a8fba027e82cbd6cc49a84da6833e72a4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbColumnCollection</scope><name>range</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a0d5ae1a12b37027acd897a1634dd255a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbColumnCollection</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

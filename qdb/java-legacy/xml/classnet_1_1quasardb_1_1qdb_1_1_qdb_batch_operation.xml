@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation" kind="class" language="Java" prot="package" abstract="yes">
+    <compoundname>net::quasardb::qdb::QdbBatchOperation</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1ae295fa713f4f1ceb70dc7cbd154d8c5b" prot="public" static="no" mutable="no">
+        <type>Object</type>
+        <definition>Object net.quasardb.qdb.QdbBatchOperation.result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchOperation.java" line="6" column="1" bodyfile="QdbBatchOperation.java" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1ac13f3bcc2df2dcd82c5fdea4b742592d" prot="public" static="no" mutable="no">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbBatchOperation.error</definition>
+        <argsstring></argsstring>
+        <name>error</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchOperation.java" line="7" column="1" bodyfile="QdbBatchOperation.java" bodystart="7" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1a160c61469b28a8a807ec92239fcd4fa3" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>abstract void</type>
+        <definition>abstract void net.quasardb.qdb.QdbBatchOperation.write</definition>
+        <argsstring>(long batch, int index)</argsstring>
+        <name>write</name>
+        <param>
+          <type>long</type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchOperation.java" line="4" column="1"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1a1634f7793e10eb2abf25b2badfa13c2c" prot="public" static="no" const="no" explicit="no" inline="no" virt="non-virtual">
+        <type>abstract void</type>
+        <definition>abstract void net.quasardb.qdb.QdbBatchOperation.read</definition>
+        <argsstring>(long batch, int index)</argsstring>
+        <name>read</name>
+        <param>
+          <type>long</type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchOperation.java" line="5" column="1"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="QdbBatchOperation.java" line="3" column="1" bodyfile="QdbBatchOperation.java" bodystart="3" bodyend="8"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1ac13f3bcc2df2dcd82c5fdea4b742592d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchOperation</scope><name>error</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1a1634f7793e10eb2abf25b2badfa13c2c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchOperation</scope><name>read</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1ae295fa713f4f1ceb70dc7cbd154d8c5b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchOperation</scope><name>result</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1a160c61469b28a8a807ec92239fcd4fa3" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchOperation</scope><name>write</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,366 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type" kind="enum" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbAggregation::Type</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a4402675e4e0f3dba12a308b20a2b28e2" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.FIRST</definition>
+        <argsstring></argsstring>
+        <name>FIRST</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_first)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="15" column="1" bodyfile="QdbAggregation.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1acaab68a2710772f5166d7830569717ef" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.LAST</definition>
+        <argsstring></argsstring>
+        <name>LAST</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_last)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="16" column="1" bodyfile="QdbAggregation.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1ad0d2232964ad185744174d61d8beea91" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.MIN</definition>
+        <argsstring></argsstring>
+        <name>MIN</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_min)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="17" column="1" bodyfile="QdbAggregation.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a47d33cf91b8dba239054d79ad1e992cd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.MAX</definition>
+        <argsstring></argsstring>
+        <name>MAX</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_max)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="18" column="1" bodyfile="QdbAggregation.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a20d085073ca2fe574ba06508d6896fd8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.ARITHMETIC_MEAN</definition>
+        <argsstring></argsstring>
+        <name>ARITHMETIC_MEAN</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_arithmetic_mean)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="19" column="1" bodyfile="QdbAggregation.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a0f7b0b1efadf352e42268924f7076f80" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.HARMONIC_MEAN</definition>
+        <argsstring></argsstring>
+        <name>HARMONIC_MEAN</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_harmonic_mean)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="20" column="1" bodyfile="QdbAggregation.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1adb2d9c2cb5fe5c9bbe2395e24d89967a" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.GEOMETRIC_MEAN</definition>
+        <argsstring></argsstring>
+        <name>GEOMETRIC_MEAN</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_geometric_mean)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="21" column="1" bodyfile="QdbAggregation.java" bodystart="21" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1acfe2d26c7d55ef9553ca3ba91691b9eb" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.QUADRATIC_MEAN</definition>
+        <argsstring></argsstring>
+        <name>QUADRATIC_MEAN</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_quadratic_mean)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="22" column="1" bodyfile="QdbAggregation.java" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a037f4615b82ea6d03a39bc8bb58693ad" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.COUNT</definition>
+        <argsstring></argsstring>
+        <name>COUNT</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_count)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="23" column="1" bodyfile="QdbAggregation.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a7c8fbb26c770270ffc9359c41db7fffc" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.SUM</definition>
+        <argsstring></argsstring>
+        <name>SUM</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_sum)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="24" column="1" bodyfile="QdbAggregation.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a456701d90eb8ca9917e6b9bb8f7d5aa6" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.SUM_OF_SQUARES</definition>
+        <argsstring></argsstring>
+        <name>SUM_OF_SQUARES</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_sum_of_squares)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="25" column="1" bodyfile="QdbAggregation.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a9c9b1325760f2c768da74ac334efa0a8" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.SPREAD</definition>
+        <argsstring></argsstring>
+        <name>SPREAD</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_spread)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="26" column="1" bodyfile="QdbAggregation.java" bodystart="26" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a7c8f632642b366ff48f02950e00fb8ce" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.SAMPLE_VARIANCE</definition>
+        <argsstring></argsstring>
+        <name>SAMPLE_VARIANCE</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_sample_variance)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="27" column="1" bodyfile="QdbAggregation.java" bodystart="27" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a21d07762c2f4ead6f349fd08dea59553" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.SAMPLE_STDDEV</definition>
+        <argsstring></argsstring>
+        <name>SAMPLE_STDDEV</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_sample_stddev)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="28" column="1" bodyfile="QdbAggregation.java" bodystart="28" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af19fc43b7a366ab15fc22a342f109454" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.POPULATION_VARIANCE</definition>
+        <argsstring></argsstring>
+        <name>POPULATION_VARIANCE</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_population_variance)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="29" column="1" bodyfile="QdbAggregation.java" bodystart="29" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af26df0715bd39c9575791b17a3f18912" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.POPULATION_STDDEV</definition>
+        <argsstring></argsstring>
+        <name>POPULATION_STDDEV</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_population_stddev)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="30" column="1" bodyfile="QdbAggregation.java" bodystart="30" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a6f06fb18e02e6865b718237ff1395fb3" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.ABS_MIN</definition>
+        <argsstring></argsstring>
+        <name>ABS_MIN</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_abs_min)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="31" column="1" bodyfile="QdbAggregation.java" bodystart="31" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af2c79380783e40cf35572d91f02f130f" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.ABS_MAX</definition>
+        <argsstring></argsstring>
+        <name>ABS_MAX</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_abs_max)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="32" column="1" bodyfile="QdbAggregation.java" bodystart="32" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1ac6445cac83382fda9f0b7b6e3311f675" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.PRODUCT</definition>
+        <argsstring></argsstring>
+        <name>PRODUCT</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_product)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="33" column="1" bodyfile="QdbAggregation.java" bodystart="33" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a4b1cbca05d3d20031b550e6033e0b1a9" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.SKEWNESS</definition>
+        <argsstring></argsstring>
+        <name>SKEWNESS</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_skewness)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="34" column="1" bodyfile="QdbAggregation.java" bodystart="34" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a0232b99d57dc1875307d130ca359fa95" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.KURTOSIS</definition>
+        <argsstring></argsstring>
+        <name>KURTOSIS</name>
+        <initializer>=(qdb_ts_aggregation_type.qdb_agg_kurtosis)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="35" column="1" bodyfile="QdbAggregation.java" bodystart="35" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a929e31f0d3f8491a93a1b6705c6750a1" prot="protected" static="no" mutable="no">
+        <type>final int</type>
+        <definition>final int net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="37" column="1" bodyfile="QdbAggregation.java" bodystart="37" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1aa67ab068a471bdbaa7780ba2240bed1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type.Type</definition>
+        <argsstring>(int type)</argsstring>
+        <name>Type</name>
+        <param>
+          <type>int</type>
+          <declname>type</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="38" column="1" bodyfile="QdbAggregation.java" bodystart="38" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="QdbAggregation.java" line="14" column="1" bodyfile="QdbAggregation.java" bodystart="14" bodyend="41"/>
+    <listofallmembers>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af2c79380783e40cf35572d91f02f130f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>ABS_MAX</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a6f06fb18e02e6865b718237ff1395fb3" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>ABS_MIN</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a20d085073ca2fe574ba06508d6896fd8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>ARITHMETIC_MEAN</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a037f4615b82ea6d03a39bc8bb58693ad" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>COUNT</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a4402675e4e0f3dba12a308b20a2b28e2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>FIRST</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1adb2d9c2cb5fe5c9bbe2395e24d89967a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>GEOMETRIC_MEAN</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a0f7b0b1efadf352e42268924f7076f80" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>HARMONIC_MEAN</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a0232b99d57dc1875307d130ca359fa95" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>KURTOSIS</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1acaab68a2710772f5166d7830569717ef" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>LAST</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a47d33cf91b8dba239054d79ad1e992cd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>MAX</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1ad0d2232964ad185744174d61d8beea91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>MIN</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af26df0715bd39c9575791b17a3f18912" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>POPULATION_STDDEV</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af19fc43b7a366ab15fc22a342f109454" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>POPULATION_VARIANCE</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1ac6445cac83382fda9f0b7b6e3311f675" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>PRODUCT</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1acfe2d26c7d55ef9553ca3ba91691b9eb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>QUADRATIC_MEAN</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a21d07762c2f4ead6f349fd08dea59553" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>SAMPLE_STDDEV</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a7c8f632642b366ff48f02950e00fb8ce" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>SAMPLE_VARIANCE</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a4b1cbca05d3d20031b550e6033e0b1a9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>SKEWNESS</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a9c9b1325760f2c768da74ac334efa0a8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>SPREAD</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a7c8fbb26c770270ffc9359c41db7fffc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>SUM</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a456701d90eb8ca9917e6b9bb8f7d5aa6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>SUM_OF_SQUARES</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1aa67ab068a471bdbaa7780ba2240bed1f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>Type</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a929e31f0d3f8491a93a1b6705c6750a1" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation::Type</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

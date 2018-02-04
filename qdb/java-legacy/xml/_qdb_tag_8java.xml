@@ -1,0 +1,52 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_qdb_tag_8java" kind="file" language="Java">
+    <compoundname>QdbTag.java</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" prot="public">net::quasardb::qdb::QdbTag</innerclass>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb">net::quasardb::qdb</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">net.quasardb.qdb;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/>java.util.*;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacenet" kindref="compound">net</ref>.<ref refid="namespacenet_1_1quasardb" kindref="compound">quasardb</ref>.<ref refid="namespacenet_1_1quasardb_1_1qdb" kindref="compound">qdb</ref>.exception.*;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacenet" kindref="compound">net</ref>.<ref refid="namespacenet_1_1quasardb" kindref="compound">quasardb</ref>.<ref refid="namespacenet_1_1quasardb_1_1qdb" kindref="compound">qdb</ref>.jni.*;</highlight></codeline>
+<codeline lineno="6"><highlight class="normal"></highlight></codeline>
+<codeline lineno="10" refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kindref="compound">QdbTag</ref><sp/></highlight><highlight class="keyword">extends</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref><sp/>{</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kindref="compound">QdbTag</ref>(Session<sp/>session,<sp/>String<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>)<sp/>{</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>super(session,<sp/>alias);</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="24"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a65c752f0b98775c3b4bd36eccf1dbdfb" kindref="member">attachEntry</ref>(<ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref><sp/>entry)<sp/>{</highlight></codeline>
+<codeline lineno="25"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a65c752f0b98775c3b4bd36eccf1dbdfb" kindref="member">attachEntry</ref>(entry.alias());</highlight></codeline>
+<codeline lineno="26"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="27"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a65c752f0b98775c3b4bd36eccf1dbdfb" kindref="member">attachEntry</ref>(String<sp/>entry)<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.attach_tag(session.handle(),<sp/>entry,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>);</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="41"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err<sp/>!=<sp/>qdb_error.tag_already_set;</highlight></codeline>
+<codeline lineno="42"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="43"><highlight class="normal"></highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>Iterable&lt;QdbEntry&gt;<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1aaed06a4d936f2a55ab27393f9166c18d" kindref="member">entries</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>QdbTagEntries(session,<sp/>alias);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"></highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a3133c37ccd9ebfb7d22655da53b518c8" kindref="member">detachEntry</ref>(<ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref><sp/>entry)<sp/>{</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a3133c37ccd9ebfb7d22655da53b518c8" kindref="member">detachEntry</ref>(entry.alias());</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"></highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a3133c37ccd9ebfb7d22655da53b518c8" kindref="member">detachEntry</ref>(String<sp/>entry)<sp/>{</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.detach_tag(session.handle(),<sp/>entry,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kindref="member">alias</ref>);</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="80"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>err<sp/>!=<sp/>qdb_error.tag_not_set;</highlight></codeline>
+<codeline lineno="81"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="82"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="QdbTag.java"/>
+  </compounddef>
+</doxygen>

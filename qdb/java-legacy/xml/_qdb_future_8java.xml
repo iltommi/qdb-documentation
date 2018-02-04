@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_qdb_future_8java" kind="file" language="Java">
+    <compoundname>QdbFuture.java</compoundname>
+    <innerclass refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" prot="public">net::quasardb::qdb::QdbFuture</innerclass>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb">net::quasardb::qdb</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">net.quasardb.qdb;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3" refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" refkind="compound"><highlight class="normal"></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">interface<sp/></highlight><highlight class="normal"><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt;T&gt;<sp/>{</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"><sp/><sp/><sp/><sp/>T<sp/></highlight><highlight class="keyword">get</highlight><highlight class="normal">();</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">boolean</highlight><highlight class="normal"><sp/>success();</highlight></codeline>
+<codeline lineno="6"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="QdbFuture.java"/>
+  </compounddef>
+</doxygen>

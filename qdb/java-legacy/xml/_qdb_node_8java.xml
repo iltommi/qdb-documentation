@@ -1,0 +1,72 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="_qdb_node_8java" kind="file" language="Java">
+    <compoundname>QdbNode.java</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" prot="public">net::quasardb::qdb::QdbNode</innerclass>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb">net::quasardb::qdb</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <programlisting>
+<codeline lineno="1"><highlight class="keyword">package<sp/></highlight><highlight class="normal">net.quasardb.qdb;</highlight></codeline>
+<codeline lineno="2"><highlight class="normal"></highlight></codeline>
+<codeline lineno="3"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacenet" kindref="compound">net</ref>.<ref refid="namespacenet_1_1quasardb" kindref="compound">quasardb</ref>.<ref refid="namespacenet_1_1quasardb_1_1qdb" kindref="compound">qdb</ref>.exception.*;</highlight></codeline>
+<codeline lineno="4"><highlight class="normal"></highlight><highlight class="keyword">import</highlight><highlight class="normal"><sp/><ref refid="namespacenet" kindref="compound">net</ref>.<ref refid="namespacenet_1_1quasardb" kindref="compound">quasardb</ref>.<ref refid="namespacenet_1_1quasardb_1_1qdb" kindref="compound">qdb</ref>.jni.*;</highlight></codeline>
+<codeline lineno="5"><highlight class="normal"></highlight></codeline>
+<codeline lineno="9" refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" refkind="compound"><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">class<sp/></highlight><highlight class="normal"><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" kindref="compound">QdbNode</ref><sp/>{</highlight></codeline>
+<codeline lineno="10"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">transient</highlight><highlight class="normal"><sp/>Session<sp/>session;</highlight></codeline>
+<codeline lineno="11"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1aab46c17e33f891f1db823c57960245da" kindref="member">hostName</ref>;</highlight></codeline>
+<codeline lineno="12"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="13"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">private</highlight><highlight class="normal"><sp/></highlight><highlight class="keyword">final</highlight><highlight class="normal"><sp/>String<sp/>uri;</highlight></codeline>
+<codeline lineno="14"><highlight class="normal"></highlight></codeline>
+<codeline lineno="15"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="comment">//<sp/>Protected<sp/>constructor.<sp/>Call<sp/>QdbCluster.node()<sp/>to<sp/>get<sp/>an<sp/>instance.</highlight><highlight class="normal"></highlight></codeline>
+<codeline lineno="16"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">protected</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" kindref="compound">QdbNode</ref>(Session<sp/>session,<sp/>String<sp/>hostName,<sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>port)<sp/>{</highlight></codeline>
+<codeline lineno="17"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.session<sp/>=<sp/>session;</highlight></codeline>
+<codeline lineno="18"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.hostName<sp/>=<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1aab46c17e33f891f1db823c57960245da" kindref="member">hostName</ref>;</highlight></codeline>
+<codeline lineno="19"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>this.port<sp/>=<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="20"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>uri<sp/>=<sp/></highlight><highlight class="stringliteral">&quot;qdb://&quot;</highlight><highlight class="normal"><sp/>+<sp/>hostName<sp/>+<sp/></highlight><highlight class="stringliteral">&quot;:&quot;</highlight><highlight class="normal"><sp/>+<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="21"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="22"><highlight class="normal"></highlight></codeline>
+<codeline lineno="28"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1aab46c17e33f891f1db823c57960245da" kindref="member">hostName</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="29"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this.<ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1aab46c17e33f891f1db823c57960245da" kindref="member">hostName</ref>;</highlight></codeline>
+<codeline lineno="30"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="31"><highlight class="normal"></highlight></codeline>
+<codeline lineno="37"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" kindref="member">port</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="38"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>this.<ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" kindref="member">port</ref>;</highlight></codeline>
+<codeline lineno="39"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="40"><highlight class="normal"></highlight></codeline>
+<codeline lineno="47"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a5b2199deb4891a7c4292319e658a7749" kindref="member">config</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="48"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="49"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reference&lt;String&gt;<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a5b2199deb4891a7c4292319e658a7749" kindref="member">config</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Reference&lt;String&gt;();</highlight></codeline>
+<codeline lineno="50"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.node_config(session.handle(),<sp/>uri,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a5b2199deb4891a7c4292319e658a7749" kindref="member">config</ref>);</highlight></codeline>
+<codeline lineno="51"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="52"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>config.value;</highlight></codeline>
+<codeline lineno="53"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="54"><highlight class="normal"></highlight></codeline>
+<codeline lineno="61"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1adc0d56dd62688b69fa03051abe897661" kindref="member">status</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="62"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="63"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reference&lt;String&gt;<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1adc0d56dd62688b69fa03051abe897661" kindref="member">status</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Reference&lt;String&gt;();</highlight></codeline>
+<codeline lineno="64"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.node_status(session.handle(),<sp/>uri,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1adc0d56dd62688b69fa03051abe897661" kindref="member">status</ref>);</highlight></codeline>
+<codeline lineno="65"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="66"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>status.value;</highlight></codeline>
+<codeline lineno="67"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="68"><highlight class="normal"></highlight></codeline>
+<codeline lineno="74"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/></highlight><highlight class="keywordtype">void</highlight><highlight class="normal"><sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a58b151e9c9a49551903dc9a22e7c3993" kindref="member">stop</ref>(String<sp/>reason)<sp/>{</highlight></codeline>
+<codeline lineno="75"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="76"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.node_stop(session.handle(),<sp/>uri,<sp/>reason);</highlight></codeline>
+<codeline lineno="77"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="78"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="79"><highlight class="normal"></highlight></codeline>
+<codeline lineno="86"><highlight class="normal"><sp/><sp/><sp/><sp/></highlight><highlight class="keyword">public</highlight><highlight class="normal"><sp/>String<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a7884b3a4a798a043a2d704dcc5990f61" kindref="member">topology</ref>()<sp/>{</highlight></codeline>
+<codeline lineno="87"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>session.throwIfClosed();</highlight></codeline>
+<codeline lineno="88"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>Reference&lt;String&gt;<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a7884b3a4a798a043a2d704dcc5990f61" kindref="member">topology</ref><sp/>=<sp/></highlight><highlight class="keyword">new</highlight><highlight class="normal"><sp/>Reference&lt;String&gt;();</highlight></codeline>
+<codeline lineno="89"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordtype">int</highlight><highlight class="normal"><sp/>err<sp/>=<sp/>qdb.node_topology(session.handle(),<sp/>uri,<sp/><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a7884b3a4a798a043a2d704dcc5990f61" kindref="member">topology</ref>);</highlight></codeline>
+<codeline lineno="90"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/>ExceptionFactory.throwIfError(err);</highlight></codeline>
+<codeline lineno="91"><highlight class="normal"><sp/><sp/><sp/><sp/><sp/><sp/><sp/><sp/></highlight><highlight class="keywordflow">return</highlight><highlight class="normal"><sp/>topology.value;</highlight></codeline>
+<codeline lineno="92"><highlight class="normal"><sp/><sp/><sp/><sp/>}</highlight></codeline>
+<codeline lineno="93"><highlight class="normal">}</highlight></codeline>
+    </programlisting>
+    <location file="QdbNode.java"/>
+  </compounddef>
+</doxygen>

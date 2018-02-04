@@ -1,0 +1,81 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode" kind="enum" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbStream::Mode</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a416bddba1f074bfe5804afed38ea66dd" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbStream.Mode.READ</definition>
+        <argsstring></argsstring>
+        <name>READ</name>
+        <initializer>=(qdb_stream_mode.read)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStream.java" line="15" column="1" bodyfile="QdbStream.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a186697781f4c76b025a9676e535add5d" prot="public" static="no" mutable="no">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbStream.Mode.APPEND</definition>
+        <argsstring></argsstring>
+        <name>APPEND</name>
+        <initializer>=(qdb_stream_mode.append)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStream.java" line="16" column="1" bodyfile="QdbStream.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a0e30c6b418c845985d9798bf6b966266" prot="protected" static="no" mutable="no">
+        <type>final int</type>
+        <definition>final int net.quasardb.qdb.QdbStream.Mode.value</definition>
+        <argsstring></argsstring>
+        <name>value</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStream.java" line="18" column="1" bodyfile="QdbStream.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1addf53f55295e55bc0224330b244fa1d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbStream.Mode.Mode</definition>
+        <argsstring>(int value)</argsstring>
+        <name>Mode</name>
+        <param>
+          <type>int</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStream.java" line="19" column="1" bodyfile="QdbStream.java" bodystart="19" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="QdbStream.java" line="13" column="1" bodyfile="QdbStream.java" bodystart="13" bodyend="22"/>
+    <listofallmembers>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a186697781f4c76b025a9676e535add5d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream::Mode</scope><name>APPEND</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1addf53f55295e55bc0224330b244fa1d1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream::Mode</scope><name>Mode</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a416bddba1f074bfe5804afed38ea66dd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream::Mode</scope><name>READ</name></member>
+      <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a0e30c6b418c845985d9798bf6b966266" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream::Mode</scope><name>value</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

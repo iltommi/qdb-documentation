@@ -1,0 +1,199 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbAggregation</compoundname>
+    <innerclass refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type" prot="public">net::quasardb::qdb::QdbAggregation::Type</innerclass>
+    <templateparamlist>
+      <param>
+        <type>T</type>
+        <typeconstraint><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" kindref="compound">QdbColumnValue</ref></typeconstraint>
+      </param>
+    </templateparamlist>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a783cae0adfc77344c2a3cb38c8f31a7b" prot="protected" static="no" mutable="no">
+        <type><ref refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type" kindref="compound">Type</ref></type>
+        <definition>Type net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.type</definition>
+        <argsstring></argsstring>
+        <name>type</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="9" column="1" bodyfile="QdbAggregation.java" bodystart="9" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1ab51726df7922606ea34f9646292e0684" prot="protected" static="no" mutable="no">
+        <type>TimeRange</type>
+        <definition>TimeRange net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.range</definition>
+        <argsstring></argsstring>
+        <name>range</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="10" column="1" bodyfile="QdbAggregation.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1af7ce75cfea931996cd2bee0127a43ca2" prot="protected" static="no" mutable="no">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.count</definition>
+        <argsstring></argsstring>
+        <name>count</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="11" column="1" bodyfile="QdbAggregation.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a33a537fbcf5dca8d9d9f15e428cea072" prot="protected" static="no" mutable="no">
+        <type>T</type>
+        <definition>T net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.result</definition>
+        <argsstring></argsstring>
+        <name>result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="12" column="1" bodyfile="QdbAggregation.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a23e657b2efede34d0dd74c080ad9c184" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.QdbAggregation</definition>
+        <argsstring>(Type type, TimeRange range, long count, T value)</argsstring>
+        <name>QdbAggregation</name>
+        <param>
+          <type><ref refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type" kindref="compound">Type</ref></type>
+          <declname>type</declname>
+        </param>
+        <param>
+          <type>TimeRange</type>
+          <declname>range</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>count</declname>
+        </param>
+        <param>
+          <type>T</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="43" column="1" bodyfile="QdbAggregation.java" bodystart="43" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a78290802ce36de47efa749508c0eda91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="50" column="1" bodyfile="QdbAggregation.java" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a430bfda9afc182490d2319ab3858e888" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type" kindref="compound">Type</ref></type>
+        <definition>Type net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.getType</definition>
+        <argsstring>()</argsstring>
+        <name>getType</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="54" column="1" bodyfile="QdbAggregation.java" bodystart="54" bodyend="56"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a5994b3b0640c0c89b2bdbd8264da75e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.getCount</definition>
+        <argsstring>()</argsstring>
+        <name>getCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="58" column="1" bodyfile="QdbAggregation.java" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a9d91848d90df1cab69ddb71d2dab043b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>TimeRange</type>
+        <definition>TimeRange net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.getRange</definition>
+        <argsstring>()</argsstring>
+        <name>getRange</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="62" column="1" bodyfile="QdbAggregation.java" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1aa84ea4e87bb2887cafad8063b3539bc1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>T</type>
+        <definition>T net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.getResult</definition>
+        <argsstring>()</argsstring>
+        <name>getResult</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbAggregation.java" line="66" column="1" bodyfile="QdbAggregation.java" bodystart="66" bodyend="68"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="3">
+        <label>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation"/>
+        <childnode refid="4" relation="usage">
+          <edgelabel>range</edgelabel>
+        </childnode>
+        <childnode refid="5" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="5">
+        <label>net.quasardb.qdb.QdbAggregation&lt; T extends QdbColumnValue &gt;.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type"/>
+      </node>
+      <node id="4">
+        <label>TimeRange</label>
+      </node>
+    </collaborationgraph>
+    <location file="QdbAggregation.java" line="8" column="1" bodyfile="QdbAggregation.java" bodystart="8" bodyend="69"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1af7ce75cfea931996cd2bee0127a43ca2" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>count</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a5994b3b0640c0c89b2bdbd8264da75e2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>getCount</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a9d91848d90df1cab69ddb71d2dab043b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>getRange</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1aa84ea4e87bb2887cafad8063b3539bc1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>getResult</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a430bfda9afc182490d2319ab3858e888" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>getType</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a23e657b2efede34d0dd74c080ad9c184" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>QdbAggregation</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1ab51726df7922606ea34f9646292e0684" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>range</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a33a537fbcf5dca8d9d9f15e428cea072" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>result</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a78290802ce36de47efa749508c0eda91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a783cae0adfc77344c2a3cb38c8f31a7b" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbAggregation</scope><name>type</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

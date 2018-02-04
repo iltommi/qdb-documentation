@@ -1,0 +1,117 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbStream</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" prot="public" virt="non-virtual">net.quasardb.qdb.QdbEntry</basecompoundref>
+    <innerclass refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode" prot="public">net::quasardb::qdb::QdbStream::Mode</innerclass>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1a6451e16138301f4dc2339f8154e42ced" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbStream.QdbStream</definition>
+        <argsstring>(Session session, String alias)</argsstring>
+        <name>QdbStream</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStream.java" line="24" column="1" bodyfile="QdbStream.java" bodystart="24" bodyend="26"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1a7a9005806b8c99f7c541ed0070edd267" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>SeekableByteChannel</type>
+        <definition>SeekableByteChannel net.quasardb.qdb.QdbStream.open</definition>
+        <argsstring>(Mode mode)</argsstring>
+        <name>open</name>
+        <param>
+          <type><ref refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode" kindref="compound">Mode</ref></type>
+          <declname>mode</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Opens a ByteChannel for the stream.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>mode</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>How to open the stream: READ or APPEND </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A SeekableByteChannel </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbStream.java" line="35" column="1" bodyfile="QdbStream.java" bodystart="35" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents a stream in a quasardb database. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="129">
+        <label>net.quasardb.qdb.QdbStream</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream"/>
+        <childnode refid="130" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="130">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="131">
+        <label>net.quasardb.qdb.QdbStream</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream"/>
+        <childnode refid="132" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="132">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+    </collaborationgraph>
+    <location file="QdbStream.java" line="11" column="1" bodyfile="QdbStream.java" bodystart="11" bodyend="44"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>metadata</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>node</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1a7a9005806b8c99f7c541ed0070edd267" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>open</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>QdbEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1a6451e16138301f4dc2339f8154e42ced" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>QdbStream</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>remove</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbStream</scope><name>tags</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

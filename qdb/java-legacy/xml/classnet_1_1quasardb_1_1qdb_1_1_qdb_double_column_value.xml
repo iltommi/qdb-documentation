@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbDoubleColumnValue</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" prot="public" virt="non-virtual">net.quasardb.qdb.QdbColumnValue&lt; Double &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a7836b34e4b88426210a94da1d3bf6106" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleColumnValue.QdbDoubleColumnValue</definition>
+        <argsstring>()</argsstring>
+        <name>QdbDoubleColumnValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="12" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a406c4a516e36db5efd344bbd18f50ffe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleColumnValue.QdbDoubleColumnValue</definition>
+        <argsstring>(Double value)</argsstring>
+        <name>QdbDoubleColumnValue</name>
+        <param>
+          <type>Double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="16" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="16" bodyend="18"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1aa915ebaf202d5323db134674db9c72b8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleColumnValue.QdbDoubleColumnValue</definition>
+        <argsstring>(Timestamp timestamp, Double value)</argsstring>
+        <name>QdbDoubleColumnValue</name>
+        <param>
+          <type>Timestamp</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>Double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="20" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="20" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a3667cd930c40cf248fdf051ac977010a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleColumnValue.QdbDoubleColumnValue</definition>
+        <argsstring>(LocalDateTime timestamp, Double value)</argsstring>
+        <name>QdbDoubleColumnValue</name>
+        <param>
+          <type>LocalDateTime</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>Double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="24" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="24" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a494d64169b26d7b418c5ae5a53395bbc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleColumnValue.QdbDoubleColumnValue</definition>
+        <argsstring>(Timespec timestamp, Double value)</argsstring>
+        <name>QdbDoubleColumnValue</name>
+        <param>
+          <type>Timespec</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>Double</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="28" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a802073a788a5189e9b5bc60833980c46" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbDoubleColumnValue.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="41" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="41" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1abc5e164c788240fb3d6f586b47575517" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbDoubleColumnValue.equals</definition>
+        <argsstring>(Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="46" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="46" bodyend="51"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1aff1001c09a801624a379a5c4278e6069" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value" kindref="compound">QdbDoubleColumnValue</ref></type>
+        <definition>static QdbDoubleColumnValue net.quasardb.qdb.QdbDoubleColumnValue.fromNative</definition>
+        <argsstring>(qdb_ts_double_point input)</argsstring>
+        <name>fromNative</name>
+        <param>
+          <type>qdb_ts_double_point</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="32" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a5ff7ee64937f0368ac3322f7b477bbab" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_ts_double_point</type>
+        <definition>static qdb_ts_double_point net.quasardb.qdb.QdbDoubleColumnValue.toNative</definition>
+        <argsstring>(QdbColumnValue&lt; Double &gt; point)</argsstring>
+        <name>toNative</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" kindref="compound">QdbColumnValue</ref>&lt; Double &gt;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="37" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="37" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a52a8af1d6532410de3fa55c3cad16463" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbDoubleColumnValue.writeValue</definition>
+        <argsstring>(java.io.ObjectOutputStream stream, Double value)</argsstring>
+        <name>writeValue</name>
+        <param>
+          <type>java.io.ObjectOutputStream</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>Double</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="53" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="53" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1ab98679e5dd11bbe884eb087aec609737" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Double</type>
+        <definition>Double net.quasardb.qdb.QdbDoubleColumnValue.readValue</definition>
+        <argsstring>(java.io.ObjectInputStream stream)</argsstring>
+        <name>readValue</name>
+        <param>
+          <type>java.io.ObjectInputStream</type>
+          <declname>stream</declname>
+        </param>
+        <exceptions> throws IOException, ClassNotFoundException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnValue.java" line="56" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="56" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="80">
+        <label>net.quasardb.qdb.QdbColumnValue&lt; Double &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value"/>
+      </node>
+      <node id="79">
+        <label>net.quasardb.qdb.QdbDoubleColumnValue</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value"/>
+        <childnode refid="80" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="82">
+        <label>net.quasardb.qdb.QdbColumnValue&lt; Double &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value"/>
+      </node>
+      <node id="81">
+        <label>net.quasardb.qdb.QdbDoubleColumnValue</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value"/>
+        <childnode refid="82" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbDoubleColumnValue.java" line="10" column="1" bodyfile="QdbDoubleColumnValue.java" bodystart="10" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1abc5e164c788240fb3d6f586b47575517" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1aff1001c09a801624a379a5c4278e6069" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>fromNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a118065045ef0d2ea4266dd1758610b8a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>getTimestamp</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ab6ad1b72c6b31693aba90284d1b1f095" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>getValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1aaccb1e0d77bc5e8e04cbdda895609cfd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1af5de6f7dc162de5aff483f967e10f4bb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ae474743718648ec1a5d913ffc9728ea6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1acf22746eb5aba86f861946f3492d1827" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a7836b34e4b88426210a94da1d3bf6106" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbDoubleColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a406c4a516e36db5efd344bbd18f50ffe" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbDoubleColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1aa915ebaf202d5323db134674db9c72b8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbDoubleColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a3667cd930c40cf248fdf051ac977010a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbDoubleColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a494d64169b26d7b418c5ae5a53395bbc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>QdbDoubleColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1ab98679e5dd11bbe884eb087aec609737" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>readValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a247bd8143f81334560b6037ff6a07ddb" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>timestamp</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a5ff7ee64937f0368ac3322f7b477bbab" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>toNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a802073a788a5189e9b5bc60833980c46" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a99fa36dcba953412717078c75b39662b" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>value</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a52a8af1d6532410de3fa55c3cad16463" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>writeValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a9923e348480da7e903c9e2ddb2418887" prot="protected" virt="non-virtual" ambiguityscope="QdbColumnValue&lt; Double &gt;."><scope>net::quasardb::qdb::QdbDoubleColumnValue</scope><name>writeValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

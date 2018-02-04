@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbBatchEntry</compoundname>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob" prot="public" virt="non-virtual">net.quasardb.qdb.QdbBatchBlob</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a103b47ec3467b7a7547c7d3f389d789c" prot="protected" static="no" mutable="no">
+        <type>final <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch" kindref="compound">QdbBatch</ref></type>
+        <definition>final QdbBatch net.quasardb.qdb.QdbBatchEntry.batch</definition>
+        <argsstring></argsstring>
+        <name>batch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchEntry.java" line="10" column="1" bodyfile="QdbBatchEntry.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1ad5961afc867429cd7723e3456c66e65b" prot="protected" static="no" mutable="no">
+        <type>final String</type>
+        <definition>final String net.quasardb.qdb.QdbBatchEntry.alias</definition>
+        <argsstring></argsstring>
+        <name>alias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchEntry.java" line="11" column="1" bodyfile="QdbBatchEntry.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1afbc6439cc2958ce7c5886f0bd4eda132" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBatchEntry.QdbBatchEntry</definition>
+        <argsstring>(QdbBatch batch, String alias)</argsstring>
+        <name>QdbBatchEntry</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch" kindref="compound">QdbBatch</ref></type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchEntry.java" line="13" column="1" bodyfile="QdbBatchEntry.java" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a6e17fe2ef792407d76d964890c86d9f4" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatchEntry.assertNotAlreadyRun</definition>
+        <argsstring>()</argsstring>
+        <name>assertNotAlreadyRun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchEntry.java" line="18" column="1" bodyfile="QdbBatchEntry.java" bodystart="18" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Add operations in a batch. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="17">
+        <label>net.quasardb.qdb.QdbBatchBlob</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob"/>
+        <childnode refid="16" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>net.quasardb.qdb.QdbBatchEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="20">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="18">
+        <label>net.quasardb.qdb.QdbBatchEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry"/>
+        <childnode refid="19" relation="usage">
+          <edgelabel>batch</edgelabel>
+        </childnode>
+      </node>
+      <node id="19">
+        <label>net.quasardb.qdb.QdbBatch</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch"/>
+        <childnode refid="20" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbBatchEntry.java" line="9" column="1" bodyfile="QdbBatchEntry.java" bodystart="9" bodyend="22"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1ad5961afc867429cd7723e3456c66e65b" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchEntry</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a6e17fe2ef792407d76d964890c86d9f4" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchEntry</scope><name>assertNotAlreadyRun</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a103b47ec3467b7a7547c7d3f389d789c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchEntry</scope><name>batch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1afbc6439cc2958ce7c5886f0bd4eda132" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchEntry</scope><name>QdbBatchEntry</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

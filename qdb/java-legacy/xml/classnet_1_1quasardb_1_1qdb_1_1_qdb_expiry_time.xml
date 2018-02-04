@@ -1,0 +1,323 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbExpiryTime</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a4e4b15530b230850b742fca479879e49" prot="private" static="no" mutable="no">
+        <type>final long</type>
+        <definition>final long net.quasardb.qdb.QdbExpiryTime.millisecondsSinceEpoch</definition>
+        <argsstring></argsstring>
+        <name>millisecondsSinceEpoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="6" column="1" bodyfile="QdbExpiryTime.java" bodystart="6" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a6984ef6b9ab756b0a5b7fa36519e78e6" prot="public" static="yes" mutable="no">
+        <type>final <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>final QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.NEVER_EXPIRES</definition>
+        <argsstring></argsstring>
+        <name>NEVER_EXPIRES</name>
+        <initializer>= new <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref>(0)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="12" column="1" bodyfile="QdbExpiryTime.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a2cb45f276fed6eaaafae0fedf5485c6c" prot="public" static="yes" mutable="no">
+        <type>final <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>final QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.PRESERVE_EXPIRATION</definition>
+        <argsstring></argsstring>
+        <name>PRESERVE_EXPIRATION</name>
+        <initializer>= new <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref>(-1)</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="13" column="1" bodyfile="QdbExpiryTime.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a606a6587109a9c1a1d800fd1fe296433" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbExpiryTime.QdbExpiryTime</definition>
+        <argsstring>(long millisecondsSinceEpoch)</argsstring>
+        <name>QdbExpiryTime</name>
+        <param>
+          <type>long</type>
+          <declname>millisecondsSinceEpoch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="8" column="1" bodyfile="QdbExpiryTime.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ae3f6ed1234d8a250e3302d495100b134" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>static QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.fromCalendar</definition>
+        <argsstring>(Calendar calendar)</argsstring>
+        <name>fromCalendar</name>
+        <param>
+          <type>Calendar</type>
+          <declname>calendar</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="15" column="1" bodyfile="QdbExpiryTime.java" bodystart="15" bodyend="17"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a90b4af7ebdae2680ec68684f8e7bd4b9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>static QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.fromDate</definition>
+        <argsstring>(Date date)</argsstring>
+        <name>fromDate</name>
+        <param>
+          <type>Date</type>
+          <declname>date</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="19" column="1" bodyfile="QdbExpiryTime.java" bodystart="19" bodyend="21"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ad2a3fcdf6c7993f9fa83825affdaf7c5" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>static QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.makeSecondsSinceEpoch</definition>
+        <argsstring>(long value)</argsstring>
+        <name>makeSecondsSinceEpoch</name>
+        <param>
+          <type>long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="23" column="1" bodyfile="QdbExpiryTime.java" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a05b41e84bceb9bb9d60c2d288cf23e38" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>static QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.makeMillisSinceEpoch</definition>
+        <argsstring>(long value)</argsstring>
+        <name>makeMillisSinceEpoch</name>
+        <param>
+          <type>long</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="27" column="1" bodyfile="QdbExpiryTime.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a570f3e887d6a744e3eeef6b39a01a6b3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>static QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.makeSecondsFromNow</definition>
+        <argsstring>(long delayInSeconds)</argsstring>
+        <name>makeSecondsFromNow</name>
+        <param>
+          <type>long</type>
+          <declname>delayInSeconds</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="31" column="1" bodyfile="QdbExpiryTime.java" bodystart="31" bodyend="33"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a94d5746fce621a89bd34fe92317b6717" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>static QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.makeMillisFromNow</definition>
+        <argsstring>(long delayInMillis)</argsstring>
+        <name>makeMillisFromNow</name>
+        <param>
+          <type>long</type>
+          <declname>delayInMillis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="35" column="1" bodyfile="QdbExpiryTime.java" bodystart="35" bodyend="37"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ac23af7ee1c393cb463b4284c805e414e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+        <definition>static QdbExpiryTime net.quasardb.qdb.QdbExpiryTime.makeMinutesFromNow</definition>
+        <argsstring>(long delayInMinutes)</argsstring>
+        <name>makeMinutesFromNow</name>
+        <param>
+          <type>long</type>
+          <declname>delayInMinutes</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="39" column="1" bodyfile="QdbExpiryTime.java" bodystart="39" bodyend="41"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a50e8cb0684b8aaa77867c13bf37df97f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbExpiryTime.toSecondsSinceEpoch</definition>
+        <argsstring>()</argsstring>
+        <name>toSecondsSinceEpoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="43" column="1" bodyfile="QdbExpiryTime.java" bodystart="43" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ac367db4ec92245ff92ebec0a681f9db8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbExpiryTime.toMillisSinceEpoch</definition>
+        <argsstring>()</argsstring>
+        <name>toMillisSinceEpoch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="47" column="1" bodyfile="QdbExpiryTime.java" bodystart="47" bodyend="49"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a03b459deb96918d4f3fca7a5da7d826d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Date</type>
+        <definition>Date net.quasardb.qdb.QdbExpiryTime.toDate</definition>
+        <argsstring>()</argsstring>
+        <name>toDate</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="51" column="1" bodyfile="QdbExpiryTime.java" bodystart="51" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ab3a6a6c593311339c28f2c5e257f960e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Calendar</type>
+        <definition>Calendar net.quasardb.qdb.QdbExpiryTime.toCalendar</definition>
+        <argsstring>()</argsstring>
+        <name>toCalendar</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="55" column="1" bodyfile="QdbExpiryTime.java" bodystart="55" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a0024d5d7dadb77d719f68ea06b4dcbc7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbExpiryTime.equals</definition>
+        <argsstring>(Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="62" column="1" bodyfile="QdbExpiryTime.java" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1af0a7ab6b53e94c1283f6d1860bdfd574" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbExpiryTime.hashCode</definition>
+        <argsstring>()</argsstring>
+        <name>hashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="67" column="1" bodyfile="QdbExpiryTime.java" bodystart="67" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ad08c540f3e766abc853bdcbad6477405" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbExpiryTime.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbExpiryTime.java" line="72" column="1" bodyfile="QdbExpiryTime.java" bodystart="72" bodyend="74"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="111">
+        <label>net.quasardb.qdb.QdbExpiryTime</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time"/>
+        <childnode refid="111" relation="usage">
+          <edgelabel>PRESERVE_EXPIRATION</edgelabel>
+          <edgelabel>NEVER_EXPIRES</edgelabel>
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbExpiryTime.java" line="5" column="1" bodyfile="QdbExpiryTime.java" bodystart="5" bodyend="75"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a0024d5d7dadb77d719f68ea06b4dcbc7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ae3f6ed1234d8a250e3302d495100b134" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>fromCalendar</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a90b4af7ebdae2680ec68684f8e7bd4b9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>fromDate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1af0a7ab6b53e94c1283f6d1860bdfd574" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a94d5746fce621a89bd34fe92317b6717" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>makeMillisFromNow</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a05b41e84bceb9bb9d60c2d288cf23e38" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>makeMillisSinceEpoch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ac23af7ee1c393cb463b4284c805e414e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>makeMinutesFromNow</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a570f3e887d6a744e3eeef6b39a01a6b3" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>makeSecondsFromNow</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ad2a3fcdf6c7993f9fa83825affdaf7c5" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>makeSecondsSinceEpoch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a4e4b15530b230850b742fca479879e49" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>millisecondsSinceEpoch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a6984ef6b9ab756b0a5b7fa36519e78e6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>NEVER_EXPIRES</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a2cb45f276fed6eaaafae0fedf5485c6c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>PRESERVE_EXPIRATION</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a606a6587109a9c1a1d800fd1fe296433" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>QdbExpiryTime</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ab3a6a6c593311339c28f2c5e257f960e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>toCalendar</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a03b459deb96918d4f3fca7a5da7d826d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>toDate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ac367db4ec92245ff92ebec0a681f9db8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>toMillisSinceEpoch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a50e8cb0684b8aaa77867c13bf37df97f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>toSecondsSinceEpoch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ad08c540f3e766abc853bdcbad6477405" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbExpiryTime</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

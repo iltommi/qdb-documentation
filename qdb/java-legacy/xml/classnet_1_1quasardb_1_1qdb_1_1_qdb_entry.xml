@@ -1,0 +1,586 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbEntry</compoundname>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque" prot="public" virt="non-virtual">net.quasardb.qdb.QdbDeque</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry" prot="public" virt="non-virtual">net.quasardb.qdb.QdbExpirableEntry</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set" prot="public" virt="non-virtual">net.quasardb.qdb.QdbHashSet</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream" prot="public" virt="non-virtual">net.quasardb.qdb.QdbStream</derivedcompoundref>
+    <derivedcompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" prot="public" virt="non-virtual">net.quasardb.qdb.QdbTag</derivedcompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" prot="protected" static="no" mutable="no">
+        <type>final transient Session</type>
+        <definition>final transient Session net.quasardb.qdb.QdbEntry.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="14" column="1" bodyfile="QdbEntry.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" prot="protected" static="no" mutable="no">
+        <type>final String</type>
+        <definition>final String net.quasardb.qdb.QdbEntry.alias</definition>
+        <argsstring></argsstring>
+        <name>alias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="15" column="1" bodyfile="QdbEntry.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbEntry.QdbEntry</definition>
+        <argsstring>(Session session, String alias)</argsstring>
+        <name>QdbEntry</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="17" column="1" bodyfile="QdbEntry.java" bodystart="17" bodyend="20"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbEntry.alias</definition>
+        <argsstring>()</argsstring>
+        <name>alias</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the alias (i.e. its &quot;key&quot;) of the entry in the database.</para><para><simplesect kind="return"><para>The alias. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="27" column="1" bodyfile="QdbEntry.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.attachTag</definition>
+        <argsstring>(QdbTag tag)</argsstring>
+        <name>attachTag</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kindref="compound">QdbTag</ref></type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Attaches a tag to the entry. The tag is created if it does not exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag to attach. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the tag has been attached, false if it was already attached </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="40" column="1" bodyfile="QdbEntry.java" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.attachTag</definition>
+        <argsstring>(String tag)</argsstring>
+        <name>attachTag</name>
+        <param>
+          <type>String</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Attaches a tag to the entry. The tag is created if it does not exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alias of the tag to attach. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the tag has been attached, false if it was already attached </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="53" column="1" bodyfile="QdbEntry.java" bodystart="53" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.equals</definition>
+        <argsstring>(Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if a <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref> points to the same entry in the database.</para><para><simplesect kind="return"><para>true if entry type and alias are equals, false otherwise </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="66" column="1" bodyfile="QdbEntry.java" bodystart="66" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.equals</definition>
+        <argsstring>(QdbEntry entry)</argsstring>
+        <name>equals</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref></type>
+          <declname>entry</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if a <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref> points to the same entry in the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>entry</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An entry to compare to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if entry type and alias are equals, false otherwise. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="76" column="1" bodyfile="QdbEntry.java" bodystart="76" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbEntry.hashCode</definition>
+        <argsstring>()</argsstring>
+        <name>hashCode</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets alias hash code.</para><para><simplesect kind="return"><para>A hash-code based on the entry alias. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="86" column="1" bodyfile="QdbEntry.java" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.hasTag</definition>
+        <argsstring>(QdbTag tag)</argsstring>
+        <name>hasTag</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kindref="compound">QdbTag</ref></type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if a tag is attached to the entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag to check </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the entry has the provided tag, false otherwise </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="99" column="1" bodyfile="QdbEntry.java" bodystart="99" bodyend="101"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.hasTag</definition>
+        <argsstring>(String tag)</argsstring>
+        <name>hasTag</name>
+        <param>
+          <type>String</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if a tag is attached to the entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alias to the tag to check. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the entry has the provided tag, false otherwise </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="112" column="1" bodyfile="QdbEntry.java" bodystart="112" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbEntry.remove</definition>
+        <argsstring>()</argsstring>
+        <name>remove</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the entry from the database.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="126" column="1" bodyfile="QdbEntry.java" bodystart="126" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.detachTag</definition>
+        <argsstring>(QdbTag tag)</argsstring>
+        <name>detachTag</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kindref="compound">QdbTag</ref></type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Detaches a tag from the entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The tag to detach. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the tag has been detached, false if the tag was not attached </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="141" column="1" bodyfile="QdbEntry.java" bodystart="141" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbEntry.detachTag</definition>
+        <argsstring>(String tag)</argsstring>
+        <name>detachTag</name>
+        <param>
+          <type>String</type>
+          <declname>tag</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Detaches a tag from the entry.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>tag</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alias of the tag to detach. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the tag has been detached, false if the tag was not attached </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="154" column="1" bodyfile="QdbEntry.java" bodystart="154" bodyend="159"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Iterable&lt; <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kindref="compound">QdbTag</ref> &gt;</type>
+        <definition>Iterable&lt;QdbTag&gt; net.quasardb.qdb.QdbEntry.tags</definition>
+        <argsstring>()</argsstring>
+        <name>tags</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the tags attached to the entry.</para><para><simplesect kind="return"><para>The tags attached to the entry. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="168" column="1" bodyfile="QdbEntry.java" bodystart="168" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata" kindref="compound">QdbEntryMetadata</ref></type>
+        <definition>QdbEntryMetadata net.quasardb.qdb.QdbEntry.metadata</definition>
+        <argsstring>()</argsstring>
+        <name>metadata</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="172" column="1" bodyfile="QdbEntry.java" bodystart="172" bodyend="186"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" kindref="compound">QdbNode</ref></type>
+        <definition>QdbNode net.quasardb.qdb.QdbEntry.node</definition>
+        <argsstring>()</argsstring>
+        <name>node</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbEntry.java" line="188" column="1" bodyfile="QdbEntry.java" bodystart="188" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An entry in the database. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="89">
+        <label>net.quasardb.qdb.QdbStream</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="87">
+        <label>net.quasardb.qdb.QdbInteger</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer"/>
+        <childnode refid="85" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="88">
+        <label>net.quasardb.qdb.QdbHashSet</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="83">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="84">
+        <label>net.quasardb.qdb.QdbDeque</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="86">
+        <label>net.quasardb.qdb.QdbBlob</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob"/>
+        <childnode refid="85" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="90">
+        <label>net.quasardb.qdb.QdbTag</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="85">
+        <label>net.quasardb.qdb.QdbExpirableEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry"/>
+        <childnode refid="83" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <location file="QdbEntry.java" line="13" column="1" bodyfile="QdbEntry.java" bodystart="13" bodyend="196"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>metadata</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>node</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>QdbEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>remove</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbEntry</scope><name>tags</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

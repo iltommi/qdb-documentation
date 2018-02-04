@@ -1,0 +1,139 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator" kind="class" language="Java" prot="package">
+    <compoundname>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Iterator&lt; QdbEntry &gt;</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a1980be216a67c34e0d027769fa7ffceb" prot="package" static="no" mutable="no">
+        <type>final long</type>
+        <definition>final long net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator.handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTagEntries.java" line="13" column="1" bodyfile="QdbTagEntries.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a6bb3ab55c0d6f69a21546ff17c16002e" prot="package" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator.hasNext</definition>
+        <argsstring></argsstring>
+        <name>hasNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTagEntries.java" line="14" column="1" bodyfile="QdbTagEntries.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a63662840fb92441cc666ea0943858546" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator.QdbTagEntriesIterator</definition>
+        <argsstring>()</argsstring>
+        <name>QdbTagEntriesIterator</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTagEntries.java" line="16" column="1" bodyfile="QdbTagEntries.java" bodystart="16" bodyend="26"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1af807a44dc8ca318539a0520fdd9eb9bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator.hasNext</definition>
+        <argsstring>()</argsstring>
+        <name>hasNext</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTagEntries.java" line="28" column="1" bodyfile="QdbTagEntries.java" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a7eb3b5b3b9d42364b5f2c96c17c82a45" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref></type>
+        <definition>QdbEntry net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator.next</definition>
+        <argsstring>()</argsstring>
+        <name>next</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTagEntries.java" line="32" column="1" bodyfile="QdbTagEntries.java" bodystart="32" bodyend="43"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a5d534c3cba4cd689276acbc12c1559f2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator.remove</definition>
+        <argsstring>()</argsstring>
+        <name>remove</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTagEntries.java" line="45" column="1" bodyfile="QdbTagEntries.java" bodystart="45" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a7776da31a7236abbfcb066e3045d3667" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator.finalize</definition>
+        <argsstring>()</argsstring>
+        <name>finalize</name>
+        <exceptions> throws Throwable </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTagEntries.java" line="50" column="1" bodyfile="QdbTagEntries.java" bodystart="50" bodyend="53"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="146">
+        <label>net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator</label>
+        <childnode refid="147" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="147">
+        <label>Iterator&lt; QdbEntry &gt;</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="148">
+        <label>net.quasardb.qdb.QdbTagEntries.QdbTagEntriesIterator</label>
+        <childnode refid="149" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="149">
+        <label>Iterator&lt; QdbEntry &gt;</label>
+      </node>
+    </collaborationgraph>
+    <location file="QdbTagEntries.java" line="12" column="1" bodyfile="QdbTagEntries.java" bodystart="12" bodyend="54"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a7776da31a7236abbfcb066e3045d3667" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</scope><name>finalize</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a1980be216a67c34e0d027769fa7ffceb" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</scope><name>handle</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a6bb3ab55c0d6f69a21546ff17c16002e" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</scope><name>hasNext</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1af807a44dc8ca318539a0520fdd9eb9bd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</scope><name>hasNext</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a7eb3b5b3b9d42364b5f2c96c17c82a45" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</scope><name>next</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a63662840fb92441cc666ea0943858546" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</scope><name>QdbTagEntriesIterator</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a5d534c3cba4cd689276acbc12c1559f2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</scope><name>remove</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

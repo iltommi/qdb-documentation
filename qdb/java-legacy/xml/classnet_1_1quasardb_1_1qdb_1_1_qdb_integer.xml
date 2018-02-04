@@ -1,0 +1,412 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbInteger</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry" prot="public" virt="non-virtual">net.quasardb.qdb.QdbExpirableEntry</basecompoundref>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1ac64ac5a791f632dfbab007f149fe2865" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbInteger.QdbInteger</definition>
+        <argsstring>(Session session, String alias)</argsstring>
+        <name>QdbInteger</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbInteger.java" line="11" column="1" bodyfile="QdbInteger.java" bodystart="11" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a6b825fdeff6e199523ff9c8ac26f8b40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbInteger.add</definition>
+        <argsstring>(long delta)</argsstring>
+        <name>add</name>
+        <param>
+          <type>long</type>
+          <declname>delta</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomically adds the given value to the current value.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>delta</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The increment to add to the current value. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The resulting value after the operation. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbInteger.java" line="25" column="1" bodyfile="QdbInteger.java" bodystart="25" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1aa26250da3ee05421bea97e44afcf2a1a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbInteger.get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Reads the current value of the integer.</para><para><simplesect kind="return"><para>The current value </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbInteger.java" line="42" column="1" bodyfile="QdbInteger.java" bodystart="42" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a3176bce17c24dca8423bfa8b451794ef" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbInteger.put</definition>
+        <argsstring>(long initialValue)</argsstring>
+        <name>put</name>
+        <param>
+          <type>long</type>
+          <declname>initialValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new integer. Errors if the integer already exists.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>initialValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the new integer. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasAlreadyExistsException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias already exists. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbInteger.java" line="58" column="1" bodyfile="QdbInteger.java" bodystart="58" bodyend="60"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a019a5494e825a75c3db731de9330829e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbInteger.put</definition>
+        <argsstring>(long initialValue, QdbExpiryTime expiryTime)</argsstring>
+        <name>put</name>
+        <param>
+          <type>long</type>
+          <declname>initialValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new integer. Errors if the integer already exists.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>initialValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The value of the new integer. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expiry time of the entry. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasAlreadyExistsException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias already exists. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbInteger.java" line="71" column="1" bodyfile="QdbInteger.java" bodystart="71" bodyend="75"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a4bcce6278d4c1615c2e77c9f1a1f6459" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbInteger.update</definition>
+        <argsstring>(long newValue)</argsstring>
+        <name>update</name>
+        <param>
+          <type>long</type>
+          <declname>newValue</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates an existing integer or creates one if it does not exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the integer. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the integer was created, or false it it was updated. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbInteger.java" line="86" column="1" bodyfile="QdbInteger.java" bodystart="86" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1ad64c5f11139b30ed43501d3aec32d7b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbInteger.update</definition>
+        <argsstring>(long newValue, QdbExpiryTime expiryTime)</argsstring>
+        <name>update</name>
+        <param>
+          <type>long</type>
+          <declname>newValue</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Updates an existing integer or creates one if it does not exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newValue</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new value of the integer. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expiry time of the entry. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the integer was created, or false it it was updated. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbInteger.java" line="100" column="1" bodyfile="QdbInteger.java" bodystart="100" bodyend="105"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A signed 64-bit integer in the database. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="121">
+        <label>net.quasardb.qdb.QdbInteger</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer"/>
+        <childnode refid="122" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="123">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="122">
+        <label>net.quasardb.qdb.QdbExpirableEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry"/>
+        <childnode refid="123" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="124">
+        <label>net.quasardb.qdb.QdbInteger</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer"/>
+        <childnode refid="125" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="126">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="125">
+        <label>net.quasardb.qdb.QdbExpirableEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry"/>
+        <childnode refid="126" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbInteger.java" line="9" column="1" bodyfile="QdbInteger.java" bodystart="9" bodyend="106"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a6b825fdeff6e199523ff9c8ac26f8b40" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>add</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a477a82e0324a7a1ebdc102b8a6e71dd8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>expiryTime</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a8c644748552b475069a95227c80830d9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>expiryTime</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1aa26250da3ee05421bea97e44afcf2a1a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>get</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>metadata</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>node</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a3176bce17c24dca8423bfa8b451794ef" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>put</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a019a5494e825a75c3db731de9330829e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>put</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>QdbEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1ad7fcfdddc2908c7b8842383d1cbdf2be" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>QdbExpirableEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1ac64ac5a791f632dfbab007f149fe2865" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>QdbInteger</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>remove</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>tags</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a4bcce6278d4c1615c2e77c9f1a1f6459" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>update</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1ad64c5f11139b30ed43501d3aec32d7b3" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbInteger</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

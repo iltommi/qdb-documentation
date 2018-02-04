@@ -1,0 +1,226 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbNode</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a8934c5b0405982474cde403b0e5e9bbe" prot="private" static="no" mutable="no">
+        <type>transient Session</type>
+        <definition>transient Session net.quasardb.qdb.QdbNode.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="10" column="1" bodyfile="QdbNode.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a45160d22a1e3e6b3eeaf3ebc88e88a09" prot="private" static="no" mutable="no">
+        <type>final String</type>
+        <definition>final String net.quasardb.qdb.QdbNode.hostName</definition>
+        <argsstring></argsstring>
+        <name>hostName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="11" column="1" bodyfile="QdbNode.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9e29c0787f0122b6640cbbc84030c070" prot="private" static="no" mutable="no">
+        <type>final int</type>
+        <definition>final int net.quasardb.qdb.QdbNode.port</definition>
+        <argsstring></argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="12" column="1" bodyfile="QdbNode.java" bodystart="12" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a15b52e7734e875e9c16a3eed2c79b324" prot="private" static="no" mutable="no">
+        <type>final String</type>
+        <definition>final String net.quasardb.qdb.QdbNode.uri</definition>
+        <argsstring></argsstring>
+        <name>uri</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="13" column="1" bodyfile="QdbNode.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9d8cb8a3dfd286878f06a30216720c46" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbNode.QdbNode</definition>
+        <argsstring>(Session session, String hostName, int port)</argsstring>
+        <name>QdbNode</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>hostName</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>port</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="16" column="1" bodyfile="QdbNode.java" bodystart="16" bodyend="21"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1aab46c17e33f891f1db823c57960245da" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbNode.hostName</definition>
+        <argsstring>()</argsstring>
+        <name>hostName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the hostname of the node.</para><para><simplesect kind="return"><para>the hostname of the quasardb node </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="28" column="1" bodyfile="QdbNode.java" bodystart="28" bodyend="30"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbNode.port</definition>
+        <argsstring>()</argsstring>
+        <name>port</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get the port of the node.</para><para><simplesect kind="return"><para>the port of the quasardb node </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="37" column="1" bodyfile="QdbNode.java" bodystart="37" bodyend="39"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a5b2199deb4891a7c4292319e658a7749" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbNode.config</definition>
+        <argsstring>()</argsstring>
+        <name>config</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the configuration node.</para><para><simplesect kind="return"><para>A JSON string containing the configuration of the node. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="47" column="1" bodyfile="QdbNode.java" bodystart="47" bodyend="53"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1adc0d56dd62688b69fa03051abe897661" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbNode.status</definition>
+        <argsstring>()</argsstring>
+        <name>status</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the status of the node.</para><para><simplesect kind="return"><para>A JSON string containing the status of the node. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="61" column="1" bodyfile="QdbNode.java" bodystart="61" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a58b151e9c9a49551903dc9a22e7c3993" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbNode.stop</definition>
+        <argsstring>(String reason)</argsstring>
+        <name>stop</name>
+        <param>
+          <type>String</type>
+          <declname>reason</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Shutdown the node.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>reason</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>A message that will be logged as the reason for the shutdown. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="74" column="1" bodyfile="QdbNode.java" bodystart="74" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a7884b3a4a798a043a2d704dcc5990f61" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbNode.topology</definition>
+        <argsstring>()</argsstring>
+        <name>topology</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the topology of the node.</para><para><simplesect kind="return"><para>A JSON string containing the topology of the node. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbNode.java" line="86" column="1" bodyfile="QdbNode.java" bodystart="86" bodyend="92"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A node in the quasardb cluster. </para>    </detaileddescription>
+    <location file="QdbNode.java" line="9" column="1" bodyfile="QdbNode.java" bodystart="9" bodyend="93"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a5b2199deb4891a7c4292319e658a7749" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>config</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a45160d22a1e3e6b3eeaf3ebc88e88a09" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>hostName</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1aab46c17e33f891f1db823c57960245da" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>hostName</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9e29c0787f0122b6640cbbc84030c070" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>port</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>port</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9d8cb8a3dfd286878f06a30216720c46" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>QdbNode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a8934c5b0405982474cde403b0e5e9bbe" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1adc0d56dd62688b69fa03051abe897661" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>status</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a58b151e9c9a49551903dc9a22e7c3993" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>stop</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a7884b3a4a798a043a2d704dcc5990f61" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>topology</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a15b52e7734e875e9c16a3eed2c79b324" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbNode</scope><name>uri</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

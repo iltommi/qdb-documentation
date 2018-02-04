@@ -1,0 +1,395 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbTimeSeries</compoundname>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a853d20fee6a02e9a25d81f7e0067b156" prot="package" static="no" mutable="no">
+        <type>Session</type>
+        <definition>Session net.quasardb.qdb.QdbTimeSeries.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="19" column="1" bodyfile="QdbTimeSeries.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ae52d80e86da6210f17b425f5f6da9785" prot="package" static="no" mutable="no">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbTimeSeries.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="20" column="1" bodyfile="QdbTimeSeries.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ac97413415169eaad2d2238bdce08f111" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbTimeSeries.QdbTimeSeries</definition>
+        <argsstring>(Session session, String name)</argsstring>
+        <name>QdbTimeSeries</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="22" column="1" bodyfile="QdbTimeSeries.java" bodystart="22" bodyend="25"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a7601ab98457e498d3b3b1b8b58bc8c01" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbTimeSeries.getName</definition>
+        <argsstring>()</argsstring>
+        <name>getName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="27" column="1" bodyfile="QdbTimeSeries.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a7e33f50dc3cad72e2b678149f5edfa82" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbTimeSeries.create</definition>
+        <argsstring>(long millisecondsShardSize, Column[] columns)</argsstring>
+        <name>create</name>
+        <param>
+          <type>long</type>
+          <declname>millisecondsShardSize</declname>
+        </param>
+        <param>
+          <type>Column []</type>
+          <declname>columns</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create new timeseries table with a collection of columns. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="34" column="1" bodyfile="QdbTimeSeries.java" bodystart="34" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a8830cdcdacd8b0d58cfef9da66902677" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Writer</type>
+        <definition>Writer net.quasardb.qdb.QdbTimeSeries.tableWriter</definition>
+        <argsstring>()</argsstring>
+        <name>tableWriter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new timeseries table writer.</para><para>Table writer should be periodically flushed by invoking the .flush() method, or create a new table writer using <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1abdaedac01a778f4d23bcb57eb7c600a8" kindref="member">autoFlushTableWriter()</ref> instead. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="49" column="1" bodyfile="QdbTimeSeries.java" bodystart="49" bodyend="51"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1abdaedac01a778f4d23bcb57eb7c600a8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>AutoFlushWriter</type>
+        <definition>AutoFlushWriter net.quasardb.qdb.QdbTimeSeries.autoFlushTableWriter</definition>
+        <argsstring>()</argsstring>
+        <name>autoFlushTableWriter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new timeseries table writer with auto-flush enabled. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="56" column="1" bodyfile="QdbTimeSeries.java" bodystart="56" bodyend="58"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1af9e1f11aecaab54be5cdf77697c6c95a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>AutoFlushWriter</type>
+        <definition>AutoFlushWriter net.quasardb.qdb.QdbTimeSeries.autoFlushTableWriter</definition>
+        <argsstring>(long threshold)</argsstring>
+        <name>autoFlushTableWriter</name>
+        <param>
+          <type>long</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new timeseries table writer with auto-flush enabled.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of rows to keep in local buffer before automatic flushing occurs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="65" column="1" bodyfile="QdbTimeSeries.java" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1acf28ed0b14dc708d010b43b35442db30" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Reader</type>
+        <definition>Reader net.quasardb.qdb.QdbTimeSeries.tableReader</definition>
+        <argsstring>(TimeRange[] ranges)</argsstring>
+        <name>tableReader</name>
+        <param>
+          <type>TimeRange []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new timeseries table reader. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="72" column="1" bodyfile="QdbTimeSeries.java" bodystart="72" bodyend="74"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1aa8cc7edef0f7f3274e24d257dd4ad55c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Reader</type>
+        <definition>Reader net.quasardb.qdb.QdbTimeSeries.tableReader</definition>
+        <argsstring>(FilteredRange[] ranges)</argsstring>
+        <name>tableReader</name>
+        <param>
+          <type>FilteredRange []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new timeseries table reader. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="79" column="1" bodyfile="QdbTimeSeries.java" bodystart="79" bodyend="81"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ae8a116fd096d1b44e2400408872334e0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbTimeSeries.insertColumns</definition>
+        <argsstring>(Column[] columns)</argsstring>
+        <name>insertColumns</name>
+        <param>
+          <type>Column []</type>
+          <declname>columns</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="83" column="1" bodyfile="QdbTimeSeries.java" bodystart="83" bodyend="88"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a3f65889bb6c14b1d822b9ccda2fb1ef0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Column []</type>
+        <definition>Column [] net.quasardb.qdb.QdbTimeSeries.listColumns</definition>
+        <argsstring>()</argsstring>
+        <name>listColumns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="90" column="1" bodyfile="QdbTimeSeries.java" bodystart="90" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1af41dd5094a7892dd9df4e7aeb26dc3b3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbTimeSeries.insertDoubles</definition>
+        <argsstring>(QdbDoubleColumnCollection points)</argsstring>
+        <name>insertDoubles</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection" kindref="compound">QdbDoubleColumnCollection</ref></type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="99" column="1" bodyfile="QdbTimeSeries.java" bodystart="99" bodyend="105"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a2f545812ad31a96166026c830183bc7c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection" kindref="compound">QdbDoubleColumnCollection</ref></type>
+        <definition>QdbDoubleColumnCollection net.quasardb.qdb.QdbTimeSeries.getDoubles</definition>
+        <argsstring>(String column, TimeRange[] ranges)</argsstring>
+        <name>getDoubles</name>
+        <param>
+          <type>String</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>TimeRange []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access to timeseries doubles by column. Helper function that automatically converts TimeRange objects to FilteredRange objects without filter; </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="111" column="1" bodyfile="QdbTimeSeries.java" bodystart="111" bodyend="114"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ad416ca31872444e696f4c4c5eede8c28" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection" kindref="compound">QdbDoubleColumnCollection</ref></type>
+        <definition>QdbDoubleColumnCollection net.quasardb.qdb.QdbTimeSeries.getDoubles</definition>
+        <argsstring>(String column, FilteredRange[] ranges)</argsstring>
+        <name>getDoubles</name>
+        <param>
+          <type>String</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>FilteredRange []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access to timeseries doubles by column. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="119" column="1" bodyfile="QdbTimeSeries.java" bodystart="119" bodyend="130"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a8098959b6a11bd925eb26fc85ad1a9ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection" kindref="compound">QdbDoubleAggregationCollection</ref></type>
+        <definition>QdbDoubleAggregationCollection net.quasardb.qdb.QdbTimeSeries.doubleAggregate</definition>
+        <argsstring>(String column, QdbDoubleAggregationCollection input)</argsstring>
+        <name>doubleAggregate</name>
+        <param>
+          <type>String</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection" kindref="compound">QdbDoubleAggregationCollection</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="132" column="1" bodyfile="QdbTimeSeries.java" bodystart="132" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a846485d05a5e85b5dab551c8b3768773" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbTimeSeries.insertBlobs</definition>
+        <argsstring>(QdbBlobColumnCollection points)</argsstring>
+        <name>insertBlobs</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection" kindref="compound">QdbBlobColumnCollection</ref></type>
+          <declname>points</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="145" column="1" bodyfile="QdbTimeSeries.java" bodystart="145" bodyend="151"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a9b7378faeb0c7b21843d0e6812596eb6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection" kindref="compound">QdbBlobColumnCollection</ref></type>
+        <definition>QdbBlobColumnCollection net.quasardb.qdb.QdbTimeSeries.getBlobs</definition>
+        <argsstring>(String column, TimeRange[] ranges)</argsstring>
+        <name>getBlobs</name>
+        <param>
+          <type>String</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>TimeRange []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access to timeseries blobs by column. Helper function that automatically converts TimeRange objects to FilteredRange objects without filter. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="158" column="1" bodyfile="QdbTimeSeries.java" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a5c43ee0e7b8dd7ea14c2350da3a8ccb1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection" kindref="compound">QdbBlobColumnCollection</ref></type>
+        <definition>QdbBlobColumnCollection net.quasardb.qdb.QdbTimeSeries.getBlobs</definition>
+        <argsstring>(String column, FilteredRange[] ranges)</argsstring>
+        <name>getBlobs</name>
+        <param>
+          <type>String</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type>FilteredRange []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Access to timeseries blobs by column. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="166" column="1" bodyfile="QdbTimeSeries.java" bodystart="166" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a665b23e31db5256bf0fce9a8c27d3a0b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection" kindref="compound">QdbBlobAggregationCollection</ref></type>
+        <definition>QdbBlobAggregationCollection net.quasardb.qdb.QdbTimeSeries.blobAggregate</definition>
+        <argsstring>(String column, QdbBlobAggregationCollection input)</argsstring>
+        <name>blobAggregate</name>
+        <param>
+          <type>String</type>
+          <declname>column</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection" kindref="compound">QdbBlobAggregationCollection</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbTimeSeries.java" line="179" column="1" bodyfile="QdbTimeSeries.java" bodystart="179" bodyend="190"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Legacy interface to <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series" kindref="compound">QdbTimeSeries</ref>, which provides legacy compatibility functions. </para>    </detaileddescription>
+    <location file="QdbTimeSeries.java" line="17" column="1" bodyfile="QdbTimeSeries.java" bodystart="17" bodyend="191"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1abdaedac01a778f4d23bcb57eb7c600a8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>autoFlushTableWriter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1af9e1f11aecaab54be5cdf77697c6c95a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>autoFlushTableWriter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a665b23e31db5256bf0fce9a8c27d3a0b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>blobAggregate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a7e33f50dc3cad72e2b678149f5edfa82" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>create</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a8098959b6a11bd925eb26fc85ad1a9ae" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>doubleAggregate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a9b7378faeb0c7b21843d0e6812596eb6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>getBlobs</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a5c43ee0e7b8dd7ea14c2350da3a8ccb1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>getBlobs</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a2f545812ad31a96166026c830183bc7c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>getDoubles</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ad416ca31872444e696f4c4c5eede8c28" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>getDoubles</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a7601ab98457e498d3b3b1b8b58bc8c01" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>getName</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a846485d05a5e85b5dab551c8b3768773" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>insertBlobs</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ae8a116fd096d1b44e2400408872334e0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>insertColumns</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1af41dd5094a7892dd9df4e7aeb26dc3b3" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>insertDoubles</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a3f65889bb6c14b1d822b9ccda2fb1ef0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>listColumns</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ae52d80e86da6210f17b425f5f6da9785" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>name</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ac97413415169eaad2d2238bdce08f111" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>QdbTimeSeries</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a853d20fee6a02e9a25d81f7e0067b156" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1acf28ed0b14dc708d010b43b35442db30" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>tableReader</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1aa8cc7edef0f7f3274e24d257dd4ad55c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>tableReader</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a8830cdcdacd8b0d58cfef9da66902677" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbTimeSeries</scope><name>tableWriter</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
