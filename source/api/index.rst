@@ -13,8 +13,8 @@ API Reference
    cpp
    go
    hadoop
+   java
    java-legacy
-   jni
    net
    nodejs
    php

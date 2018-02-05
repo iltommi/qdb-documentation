@@ -1,11 +1,16 @@
-Java
-====
+Java (Legacy API)
+=================
 
-.. default-domain:: java
-.. highlight:: java
+.. default-domain:: java-legacy
+.. highlight:: java-legacy
 
 Introduction
 ------------
+
+.. warning:: **You're looking at our deprecated, legacy Java API**
+
+             This documment is about our deprecated Java API that is for customers
+             that were on our old, < 2.2.0 API. Please see our :doc:`java` documentation.
 
 This document is an introduction to the quasardb Java API.
 
