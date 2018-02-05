@@ -62,3 +62,10 @@ Or, if you use Gradle, your ``build.gradle`` should look like:
 
 
 .. _Javadoc: https://doc.quasardb.net/java/
+
+Reference
+---------
+
+.. doxygennamespace:: net::quasardb::qdb
+  :project: qdb_jni_api
+  :members:
