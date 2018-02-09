@@ -268,3 +268,7 @@ This chapter contains a short summary of our Java API. For more a complete refer
 .. doxygenclass:: net::quasardb::qdb::ts::Value
 	:project: qdb_java_api
         :members:
+
+.. doxygenclass:: net::quasardb::qdb::ts::Result
+	:project: qdb_java_api
+        :members:
