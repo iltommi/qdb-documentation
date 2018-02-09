@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="13" column="1" bodyfile="ts/Timespec.java" bodystart="13" bodyend="-1"/>
+        <location file="ts/Timespec.java" line="20" column="1" bodyfile="ts/Timespec.java" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -31,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="14" column="1" bodyfile="ts/Timespec.java" bodystart="14" bodyend="-1"/>
+        <location file="ts/Timespec.java" line="21" column="1" bodyfile="ts/Timespec.java" bodystart="21" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1af48bc6201a64aa1cb745d702393fff4a" prot="protected" static="no" mutable="no">
         <type>long</type>
@@ -44,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="15" column="1" bodyfile="ts/Timespec.java" bodystart="15" bodyend="-1"/>
+        <location file="ts/Timespec.java" line="22" column="1" bodyfile="ts/Timespec.java" bodystart="22" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -56,10 +56,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Construct a new <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> without any time. Should typically not be used, as these timespec values will be rejected by the QuasarDB backend. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="17" column="1" bodyfile="ts/Timespec.java" bodystart="17" bodyend="20"/>
+        <location file="ts/Timespec.java" line="28" column="1" bodyfile="ts/Timespec.java" bodystart="28" bodyend="31"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ab68fde11c45ef754eb43451ca7b715d2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -80,7 +80,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="22" column="1" bodyfile="ts/Timespec.java" bodystart="22" bodyend="25"/>
+        <location file="ts/Timespec.java" line="33" column="1" bodyfile="ts/Timespec.java" bodystart="33" bodyend="36"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a88ec741726f7d607c052ebb793b85a17" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -97,7 +97,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="27" column="1" bodyfile="ts/Timespec.java" bodystart="27" bodyend="30"/>
+        <location file="ts/Timespec.java" line="38" column="1" bodyfile="ts/Timespec.java" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1acce55406c130c83e90aadc16fc4e4448" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -114,7 +114,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="32" column="1" bodyfile="ts/Timespec.java" bodystart="32" bodyend="34"/>
+        <location file="ts/Timespec.java" line="43" column="1" bodyfile="ts/Timespec.java" bodystart="43" bodyend="45"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a423d3bf28da00b7ddc248cec350b76a2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -131,7 +131,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="36" column="1" bodyfile="ts/Timespec.java" bodystart="36" bodyend="39"/>
+        <location file="ts/Timespec.java" line="47" column="1" bodyfile="ts/Timespec.java" bodystart="47" bodyend="50"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a4a0fad684f8d6b9ebefee8023b635c7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>long</type>
@@ -144,7 +144,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="41" column="1" bodyfile="ts/Timespec.java" bodystart="41" bodyend="43"/>
+        <location file="ts/Timespec.java" line="52" column="1" bodyfile="ts/Timespec.java" bodystart="52" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ab6e9589717ad652ffd87f19d85c0ea34" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>long</type>
@@ -157,7 +157,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="45" column="1" bodyfile="ts/Timespec.java" bodystart="45" bodyend="47"/>
+        <location file="ts/Timespec.java" line="56" column="1" bodyfile="ts/Timespec.java" bodystart="56" bodyend="58"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1aff8af9bdcd66c2b8cfce7d47cd983b16" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
@@ -174,7 +174,7 @@
 <para>Returns copy of this instance with the specified duration in seconds added. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="60" column="1" bodyfile="ts/Timespec.java" bodystart="60" bodyend="63"/>
+        <location file="ts/Timespec.java" line="80" column="1" bodyfile="ts/Timespec.java" bodystart="80" bodyend="83"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a4abef42ceaa3e1d62df4f920b04136d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
@@ -191,7 +191,41 @@
 <para>Returns copy of this instance with the specified duration in nanoseconds added. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="68" column="1" bodyfile="ts/Timespec.java" bodystart="68" bodyend="71"/>
+        <location file="ts/Timespec.java" line="88" column="1" bodyfile="ts/Timespec.java" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a3aee91c331b0821300bf5e757fc25fa7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
+        <definition>Timespec net.quasardb.qdb.ts.Timespec.minusSeconds</definition>
+        <argsstring>(long secondsToDeduct)</argsstring>
+        <name>minusSeconds</name>
+        <param>
+          <type>long</type>
+          <declname>secondsToDeduct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns copy of this instance with the specified duration in seconds deducted. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Timespec.java" line="96" column="1" bodyfile="ts/Timespec.java" bodystart="96" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a21f3d17dd0ef0c54051ded2d346bfacc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
+        <definition>Timespec net.quasardb.qdb.ts.Timespec.minusNanos</definition>
+        <argsstring>(long nanosToDeduct)</argsstring>
+        <name>minusNanos</name>
+        <param>
+          <type>long</type>
+          <declname>nanosToDeduct</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns copy of this instance with the specified duration in nanoseconds deducted. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Timespec.java" line="104" column="1" bodyfile="ts/Timespec.java" bodystart="104" bodyend="107"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a825647a2769be64265e93b97a25e1c3c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Instant</type>
@@ -201,10 +235,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Converts this <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> into an <ref refid="" kindref="compound">Instant</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="73" column="1" bodyfile="ts/Timespec.java" bodystart="73" bodyend="76"/>
+        <location file="ts/Timespec.java" line="113" column="1" bodyfile="ts/Timespec.java" bodystart="113" bodyend="116"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a584c47e125d6ec6da28010ffa71c55bd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>LocalDateTime</type>
@@ -214,10 +248,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Converts this <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> into an <ref refid="" kindref="compound">LocalDateTime</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="78" column="1" bodyfile="ts/Timespec.java" bodystart="78" bodyend="81"/>
+        <location file="ts/Timespec.java" line="121" column="1" bodyfile="ts/Timespec.java" bodystart="121" bodyend="124"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a661f065bdcb3b76d5abd3cad9341841d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Timestamp</type>
@@ -227,10 +261,10 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Converts this <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> into an sql <ref refid="" kindref="compound">Timestamp</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="83" column="1" bodyfile="ts/Timespec.java" bodystart="83" bodyend="85"/>
+        <location file="ts/Timespec.java" line="129" column="1" bodyfile="ts/Timespec.java" bodystart="129" bodyend="131"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1aaa12b8c30b2dbec29883705c8468148a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>boolean</type>
@@ -247,7 +281,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="88" column="1" bodyfile="ts/Timespec.java" bodystart="88" bodyend="93"/>
+        <location file="ts/Timespec.java" line="134" column="1" bodyfile="ts/Timespec.java" bodystart="134" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a787c8a57415727bf95ac58b5657dec8b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -260,7 +294,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="95" column="1" bodyfile="ts/Timespec.java" bodystart="95" bodyend="97"/>
+        <location file="ts/Timespec.java" line="141" column="1" bodyfile="ts/Timespec.java" bodystart="141" bodyend="143"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -272,10 +306,11 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Construct a new <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> based on a <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock" kindref="compound">NanoClock</ref> that provides nanosecond precision.</para><para><simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock" kindref="compound">NanoClock</ref> </para></simplesect>
+</para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="49" column="1" bodyfile="ts/Timespec.java" bodystart="49" bodyend="51"/>
+        <location file="ts/Timespec.java" line="66" column="1" bodyfile="ts/Timespec.java" bodystart="66" bodyend="68"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a1db6d6154852fe9ce7be22783e15a46e" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
@@ -289,16 +324,18 @@
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-        </detaileddescription>
+<para>Construct a new <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> using your own custom Clock. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Timespec.java" line="53" column="1" bodyfile="ts/Timespec.java" bodystart="53" bodyend="55"/>
+        <location file="ts/Timespec.java" line="73" column="1" bodyfile="ts/Timespec.java" bodystart="73" bodyend="75"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Nanosecond precision time specification for QuasarDB. Allows construction from multiple different clock sources, and interaction with the QuasarDB backend.</para><para><simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref> </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="375">
         <label>Serializable</label>
@@ -321,7 +358,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="ts/Timespec.java" line="12" column="1" bodyfile="ts/Timespec.java" bodystart="12" bodyend="98"/>
+    <location file="ts/Timespec.java" line="19" column="1" bodyfile="ts/Timespec.java" bodystart="19" bodyend="144"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a825647a2769be64265e93b97a25e1c3c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>asInstant</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a584c47e125d6ec6da28010ffa71c55bd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>asLocalDateTime</name></member>
@@ -330,6 +367,8 @@
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1aaa12b8c30b2dbec29883705c8468148a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>equals</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ab6e9589717ad652ffd87f19d85c0ea34" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>getNano</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a4a0fad684f8d6b9ebefee8023b635c7d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>getSec</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a21f3d17dd0ef0c54051ded2d346bfacc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>minusNanos</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a3aee91c331b0821300bf5e757fc25fa7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>minusSeconds</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ac91d638faef16fc7efae401148fff050" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>now</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1a1db6d6154852fe9ce7be22783e15a46e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>now</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1af48bc6201a64aa1cb745d702393fff4a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Timespec</scope><name>nsec</name></member>

@@ -3,6 +3,22 @@
   <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kind="class" language="Java" prot="public">
     <compoundname>net::quasardb::qdb::ts::Table</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Serializable</basecompoundref>
+      <sectiondef kind="package-static-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a7c7588b03cbb53ec0f8c32811f9d3df6" prot="package" static="yes" mutable="no">
+        <type>final long</type>
+        <definition>final long net.quasardb.qdb.ts.Table.DEFAULT_SHARD_SIZE</definition>
+        <argsstring></argsstring>
+        <name>DEFAULT_SHARD_SIZE</name>
+        <initializer>= 86400000</initializer>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="24" column="1" bodyfile="ts/Table.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
       <sectiondef kind="package-attrib">
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1abf2495a20d8e6362fa0c0686f467732f" prot="package" static="no" mutable="no">
         <type>String</type>
@@ -15,7 +31,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="24" column="1" bodyfile="ts/Table.java" bodystart="24" bodyend="-1"/>
+        <location file="ts/Table.java" line="26" column="1" bodyfile="ts/Table.java" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a14fac7b88ccea48eb1170dfe00feaf16" prot="package" static="no" mutable="no">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" kindref="compound">Column</ref> []</type>
@@ -28,7 +44,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="25" column="1" bodyfile="ts/Table.java" bodystart="25" bodyend="-1"/>
+        <location file="ts/Table.java" line="27" column="1" bodyfile="ts/Table.java" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aa953f51882ce6dde64730d1063ae34d4" prot="package" static="no" mutable="no">
         <type>Map&lt; String, Integer &gt;</type>
@@ -41,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="26" column="1" bodyfile="ts/Table.java" bodystart="26" bodyend="-1"/>
+        <location file="ts/Table.java" line="28" column="1" bodyfile="ts/Table.java" bodystart="28" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-func">
@@ -79,10 +95,117 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="34" column="1" bodyfile="ts/Table.java" bodystart="34" bodyend="49"/>
+        <location file="ts/Table.java" line="36" column="1" bodyfile="ts/Table.java" bodystart="36" bodyend="51"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a820a1fc90f78e1a27032bf662d44a816" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+        <definition>static Table net.quasardb.qdb.ts.Table.create</definition>
+        <argsstring>(Session session, String name, Column[] columns)</argsstring>
+        <name>create</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" kindref="compound">Column</ref> []</type>
+          <declname>columns</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create new timeseries table with a default shard size.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier for this timeseries table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" kindref="compound">Column</ref> definitions of this table. The ordering of the array will persist through the table definition and cannot be changed after creation. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the newly created timeseries table. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="62" column="1" bodyfile="ts/Table.java" bodystart="62" bodyend="64"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ac21adf2c639ab9551ad90c52a22f85f8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+        <definition>static Table net.quasardb.qdb.ts.Table.create</definition>
+        <argsstring>(Session session, String name, Column[] columns, long shardSize)</argsstring>
+        <name>create</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>name</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" kindref="compound">Column</ref> []</type>
+          <declname>columns</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>shardSize</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create new timeseries table.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Unique identifier for this timeseries table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>columns</parametername>
+</parameternamelist>
+<parameterdescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" kindref="compound">Column</ref> definitions of this table. The ordering of the array will persist through the table definition and cannot be changed after creation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>shardSize</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The size of the shards in ms. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Reference to the newly created timeseries table. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="76" column="1" bodyfile="ts/Table.java" bodystart="76" bodyend="85"/>
+      </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a25b622f32c44d2fa6481f1a65bedd8c7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer" kindref="compound">Writer</ref></type>
         <definition>static Writer net.quasardb.qdb.ts.Table.writer</definition>
@@ -104,7 +227,7 @@
 <parametername>session</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Active connection with the QdbCluster </para></parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -117,7 +240,43 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="57" column="1" bodyfile="ts/Table.java" bodystart="57" bodyend="60"/>
+        <location file="ts/Table.java" line="94" column="1" bodyfile="ts/Table.java" bodystart="94" bodyend="96"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1af6689c5034e5a560314736b9846dc0b8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer" kindref="compound">Writer</ref></type>
+        <definition>static Writer net.quasardb.qdb.ts.Table.writer</definition>
+        <argsstring>(Session session, Table table)</argsstring>
+        <name>writer</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new writer for a timeseries table.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries table. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="104" column="1" bodyfile="ts/Table.java" bodystart="104" bodyend="106"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ab6326323e1090cf527f3066bef5b69c8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref></type>
@@ -140,7 +299,7 @@
 <parametername>session</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Active connection with the QdbCluster </para></parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -153,7 +312,43 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="69" column="1" bodyfile="ts/Table.java" bodystart="69" bodyend="72"/>
+        <location file="ts/Table.java" line="115" column="1" bodyfile="ts/Table.java" bodystart="115" bodyend="117"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a9eb9c51e3041052a379002fc90ad0bcb" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref></type>
+        <definition>static AutoFlushWriter net.quasardb.qdb.ts.Table.autoFlushWriter</definition>
+        <argsstring>(Session session, Table table)</argsstring>
+        <name>autoFlushWriter</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new writer for a timeseries table that periodically flushes its local cache.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries table. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="126" column="1" bodyfile="ts/Table.java" bodystart="126" bodyend="128"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aa78fb256e0caaf4891bee0c1cc07fe03" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref></type>
@@ -180,7 +375,7 @@
 <parametername>session</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Active connection with the QdbCluster </para></parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -200,7 +395,54 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="82" column="1" bodyfile="ts/Table.java" bodystart="82" bodyend="86"/>
+        <location file="ts/Table.java" line="138" column="1" bodyfile="ts/Table.java" bodystart="138" bodyend="142"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1af53f0d29032a81b28eff6c052521be72" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kindref="compound">AutoFlushWriter</ref></type>
+        <definition>static AutoFlushWriter net.quasardb.qdb.ts.Table.autoFlushWriter</definition>
+        <argsstring>(Session session, Table table, long threshold)</argsstring>
+        <name>autoFlushWriter</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new writer for a timeseries table that periodically flushes its local cache.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of rows to keep in local buffer before automatic flushing occurs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="152" column="1" bodyfile="ts/Table.java" bodystart="152" bodyend="156"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a8383e5948b62cc7d39165761d9f0aea4" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader" kindref="compound">Reader</ref></type>
@@ -227,7 +469,7 @@
 <parametername>session</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Active connection with the QdbCluster </para></parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -247,7 +489,54 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="95" column="1" bodyfile="ts/Table.java" bodystart="95" bodyend="99"/>
+        <location file="ts/Table.java" line="165" column="1" bodyfile="ts/Table.java" bodystart="165" bodyend="169"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ad9d8a2cb8c4a4a7773a71b8f1093d7aa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader" kindref="compound">Reader</ref></type>
+        <definition>static Reader net.quasardb.qdb.ts.Table.reader</definition>
+        <argsstring>(Session session, Table table, FilteredRange[] ranges)</argsstring>
+        <name>reader</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range" kindref="compound">FilteredRange</ref> []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new reader for a timeseries table.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ranges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Filtered time ranges to look for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="178" column="1" bodyfile="ts/Table.java" bodystart="178" bodyend="182"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a22a38bfca2c3b7fb1b23ff0b39fc7591" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader" kindref="compound">Reader</ref></type>
@@ -274,7 +563,7 @@
 <parametername>session</parametername>
 </parameternamelist>
 <parameterdescription>
-<para>Active connection with the QdbCluster </para></parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
 </parameteritem>
 <parameteritem>
 <parameternamelist>
@@ -294,7 +583,54 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="108" column="1" bodyfile="ts/Table.java" bodystart="108" bodyend="114"/>
+        <location file="ts/Table.java" line="191" column="1" bodyfile="ts/Table.java" bodystart="191" bodyend="193"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a6d4038abba3c9c25ebba4e7e27c03b1d" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader" kindref="compound">Reader</ref></type>
+        <definition>static Reader net.quasardb.qdb.ts.Table.reader</definition>
+        <argsstring>(Session session, Table table, TimeRange[] ranges)</argsstring>
+        <name>reader</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref> []</type>
+          <declname>ranges</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initializes new reader for a timeseries table.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active session with the QuasarDB cluster. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>table</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries table. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ranges</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Time ranges to look for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="202" column="1" bodyfile="ts/Table.java" bodystart="202" bodyend="208"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -309,20 +645,20 @@
 <para>Returns the timeseries table name. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="119" column="1" bodyfile="ts/Table.java" bodystart="119" bodyend="121"/>
+        <location file="ts/Table.java" line="213" column="1" bodyfile="ts/Table.java" bodystart="213" bodyend="215"/>
       </memberdef>
-      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a2ea0f236609bce311a57c8d92e5c5edb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aabf86956487df07128a2d4844e72e15c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column" kindref="compound">Column</ref> []</type>
-        <definition>Column [] net.quasardb.qdb.ts.Table.getColumnInfo</definition>
+        <definition>Column [] net.quasardb.qdb.ts.Table.getColumns</definition>
         <argsstring>()</argsstring>
-        <name>getColumnInfo</name>
+        <name>getColumns</name>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
-<para>Returns internal representation of columns, for internal use only. </para>        </detaileddescription>
+<para>Returns column representation of this table. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="127" column="1" bodyfile="ts/Table.java" bodystart="127" bodyend="129"/>
+        <location file="ts/Table.java" line="220" column="1" bodyfile="ts/Table.java" bodystart="220" bodyend="222"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a33828ee88d69fb8d3f21403c092733e6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -348,7 +684,20 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Table.java" line="138" column="1" bodyfile="ts/Table.java" bodystart="138" bodyend="145"/>
+        <location file="ts/Table.java" line="231" column="1" bodyfile="ts/Table.java" bodystart="231" bodyend="238"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a783fed61b91af54df12f04af90e65f6a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.Table.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Table.java" line="240" column="1" bodyfile="ts/Table.java" bodystart="240" bodyend="242"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -415,20 +764,29 @@
         <label>ByteBuffer</label>
       </node>
     </collaborationgraph>
-    <location file="ts/Table.java" line="23" column="1" bodyfile="ts/Table.java" bodystart="23" bodyend="146"/>
+    <location file="ts/Table.java" line="23" column="1" bodyfile="ts/Table.java" bodystart="23" bodyend="243"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ab6326323e1090cf527f3066bef5b69c8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>autoFlushWriter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a9eb9c51e3041052a379002fc90ad0bcb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>autoFlushWriter</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aa78fb256e0caaf4891bee0c1cc07fe03" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>autoFlushWriter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1af53f0d29032a81b28eff6c052521be72" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>autoFlushWriter</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a33828ee88d69fb8d3f21403c092733e6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>columnIndexById</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aa953f51882ce6dde64730d1063ae34d4" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>columnOffsets</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a14fac7b88ccea48eb1170dfe00feaf16" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>columns</name></member>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a2ea0f236609bce311a57c8d92e5c5edb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>getColumnInfo</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a820a1fc90f78e1a27032bf662d44a816" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>create</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ac21adf2c639ab9551ad90c52a22f85f8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>create</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a7c7588b03cbb53ec0f8c32811f9d3df6" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>DEFAULT_SHARD_SIZE</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1aabf86956487df07128a2d4844e72e15c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>getColumns</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a5fee81c8ddc4d0e0a6a8dd9ffed0ca0d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>getName</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1abf2495a20d8e6362fa0c0686f467732f" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>name</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a8383e5948b62cc7d39165761d9f0aea4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>reader</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1ad9d8a2cb8c4a4a7773a71b8f1093d7aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>reader</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a22a38bfca2c3b7fb1b23ff0b39fc7591" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>reader</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a6d4038abba3c9c25ebba4e7e27c03b1d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>reader</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a46485132db6d165cae12cc69266b334a" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>Table</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a783fed61b91af54df12f04af90e65f6a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>toString</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1a25b622f32c44d2fa6481f1a65bedd8c7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>writer</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table_1af6689c5034e5a560314736b9846dc0b8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Table</scope><name>writer</name></member>
     </listofallmembers>
   </compounddef>
 </doxygen>

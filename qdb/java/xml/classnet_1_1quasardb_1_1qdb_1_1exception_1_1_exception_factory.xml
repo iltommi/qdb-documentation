@@ -18,7 +18,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/ExceptionFactory.java" line="7" column="1" bodyfile="exceptions/ExceptionFactory.java" bodystart="7" bodyend="12"/>
+        <location file="exception/ExceptionFactory.java" line="7" column="1" bodyfile="exception/ExceptionFactory.java" bodystart="7" bodyend="12"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_factory_1a85916f182f3910a0a0824ee21345e5c7" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref></type>
@@ -35,14 +35,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/ExceptionFactory.java" line="14" column="1" bodyfile="exceptions/ExceptionFactory.java" bodystart="14" bodyend="79"/>
+        <location file="exception/ExceptionFactory.java" line="14" column="1" bodyfile="exception/ExceptionFactory.java" bodystart="14" bodyend="79"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="exceptions/ExceptionFactory.java" line="5" column="1" bodyfile="exceptions/ExceptionFactory.java" bodystart="5" bodyend="80"/>
+    <location file="exception/ExceptionFactory.java" line="5" column="1" bodyfile="exception/ExceptionFactory.java" bodystart="5" bodyend="80"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_factory_1a85916f182f3910a0a0824ee21345e5c7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ExceptionFactory</scope><name>createException</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_factory_1aa677cfb7c1a0249d7e90f4451b7e81f7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ExceptionFactory</scope><name>throwIfError</name></member>

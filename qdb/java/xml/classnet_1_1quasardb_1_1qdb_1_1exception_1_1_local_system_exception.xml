@@ -19,7 +19,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/system/local/LocalSystemException.java" line="8" column="1" bodyfile="exceptions/system/local/LocalSystemException.java" bodystart="8" bodyend="10"/>
+        <location file="exception/system/local/LocalSystemException.java" line="8" column="1" bodyfile="exception/system/local/LocalSystemException.java" bodystart="8" bodyend="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -72,7 +72,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="exceptions/system/local/LocalSystemException.java" line="6" column="1" bodyfile="exceptions/system/local/LocalSystemException.java" bodystart="6" bodyend="11"/>
+    <location file="exception/system/local/LocalSystemException.java" line="6" column="1" bodyfile="exception/system/local/LocalSystemException.java" bodystart="6" bodyend="11"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::LocalSystemException</scope><name>Exception</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception_1a4be777e99f2c50f870b6290dae890be7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::LocalSystemException</scope><name>LocalSystemException</name></member>

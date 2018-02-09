@@ -4,24 +4,8 @@
     <compoundname>net::quasardb::qdb::ts::Value</compoundname>
     <basecompoundref prot="public" virt="non-virtual">Serializable</basecompoundref>
     <innerclass refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type" prot="public">net::quasardb::qdb::ts::Value::Type</innerclass>
-      <sectiondef kind="private-static-attrib">
-      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1afb90d5a839b3523cf91fd78fb679bf8a" prot="private" static="yes" mutable="no">
-        <type>final char []</type>
-        <definition>final char [] net.quasardb.qdb.ts.Value.hexArray</definition>
-        <argsstring></argsstring>
-        <name>hexArray</name>
-        <initializer>= &quot;0123456789ABCDEF&quot;.toCharArray()</initializer>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="ts/Value.java" line="16" column="1" bodyfile="ts/Value.java" bodystart="16" bodyend="-1"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="public-attrib">
-      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5c69924335ed97197f81105e06baf104" prot="public" static="no" mutable="no">
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5c69924335ed97197f81105e06baf104" prot="package" static="no" mutable="no">
         <type><ref refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type" kindref="compound">Type</ref></type>
         <definition>Type net.quasardb.qdb.ts.Value.type</definition>
         <argsstring></argsstring>
@@ -32,9 +16,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="18" column="1" bodyfile="ts/Value.java" bodystart="18" bodyend="-1"/>
+        <location file="ts/Value.java" line="16" column="1" bodyfile="ts/Value.java" bodystart="16" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5d523ae893bb54b635850c120304e164" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5d523ae893bb54b635850c120304e164" prot="package" static="no" mutable="no">
         <type>long</type>
         <definition>long net.quasardb.qdb.ts.Value.int64Value</definition>
         <argsstring></argsstring>
@@ -45,9 +29,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="19" column="1" bodyfile="ts/Value.java" bodystart="19" bodyend="-1"/>
+        <location file="ts/Value.java" line="17" column="1" bodyfile="ts/Value.java" bodystart="17" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0a806421cbdad685d0c6eb0ad5710309" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0a806421cbdad685d0c6eb0ad5710309" prot="package" static="no" mutable="no">
         <type>double</type>
         <definition>double net.quasardb.qdb.ts.Value.doubleValue</definition>
         <argsstring></argsstring>
@@ -58,9 +42,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="20" column="1" bodyfile="ts/Value.java" bodystart="20" bodyend="-1"/>
+        <location file="ts/Value.java" line="18" column="1" bodyfile="ts/Value.java" bodystart="18" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae59e2d0b630c1e14ef05f8c2b39695bf" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae59e2d0b630c1e14ef05f8c2b39695bf" prot="package" static="no" mutable="no">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
         <definition>Timespec net.quasardb.qdb.ts.Value.timestampValue</definition>
         <argsstring></argsstring>
@@ -71,9 +55,9 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="21" column="1" bodyfile="ts/Value.java" bodystart="21" bodyend="-1"/>
+        <location file="ts/Value.java" line="19" column="1" bodyfile="ts/Value.java" bodystart="19" bodyend="-1"/>
       </memberdef>
-      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aabea8e2921a73e24c66c376842f4a3b1" prot="public" static="no" mutable="no">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aabea8e2921a73e24c66c376842f4a3b1" prot="package" static="no" mutable="no">
         <type>ByteBuffer</type>
         <definition>ByteBuffer net.quasardb.qdb.ts.Value.blobValue</definition>
         <argsstring></argsstring>
@@ -84,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="22" column="1" bodyfile="ts/Value.java" bodystart="22" bodyend="-1"/>
+        <location file="ts/Value.java" line="20" column="1" bodyfile="ts/Value.java" bodystart="20" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -99,7 +83,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="60" column="1" bodyfile="ts/Value.java" bodystart="60" bodyend="62"/>
+        <location file="ts/Value.java" line="58" column="1" bodyfile="ts/Value.java" bodystart="58" bodyend="60"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a4b891abe900ea064567982741103b9e4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -112,7 +96,7 @@
 <para>Updates value to represent an unintialised value. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="78" column="1" bodyfile="ts/Value.java" bodystart="78" bodyend="80"/>
+        <location file="ts/Value.java" line="76" column="1" bodyfile="ts/Value.java" bodystart="76" bodyend="78"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aae1d4ca5248f39ac6ccc9d178d5cb52d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -129,7 +113,7 @@
 <para>Updates value to take a certain long integer value; </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="94" column="1" bodyfile="ts/Value.java" bodystart="94" bodyend="97"/>
+        <location file="ts/Value.java" line="92" column="1" bodyfile="ts/Value.java" bodystart="92" bodyend="95"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a344ba9095f0e3004d029fcddebc92169" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -146,7 +130,7 @@
 <para>Updates value to take a certain double value; </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="111" column="1" bodyfile="ts/Value.java" bodystart="111" bodyend="114"/>
+        <location file="ts/Value.java" line="109" column="1" bodyfile="ts/Value.java" bodystart="109" bodyend="112"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7d2a93d25bd1ad066b8a159792a6de4e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -163,7 +147,7 @@
 <para>Updates value to take a certain long integer value; </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="128" column="1" bodyfile="ts/Value.java" bodystart="128" bodyend="131"/>
+        <location file="ts/Value.java" line="126" column="1" bodyfile="ts/Value.java" bodystart="126" bodyend="129"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6af7416923c5b80c60c7b4e833b69920" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -180,7 +164,7 @@
 <para>Updates value to take a certain blob value. Warning: assumes byte array will stay in memory for as long as this object lives. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="153" column="1" bodyfile="ts/Value.java" bodystart="153" bodyend="156"/>
+        <location file="ts/Value.java" line="151" column="1" bodyfile="ts/Value.java" bodystart="151" bodyend="154"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1acd0265bb27d4c57a5ab898aae25735a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -197,7 +181,7 @@
 <para>Updates value to take a certain blob value; </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="161" column="1" bodyfile="ts/Value.java" bodystart="161" bodyend="164"/>
+        <location file="ts/Value.java" line="159" column="1" bodyfile="ts/Value.java" bodystart="159" bodyend="162"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a3d7e38b3e2038352479991eb5aa4f438" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>boolean</type>
@@ -214,7 +198,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="205" column="1" bodyfile="ts/Value.java" bodystart="205" bodyend="232"/>
+        <location file="ts/Value.java" line="192" column="1" bodyfile="ts/Value.java" bodystart="192" bodyend="219"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6fdfd849aff4d6872814e780c9fc6a7d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type" kindref="compound">Type</ref></type>
@@ -227,7 +211,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="308" column="1" bodyfile="ts/Value.java" bodystart="308" bodyend="310"/>
+        <location file="ts/Value.java" line="295" column="1" bodyfile="ts/Value.java" bodystart="295" bodyend="297"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6600492022fa9be1f0d56f09ef9081ce" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>long</type>
@@ -240,7 +224,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="312" column="1" bodyfile="ts/Value.java" bodystart="312" bodyend="318"/>
+        <location file="ts/Value.java" line="299" column="1" bodyfile="ts/Value.java" bodystart="299" bodyend="305"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a31078dc93f4595ce71c132a1e76c838f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>double</type>
@@ -253,7 +237,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="320" column="1" bodyfile="ts/Value.java" bodystart="320" bodyend="326"/>
+        <location file="ts/Value.java" line="307" column="1" bodyfile="ts/Value.java" bodystart="307" bodyend="313"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a32ddf392be750c2ce4edeec2cd19be8d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref></type>
@@ -266,7 +250,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="328" column="1" bodyfile="ts/Value.java" bodystart="328" bodyend="334"/>
+        <location file="ts/Value.java" line="315" column="1" bodyfile="ts/Value.java" bodystart="315" bodyend="321"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae9a55f5bb96f2094d8ffdcb650700a9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>ByteBuffer</type>
@@ -279,7 +263,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="336" column="1" bodyfile="ts/Value.java" bodystart="336" bodyend="342"/>
+        <location file="ts/Value.java" line="323" column="1" bodyfile="ts/Value.java" bodystart="323" bodyend="329"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a743b4bdf83199c949961319b038b823d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -292,7 +276,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="344" column="1" bodyfile="ts/Value.java" bodystart="344" bodyend="361"/>
+        <location file="ts/Value.java" line="331" column="1" bodyfile="ts/Value.java" bodystart="331" bodyend="348"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -311,7 +295,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="64" column="1" bodyfile="ts/Value.java" bodystart="64" bodyend="66"/>
+        <location file="ts/Value.java" line="62" column="1" bodyfile="ts/Value.java" bodystart="62" bodyend="64"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -326,7 +310,7 @@
 <para>Create a null / empty value. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="71" column="1" bodyfile="ts/Value.java" bodystart="71" bodyend="73"/>
+        <location file="ts/Value.java" line="69" column="1" bodyfile="ts/Value.java" bodystart="69" bodyend="71"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1af01afcf3f4a2a752c2008151cc829501" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref></type>
@@ -343,7 +327,7 @@
 <para>Represents a long integer </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="85" column="1" bodyfile="ts/Value.java" bodystart="85" bodyend="89"/>
+        <location file="ts/Value.java" line="83" column="1" bodyfile="ts/Value.java" bodystart="83" bodyend="87"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7e387e1798a83a3002f7bb33f3e05d6f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref></type>
@@ -360,7 +344,7 @@
 <para>Represents a double value. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="102" column="1" bodyfile="ts/Value.java" bodystart="102" bodyend="106"/>
+        <location file="ts/Value.java" line="100" column="1" bodyfile="ts/Value.java" bodystart="100" bodyend="104"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ad9558e2c059e37e0bb81bdb1ed695071" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref></type>
@@ -377,7 +361,7 @@
 <para>Represents a long integer </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="119" column="1" bodyfile="ts/Value.java" bodystart="119" bodyend="123"/>
+        <location file="ts/Value.java" line="117" column="1" bodyfile="ts/Value.java" bodystart="117" bodyend="121"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a40557c06ad80a831fc085d96685f75e9" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref></type>
@@ -394,7 +378,7 @@
 <para>Represents a blob value. Warning: assumes byte array will stay in memory for as long as this object lives. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="137" column="1" bodyfile="ts/Value.java" bodystart="137" bodyend="141"/>
+        <location file="ts/Value.java" line="135" column="1" bodyfile="ts/Value.java" bodystart="135" bodyend="139"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0f75a2704bddef927bca9b745fb8576f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref></type>
@@ -411,7 +395,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="143" column="1" bodyfile="ts/Value.java" bodystart="143" bodyend="147"/>
+        <location file="ts/Value.java" line="141" column="1" bodyfile="ts/Value.java" bodystart="141" bodyend="145"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aaea48197075483221250201454e153f8" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref></type>
@@ -428,7 +412,7 @@
 <para>Represents a safe blob value that copies the byte array. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="169" column="1" bodyfile="ts/Value.java" bodystart="169" bodyend="178"/>
+        <location file="ts/Value.java" line="167" column="1" bodyfile="ts/Value.java" bodystart="167" bodyend="176"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a85a6ed04a0154e4c6666950fd23c8856" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref></type>
@@ -445,27 +429,66 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="180" column="1" bodyfile="ts/Value.java" bodystart="180" bodyend="191"/>
+        <location file="ts/Value.java" line="178" column="1" bodyfile="ts/Value.java" bodystart="178" bodyend="189"/>
       </memberdef>
       </sectiondef>
-      <sectiondef kind="private-static-func">
-      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aae35b456e65013c5ca10df722d494f12" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>String</type>
-        <definition>static String net.quasardb.qdb.ts.Value.bytesToHex</definition>
-        <argsstring>(byte[] bytes)</argsstring>
-        <name>bytesToHex</name>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a4a4ccdd21d710250df630c2f4aee6317" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Value.writeObject</definition>
+        <argsstring>(java.io.ObjectOutputStream stream)</argsstring>
+        <name>writeObject</name>
         <param>
-          <type>byte []</type>
-          <declname>bytes</declname>
+          <type>java.io.ObjectOutputStream</type>
+          <declname>stream</declname>
         </param>
+        <exceptions> throws IOException </exceptions>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="193" column="1" bodyfile="ts/Value.java" bodystart="193" bodyend="201"/>
+        <location file="ts/Value.java" line="221" column="1" bodyfile="ts/Value.java" bodystart="221" bodyend="242"/>
       </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aa5ae7c7b92d92d384f03b5035acb2f27" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.Value.readObject</definition>
+        <argsstring>(java.io.ObjectInputStream stream)</argsstring>
+        <name>readObject</name>
+        <param>
+          <type>java.io.ObjectInputStream</type>
+          <declname>stream</declname>
+        </param>
+        <exceptions> throws IOException, ClassNotFoundException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Value.java" line="258" column="1" bodyfile="ts/Value.java" bodystart="258" bodyend="279"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7373f4e9b98dafa4c9185d1f32ee425d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ByteBuffer</type>
+        <definition>ByteBuffer net.quasardb.qdb.ts.Value.readBlobValue</definition>
+        <argsstring>(java.io.ObjectInputStream stream)</argsstring>
+        <name>readBlobValue</name>
+        <param>
+          <type>java.io.ObjectInputStream</type>
+          <declname>stream</declname>
+        </param>
+        <exceptions> throws IOException, ClassNotFoundException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Value.java" line="281" column="1" bodyfile="ts/Value.java" bodystart="281" bodyend="293"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a028381b5b95abaa7cd999c20b2e76719" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
         <definition>static void net.quasardb.qdb.ts.Value.writeBlobValue</definition>
@@ -486,63 +509,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="257" column="1" bodyfile="ts/Value.java" bodystart="257" bodyend="268"/>
-      </memberdef>
-      </sectiondef>
-      <sectiondef kind="private-func">
-      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a4a4ccdd21d710250df630c2f4aee6317" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void net.quasardb.qdb.ts.Value.writeObject</definition>
-        <argsstring>(java.io.ObjectOutputStream stream)</argsstring>
-        <name>writeObject</name>
-        <param>
-          <type>java.io.ObjectOutputStream</type>
-          <declname>stream</declname>
-        </param>
-        <exceptions> throws IOException </exceptions>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="ts/Value.java" line="234" column="1" bodyfile="ts/Value.java" bodystart="234" bodyend="255"/>
-      </memberdef>
-      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aa5ae7c7b92d92d384f03b5035acb2f27" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>void</type>
-        <definition>void net.quasardb.qdb.ts.Value.readObject</definition>
-        <argsstring>(java.io.ObjectInputStream stream)</argsstring>
-        <name>readObject</name>
-        <param>
-          <type>java.io.ObjectInputStream</type>
-          <declname>stream</declname>
-        </param>
-        <exceptions> throws IOException, ClassNotFoundException </exceptions>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="ts/Value.java" line="271" column="1" bodyfile="ts/Value.java" bodystart="271" bodyend="292"/>
-      </memberdef>
-      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7373f4e9b98dafa4c9185d1f32ee425d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
-        <type>ByteBuffer</type>
-        <definition>ByteBuffer net.quasardb.qdb.ts.Value.readBlobValue</definition>
-        <argsstring>(java.io.ObjectInputStream stream)</argsstring>
-        <name>readBlobValue</name>
-        <param>
-          <type>java.io.ObjectInputStream</type>
-          <declname>stream</declname>
-        </param>
-        <exceptions> throws IOException, ClassNotFoundException </exceptions>
-        <briefdescription>
-        </briefdescription>
-        <detaileddescription>
-        </detaileddescription>
-        <inbodydescription>
-        </inbodydescription>
-        <location file="ts/Value.java" line="294" column="1" bodyfile="ts/Value.java" bodystart="294" bodyend="306"/>
+        <location file="ts/Value.java" line="244" column="1" bodyfile="ts/Value.java" bodystart="244" bodyend="255"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -593,10 +560,9 @@
         <label>ByteBuffer</label>
       </node>
     </collaborationgraph>
-    <location file="ts/Value.java" line="14" column="1" bodyfile="ts/Value.java" bodystart="14" bodyend="363"/>
+    <location file="ts/Value.java" line="14" column="1" bodyfile="ts/Value.java" bodystart="14" bodyend="350"/>
     <listofallmembers>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aabea8e2921a73e24c66c376842f4a3b1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>blobValue</name></member>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aae35b456e65013c5ca10df722d494f12" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>bytesToHex</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aabea8e2921a73e24c66c376842f4a3b1" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>blobValue</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a40557c06ad80a831fc085d96685f75e9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>createBlob</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0f75a2704bddef927bca9b745fb8576f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>createBlob</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7e387e1798a83a3002f7bb33f3e05d6f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>createDouble</name></member>
@@ -605,15 +571,14 @@
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aaea48197075483221250201454e153f8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>createSafeBlob</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a85a6ed04a0154e4c6666950fd23c8856" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>createSafeBlob</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ad9558e2c059e37e0bb81bdb1ed695071" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>createTimestamp</name></member>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0a806421cbdad685d0c6eb0ad5710309" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>doubleValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a0a806421cbdad685d0c6eb0ad5710309" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>doubleValue</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a3d7e38b3e2038352479991eb5aa4f438" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>equals</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae9a55f5bb96f2094d8ffdcb650700a9d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>getBlob</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a31078dc93f4595ce71c132a1e76c838f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>getDouble</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6600492022fa9be1f0d56f09ef9081ce" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>getInt64</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a32ddf392be750c2ce4edeec2cd19be8d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>getTimestamp</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6fdfd849aff4d6872814e780c9fc6a7d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>getType</name></member>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1afb90d5a839b3523cf91fd78fb679bf8a" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>hexArray</name></member>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5d523ae893bb54b635850c120304e164" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>int64Value</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5d523ae893bb54b635850c120304e164" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>int64Value</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7373f4e9b98dafa4c9185d1f32ee425d" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>readBlobValue</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aa5ae7c7b92d92d384f03b5035acb2f27" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>readObject</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a6af7416923c5b80c60c7b4e833b69920" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>setBlob</name></member>
@@ -622,9 +587,9 @@
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aae1d4ca5248f39ac6ccc9d178d5cb52d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>setInt64</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a4b891abe900ea064567982741103b9e4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>setNull</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a7d2a93d25bd1ad066b8a159792a6de4e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>setTimestamp</name></member>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae59e2d0b630c1e14ef05f8c2b39695bf" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>timestampValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae59e2d0b630c1e14ef05f8c2b39695bf" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>timestampValue</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a743b4bdf83199c949961319b038b823d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>toString</name></member>
-      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5c69924335ed97197f81105e06baf104" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>type</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a5c69924335ed97197f81105e06baf104" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>type</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1aac071d1feec5521fbf7405cc9b0ad417" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>Value</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1ae17cece4b7640ca872d6c45b527f83d6" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>Value</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1a028381b5b95abaa7cd999c20b2e76719" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value</scope><name>writeBlobValue</name></member>

@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/operation/OperationException.java" line="8" column="1" bodyfile="exceptions/operation/OperationException.java" bodystart="8" bodyend="10"/>
+        <location file="exception/operation/OperationException.java" line="8" column="1" bodyfile="exception/operation/OperationException.java" bodystart="8" bodyend="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -151,7 +151,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="exceptions/operation/OperationException.java" line="6" column="1" bodyfile="exceptions/operation/OperationException.java" bodystart="6" bodyend="11"/>
+    <location file="exception/operation/OperationException.java" line="6" column="1" bodyfile="exception/operation/OperationException.java" bodystart="6" bodyend="11"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::OperationException</scope><name>Exception</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::OperationException</scope><name>OperationException</name></member>

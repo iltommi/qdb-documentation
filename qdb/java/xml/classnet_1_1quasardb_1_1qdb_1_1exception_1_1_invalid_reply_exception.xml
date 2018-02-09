@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/protocol/InvalidReplyException.java" line="8" column="1" bodyfile="exceptions/protocol/InvalidReplyException.java" bodystart="8" bodyend="10"/>
+        <location file="exception/protocol/InvalidReplyException.java" line="8" column="1" bodyfile="exception/protocol/InvalidReplyException.java" bodystart="8" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1a5b9a5fe68515b8921f27c82131479e2f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/protocol/InvalidReplyException.java" line="12" column="1" bodyfile="exceptions/protocol/InvalidReplyException.java" bodystart="12" bodyend="14"/>
+        <location file="exception/protocol/InvalidReplyException.java" line="12" column="1" bodyfile="exception/protocol/InvalidReplyException.java" bodystart="12" bodyend="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -85,7 +85,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="exceptions/protocol/InvalidReplyException.java" line="6" column="1" bodyfile="exceptions/protocol/InvalidReplyException.java" bodystart="6" bodyend="15"/>
+    <location file="exception/protocol/InvalidReplyException.java" line="6" column="1" bodyfile="exception/protocol/InvalidReplyException.java" bodystart="6" bodyend="15"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidReplyException</scope><name>Exception</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception_1abab983eabeb7409b423ceae9df8fd8e6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidReplyException</scope><name>InvalidReplyException</name></member>

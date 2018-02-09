@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="25" column="1" bodyfile="ts/Value.java" bodystart="25" bodyend="-1"/>
+        <location file="ts/Value.java" line="23" column="1" bodyfile="ts/Value.java" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1af3625c3f9edb0db8bb51dbbdf6a6ecea" prot="public" static="no" mutable="no">
         <type></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="26" column="1" bodyfile="ts/Value.java" bodystart="26" bodyend="-1"/>
+        <location file="ts/Value.java" line="24" column="1" bodyfile="ts/Value.java" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a22fb03ce4afa0a5b1e069639505ea2be" prot="public" static="no" mutable="no">
         <type></type>
@@ -43,7 +43,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="27" column="1" bodyfile="ts/Value.java" bodystart="27" bodyend="-1"/>
+        <location file="ts/Value.java" line="25" column="1" bodyfile="ts/Value.java" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1acac67e4bc1fe9870f138a5fd2caa2e79" prot="public" static="no" mutable="no">
         <type></type>
@@ -57,7 +57,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="28" column="1" bodyfile="ts/Value.java" bodystart="28" bodyend="-1"/>
+        <location file="ts/Value.java" line="26" column="1" bodyfile="ts/Value.java" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a5a2bdc66ea0ab972f1008623b2b1b593" prot="public" static="no" mutable="no">
         <type></type>
@@ -71,7 +71,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="30" column="1" bodyfile="ts/Value.java" bodystart="29" bodyend="-1"/>
+        <location file="ts/Value.java" line="28" column="1" bodyfile="ts/Value.java" bodystart="27" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-attrib">
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="32" column="1" bodyfile="ts/Value.java" bodystart="32" bodyend="-1"/>
+        <location file="ts/Value.java" line="30" column="1" bodyfile="ts/Value.java" bodystart="30" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -105,7 +105,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="33" column="1" bodyfile="ts/Value.java" bodystart="33" bodyend="35"/>
+        <location file="ts/Value.java" line="31" column="1" bodyfile="ts/Value.java" bodystart="31" bodyend="33"/>
       </memberdef>
       <memberdef kind="function" id="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a4d90255112c345fccd885f36b41cfaed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>int</type>
@@ -118,7 +118,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="37" column="1" bodyfile="ts/Value.java" bodystart="37" bodyend="39"/>
+        <location file="ts/Value.java" line="35" column="1" bodyfile="ts/Value.java" bodystart="35" bodyend="37"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-static-func">
@@ -137,14 +137,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Value.java" line="41" column="1" bodyfile="ts/Value.java" bodystart="41" bodyend="57"/>
+        <location file="ts/Value.java" line="39" column="1" bodyfile="ts/Value.java" bodystart="39" bodyend="55"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="ts/Value.java" line="24" column="1" bodyfile="ts/Value.java" bodystart="24" bodyend="58"/>
+    <location file="ts/Value.java" line="22" column="1" bodyfile="ts/Value.java" bodystart="22" bodyend="56"/>
     <listofallmembers>
       <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a4d90255112c345fccd885f36b41cfaed" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value::Type</scope><name>asInt</name></member>
       <member refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type_1a22fb03ce4afa0a5b1e069639505ea2be" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Value::Type</scope><name>BLOB</name></member>

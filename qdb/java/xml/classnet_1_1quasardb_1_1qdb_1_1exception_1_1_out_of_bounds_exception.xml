@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/input/OutOfBoundsException.java" line="8" column="1" bodyfile="exceptions/input/OutOfBoundsException.java" bodystart="8" bodyend="10"/>
+        <location file="exception/input/OutOfBoundsException.java" line="8" column="1" bodyfile="exception/input/OutOfBoundsException.java" bodystart="8" bodyend="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -68,7 +68,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="exceptions/input/OutOfBoundsException.java" line="6" column="1" bodyfile="exceptions/input/OutOfBoundsException.java" bodystart="6" bodyend="11"/>
+    <location file="exception/input/OutOfBoundsException.java" line="6" column="1" bodyfile="exception/input/OutOfBoundsException.java" bodystart="6" bodyend="11"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::OutOfBoundsException</scope><name>Exception</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception_1ad5b6e09fc8b66e9fbec208904b47a93d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::OutOfBoundsException</scope><name>InputException</name></member>

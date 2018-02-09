@@ -14,7 +14,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/FilteredRange.java" line="11" column="1" bodyfile="ts/FilteredRange.java" bodystart="11" bodyend="-1"/>
+        <location file="ts/FilteredRange.java" line="12" column="1" bodyfile="ts/FilteredRange.java" bodystart="12" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a77ac9670fffef28ef86290615cbc832c" prot="package" static="no" mutable="no">
         <type>qdb_ts_filter</type>
@@ -27,7 +27,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/FilteredRange.java" line="12" column="1" bodyfile="ts/FilteredRange.java" bodystart="12" bodyend="-1"/>
+        <location file="ts/FilteredRange.java" line="13" column="1" bodyfile="ts/FilteredRange.java" bodystart="13" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -46,7 +46,7 @@
 <para>Wraps a <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref> without applying any filters. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/FilteredRange.java" line="17" column="1" bodyfile="ts/FilteredRange.java" bodystart="17" bodyend="19"/>
+        <location file="ts/FilteredRange.java" line="18" column="1" bodyfile="ts/FilteredRange.java" bodystart="18" bodyend="20"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1ad2a0aef2fb7f2b89d650976230391b66" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref></type>
@@ -59,7 +59,7 @@
 <para>Access to the underlying <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref>. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/FilteredRange.java" line="29" column="1" bodyfile="ts/FilteredRange.java" bodystart="29" bodyend="31"/>
+        <location file="ts/FilteredRange.java" line="30" column="1" bodyfile="ts/FilteredRange.java" bodystart="30" bodyend="32"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a08fd1a07a555060202fc04d8d300599c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>String</type>
@@ -72,7 +72,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/FilteredRange.java" line="37" column="1" bodyfile="ts/FilteredRange.java" bodystart="37" bodyend="39"/>
+        <location file="ts/FilteredRange.java" line="38" column="1" bodyfile="ts/FilteredRange.java" bodystart="38" bodyend="40"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -95,7 +95,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/FilteredRange.java" line="21" column="1" bodyfile="ts/FilteredRange.java" bodystart="21" bodyend="24"/>
+        <location file="ts/FilteredRange.java" line="22" column="1" bodyfile="ts/FilteredRange.java" bodystart="22" bodyend="25"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a6cab702c1c8460541f75fb492908001f" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>qdb_ts_filter</type>
@@ -108,13 +108,13 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/FilteredRange.java" line="33" column="1" bodyfile="ts/FilteredRange.java" bodystart="33" bodyend="35"/>
+        <location file="ts/FilteredRange.java" line="34" column="1" bodyfile="ts/FilteredRange.java" bodystart="34" bodyend="36"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-<para>Represents a time range with additional filters applied.</para><para>Currently serves as a placeholder class, as no filters are supported yet. </para>    </detaileddescription>
+<para>Represents a time range with additional filters applied. </para><para><bold>Warning:</bold> Currently serves as a placeholder class, as no filters are supported yet. </para>    </detaileddescription>
     <collaborationgraph>
       <node id="157">
         <label>net.quasardb.qdb.ts.TimeRange</label>
@@ -143,7 +143,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="ts/FilteredRange.java" line="10" column="1" bodyfile="ts/FilteredRange.java" bodystart="10" bodyend="40"/>
+    <location file="ts/FilteredRange.java" line="11" column="1" bodyfile="ts/FilteredRange.java" bodystart="11" bodyend="41"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a77ac9670fffef28ef86290615cbc832c" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>filter</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_filtered_range_1a43a20874ba40041de509bc1563d3b713" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::FilteredRange</scope><name>FilteredRange</name></member>

@@ -34,6 +34,6 @@
     </briefdescription>
     <detaileddescription>
     </detaileddescription>
-    <location file="exceptions/connection/ConnectionException.java" line="1" column="1"/>
+    <location file="exception/connection/ConnectionException.java" line="1" column="1"/>
   </compounddef>
 </doxygen>

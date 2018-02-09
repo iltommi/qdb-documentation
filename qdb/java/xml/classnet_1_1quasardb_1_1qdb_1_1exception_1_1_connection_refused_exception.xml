@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/connection/ConnectionRefusedException.java" line="8" column="1" bodyfile="exceptions/connection/ConnectionRefusedException.java" bodystart="8" bodyend="10"/>
+        <location file="exception/connection/ConnectionRefusedException.java" line="8" column="1" bodyfile="exception/connection/ConnectionRefusedException.java" bodystart="8" bodyend="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -68,7 +68,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="exceptions/connection/ConnectionRefusedException.java" line="6" column="1" bodyfile="exceptions/connection/ConnectionRefusedException.java" bodystart="6" bodyend="11"/>
+    <location file="exception/connection/ConnectionRefusedException.java" line="6" column="1" bodyfile="exception/connection/ConnectionRefusedException.java" bodystart="6" bodyend="11"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception_1a894e0925a895f2fc8eec9fbf5b80669c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ConnectionRefusedException</scope><name>ConnectionException</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception_1ad75da3bb10569ef5f9a2e2d9736fc52e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ConnectionRefusedException</scope><name>ConnectionRefusedException</name></member>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="9" column="1" bodyfile="ts/NanoClock.java" bodystart="9" bodyend="-1"/>
+        <location file="ts/NanoClock.java" line="15" column="1" bodyfile="ts/NanoClock.java" bodystart="15" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ac60a45c7d927e2db908df411e25205d6" prot="private" static="no" mutable="no">
         <type>final long</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="10" column="1" bodyfile="ts/NanoClock.java" bodystart="10" bodyend="-1"/>
+        <location file="ts/NanoClock.java" line="16" column="1" bodyfile="ts/NanoClock.java" bodystart="16" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aee716cfd3c6cfc4ad9c5503ebc0decdf" prot="private" static="no" mutable="no">
         <type>final Instant</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="11" column="1" bodyfile="ts/NanoClock.java" bodystart="11" bodyend="-1"/>
+        <location file="ts/NanoClock.java" line="17" column="1" bodyfile="ts/NanoClock.java" bodystart="17" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -56,7 +56,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="13" column="1" bodyfile="ts/NanoClock.java" bodystart="13" bodyend="16"/>
+        <location file="ts/NanoClock.java" line="19" column="1" bodyfile="ts/NanoClock.java" bodystart="19" bodyend="22"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aae09122ee04813f8c352399155d96d37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -73,7 +73,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="18" column="1" bodyfile="ts/NanoClock.java" bodystart="18" bodyend="23"/>
+        <location file="ts/NanoClock.java" line="24" column="1" bodyfile="ts/NanoClock.java" bodystart="24" bodyend="29"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a628521cd1a9fb8d75dcbad7e4783d5ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>ZoneId</type>
@@ -86,7 +86,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="26" column="1" bodyfile="ts/NanoClock.java" bodystart="26" bodyend="29"/>
+        <location file="ts/NanoClock.java" line="32" column="1" bodyfile="ts/NanoClock.java" bodystart="32" bodyend="35"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ad6163fd8355a48f71213ea6648d35dac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>Instant</type>
@@ -99,7 +99,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="32" column="1" bodyfile="ts/NanoClock.java" bodystart="32" bodyend="35"/>
+        <location file="ts/NanoClock.java" line="38" column="1" bodyfile="ts/NanoClock.java" bodystart="38" bodyend="41"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aa82535ede89b1bf77c937c41fcd29e5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock" kindref="compound">NanoClock</ref></type>
@@ -116,7 +116,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="38" column="1" bodyfile="ts/NanoClock.java" bodystart="38" bodyend="41"/>
+        <location file="ts/NanoClock.java" line="44" column="1" bodyfile="ts/NanoClock.java" bodystart="44" bodyend="47"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -131,13 +131,14 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/NanoClock.java" line="43" column="1" bodyfile="ts/NanoClock.java" bodystart="43" bodyend="46"/>
+        <location file="ts/NanoClock.java" line="49" column="1" bodyfile="ts/NanoClock.java" bodystart="49" bodyend="52"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
     </briefdescription>
     <detaileddescription>
-    </detaileddescription>
+<para>Nanosecond precision clock implementation. Used by <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> as its default Clock backend.</para><para><simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ac91d638faef16fc7efae401148fff050" kindref="member">Timespec::now()</ref> </para></simplesect>
+</para>    </detaileddescription>
     <inheritancegraph>
       <node id="227">
         <label>Clock</label>
@@ -160,7 +161,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="ts/NanoClock.java" line="8" column="1" bodyfile="ts/NanoClock.java" bodystart="7" bodyend="47"/>
+    <location file="ts/NanoClock.java" line="14" column="1" bodyfile="ts/NanoClock.java" bodystart="13" bodyend="53"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a3eac7e36fc26c68f05fd8ba6ba6fcae3" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>clock</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a83f0658dd7442af717d7c88401ed4f6d" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>getSystemNanos</name></member>

@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/operation/BatchNotRunException.java" line="8" column="1" bodyfile="exceptions/operation/BatchNotRunException.java" bodystart="8" bodyend="10"/>
+        <location file="exception/operation/BatchNotRunException.java" line="8" column="1" bodyfile="exception/operation/BatchNotRunException.java" bodystart="8" bodyend="10"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -68,7 +68,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="exceptions/operation/BatchNotRunException.java" line="6" column="1" bodyfile="exceptions/operation/BatchNotRunException.java" bodystart="6" bodyend="11"/>
+    <location file="exception/operation/BatchNotRunException.java" line="6" column="1" bodyfile="exception/operation/BatchNotRunException.java" bodystart="6" bodyend="11"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_not_run_exception_1aef7eed6d5f8b99e533cf7f1ffe58751d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchNotRunException</scope><name>BatchNotRunException</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::BatchNotRunException</scope><name>Exception</name></member>

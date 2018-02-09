@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="connection/Session.java" line="23" column="1" bodyfile="connection/Session.java" bodystart="23" bodyend="-1"/>
+        <location file="Session.java" line="23" column="1" bodyfile="Session.java" bodystart="23" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a2e18ee51ba58b12c5256985fceec689c" prot="protected" static="no" mutable="no">
         <type>String</type>
@@ -28,7 +28,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="connection/Session.java" line="24" column="1" bodyfile="connection/Session.java" bodystart="24" bodyend="-1"/>
+        <location file="Session.java" line="24" column="1" bodyfile="Session.java" bodystart="24" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af9872aea6a401863bfc73a8cb8bce152" prot="protected" static="no" mutable="no">
         <type>String</type>
@@ -41,7 +41,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="connection/Session.java" line="25" column="1" bodyfile="connection/Session.java" bodystart="25" bodyend="-1"/>
+        <location file="Session.java" line="25" column="1" bodyfile="Session.java" bodystart="25" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -68,7 +68,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="connection/Session.java" line="27" column="1" bodyfile="connection/Session.java" bodystart="27" bodyend="33"/>
+        <location file="Session.java" line="27" column="1" bodyfile="Session.java" bodystart="27" bodyend="33"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="package-static-func">
@@ -87,7 +87,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="connection/Session.java" line="35" column="1" bodyfile="connection/Session.java" bodystart="35" bodyend="39"/>
+        <location file="Session.java" line="35" column="1" bodyfile="Session.java" bodystart="35" bodyend="39"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -114,7 +114,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="connection/Session.java" line="22" column="1" bodyfile="connection/Session.java" bodystart="22" bodyend="40"/>
+    <location file="Session.java" line="22" column="1" bodyfile="Session.java" bodystart="22" bodyend="40"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af9872aea6a401863bfc73a8cb8bce152" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::Session::SecurityOptions</scope><name>clusterPublicKey</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a0c897ec7aa186e0c3f47e81332b642ec" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session::SecurityOptions</scope><name>SecurityOptions</name></member>

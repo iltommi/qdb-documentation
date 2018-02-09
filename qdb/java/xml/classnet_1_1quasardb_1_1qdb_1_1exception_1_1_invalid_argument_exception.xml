@@ -15,7 +15,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/input/InvalidArgumentException.java" line="8" column="1" bodyfile="exceptions/input/InvalidArgumentException.java" bodystart="8" bodyend="10"/>
+        <location file="exception/input/InvalidArgumentException.java" line="8" column="1" bodyfile="exception/input/InvalidArgumentException.java" bodystart="8" bodyend="10"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception_1a4408dead94c2f7082bcb1016945844ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type></type>
@@ -32,7 +32,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="exceptions/input/InvalidArgumentException.java" line="12" column="1" bodyfile="exceptions/input/InvalidArgumentException.java" bodystart="12" bodyend="14"/>
+        <location file="exception/input/InvalidArgumentException.java" line="12" column="1" bodyfile="exception/input/InvalidArgumentException.java" bodystart="12" bodyend="14"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -85,7 +85,7 @@
         </childnode>
       </node>
     </collaborationgraph>
-    <location file="exceptions/input/InvalidArgumentException.java" line="6" column="1" bodyfile="exceptions/input/InvalidArgumentException.java" bodystart="6" bodyend="15"/>
+    <location file="exception/input/InvalidArgumentException.java" line="6" column="1" bodyfile="exception/input/InvalidArgumentException.java" bodystart="6" bodyend="15"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidArgumentException</scope><name>Exception</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception_1ad5b6e09fc8b66e9fbec208904b47a93d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidArgumentException</scope><name>InputException</name></member>

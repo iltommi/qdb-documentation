@@ -16,7 +16,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="23" column="1" bodyfile="ts/Reader.java" bodystart="23" bodyend="-1"/>
+        <location file="ts/Reader.java" line="25" column="1" bodyfile="ts/Reader.java" bodystart="25" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1af60408cd76aef30e287b07cca2ee329b" prot="package" static="no" mutable="no">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
@@ -29,7 +29,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="24" column="1" bodyfile="ts/Reader.java" bodystart="24" bodyend="-1"/>
+        <location file="ts/Reader.java" line="26" column="1" bodyfile="ts/Reader.java" bodystart="26" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9495fabf5a3cf08bc2c8f501ab7867b5" prot="package" static="no" mutable="no">
         <type>Long</type>
@@ -42,7 +42,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="25" column="1" bodyfile="ts/Reader.java" bodystart="25" bodyend="-1"/>
+        <location file="ts/Reader.java" line="27" column="1" bodyfile="ts/Reader.java" bodystart="27" bodyend="-1"/>
       </memberdef>
       <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a3403caad2a3ecadc45f484c3b5439880" prot="package" static="no" mutable="no">
         <type>Reference&lt; <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref> &gt;</type>
@@ -55,7 +55,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="26" column="1" bodyfile="ts/Reader.java" bodystart="26" bodyend="-1"/>
+        <location file="ts/Reader.java" line="28" column="1" bodyfile="ts/Reader.java" bodystart="28" bodyend="-1"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="protected-func">
@@ -82,7 +82,7 @@
         </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="28" column="1" bodyfile="ts/Reader.java" bodystart="28" bodyend="45"/>
+        <location file="ts/Reader.java" line="30" column="1" bodyfile="ts/Reader.java" bodystart="30" bodyend="47"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a74f99713e847f42d14c6798110887cdf" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -96,7 +96,7 @@
 <para>Cleans up the internal representation of the local table. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="58" column="1" bodyfile="ts/Reader.java" bodystart="58" bodyend="64"/>
+        <location file="ts/Reader.java" line="60" column="1" bodyfile="ts/Reader.java" bodystart="60" bodyend="66"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="public-func">
@@ -112,7 +112,7 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="50" column="1" bodyfile="ts/Reader.java" bodystart="50" bodyend="52"/>
+        <location file="ts/Reader.java" line="52" column="1" bodyfile="ts/Reader.java" bodystart="52" bodyend="54"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a07be3a508107317fc6291e74a33ff4bc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -126,7 +126,7 @@
 <para>Closes the timeseries table and local cache so that memory can be reclaimed. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="87" column="1" bodyfile="ts/Reader.java" bodystart="87" bodyend="90"/>
+        <location file="ts/Reader.java" line="89" column="1" bodyfile="ts/Reader.java" bodystart="89" bodyend="92"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1aaa0e833b20271aecfd1ca2baa6d9f4af" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>boolean</type>
@@ -140,13 +140,14 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="98" column="1" bodyfile="ts/Reader.java" bodystart="98" bodyend="102"/>
+        <location file="ts/Reader.java" line="101" column="1" bodyfile="ts/Reader.java" bodystart="101" bodyend="105"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a9240baf8b992815d26ed0533960a9d78" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref></type>
         <definition>Row net.quasardb.qdb.ts.Reader.next</definition>
         <argsstring>()</argsstring>
         <name>next</name>
+        <exceptions> throws <ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_iterator_exception" kindref="compound">InvalidIteratorException</ref> </exceptions>
         <briefdescription>
         </briefdescription>
         <detaileddescription>
@@ -162,7 +163,20 @@
 </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="112" column="1" bodyfile="ts/Reader.java" bodystart="112" bodyend="120"/>
+        <location file="ts/Reader.java" line="116" column="1" bodyfile="ts/Reader.java" bodystart="116" bodyend="124"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1abaa25de6280160ae0f295ca1382d7d22" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Stream&lt; <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref> &gt;</type>
+        <definition>Stream&lt;Row&gt; net.quasardb.qdb.ts.Reader.stream</definition>
+        <argsstring>()</argsstring>
+        <name>stream</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Provides stream-based access. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Reader.java" line="129" column="1" bodyfile="ts/Reader.java" bodystart="129" bodyend="132"/>
       </memberdef>
       </sectiondef>
       <sectiondef kind="private-func">
@@ -177,7 +191,7 @@
 <para>Reads the next row from local table. Transparently updates the local reference to the internal row. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="70" column="1" bodyfile="ts/Reader.java" bodystart="70" bodyend="73"/>
+        <location file="ts/Reader.java" line="72" column="1" bodyfile="ts/Reader.java" bodystart="72" bodyend="75"/>
       </memberdef>
       <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a5d0f1fab80e742a3f30270eaf6707bbc" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
         <type>void</type>
@@ -190,7 +204,7 @@
 <para>Reads the next row from local table when appropriate. </para>        </detaileddescription>
         <inbodydescription>
         </inbodydescription>
-        <location file="ts/Reader.java" line="78" column="1" bodyfile="ts/Reader.java" bodystart="78" bodyend="82"/>
+        <location file="ts/Reader.java" line="80" column="1" bodyfile="ts/Reader.java" bodystart="80" bodyend="84"/>
       </memberdef>
       </sectiondef>
     <briefdescription>
@@ -292,7 +306,7 @@
         <label>ByteBuffer</label>
       </node>
     </collaborationgraph>
-    <location file="ts/Reader.java" line="22" column="1" bodyfile="ts/Reader.java" bodystart="22" bodyend="121"/>
+    <location file="ts/Reader.java" line="24" column="1" bodyfile="ts/Reader.java" bodystart="24" bodyend="133"/>
     <listofallmembers>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a07be3a508107317fc6291e74a33ff4bc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>close</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a74f99713e847f42d14c6798110887cdf" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>finalize</name></member>
@@ -305,6 +319,7 @@
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1abb0ee2f55fe02ea4525f05b83e25eac5" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>Reader</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1a367c1353862c1f5214eb4f6e3f911b41" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>readNext</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1ac0cf741ede3f7406ff1572ece07120e8" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1abaa25de6280160ae0f295ca1382d7d22" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>stream</name></member>
       <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_reader_1af60408cd76aef30e287b07cca2ee329b" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::Reader</scope><name>table</name></member>
     </listofallmembers>
   </compounddef>
