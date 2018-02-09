@@ -66,45 +66,50 @@ Or, if you use Gradle, your ``build.gradle`` should look like:
 Connecting to the database
 --------------------------
 
-You connect to a QuasarDB cluster by creating an instance of :any:`net::quasardb::qdb::Session` and establishing a connection with a QuasarDB cluster.
+QuasarDB provides thread-safe access to a cluster using the :cpp:class:`Session <net::quasardb::qdb::Session>` class. This class comes with a built-in, high-performance connection pool that can be shared between multiple threads. You are encourage to reuse this object as often as possible, ideally only creating a single instance during the lifetime of your JVM process.
+
+Establishing a connection
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+You connect to a QuasarDB cluster by calling the **connect** function of the :cpp:class:`Session <net::quasardb::qdb::Session>` class and establishing a connection with a QuasarDB cluster like this:
 
 .. code-block:: java
 
-   static Session connectToCluster(String uri) {
-     try {
-       return Session.connect(uri);
-     } catch (ConnectionRefusedException ex) {
-       System.err.println("Failed to connect to " + uri +
-                          ", make sure server is running!");
-       System.exit(1);
-       return null;
-     }
+   try {
+     Session mySession = Session.connect(uri);
+   } catch (ConnectionRefusedException ex) {
+     System.err.println("Failed to connect to " + uri +
+                        ", make sure server is running!");
+     System.exit(1);
    }
 
+Establishing a secure connection
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+By providing additional :cpp:class:`SecurityOptions <net::quasardb::qdb::Session::SecurityOptions>` when establishing a connection, we get a secure connection to the cluster:
+
+.. code-block:: java
+
+   try {
+     Session mySession = Session.connect(new Session.SecurityOptions("userName",
+                                                                     "userPrivateKey",
+                                                                     "clusterPublicKey"),
+                                         uri);
+   } catch (ConnectionRefusedException ex) {
+     System.err.println("Failed to connect to " + uri +
+                        ", make sure server is running!");
+     System.exit(1);
+   }
 
 Reference
 ---------
 
+This chapter contains a short summary of our Java API. For more a complete reference, please see our Javadoc_.
+
+.. doxygenclass:: net::quasardb::qdb::Session::SecurityOptions
+	:project: qdb_java_api
+        :members:
+
 .. doxygenclass:: net::quasardb::qdb::Session
 	:project: qdb_java_api
-	:members:
-
-.. doxygenclass:: net::quasardb::qdb::ts::Table
-	:project: qdb_java_api
-	:members:
-
-.. doxygenclass:: net::quasardb::qdb::ts::Writer
-	:project: qdb_java_api
-	:members:
-
-.. doxygenclass:: net::quasardb::qdb::ts::Reader
-	:project: qdb_java_api
-	:members:^^^^^
-
-.. doxygenclass:: net::quasardb::qdb::ts::Query
-	:project: qdb_java_api
-	:members:
-
-.. doxygenclass:: net::quasardb::qdb::ts::Result
-	:project: qdb_java_api
-	:members:
+        :members: connect
