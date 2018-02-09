@@ -34,14 +34,14 @@ Connecting to a cluster
 The first thing to do is to initialize a handle. A handle is an opaque structure that represents a client-side instance.
 It is initialized using the function :func:`qdb_open`:
 
-.. literalinclude:: ../../../api/c/examples/c/connect.c
+.. literalinclude:: ../../../apis/c/examples/c/connect.c
     :start-after: doc-start-open
     :end-before: doc-end-open
     :dedent: 4
 
 We can also use the convenience function :func:`qdb_open_tcp`:
 
-.. literalinclude:: ../../../api/c/examples/c/connect_tcp.c
+.. literalinclude:: ../../../apis/c/examples/c/connect_tcp.c
     :start-after: doc-start-open
     :end-before: doc-end-open
     :dedent: 4
@@ -51,28 +51,28 @@ Once the handle is initialized, you need to add credentials information before y
 For that you need to set the cluster public key, which will make sure you connect to the right cluster, and the user credentials which consist in the user name and the user private key and are necessary to authenticate the connection.
 These information are given to you by your administrator. You need to use :func:`qdb_option_set_cluster_public_key` and :func:`qdb_option_set_user_credentials`.
 
-.. literalinclude:: ../../../api/c/examples/c/secure_connect.c
+.. literalinclude:: ../../../apis/c/examples/c/secure_connect.c
     :start-after: doc-start-secure-connect
     :end-before: doc-end-secure-connect
     :dedent: 4
 
 If the server has full traffic encryption, you must enable it on the client side before establishing the connection:
 
-.. literalinclude:: ../../../api/c/examples/c/secure_connect.c
+.. literalinclude:: ../../../apis/c/examples/c/secure_connect.c
     :start-after: doc-start-set-encryption
     :end-before: doc-end-set-encryption
     :dedent: 4
 
 You are now ready to establish the connection. This code will establish a connection to a single quasardb node listening on the localhost with the :func:`qdb_connect` function:
 
-.. literalinclude:: ../../../api/c/examples/c/connect.c
+.. literalinclude:: ../../../apis/c/examples/c/connect.c
     :start-after: doc-start-connect
     :end-before: doc-end-connect
     :dedent: 4
 
 Note that we could have used the IP address instead:
 
-.. literalinclude:: ../../../api/c/examples/c/connect_tcp.c
+.. literalinclude:: ../../../apis/c/examples/c/connect_tcp.c
     :start-after: doc-start-connect
     :end-before: doc-end-connect
     :dedent: 4
@@ -82,7 +82,7 @@ Note that we could have used the IP address instead:
 
 `IPv6 <https://en.wikipedia.org/wiki/IPv6>`_ is also supported if the node listens on an IPv6 address:
 
-.. literalinclude:: ../../../api/c/examples/c/connect_ipv6.c
+.. literalinclude:: ../../../apis/c/examples/c/connect_ipv6.c
     :start-after: doc-start-connect
     :end-before: doc-end-connect
     :dedent: 4
@@ -95,7 +95,7 @@ Connecting to multiple nodes within the same cluster
 
 Although quasardb is fault-tolerant, if the client tries to connect to the cluster through a node that is unavailable, the connection will fail. To prevent that, it is advised to pass a URI string to :func:`qdb_connect` with multiple comma-separated hosts and ports. If the client can establish a connection with any of the nodes, the call will succeed.
 
-.. literalinclude:: ../../../api/c/examples/c/connect_many.c
+.. literalinclude:: ../../../apis/c/examples/c/connect_many.c
     :start-after: doc-start-connect
     :end-before: doc-end-connect
     :dedent: 4
@@ -111,14 +111,14 @@ The content is a buffer containing arbitrary data. You need to specify the size 
 
 There are two ways to add entries into the repository. You can use :func:`qdb_blob_put`:
 
-.. literalinclude:: ../../../api/c/examples/c/blob_put.c
+.. literalinclude:: ../../../apis/c/examples/c/blob_put.c
     :start-after: doc-start-blob_put
     :end-before: doc-end-blob_put
     :dedent: 12
 
 or you can use :func:`qdb_blob_update`:
 
-.. literalinclude:: ../../../api/c/examples/c/blob_update.c
+.. literalinclude:: ../../../apis/c/examples/c/blob_update.c
     :start-after: doc-start-blob_update
     :end-before: doc-end-blob_update
     :dedent: 12
@@ -133,21 +133,21 @@ Getting entries
 
 The most convenient way to fetch an entry is :func:`qdb_blob_get`:
 
-.. literalinclude:: ../../../api/c/examples/c/blob_get.c
+.. literalinclude:: ../../../apis/c/examples/c/blob_get.c
     :start-after: doc-start-blob_get
     :end-before: doc-end-blob_get
     :dedent: 12
 
 The function will allocate the buffer and update the length. You will need to release the memory later with :func:`qdb_release`:
 
-.. literalinclude:: ../../../api/c/examples/c/blob_get.c
+.. literalinclude:: ../../../apis/c/examples/c/blob_get.c
     :start-after: doc-start-free_buffer
     :end-before: doc-end-free_buffer
     :dedent: 16
 
 However, for maximum performance you might want to manage allocation yourself and reuse buffers (for example). In which case you will prefer to use :func:`qdb_blob_get_noalloc`:
 
-.. literalinclude:: ../../../api/c/examples/c/blob_get_noalloc.c
+.. literalinclude:: ../../../apis/c/examples/c/blob_get_noalloc.c
     :start-after: doc-start-blob_get_noalloc
     :end-before: doc-end-blob_get_noalloc
     :dedent: 12
@@ -160,7 +160,7 @@ Removing entries
 
 Removing is done with the function :func:`qdb_remove`:
 
-.. literalinclude:: ../../../api/c/examples/c/remove.c
+.. literalinclude:: ../../../apis/c/examples/c/remove.c
     :start-after: doc-start-remove
     :end-before: doc-end-remove
     :dedent: 12
@@ -173,7 +173,7 @@ Cleaning up
 
 When you are done working with a quasardb cluster, call :func:`qdb_close`:
 
-.. literalinclude:: ../../../api/c/examples/c/connect.c
+.. literalinclude:: ../../../apis/c/examples/c/connect.c
     :start-after: doc-start-close
     :end-before: doc-end-close
     :dedent: 4
@@ -190,7 +190,7 @@ Timeout
 
 It is possible to configure the client-side timeout with the :func:`qdb_option_set_timeout`:
 
-.. literalinclude:: ../../../api/c/examples/c/blob_get.c
+.. literalinclude:: ../../../apis/c/examples/c/blob_get.c
     :start-after: doc-start-option_set_timeout
     :end-before: doc-end-option_set_timeout
     :dedent: 12
@@ -209,21 +209,21 @@ Values in the past are considered invalid, except for a couple of minutes to acc
 
 To set the expiry time of an entry relatively to the call time:
 
-.. literalinclude:: ../../../api/c/examples/c/expires.c
+.. literalinclude:: ../../../apis/c/examples/c/expires.c
     :start-after: doc-start-expires_from_now
     :end-before: doc-end-expires_from_now
     :dedent: 12
 
 To prevent an entry from ever expiring:
 
-.. literalinclude:: ../../../api/c/examples/c/expires.c
+.. literalinclude:: ../../../apis/c/examples/c/expires.c
     :start-after: doc-start-expires_at
     :end-before: doc-end-expires_at
     :dedent: 12
 
 By default, entries never expire. To obtain the expiry time of an existing entry:
 
-.. literalinclude:: ../../../api/c/examples/c/expires.c
+.. literalinclude:: ../../../apis/c/examples/c/expires.c
     :start-after: doc-start-get_expiry_time
     :end-before: doc-end-get_expiry_time
     :dedent: 12
@@ -234,7 +234,7 @@ Integers
 Quasardb supports signed 64-bit integers natively. All operations on integers are guaranteed to be atomic. Likes blobs, integers support put (:func:`qdb_int_put`),
 update (:func:`qdb_int_update`), get (:func:`qdb_int_get`) and remove (:func:`qdb_remove`):
 
-.. literalinclude:: ../../../api/c/examples/c/int_basics.c
+.. literalinclude:: ../../../apis/c/examples/c/int_basics.c
     :start-after: doc-start-int_basics
     :end-before: doc-end-int_basics
     :dedent: 12
@@ -243,7 +243,7 @@ Quasardb API defines a cross platform integer to be used with all integer operat
 
 In addition to basic put/update/get/remove operations, integers support atomic increment and decrement through the :func:`qdb_int_add` function:
 
-.. literalinclude:: ../../../api/c/examples/c/int_add.c
+.. literalinclude:: ../../../apis/c/examples/c/int_add.c
     :start-after: doc-start-int_add
     :end-before: doc-end-int_add
     :dedent: 12
@@ -259,7 +259,7 @@ Any entry can have an arbitrary number of tags, and you can lookup entries based
 
 You can attach one tag at a time to an entry (:func:`qdb_attach_tag`), or several tags at once (:func:`qdb_attach_tags`):
 
-.. literalinclude:: ../../../api/c/examples/c/tags.c
+.. literalinclude:: ../../../apis/c/examples/c/tags.c
     :start-after: doc-start-tag_attach
     :end-before: doc-end-tag_attach
     :dedent: 12
@@ -268,7 +268,7 @@ If the tag is already set, the error code returned will be :cpp:enum:`qdb_e_tag_
 
 To remove a tag, use :func:`qdb_detach_tag`:
 
-.. literalinclude:: ../../../api/c/examples/c/tags.c
+.. literalinclude:: ../../../apis/c/examples/c/tags.c
     :start-after: doc-start-tag_detach
     :end-before: doc-end-tag_detach
     :dedent: 12
@@ -282,7 +282,7 @@ To retrieve the entries matching a tag, there are two possibilities: fetch every
 
 If you think the number of returned entries will be reasonable (e.g. easily fits in RAM), you can use :func:`qdb_get_tagged`:
 
-.. literalinclude:: ../../../api/c/examples/c/tags.c
+.. literalinclude:: ../../../apis/c/examples/c/tags.c
     :start-after: doc-start-tag_get
     :end-before: doc-end-tag_get
     :dedent: 12
@@ -292,7 +292,7 @@ If you think the number of returned entries will be reasonable (e.g. easily fits
 
 If you suspect the number of results to be very high, you may want to iterate over the results:
 
-.. literalinclude:: ../../../api/c/examples/c/tags.c
+.. literalinclude:: ../../../apis/c/examples/c/tags.c
     :start-after: doc-start-tag_iterate
     :end-before: doc-end-tag_iterate
     :dedent: 12
@@ -303,7 +303,7 @@ Removing an entry correctly updates the associated tags, in other words, a remov
 
 Forward lookup is also supported. For any entry, you can test the existence of a tag or just retrieve the list of tags:
 
-.. literalinclude:: ../../../api/c/examples/c/tags.c
+.. literalinclude:: ../../../apis/c/examples/c/tags.c
     :start-after: doc-start-tag_meta
     :end-before: doc-end-tag_meta
     :dedent: 12
@@ -327,7 +327,7 @@ There is no limit to the number of entries in a deque, no limit to the size of t
 
 To create a deque, you push elements to it using either :func:`qdb_deque_push_front` or :func:`qdb_deque_push_back`. Each function has a constant complexity and will span the deque accross nodes as it grows.
 
-.. literalinclude:: ../../../api/c/examples/c/deque.c
+.. literalinclude:: ../../../apis/c/examples/c/deque.c
     :start-after: doc-start-deque_push
     :end-before: doc-end-deque_push
     :dedent: 12
@@ -336,14 +336,14 @@ Push operations are atomic and safe to use concurrently.
 
 To access elements within a deque, you can either use :func:`qdb_deque_front`, :func:`qdb_deque_back` or :func:`qdb_deque_get_at`. Each function has a constant complexity, independant of the length of the deque. The :func:`qdb_deque_get_at` function uses 0 based index, 0 representing the front item.
 
-.. literalinclude:: ../../../api/c/examples/c/deque.c
+.. literalinclude:: ../../../apis/c/examples/c/deque.c
     :start-after: doc-start-deque_axx
     :end-before: doc-end-deque_axx
     :dedent: 12
 
 It is possible to atomically update any entry within the deque with :func:`qdb_deque_set_at`:
 
-.. literalinclude:: ../../../api/c/examples/c/deque.c
+.. literalinclude:: ../../../apis/c/examples/c/deque.c
     :start-after: doc-start-deque_set
     :end-before: doc-end-deque_set
     :dedent: 12
@@ -353,7 +353,7 @@ It is possible to atomically update any entry within the deque with :func:`qdb_d
 
 In addition to accessing entries, it is also possible to atomically remove and retrieve an entry with the :func:`qdb_deque_pop_front` and :func:`qdb_deque_pop_back` functions:
 
-.. literalinclude:: ../../../api/c/examples/c/deque.c
+.. literalinclude:: ../../../apis/c/examples/c/deque.c
     :start-after: doc-start-deque_pop
     :end-before: doc-end-deque_pop
     :dedent: 12
@@ -363,14 +363,14 @@ In addition to accessing entries, it is also possible to atomically remove and r
 
 A deque can be empty. You can query the size of the deque with the :func:`qdb_deque_size` function:
 
-.. literalinclude:: ../../../api/c/examples/c/deque.c
+.. literalinclude:: ../../../apis/c/examples/c/deque.c
     :start-after: doc-start-deque_size
     :end-before: doc-end-deque_size
     :dedent: 12
 
 To fully a deque, use :func:`qdb_remove`, like any other entry type:
 
-.. literalinclude:: ../../../api/c/examples/c/deque.c
+.. literalinclude:: ../../../apis/c/examples/c/deque.c
     :start-after: doc-start-deque_remove
     :end-before: doc-end-deque_remove
     :dedent: 12
@@ -389,28 +389,28 @@ Insertion, access and removal are logarithmic respective to the size of the set.
 
 To create a set, you insert an entry to a previously non existing set with :func:`qdb_hset_insert`:
 
-.. literalinclude:: ../../../api/c/examples/c/hset.c
+.. literalinclude:: ../../../apis/c/examples/c/hset.c
     :start-after: doc-start-hset_insert
     :end-before: doc-end-hset_insert
     :dedent: 12
 
 When you need to remove an entry from a set, use :func:`qdb_hset_erase`:
 
-.. literalinclude:: ../../../api/c/examples/c/hset.c
+.. literalinclude:: ../../../apis/c/examples/c/hset.c
     :start-after: doc-start-hset_erase
     :end-before: doc-end-hset_erase
     :dedent: 12
 
 To test the existence of an entry within a set, use :func:`qdb_hset_contains`:
 
-.. literalinclude:: ../../../api/c/examples/c/hset.c
+.. literalinclude:: ../../../apis/c/examples/c/hset.c
     :start-after: doc-start-hset_contains
     :end-before: doc-end-hset_contains
     :dedent: 12
 
 To fully remove a set, use :func:`qdb_remove`, like any other entry type:
 
-.. literalinclude:: ../../../api/c/examples/c/hset.c
+.. literalinclude:: ../../../apis/c/examples/c/hset.c
     :start-after: doc-start-hset_remove
     :end-before: doc-end-hset_remove
     :dedent: 12
@@ -422,21 +422,21 @@ Batch operations can greatly increase performance when it is necessary to run ma
 
 The :func:`qdb_init_operations` ensures that the operations are properly reset before setting any value:
 
-.. literalinclude:: ../../../api/c/examples/c/batch.c
+.. literalinclude:: ../../../apis/c/examples/c/batch.c
     :start-after: doc-start-init_operations
     :end-before: doc-end-init_operations
     :dedent: 12
 
 Once this is done, you can fill the array with the operations you would like to run. :func:`qdb_init_operations` makes sure all the values have proper defaults:
 
-.. literalinclude:: ../../../api/c/examples/c/batch.c
+.. literalinclude:: ../../../apis/c/examples/c/batch.c
     :start-after: doc-start-batch-create
     :end-before: doc-end-batch-create
     :dedent: 16
 
 You now have an operations batch that can be run on the cluster:
 
-.. literalinclude:: ../../../api/c/examples/c/batch.c
+.. literalinclude:: ../../../apis/c/examples/c/batch.c
     :start-after: doc-start-run_batch
     :end-before: doc-end-run_batch
     :dedent: 16
@@ -447,7 +447,7 @@ The error field of each operation is updated to reflect its status. If it is not
 
 Let's imagine the previous example returned an error. Here is some simple code for error detection:
 
-.. literalinclude:: ../../../api/c/examples/c/batch.c
+.. literalinclude:: ../../../apis/c/examples/c/batch.c
     :start-after: doc-start-error
     :end-before: doc-end-error
     :dedent: 16
@@ -456,21 +456,21 @@ What you must do when an error occurs is entirely dependent on your application.
 
 In our case, there have been four operations, two blob gets, one blob update and one int increase. In the case of the update, we only care if the operation has been successful or not. But what about the gets and the increase? The content is available in the result field for blobs:
 
-.. literalinclude:: ../../../api/c/examples/c/batch.c
+.. literalinclude:: ../../../apis/c/examples/c/batch.c
     :start-after: doc-start-results-blob
     :end-before: doc-end-results-blob
     :dedent: 16
 
 And for the integer in result_value:
 
-.. literalinclude:: ../../../api/c/examples/c/batch.c
+.. literalinclude:: ../../../apis/c/examples/c/batch.c
     :start-after: doc-start-results-int
     :end-before: doc-end-results-int
     :dedent: 16
 
 Once you are finished with a series of batch operations, you must release the memory that the API allocated using :func:`qdb_release`. The call releases all buffers at once:
 
-.. literalinclude:: ../../../api/c/examples/c/batch.c
+.. literalinclude:: ../../../apis/c/examples/c/batch.c
     :start-after: doc-start-free_operations
     :end-before: doc-end-free_operations
     :dedent: 16
@@ -491,12 +491,12 @@ Iteration on the cluster's entries can be done forward and backward. You initial
 
 Actual iteration is done with :func:`qdb_iterator_next` and :func:`qdb_iterator_previous`. Once completed, the iterator should be freed with :func:`qdb_iterator_close`:
 
-.. literalinclude:: ../../../api/c/examples/c/iterator.c
+.. literalinclude:: ../../../apis/c/examples/c/iterator.c
     :start-after: doc-start-iterator_begin
     :end-before: doc-end-iterator_begin
     :dedent: 12
 
-.. literalinclude:: ../../../api/c/examples/c/iterator.c
+.. literalinclude:: ../../../apis/c/examples/c/iterator.c
     :start-after: doc-start-iterator_rbegin
     :end-before: doc-end-iterator_rbegin
     :dedent: 12
@@ -509,7 +509,7 @@ Queries
 
 To run a query on quasardb, use the function :func:`qdb_query`. The API transparently runs the query accross the cluster, and returns the list of aliases matching the query result.
 
-.. literalinclude:: ../../../api/c/examples/c/run_query.c
+.. literalinclude:: ../../../apis/c/examples/c/run_query.c
     :start-after: doc-start-query
     :end-before: doc-end-query
     :dedent: 12
@@ -526,21 +526,21 @@ Streaming
 Use the streaming API to read or write portions of large entries in linear packets. There is no limit to the size of entries that can be streamed to or from the client.
 First, one should open the stream handle choosing an appropriate mode:
 
-.. literalinclude:: ../../../api/c/examples/c/stream_write.c
+.. literalinclude:: ../../../apis/c/examples/c/stream_write.c
     :start-after: doc-start-stream_open
     :end-before: doc-end-stream_open
     :dedent: 4
 
 Then, you can stream in (write) as much data as you wish:
 
-.. literalinclude:: ../../../api/c/examples/c/stream_write.c
+.. literalinclude:: ../../../apis/c/examples/c/stream_write.c
     :start-after: doc-start-stream_write
     :end-before: doc-end-stream_write
     :dedent: 8
 
 To get the current size of the stream, in bytes, there is :func:`qdb_stream_size`:
 
-.. literalinclude:: ../../../api/c/examples/c/stream_write.c
+.. literalinclude:: ../../../apis/c/examples/c/stream_write.c
     :start-after: doc-start-stream_size
     :end-before: doc-end-stream_size
     :dedent: 8
@@ -554,35 +554,35 @@ Then getting and aggregating the inserted points.
 
 To create a timeseries in quasardb, use the function :func:`qdb_ts_create`.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_create
     :end-before: doc-end-ts_create
     :dedent: 12
 
 You can also add columns with :func:`qdb_ts_insert_columns`.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_insert_columns
     :end-before: doc-end-ts_insert_columns
     :dedent: 12
 
 You can list all columns of a timseries :func:`qdb_ts_list_columns`:
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_list_columns
     :end-before: doc-end-ts_list_columns
     :dedent: 16
 
 Don't forget to release memory afterward.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_list_columns-release
     :end-before: doc-end-ts_list_columns-release
     :dedent: 16
 
 As a helper, we may use the following columns as shortcuts:
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_column_helpers
     :end-before: doc-end-ts_column_helpers
     :dedent: 12
@@ -593,7 +593,7 @@ As a helper, we may use the following columns as shortcuts:
 Let's say you use quasardb as a database for IOT without any filter or cache between your device and the server.
 You will need to insert the points as they come, as in one-by-one, and column-by-column.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_double_insert-single
     :end-before: doc-end-ts_double_insert-single
     :dedent: 16
@@ -601,14 +601,14 @@ You will need to insert the points as they come, as in one-by-one, and column-by
 Assuming you now have some kind of cache that gets data from a SINGLE device.
 You're still stuck with column-by-column but you can begin to insert in a more efficient manner.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_double_insert-multiple
     :end-before: doc-end-ts_double_insert-multiple
     :dedent: 16
 
 You can insert blobs the same way with :func:`qdb_ts_blob_insert`.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_blob_insert
     :end-before: doc-end-ts_blob_insert
     :dedent: 16
@@ -623,28 +623,28 @@ I present you the row-by-row bulk API!
 
 First you need to initialize a table to store your information as a row.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-bulk-push-ts_local_table_init
     :end-before: doc-end-bulk-push-ts_local_table_init
     :dedent: 16
 
 Then you can set each values corresponding to the specified columns of your local table.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-bulk-push-ts_row_set
     :end-before: doc-end-bulk-push-ts_row_set
     :dedent: 16
 
 Once set, you can append this row with :func:`qdb_ts_table_row_append`
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-bulk-push-ts_append_row
     :end-before: doc-end-bulk-push-ts_append_row
     :dedent: 16
 
 You can finally push your data when you're done appending rows.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-bulk-push-ts_push
     :end-before: doc-end-bulk-push-ts_push
     :dedent: 16
@@ -656,14 +656,14 @@ Now that we have data inserted, it would be useful to retrieve results.
 You can either get ranges of values associated with timestamps, for this purpose we will use the :func:`qdb_ts_double_get_ranges`
 As you may have guessed the following calls are also possible :func:`qdb_ts_blob_get_ranges`, :func:`qdb_ts_int64_get_ranges` and :func:`qdb_ts_timestamp_get_ranges`.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_double_get_ranges
     :end-before: doc-end-ts_double_get_ranges
     :dedent: 16
 
 Don't forget to release the memory after usage:
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_double_get_ranges-release
     :end-before: doc-end-ts_double_get_ranges-release
     :dedent: 16
@@ -675,21 +675,21 @@ Don't forget to release the memory after usage:
 Since 2.2.0 it is now possible to get results as a row, in a similar way as what you are used to in sql.
 First you need to initialize a local table, the same way you did for a bulk push.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-bulk-get-ts_local_table_init
     :end-before: doc-end-bulk-get-ts_local_table_init
     :dedent: 16
 
 Set the range that you want to get with :func:`qdb_ts_table_get_ranges`
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-bulk-get-ts_table_get_ranges
     :end-before: doc-end-bulk-get-ts_table_get_ranges
     :dedent: 16
 
 Then you can fetch each row, and read the data column-by-column:
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-bulk-get-fetching
     :end-before: doc-end-bulk-get-fetching
     :dedent: 20
@@ -700,28 +700,28 @@ Then you can fetch each row, and read the data column-by-column:
 Going further you may want to get aggregated results. Like average, min, max or first in a range.
 This is possible with :func:`qdb_ts_blob_aggregate`.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_double_aggregate
     :end-before: doc-end-ts_double_aggregate
     :dedent: 16
 
 To print the result:
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_double_aggregate-printf
     :end-before: doc-end-ts_double_aggregate-printf
     :dedent: 20
 
 The same can be done for blobs:
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_blob_aggregate
     :end-before: doc-end-ts_blob_aggregate
     :dedent: 16
 
 Again, print the result with printf
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_blob_aggregate-printf
     :end-before: doc-end-ts_blob_aggregate-printf
     :dedent: 20
@@ -730,7 +730,7 @@ Again, print the result with printf
 ^^^^^^^^^^^^^^^^^
 It's possible to remove a range or multiple ranges of data within a timeseries column via :func:`qdb_ts_erase_ranges`.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_erase_ranges
     :end-before: doc-end-ts_erase_ranges
     :dedent: 16
@@ -738,7 +738,7 @@ It's possible to remove a range or multiple ranges of data within a timeseries c
 
 Finally, you may want to delete the timeseries, it's done the same way as any entry in quasardb, using :func:`qdb_remove`.
 
-.. literalinclude:: ../../../api/c/examples/c/timeseries.c
+.. literalinclude:: ../../../apis/c/examples/c/timeseries.c
     :start-after: doc-start-ts_remove
     :end-before: doc-end-ts_remove
     :dedent: 12
@@ -757,7 +757,7 @@ Logging is asynchronous, however buffers are flushed when :func:`qdb_close` is s
 
 The callback profile is the following:
 
-.. literalinclude:: ../../../api/c/examples/c/log_callback.c
+.. literalinclude:: ../../../apis/c/examples/c/log_callback.c
     :start-after: doc-start-log_callback
     :end-before: doc-end-log_callback
 
@@ -772,27 +772,27 @@ The parameters passed to the callback are:
 
 Here is a callback example:
 
-.. literalinclude:: ../../../api/c/examples/c/log_callback.c
+.. literalinclude:: ../../../apis/c/examples/c/log_callback.c
     :start-after: doc-start-my_log_callback
     :end-before: doc-end-my_log_callback
 
 Setting the callback is done with :func:`qdb_log_add_callback`:
 
-.. literalinclude:: ../../../api/c/examples/c/log_callback.c
+.. literalinclude:: ../../../apis/c/examples/c/log_callback.c
     :start-after: doc-start-log_add_callback
     :end-before: doc-end-log_add_callback
     :dedent: 12
 
 If you later wish to unregister the callback:
 
-.. literalinclude:: ../../../api/c/examples/c/log_callback.c
+.. literalinclude:: ../../../apis/c/examples/c/log_callback.c
     :start-after: doc-start-log_remove_callback
     :end-before: doc-end-log_remove_callback
     :dedent: 16
 
 You may pass a null pointer as callback identifier to :func:`qdb_log_add_callback`, but then you will lose the possibility to unregister it.
 
-.. literalinclude:: ../../../api/c/examples/c/log_callback.c
+.. literalinclude:: ../../../apis/c/examples/c/log_callback.c
     :start-after: doc-start-log_add_callback-no-cid
     :end-before: doc-end-log_add_callback-no-cid
     :dedent: 12
