@@ -293,7 +293,7 @@ intersphinx_mapping = {
 }
 
 javadoc_url_map = {
-    'java': ('https://docs.oracle.com/javase/7/docs/api/', 'javadoc')
+    'java': ('https://docs.oracle.com/javase/8/docs/api/', 'javadoc')
 }
 
 linkcheck_anchors = False
