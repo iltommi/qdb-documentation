@@ -101,6 +101,33 @@ By providing additional :cpp:class:`SecurityOptions <net::quasardb::qdb::Session
      System.exit(1);
    }
 
+
+Table management
+----------------
+
+The Java API exposes its timeseries using the :cpp:class:`Table <net::quasardb::qdb::ts::Table>` class.
+
+Create
+^^^^^^
+
+You can invoke the **create** to create a new timeseries table:
+
+.. code-block:: java
+
+   try {
+     Session mySession = Session.connect(new Session.SecurityOptions("userName",
+                                                                     "userPrivateKey",
+                                                                     "clusterPublicKey"),
+                                         uri);
+   } catch (ConnectionRefusedException ex) {
+     System.err.println("Failed to connect to " + uri +
+                        ", make sure server is running!");
+     System.exit(1);
+   }
+
+
+
+
 Reference
 ---------
 
@@ -113,3 +140,7 @@ This chapter contains a short summary of our Java API. For more a complete refer
 .. doxygenclass:: net::quasardb::qdb::Session
 	:project: qdb_java_api
         :members: connect
+
+.. doxygenclass:: net::quasardb::qdb::ts::Table
+	:project: qdb_java_api
+        :members:
