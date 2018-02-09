@@ -63,9 +63,48 @@ Or, if you use Gradle, your ``build.gradle`` should look like:
 
 .. _Javadoc: https://doc.quasardb.net/java/
 
+Connecting to the database
+--------------------------
+
+You connect to a QuasarDB cluster by creating an instance of :any:`net::quasardb::qdb::Session` and establishing a connection with a QuasarDB cluster.
+
+.. code-block:: java
+
+   static Session connectToCluster(String uri) {
+     try {
+       return Session.connect(uri);
+     } catch (ConnectionRefusedException ex) {
+       System.err.println("Failed to connect to " + uri +
+                          ", make sure server is running!");
+       System.exit(1);
+       return null;
+     }
+   }
+
+
 Reference
 ---------
 
-.. doxygennamespace:: net::quasardb::qdb
-  :project: qdb_jni_api
-  :members:
+.. doxygenclass:: net::quasardb::qdb::Session
+	:project: qdb_java_api
+	:members:
+
+.. doxygenclass:: net::quasardb::qdb::ts::Table
+	:project: qdb_java_api
+	:members:
+
+.. doxygenclass:: net::quasardb::qdb::ts::Writer
+	:project: qdb_java_api
+	:members:
+
+.. doxygenclass:: net::quasardb::qdb::ts::Reader
+	:project: qdb_java_api
+	:members:^^^^^
+
+.. doxygenclass:: net::quasardb::qdb::ts::Query
+	:project: qdb_java_api
+	:members:
+
+.. doxygenclass:: net::quasardb::qdb::ts::Result
+	:project: qdb_java_api
+	:members:
