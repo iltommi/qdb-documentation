@@ -199,6 +199,7 @@ As you can see above, the :cpp:class:`Reader <net::quasardb::qdb::ts::Reader>` e
    Table
      .reader(session, t, myTimeRange)
      .stream()
+     .parallel()
      .filter(myClass::isValid)
      .forEach(System.out::println);
 
@@ -216,6 +217,16 @@ For more ad-hoc analysis and aggregations, you can use our :cpp:class:`Query <ne
    for (Result.Table t : r.tables) {
      System.out.println("has table with results: " + t.toString());
    }
+
+And the Query API also provides Stream-based access to the Result set:
+
+.. code-block:: java
+
+   Query.of("select double_val from "  + myTable.getName() + " in range(now, +1h)")
+     .execute(session)
+     .parallel()
+     .filter(myClass::isValid)
+     .forEach(System.out::println);
 
 The code above will query the ``double_val`` column from your time range, and return the entire :cpp:class:`Result <net::quasardb::qdb::ts::Result>` object. We also suggest you explore our Javadoc_ to see a more comprehensive overview on how to inspect the Result object.
 
