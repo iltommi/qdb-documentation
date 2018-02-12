@@ -1,6 +1,29 @@
 Change log
 **********
 
+2.3.0 - "Epictetus" - 02/15/2018
+================================
+
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+    `Epictetus <https://en.wikipedia.org/wiki/Epictetus>`_ was a Greek Stoic philosopher. He was born a slave at Hierapolis, Phrygia (present day Pamukkale, Turkey) and lived in Rome until his banishment, when he went to Nicopolis in northwestern Greece for the rest of his life. [...] Epictetus taught that philosophy is a way of life and not just a theoretical discipline. To Epictetus, all external events are beyond our control; we should accept calmly and dispassionately whatever happens. However, individuals are responsible for their own actions, which they can examine and control through rigorous self-discipline.
+
+Changes in this version
+-----------------------
+
+    * Protocol version 20
+    * Queries can now leverage the result of tag based lookup
+    * New column type: signed 64-bit integer
+    * New column type: nanosecond resolution timestamp
+    * Fixed a bug where skewness computation could be invalid on very large time series
+    * [api] The query language is now available through the API
+    * [api] Some asynchronous operations did not properly retry on error, resulting in sporadic network errors popped back to the user
+    * [admin] Adding an existing user will fail instead of overwritting the old one
+    * [packaging] The libc++ API is now bundled on MacOS and FreeBSD for greater compatibility
+    * [kernel] Accross the board performance improvements and memory usage reduction
+    * [kernel] Upgraded to Boost 1.66
+    * [persistence] Upgraded to RocksDB 5.9.2
+
 2.2.0 - "Chrysippus" - 12/21/2017
 =================================
 
