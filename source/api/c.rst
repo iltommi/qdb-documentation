@@ -808,94 +808,94 @@ General
 ^^^^^^^
 
 .. doxygengroup:: client
-  :content-only:
+  :members:
 
 Error codes
 ^^^^^^^^^^^
 
 .. doxygengroup:: error
-  :content-only:
+  :members:
 
 Batches
 ^^^^^^^
 
 .. doxygengroup:: batch
-  :content-only:
+  :members:
 
 Blobs
 ^^^^^^
 
 .. doxygengroup:: blob
-  :content-only:
+  :members:
 
 Cluster and nodes
 ^^^^^^^^^^^^^^^^^
 
 .. doxygengroup:: node
-  :content-only:
+  :members:
 
 Deques
 ^^^^^^
 
 .. doxygengroup:: deque
-  :content-only:
+  :members:
 
 Hash sets
 ^^^^^^^^^
 
 .. doxygengroup:: hset
-  :content-only:
+  :members:
 
 Integers
 ^^^^^^^^
 
 .. doxygengroup:: integer
-  :content-only:
+  :members:
 
 Iterators
 ^^^^^^^^^
 
 .. doxygengroup:: iterator
-  :content-only:
+  :members:
 
 Log
 ^^^
 
 .. doxygengroup:: log
-  :content-only:
+  :members:
 
 Prefix
 ^^^^^^
 
 .. doxygengroup:: prefix
-  :content-only:
+  :members:
 
 Queries
 ^^^^^^^^
 
 .. doxygengroup:: query
-  :content-only:
+  :members:
 
 Streams
 ^^^^^^^
 
 .. doxygengroup:: stream
-  :content-only:
+  :members:
 
 Suffix
 ^^^^^^
 
 .. doxygengroup:: suffix
-  :content-only:
+  :members:
 
 Tags
 ^^^^
 
 .. doxygengroup:: tag
-  :content-only:
+  :members:
 
 Time series
 ^^^^^^^^^^^
 
 .. doxygengroup:: ts
-  :content-only:
+  :members:
