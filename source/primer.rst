@@ -189,10 +189,17 @@ Then you can look up based on those tags::
 
 It's also possible to ask more complex questions, such as *"give me everything that is tagged with 'usd' but not 'nyq'"*::
 
-    qdbsh > query "tag='usd' and not tag='nyq'"
+    qdbsh >find(tag='usd' and not tag='nyq')
     An entry matching the provided alias cannot be found.
 
 Which is, in our case, the correct answer!
+
+Can you inject the result of a find in a select? Of course you can::
+
+    qdbsh > select arithmetic_mean(close) from find(tag='nyq') in range(2017, +10d)
+    timestamp                      arithmetic_mean(close)
+    ------------------------------------------------------
+    2017-01-01T00:00:00.000000000Z 2.00
 
 That demo is nice, but what happens when I go to production?
 ------------------------------------------------------------

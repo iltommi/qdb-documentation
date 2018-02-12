@@ -101,6 +101,11 @@ EBNF Grammar
 
 .. highlight:: bnf
 
+Identifiers
+^^^^^^^^^^^
+
+An identifier, should it be a variable name, a column name or a table name is an alphanumerical string that may not start with a digit. Punctuation is accepted, with the exception of ``+``, ``-``, ``/``, ``*``, ``(`` and ``)``.
+
 Duration
 ^^^^^^^^
 
@@ -174,7 +179,7 @@ Find
 By default, all types are selected, if one or more types is selected, only those types will be returned. Thus, the grammar does not allow you to exclude a type::
 
     <entry_types> ::= "blob" | "int" | "integer" | "hset" | "stream" | "deque" | "ts"
-    <quoted_string> ::= "\"" <utf8_string> "\"" | "'" <utf8_string> "'"
+    <quoted_string> ::= "\"" <identifier> "\"" | "'" <identifier> "'"
     <tag> ::= "tag=" <quoted_string>
     <type> ::= "type=" <entry_types>
     <positive> ::= <tag> | <type>
