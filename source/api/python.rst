@@ -38,7 +38,7 @@ Windows users can download the installer from the download site. The installers 
 Compiling From Source
 `````````````````````
 
-If you have a different Python version or you want to recompile the extension, download the source package. To compile the source package, you need the quasardb C library, `CMake <https://cmake.org/>`_, `SWIG <http://www.swig.org/>`_, and the Python :mod:`distutils` installed.
+If you have a different Python version or you want to recompile the extension, download the source package. To compile the source package, you need the quasardb C library, `CMake <https://cmake.org/>`_, `SWIG <http://swig.org/>`_, and the Python :mod:`distutils` installed.
 
 Unpack the archive and in the directory run:
 
