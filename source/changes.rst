@@ -13,8 +13,6 @@ Changes in this version
 
     * Protocol version 20
     * Queries can now leverage the result of tag based lookup
-    * New column type: signed 64-bit integer
-    * New column type: nanosecond resolution timestamp
     * Fixed a bug where skewness computation could be invalid on very large time series
     * [api] The query language is now available through the API
     * [api] Some asynchronous operations did not properly retry on error, resulting in sporadic network errors popped back to the user
