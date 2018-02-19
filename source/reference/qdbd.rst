@@ -14,7 +14,7 @@ The network distribution uses the `Chord <https://github.com/sit/dht/wiki>`_ pro
 The quasardb daemon does not require privileges (unless listening on a port under 1024) and can be launched from the command line. From this command line it can safely be stopped with CTRL-C. On UNIX, CTRL-Z will also result in the daemon being suspended.
 
 .. important::
-    Without a valid license (see :doc:`../license`), quasardb will run in "community edition" mode. The community edition is limited to 16 GiB of storage and 2 GiB of RAM per node, with a maximum of two nodes per cluster.
+    Without a valid license (see :doc:`../license`), quasardb will run in "community edition" mode. The community edition is limited to 16 GiB of storage and 4 GiB of RAM per node, with a maximum of two nodes per cluster.
 
 Quick Reference
 ===============
@@ -190,7 +190,7 @@ Theoretical limits
     The maximum number of entries is :math:`2^{63}` (9,223,372,036,854,775,808)
 
 **Node maximum capacity**
-    The node capacity depends on the available disk space on a given node. The community edition is limited to 16 GiB on disk and 2 GiB in RAM.
+    The node capacity depends on the available disk space on a given node. The community edition is limited to 16 GiB on disk and 4 GiB in RAM.
 
 **Total amount of data**
     The total amount of data a single grid may handle is 16 EiB (that's 18,446,744,073,709,551,616 bytes).
