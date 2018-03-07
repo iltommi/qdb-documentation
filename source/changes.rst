@@ -1,6 +1,27 @@
 Change log
 **********
 
+2.4.0 - "Aratus" - 03/11/2018
+=============================
+
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+    `Aratus <https://en.wikipedia.org/wiki/Aratus>`_ was a Greek didactic poet. His major extant work is his hexameter poem Phenomena, the first half of which is a verse setting of a lost work of the same name by Eudoxus of Cnidus. It describes the constellations and other celestial phenomena. The second half is called the Diosemeia , and is chiefly about weather lore.`
+
+Changes in this version
+-----------------------
+
+    * Protocol version 20
+    * [query] Support for arithmetic expressions in SELECT statements
+    * [query] Support for multiple ranges in SELECT statements
+    * [query] Initial support for WHERE clause - only single column queries are currently supported
+    * [persistence] Greatly improved data compression (up to 5x)
+    * [aggregation] Added specific SSE 4.2 optimizations for machines without AVX and AVX2
+    * [aggregations] Significantly increased the speed of integer 64-bit aggregations (up to 6x)
+    * [aggregations] Significantly increased the speed of sum_of_squares and product aggregations functions (up to 4x)
+    * [python] Exposed query API
+    * [shell] Fixed a bug where the columns would be displayed in the wrong order for a star SELECT
+
 2.3.0 - "Epictetus" - 02/15/2018
 ================================
 

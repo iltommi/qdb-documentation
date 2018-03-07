@@ -96,6 +96,10 @@ Get the sum of volume and the number of lines for the last hour by 10 seconds gr
 
     select sum(volume), count(volume) from stocks.apple in range(now, -1h) group by 10s
 
+Get the sum of volumes for "stocks.apple" the year 2008 and 2010::
+
+    select sum(volume) from stocks.apple in [range(2008, +1y), range(2010, +1y)]
+
 EBNF Grammar
 -------------
 
@@ -141,7 +145,7 @@ Dates are in ISO format, and abbreviation are supported, for example "2008" mean
     <minute> ::= <digit>? <digit>
     <seconds> ::= <digit>? <digit>
     <nanoseconds> ::= <digit>+
-    <time> ::= <hours> ":" <minutes> (":" <seconds> ("." <nanoseconds>)?)?
+    <time> ::= <hours> ":" <minutes> [":" <seconds> ["." <nanoseconds>]]
     <year> ::= <digit> <digit> <digit> <digit>
     <month> ::= <digit>? <digit>
     <day> ::= <digit>? <digit>
@@ -164,14 +168,16 @@ Time range are between two absolute time points, or one absolute time point and 
     <absolute> ::= <time_point>
     <relative> ::= "+" <duration> | "-" <duration>
     <time_range> ::= "range" "(" <absolute> "," (<absolute> | <relative>) ")"
+    <time_ranges> ::= "[" <time_range> ("," <time_range>)+ "]"" | <time_range>
 
-Time ranges are left inclusive, right exclusive.
+Time ranges are left inclusive, right exclusive. Collections of ranges are supported.
 
 Examples:
 
     * ``range(2008, +1d)``: The first day of 2008
     * ``range(2006, 2008)``: Between January 1st 2006 midnight and January 1st 2008 midnight
     * ``range(2008-05-03T23:20:35.9791, +1000ns)``: Between May 5th, 2008 23 hours 20 minutes 35 seconds 9791 nanoseconds and May 5th, 2008 23 hours 20 minutes 35 seconds 10791 nanoseconds
+    * ``[range(2008, +1d), range(2009, +1d)]``: The first day of 2008 and the first day of 2009
 
 Find
 ^^^^
@@ -187,18 +193,74 @@ By default, all types are selected, if one or more types is selected, only those
     <statement> ::= <positive> | <negative>
     <find> ::= <statement> | <statement> "and" <query>
 
+Expression
+^^^^^^^^^^
+
+An expression is a composition of arithmetic operations, and supports operator precedence::
+
+    <expression> ::= <term> {("+" <term>) | ("-" <term>)}
+    <term> ::= <factor> {("*" <factor>) | ("/" <factor>)}
+    <factor> ::= "(" <expression> ")" | "-" <factor> | "+" <factor> | <number> | <function> | <identifier>
+    <function> ::= <aggregation> "(" <identifier> ")"
+    <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+    <number> ::= <digit>+ ["." <digit>]
+
+An aggregation is one of the supported aggregation functions (see :ref:`ts_functions`).
+
+When composing heteregenous types, the promotions rules are the following:
+
+    * For integers and doubles operations, integers are promoted to doubles
+    * For timestamps and integers operations, timestamps are promoted to integers (epoch timestamp)
+    * For timestamps and doubles operations, timestamps are promoted to doubles (epoch timestamp)
+
+Division by zero will result in:
+
+    * For doubles operation, in NaN
+    * For integer operations, in zero (this may change in the future)
+    * For timestamps, in the epoch zero timestamp
+
+It is not supported to multiply or divide by a timestamp.
+
+.. note::
+    Functions composition is currently not supported, e.g. ``sum(sum(col1) + sum(col2))``
+
+Examples:
+
+    * ``sum(open)*sum(volume)/count(open)``: Compose the functions results.
+    * ``open+volume``: Create a column result composed of the sum of open and volume.
+    * ``1+open``: Adds 1 to every result of column.
+
+Conditional expression
+^^^^^^^^^^^^^^^^^^^^^^
+
+A conditional expression is a composition of logical and arithmetic operations evaluating to a boolean::
+
+    <or> ::= <and> {"or" <and>}
+    <and> ::= <not> {"and" <not>}
+    <not> ::= "not" <relation> | <relation>
+    <relation> ::= <expression> {<comparison_operator> <expression>}
+    <comparison_operator> ::= ">=" | "<=" | "!=" | "<" | "=" | ">"
+
+Examples:
+
+    * ``open=1``: Return true if and only if the value of open is 1
+    * ``(close > 1) or (open < 2)``: Returns true if and only if the value of close is greater than 1 or the value is open is less than 2
 
 Select
 ^^^^^^
 
 Select currently requires a time range and does not support where clauses::
 
-    <columns> ::= "*" | (<identifier> ("," <identifier>)+)
+    <columns> ::= "*" | (<expression> ("," <expression>)+)
     <lookup> ::= <identifier> | <find>
-    <lookup_list> ::= <lookup> ("," <lookup>)+
+    <lookup_list> ::= <lookup> ["," <lookup>]
+    <where> ::= "where" <conditional_expression>
     <group_by> ::= "group" "by" <duration>
     <asof> ::= "asof" "(" <identifier> ")"
-    <select> ::= "select" <columns> "from" <lookup_list> "in" <time_range> (<group_by>? | <asof>?)
+    <select> ::= "select" <columns> "from" <lookup_list> "in" <time_ranges> (<where>? <group_by>? | <asof>?)
+
+.. note::
+    Only single column queries are currently supported for WHERE clauses.
 
 How it works
 -------------
