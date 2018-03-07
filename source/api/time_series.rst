@@ -77,9 +77,6 @@ Resolution
 
 Each point in time is represented with a very-high precision 128-bit timestamp with nanosecond granularity, which makes it possible to represent any point in time for the duration of the universe.
 
-.. note::
-    100-picosecond granularity is planned for a future release.
-
 Real-time aggregation
 ^^^^^^^^^^^^^^^^^^^^^
 
@@ -92,16 +89,17 @@ When the time interval spans several nodes, the API will transparently distribut
 Efficient storage
 ^^^^^^^^^^^^^^^^^
 
-While preserving the 128-bit resolution of each timestamp, each bucket only stores the 64-bit index relative to its time interval. Values are stored to disk using variadic encoding to minimize storage space.
+While preserving the 128-bit resolution of each timestamp, each bucket only stores the 64-bit index relative to its time interval. Each 64-bit index is compressed using a lossless compression algorithm that stores only the second-degree variations, leveraging the column-oriented nature of quasarDB.
+
+Integer values are compressed to disk using an algorithm similar to the one used for timestamps.
+
+Doubles and blobs values are currently not compressed.
 
 When a time interval does not contain data, it does not use any space. Thus, discontinuous data is natively supported and there is no need to *"clean up"* the data before inserting it into quasardb.
 
-Blobs are compressed using `LZ4 <https://en.wikipedia.org/wiki/LZ4_(compression_algorithm)>`_.
-
 For more information, see :doc:`../concepts/data_storage`.
 
-.. note::
-    Lossless temporal compression of values and timestamps is planned for a future release.
+.. _ts_functions:
 
 Supported server side functions
 -------------------------------
@@ -111,51 +109,48 @@ All functions are transparently distributed over the cluster.
  +-----------------------------------+----------------+------------+------------+
  | Operation                         | Applies to     | Complexity | Vectorized |
  +===================================+================+============+============+
- | First element                     | Any column     | Constant   | No         |
+ | First element                     | Any            | Constant   | No         |
  +-----------------------------------+----------------+------------+------------+
- | Last element                      | Any column     | Constant   | No         |
+ | Last element                      | Any            | Constant   | No         |
  +-----------------------------------+----------------+------------+------------+
- | Minimum element                   | Double columns | Linear     | Yes        |
+ | Minimum element                   | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Minimum element (absolute values) | Double columns | Linear     | No         |
+ | Minimum element (absolute values) | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Maximum element                   | Double columns | Linear     | Yes        |
+ | Maximum element                   | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Maximum element (absolute values) | Double columns | Linear     | No         |
+ | Maximum element (absolute values) | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Spread                            | Double columns | Linear     | Yes        |
+ | Spread                            | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Population variance               | Double columns | Linear     | No         |
+ | Population variance               | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Sample variance                   | Double columns | Linear     | No         |
+ | Sample variance                   | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Population standard deviation     | Double columns | Linear     | No         |
+ | Population standard deviation     | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Sample standard deviation         | Double columns | Linear     | No         |
+ | Sample standard deviation         | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Arithmetic mean                   | Double columns | Linear     | Yes        |
+ | Arithmetic mean                   | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Harmonic mean                     | Double columns | Linear     | No         |
+ | Harmonic mean                     | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Geometric mean                    | Double columns | Linear     | No         |
+ | Geometric mean                    | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Quadratic mean (root mean square) | Double columns | Linear     | No         |
+ | Quadratic mean (root mean square) | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Number of elements                | Any column     | Constant   | No         |
+ | Number of elements                | Any            | Constant   | No         |
  +-----------------------------------+----------------+------------+------------+
- | Sum                               | Double columns | Linear     | Yes        |
+ | Sum                               | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Sum of squares                    | Double columns | Linear     | No         |
+ | Sum of squares                    | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Product                           | Double columns | Linear     | No         |
+ | Product                           | Double, int64  | Linear     | Yes        |
  +-----------------------------------+----------------+------------+------------+
- | Skewness                          | Double columns | Linear     | No         |
+ | Skewness                          | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
- | Kurtosis                          | Double columns | Linear     | No         |
+ | Kurtosis                          | Double, int64  | Linear     | No         |
  +-----------------------------------+----------------+------------+------------+
-
-.. note::
-    The following functions are planned in the short term: distinct values count, median, most frequent value, least frequent value, moving average and percentile.
 
 Usage
 -------
