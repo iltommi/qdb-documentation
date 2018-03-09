@@ -1,0 +1,745 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbCluster</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AutoCloseable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aa573492f22ac40d73d1fbb5cfb808cc5" prot="private" static="no" mutable="no">
+        <type>Session</type>
+        <definition>Session net.quasardb.qdb.QdbCluster.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="15" column="1" bodyfile="QdbCluster.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a4b47f3f4fb30c9329b3d59353399b490" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbCluster.QdbCluster</definition>
+        <argsstring>(String uri)</argsstring>
+        <name>QdbCluster</name>
+        <param>
+          <type>String</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Connects to a quasardb cluster through the specified URI. Requires security settings to be disabled. The URI contains the addresses of the bootstrapping nodes, other nodes are discovered during the first connection. Having more than one node in the URI allows to connect to the cluster even if the first node is down.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string in the form of <computeroutput>qdb://&lt;address1&gt;:&lt;port1&gt;[,&lt;address2&gt;:&lt;port2&gt;...]</computeroutput> </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ConnectionRefusedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the connection to the cluster is refused. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the syntax of the URI is incorrect. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="26" column="1" bodyfile="QdbCluster.java" bodystart="26" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1ccc48741797ecd6d418d130f57cc53d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbCluster.QdbCluster</definition>
+        <argsstring>(String uri, Session.SecurityOptions securityOptions)</argsstring>
+        <name>QdbCluster</name>
+        <param>
+          <type>String</type>
+          <declname>uri</declname>
+        </param>
+        <param>
+          <type>Session.SecurityOptions</type>
+          <declname>securityOptions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Connects to a quasardb secure cluster through the specified URI. The URI contains the addresses of the bootstrapping nodes, other nodes are discovered during the first connection. Having more than one node in the URI allows to connect to the cluster even if the first node is down.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>a string in the form of <computeroutput>qdb://&lt;address1&gt;:&lt;port1&gt;[,&lt;address2&gt;:&lt;port2&gt;...]</computeroutput> </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>securityOptions</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>An instance of QdbCluster.SecurityOptions for authentication. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ConnectionRefusedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the connection to the cluster is refused. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the syntax of the URI is incorrect. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="41" column="1" bodyfile="QdbCluster.java" bodystart="41" bodyend="45"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbCluster.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Closes the connection to the cluster. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="50" column="1" bodyfile="QdbCluster.java" bodystart="50" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ab4baec08de44c1f6871b7bae429ea034" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Session</type>
+        <definition>Session net.quasardb.qdb.QdbCluster.getSession</definition>
+        <argsstring>()</argsstring>
+        <name>getSession</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns the active Session. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="57" column="1" bodyfile="QdbCluster.java" bodystart="57" bodyend="59"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a285982aaee4ea95e5d0bf790c0ee0531" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbCluster.isLegacySessionInitialised</definition>
+        <argsstring>()</argsstring>
+        <name>isLegacySessionInitialised</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns true if a the legacy session object is initialised and in used by other objects. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="65" column="1" bodyfile="QdbCluster.java" bodystart="65" bodyend="67"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1319ace6b97d3a42958d250f18e38d54" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob" kindref="compound">QdbBlob</ref></type>
+        <definition>QdbBlob net.quasardb.qdb.QdbCluster.blob</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>blob</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to a blob in the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the blob. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="76" column="1" bodyfile="QdbCluster.java" bodystart="76" bodyend="79"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a301f3fd250d3ae6bc00ae6ee29efeba5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque" kindref="compound">QdbDeque</ref></type>
+        <definition>QdbDeque net.quasardb.qdb.QdbCluster.deque</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>deque</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to a deque (double-ended queue) in the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the deque. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="88" column="1" bodyfile="QdbCluster.java" bodystart="88" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ae14b031bf7cabefe09d50dd1fec76816" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref></type>
+        <definition>QdbEntry net.quasardb.qdb.QdbCluster.entry</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>entry</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to an entry in the database, the entry must exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A subclass of <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kindref="compound">QdbEntry</ref> depending on the type of entry currently in the database. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the entry does not exist. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="101" column="1" bodyfile="QdbCluster.java" bodystart="101" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aaab342ef0966a06ae1a3da626e565306" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set" kindref="compound">QdbHashSet</ref></type>
+        <definition>QdbHashSet net.quasardb.qdb.QdbCluster.hashSet</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>hashSet</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to a hash-set in the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the hash-set. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="113" column="1" bodyfile="QdbCluster.java" bodystart="113" bodyend="116"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a9cdb2ed140d8c7b6f6bf6cc77337d036" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" kindref="compound">QdbInteger</ref></type>
+        <definition>QdbInteger net.quasardb.qdb.QdbCluster.integer</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>integer</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to an integer in the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the integer. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="125" column="1" bodyfile="QdbCluster.java" bodystart="125" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ae13527f8d8cb11e2539dc5e55b632418" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" kindref="compound">QdbNode</ref></type>
+        <definition>QdbNode net.quasardb.qdb.QdbCluster.node</definition>
+        <argsstring>(String uri)</argsstring>
+        <name>node</name>
+        <param>
+          <type>String</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to a node (i.e. a server) in the cluster.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The URI of the node, in the form qdb://10.0.0.1:2836 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The node </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="137" column="1" bodyfile="QdbCluster.java" bodystart="137" bodyend="149"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a35e3ed456b1d9931a683f12626cdb81e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream" kindref="compound">QdbStream</ref></type>
+        <definition>QdbStream net.quasardb.qdb.QdbCluster.stream</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>stream</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to a stream in the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the stream. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="158" column="1" bodyfile="QdbCluster.java" bodystart="158" bodyend="161"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1926d31effdd7198997bd1bca0801aa3" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kindref="compound">QdbTag</ref></type>
+        <definition>QdbTag net.quasardb.qdb.QdbCluster.tag</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>tag</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Get a handle to a tag to in the database</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the tag. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="170" column="1" bodyfile="QdbCluster.java" bodystart="170" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ab90635b1c6407bc1b689ab17eb1ceeda" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series" kindref="compound">QdbTimeSeries</ref></type>
+        <definition>QdbTimeSeries net.quasardb.qdb.QdbCluster.timeSeries</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>timeSeries</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets a handle to a timeseries in the database.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeseries unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the timeseries. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="182" column="1" bodyfile="QdbCluster.java" bodystart="182" bodyend="185"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1afbe5dcd503bf1837fba6b24bdcc9783c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series" kindref="compound">QdbTimeSeries</ref></type>
+        <definition>QdbTimeSeries net.quasardb.qdb.QdbCluster.createTimeSeries</definition>
+        <argsstring>(String alias, long shardSize, Column[] columns)</argsstring>
+        <name>createTimeSeries</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>shardSize</declname>
+        </param>
+        <param>
+          <type>Column []</type>
+          <declname>columns</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets creates a new timeseries in the database and returns handle.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeseries unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to perform operations on the timeseries. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="194" column="1" bodyfile="QdbCluster.java" bodystart="194" bodyend="199"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a38d7d738f4cf69ed1a1a503790012bf0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" kindref="compound">QdbNode</ref></type>
+        <definition>QdbNode net.quasardb.qdb.QdbCluster.findNodeFor</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>findNodeFor</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the location for a provided alias.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The entry unique key/identifier in the database. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>the location, i.e. node&apos;s address and port, on which the entry with the provided alias is stored. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="208" column="1" bodyfile="QdbCluster.java" bodystart="208" bodyend="212"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a9cee6273da3a539a9446a63c3b619bbc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbCluster.purgeAll</definition>
+        <argsstring>(int timeoutMillis)</argsstring>
+        <name>purgeAll</name>
+        <param>
+          <type>int</type>
+          <declname>timeoutMillis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Remove all data from the cluster.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeoutMillis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout of the operation, in milliseconds</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OperationDisabledException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the operation has been disabled on the server. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="222" column="1" bodyfile="QdbCluster.java" bodystart="222" bodyend="226"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1967af242da1193420fdb50f5355f3f7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbCluster.trimAll</definition>
+        <argsstring>(int timeoutMillis)</argsstring>
+        <name>trimAll</name>
+        <param>
+          <type>int</type>
+          <declname>timeoutMillis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Trim data from the cluster, that is, remove dead references and old versions.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeoutMillis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout of the operation, in milliseconds</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="235" column="1" bodyfile="QdbCluster.java" bodystart="235" bodyend="239"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a89dd22e066b9a13cc980ed00717bcbf8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch" kindref="compound">QdbBatch</ref></type>
+        <definition>QdbBatch net.quasardb.qdb.QdbCluster.createBatch</definition>
+        <argsstring>()</argsstring>
+        <name>createBatch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create an empty batch.</para><para><simplesect kind="return"><para>An empty batch. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="246" column="1" bodyfile="QdbCluster.java" bodystart="246" bodyend="249"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a61919276c9a2a66ce957b2028b2b25a1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbCluster.setTimeout</definition>
+        <argsstring>(int timeoutMillis)</argsstring>
+        <name>setTimeout</name>
+        <param>
+          <type>int</type>
+          <declname>timeoutMillis</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Set network timeout for this client.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>timeoutMillis</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The timeout of the operation, in milliseconds</para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="258" column="1" bodyfile="QdbCluster.java" bodystart="258" bodyend="262"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a2eb1c6c3984350980aac979f934a2543" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String net.quasardb.qdb.QdbCluster.build</definition>
+        <argsstring>()</argsstring>
+        <name>build</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the build version of the quasardb API</para><para><simplesect kind="return"><para>build version of the quasardb API </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="269" column="1" bodyfile="QdbCluster.java" bodystart="269" bodyend="271"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a0f9a2b4bd93d6aa5053e09e47dd239f3" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>static String net.quasardb.qdb.QdbCluster.version</definition>
+        <argsstring>()</argsstring>
+        <name>version</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieve the version of the quasardb API</para><para><simplesect kind="return"><para>The version of the quasardb API. </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbCluster.java" line="278" column="1" bodyfile="QdbCluster.java" bodystart="278" bodyend="280"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A connection to a quasardb cluster. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="50">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="49">
+        <label>net.quasardb.qdb.QdbCluster</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster"/>
+        <childnode refid="50" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="52">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="51">
+        <label>net.quasardb.qdb.QdbCluster</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster"/>
+        <childnode refid="52" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbCluster.java" line="14" column="1" bodyfile="QdbCluster.java" bodystart="14" bodyend="281"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1319ace6b97d3a42958d250f18e38d54" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>blob</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a2eb1c6c3984350980aac979f934a2543" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>build</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a89dd22e066b9a13cc980ed00717bcbf8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>createBatch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1afbe5dcd503bf1837fba6b24bdcc9783c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>createTimeSeries</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a301f3fd250d3ae6bc00ae6ee29efeba5" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>deque</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ae14b031bf7cabefe09d50dd1fec76816" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>entry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a38d7d738f4cf69ed1a1a503790012bf0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>findNodeFor</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ab4baec08de44c1f6871b7bae429ea034" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>getSession</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aaab342ef0966a06ae1a3da626e565306" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>hashSet</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a9cdb2ed140d8c7b6f6bf6cc77337d036" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>integer</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a285982aaee4ea95e5d0bf790c0ee0531" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>isLegacySessionInitialised</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ae13527f8d8cb11e2539dc5e55b632418" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>node</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a9cee6273da3a539a9446a63c3b619bbc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>purgeAll</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a4b47f3f4fb30c9329b3d59353399b490" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>QdbCluster</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1ccc48741797ecd6d418d130f57cc53d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>QdbCluster</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aa573492f22ac40d73d1fbb5cfb808cc5" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a61919276c9a2a66ce957b2028b2b25a1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>setTimeout</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a35e3ed456b1d9931a683f12626cdb81e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>stream</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1926d31effdd7198997bd1bca0801aa3" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>tag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ab90635b1c6407bc1b689ab17eb1ceeda" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>timeSeries</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1967af242da1193420fdb50f5355f3f7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>trimAll</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a0f9a2b4bd93d6aa5053e09e47dd239f3" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbCluster</scope><name>version</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

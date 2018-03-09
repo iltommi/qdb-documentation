@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_488f80bc20235d76ea3c3f6f030b8927" kind="dir">
+    <compoundname>exception/input</compoundname>
+    <innerfile refid="_input_exception_8java">InputException.java</innerfile>
+    <innerfile refid="_invalid_argument_exception_8java">InvalidArgumentException.java</innerfile>
+    <innerfile refid="_out_of_bounds_exception_8java">OutOfBoundsException.java</innerfile>
+    <innerfile refid="_reserved_alias_exception_8java">ReservedAliasException.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exception/input/"/>
+  </compounddef>
+</doxygen>

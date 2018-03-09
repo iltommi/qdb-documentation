@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::AliasNotFoundException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OperationException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception_1a450a1207fcb1bfde7c5d976af9ab7ed9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.AliasNotFoundException.AliasNotFoundException</definition>
+        <argsstring>()</argsstring>
+        <name>AliasNotFoundException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/operation/AliasNotFoundException.java" line="8" column="1" bodyfile="exception/operation/AliasNotFoundException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when an entry cannot be found in the database </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="8">
+        <label>net.quasardb.qdb.exception.AliasNotFoundException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>RuntimeException</label>
+      </node>
+      <node id="9">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="10" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="10">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>net.quasardb.qdb.exception.AliasNotFoundException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>RuntimeException</label>
+      </node>
+      <node id="13">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="14" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="14">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/operation/AliasNotFoundException.java" line="6" column="1" bodyfile="exception/operation/AliasNotFoundException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception_1a450a1207fcb1bfde7c5d976af9ab7ed9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::AliasNotFoundException</scope><name>AliasNotFoundException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::AliasNotFoundException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::AliasNotFoundException</scope><name>OperationException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

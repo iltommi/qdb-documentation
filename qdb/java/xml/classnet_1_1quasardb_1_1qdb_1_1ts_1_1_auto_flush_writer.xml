@@ -1,0 +1,264 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::AutoFlushWriter</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer" prot="public" virt="non-virtual">net.quasardb.qdb.ts.Writer</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a5a60f431bcddf116d3ce97ef9323633b" prot="package" static="no" mutable="no">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.ts.AutoFlushWriter.counter</definition>
+        <argsstring></argsstring>
+        <name>counter</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/AutoFlushWriter.java" line="18" column="1" bodyfile="ts/AutoFlushWriter.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a56d2875fd7ae7697cf7b616fa3bace45" prot="package" static="no" mutable="no">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.ts.AutoFlushWriter.threshold</definition>
+        <argsstring></argsstring>
+        <name>threshold</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/AutoFlushWriter.java" line="19" column="1" bodyfile="ts/AutoFlushWriter.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a46506e6d44d1fa0d4320226a0128f08d" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.AutoFlushWriter.AutoFlushWriter</definition>
+        <argsstring>(Session session, Table table)</argsstring>
+        <name>AutoFlushWriter</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize a new auto-flushing timeseries table with a default threshold of 50000 rows.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active connection with the QdbCluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries name. Must already exist. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/AutoFlushWriter.java" line="27" column="1" bodyfile="ts/AutoFlushWriter.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a1a1248efddb7913666b6a7700a9a6f07" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.AutoFlushWriter.AutoFlushWriter</definition>
+        <argsstring>(Session session, Table table, long threshold)</argsstring>
+        <name>AutoFlushWriter</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table" kindref="compound">Table</ref></type>
+          <declname>table</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>threshold</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize a new auto-flushing timeseries table.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>session</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Active connection with the QdbCluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>name</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Timeseries name. Must already exist. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>threshold</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The amount of rows to keep in local buffer before automatic flushing occurs. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/AutoFlushWriter.java" line="38" column="1" bodyfile="ts/AutoFlushWriter.java" bodystart="38" bodyend="43"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1ad057d49068a15fc60b4b5cb167a2392c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.ts.AutoFlushWriter.append</definition>
+        <argsstring>(Row row)</argsstring>
+        <name>append</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_row" kindref="compound">Row</ref></type>
+          <declname>row</declname>
+        </param>
+        <exceptions> throws IOException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/AutoFlushWriter.java" line="46" column="1" bodyfile="ts/AutoFlushWriter.java" bodystart="46" bodyend="56"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>An implementation of a <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer" kindref="compound">Writer</ref> that automatically flushes the local cache when a certain threshold has been reached. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="18">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="17">
+        <label>net.quasardb.qdb.ts.Writer</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer"/>
+        <childnode refid="18" relation="public-inheritance">
+        </childnode>
+        <childnode refid="19" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="16">
+        <label>net.quasardb.qdb.ts.AutoFlushWriter</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer"/>
+        <childnode refid="17" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="19">
+        <label>Flushable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="31">
+        <label>net.quasardb.qdb.Session</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_session"/>
+      </node>
+      <node id="26">
+        <label>net.quasardb.qdb.ts.Column</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_column"/>
+        <childnode refid="27" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="22">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="27">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="28" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="29" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="30" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="30">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="25">
+        <label>Serializable</label>
+      </node>
+      <node id="21">
+        <label>net.quasardb.qdb.ts.Writer</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer"/>
+        <childnode refid="22" relation="public-inheritance">
+        </childnode>
+        <childnode refid="23" relation="public-inheritance">
+        </childnode>
+        <childnode refid="24" relation="usage">
+          <edgelabel>table</edgelabel>
+        </childnode>
+        <childnode refid="31" relation="usage">
+          <edgelabel>session</edgelabel>
+        </childnode>
+      </node>
+      <node id="20">
+        <label>net.quasardb.qdb.ts.AutoFlushWriter</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer"/>
+        <childnode refid="21" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="24">
+        <label>net.quasardb.qdb.ts.Table</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_table"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+        <childnode refid="26" relation="usage">
+          <edgelabel>columns</edgelabel>
+        </childnode>
+      </node>
+      <node id="23">
+        <label>Flushable</label>
+      </node>
+      <node id="29">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="25" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="ts/AutoFlushWriter.java" line="16" column="1" bodyfile="ts/AutoFlushWriter.java" bodystart="16" bodyend="57"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1ad057d49068a15fc60b4b5cb167a2392c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a49e252d9f73202ba81941b2d0d09b536" prot="public" virt="non-virtual" ambiguityscope="net::quasardb::qdb::ts::Writer."><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a7c36c5d76de7335563b6035c2f1cec15" prot="public" virt="non-virtual" ambiguityscope="net::quasardb::qdb::ts::Writer."><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a2980fcb53f005ad1c180dd1f73bc6b80" prot="public" virt="non-virtual" ambiguityscope="net::quasardb::qdb::ts::Writer."><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>append</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a46506e6d44d1fa0d4320226a0128f08d" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>AutoFlushWriter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a1a1248efddb7913666b6a7700a9a6f07" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>AutoFlushWriter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a906f2b5a90d00876d2dc125e44a1c26c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a5a60f431bcddf116d3ce97ef9323633b" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>counter</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1acf869ddeea644676e679d23a0e45bf90" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>finalize</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a815009f0ffc26d66be1c14f0f5b56a7e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>flush</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1afcb45c19cfc4d73901424010aefcd0fa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>getTable</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af521870896ff566da2f8562b9cba1b3d" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>localTable</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1af59be70444f929e001da089d9c7ffa63" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1adfe1e19376d8dc94edee037f0c16c55f" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>table</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_auto_flush_writer_1a56d2875fd7ae7697cf7b616fa3bace45" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>threshold</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_writer_1a75340be8ea4088c3c212014da2cb83b8" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::AutoFlushWriter</scope><name>Writer</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

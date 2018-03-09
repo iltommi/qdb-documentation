@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::AliasAlreadyExistsException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OperationException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception_1a2d6be7baa2083cf529eef9815848905f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.AliasAlreadyExistsException.AliasAlreadyExistsException</definition>
+        <argsstring>()</argsstring>
+        <name>AliasAlreadyExistsException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/operation/AliasAlreadyExistsException.java" line="8" column="1" bodyfile="exception/operation/AliasAlreadyExistsException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the specified entry already exists in the database. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="3">
+        <label>RuntimeException</label>
+      </node>
+      <node id="1">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="2" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="0">
+        <label>net.quasardb.qdb.exception.AliasAlreadyExistsException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception"/>
+        <childnode refid="1" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="2">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="3" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="7">
+        <label>RuntimeException</label>
+      </node>
+      <node id="5">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="6" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="4">
+        <label>net.quasardb.qdb.exception.AliasAlreadyExistsException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception"/>
+        <childnode refid="5" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="6">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/operation/AliasAlreadyExistsException.java" line="6" column="1" bodyfile="exception/operation/AliasAlreadyExistsException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception_1a2d6be7baa2083cf529eef9815848905f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::AliasAlreadyExistsException</scope><name>AliasAlreadyExistsException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::AliasAlreadyExistsException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::AliasAlreadyExistsException</scope><name>OperationException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

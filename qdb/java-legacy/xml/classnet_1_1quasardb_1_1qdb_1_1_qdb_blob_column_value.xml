@@ -1,0 +1,261 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbBlobColumnValue</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" prot="public" virt="non-virtual">net.quasardb.qdb.QdbColumnValue&lt; ByteBuffer &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a9045a52690d29de972f576bde3f54623" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBlobColumnValue.QdbBlobColumnValue</definition>
+        <argsstring>()</argsstring>
+        <name>QdbBlobColumnValue</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="13" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="13" bodyend="15"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a8b3e9d9a93026e9093e08fa86098a52b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBlobColumnValue.QdbBlobColumnValue</definition>
+        <argsstring>(ByteBuffer value)</argsstring>
+        <name>QdbBlobColumnValue</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="17" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="17" bodyend="19"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a34b7b17dd6c3b1e1ed561aa252feefed" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBlobColumnValue.QdbBlobColumnValue</definition>
+        <argsstring>(Timestamp timestamp, ByteBuffer value)</argsstring>
+        <name>QdbBlobColumnValue</name>
+        <param>
+          <type>Timestamp</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="21" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="21" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a11f322d3eb049c7284b382d8007ab35b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBlobColumnValue.QdbBlobColumnValue</definition>
+        <argsstring>(LocalDateTime timestamp, ByteBuffer value)</argsstring>
+        <name>QdbBlobColumnValue</name>
+        <param>
+          <type>LocalDateTime</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="25" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a9b2b414cedc6a4c9ed503b1c107a0343" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBlobColumnValue.QdbBlobColumnValue</definition>
+        <argsstring>(Timespec timestamp, ByteBuffer value)</argsstring>
+        <name>QdbBlobColumnValue</name>
+        <param>
+          <type>Timespec</type>
+          <declname>timestamp</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>value</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="29" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1ad213cc387c449a2f8ebccb0d4d767096" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.QdbBlobColumnValue.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="42" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="42" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a467fa32887342ecda2a344457b87c751" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBlobColumnValue.equals</definition>
+        <argsstring>(Object obj)</argsstring>
+        <name>equals</name>
+        <param>
+          <type>Object</type>
+          <declname>obj</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="47" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="47" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1ade0db500c2726501f743716fc1f67dda" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value" kindref="compound">QdbBlobColumnValue</ref></type>
+        <definition>static QdbBlobColumnValue net.quasardb.qdb.QdbBlobColumnValue.fromNative</definition>
+        <argsstring>(qdb_ts_blob_point input)</argsstring>
+        <name>fromNative</name>
+        <param>
+          <type>qdb_ts_blob_point</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="33" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="33" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1adcd779623cd4e3ba2acf650d68c0fc22" prot="protected" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_ts_blob_point</type>
+        <definition>static qdb_ts_blob_point net.quasardb.qdb.QdbBlobColumnValue.toNative</definition>
+        <argsstring>(QdbColumnValue&lt; ByteBuffer &gt; point)</argsstring>
+        <name>toNative</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" kindref="compound">QdbColumnValue</ref>&lt; ByteBuffer &gt;</type>
+          <declname>point</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="38" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="38" bodyend="40"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a20c6791596328c6c71a17fdd4f4adcbf" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBlobColumnValue.writeValue</definition>
+        <argsstring>(java.io.ObjectOutputStream stream, ByteBuffer value)</argsstring>
+        <name>writeValue</name>
+        <param>
+          <type>java.io.ObjectOutputStream</type>
+          <declname>stream</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>value</declname>
+        </param>
+        <exceptions> throws IOException     </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="54" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="54" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1afc7768c75360fef00626f016a831b277" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ByteBuffer</type>
+        <definition>ByteBuffer net.quasardb.qdb.QdbBlobColumnValue.readValue</definition>
+        <argsstring>(java.io.ObjectInputStream stream)</argsstring>
+        <name>readValue</name>
+        <param>
+          <type>java.io.ObjectInputStream</type>
+          <declname>stream</declname>
+        </param>
+        <exceptions> throws IOException, ClassNotFoundException </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlobColumnValue.java" line="69" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="69" bodyend="81"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="46">
+        <label>net.quasardb.qdb.QdbColumnValue&lt; ByteBuffer &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value"/>
+      </node>
+      <node id="45">
+        <label>net.quasardb.qdb.QdbBlobColumnValue</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value"/>
+        <childnode refid="46" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="48">
+        <label>net.quasardb.qdb.QdbColumnValue&lt; ByteBuffer &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value"/>
+      </node>
+      <node id="47">
+        <label>net.quasardb.qdb.QdbBlobColumnValue</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value"/>
+        <childnode refid="48" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbBlobColumnValue.java" line="11" column="1" bodyfile="QdbBlobColumnValue.java" bodystart="11" bodyend="82"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a467fa32887342ecda2a344457b87c751" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1ade0db500c2726501f743716fc1f67dda" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>fromNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a118065045ef0d2ea4266dd1758610b8a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>getTimestamp</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ab6ad1b72c6b31693aba90284d1b1f095" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>getValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a9045a52690d29de972f576bde3f54623" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbBlobColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a8b3e9d9a93026e9093e08fa86098a52b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbBlobColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a34b7b17dd6c3b1e1ed561aa252feefed" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbBlobColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a11f322d3eb049c7284b382d8007ab35b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbBlobColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a9b2b414cedc6a4c9ed503b1c107a0343" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbBlobColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1aaccb1e0d77bc5e8e04cbdda895609cfd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1af5de6f7dc162de5aff483f967e10f4bb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ae474743718648ec1a5d913ffc9728ea6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1acf22746eb5aba86f861946f3492d1827" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>QdbColumnValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1afc7768c75360fef00626f016a831b277" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>readValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a247bd8143f81334560b6037ff6a07ddb" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>timestamp</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1adcd779623cd4e3ba2acf650d68c0fc22" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>toNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1ad213cc387c449a2f8ebccb0d4d767096" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a99fa36dcba953412717078c75b39662b" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>value</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a20c6791596328c6c71a17fdd4f4adcbf" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>writeValue</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a9923e348480da7e903c9e2ddb2418887" prot="protected" virt="non-virtual" ambiguityscope="QdbColumnValue&lt; ByteBuffer &gt;."><scope>net::quasardb::qdb::QdbBlobColumnValue</scope><name>writeValue</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

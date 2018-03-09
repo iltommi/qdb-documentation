@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_0ef398a98eaf17e1a590b3099d21a446" kind="dir">
+    <compoundname>exception/system/local</compoundname>
+    <innerfile refid="_local_system_exception_8java">LocalSystemException.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exception/system/local/"/>
+  </compounddef>
+</doxygen>

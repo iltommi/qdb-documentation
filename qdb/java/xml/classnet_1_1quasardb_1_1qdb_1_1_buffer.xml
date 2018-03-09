@@ -1,0 +1,224 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_buffer" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::Buffer</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AutoCloseable</basecompoundref>
+      <sectiondef kind="package-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a246e0d5dfe36f50f1a00b21538008947" prot="package" static="no" mutable="no">
+        <type>final <ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+        <definition>final Session net.quasardb.qdb.Buffer.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="10" column="1" bodyfile="Buffer.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a062f9463660cdc2eb3b231897d165603" prot="package" static="no" mutable="no">
+        <type>ByteBuffer</type>
+        <definition>ByteBuffer net.quasardb.qdb.Buffer.buffer</definition>
+        <argsstring></argsstring>
+        <name>buffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="11" column="1" bodyfile="Buffer.java" bodystart="11" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae47a181a6a5559ab23eb49e7b0f99f3b" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.Buffer.Buffer</definition>
+        <argsstring>(Session session, ByteBuffer buffer)</argsstring>
+        <name>Buffer</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="13" column="1" bodyfile="Buffer.java" bodystart="13" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a89bb51ca25b5a72af1942c99801332a7" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.Buffer.finalize</definition>
+        <argsstring>()</argsstring>
+        <name>finalize</name>
+        <exceptions> throws Throwable </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="27" column="1" bodyfile="Buffer.java" bodystart="27" bodyend="30"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1abf49dd29690dc31bdc4224156d97c8a0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_buffer" kindref="compound">Buffer</ref></type>
+        <definition>static Buffer net.quasardb.qdb.Buffer.wrap</definition>
+        <argsstring>(Session session, ByteBuffer buffer)</argsstring>
+        <name>wrap</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>buffer</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="18" column="1" bodyfile="Buffer.java" bodystart="18" bodyend="20"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a811ceb0114de090d1e94d777ad69d216" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_buffer" kindref="compound">Buffer</ref></type>
+        <definition>static Buffer net.quasardb.qdb.Buffer.wrap</definition>
+        <argsstring>(Session session, Reference&lt; ByteBuffer &gt; ref)</argsstring>
+        <name>wrap</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>Reference&lt; ByteBuffer &gt;</type>
+          <declname>ref</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="22" column="1" bodyfile="Buffer.java" bodystart="22" bodyend="24"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1af8f6a70c46f0c834cbce59bbb936023a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.Buffer.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="33" column="1" bodyfile="Buffer.java" bodystart="33" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae48d09084c3ff18cabf486a0fff8c975" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ByteBuffer</type>
+        <definition>ByteBuffer net.quasardb.qdb.Buffer.toByteBuffer</definition>
+        <argsstring>()</argsstring>
+        <name>toByteBuffer</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="40" column="1" bodyfile="Buffer.java" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a7ae7cb354801ac4e1a9040f723c4418b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.Buffer.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="47" column="1" bodyfile="Buffer.java" bodystart="47" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae6b4240f3a05e1b33a0ba1f44699109b" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.Buffer.throwIfClosed</definition>
+        <argsstring>()</argsstring>
+        <name>throwIfClosed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Buffer.java" line="54" column="1" bodyfile="Buffer.java" bodystart="54" bodyend="58"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="65">
+        <label>net.quasardb.qdb.Buffer</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_buffer"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="66">
+        <label>AutoCloseable</label>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="70">
+        <label>net.quasardb.qdb.Session</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_session"/>
+      </node>
+      <node id="67">
+        <label>net.quasardb.qdb.Buffer</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_buffer"/>
+        <childnode refid="68" relation="public-inheritance">
+        </childnode>
+        <childnode refid="69" relation="usage">
+          <edgelabel>buffer</edgelabel>
+        </childnode>
+        <childnode refid="70" relation="usage">
+          <edgelabel>session</edgelabel>
+        </childnode>
+      </node>
+      <node id="68">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="69">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="Buffer.java" line="9" column="1" bodyfile="Buffer.java" bodystart="9" bodyend="59"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a062f9463660cdc2eb3b231897d165603" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>buffer</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae47a181a6a5559ab23eb49e7b0f99f3b" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>Buffer</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1af8f6a70c46f0c834cbce59bbb936023a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a89bb51ca25b5a72af1942c99801332a7" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>finalize</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a246e0d5dfe36f50f1a00b21538008947" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae6b4240f3a05e1b33a0ba1f44699109b" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>throwIfClosed</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1ae48d09084c3ff18cabf486a0fff8c975" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>toByteBuffer</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a7ae7cb354801ac4e1a9040f723c4418b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>toString</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1abf49dd29690dc31bdc4224156d97c8a0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>wrap</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_buffer_1a811ceb0114de090d1e94d777ad69d216" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Buffer</scope><name>wrap</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

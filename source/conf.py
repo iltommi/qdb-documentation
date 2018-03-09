@@ -37,7 +37,9 @@ extensions = [
 ]
 
 breathe_projects = {
-    "qdb_capi": "../qdb/c/xml"
+    "qdb_capi": "../qdb/c/xml",
+    "qdb_java_api": "../qdb/java/xml",
+    "qdb_java_legacy_api": "../qdb/java-legacy/xml"
 }
 
 breathe_default_project = "qdb_capi"
@@ -291,7 +293,7 @@ intersphinx_mapping = {
 }
 
 javadoc_url_map = {
-    'java': ('https://docs.oracle.com/javase/7/docs/api/', 'javadoc')
+    'java': ('https://docs.oracle.com/javase/8/docs/api/', 'javadoc8')
 }
 
 linkcheck_anchors = False

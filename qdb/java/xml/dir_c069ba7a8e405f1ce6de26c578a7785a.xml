@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_c069ba7a8e405f1ce6de26c578a7785a" kind="dir">
+    <compoundname>exception/operation</compoundname>
+    <innerfile refid="_alias_already_exists_exception_8java">AliasAlreadyExistsException.java</innerfile>
+    <innerfile refid="_alias_not_found_exception_8java">AliasNotFoundException.java</innerfile>
+    <innerfile refid="_batch_already_run_exception_8java">BatchAlreadyRunException.java</innerfile>
+    <innerfile refid="_batch_closed_exception_8java">BatchClosedException.java</innerfile>
+    <innerfile refid="_batch_not_run_exception_8java">BatchNotRunException.java</innerfile>
+    <innerfile refid="_buffer_closed_exception_8java">BufferClosedException.java</innerfile>
+    <innerfile refid="_cluster_closed_exception_8java">ClusterClosedException.java</innerfile>
+    <innerfile refid="_incompatible_type_exception_8java">IncompatibleTypeException.java</innerfile>
+    <innerfile refid="_invalid_iterator_exception_8java">InvalidIteratorException.java</innerfile>
+    <innerfile refid="_operation_disabled_exception_8java">OperationDisabledException.java</innerfile>
+    <innerfile refid="_operation_exception_8java">OperationException.java</innerfile>
+    <innerfile refid="_overflow_exception_8java">OverflowException.java</innerfile>
+    <innerfile refid="_resource_locked_exception_8java">ResourceLockedException.java</innerfile>
+    <innerfile refid="_underflow_exception_8java">UnderflowException.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exception/operation/"/>
+  </compounddef>
+</doxygen>

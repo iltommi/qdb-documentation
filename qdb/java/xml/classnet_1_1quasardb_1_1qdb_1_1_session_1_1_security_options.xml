@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::Session::SecurityOptions</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Serializable</basecompoundref>
+      <sectiondef kind="protected-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af154e5dfe2bfd1fdf48693b9404b5fe6" prot="protected" static="no" mutable="no">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.Session.SecurityOptions.userName</definition>
+        <argsstring></argsstring>
+        <name>userName</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="23" column="1" bodyfile="Session.java" bodystart="23" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a2e18ee51ba58b12c5256985fceec689c" prot="protected" static="no" mutable="no">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.Session.SecurityOptions.userPrivateKey</definition>
+        <argsstring></argsstring>
+        <name>userPrivateKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="24" column="1" bodyfile="Session.java" bodystart="24" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af9872aea6a401863bfc73a8cb8bce152" prot="protected" static="no" mutable="no">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.Session.SecurityOptions.clusterPublicKey</definition>
+        <argsstring></argsstring>
+        <name>clusterPublicKey</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="25" column="1" bodyfile="Session.java" bodystart="25" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a0c897ec7aa186e0c3f47e81332b642ec" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.Session.SecurityOptions.SecurityOptions</definition>
+        <argsstring>(String userName, String userPrivateKey, String clusterPublicKey)</argsstring>
+        <name>SecurityOptions</name>
+        <param>
+          <type>String</type>
+          <declname>userName</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>userPrivateKey</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>clusterPublicKey</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="27" column="1" bodyfile="Session.java" bodystart="27" bodyend="33"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a03a032a8ab2d3d06ff54eb70caacf4cc" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_cluster_security_options</type>
+        <definition>static qdb_cluster_security_options net.quasardb.qdb.Session.SecurityOptions.toNative</definition>
+        <argsstring>(SecurityOptions options)</argsstring>
+        <name>toNative</name>
+        <param>
+          <type>SecurityOptions</type>
+          <declname>options</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="35" column="1" bodyfile="Session.java" bodystart="35" bodyend="39"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="340">
+        <label>Serializable</label>
+      </node>
+      <node id="339">
+        <label>net.quasardb.qdb.Session.SecurityOptions</label>
+        <childnode refid="340" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="342">
+        <label>Serializable</label>
+      </node>
+      <node id="341">
+        <label>net.quasardb.qdb.Session.SecurityOptions</label>
+        <childnode refid="342" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="Session.java" line="22" column="1" bodyfile="Session.java" bodystart="22" bodyend="40"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af9872aea6a401863bfc73a8cb8bce152" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::Session::SecurityOptions</scope><name>clusterPublicKey</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a0c897ec7aa186e0c3f47e81332b642ec" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session::SecurityOptions</scope><name>SecurityOptions</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a03a032a8ab2d3d06ff54eb70caacf4cc" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::Session::SecurityOptions</scope><name>toNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1af154e5dfe2bfd1fdf48693b9404b5fe6" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::Session::SecurityOptions</scope><name>userName</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options_1a2e18ee51ba58b12c5256985fceec689c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::Session::SecurityOptions</scope><name>userPrivateKey</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

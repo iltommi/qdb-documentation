@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::NanoClock</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">Clock</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a3eac7e36fc26c68f05fd8ba6ba6fcae3" prot="private" static="no" mutable="no">
+        <type>final Clock</type>
+        <definition>final Clock net.quasardb.qdb.ts.NanoClock.clock</definition>
+        <argsstring></argsstring>
+        <name>clock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="15" column="1" bodyfile="ts/NanoClock.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ac60a45c7d927e2db908df411e25205d6" prot="private" static="no" mutable="no">
+        <type>final long</type>
+        <definition>final long net.quasardb.qdb.ts.NanoClock.initialNanos</definition>
+        <argsstring></argsstring>
+        <name>initialNanos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="16" column="1" bodyfile="ts/NanoClock.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aee716cfd3c6cfc4ad9c5503ebc0decdf" prot="private" static="no" mutable="no">
+        <type>final Instant</type>
+        <definition>final Instant net.quasardb.qdb.ts.NanoClock.initialInstant</definition>
+        <argsstring></argsstring>
+        <name>initialInstant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="17" column="1" bodyfile="ts/NanoClock.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a0ec6432e6ec6410836959c36a1006714" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.NanoClock.NanoClock</definition>
+        <argsstring>()</argsstring>
+        <name>NanoClock</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="19" column="1" bodyfile="ts/NanoClock.java" bodystart="19" bodyend="22"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aae09122ee04813f8c352399155d96d37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.NanoClock.NanoClock</definition>
+        <argsstring>(final Clock clock)</argsstring>
+        <name>NanoClock</name>
+        <param>
+          <type>final Clock</type>
+          <declname>clock</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="24" column="1" bodyfile="ts/NanoClock.java" bodystart="24" bodyend="29"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a628521cd1a9fb8d75dcbad7e4783d5ae" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>ZoneId</type>
+        <definition>ZoneId net.quasardb.qdb.ts.NanoClock.getZone</definition>
+        <argsstring>()</argsstring>
+        <name>getZone</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="32" column="1" bodyfile="ts/NanoClock.java" bodystart="32" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ad6163fd8355a48f71213ea6648d35dac" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Instant</type>
+        <definition>Instant net.quasardb.qdb.ts.NanoClock.instant</definition>
+        <argsstring>()</argsstring>
+        <name>instant</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="38" column="1" bodyfile="ts/NanoClock.java" bodystart="38" bodyend="41"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aa82535ede89b1bf77c937c41fcd29e5c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock" kindref="compound">NanoClock</ref></type>
+        <definition>NanoClock net.quasardb.qdb.ts.NanoClock.withZone</definition>
+        <argsstring>(final ZoneId zone)</argsstring>
+        <name>withZone</name>
+        <param>
+          <type>final ZoneId</type>
+          <declname>zone</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="44" column="1" bodyfile="ts/NanoClock.java" bodystart="44" bodyend="47"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a83f0658dd7442af717d7c88401ed4f6d" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.ts.NanoClock.getSystemNanos</definition>
+        <argsstring>()</argsstring>
+        <name>getSystemNanos</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/NanoClock.java" line="49" column="1" bodyfile="ts/NanoClock.java" bodystart="49" bodyend="52"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Nanosecond precision clock implementation. Used by <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec" kindref="compound">Timespec</ref> as its default Clock backend.</para><para><simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec_1ac91d638faef16fc7efae401148fff050" kindref="member">Timespec::now()</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="227">
+        <label>Clock</label>
+      </node>
+      <node id="226">
+        <label>net.quasardb.qdb.ts.NanoClock</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock"/>
+        <childnode refid="227" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="229">
+        <label>Clock</label>
+      </node>
+      <node id="228">
+        <label>net.quasardb.qdb.ts.NanoClock</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock"/>
+        <childnode refid="229" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="ts/NanoClock.java" line="14" column="1" bodyfile="ts/NanoClock.java" bodystart="13" bodyend="53"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a3eac7e36fc26c68f05fd8ba6ba6fcae3" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>clock</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a83f0658dd7442af717d7c88401ed4f6d" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>getSystemNanos</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a628521cd1a9fb8d75dcbad7e4783d5ae" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>getZone</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aee716cfd3c6cfc4ad9c5503ebc0decdf" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>initialInstant</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ac60a45c7d927e2db908df411e25205d6" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>initialNanos</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1ad6163fd8355a48f71213ea6648d35dac" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>instant</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1a0ec6432e6ec6410836959c36a1006714" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>NanoClock</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aae09122ee04813f8c352399155d96d37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>NanoClock</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_nano_clock_1aa82535ede89b1bf77c937c41fcd29e5c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::NanoClock</scope><name>withZone</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

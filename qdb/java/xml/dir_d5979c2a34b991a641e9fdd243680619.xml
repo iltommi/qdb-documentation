@@ -1,0 +1,13 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_d5979c2a34b991a641e9fdd243680619" kind="dir">
+    <compoundname>exception/protocol</compoundname>
+    <innerfile refid="_invalid_reply_exception_8java">InvalidReplyException.java</innerfile>
+    <innerfile refid="_protocol_exception_8java">ProtocolException.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exception/protocol/"/>
+  </compounddef>
+</doxygen>

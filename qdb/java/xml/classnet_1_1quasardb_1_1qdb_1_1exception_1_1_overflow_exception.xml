@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::OverflowException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OperationException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception_1a939dee6df26cdb959cbc156bec248359" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.OverflowException.OverflowException</definition>
+        <argsstring>()</argsstring>
+        <name>OverflowException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/operation/OverflowException.java" line="8" column="1" bodyfile="exception/operation/OverflowException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the operation cannot be performed because the 64-bit integer would overflow </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="265">
+        <label>net.quasardb.qdb.exception.OverflowException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception"/>
+        <childnode refid="266" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="268">
+        <label>RuntimeException</label>
+      </node>
+      <node id="266">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="267" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="267">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="268" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="269">
+        <label>net.quasardb.qdb.exception.OverflowException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception"/>
+        <childnode refid="270" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="272">
+        <label>RuntimeException</label>
+      </node>
+      <node id="270">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="271" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="271">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="272" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/operation/OverflowException.java" line="6" column="1" bodyfile="exception/operation/OverflowException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::OverflowException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::OverflowException</scope><name>OperationException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception_1a939dee6df26cdb959cbc156bec248359" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::OverflowException</scope><name>OverflowException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacenet_1_1quasardb_1_1qdb" kind="namespace" language="Java">
+    <compoundname>net::quasardb::qdb</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_buffer" prot="public">net::quasardb::qdb::Buffer</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_session" prot="public">net::quasardb::qdb::Session</innerclass>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb_1_1exception">net::quasardb::qdb::exception</innernamespace>
+    <innernamespace refid="namespacenet_1_1quasardb_1_1qdb_1_1ts">net::quasardb::qdb::ts</innernamespace>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="Buffer.java" line="1" column="1"/>
+  </compounddef>
+</doxygen>

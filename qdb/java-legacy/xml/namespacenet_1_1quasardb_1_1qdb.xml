@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacenet_1_1quasardb_1_1qdb" kind="namespace" language="Java">
+    <compoundname>net::quasardb::qdb</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation" prot="public">net::quasardb::qdb::QdbAggregation</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch" prot="public">net::quasardb::qdb::QdbBatch</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob" prot="public">net::quasardb::qdb::QdbBatchBlob</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry" prot="public">net::quasardb::qdb::QdbBatchEntry</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future" prot="public">net::quasardb::qdb::QdbBatchFuture</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation" prot="package">net::quasardb::qdb::QdbBatchOperation</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob" prot="public">net::quasardb::qdb::QdbBlob</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation" prot="public">net::quasardb::qdb::QdbBlobAggregation</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection" prot="public">net::quasardb::qdb::QdbBlobAggregationCollection</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection" prot="public">net::quasardb::qdb::QdbBlobColumnCollection</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value" prot="public">net::quasardb::qdb::QdbBlobColumnValue</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster" prot="public">net::quasardb::qdb::QdbCluster</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection" prot="public">net::quasardb::qdb::QdbColumnCollection</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" prot="public">net::quasardb::qdb::QdbColumnValue</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque" prot="public">net::quasardb::qdb::QdbDeque</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation" prot="public">net::quasardb::qdb::QdbDoubleAggregation</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection" prot="public">net::quasardb::qdb::QdbDoubleAggregationCollection</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection" prot="public">net::quasardb::qdb::QdbDoubleColumnCollection</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value" prot="public">net::quasardb::qdb::QdbDoubleColumnValue</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" prot="public">net::quasardb::qdb::QdbEntry</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_factory" prot="package">net::quasardb::qdb::QdbEntryFactory</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata" prot="public">net::quasardb::qdb::QdbEntryMetadata</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags" prot="package">net::quasardb::qdb::QdbEntryTags</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry" prot="public">net::quasardb::qdb::QdbExpirableEntry</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" prot="public">net::quasardb::qdb::QdbExpiryTime</innerclass>
+    <innerclass refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" prot="public">net::quasardb::qdb::QdbFuture</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set" prot="public">net::quasardb::qdb::QdbHashSet</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id" prot="public">net::quasardb::qdb::QdbId</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" prot="public">net::quasardb::qdb::QdbInteger</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" prot="public">net::quasardb::qdb::QdbNode</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream" prot="public">net::quasardb::qdb::QdbStream</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel" prot="package">net::quasardb::qdb::QdbStreamChannel</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" prot="public">net::quasardb::qdb::QdbTag</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries" prot="package">net::quasardb::qdb::QdbTagEntries</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series" prot="public">net::quasardb::qdb::QdbTimeSeries</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Official quasardb Java API </para>    </detaileddescription>
+    <location file="package-info.java" line="4" column="1"/>
+  </compounddef>
+</doxygen>

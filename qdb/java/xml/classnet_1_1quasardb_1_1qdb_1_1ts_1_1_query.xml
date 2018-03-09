@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Query</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1a0304c78118407bcb7cdc750cd289ad0d" prot="private" static="no" mutable="no">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.Query.query</definition>
+        <argsstring></argsstring>
+        <name>query</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Query.java" line="22" column="1" bodyfile="ts/Query.java" bodystart="22" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ab410f82a310c62ac73908a7c4e7e4948" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Query.Query</definition>
+        <argsstring>()</argsstring>
+        <name>Query</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Query.java" line="24" column="1" bodyfile="ts/Query.java" bodystart="24" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1abdbfeb701a311423041c5b5736e8b687" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Query.Query</definition>
+        <argsstring>(String query)</argsstring>
+        <name>Query</name>
+        <param>
+          <type>String</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Query.java" line="27" column="1" bodyfile="ts/Query.java" bodystart="27" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ad5f4610408c12c46ccd94b9a6f66bc3f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query" kindref="compound">Query</ref></type>
+        <definition>static Query net.quasardb.qdb.ts.Query.create</definition>
+        <argsstring>()</argsstring>
+        <name>create</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Creates a new, empty query instance. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Query.java" line="34" column="1" bodyfile="ts/Query.java" bodystart="34" bodyend="36"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ab531147e707fb2a6a91e506c0ac1bf73" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query" kindref="compound">Query</ref></type>
+        <definition>static Query net.quasardb.qdb.ts.Query.of</definition>
+        <argsstring>(String query)</argsstring>
+        <name>of</name>
+        <param>
+          <type>String</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Returns new <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query" kindref="compound">Query</ref> instance based on a string.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>query</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The query string to execute. Refer to the QuasarDB documentation for the full query syntax. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Query.java" line="44" column="1" bodyfile="ts/Query.java" bodystart="44" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1aed49713ecfc5607d15d7eec033c8e99f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result" kindref="compound">Result</ref></type>
+        <definition>Result net.quasardb.qdb.ts.Query.execute</definition>
+        <argsstring>(Session session)</argsstring>
+        <name>execute</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Query.java" line="48" column="1" bodyfile="ts/Query.java" bodystart="48" bodyend="59"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents a timeseries query.</para><para>Use this class directly if you&apos;re planning on writing complex, custom queries. If your queries are relatively simple, consider using the <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder" kindref="compound">QueryBuilder</ref> instead.</para><para><simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder" kindref="compound">QueryBuilder</ref> </para></simplesect>
+</para>    </detaileddescription>
+    <location file="ts/Query.java" line="20" column="1" bodyfile="ts/Query.java" bodystart="20" bodyend="60"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ad5f4610408c12c46ccd94b9a6f66bc3f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Query</scope><name>create</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1aed49713ecfc5607d15d7eec033c8e99f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Query</scope><name>execute</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ab531147e707fb2a6a91e506c0ac1bf73" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Query</scope><name>of</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1a0304c78118407bcb7cdc750cd289ad0d" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::Query</scope><name>query</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1ab410f82a310c62ac73908a7c4e7e4948" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Query</scope><name>Query</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_1abdbfeb701a311423041c5b5736e8b687" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::ts::Query</scope><name>Query</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

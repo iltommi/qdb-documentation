@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="namespacenet_1_1quasardb_1_1qdb_1_1exception" kind="namespace" language="Java">
+    <compoundname>net::quasardb::qdb::exception</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_already_exists_exception" prot="public">net::quasardb::qdb::exception::AliasAlreadyExistsException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_alias_not_found_exception" prot="public">net::quasardb::qdb::exception::AliasNotFoundException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_already_run_exception" prot="public">net::quasardb::qdb::exception::BatchAlreadyRunException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_closed_exception" prot="public">net::quasardb::qdb::exception::BatchClosedException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_batch_not_run_exception" prot="public">net::quasardb::qdb::exception::BatchNotRunException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_buffer_closed_exception" prot="public">net::quasardb::qdb::exception::BufferClosedException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_cluster_closed_exception" prot="public">net::quasardb::qdb::exception::ClusterClosedException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception" prot="public">net::quasardb::qdb::exception::ConnectionException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception" prot="public">net::quasardb::qdb::exception::ConnectionRefusedException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" prot="public">net::quasardb::qdb::exception::Exception</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_factory" prot="public">net::quasardb::qdb::exception::ExceptionFactory</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_host_not_found_exception" prot="public">net::quasardb::qdb::exception::HostNotFoundException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_incompatible_type_exception" prot="public">net::quasardb::qdb::exception::IncompatibleTypeException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception" prot="public">net::quasardb::qdb::exception::InputException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception" prot="public">net::quasardb::qdb::exception::InvalidArgumentException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_iterator_exception" prot="public">net::quasardb::qdb::exception::InvalidIteratorException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_reply_exception" prot="public">net::quasardb::qdb::exception::InvalidReplyException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception" prot="public">net::quasardb::qdb::exception::LocalSystemException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_disabled_exception" prot="public">net::quasardb::qdb::exception::OperationDisabledException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public">net::quasardb::qdb::exception::OperationException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_out_of_bounds_exception" prot="public">net::quasardb::qdb::exception::OutOfBoundsException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_overflow_exception" prot="public">net::quasardb::qdb::exception::OverflowException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_protocol_exception" prot="public">net::quasardb::qdb::exception::ProtocolException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception" prot="public">net::quasardb::qdb::exception::RemoteSystemException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception" prot="public">net::quasardb::qdb::exception::ReservedAliasException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception" prot="public">net::quasardb::qdb::exception::ResourceLockedException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" prot="public">net::quasardb::qdb::exception::SystemException</innerclass>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_underflow_exception" prot="public">net::quasardb::qdb::exception::UnderflowException</innerclass>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exception/connection/ConnectionException.java" line="1" column="1"/>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::RemoteSystemException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.SystemException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception_1ab51b0eb441c793d7a065f40fc70b2537" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.RemoteSystemException.RemoteSystemException</definition>
+        <argsstring>(String message)</argsstring>
+        <name>RemoteSystemException</name>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/system/remote/RemoteSystemException.java" line="8" column="1" bodyfile="exception/system/remote/RemoteSystemException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the remote (ie server) operating system caused an error </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="300">
+        <label>net.quasardb.qdb.exception.SystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception"/>
+        <childnode refid="301" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="299">
+        <label>net.quasardb.qdb.exception.RemoteSystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception"/>
+        <childnode refid="300" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="302">
+        <label>RuntimeException</label>
+      </node>
+      <node id="301">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="302" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="304">
+        <label>net.quasardb.qdb.exception.SystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception"/>
+        <childnode refid="305" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="303">
+        <label>net.quasardb.qdb.exception.RemoteSystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception"/>
+        <childnode refid="304" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="306">
+        <label>RuntimeException</label>
+      </node>
+      <node id="305">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="306" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/system/remote/RemoteSystemException.java" line="6" column="1" bodyfile="exception/system/remote/RemoteSystemException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::RemoteSystemException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_remote_system_exception_1ab51b0eb441c793d7a065f40fc70b2537" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::RemoteSystemException</scope><name>RemoteSystemException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception_1aca492c590628ea1834a845eede6eefe2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::RemoteSystemException</scope><name>SystemException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

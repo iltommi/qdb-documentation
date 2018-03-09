@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbDoubleAggregationCollection</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">java::util::ArrayList&lt; QdbDoubleAggregation &gt;</basecompoundref>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection_1abf24f18730b7e48cdc2e554a842bb2aa" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_ts_double_aggregation []</type>
+        <definition>static qdb_ts_double_aggregation [] net.quasardb.qdb.QdbDoubleAggregationCollection.toNative</definition>
+        <argsstring>(QdbDoubleAggregationCollection input)</argsstring>
+        <name>toNative</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection" kindref="compound">QdbDoubleAggregationCollection</ref></type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleAggregationCollection.java" line="12" column="1" bodyfile="QdbDoubleAggregationCollection.java" bodystart="12" bodyend="16"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection_1abdb0203e020f78eaa31a29391ec8d31f" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection" kindref="compound">QdbDoubleAggregationCollection</ref></type>
+        <definition>static QdbDoubleAggregationCollection net.quasardb.qdb.QdbDoubleAggregationCollection.fromNative</definition>
+        <argsstring>(qdb_ts_double_aggregation[] input)</argsstring>
+        <name>fromNative</name>
+        <param>
+          <type>qdb_ts_double_aggregation []</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleAggregationCollection.java" line="19" column="1" bodyfile="QdbDoubleAggregationCollection.java" bodystart="19" bodyend="27"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="72">
+        <label>java::util::ArrayList&lt; QdbDoubleAggregation &gt;</label>
+      </node>
+      <node id="71">
+        <label>net.quasardb.qdb.QdbDoubleAggregationCollection</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection"/>
+        <childnode refid="72" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="74">
+        <label>java::util::ArrayList&lt; QdbDoubleAggregation &gt;</label>
+      </node>
+      <node id="73">
+        <label>net.quasardb.qdb.QdbDoubleAggregationCollection</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection"/>
+        <childnode refid="74" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbDoubleAggregationCollection.java" line="10" column="1" bodyfile="QdbDoubleAggregationCollection.java" bodystart="10" bodyend="28"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection_1abdb0203e020f78eaa31a29391ec8d31f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregationCollection</scope><name>fromNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection_1abf24f18730b7e48cdc2e554a842bb2aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleAggregationCollection</scope><name>toNative</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

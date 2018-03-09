@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::ConnectionRefusedException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.ConnectionException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception_1ad75da3bb10569ef5f9a2e2d9736fc52e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.ConnectionRefusedException.ConnectionRefusedException</definition>
+        <argsstring>()</argsstring>
+        <name>ConnectionRefusedException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/connection/ConnectionRefusedException.java" line="8" column="1" bodyfile="exception/connection/ConnectionRefusedException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the connection to the cluster is refused. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="109">
+        <label>RuntimeException</label>
+      </node>
+      <node id="107">
+        <label>net.quasardb.qdb.exception.ConnectionException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception"/>
+        <childnode refid="108" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="106">
+        <label>net.quasardb.qdb.exception.ConnectionRefusedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception"/>
+        <childnode refid="107" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="108">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="109" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="113">
+        <label>RuntimeException</label>
+      </node>
+      <node id="111">
+        <label>net.quasardb.qdb.exception.ConnectionException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception"/>
+        <childnode refid="112" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="110">
+        <label>net.quasardb.qdb.exception.ConnectionRefusedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception"/>
+        <childnode refid="111" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="112">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="113" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/connection/ConnectionRefusedException.java" line="6" column="1" bodyfile="exception/connection/ConnectionRefusedException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_exception_1a894e0925a895f2fc8eec9fbf5b80669c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ConnectionRefusedException</scope><name>ConnectionException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_connection_refused_exception_1ad75da3bb10569ef5f9a2e2d9736fc52e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ConnectionRefusedException</scope><name>ConnectionRefusedException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ConnectionRefusedException</scope><name>Exception</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

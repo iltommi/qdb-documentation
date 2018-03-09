@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_5834c169ac818fb4b61d1b6f37638e83" kind="dir">
+    <compoundname>exception</compoundname>
+    <innerdir refid="dir_090cc7ab08b611a27bc9aa994cd813ec">exception/connection</innerdir>
+    <innerdir refid="dir_488f80bc20235d76ea3c3f6f030b8927">exception/input</innerdir>
+    <innerdir refid="dir_c069ba7a8e405f1ce6de26c578a7785a">exception/operation</innerdir>
+    <innerdir refid="dir_d5979c2a34b991a641e9fdd243680619">exception/protocol</innerdir>
+    <innerdir refid="dir_9c971f2e2f96f9fccc7d590dd8479e9f">exception/system</innerdir>
+    <innerfile refid="_exception_8java">Exception.java</innerfile>
+    <innerfile refid="_exception_factory_8java">ExceptionFactory.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exception/"/>
+  </compounddef>
+</doxygen>

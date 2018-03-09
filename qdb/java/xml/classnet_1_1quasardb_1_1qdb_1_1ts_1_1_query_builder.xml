@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::QueryBuilder</compoundname>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1ab91489389c115e3162b337ff51d3f42c" prot="private" static="no" mutable="no">
+        <type>StringJoiner</type>
+        <definition>StringJoiner net.quasardb.qdb.ts.QueryBuilder.query</definition>
+        <argsstring></argsstring>
+        <name>query</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/QueryBuilder.java" line="10" column="1" bodyfile="ts/QueryBuilder.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a3215ec5e313a0a60d066c8acc4b1e29b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.QueryBuilder.QueryBuilder</definition>
+        <argsstring>()</argsstring>
+        <name>QueryBuilder</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/QueryBuilder.java" line="12" column="1" bodyfile="ts/QueryBuilder.java" bodystart="12" bodyend="14"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a076826b7361e4c0738fc08aad0acfbca" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder" kindref="compound">QueryBuilder</ref></type>
+        <definition>QueryBuilder net.quasardb.qdb.ts.QueryBuilder.add</definition>
+        <argsstring>(String str)</argsstring>
+        <name>add</name>
+        <param>
+          <type>String</type>
+          <declname>str</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds plain java string to query. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/QueryBuilder.java" line="23" column="1" bodyfile="ts/QueryBuilder.java" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a685323ae4190fcbc523395378b2997e7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder" kindref="compound">QueryBuilder</ref></type>
+        <definition>QueryBuilder net.quasardb.qdb.ts.QueryBuilder.in</definition>
+        <argsstring>(TimeRange range)</argsstring>
+        <name>in</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_time_range" kindref="compound">TimeRange</ref></type>
+          <declname>range</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds clause that limits a query&apos;s results to a timerange. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/QueryBuilder.java" line="31" column="1" bodyfile="ts/QueryBuilder.java" bodystart="31" bodyend="38"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1aa99f5a91ebdc08a41ccc5e8e7cfc6515" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query" kindref="compound">Query</ref></type>
+        <definition>Query net.quasardb.qdb.ts.QueryBuilder.asQuery</definition>
+        <argsstring>()</argsstring>
+        <name>asQuery</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/QueryBuilder.java" line="40" column="1" bodyfile="ts/QueryBuilder.java" bodystart="40" bodyend="42"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a8b56da0062f2642321bcf064f538a4e5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.QueryBuilder.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/QueryBuilder.java" line="44" column="1" bodyfile="ts/QueryBuilder.java" bodystart="44" bodyend="46"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1afee738b53ad453f0fdc30250826fffc9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.QueryBuilder.QueryBuilder</definition>
+        <argsstring>(StringJoiner query)</argsstring>
+        <name>QueryBuilder</name>
+        <param>
+          <type>StringJoiner</type>
+          <declname>query</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/QueryBuilder.java" line="16" column="1" bodyfile="ts/QueryBuilder.java" bodystart="16" bodyend="18"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Utility class with functions that make it easier to construct a query. </para>    </detaileddescription>
+    <location file="ts/QueryBuilder.java" line="9" column="1" bodyfile="ts/QueryBuilder.java" bodystart="9" bodyend="47"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a076826b7361e4c0738fc08aad0acfbca" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::QueryBuilder</scope><name>add</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1aa99f5a91ebdc08a41ccc5e8e7cfc6515" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::QueryBuilder</scope><name>asQuery</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a685323ae4190fcbc523395378b2997e7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::QueryBuilder</scope><name>in</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1ab91489389c115e3162b337ff51d3f42c" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::QueryBuilder</scope><name>query</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a3215ec5e313a0a60d066c8acc4b1e29b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::QueryBuilder</scope><name>QueryBuilder</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1afee738b53ad453f0fdc30250826fffc9" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::ts::QueryBuilder</scope><name>QueryBuilder</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query_builder_1a8b56da0062f2642321bcf064f538a4e5" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::QueryBuilder</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

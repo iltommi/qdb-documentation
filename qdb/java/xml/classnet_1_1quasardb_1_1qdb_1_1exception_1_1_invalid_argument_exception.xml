@@ -1,0 +1,96 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::InvalidArgumentException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.InputException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception_1a96eb0e4bdb94fdde49f75d6b402655e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.InvalidArgumentException.InvalidArgumentException</definition>
+        <argsstring>()</argsstring>
+        <name>InvalidArgumentException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/input/InvalidArgumentException.java" line="8" column="1" bodyfile="exception/input/InvalidArgumentException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception_1a4408dead94c2f7082bcb1016945844ea" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.InvalidArgumentException.InvalidArgumentException</definition>
+        <argsstring>(String message)</argsstring>
+        <name>InvalidArgumentException</name>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/input/InvalidArgumentException.java" line="12" column="1" bodyfile="exception/input/InvalidArgumentException.java" bodystart="12" bodyend="14"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when argument passed to a method is incorrect. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="197">
+        <label>RuntimeException</label>
+      </node>
+      <node id="195">
+        <label>net.quasardb.qdb.exception.InputException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception"/>
+        <childnode refid="196" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="196">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="197" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="194">
+        <label>net.quasardb.qdb.exception.InvalidArgumentException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception"/>
+        <childnode refid="195" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="201">
+        <label>RuntimeException</label>
+      </node>
+      <node id="199">
+        <label>net.quasardb.qdb.exception.InputException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception"/>
+        <childnode refid="200" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="200">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="201" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="198">
+        <label>net.quasardb.qdb.exception.InvalidArgumentException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception"/>
+        <childnode refid="199" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/input/InvalidArgumentException.java" line="6" column="1" bodyfile="exception/input/InvalidArgumentException.java" bodystart="6" bodyend="15"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidArgumentException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception_1ad5b6e09fc8b66e9fbec208904b47a93d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidArgumentException</scope><name>InputException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception_1a96eb0e4bdb94fdde49f75d6b402655e1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidArgumentException</scope><name>InvalidArgumentException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_invalid_argument_exception_1a4408dead94c2f7082bcb1016945844ea" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::InvalidArgumentException</scope><name>InvalidArgumentException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

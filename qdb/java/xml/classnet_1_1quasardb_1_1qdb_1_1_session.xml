@@ -1,0 +1,218 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_session" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::Session</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1_session_1_1_security_options" prot="public">net::quasardb::qdb::Session::SecurityOptions</innerclass>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_session_1a5366c50028697c77382157a9734659f6" prot="private" static="no" mutable="no">
+        <type>transient long</type>
+        <definition>transient long net.quasardb.qdb.Session.handle</definition>
+        <argsstring></argsstring>
+        <name>handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="19" column="1" bodyfile="Session.java" bodystart="19" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_session_1ae2fe28ef2548b167ac4a445760fe42f7" prot="private" static="no" mutable="no">
+        <type>qdb_cluster_security_options</type>
+        <definition>qdb_cluster_security_options net.quasardb.qdb.Session.securityOptions</definition>
+        <argsstring></argsstring>
+        <name>securityOptions</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="20" column="1" bodyfile="Session.java" bodystart="20" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1a761917a9a86021378691e71816dc72fb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.Session.Session</definition>
+        <argsstring>()</argsstring>
+        <name>Session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize a new <ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref> without security settings. Connections to the QuasarDB cluster will be insecure and unauthenticated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="46" column="1" bodyfile="Session.java" bodystart="46" bodyend="48"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1ab569d260522a54581ef42c9d0da724d1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.Session.Session</definition>
+        <argsstring>(SecurityOptions securityOptions)</argsstring>
+        <name>Session</name>
+        <param>
+          <type>SecurityOptions</type>
+          <declname>securityOptions</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Initialize a new <ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref> with security settings. Connections to the QuasarDB will use a secure connection and will be authenticated. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="54" column="1" bodyfile="Session.java" bodystart="54" bodyend="57"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1a7e5d5fb2d9785d2bb5bf966443b9033b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.Session.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="88" column="1" bodyfile="Session.java" bodystart="88" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1acf4f4e322804a32db94f86d3ac81f928" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.Session.isClosed</definition>
+        <argsstring>()</argsstring>
+        <name>isClosed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="95" column="1" bodyfile="Session.java" bodystart="95" bodyend="97"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1a8c12e8a38b29056760cdfde5ef634b59" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.Session.throwIfClosed</definition>
+        <argsstring>()</argsstring>
+        <name>throwIfClosed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="99" column="1" bodyfile="Session.java" bodystart="99" bodyend="102"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1acebea1c7cff503819c8c884d28a0a8b6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.Session.handle</definition>
+        <argsstring>()</argsstring>
+        <name>handle</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="110" column="1" bodyfile="Session.java" bodystart="110" bodyend="112"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1ab1e87061b2e5889029fbd217686fdce0" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+        <definition>static Session net.quasardb.qdb.Session.connect</definition>
+        <argsstring>(String uri)</argsstring>
+        <name>connect</name>
+        <param>
+          <type>String</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Establishes a connection</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fully qualified quasardb cluster uri, e.g. qdb://127.0.0.1:2836 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A QuasarDB session </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="65" column="1" bodyfile="Session.java" bodystart="65" bodyend="71"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1abec132f3ca512ee4787cd89943d10109" prot="public" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_session" kindref="compound">Session</ref></type>
+        <definition>static Session net.quasardb.qdb.Session.connect</definition>
+        <argsstring>(SecurityOptions options, String uri)</argsstring>
+        <name>connect</name>
+        <param>
+          <type>SecurityOptions</type>
+          <declname>options</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>uri</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Establishes a secure connection</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>options</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Security options for authenticating with cluster </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>uri</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>Fully qualified quasardb cluster uri, e.g. qdb://127.0.0.1:2836 </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A secure QuasarDB session </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="80" column="1" bodyfile="Session.java" bodystart="80" bodyend="86"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_session_1ad124ec391a6a6ac6aa6d443cff004836" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.Session.finalize</definition>
+        <argsstring>()</argsstring>
+        <name>finalize</name>
+        <exceptions> throws Throwable </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="Session.java" line="105" column="1" bodyfile="Session.java" bodystart="105" bodyend="108"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Represents a connection with the QuasarDB cluster. This class is backed by a connection pool, and is thread-safe. You are encouraged to reuse this object as much as possible, ideally only creating a single session for the lifetime of your process. </para>    </detaileddescription>
+    <location file="Session.java" line="18" column="1" bodyfile="Session.java" bodystart="18" bodyend="113"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a7e5d5fb2d9785d2bb5bf966443b9033b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ab1e87061b2e5889029fbd217686fdce0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>connect</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1abec132f3ca512ee4787cd89943d10109" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>connect</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ad124ec391a6a6ac6aa6d443cff004836" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>finalize</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a5366c50028697c77382157a9734659f6" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>handle</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1acebea1c7cff503819c8c884d28a0a8b6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>handle</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1acf4f4e322804a32db94f86d3ac81f928" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>isClosed</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ae2fe28ef2548b167ac4a445760fe42f7" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>securityOptions</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a761917a9a86021378691e71816dc72fb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>Session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1ab569d260522a54581ef42c9d0da724d1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>Session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_session_1a8c12e8a38b29056760cdfde5ef634b59" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::Session</scope><name>throwIfClosed</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

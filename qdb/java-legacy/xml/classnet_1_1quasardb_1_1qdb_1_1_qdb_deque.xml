@@ -1,0 +1,460 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbDeque</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" prot="public" virt="non-virtual">net.quasardb.qdb.QdbEntry</basecompoundref>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a8e054809a873ad62c8bc8fa0af802bac" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDeque.QdbDeque</definition>
+        <argsstring>(Session session, String alias)</argsstring>
+        <name>QdbDeque</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="14" column="1" bodyfile="QdbDeque.java" bodystart="14" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a6c99ff9402f99a44ac2537d11ce64934" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbDeque.back</definition>
+        <argsstring>()</argsstring>
+        <name>back</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the item at the back of the queue. The queue must already exist.</para><para><simplesect kind="return"><para>The content of the item, or null if the deque was empty. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="27" column="1" bodyfile="QdbDeque.java" bodystart="27" bodyend="35"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a1ef8a776dc717a02b023d98f15668fdc" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbDeque.get</definition>
+        <argsstring>(long index)</argsstring>
+        <name>get</name>
+        <param>
+          <type>long</type>
+          <declname>index</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the value of the queue at the specified index. The queue must already exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>index</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The zero-based index you wish to retrieve. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The content of the item. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>OutOfBoundsException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the index is negative, or greater or equal than deque size. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="48" column="1" bodyfile="QdbDeque.java" bodystart="48" bodyend="54"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a751a21d8df03b8ffa2577de495f7d1e1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbDeque.front</definition>
+        <argsstring>()</argsstring>
+        <name>front</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the item at the front of the queue. The queue must already exist.</para><para><simplesect kind="return"><para>The content of the item, or null if the deque was empty. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="65" column="1" bodyfile="QdbDeque.java" bodystart="65" bodyend="73"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1ab85d18ccc849f3db6b8476c25d17aa13" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbDeque.popBack</definition>
+        <argsstring>()</argsstring>
+        <name>popBack</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes and retrieves the item at the back of the queue. The queue must already exist.</para><para><simplesect kind="return"><para>The content of the removed item, or null if the deque was empty. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="84" column="1" bodyfile="QdbDeque.java" bodystart="84" bodyend="92"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1afba05060c929ecbbc342524b2578fca1" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbDeque.popFront</definition>
+        <argsstring>()</argsstring>
+        <name>popFront</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes and retrieves the item at the front of the queue. The queue must already exist.</para><para><simplesect kind="return"><para>The content of the removed item, or null if the deque was empty. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="103" column="1" bodyfile="QdbDeque.java" bodystart="103" bodyend="111"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a513ffa68dc2a71cb6bbe945e34022617" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbDeque.pushBack</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>pushBack</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inserts the content at the back of the queue. Creates the queue if it does not exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content that will be added to the queue. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="121" column="1" bodyfile="QdbDeque.java" bodystart="121" bodyend="125"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a1994ad08e3a9bb5aa2757f2e08dd58a6" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbDeque.pushFront</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>pushFront</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Inserts the content at the front of the queue. Creates the queue if it does not exist.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content that will be added to the queue. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="135" column="1" bodyfile="QdbDeque.java" bodystart="135" bodyend="139"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1adfd84c5bb2dcaf5af4f6d9ff05249ebd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbDeque.size</definition>
+        <argsstring>()</argsstring>
+        <name>size</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Retrieves the size of the queue. The queue must already exist.</para><para><simplesect kind="return"><para>The number of items in the deque. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDeque.java" line="150" column="1" bodyfile="QdbDeque.java" bodystart="150" bodyend="156"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A deque in the database. Deque stands for &quot;double-ended queue&quot;, you can both enqueue and dequeue from the front and the back. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="64">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="63">
+        <label>net.quasardb.qdb.QdbDeque</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque"/>
+        <childnode refid="64" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="66">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="65">
+        <label>net.quasardb.qdb.QdbDeque</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque"/>
+        <childnode refid="66" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbDeque.java" line="12" column="1" bodyfile="QdbDeque.java" bodystart="12" bodyend="157"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a6c99ff9402f99a44ac2537d11ce64934" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>back</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a751a21d8df03b8ffa2577de495f7d1e1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>front</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a1ef8a776dc717a02b023d98f15668fdc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>get</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>metadata</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>node</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1ab85d18ccc849f3db6b8476c25d17aa13" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>popBack</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1afba05060c929ecbbc342524b2578fca1" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>popFront</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a513ffa68dc2a71cb6bbe945e34022617" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>pushBack</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a1994ad08e3a9bb5aa2757f2e08dd58a6" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>pushFront</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a8e054809a873ad62c8bc8fa0af802bac" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>QdbDeque</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>QdbEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>remove</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1adfd84c5bb2dcaf5af4f6d9ff05249ebd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>size</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDeque</scope><name>tags</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

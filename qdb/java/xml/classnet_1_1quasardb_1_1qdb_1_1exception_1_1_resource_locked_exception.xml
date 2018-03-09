@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::ResourceLockedException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.OperationException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception_1a3ae3940abcb841f6ba9f168ed1e2a697" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.ResourceLockedException.ResourceLockedException</definition>
+        <argsstring>()</argsstring>
+        <name>ResourceLockedException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/operation/ResourceLockedException.java" line="8" column="1" bodyfile="exception/operation/ResourceLockedException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when an operation cannot be performed because the entry is locked. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="315">
+        <label>net.quasardb.qdb.exception.ResourceLockedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception"/>
+        <childnode refid="316" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="318">
+        <label>RuntimeException</label>
+      </node>
+      <node id="316">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="317" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="317">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="318" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="319">
+        <label>net.quasardb.qdb.exception.ResourceLockedException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception"/>
+        <childnode refid="320" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="322">
+        <label>RuntimeException</label>
+      </node>
+      <node id="320">
+        <label>net.quasardb.qdb.exception.OperationException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception"/>
+        <childnode refid="321" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="321">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="322" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/operation/ResourceLockedException.java" line="6" column="1" bodyfile="exception/operation/ResourceLockedException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ResourceLockedException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_operation_exception_1a889e7b322c94e97194427c813ca86c0e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ResourceLockedException</scope><name>OperationException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_resource_locked_exception_1a3ae3940abcb841f6ba9f168ed1e2a697" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ResourceLockedException</scope><name>ResourceLockedException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

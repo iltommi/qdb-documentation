@@ -1,0 +1,502 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygenindex xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="index.xsd" version="1.8.13">
+  <compound refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode" kind="enum"><name>net::quasardb::qdb::QdbStream::Mode</name>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a416bddba1f074bfe5804afed38ea66dd" kind="variable"><name>READ</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a186697781f4c76b025a9676e535add5d" kind="variable"><name>APPEND</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1a0e30c6b418c845985d9798bf6b966266" kind="variable"><name>value</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1_1_mode_1addf53f55295e55bc0224330b244fa1d1" kind="function"><name>Mode</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation" kind="class"><name>net::quasardb::qdb::QdbAggregation</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a783cae0adfc77344c2a3cb38c8f31a7b" kind="variable"><name>type</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1ab51726df7922606ea34f9646292e0684" kind="variable"><name>range</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1af7ce75cfea931996cd2bee0127a43ca2" kind="variable"><name>count</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a33a537fbcf5dca8d9d9f15e428cea072" kind="variable"><name>result</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a23e657b2efede34d0dd74c080ad9c184" kind="function"><name>QdbAggregation</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a78290802ce36de47efa749508c0eda91" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a430bfda9afc182490d2319ab3858e888" kind="function"><name>getType</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a5994b3b0640c0c89b2bdbd8264da75e2" kind="function"><name>getCount</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1a9d91848d90df1cab69ddb71d2dab043b" kind="function"><name>getRange</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1aa84ea4e87bb2887cafad8063b3539bc1" kind="function"><name>getResult</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch" kind="class"><name>net::quasardb::qdb::QdbBatch</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ac89295410454bc36760fe1021e98d8ce" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1d0aeea3bc319dba866b6271dc4a3487" kind="variable"><name>operations</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1abc24dd37f9a529943e5733d5beba58e4" kind="variable"><name>hasRun</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1ff259d620b1f6b3a76cb369d5456a67" kind="variable"><name>successCount</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2e6bf6062942aef6b899311375c370a9" kind="variable"><name>batch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a9b7f26f8f241f37dbe426e5fd20ee662" kind="function"><name>QdbBatch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a46f8849e7194943d3ef280592c8ad8db" kind="function"><name>finalize</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a7f4e06ec89076bae4d58f738e00164d2" kind="function"><name>addOperation</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1aed0a29ff2597c4b1a59dcb34a5498b11" kind="function"><name>hasRun</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a23b10a47ac9cba0a2402f70f6130bd3f" kind="function"><name>blob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2407a58d9cc562809563b38832d8ab75" kind="function"><name>run</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kind="function"><name>close</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a680272fb3eb4e1d50125b2785c6c5b85" kind="function"><name>success</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ad7bfaaaa4d49842a4205fdfc8ce8dd26" kind="function"><name>operationCount</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1adb4bb5bef5bea08b300850b53f7390d7" kind="function"><name>successCount</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8e7c8990fbb074920af8f84df038fbbe" kind="function"><name>isClosed</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a09ce9ae234718f07a358a9978151b6f9" kind="function"><name>throwIfClosed</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a3ee0976b94515bae0fced604b5c160ed" kind="function"><name>throwIfHasRun</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ae2810565edb6985e97f55c42dc5eabfd" kind="function"><name>throwIfNotRun</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a34460f1bbff5c5311854baab84307807" kind="function"><name>create_batch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a6322e186955a3274e9f7b3dba7bb26e8" kind="function"><name>delete_batch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2664e905882685062817c11c80389c3f" kind="function"><name>write_operations_to_batch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1bffa78842abd88f9c4596ae116e2dc3" kind="function"><name>read_operations_from_batch</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob" kind="class"><name>net::quasardb::qdb::QdbBatchBlob</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1ad3101c29c31f56c9c9d8a03f12d965e5" kind="function"><name>QdbBatchBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a445c3642aaeba17a6d3d40b4a9df3675" kind="function"><name>compareAndSwap</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a01579e9feb2fe5624af5f701609d0219" kind="function"><name>compareAndSwap</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a424082358d261d745c1bd9a1cc01bf2e" kind="function"><name>get</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1aa3f906ade93ac45f95881009ecd96d81" kind="function"><name>getAndUpdate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1ad9b49aa11f95577dd378420b34e027e9" kind="function"><name>getAndUpdate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a1e829ab13d7e558ed06ef94be19a9b1f" kind="function"><name>put</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a336bbebb3fa8967825745d85ddf616cb" kind="function"><name>put</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1af412f1639bb4c4336dcf19f275f0881c" kind="function"><name>update</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a670b967a907897738c06b69d19f074d4" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry" kind="class"><name>net::quasardb::qdb::QdbBatchEntry</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a103b47ec3467b7a7547c7d3f389d789c" kind="variable"><name>batch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1ad5961afc867429cd7723e3456c66e65b" kind="variable"><name>alias</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1afbc6439cc2958ce7c5886f0bd4eda132" kind="function"><name>QdbBatchEntry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a6e17fe2ef792407d76d964890c86d9f4" kind="function"><name>assertNotAlreadyRun</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future" kind="class"><name>net::quasardb::qdb::QdbBatchFuture</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future_1a1103067ac650ad0369d0911bde2b0f8f" kind="variable"><name>batch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future_1a44d61d2eedd6a473f7674af91716049a" kind="variable"><name>op</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future_1ac27bb22275e5431ebf44b512af122cbe" kind="function"><name>QdbBatchFuture</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future_1a68fffed1472495bb1d15528f6d406c21" kind="function"><name>get</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_future_1aaa89a55f005f5b6bf934f88c8e6952e7" kind="function"><name>success</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation" kind="class"><name>net::quasardb::qdb::QdbBatchOperation</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1ae295fa713f4f1ceb70dc7cbd154d8c5b" kind="variable"><name>result</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1ac13f3bcc2df2dcd82c5fdea4b742592d" kind="variable"><name>error</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1a160c61469b28a8a807ec92239fcd4fa3" kind="function"><name>write</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_operation_1a1634f7793e10eb2abf25b2badfa13c2c" kind="function"><name>read</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob" kind="class"><name>net::quasardb::qdb::QdbBlob</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a25b7352c5cac6f6dc044837016cfaa12" kind="function"><name>QdbBlob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a8698950e8ea4694cdc6ce6cf0949843a" kind="function"><name>compareAndSwap</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab2b4c2dba4e28fe7e3e51296587e564c" kind="function"><name>compareAndSwap</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a2938338e615b82dedf3a92b55c7bca37" kind="function"><name>get</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a3414df3e14f9ae25a6c0338c46c93878" kind="function"><name>getAndRemove</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a433d42c9884b737ff4cc07b703dfd7b0" kind="function"><name>getAndUpdate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acc1d01a7984e7c6947906b9ba10b3c9d" kind="function"><name>getAndUpdate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ad1e808200de3df609a85e5bdf94a897f" kind="function"><name>put</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab27e1c9bec4731105d648830072eb29b" kind="function"><name>put</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab65a757e96cffbf481cfc80bc8cca67f" kind="function"><name>removeIf</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acf830f27d66f8d7e3ba1631176df3369" kind="function"><name>update</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1af9cfe1bfc27534d6c7b0b41f85f1ca40" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation" kind="class"><name>net::quasardb::qdb::QdbBlobAggregation</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_1ada3fec907957eff2bc5860b9b1399286" kind="function"><name>QdbBlobAggregation</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_1a652178de560d864be32a9bc3da1a0dfb" kind="function"><name>QdbBlobAggregation</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_1a32a5854b0d1bdfacfe6dc1e70472c979" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_1ae4f54f240b156080c163d184d9ae2646" kind="function"><name>fromNative</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection" kind="class"><name>net::quasardb::qdb::QdbBlobAggregationCollection</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection_1a47bd1ef22a8c4f5982209a5ac267a7a2" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_aggregation_collection_1a09b950d5368f433e2e7b8b5fde8e6782" kind="function"><name>fromNative</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection" kind="class"><name>net::quasardb::qdb::QdbBlobColumnCollection</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection_1ad144a8fb8f6b958909013862e692e860" kind="function"><name>QdbBlobColumnCollection</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection_1a241905ff2a4193759e85972350763419" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_collection_1a6acda07a85bedced44a4c4d467f192d0" kind="function"><name>fromNative</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value" kind="class"><name>net::quasardb::qdb::QdbBlobColumnValue</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a9045a52690d29de972f576bde3f54623" kind="function"><name>QdbBlobColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a8b3e9d9a93026e9093e08fa86098a52b" kind="function"><name>QdbBlobColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a34b7b17dd6c3b1e1ed561aa252feefed" kind="function"><name>QdbBlobColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a11f322d3eb049c7284b382d8007ab35b" kind="function"><name>QdbBlobColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a9b2b414cedc6a4c9ed503b1c107a0343" kind="function"><name>QdbBlobColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1ad213cc387c449a2f8ebccb0d4d767096" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a467fa32887342ecda2a344457b87c751" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1ade0db500c2726501f743716fc1f67dda" kind="function"><name>fromNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1adcd779623cd4e3ba2acf650d68c0fc22" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1a20c6791596328c6c71a17fdd4f4adcbf" kind="function"><name>writeValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_column_value_1afc7768c75360fef00626f016a831b277" kind="function"><name>readValue</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster" kind="class"><name>net::quasardb::qdb::QdbCluster</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aa573492f22ac40d73d1fbb5cfb808cc5" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a4b47f3f4fb30c9329b3d59353399b490" kind="function"><name>QdbCluster</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1ccc48741797ecd6d418d130f57cc53d" kind="function"><name>QdbCluster</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kind="function"><name>close</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ab4baec08de44c1f6871b7bae429ea034" kind="function"><name>getSession</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a285982aaee4ea95e5d0bf790c0ee0531" kind="function"><name>isLegacySessionInitialised</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1319ace6b97d3a42958d250f18e38d54" kind="function"><name>blob</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a301f3fd250d3ae6bc00ae6ee29efeba5" kind="function"><name>deque</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ae14b031bf7cabefe09d50dd1fec76816" kind="function"><name>entry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aaab342ef0966a06ae1a3da626e565306" kind="function"><name>hashSet</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a9cdb2ed140d8c7b6f6bf6cc77337d036" kind="function"><name>integer</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ae13527f8d8cb11e2539dc5e55b632418" kind="function"><name>node</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a35e3ed456b1d9931a683f12626cdb81e" kind="function"><name>stream</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1926d31effdd7198997bd1bca0801aa3" kind="function"><name>tag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1ab90635b1c6407bc1b689ab17eb1ceeda" kind="function"><name>timeSeries</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1afbe5dcd503bf1837fba6b24bdcc9783c" kind="function"><name>createTimeSeries</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a38d7d738f4cf69ed1a1a503790012bf0" kind="function"><name>findNodeFor</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a9cee6273da3a539a9446a63c3b619bbc" kind="function"><name>purgeAll</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a1967af242da1193420fdb50f5355f3f7" kind="function"><name>trimAll</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a89dd22e066b9a13cc980ed00717bcbf8" kind="function"><name>createBatch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a61919276c9a2a66ce957b2028b2b25a1" kind="function"><name>setTimeout</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a2eb1c6c3984350980aac979f934a2543" kind="function"><name>build</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1a0f9a2b4bd93d6aa5053e09e47dd239f3" kind="function"><name>version</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection" kind="class"><name>net::quasardb::qdb::QdbColumnCollection</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7f62bac1f0e459e2f617c40799f19690" kind="variable"><name>column</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a32a49c540e616b3177c943eebbcd286a" kind="function"><name>QdbColumnCollection</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7ab684c1f0c42abe932f503f3318d54e" kind="function"><name>getColumn</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a8fba027e82cbd6cc49a84da6833e72a4" kind="function"><name>range</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1af7dcece96a372c6aff95d5e4cbd316fe" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a0d5ae1a12b37027acd897a1634dd255a" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value" kind="class"><name>net::quasardb::qdb::QdbColumnValue</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a247bd8143f81334560b6037ff6a07ddb" kind="variable"><name>timestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a99fa36dcba953412717078c75b39662b" kind="variable"><name>value</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1aaccb1e0d77bc5e8e04cbdda895609cfd" kind="function"><name>QdbColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1af5de6f7dc162de5aff483f967e10f4bb" kind="function"><name>QdbColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ae474743718648ec1a5d913ffc9728ea6" kind="function"><name>QdbColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1acf22746eb5aba86f861946f3492d1827" kind="function"><name>QdbColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a118065045ef0d2ea4266dd1758610b8a" kind="function"><name>getTimestamp</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ab6ad1b72c6b31693aba90284d1b1f095" kind="function"><name>getValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ae3ab6c87c8e07d64e6a1147527b66b22" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1ad1e3078317c60e2b57608b1228ecadef" kind="function"><name>writeObject</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a478497324f5ca94bddc6759660ec1751" kind="function"><name>readObject</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a9923e348480da7e903c9e2ddb2418887" kind="function"><name>writeValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_value_1a6acdb71324ccb4f642eb84085c9288a0" kind="function"><name>readValue</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque" kind="class"><name>net::quasardb::qdb::QdbDeque</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a8e054809a873ad62c8bc8fa0af802bac" kind="function"><name>QdbDeque</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a6c99ff9402f99a44ac2537d11ce64934" kind="function"><name>back</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a1ef8a776dc717a02b023d98f15668fdc" kind="function"><name>get</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a751a21d8df03b8ffa2577de495f7d1e1" kind="function"><name>front</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1ab85d18ccc849f3db6b8476c25d17aa13" kind="function"><name>popBack</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1afba05060c929ecbbc342524b2578fca1" kind="function"><name>popFront</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a513ffa68dc2a71cb6bbe945e34022617" kind="function"><name>pushBack</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1a1994ad08e3a9bb5aa2757f2e08dd58a6" kind="function"><name>pushFront</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_deque_1adfd84c5bb2dcaf5af4f6d9ff05249ebd" kind="function"><name>size</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation" kind="class"><name>net::quasardb::qdb::QdbDoubleAggregation</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a43e45fbd7d7e5d5927256eb01ffe4b44" kind="function"><name>QdbDoubleAggregation</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a58733958c0947951779379c42e32e8aa" kind="function"><name>QdbDoubleAggregation</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a27c17a0f0e75f6f7a538caa7a1148a67" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_1a341d0f88b6c97d6c58286df24a8e2554" kind="function"><name>fromNative</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection" kind="class"><name>net::quasardb::qdb::QdbDoubleAggregationCollection</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection_1abf24f18730b7e48cdc2e554a842bb2aa" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_aggregation_collection_1abdb0203e020f78eaa31a29391ec8d31f" kind="function"><name>fromNative</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection" kind="class"><name>net::quasardb::qdb::QdbDoubleColumnCollection</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1aa3b90e7d533a35f5fa44129d5428bf20" kind="function"><name>QdbDoubleColumnCollection</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1ab7a3384ac9e542d195445506aa8c766b" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1a9f34e3273f1f3b84795b5493ffe42539" kind="function"><name>fromNative</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value" kind="class"><name>net::quasardb::qdb::QdbDoubleColumnValue</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a7836b34e4b88426210a94da1d3bf6106" kind="function"><name>QdbDoubleColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a406c4a516e36db5efd344bbd18f50ffe" kind="function"><name>QdbDoubleColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1aa915ebaf202d5323db134674db9c72b8" kind="function"><name>QdbDoubleColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a3667cd930c40cf248fdf051ac977010a" kind="function"><name>QdbDoubleColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a494d64169b26d7b418c5ae5a53395bbc" kind="function"><name>QdbDoubleColumnValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a802073a788a5189e9b5bc60833980c46" kind="function"><name>toString</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1abc5e164c788240fb3d6f586b47575517" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1aff1001c09a801624a379a5c4278e6069" kind="function"><name>fromNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a5ff7ee64937f0368ac3322f7b477bbab" kind="function"><name>toNative</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1a52a8af1d6532410de3fa55c3cad16463" kind="function"><name>writeValue</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_value_1ab98679e5dd11bbe884eb087aec609737" kind="function"><name>readValue</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry" kind="class"><name>net::quasardb::qdb::QdbEntry</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" kind="variable"><name>alias</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" kind="function"><name>QdbEntry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" kind="function"><name>alias</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" kind="function"><name>attachTag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" kind="function"><name>attachTag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" kind="function"><name>hashCode</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" kind="function"><name>hasTag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" kind="function"><name>hasTag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" kind="function"><name>remove</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" kind="function"><name>detachTag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" kind="function"><name>detachTag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" kind="function"><name>tags</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" kind="function"><name>metadata</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" kind="function"><name>node</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_factory" kind="class"><name>net::quasardb::qdb::QdbEntryFactory</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_factory_1a632bb4799da1f1b90a05d1501770a774" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_factory_1a3c3b3755034e162cf95e1da16e4cc46b" kind="function"><name>QdbEntryFactory</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_factory_1afe95358e1ca398216edcffd680fe92f8" kind="function"><name>createEntry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_factory_1a4d439773e2e43d58a304842b040ad28f" kind="function"><name>createEntry</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata" kind="class"><name>net::quasardb::qdb::QdbEntryMetadata</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1abc2b1c425992210bd3c85b1c0cd20592" kind="variable"><name>reference</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1aaa1655a1c22f1304ed8c6601eb4682f6" kind="variable"><name>size</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1a52968b6edad06fd20b33a5fd16f2e3af" kind="variable"><name>lastModificationTime</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1a9badf66e019fabe9e982c68b5c302acf" kind="variable"><name>expiryTime</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1a435fb52b1f80091f601c269cf6cff39f" kind="function"><name>QdbEntryMetadata</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1aa923e34022ab8c645451f28b0e6d0c3a" kind="function"><name>reference</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1a6c58cde448687e7abbd69a2721bd8542" kind="function"><name>size</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1a343b5a35a1accc2510557f13f6eada22" kind="function"><name>lastModificationTime</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_metadata_1a6e3bf1918dfe8a6f53088201148aaac0" kind="function"><name>expiryTime</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags" kind="class"><name>net::quasardb::qdb::QdbEntryTags</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1adf63814545a949cb3ff11cbfc8dec0ae" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1ad290b635af4c616b93d53023efa8b7b0" kind="variable"><name>alias</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1ab06b29772cb23185514f249774aa3d59" kind="function"><name>QdbEntryTags</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1a5727dae852909cd735b82ee4d3798f78" kind="function"><name>iterator</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1_1_qdb_entry_tags_iterator" kind="class"><name>net::quasardb::qdb::QdbEntryTags::QdbEntryTagsIterator</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1_1_qdb_entry_tags_iterator_1a7d5060443eab0a20570efe67148ec90a" kind="variable"><name>tags</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1_1_qdb_entry_tags_iterator_1a467b37de6964daab6869c4fd45b2c7f0" kind="variable"><name>index</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1_1_qdb_entry_tags_iterator_1ad4deb1bba7a1b19638681cd7e77e0a2f" kind="function"><name>QdbEntryTagsIterator</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1_1_qdb_entry_tags_iterator_1a197f7f24d4e86cde485f9b0a87ad029c" kind="function"><name>hasNext</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1_1_qdb_entry_tags_iterator_1aa0bcf8bbf0723e501729e8ff99ddee47" kind="function"><name>next</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_tags_1_1_qdb_entry_tags_iterator_1a993d82487ffb6d857f1e79e46eaaa2e6" kind="function"><name>remove</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry" kind="class"><name>net::quasardb::qdb::QdbExpirableEntry</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1ad7fcfdddc2908c7b8842383d1cbdf2be" kind="function"><name>QdbExpirableEntry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a477a82e0324a7a1ebdc102b8a6e71dd8" kind="function"><name>expiryTime</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a8c644748552b475069a95227c80830d9" kind="function"><name>expiryTime</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kind="class"><name>net::quasardb::qdb::QdbExpiryTime</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a4e4b15530b230850b742fca479879e49" kind="variable"><name>millisecondsSinceEpoch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a6984ef6b9ab756b0a5b7fa36519e78e6" kind="variable"><name>NEVER_EXPIRES</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a2cb45f276fed6eaaafae0fedf5485c6c" kind="variable"><name>PRESERVE_EXPIRATION</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a606a6587109a9c1a1d800fd1fe296433" kind="function"><name>QdbExpiryTime</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ae3f6ed1234d8a250e3302d495100b134" kind="function"><name>fromCalendar</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a90b4af7ebdae2680ec68684f8e7bd4b9" kind="function"><name>fromDate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ad2a3fcdf6c7993f9fa83825affdaf7c5" kind="function"><name>makeSecondsSinceEpoch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a05b41e84bceb9bb9d60c2d288cf23e38" kind="function"><name>makeMillisSinceEpoch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a570f3e887d6a744e3eeef6b39a01a6b3" kind="function"><name>makeSecondsFromNow</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a94d5746fce621a89bd34fe92317b6717" kind="function"><name>makeMillisFromNow</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ac23af7ee1c393cb463b4284c805e414e" kind="function"><name>makeMinutesFromNow</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a50e8cb0684b8aaa77867c13bf37df97f" kind="function"><name>toSecondsSinceEpoch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ac367db4ec92245ff92ebec0a681f9db8" kind="function"><name>toMillisSinceEpoch</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a03b459deb96918d4f3fca7a5da7d826d" kind="function"><name>toDate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ab3a6a6c593311339c28f2c5e257f960e" kind="function"><name>toCalendar</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1a0024d5d7dadb77d719f68ea06b4dcbc7" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1af0a7ab6b53e94c1283f6d1860bdfd574" kind="function"><name>hashCode</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time_1ad08c540f3e766abc853bdcbad6477405" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kind="interface"><name>net::quasardb::qdb::QdbFuture</name>
+    <member refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future_1a130edec9b18ccab234814391da6aad8e" kind="function"><name>get</name></member>
+    <member refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future_1ac2efefe56fa02dfefea7b77ad1ccc334" kind="function"><name>success</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set" kind="class"><name>net::quasardb::qdb::QdbHashSet</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set_1abdfa076137b2a793018899a775e66946" kind="function"><name>QdbHashSet</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set_1ac2c536ba0ab31b28227ec3c450f664cf" kind="function"><name>contains</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set_1ac3d2773d79c7eb9900bdc70db4f865a6" kind="function"><name>erase</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_hash_set_1a4bd5671937e576325533c196a8a7dc3b" kind="function"><name>insert</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id" kind="class"><name>net::quasardb::qdb::QdbId</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a50cff11f9281e3422517d50a9c5695a9" kind="variable"><name>data</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1ac06ea9f2776ab25785d3deec79502341" kind="function"><name>QdbId</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1ab8f186329a56326ea68072c729c6c8b0" kind="function"><name>data</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a436973a2788c17a5a4eb43522a7d51d8" kind="function"><name>equals</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1a88fc38f6086da24cb091cf27804b0ad8" kind="function"><name>hashCode</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_id_1aeba88116da78d3100a29892a8ed32897" kind="function"><name>toString</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer" kind="class"><name>net::quasardb::qdb::QdbInteger</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1ac64ac5a791f632dfbab007f149fe2865" kind="function"><name>QdbInteger</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a6b825fdeff6e199523ff9c8ac26f8b40" kind="function"><name>add</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1aa26250da3ee05421bea97e44afcf2a1a" kind="function"><name>get</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a3176bce17c24dca8423bfa8b451794ef" kind="function"><name>put</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a019a5494e825a75c3db731de9330829e" kind="function"><name>put</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1a4bcce6278d4c1615c2e77c9f1a1f6459" kind="function"><name>update</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_integer_1ad64c5f11139b30ed43501d3aec32d7b3" kind="function"><name>update</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node" kind="class"><name>net::quasardb::qdb::QdbNode</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a8934c5b0405982474cde403b0e5e9bbe" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a45160d22a1e3e6b3eeaf3ebc88e88a09" kind="variable"><name>hostName</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9e29c0787f0122b6640cbbc84030c070" kind="variable"><name>port</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a15b52e7734e875e9c16a3eed2c79b324" kind="variable"><name>uri</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9d8cb8a3dfd286878f06a30216720c46" kind="function"><name>QdbNode</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1aab46c17e33f891f1db823c57960245da" kind="function"><name>hostName</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a9f9c8de1e30974f93ab884ba6acb40e2" kind="function"><name>port</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a5b2199deb4891a7c4292319e658a7749" kind="function"><name>config</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1adc0d56dd62688b69fa03051abe897661" kind="function"><name>status</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a58b151e9c9a49551903dc9a22e7c3993" kind="function"><name>stop</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_node_1a7884b3a4a798a043a2d704dcc5990f61" kind="function"><name>topology</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream" kind="class"><name>net::quasardb::qdb::QdbStream</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1a6451e16138301f4dc2339f8154e42ced" kind="function"><name>QdbStream</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_1a7a9005806b8c99f7c541ed0070edd267" kind="function"><name>open</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel" kind="class"><name>net::quasardb::qdb::QdbStreamChannel</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae98fad35adcb2d80c2b9feecbee83810" kind="variable"><name>handle</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae267d27670a283ea993b8b6554523505" kind="function"><name>QdbStreamChannel</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a4abdd12dd2866c61ce1f767185bda6eb" kind="function"><name>close</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a97fe55eba63a8d7a666d8c77302958c8" kind="function"><name>isOpen</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1af569974b6d615a04f93d95c8bb7f15c2" kind="function"><name>position</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ab0b893bad14b0bfdc5c5c8fe1ad26880" kind="function"><name>position</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a856348bd12a8795ad10350d10c472322" kind="function"><name>read</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a71c3b4cb2e063df4b334c2031fae6a26" kind="function"><name>size</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a424ac6e3caa159b58d4030a4f344b214" kind="function"><name>truncate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1a5cf7ecc39ad1ff8fc4eaeab173726eff" kind="function"><name>write</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ae1653deee183a41c5709b28706e8d9c1" kind="function"><name>throwIfClosed</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_stream_channel_1ad80a1741eb544f7e94e87ac0f47232ba" kind="function"><name>throwIfError</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag" kind="class"><name>net::quasardb::qdb::QdbTag</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a361b1a9e9d0d2e8e54845f407648d9e2" kind="function"><name>QdbTag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a65c752f0b98775c3b4bd36eccf1dbdfb" kind="function"><name>attachEntry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1af1f5d74fba269c84585ced5954df5a89" kind="function"><name>attachEntry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1aaed06a4d936f2a55ab27393f9166c18d" kind="function"><name>entries</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1a3133c37ccd9ebfb7d22655da53b518c8" kind="function"><name>detachEntry</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_1acec19745b4a4aabe15659bf127c5d608" kind="function"><name>detachEntry</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries" kind="class"><name>net::quasardb::qdb::QdbTagEntries</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1ade9b2f9f52db988a2499c1e4651611cf" kind="variable"><name>factory</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1aa337648661bc49ae9f260eddf605fb9f" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1ae5482dd71999fa3194229118cec9d90d" kind="variable"><name>tag</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1aefed04e911c76ae21e490df30f119718" kind="function"><name>QdbTagEntries</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1af6162f817f318b0f82636f2d20086fe3" kind="function"><name>iterator</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator" kind="class"><name>net::quasardb::qdb::QdbTagEntries::QdbTagEntriesIterator</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a1980be216a67c34e0d027769fa7ffceb" kind="variable"><name>handle</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a6bb3ab55c0d6f69a21546ff17c16002e" kind="variable"><name>hasNext</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a63662840fb92441cc666ea0943858546" kind="function"><name>QdbTagEntriesIterator</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1af807a44dc8ca318539a0520fdd9eb9bd" kind="function"><name>hasNext</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a7eb3b5b3b9d42364b5f2c96c17c82a45" kind="function"><name>next</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a5d534c3cba4cd689276acbc12c1559f2" kind="function"><name>remove</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_tag_entries_1_1_qdb_tag_entries_iterator_1a7776da31a7236abbfcb066e3045d3667" kind="function"><name>finalize</name></member>
+  </compound>
+  <compound refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series" kind="class"><name>net::quasardb::qdb::QdbTimeSeries</name>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a853d20fee6a02e9a25d81f7e0067b156" kind="variable"><name>session</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ae52d80e86da6210f17b425f5f6da9785" kind="variable"><name>name</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ac97413415169eaad2d2238bdce08f111" kind="function"><name>QdbTimeSeries</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a7601ab98457e498d3b3b1b8b58bc8c01" kind="function"><name>getName</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a7e33f50dc3cad72e2b678149f5edfa82" kind="function"><name>create</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a8830cdcdacd8b0d58cfef9da66902677" kind="function"><name>tableWriter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1abdaedac01a778f4d23bcb57eb7c600a8" kind="function"><name>autoFlushTableWriter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1af9e1f11aecaab54be5cdf77697c6c95a" kind="function"><name>autoFlushTableWriter</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1acf28ed0b14dc708d010b43b35442db30" kind="function"><name>tableReader</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1aa8cc7edef0f7f3274e24d257dd4ad55c" kind="function"><name>tableReader</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ae8a116fd096d1b44e2400408872334e0" kind="function"><name>insertColumns</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a3f65889bb6c14b1d822b9ccda2fb1ef0" kind="function"><name>listColumns</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1af41dd5094a7892dd9df4e7aeb26dc3b3" kind="function"><name>insertDoubles</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a2f545812ad31a96166026c830183bc7c" kind="function"><name>getDoubles</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1ad416ca31872444e696f4c4c5eede8c28" kind="function"><name>getDoubles</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a8098959b6a11bd925eb26fc85ad1a9ae" kind="function"><name>doubleAggregate</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a846485d05a5e85b5dab551c8b3768773" kind="function"><name>insertBlobs</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a9b7378faeb0c7b21843d0e6812596eb6" kind="function"><name>getBlobs</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a5c43ee0e7b8dd7ea14c2350da3a8ccb1" kind="function"><name>getBlobs</name></member>
+    <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_time_series_1a665b23e31db5256bf0fce9a8c27d3a0b" kind="function"><name>blobAggregate</name></member>
+  </compound>
+  <compound refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type" kind="enum"><name>net::quasardb::qdb::QdbAggregation::Type</name>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a4402675e4e0f3dba12a308b20a2b28e2" kind="variable"><name>FIRST</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1acaab68a2710772f5166d7830569717ef" kind="variable"><name>LAST</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1ad0d2232964ad185744174d61d8beea91" kind="variable"><name>MIN</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a47d33cf91b8dba239054d79ad1e992cd" kind="variable"><name>MAX</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a20d085073ca2fe574ba06508d6896fd8" kind="variable"><name>ARITHMETIC_MEAN</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a0f7b0b1efadf352e42268924f7076f80" kind="variable"><name>HARMONIC_MEAN</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1adb2d9c2cb5fe5c9bbe2395e24d89967a" kind="variable"><name>GEOMETRIC_MEAN</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1acfe2d26c7d55ef9553ca3ba91691b9eb" kind="variable"><name>QUADRATIC_MEAN</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a037f4615b82ea6d03a39bc8bb58693ad" kind="variable"><name>COUNT</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a7c8fbb26c770270ffc9359c41db7fffc" kind="variable"><name>SUM</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a456701d90eb8ca9917e6b9bb8f7d5aa6" kind="variable"><name>SUM_OF_SQUARES</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a9c9b1325760f2c768da74ac334efa0a8" kind="variable"><name>SPREAD</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a7c8f632642b366ff48f02950e00fb8ce" kind="variable"><name>SAMPLE_VARIANCE</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a21d07762c2f4ead6f349fd08dea59553" kind="variable"><name>SAMPLE_STDDEV</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af19fc43b7a366ab15fc22a342f109454" kind="variable"><name>POPULATION_VARIANCE</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af26df0715bd39c9575791b17a3f18912" kind="variable"><name>POPULATION_STDDEV</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a6f06fb18e02e6865b718237ff1395fb3" kind="variable"><name>ABS_MIN</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1af2c79380783e40cf35572d91f02f130f" kind="variable"><name>ABS_MAX</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1ac6445cac83382fda9f0b7b6e3311f675" kind="variable"><name>PRODUCT</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a4b1cbca05d3d20031b550e6033e0b1a9" kind="variable"><name>SKEWNESS</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a0232b99d57dc1875307d130ca359fa95" kind="variable"><name>KURTOSIS</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1a929e31f0d3f8491a93a1b6705c6750a1" kind="variable"><name>value</name></member>
+    <member refid="enumnet_1_1quasardb_1_1qdb_1_1_qdb_aggregation_1_1_type_1aa67ab068a471bdbaa7780ba2240bed1f" kind="function"><name>Type</name></member>
+  </compound>
+  <compound refid="namespacejava_1_1io" kind="namespace"><name>java::io</name>
+  </compound>
+  <compound refid="namespacejava_1_1nio_1_1channels" kind="namespace"><name>java::nio::channels</name>
+  </compound>
+  <compound refid="namespacejava_1_1util" kind="namespace"><name>java::util</name>
+  </compound>
+  <compound refid="namespacejava_1_1util_1_1regex" kind="namespace"><name>java::util::regex</name>
+  </compound>
+  <compound refid="namespacenet" kind="namespace"><name>net</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb" kind="namespace"><name>net::quasardb</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb" kind="namespace"><name>net::quasardb::qdb</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb_1_1exception" kind="namespace"><name>net::quasardb::qdb::exception</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb_1_1jni" kind="namespace"><name>net::quasardb::qdb::jni</name>
+  </compound>
+  <compound refid="namespacenet_1_1quasardb_1_1qdb_1_1ts" kind="namespace"><name>net::quasardb::qdb::ts</name>
+  </compound>
+  <compound refid="package-info_8java" kind="file"><name>package-info.java</name>
+  </compound>
+  <compound refid="_qdb_aggregation_8java" kind="file"><name>QdbAggregation.java</name>
+  </compound>
+  <compound refid="_qdb_batch_8java" kind="file"><name>QdbBatch.java</name>
+  </compound>
+  <compound refid="_qdb_batch_blob_8java" kind="file"><name>QdbBatchBlob.java</name>
+  </compound>
+  <compound refid="_qdb_batch_entry_8java" kind="file"><name>QdbBatchEntry.java</name>
+  </compound>
+  <compound refid="_qdb_batch_future_8java" kind="file"><name>QdbBatchFuture.java</name>
+  </compound>
+  <compound refid="_qdb_batch_operation_8java" kind="file"><name>QdbBatchOperation.java</name>
+  </compound>
+  <compound refid="_qdb_blob_8java" kind="file"><name>QdbBlob.java</name>
+  </compound>
+  <compound refid="_qdb_blob_aggregation_8java" kind="file"><name>QdbBlobAggregation.java</name>
+  </compound>
+  <compound refid="_qdb_blob_aggregation_collection_8java" kind="file"><name>QdbBlobAggregationCollection.java</name>
+  </compound>
+  <compound refid="_qdb_blob_column_collection_8java" kind="file"><name>QdbBlobColumnCollection.java</name>
+  </compound>
+  <compound refid="_qdb_blob_column_value_8java" kind="file"><name>QdbBlobColumnValue.java</name>
+  </compound>
+  <compound refid="_qdb_cluster_8java" kind="file"><name>QdbCluster.java</name>
+  </compound>
+  <compound refid="_qdb_column_collection_8java" kind="file"><name>QdbColumnCollection.java</name>
+  </compound>
+  <compound refid="_qdb_column_value_8java" kind="file"><name>QdbColumnValue.java</name>
+  </compound>
+  <compound refid="_qdb_deque_8java" kind="file"><name>QdbDeque.java</name>
+  </compound>
+  <compound refid="_qdb_double_aggregation_8java" kind="file"><name>QdbDoubleAggregation.java</name>
+  </compound>
+  <compound refid="_qdb_double_aggregation_collection_8java" kind="file"><name>QdbDoubleAggregationCollection.java</name>
+  </compound>
+  <compound refid="_qdb_double_column_collection_8java" kind="file"><name>QdbDoubleColumnCollection.java</name>
+  </compound>
+  <compound refid="_qdb_double_column_value_8java" kind="file"><name>QdbDoubleColumnValue.java</name>
+  </compound>
+  <compound refid="_qdb_entry_8java" kind="file"><name>QdbEntry.java</name>
+  </compound>
+  <compound refid="_qdb_entry_factory_8java" kind="file"><name>QdbEntryFactory.java</name>
+  </compound>
+  <compound refid="_qdb_entry_metadata_8java" kind="file"><name>QdbEntryMetadata.java</name>
+  </compound>
+  <compound refid="_qdb_entry_tags_8java" kind="file"><name>QdbEntryTags.java</name>
+  </compound>
+  <compound refid="_qdb_expirable_entry_8java" kind="file"><name>QdbExpirableEntry.java</name>
+  </compound>
+  <compound refid="_qdb_expiry_time_8java" kind="file"><name>QdbExpiryTime.java</name>
+  </compound>
+  <compound refid="_qdb_future_8java" kind="file"><name>QdbFuture.java</name>
+  </compound>
+  <compound refid="_qdb_hash_set_8java" kind="file"><name>QdbHashSet.java</name>
+  </compound>
+  <compound refid="_qdb_id_8java" kind="file"><name>QdbId.java</name>
+  </compound>
+  <compound refid="_qdb_integer_8java" kind="file"><name>QdbInteger.java</name>
+  </compound>
+  <compound refid="_qdb_node_8java" kind="file"><name>QdbNode.java</name>
+  </compound>
+  <compound refid="_qdb_stream_8java" kind="file"><name>QdbStream.java</name>
+  </compound>
+  <compound refid="_qdb_stream_channel_8java" kind="file"><name>QdbStreamChannel.java</name>
+  </compound>
+  <compound refid="_qdb_tag_8java" kind="file"><name>QdbTag.java</name>
+  </compound>
+  <compound refid="_qdb_tag_entries_8java" kind="file"><name>QdbTagEntries.java</name>
+  </compound>
+  <compound refid="_qdb_time_series_8java" kind="file"><name>QdbTimeSeries.java</name>
+  </compound>
+</doxygenindex>

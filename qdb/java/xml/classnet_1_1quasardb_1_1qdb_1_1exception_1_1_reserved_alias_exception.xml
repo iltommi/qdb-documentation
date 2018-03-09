@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::ReservedAliasException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.InputException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception_1a1ad26eb697833537b03c300cf4020ce5" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.ReservedAliasException.ReservedAliasException</definition>
+        <argsstring>()</argsstring>
+        <name>ReservedAliasException</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/input/ReservedAliasException.java" line="8" column="1" bodyfile="exception/input/ReservedAliasException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the specified alias is reserved for quasardb intenal use. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="307">
+        <label>net.quasardb.qdb.exception.ReservedAliasException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception"/>
+        <childnode refid="308" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="310">
+        <label>RuntimeException</label>
+      </node>
+      <node id="308">
+        <label>net.quasardb.qdb.exception.InputException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception"/>
+        <childnode refid="309" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="309">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="310" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="311">
+        <label>net.quasardb.qdb.exception.ReservedAliasException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception"/>
+        <childnode refid="312" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="314">
+        <label>RuntimeException</label>
+      </node>
+      <node id="312">
+        <label>net.quasardb.qdb.exception.InputException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception"/>
+        <childnode refid="313" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="313">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="314" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/input/ReservedAliasException.java" line="6" column="1" bodyfile="exception/input/ReservedAliasException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ReservedAliasException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_input_exception_1ad5b6e09fc8b66e9fbec208904b47a93d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ReservedAliasException</scope><name>InputException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_reserved_alias_exception_1a1ad26eb697833537b03c300cf4020ce5" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::ReservedAliasException</scope><name>ReservedAliasException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

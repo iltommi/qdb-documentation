@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_f589aaf40904425344c8ecec85405494" kind="dir">
+    <compoundname>exception/system/remote</compoundname>
+    <innerfile refid="_remote_system_exception_8java">RemoteSystemException.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="exception/system/remote/"/>
+  </compounddef>
+</doxygen>

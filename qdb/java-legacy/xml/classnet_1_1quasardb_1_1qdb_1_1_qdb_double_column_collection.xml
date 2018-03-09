@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbDoubleColumnCollection</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection" prot="public" virt="non-virtual">net.quasardb.qdb.QdbColumnCollection&lt; QdbDoubleColumnValue &gt;</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1aa3b90e7d533a35f5fa44129d5428bf20" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbDoubleColumnCollection.QdbDoubleColumnCollection</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>QdbDoubleColumnCollection</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnCollection.java" line="11" column="1" bodyfile="QdbDoubleColumnCollection.java" bodystart="11" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1ab7a3384ac9e542d195445506aa8c766b" prot="package" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>qdb_ts_double_point []</type>
+        <definition>qdb_ts_double_point [] net.quasardb.qdb.QdbDoubleColumnCollection.toNative</definition>
+        <argsstring>()</argsstring>
+        <name>toNative</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnCollection.java" line="15" column="1" bodyfile="QdbDoubleColumnCollection.java" bodystart="15" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="package-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1a9f34e3273f1f3b84795b5493ffe42539" prot="package" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection" kindref="compound">QdbDoubleColumnCollection</ref></type>
+        <definition>static QdbDoubleColumnCollection net.quasardb.qdb.QdbDoubleColumnCollection.fromNative</definition>
+        <argsstring>(String alias, qdb_ts_double_point[] input)</argsstring>
+        <name>fromNative</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <param>
+          <type>qdb_ts_double_point []</type>
+          <declname>input</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbDoubleColumnCollection.java" line="21" column="1" bodyfile="QdbDoubleColumnCollection.java" bodystart="21" bodyend="29"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <inheritancegraph>
+      <node id="76">
+        <label>net.quasardb.qdb.QdbColumnCollection&lt; QdbDoubleColumnValue &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection"/>
+      </node>
+      <node id="75">
+        <label>net.quasardb.qdb.QdbDoubleColumnCollection</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection"/>
+        <childnode refid="76" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="78">
+        <label>net.quasardb.qdb.QdbColumnCollection&lt; QdbDoubleColumnValue &gt;</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection"/>
+      </node>
+      <node id="77">
+        <label>net.quasardb.qdb.QdbDoubleColumnCollection</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection"/>
+        <childnode refid="78" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbDoubleColumnCollection.java" line="10" column="1" bodyfile="QdbDoubleColumnCollection.java" bodystart="10" bodyend="31"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7f62bac1f0e459e2f617c40799f19690" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>column</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1af7dcece96a372c6aff95d5e4cbd316fe" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1a9f34e3273f1f3b84795b5493ffe42539" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>fromNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a7ab684c1f0c42abe932f503f3318d54e" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>getColumn</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a32a49c540e616b3177c943eebbcd286a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>QdbColumnCollection</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1aa3b90e7d533a35f5fa44129d5428bf20" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>QdbDoubleColumnCollection</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a8fba027e82cbd6cc49a84da6833e72a4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>range</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_double_column_collection_1ab7a3384ac9e542d195445506aa8c766b" prot="package" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>toNative</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_column_collection_1a0d5ae1a12b37027acd897a1634dd255a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbDoubleColumnCollection</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

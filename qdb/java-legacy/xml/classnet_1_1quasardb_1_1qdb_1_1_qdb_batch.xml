@@ -1,0 +1,495 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbBatch</compoundname>
+    <basecompoundref prot="public" virt="non-virtual">AutoCloseable</basecompoundref>
+      <sectiondef kind="private-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ac89295410454bc36760fe1021e98d8ce" prot="private" static="no" mutable="no">
+        <type>final Session</type>
+        <definition>final Session net.quasardb.qdb.QdbBatch.session</definition>
+        <argsstring></argsstring>
+        <name>session</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="14" column="1" bodyfile="QdbBatch.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1d0aeea3bc319dba866b6271dc4a3487" prot="private" static="no" mutable="no">
+        <type>LinkedList&lt; QdbBatchOperation &gt;</type>
+        <definition>LinkedList&lt;QdbBatchOperation&gt; net.quasardb.qdb.QdbBatch.operations</definition>
+        <argsstring></argsstring>
+        <name>operations</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="15" column="1" bodyfile="QdbBatch.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1abc24dd37f9a529943e5733d5beba58e4" prot="private" static="no" mutable="no">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBatch.hasRun</definition>
+        <argsstring></argsstring>
+        <name>hasRun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="16" column="1" bodyfile="QdbBatch.java" bodystart="16" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1ff259d620b1f6b3a76cb369d5456a67" prot="private" static="no" mutable="no">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbBatch.successCount</definition>
+        <argsstring></argsstring>
+        <name>successCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="17" column="1" bodyfile="QdbBatch.java" bodystart="17" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2e6bf6062942aef6b899311375c370a9" prot="private" static="no" mutable="no">
+        <type>long</type>
+        <definition>long net.quasardb.qdb.QdbBatch.batch</definition>
+        <argsstring></argsstring>
+        <name>batch</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="18" column="1" bodyfile="QdbBatch.java" bodystart="18" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a9b7f26f8f241f37dbe426e5fd20ee662" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBatch.QdbBatch</definition>
+        <argsstring>(Session session)</argsstring>
+        <name>QdbBatch</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="21" column="1" bodyfile="QdbBatch.java" bodystart="21" bodyend="24"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a46f8849e7194943d3ef280592c8ad8db" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatch.finalize</definition>
+        <argsstring>()</argsstring>
+        <name>finalize</name>
+        <exceptions> throws Throwable </exceptions>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>If you forgot to call <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kindref="member">close()</ref> we have you covered. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="75" column="1" bodyfile="QdbBatch.java" bodystart="75" bodyend="78"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a7f4e06ec89076bae4d58f738e00164d2" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatch.addOperation</definition>
+        <argsstring>(QdbBatchOperation op)</argsstring>
+        <name>addOperation</name>
+        <param>
+          <type>QdbBatchOperation</type>
+          <declname>op</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="139" column="1" bodyfile="QdbBatch.java" bodystart="139" bodyend="143"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1aed0a29ff2597c4b1a59dcb34a5498b11" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBatch.hasRun</definition>
+        <argsstring>()</argsstring>
+        <name>hasRun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="145" column="1" bodyfile="QdbBatch.java" bodystart="145" bodyend="148"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a23b10a47ac9cba0a2402f70f6130bd3f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob" kindref="compound">QdbBatchBlob</ref></type>
+        <definition>QdbBatchBlob net.quasardb.qdb.QdbBatch.blob</definition>
+        <argsstring>(String alias)</argsstring>
+        <name>blob</name>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Add blob operations to the batch.</para><para>A call to this method is usually followed by a call to an operation. For example: <programlisting><codeline><highlight class="normal">QdbFuture&lt;ByteBuffer&gt;<sp/>result<sp/>=<sp/>myBatch.blob(&quot;myBlob&quot;).get();</highlight></codeline>
+</programlisting></para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>alias</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The alias of the blob you want to add operations for. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A handle to a virtual blob on with to perform the operation. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>BatchClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kindref="member">close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BatchAlreadyRunException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2407a58d9cc562809563b38832d8ab75" kindref="member">run()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="40" column="1" bodyfile="QdbBatch.java" bodystart="40" bodyend="44"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2407a58d9cc562809563b38832d8ab75" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatch.run</definition>
+        <argsstring>()</argsstring>
+        <name>run</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Executes all operations in the batch.</para><para>A batch can only be run once. Once a batch is run, most method will throw a BatchAlreadyRunException.</para><para><parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>BatchClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kindref="member">close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BatchAlreadyRunException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2407a58d9cc562809563b38832d8ab75" kindref="member">run()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="55" column="1" bodyfile="QdbBatch.java" bodystart="55" bodyend="69"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatch.close</definition>
+        <argsstring>()</argsstring>
+        <name>close</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Release the memory allocated by quasardb.</para><para>Once this method has been called, most other methods will throw BatchClosedException. </para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="85" column="1" bodyfile="QdbBatch.java" bodystart="85" bodyend="91"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a680272fb3eb4e1d50125b2785c6c5b85" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBatch.success</definition>
+        <argsstring>()</argsstring>
+        <name>success</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Check if all operations executed successfully.</para><para><simplesect kind="return"><para>true if all operations succeeded, false if any operation failed. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>BatchClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kindref="member">close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BatchNotRunException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2407a58d9cc562809563b38832d8ab75" kindref="member">run()</ref> has not been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="100" column="1" bodyfile="QdbBatch.java" bodystart="100" bodyend="104"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ad7bfaaaa4d49842a4205fdfc8ce8dd26" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbBatch.operationCount</definition>
+        <argsstring>()</argsstring>
+        <name>operationCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the total number of operations in the batch</para><para><simplesect kind="return"><para>The number of operations that the batch contains. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>BatchClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kindref="member">close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="112" column="1" bodyfile="QdbBatch.java" bodystart="112" bodyend="115"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1adb4bb5bef5bea08b300850b53f7390d7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>int</type>
+        <definition>int net.quasardb.qdb.QdbBatch.successCount</definition>
+        <argsstring>()</argsstring>
+        <name>successCount</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Gets the number of successful operations</para><para><simplesect kind="return"><para>The number of successful operations </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>BatchClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kindref="member">close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>BatchNotRunException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2407a58d9cc562809563b38832d8ab75" kindref="member">run()</ref> has not been called. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="124" column="1" bodyfile="QdbBatch.java" bodystart="124" bodyend="128"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8e7c8990fbb074920af8f84df038fbbe" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBatch.isClosed</definition>
+        <argsstring>()</argsstring>
+        <name>isClosed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Checks if <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" kindref="member">close()</ref> has been called.</para><para><simplesect kind="return"><para>true if batch has been closed, false if not </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="135" column="1" bodyfile="QdbBatch.java" bodystart="135" bodyend="137"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a09ce9ae234718f07a358a9978151b6f9" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatch.throwIfClosed</definition>
+        <argsstring>()</argsstring>
+        <name>throwIfClosed</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="150" column="1" bodyfile="QdbBatch.java" bodystart="150" bodyend="153"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a3ee0976b94515bae0fced604b5c160ed" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatch.throwIfHasRun</definition>
+        <argsstring>()</argsstring>
+        <name>throwIfHasRun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="155" column="1" bodyfile="QdbBatch.java" bodystart="155" bodyend="158"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ae2810565edb6985e97f55c42dc5eabfd" prot="private" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBatch.throwIfNotRun</definition>
+        <argsstring>()</argsstring>
+        <name>throwIfNotRun</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="160" column="1" bodyfile="QdbBatch.java" bodystart="160" bodyend="163"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="private-static-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a34460f1bbff5c5311854baab84307807" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>long</type>
+        <definition>static long net.quasardb.qdb.QdbBatch.create_batch</definition>
+        <argsstring>(Session session, int count)</argsstring>
+        <name>create_batch</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>int</type>
+          <declname>count</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="165" column="1" bodyfile="QdbBatch.java" bodystart="165" bodyend="170"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a6322e186955a3274e9f7b3dba7bb26e8" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void net.quasardb.qdb.QdbBatch.delete_batch</definition>
+        <argsstring>(Session session, long batch)</argsstring>
+        <name>delete_batch</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>long</type>
+          <declname>batch</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="172" column="1" bodyfile="QdbBatch.java" bodystart="172" bodyend="175"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2664e905882685062817c11c80389c3f" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void net.quasardb.qdb.QdbBatch.write_operations_to_batch</definition>
+        <argsstring>(long batch, Iterable&lt; QdbBatchOperation &gt; operations)</argsstring>
+        <name>write_operations_to_batch</name>
+        <param>
+          <type>long</type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>Iterable&lt; QdbBatchOperation &gt;</type>
+          <declname>operations</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="177" column="1" bodyfile="QdbBatch.java" bodystart="177" bodyend="181"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1bffa78842abd88f9c4596ae116e2dc3" prot="private" static="yes" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>static void net.quasardb.qdb.QdbBatch.read_operations_from_batch</definition>
+        <argsstring>(long batch, Iterable&lt; QdbBatchOperation &gt; operations)</argsstring>
+        <name>read_operations_from_batch</name>
+        <param>
+          <type>long</type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>Iterable&lt; QdbBatchOperation &gt;</type>
+          <declname>operations</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatch.java" line="183" column="1" bodyfile="QdbBatch.java" bodystart="183" bodyend="187"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A batch containing a list of operation.</para><para>Batches are used to reduce the number of requests by performing several operations in one request. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="7">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="6">
+        <label>net.quasardb.qdb.QdbBatch</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch"/>
+        <childnode refid="7" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="9">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="8">
+        <label>net.quasardb.qdb.QdbBatch</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch"/>
+        <childnode refid="9" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbBatch.java" line="13" column="1" bodyfile="QdbBatch.java" bodystart="13" bodyend="188"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a7f4e06ec89076bae4d58f738e00164d2" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>addOperation</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2e6bf6062942aef6b899311375c370a9" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>batch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a23b10a47ac9cba0a2402f70f6130bd3f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>blob</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8a48d6e9ca8e4c10f22f2a37065d85dd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>close</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a34460f1bbff5c5311854baab84307807" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>create_batch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a6322e186955a3274e9f7b3dba7bb26e8" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>delete_batch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a46f8849e7194943d3ef280592c8ad8db" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>finalize</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1abc24dd37f9a529943e5733d5beba58e4" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>hasRun</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1aed0a29ff2597c4b1a59dcb34a5498b11" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>hasRun</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a8e7c8990fbb074920af8f84df038fbbe" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>isClosed</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ad7bfaaaa4d49842a4205fdfc8ce8dd26" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>operationCount</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1d0aeea3bc319dba866b6271dc4a3487" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>operations</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a9b7f26f8f241f37dbe426e5fd20ee662" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>QdbBatch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1bffa78842abd88f9c4596ae116e2dc3" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>read_operations_from_batch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2407a58d9cc562809563b38832d8ab75" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>run</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ac89295410454bc36760fe1021e98d8ce" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a680272fb3eb4e1d50125b2785c6c5b85" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>success</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a1ff259d620b1f6b3a76cb369d5456a67" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>successCount</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1adb4bb5bef5bea08b300850b53f7390d7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>successCount</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a09ce9ae234718f07a358a9978151b6f9" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>throwIfClosed</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a3ee0976b94515bae0fced604b5c160ed" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>throwIfHasRun</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1ae2810565edb6985e97f55c42dc5eabfd" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>throwIfNotRun</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_1a2664e905882685062817c11c80389c3f" prot="private" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatch</scope><name>write_operations_to_batch</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

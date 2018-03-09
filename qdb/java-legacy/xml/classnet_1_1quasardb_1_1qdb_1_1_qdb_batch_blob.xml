@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbBatchBlob</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry" prot="public" virt="non-virtual">net.quasardb.qdb.QdbBatchEntry</basecompoundref>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1ad3101c29c31f56c9c9d8a03f12d965e5" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBatchBlob.QdbBatchBlob</definition>
+        <argsstring>(QdbBatch batch, String alias)</argsstring>
+        <name>QdbBatchBlob</name>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch" kindref="compound">QdbBatch</ref></type>
+          <declname>batch</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="11" column="1" bodyfile="QdbBatchBlob.java" bodystart="11" bodyend="13"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a445c3642aaeba17a6d3d40b4a9df3675" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; ByteBuffer &gt;</type>
+        <definition>QdbFuture&lt;ByteBuffer&gt; net.quasardb.qdb.QdbBatchBlob.compareAndSwap</definition>
+        <argsstring>(ByteBuffer newContent, ByteBuffer comparand)</argsstring>
+        <name>compareAndSwap</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>newContent</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>comparand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a &quot;compareAndSwap&quot; operation to the batch: &quot;Atomically compares the content of the blob and replaces it, if it matches.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be updated to the server in case of match. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comparand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be compared to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a8698950e8ea4694cdc6ce6cf0949843a" kindref="member">QdbBlob::compareAndSwap(ByteBuffer, ByteBuffer)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="23" column="1" bodyfile="QdbBatchBlob.java" bodystart="23" bodyend="25"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a01579e9feb2fe5624af5f701609d0219" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; ByteBuffer &gt;</type>
+        <definition>QdbFuture&lt;ByteBuffer&gt; net.quasardb.qdb.QdbBatchBlob.compareAndSwap</definition>
+        <argsstring>(ByteBuffer newContent, ByteBuffer comparand, QdbExpiryTime expiryTime)</argsstring>
+        <name>compareAndSwap</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>newContent</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>comparand</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a &quot;compareAndSwap&quot; operation to the batch: &quot;Atomically compares the content of the blob and replaces it, if it matches.&quot;"</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be updated to the server, in case of match. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comparand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be compared to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new expiry time of the blob, in case of match </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab2b4c2dba4e28fe7e3e51296587e564c" kindref="member">QdbBlob::compareAndSwap(ByteBuffer, ByteBuffer, QdbExpiryTime)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="36" column="1" bodyfile="QdbBatchBlob.java" bodystart="36" bodyend="55"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a424082358d261d745c1bd9a1cc01bf2e" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; ByteBuffer &gt;</type>
+        <definition>QdbFuture&lt;ByteBuffer&gt; net.quasardb.qdb.QdbBatchBlob.get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a &quot;get&quot; operation to the batch: &quot;Read the content of the blob.&quot;</para><para><simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a2938338e615b82dedf3a92b55c7bca37" kindref="member">QdbBlob::get()</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="63" column="1" bodyfile="QdbBatchBlob.java" bodystart="63" bodyend="82"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1aa3f906ade93ac45f95881009ecd96d81" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; ByteBuffer &gt;</type>
+        <definition>QdbFuture&lt;ByteBuffer&gt; net.quasardb.qdb.QdbBatchBlob.getAndUpdate</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>getAndUpdate</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a &quot;getAndUpdate&quot; operation to the batch: &quot;Atomically reads and replaces (in this order) the content of blob.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set, before being replaced. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a433d42c9884b737ff4cc07b703dfd7b0" kindref="member">QdbBlob::getAndUpdate(ByteBuffer)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="91" column="1" bodyfile="QdbBatchBlob.java" bodystart="91" bodyend="93"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1ad9b49aa11f95577dd378420b34e027e9" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; ByteBuffer &gt;</type>
+        <definition>QdbFuture&lt;ByteBuffer&gt; net.quasardb.qdb.QdbBatchBlob.getAndUpdate</definition>
+        <argsstring>(ByteBuffer content, QdbExpiryTime expiryTime)</argsstring>
+        <name>getAndUpdate</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a &quot;getAndUpdate&quot; operation to the batch: &quot;Atomically reads and replaces (in this order) the content of blob.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set, before being replaced. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new expiry time of the blob. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acc1d01a7984e7c6947906b9ba10b3c9d" kindref="member">QdbBlob::getAndUpdate(ByteBuffer,QdbExpiryTime)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="103" column="1" bodyfile="QdbBatchBlob.java" bodystart="103" bodyend="122"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a1e829ab13d7e558ed06ef94be19a9b1f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; Void &gt;</type>
+        <definition>QdbFuture&lt;Void&gt; net.quasardb.qdb.QdbBatchBlob.put</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>put</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a &quot;put&quot; operation to the batch: &quot;Create a new blob with the specified content. Fails if the blob already exists.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be created. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ad1e808200de3df609a85e5bdf94a897f" kindref="member">QdbBlob::put(ByteBuffer)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="131" column="1" bodyfile="QdbBatchBlob.java" bodystart="131" bodyend="133"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a336bbebb3fa8967825745d85ddf616cb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; Void &gt;</type>
+        <definition>QdbFuture&lt;Void&gt; net.quasardb.qdb.QdbBatchBlob.put</definition>
+        <argsstring>(ByteBuffer content, QdbExpiryTime expiryTime)</argsstring>
+        <name>put</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds a &quot;put&quot; operation to the batch: &quot;Create a new blob with the specified content. Fails if the blob already exists.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be created. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expiry time of the blob. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab27e1c9bec4731105d648830072eb29b" kindref="member">QdbBlob::put(ByteBuffer,QdbExpiryTime)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="143" column="1" bodyfile="QdbBatchBlob.java" bodystart="143" bodyend="162"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1af412f1639bb4c4336dcf19f275f0881c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; Void &gt;</type>
+        <definition>QdbFuture&lt;Void&gt; net.quasardb.qdb.QdbBatchBlob.update</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>update</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds an &quot;update&quot; operation to the batch: &quot;Replaces the content of the blob.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acf830f27d66f8d7e3ba1631176df3369" kindref="member">QdbBlob::update(ByteBuffer)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="171" column="1" bodyfile="QdbBatchBlob.java" bodystart="171" bodyend="173"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a670b967a907897738c06b69d19f074d4" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type><ref refid="interfacenet_1_1quasardb_1_1qdb_1_1_qdb_future" kindref="compound">QdbFuture</ref>&lt; Void &gt;</type>
+        <definition>QdbFuture&lt;Void&gt; net.quasardb.qdb.QdbBatchBlob.update</definition>
+        <argsstring>(ByteBuffer content, QdbExpiryTime expiryTime)</argsstring>
+        <name>update</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Adds an &quot;update&quot; operation to the batch: &quot;Replaces the content of the blob.&quot;</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new expiry time of the blob. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A future that will contain the result of the operation after the batch is run. </para></simplesect>
+<simplesect kind="see"><para><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1af9cfe1bfc27534d6c7b0b41f85f1ca40" kindref="member">QdbBlob::update(ByteBuffer,QdbExpiryTime)</ref> </para></simplesect>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBatchBlob.java" line="183" column="1" bodyfile="QdbBatchBlob.java" bodystart="183" bodyend="202"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>Add blob operations in a batch. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="10">
+        <label>net.quasardb.qdb.QdbBatchBlob</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob"/>
+        <childnode refid="11" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="11">
+        <label>net.quasardb.qdb.QdbBatchEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry"/>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="12">
+        <label>net.quasardb.qdb.QdbBatchBlob</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob"/>
+        <childnode refid="13" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="15">
+        <label>AutoCloseable</label>
+      </node>
+      <node id="13">
+        <label>net.quasardb.qdb.QdbBatchEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry"/>
+        <childnode refid="14" relation="usage">
+          <edgelabel>batch</edgelabel>
+        </childnode>
+      </node>
+      <node id="14">
+        <label>net.quasardb.qdb.QdbBatch</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch"/>
+        <childnode refid="15" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbBatchBlob.java" line="9" column="1" bodyfile="QdbBatchBlob.java" bodystart="9" bodyend="203"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1ad5961afc867429cd7723e3456c66e65b" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a6e17fe2ef792407d76d964890c86d9f4" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>assertNotAlreadyRun</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1a103b47ec3467b7a7547c7d3f389d789c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>batch</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a445c3642aaeba17a6d3d40b4a9df3675" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>compareAndSwap</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a01579e9feb2fe5624af5f701609d0219" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>compareAndSwap</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a424082358d261d745c1bd9a1cc01bf2e" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>get</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1aa3f906ade93ac45f95881009ecd96d81" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>getAndUpdate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1ad9b49aa11f95577dd378420b34e027e9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>getAndUpdate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a1e829ab13d7e558ed06ef94be19a9b1f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>put</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a336bbebb3fa8967825745d85ddf616cb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>put</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1ad3101c29c31f56c9c9d8a03f12d965e5" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>QdbBatchBlob</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_entry_1afbc6439cc2958ce7c5886f0bd4eda132" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>QdbBatchEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1af412f1639bb4c4336dcf19f275f0881c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>update</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_batch_blob_1a670b967a907897738c06b69d19f074d4" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBatchBlob</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="dir_e5bdf6bcb353eef476ed7a66082b6a34" kind="dir">
+    <compoundname>ts</compoundname>
+    <innerfile refid="_auto_flush_writer_8java">AutoFlushWriter.java</innerfile>
+    <innerfile refid="_column_8java">Column.java</innerfile>
+    <innerfile refid="_filtered_range_8java">FilteredRange.java</innerfile>
+    <innerfile refid="_nano_clock_8java">NanoClock.java</innerfile>
+    <innerfile refid="_query_8java">Query.java</innerfile>
+    <innerfile refid="_query_builder_8java">QueryBuilder.java</innerfile>
+    <innerfile refid="_reader_8java">Reader.java</innerfile>
+    <innerfile refid="_result_8java">Result.java</innerfile>
+    <innerfile refid="_row_8java">Row.java</innerfile>
+    <innerfile refid="_table_8java">Table.java</innerfile>
+    <innerfile refid="_time_range_8java">TimeRange.java</innerfile>
+    <innerfile refid="_timespec_8java">Timespec.java</innerfile>
+    <innerfile refid="_value_8java">Value.java</innerfile>
+    <innerfile refid="_writer_8java">Writer.java</innerfile>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <location file="ts/"/>
+  </compounddef>
+</doxygen>

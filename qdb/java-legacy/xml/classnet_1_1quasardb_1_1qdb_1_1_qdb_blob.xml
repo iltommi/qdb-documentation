@@ -1,0 +1,745 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::QdbBlob</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry" prot="public" virt="non-virtual">net.quasardb.qdb.QdbExpirableEntry</basecompoundref>
+      <sectiondef kind="protected-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a25b7352c5cac6f6dc044837016cfaa12" prot="protected" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.QdbBlob.QdbBlob</definition>
+        <argsstring>(Session session, String alias)</argsstring>
+        <name>QdbBlob</name>
+        <param>
+          <type>Session</type>
+          <declname>session</declname>
+        </param>
+        <param>
+          <type>String</type>
+          <declname>alias</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="14" column="1" bodyfile="QdbBlob.java" bodystart="14" bodyend="16"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a8698950e8ea4694cdc6ce6cf0949843a" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbBlob.compareAndSwap</definition>
+        <argsstring>(ByteBuffer newContent, ByteBuffer comparand)</argsstring>
+        <name>compareAndSwap</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>newContent</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>comparand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomically compares the content of the blob and replaces it, if it matches.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be updated to the server in case of match. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comparand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be compared to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns The original content if comparand doesn&apos;t match. Returns null otherwise. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="29" column="1" bodyfile="QdbBlob.java" bodystart="29" bodyend="31"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab2b4c2dba4e28fe7e3e51296587e564c" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbBlob.compareAndSwap</definition>
+        <argsstring>(ByteBuffer newContent, ByteBuffer comparand, QdbExpiryTime expiryTime)</argsstring>
+        <name>compareAndSwap</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>newContent</declname>
+        </param>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>comparand</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomically compares the content of the blob and replaces it, if it matches.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>newContent</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be updated to the server, in case of match. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>comparand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be compared to. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new expiry time of the blob, in case of match </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>Returns The original content if comparand doesn&apos;t match. Returns null otherwise. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the expiry time is in the past (with a certain tolerance) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="46" column="1" bodyfile="QdbBlob.java" bodystart="46" bodyend="52"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a2938338e615b82dedf3a92b55c7bca37" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbBlob.get</definition>
+        <argsstring>()</argsstring>
+        <name>get</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Read the content of the blob.</para><para><simplesect kind="return"><para>The current content. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="62" column="1" bodyfile="QdbBlob.java" bodystart="62" bodyend="68"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a3414df3e14f9ae25a6c0338c46c93878" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbBlob.getAndRemove</definition>
+        <argsstring>()</argsstring>
+        <name>getAndRemove</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomically reads the content of the blob and removes it.</para><para><simplesect kind="return"><para>The content of the blob, before being removed. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="79" column="1" bodyfile="QdbBlob.java" bodystart="79" bodyend="85"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a433d42c9884b737ff4cc07b703dfd7b0" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbBlob.getAndUpdate</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>getAndUpdate</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomically reads and replaces (in this order) the content of blob.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set, before being replaced. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>A buffer representing the content of the blob, before the update. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="97" column="1" bodyfile="QdbBlob.java" bodystart="97" bodyend="99"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acc1d01a7984e7c6947906b9ba10b3c9d" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>Buffer</type>
+        <definition>Buffer net.quasardb.qdb.QdbBlob.getAndUpdate</definition>
+        <argsstring>(ByteBuffer content, QdbExpiryTime expiryTime)</argsstring>
+        <name>getAndUpdate</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Atomically reads and replaces (in this order) the content of blob.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set, before being replaced. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new expiry time of the blob. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>The content of the blob to be set, before being replaced. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the expiry time is in the past (with a certain tolerance) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="113" column="1" bodyfile="QdbBlob.java" bodystart="113" bodyend="119"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ad1e808200de3df609a85e5bdf94a897f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBlob.put</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>put</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new blob with the specified content. Fails if the blob already exists.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be created. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasAlreadyExistsException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias already exists. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="129" column="1" bodyfile="QdbBlob.java" bodystart="129" bodyend="131"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab27e1c9bec4731105d648830072eb29b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>void</type>
+        <definition>void net.quasardb.qdb.QdbBlob.put</definition>
+        <argsstring>(ByteBuffer content, QdbExpiryTime expiryTime)</argsstring>
+        <name>put</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Create a new blob with the specified content. Fails if the blob already exists.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be created. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The expiry time of the blob. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasAlreadyExistsException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias already exists. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the expiry time is in the past (with a certain tolerance) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="143" column="1" bodyfile="QdbBlob.java" bodystart="143" bodyend="147"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab65a757e96cffbf481cfc80bc8cca67f" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBlob.removeIf</definition>
+        <argsstring>(ByteBuffer comparand)</argsstring>
+        <name>removeIf</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>comparand</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Removes the blob if its content matches comparand.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>comparand</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content to be compared to. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the blob was actually removed, false if not. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>AliasNotFoundException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If an entry matching the provided alias cannot be found. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="159" column="1" bodyfile="QdbBlob.java" bodystart="159" bodyend="164"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acf830f27d66f8d7e3ba1631176df3369" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBlob.update</definition>
+        <argsstring>(ByteBuffer content)</argsstring>
+        <name>update</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Replaces the content of the blob.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the blob was created, or false it it was updated. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="175" column="1" bodyfile="QdbBlob.java" bodystart="175" bodyend="177"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1af9cfe1bfc27534d6c7b0b41f85f1ca40" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>boolean</type>
+        <definition>boolean net.quasardb.qdb.QdbBlob.update</definition>
+        <argsstring>(ByteBuffer content, QdbExpiryTime expiryTime)</argsstring>
+        <name>update</name>
+        <param>
+          <type>ByteBuffer</type>
+          <declname>content</declname>
+        </param>
+        <param>
+          <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expiry_time" kindref="compound">QdbExpiryTime</ref></type>
+          <declname>expiryTime</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+<para>Replaces the content of the blob.</para><para><parameterlist kind="param"><parameteritem>
+<parameternamelist>
+<parametername>content</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The content of the blob to be set. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>expiryTime</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>The new expiry time of the blob. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+<simplesect kind="return"><para>true if the blob was created, or false it it was updated. </para></simplesect>
+<parameterlist kind="exception"><parameteritem>
+<parameternamelist>
+<parametername>ClusterClosedException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If <ref refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_cluster_1aabf45b6a7a3596fdf5a2bb347e19bb09" kindref="member">QdbCluster.close()</ref> has been called. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>IncompatibleTypeException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias has a type incompatible for this operation. </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>InvalidArgumentException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the expiry time is in the past (with a certain tolerance) </para></parameterdescription>
+</parameteritem>
+<parameteritem>
+<parameternamelist>
+<parametername>ReservedAliasException</parametername>
+</parameternamelist>
+<parameterdescription>
+<para>If the alias name or prefix is reserved for quasardb internal use. </para></parameterdescription>
+</parameteritem>
+</parameterlist>
+</para>        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="QdbBlob.java" line="190" column="1" bodyfile="QdbBlob.java" bodystart="190" bodyend="195"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>A blob in the database. Blob stands for &quot;Binary Large Object&quot;, it&apos;s an entry which store binary data. </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="29">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="27">
+        <label>net.quasardb.qdb.QdbBlob</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob"/>
+        <childnode refid="28" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="28">
+        <label>net.quasardb.qdb.QdbExpirableEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry"/>
+        <childnode refid="29" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="32">
+        <label>net.quasardb.qdb.QdbEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry"/>
+      </node>
+      <node id="30">
+        <label>net.quasardb.qdb.QdbBlob</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob"/>
+        <childnode refid="31" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="31">
+        <label>net.quasardb.qdb.QdbExpirableEntry</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry"/>
+        <childnode refid="32" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="QdbBlob.java" line="12" column="1" bodyfile="QdbBlob.java" bodystart="12" bodyend="196"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a521c78d569e2d6edfd9a06fc53a236ac" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0a5e7e2f6f97cd137be32c365052c860" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>alias</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a1d73e0768608d79aa0c1f849f84876cd" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1adbbc0a5ae92ed4a78c3be7931d375907" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>attachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a8698950e8ea4694cdc6ce6cf0949843a" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>compareAndSwap</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab2b4c2dba4e28fe7e3e51296587e564c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>compareAndSwap</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ac274499da527ee31c0571eb1456f0f6c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a85c91ef5a8238644f41d2d6417fb0f37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>detachTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a69f088ca08d42f74de828c12eb15426b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a6992443bb288f6bc0107a33fb0e8604c" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>equals</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a477a82e0324a7a1ebdc102b8a6e71dd8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>expiryTime</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1a8c644748552b475069a95227c80830d9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>expiryTime</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a2938338e615b82dedf3a92b55c7bca37" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>get</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a3414df3e14f9ae25a6c0338c46c93878" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>getAndRemove</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a433d42c9884b737ff4cc07b703dfd7b0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>getAndUpdate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acc1d01a7984e7c6947906b9ba10b3c9d" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>getAndUpdate</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0cac46d2604b4376240e4502c2dd13aa" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>hashCode</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ab32f5541fd79c240a98fdc41d4fe6f91" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1ae9b4ea850051e3f868caa0c9eddea5fc" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>hasTag</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a2b6953f805ad2caf35f746fbcf9e9fb9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>metadata</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aedd62e1fa19e52291a236cdc206609ab" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>node</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ad1e808200de3df609a85e5bdf94a897f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>put</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab27e1c9bec4731105d648830072eb29b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>put</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1a25b7352c5cac6f6dc044837016cfaa12" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>QdbBlob</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1aca89597a317396c44cf95c734becd78c" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>QdbEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_expirable_entry_1ad7fcfdddc2908c7b8842383d1cbdf2be" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>QdbExpirableEntry</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a9dcc4788d6caee2363c65ae142bfb2ca" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>remove</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1ab65a757e96cffbf481cfc80bc8cca67f" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>removeIf</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a89963572238447fac96b58e8a4e4034a" prot="protected" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>session</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_entry_1a0301f8e4b9115510ffd9dd025a77b411" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>tags</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1acf830f27d66f8d7e3ba1631176df3369" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>update</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1_qdb_blob_1af9cfe1bfc27534d6c7b0b41f85f1ca40" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::QdbBlob</scope><name>update</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

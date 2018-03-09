@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::exception::LocalSystemException</compoundname>
+    <basecompoundref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception" prot="public" virt="non-virtual">net.quasardb.qdb.exception.SystemException</basecompoundref>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception_1a4be777e99f2c50f870b6290dae890be7" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.exception.LocalSystemException.LocalSystemException</definition>
+        <argsstring>(String message)</argsstring>
+        <name>LocalSystemException</name>
+        <param>
+          <type>String</type>
+          <declname>message</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="exception/system/local/LocalSystemException.java" line="8" column="1" bodyfile="exception/system/local/LocalSystemException.java" bodystart="8" bodyend="10"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para><ref refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception" kindref="compound">Exception</ref> thrown when the local (ie client) operating system caused an error </para>    </detaileddescription>
+    <inheritancegraph>
+      <node id="219">
+        <label>net.quasardb.qdb.exception.SystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception"/>
+        <childnode refid="220" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="221">
+        <label>RuntimeException</label>
+      </node>
+      <node id="218">
+        <label>net.quasardb.qdb.exception.LocalSystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception"/>
+        <childnode refid="219" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="220">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="221" relation="public-inheritance">
+        </childnode>
+      </node>
+    </inheritancegraph>
+    <collaborationgraph>
+      <node id="223">
+        <label>net.quasardb.qdb.exception.SystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception"/>
+        <childnode refid="224" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="225">
+        <label>RuntimeException</label>
+      </node>
+      <node id="222">
+        <label>net.quasardb.qdb.exception.LocalSystemException</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception"/>
+        <childnode refid="223" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="224">
+        <label>net.quasardb.qdb.exception.Exception</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception"/>
+        <childnode refid="225" relation="public-inheritance">
+        </childnode>
+      </node>
+    </collaborationgraph>
+    <location file="exception/system/local/LocalSystemException.java" line="6" column="1" bodyfile="exception/system/local/LocalSystemException.java" bodystart="6" bodyend="11"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_exception_1aa9ab5858e80e3d7ca5d9f45c80b91977" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::LocalSystemException</scope><name>Exception</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_local_system_exception_1a4be777e99f2c50f870b6290dae890be7" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::LocalSystemException</scope><name>LocalSystemException</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1exception_1_1_system_exception_1aca492c590628ea1834a845eede6eefe2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::exception::LocalSystemException</scope><name>SystemException</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

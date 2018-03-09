@@ -1,0 +1,124 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Result</compoundname>
+    <innerclass refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table" prot="public">net::quasardb::qdb::ts::Result::Table</innerclass>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1a15310f6a299548f4569afb663769f381" prot="public" static="no" mutable="no">
+        <type>Table []</type>
+        <definition>Table [] net.quasardb.qdb.ts.Result.tables</definition>
+        <argsstring></argsstring>
+        <name>tables</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="10" column="1" bodyfile="ts/Result.java" bodystart="10" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1ac42f90dd3b5b985d251bc7712d3864c2" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Result.Result</definition>
+        <argsstring>()</argsstring>
+        <name>Result</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="22" column="1" bodyfile="ts/Result.java" bodystart="22" bodyend="23"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1aee013a156e3a36a8f9fdb8bddaabb7e8" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type></type>
+        <definition>net.quasardb.qdb.ts.Result.Result</definition>
+        <argsstring>(Table[] tables)</argsstring>
+        <name>Result</name>
+        <param>
+          <type>Table []</type>
+          <declname>tables</declname>
+        </param>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="25" column="1" bodyfile="ts/Result.java" bodystart="25" bodyend="27"/>
+      </memberdef>
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1a5a0631cd81cd030807d76a1ce788d49b" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.Result.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="29" column="1" bodyfile="ts/Result.java" bodystart="29" bodyend="31"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+<para>The result of a <ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_query" kindref="compound">Query</ref> </para>    </detaileddescription>
+    <collaborationgraph>
+      <node id="326">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="327" relation="public-inheritance">
+        </childnode>
+        <childnode refid="328" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="329" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="330" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="330">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="327">
+        <label>Serializable</label>
+      </node>
+      <node id="325">
+        <label>net.quasardb.qdb.ts.Result.Table</label>
+        <childnode refid="326" relation="usage">
+          <edgelabel>rows</edgelabel>
+        </childnode>
+      </node>
+      <node id="324">
+        <label>net.quasardb.qdb.ts.Result</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result"/>
+        <childnode refid="325" relation="usage">
+          <edgelabel>tables</edgelabel>
+        </childnode>
+      </node>
+      <node id="329">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="327" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="328">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="ts/Result.java" line="8" column="1" bodyfile="ts/Result.java" bodystart="8" bodyend="32"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1ac42f90dd3b5b985d251bc7712d3864c2" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result</scope><name>Result</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1aee013a156e3a36a8f9fdb8bddaabb7e8" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result</scope><name>Result</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1a15310f6a299548f4569afb663769f381" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result</scope><name>tables</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1a5a0631cd81cd030807d76a1ce788d49b" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>

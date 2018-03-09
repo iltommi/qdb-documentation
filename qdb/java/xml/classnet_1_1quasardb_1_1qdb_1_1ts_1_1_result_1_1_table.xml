@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' standalone='no'?>
+<doxygen xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="compound.xsd" version="1.8.13">
+  <compounddef id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table" kind="class" language="Java" prot="public">
+    <compoundname>net::quasardb::qdb::ts::Result::Table</compoundname>
+      <sectiondef kind="public-attrib">
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a70893c34a6321c630c6b85a2e439f0c0" prot="public" static="no" mutable="no">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.Result.Table.name</definition>
+        <argsstring></argsstring>
+        <name>name</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="13" column="1" bodyfile="ts/Result.java" bodystart="13" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a4cb226079815e334761f3add31bffaf9" prot="public" static="no" mutable="no">
+        <type>String []</type>
+        <definition>String [] net.quasardb.qdb.ts.Result.Table.columns</definition>
+        <argsstring></argsstring>
+        <name>columns</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="14" column="1" bodyfile="ts/Result.java" bodystart="14" bodyend="-1"/>
+      </memberdef>
+      <memberdef kind="variable" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a07efff918d75e8250a91f72b0af13f24" prot="public" static="no" mutable="no">
+        <type><ref refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value" kindref="compound">Value</ref> [][]</type>
+        <definition>Value [][] net.quasardb.qdb.ts.Result.Table.rows</definition>
+        <argsstring></argsstring>
+        <name>rows</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="15" column="1" bodyfile="ts/Result.java" bodystart="15" bodyend="-1"/>
+      </memberdef>
+      </sectiondef>
+      <sectiondef kind="public-func">
+      <memberdef kind="function" id="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1ad02abf4ed0d9838d0bc46566754d10eb" prot="public" static="no" const="no" explicit="no" inline="yes" virt="non-virtual">
+        <type>String</type>
+        <definition>String net.quasardb.qdb.ts.Result.Table.toString</definition>
+        <argsstring>()</argsstring>
+        <name>toString</name>
+        <briefdescription>
+        </briefdescription>
+        <detaileddescription>
+        </detaileddescription>
+        <inbodydescription>
+        </inbodydescription>
+        <location file="ts/Result.java" line="17" column="1" bodyfile="ts/Result.java" bodystart="17" bodyend="19"/>
+      </memberdef>
+      </sectiondef>
+    <briefdescription>
+    </briefdescription>
+    <detaileddescription>
+    </detaileddescription>
+    <collaborationgraph>
+      <node id="364">
+        <label>net.quasardb.qdb.ts.Value</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_value"/>
+        <childnode refid="365" relation="public-inheritance">
+        </childnode>
+        <childnode refid="366" relation="usage">
+          <edgelabel>blobValue</edgelabel>
+        </childnode>
+        <childnode refid="367" relation="usage">
+          <edgelabel>timestampValue</edgelabel>
+        </childnode>
+        <childnode refid="368" relation="usage">
+          <edgelabel>type</edgelabel>
+        </childnode>
+      </node>
+      <node id="368">
+        <label>net.quasardb.qdb.ts.Value.Type</label>
+        <link refid="enumnet_1_1quasardb_1_1qdb_1_1ts_1_1_value_1_1_type"/>
+      </node>
+      <node id="365">
+        <label>Serializable</label>
+      </node>
+      <node id="363">
+        <label>net.quasardb.qdb.ts.Result.Table</label>
+        <childnode refid="364" relation="usage">
+          <edgelabel>rows</edgelabel>
+        </childnode>
+      </node>
+      <node id="367">
+        <label>net.quasardb.qdb.ts.Timespec</label>
+        <link refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_timespec"/>
+        <childnode refid="365" relation="public-inheritance">
+        </childnode>
+      </node>
+      <node id="366">
+        <label>ByteBuffer</label>
+      </node>
+    </collaborationgraph>
+    <location file="ts/Result.java" line="12" column="1" bodyfile="ts/Result.java" bodystart="12" bodyend="20"/>
+    <listofallmembers>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a4cb226079815e334761f3add31bffaf9" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result::Table</scope><name>columns</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a70893c34a6321c630c6b85a2e439f0c0" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result::Table</scope><name>name</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1a07efff918d75e8250a91f72b0af13f24" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result::Table</scope><name>rows</name></member>
+      <member refid="classnet_1_1quasardb_1_1qdb_1_1ts_1_1_result_1_1_table_1ad02abf4ed0d9838d0bc46566754d10eb" prot="public" virt="non-virtual"><scope>net::quasardb::qdb::ts::Result::Table</scope><name>toString</name></member>
+    </listofallmembers>
+  </compounddef>
+</doxygen>
