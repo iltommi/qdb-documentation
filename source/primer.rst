@@ -52,7 +52,7 @@ This is the code you need to write:
     # creating the timeseries in the database
     # it will return a list of created columns that we don't need here
     # and throw an error if the timeseries already exist
-    ts.create([quasardb.TimeSeries.DoubleColumnInfo("close")])
+    my_ts.create([quasardb.TimeSeries.DoubleColumnInfo("close")])
 
 You create the timeseries only once, like you create a table in a SQL database only once. If you wish to delete (drop) the whole timeseries, you do the following.
 
@@ -61,7 +61,7 @@ You create the timeseries only once, like you create a table in a SQL database o
     c = quasardb.Cluster("qdb://127.0.0.1:2836")
     my_ts = c.ts("stocks")
     # remove the whole timeseries, in one call
-    ts.remove()
+    my_ts.remove()
 
 .. note::
     Operations performed on timeseries are transactional. |quasardb| uses MVCC and 2PC to provide you with a high level of reliability.
