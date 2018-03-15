@@ -249,7 +249,7 @@ Examples:
 Select
 ^^^^^^
 
-Select currently requires a time range and does not support where clauses::
+Select currently requires a time range and supports where clauses::
 
     <columns> ::= "*" | (<expression> ("," <expression>)+)
     <lookup> ::= <identifier> | <find>
