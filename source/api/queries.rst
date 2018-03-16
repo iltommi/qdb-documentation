@@ -38,19 +38,19 @@ Lookup examples
 
 Find all entries that have the tag "stocks"::
 
-    find(tag="stocks")
+    find(tag='stocks')
 
 Find all entries that have the tags "stocks", "euro", "industry"::
 
-    find(tag="stocks" and tag="euro" and tag="industry")
+    find(tag='stocks' and tag='euro' and tag='industry')
 
 Find all entries that have the tags "stocks", "euro", "industry" but not "germany"::
 
-    find(tag="stocks" and tag="euro" and tag="industry" and not tag="germany")
+    find(tag='stocks' and tag='euro' and tag='industry' and not tag='germany')
 
 Find all entries that have the tags "stocks", "euro", "industry" but not "germany", and are a time series::
 
-    find(tag="stocks" and tag="euro" and tag="industry" and not tag="germany" and type=ts)
+    find(tag='stocks' and tag='euro' and tag='industry' and not tag='germany' and type=ts)
 
 Basic select examples
 ----------------------
