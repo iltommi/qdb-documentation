@@ -24,6 +24,12 @@ Before we publish the documentation, we validate it in the [Documentation -> Val
 
 Only when the validation step succeeds, a deploy is triggered and the documentation will be pushed to our webserver. Based on the branch being deployed, TeamCity will automatically put the documentation in the correct path such that `/master/` refers to the master branch and `/1.2.3` refers to the version branch.
 
+# TODO
+
+There still is one problem with the current build pipeline: As you can see in the build chain below, it is as if the build of `qdb-doc engine` is the main repository that contains all documentation, but that is not in fact the case. `qdb-doc-engine` is a tool to build documentation, but the `qdb-documentation` (this repository) is actually what we want to build. We should separate the two projects: `qdb-doc-engine` should trigger to build its docker container, and `qdb-documentation` should run inside that docker container. 
+
+
+
 # Build chain
 
 For completeness sake, this is what the build pipeline looks like:
