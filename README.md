@@ -21,3 +21,9 @@ Before we publish the documentation, we validate it in the [Documentation -> Val
 ## Deployment
 
 Only when the validation step succeeds, a deploy is triggered and the documentation will be pushed to our webserver. Based on the branch being deployed, TeamCity will automatically put the documentation in the correct path such that `/master/` refers to the master branch and `/1.2.3` refers to the version branch.
+
+# Build chain
+
+For completeness sake, this is what the build pipeline looks like:
+
+![alt text](https://raw.githubusercontent.com/bureau14/qdb-documentation/master/build-chain.png)
