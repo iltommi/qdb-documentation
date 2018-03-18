@@ -40,6 +40,10 @@ Find all entries that have the tag "stocks"::
 
     find(tag='stocks')
 
+Find all timeseries that have the tag "stocks"::
+
+    find(tag='stocks' type=ts)
+
 Find all entries that have the tags "stocks", "euro", "industry"::
 
     find(tag='stocks' and tag='euro' and tag='industry')
