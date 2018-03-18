@@ -8,6 +8,8 @@ The current build process (as reflected in TeamCity) is as follows:
 
 This step assembles all the documentation sources as; at the moment of writing, this essentially means checking out all API repositories (qdb-api-java, qdb-api-go, etc) and checking out this repository. Any change in any of these repositories will automatically trigger this project.
 
+This is a significant change since the previous iteration of the documentation pipeline: qdb-doc-engine used to pull in its dependencies itself, but this ultimately proved fragile and inflexible when dealing with versioning. By leveraging TeamCity assemble the dependencies, we get flexible branch/version management and build triggers for free.
+
 In TeamCity, this is currently the first step of the build of the [Documentation -> Doc Engine](https://teamcity.quasardb.net/viewType.html?buildTypeId=Documentation_DocEngine) project.
 
 ## Generate documentation (qdb-doc-engine)
