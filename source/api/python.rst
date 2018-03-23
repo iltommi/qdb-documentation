@@ -83,6 +83,14 @@ The execution of the above code snippet will output:
 
     content
 
+If your cluster is set up using security features, you can provide authentication details as follows:
+
+.. testcode:: quasardb
+    c = quasardb.Cluster(uri='qdb://127.0.0.1:2836',
+                         user_name='qdbuser',
+                         user_private_key='/var/lib/qdb/user_private.key')
+
+
 Timeout
 -------
 
@@ -174,4 +182,3 @@ Reference
     :members:
     :inherited-members:
     :show-inheritance:
-
