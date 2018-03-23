@@ -790,7 +790,7 @@ If you later wish to unregister the callback:
     :end-before: doc-end-log_remove_callback
     :dedent: 16
 
-You may pass a null pointer as callback identifier to :func:`qdb_log_add_callback`, but then you will lose the possibility to unregister it.  T
+You may pass a null pointer as callback identifier to :func:`qdb_log_add_callback`, but then you will lose the possibility to unregister it.
 
 .. literalinclude:: ../../../apis/c/examples/c/log_callback.c
     :start-after: doc-start-log_add_callback-no-cid
