@@ -1,6 +1,9 @@
 C++
 ====
 
+ T
+
+
 .. default-domain:: cpp
 .. cpp:namespace:: qdb
 .. highlight:: cpp
