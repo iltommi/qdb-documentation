@@ -96,6 +96,36 @@ The "current" state of the cluster is what is iterated upon. No "snapshot" is ma
 .. note::
     Entries cannot be iterated if the cluster is in transient mode.
 
+Automatic recovery
+------------------
+
+Network disruptions
+^^^^^^^^^^^^^^^^^^^
+
+In case of a network error, such as a connection reset, the API will automatically attempt to repair the connection one time. This is to protect the client from temporary network disruptions that can occur in very busy infrastructures.
+
+Timeout
+^^^^^^^
+
+The client API has a configurable network timeout, which cannot be zero. When a client receives no answer from the server after the timeout duration, it will consider this has a timeout error.
+
+Certain operations, that can be particularly long (such as cluster trimming), have an optional timeout parameter which will be used instead of the default timeout parameter.
+
+Unstable cluster
+^^^^^^^^^^^^^^^^
+
+If the client API receives a cluster unstable error, or when it cannot reach a node (timeout, connection refused, connection reset...), the client API will reset the whole cluster connection by rebuilding it from the initially provided connection string. It will wait for the cluster to become available for a customizable amount of time which is called the "maximum stabilization wait".
+
+During this time, it will attempt to rebuild the connection at random time intervals, as long as the cluster is unavailable or when the maximum allowed amount of time has been reached (whichever comes first).
+
+The actual wait duration may be up to three times greater than the configured time, but cannot not be less.
+
+If this duration is zero, the client API will not attempt to rebuild the connection and pop back the error immediately to the user.
+
+For the cluster connection to be repaired automatically, at least one node from the cluster connection string must be up. This is why, your connection string should contain more than one node.
+
+The maximum stabilization wait time must be either zero (disabled) or greater than the network timeout.
+
 Batch operations
 ----------------
 
