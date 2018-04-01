@@ -78,6 +78,10 @@ Get the last second of 2016 for "stocks.apple"::
 
     select * from stocks.apple in range(2017, -1s)
 
+Get the close and open values that are greater than 3 of "stocks.apple" for the first 10 days of 2016::
+
+    select close from stocks.apple in range(2016, +10d) where (close > 3) and (open > 3)
+
 Get the last close value for March 28th 2016::
 
     select last(close) from stocks.apple in range(2016-03-28, +1d)
@@ -87,6 +91,10 @@ Advanced select examples
 
 .. note::
     These examples assume typical open, high, low, close, volume stocks time series.
+
+Get the open and close value when volume is greater than 0 for the first 5 days of 2016 and 2017 for "stocks.apple"::
+
+    select open, close from stocks.apple in [range(2016, +5d), range(2017, +5d)] where volume > 0
 
 Get the hourly arithmetic mean of volume exchanged for all nasdaq stocks for yesterday::
 
@@ -264,7 +272,7 @@ Select currently requires a time range and supports where clauses::
     <select> ::= "select" <columns> "from" <lookup_list> "in" <time_ranges> (<where>? <group_by>? | <asof>?)
 
 .. note::
-    Only single column queries are currently supported for WHERE clauses.
+    Multi-column queries are supported, however you currently cannot compare values of different columns. For example you can write ``(close > 3) and (open > 3)`` but not ``close > open``.
 
 How it works
 -------------
