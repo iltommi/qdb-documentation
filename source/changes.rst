@@ -1,6 +1,28 @@
 Change log
 **********
 
+2.5.0 - "Theodosius" - 04/13/2018
+=================================
+
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+    `Theodosius of Bithynia <https://en.wikipedia.org/wiki/Theodosius_of_Bithynia>`_ was a Greek astronomer and mathematician who wrote the Sphaerics, a book on the geometry of the sphere.
+
+Changes in this version
+-----------------------
+
+    * Protocol version 20
+    * [build] New Core2 and ARM64 builds. The Core2 build enables you to run quasarDB on older generation of Intel-compatible processors.
+    * [daemon] Significant improvements to timeseries insertion speed.
+    * [daemon] Greatly reduced the probability of conflicts during time series insertions.
+    * [query] A WHERE clause can now have an arbitrary number of columns.
+    * [query] The WHERE clause now supports comparisons for blobs.
+    * [persistence] Optimized data storage and compression algorithms resulting in significant savings for timeseries with more than three (3) columns.
+    * [api] When a cluster is unstable, the API will now wait a configurable amount of time for stabilization.
+    * [shell] Added a new command to display the current status of a cluster.
+    * [web bridge] The query API is now available through REST.
+    * [licensing] We've updated the licensing system. Previously attributed licenses no longer work. Contact you quasarDB Solutions Architect for an updated license.
+
 2.4.0 - "Aratus" - 03/11/2018
 =============================
 
@@ -16,7 +38,7 @@ Changes in this version
     * [query] Support for multiple ranges in SELECT statements
     * [query] Initial support for WHERE clause - only single column queries are currently supported
     * [persistence] Greatly improved data compression (up to 5x)
-    * [aggregation] Added specific SSE 4.2 optimizations for machines without AVX and AVX2
+    * [aggregations] Added specific SSE 4.2 optimizations for machines without AVX and AVX2
     * [aggregations] Significantly increased the speed of integer 64-bit aggregations (up to 6x)
     * [aggregations] Significantly increased the speed of sum_of_squares and product aggregations functions (up to 4x)
     * [python] Exposed query API

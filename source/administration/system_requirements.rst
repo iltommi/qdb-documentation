@@ -6,11 +6,28 @@ System Requirements
 Hardware Requirements
 ---------------------
 
+Main build
+^^^^^^^^^^
+
     * An Intel Westmere or better microarchitecture (AMD Bulldozer or better)
-    * End-to-end ECC memory (motherboard, CPU and memory)
-    * At least 1 GiB of RAM
-    * At least 10 GiB of disk
-    * 1 Gbit ethernet port or better
+    * End-to-end ECC memory highly recommended (motherboard, CPU and memory)
+    * At least 512 MB of RAM
+    * At least 1 GiB of disk
+
+Core2 build
+^^^^^^^^^^^
+
+    * An Intel Core or better microarchitecture
+    * End-to-end ECC memory highly recommended (motherboard, CPU and memory)
+    * At least 512 MB of RAM
+    * At least 1 GiB of disk
+
+ARM64 build
+^^^^^^^^^^^
+
+    * ARM64 architecture
+    * At least 512 MB of RAM
+    * At least 1 GiB of disk
 
 It is strongly advised to have a homogenous hardware configuration within a cluster.
 
