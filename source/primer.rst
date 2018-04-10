@@ -135,6 +135,15 @@ As you can see the timestamp allows for nanosecond precision. Time definition sy
     2017-01-02T00:00:00.000000000Z 2.000000
     2017-01-03T00:00:00.000000000Z 3.000000
 
+You can narrow down your searches with the WHERE keyword, exactly as you would in a regular SQL query:
+
+.. code-block:: sql
+
+    qdbsh > select * from stocks in range(2017, +10d) where close < 2
+    timestamp                      close
+    --------------------------------------------
+    2017-01-01T00:00:00.000000000Z 1.000000
+
 The database is also able to perform server-side aggregations for maximum performance. For example, you can ask for the average value of a timeseries, without having to retrieve all the data. Aggregations are able to leverage the enhanced instruction set of your CPU, when available.
 
 For example, we can request the arithmetic mean of our stocks for the same interval:

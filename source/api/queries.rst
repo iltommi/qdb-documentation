@@ -120,7 +120,7 @@ EBNF Grammar
 Identifiers
 ^^^^^^^^^^^
 
-An identifier, should it be a variable name, a column name or a table name is an alphanumerical string that may not start with a digit. Punctuation is accepted, with the exception of ``+``, ``-``, ``/``, ``*``, ``(`` and ``)``.
+An identifier, should it be a variable name, a column name or a table name is an alphanumerical string that may not start with a digit. Punctuation is accepted, with the exception of ``+``, ``-``, ``/``, ``*``, ``(``, ``)``, ``~``, and ``!``.
 
 Duration
 ^^^^^^^^
@@ -210,9 +210,10 @@ Expression
 
 An expression is a composition of arithmetic operations, and supports operator precedence::
 
+    <quoted_string> ::= "\"" <identifier> "\"" | "'" <identifier> "'"
     <expression> ::= <term> {("+" <term>) | ("-" <term>)}
     <term> ::= <factor> {("*" <factor>) | ("/" <factor>)}
-    <factor> ::= "(" <expression> ")" | "-" <factor> | "+" <factor> | <number> | <function> | <identifier>
+    <factor> ::= "(" <expression> ")" | "-" <factor> | "+" <factor> | <number> | <quoted_string> | <function> | <identifier>
     <function> ::= <aggregation> "(" <identifier> ")"
     <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     <number> ::= <digit>+ ["." <digit>]
@@ -257,6 +258,7 @@ Examples:
 
     * ``open=1``: Return true if and only if the value of open is 1
     * ``(close > 1) or (open < 2)``: Returns true if and only if the value of close is greater than 1 or the value is open is less than 2
+    * ``instrument="A"``: Returns true if and only if the value of instrument is equal to the string "A"
 
 Select
 ^^^^^^

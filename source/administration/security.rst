@@ -32,7 +32,7 @@ Traffic encryption
 QuasarDB has built-in support for full traffic encryption as well as message integrity. Traffic encryption requires authentication to be turned on.
 
 .. note::
-    Traffic is encrypted using AES GCM with a 256-bit key. It requires the AES-NI instructions.
+    Traffic is encrypted using AES GCM with a 256-bit key. It requires the AES-NI instructions or equivalent. Thus, it is not available on all platforms.
 
 Because traffic encryption can have a significant performance impact, it is turned off by default.
 
