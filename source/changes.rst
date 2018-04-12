@@ -12,16 +12,18 @@ Changes in this version
 -----------------------
 
     * Protocol version 20
-    * [build] New Core2 and ARM64 builds. The Core2 build enables you to run quasarDB on older generation of Intel-compatible processors.
-    * [daemon] Significant improvements to timeseries insertion speed.
-    * [daemon] Greatly reduced the probability of conflicts during time series insertions.
     * [query] A WHERE clause can now have an arbitrary number of columns.
     * [query] The WHERE clause now supports comparisons for blobs.
     * [persistence] Optimized data storage and compression algorithms resulting in significant savings for timeseries with more than three (3) columns.
+    * [daemon] Significant improvements to timeseries insertion speed.
+    * [daemon] Greatly reduced the probability of conflicts during time series insertions.
     * [api] When a cluster is unstable, the API will now wait a configurable amount of time for stabilization.
     * [shell] Added a new command to display the current status of a cluster.
     * [web bridge] The query API is now available through REST.
-    * [licensing] We've updated the licensing system. Previously attributed licenses no longer work. Contact you quasarDB Solutions Architect for an updated license.
+    * [packaging] New Core2 build. The Core2 build enables you to run quasarDB on older generation of Intel-compatible processors. The default build requires a Westmere or better micro-architecture.
+    * [packaging] We successfully built quasardb for the ARM64 architecture. Build available upon request.
+    * [licensing] We've updated the licensing system. Previously attributed licenses will no longer work. Contact you quasarDB Solutions Architect for an updated license. This does not change
+      the price or the validity of your current license.
 
 2.4.0 - "Aratus" - 03/11/2018
 =============================
