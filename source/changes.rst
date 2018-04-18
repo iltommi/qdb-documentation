@@ -1,7 +1,7 @@
 Change log
 **********
 
-2.5.0 - "Theodosius" - 04/13/2018
+2.5.0 - "Theodosius" - 04/20/2018
 =================================
 
 From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
@@ -15,7 +15,6 @@ Changes in this version
     * [query] A WHERE clause can now have an arbitrary number of columns.
     * [query] The WHERE clause now supports comparisons for blobs.
     * [persistence] Optimized data storage and compression algorithms resulting in significant savings for timeseries with more than three (3) columns.
-    * [daemon] Significant improvements to timeseries insertion speed.
     * [daemon] Greatly reduced the probability of conflicts during time series insertions.
     * [api] When a cluster is unstable, the API will now wait a configurable amount of time for stabilization.
     * [shell] Added a new command to display the current status of a cluster.
