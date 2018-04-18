@@ -196,7 +196,7 @@ Find
 
 By default, all types are selected, if one or more types is selected, only those types will be returned. Thus, the grammar does not allow you to exclude a type::
 
-    <entry_types> ::= "blob" | "int" | "integer" | "hset" | "stream" | "deque" | "ts"
+    <entry_types> ::= "blob" | "int" | "integer" | "stream" | "deque" | "ts"
     <quoted_string> ::= "\"" <identifier> "\"" | "'" <identifier> "'"
     <tag> ::= "tag=" <quoted_string>
     <type> ::= "type=" <entry_types>

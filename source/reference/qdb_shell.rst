@@ -54,9 +54,6 @@ Commands
  :ref:`get_expiry alias <qdbsh_get_expiry>`                                           return the absolute expiry time of the entry
  :ref:`get_type alias <qdbsh_get_type>`                                               return the type of the entry
  :ref:`remove alias <qdbsh_remove>`                                                   remove the entry from the cluster
- :ref:`hset_contains alias content <qdbsh_hset_contains>`                             returns true if the HSet contains the content
- :ref:`hset_erase alias content <qdbsh_hset_erase>`                                   remove a value from the HSet
- :ref:`hset_insert alias content <qdbsh_hset_insert>`                                 insert a value into the HSet
  :ref:`int_add alias value <qdbsh_int_add>`                                           atomically increment the Integer by the value
  :ref:`int_get alias <qdbsh_int_get>`                                                 return the value of the Integer
  :ref:`int_put alias value <qdbsh_int_put>`                                           create a new Integer; fails if Integer already exists
@@ -417,36 +414,6 @@ A command generally requires one or several arguments. Each argument is separate
         Removes an entry named "obsolete"::
 
             remove obsolete
-
-
-.. _qdbsh_hset_contains:
-.. option:: hset_contains <alias> <content>
-
-    Returns true if the content is present in the HSet.
-
-    :param alias: *(string)* the alias of the HSet
-    :param content: *(string)* the value to locate in the HSet
-    :return: true if the value is present in the Hset, false otherwise.
-
-
-.. _qdbsh_hset_erase:
-.. option:: hset_erase <alias> <content>
-
-    Remove a value from the HSet.
-
-    :param alias: *(string)* the alias of the HSet
-    :param content: *(string)* the value to remove from the HSet
-    :return: true if the value was successfully removed, false otherwise.
-
-
-.. _qdbsh_hset_insert:
-.. option:: hset_insert <alias> <content>
-
-    Add a value to the HSet.
-
-    :param alias: *(string)* the alias of the HSet
-    :param content: *(string)* the value to add to the HSet
-    :return: true if the value was successfully removed, false otherwise.
 
 
 .. _qdbsh_int_add:

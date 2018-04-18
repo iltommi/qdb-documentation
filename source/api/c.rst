@@ -24,7 +24,7 @@ The C API package is downloadable from the quasardb download site. All informati
             \doc    // This documentation
 
 
-Most C functions, typedefs and enums are available in the ``include/qdb/client.h`` header file. The object specific functions for hsets, integers, double-ended queues, and tags are in their respective ``include/qdb/*.h`` files.
+Most C functions, typedefs and enums are available in the ``include/qdb/client.h`` header file. The object specific functions for integers, double-ended queues, and tags are in their respective ``include/qdb/*.h`` files.
 
 .. highlight:: c
 
@@ -376,44 +376,6 @@ To fully a deque, use :func:`qdb_remove`, like any other entry type:
     :dedent: 12
 
 Removing a deque has a linear complexity.
-
-Hashed sets
------------
-
-.. warning::
-    Experimental feature
-
-Hashed sets are distributed over the nodes and have no limit in the number of entries or the size of the entries. Hashed set currently support only insertion, erasure and querying. Entries are hashed using a cryptographically strong 256-bit hash, making collision extremely unlikely.
-
-Insertion, access and removal are logarithmic respective to the size of the set.
-
-To create a set, you insert an entry to a previously non existing set with :func:`qdb_hset_insert`:
-
-.. literalinclude:: ../../../apis/c/examples/c/hset.c
-    :start-after: doc-start-hset_insert
-    :end-before: doc-end-hset_insert
-    :dedent: 12
-
-When you need to remove an entry from a set, use :func:`qdb_hset_erase`:
-
-.. literalinclude:: ../../../apis/c/examples/c/hset.c
-    :start-after: doc-start-hset_erase
-    :end-before: doc-end-hset_erase
-    :dedent: 12
-
-To test the existence of an entry within a set, use :func:`qdb_hset_contains`:
-
-.. literalinclude:: ../../../apis/c/examples/c/hset.c
-    :start-after: doc-start-hset_contains
-    :end-before: doc-end-hset_contains
-    :dedent: 12
-
-To fully remove a set, use :func:`qdb_remove`, like any other entry type:
-
-.. literalinclude:: ../../../apis/c/examples/c/hset.c
-    :start-after: doc-start-hset_remove
-    :end-before: doc-end-hset_remove
-    :dedent: 12
 
 Batch operations
 ----------------
@@ -838,12 +800,6 @@ Deques
 ^^^^^^
 
 .. doxygengroup:: deque
-  :members:
-
-Hash sets
-^^^^^^^^^
-
-.. doxygengroup:: hset
   :members:
 
 Integers

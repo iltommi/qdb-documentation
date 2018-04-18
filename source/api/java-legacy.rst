@@ -576,13 +576,6 @@ Expiry Time
 	:project: qdb_java_legacy_api
 	:members:
 
-HashSet
-^^^^^^^
-
-.. doxygenclass:: net::quasardb::qdb::QdbHashSet
-	:project: qdb_java_legacy_api
-	:members:
-
 Id
 ^^
 
@@ -653,8 +646,6 @@ Appendix A: entry class hierarchy
     * ``QdbBlob``
 
     * ``QdbInteger``
-
-  * ``QdbHashSet``
 
   * ``QdbStream``
 

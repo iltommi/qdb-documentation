@@ -76,34 +76,6 @@ Quasardb provides double-ended queues, or simply "deque".
 		myQueue.PushBack(b)
 		c = myQueue.PopFront()
 
-Hash sets
----------
-
-We also provide distributed sets.
-
-.. tabs::
-
-	.. code-tab:: c#
-
-		byte[] a, b, c;
-
-		QdbHashSet mySet = cluster.HashSet("Janet the set");
-
-		mySet.Insert(a);
-		mySet.Erase(b);
-		bool hasC = mySet.Contains(c);
-
-	.. code-tab:: vbnet
-
-		Dim a, b, c As Byte()
-
-		Dim mySet = cluster.HashSet("Janet the set")
-
-		mySet.Insert(a)
-		mySet.Erase(b)
-		Dim hasC = mySet.Contains(c)
-
-
 Integers
 --------
 
@@ -229,13 +201,6 @@ Deque
 ^^^^^
 
 .. doxygenclass:: Quasardb::QdbDeque
-	:project: qdb_dotnetapi
-	:members:
-
-HashSet
-^^^^^^^^^^
-
-.. doxygenclass:: Quasardb::QdbHashSet
 	:project: qdb_dotnetapi
 	:members:
 

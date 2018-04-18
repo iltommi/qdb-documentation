@@ -136,7 +136,6 @@ Changes in this version
     * Distributed ACID transactions
     * Distributed secondary-indexes (tags)
     * Distributed double-ended queues (deques)
-    * Distributed hash sets (hset)
     * Native atomic signed 64-bit integers operations
     * Native support for Mac OS X
     * Many usability improvements in all tools

@@ -97,9 +97,6 @@ Quick Reference
   :c:type:`qdb_error_t`                  :func:`handle::int_update`                         ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t` ``number,`` :c:type:`qdb_time_t` ``expiry_time);``
   :c:type:`qdb_error_t`                  :func:`handle::int_add`                            ``(``\ |CONST_CHAR_P| ``alias,`` :c:type:`qdb_int_t` ``addend,`` :c:type:`qdb_int_t *` ``result = NULL);``
   :c:type:`qdb_error_t`                  :func:`handle::has_tag`                            ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``tag);``
-  :c:type:`qdb_error_t`                  :func:`handle::hset_contains`                      ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
-  :c:type:`qdb_error_t`                  :func:`handle::hset_insert`                        ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
-  :c:type:`qdb_error_t`                  :func:`handle::hset_erase`                         ``(``\ |CONST_CHAR_P| ``alias,`` |CONST_CHAR_P| ``content,`` :c:type:`qdb_size_t` ``content_length);``
   :type:`std::string`                    :func:`handle::node_config`                        ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
   :type:`std::string`                    :func:`handle::node_status`                        ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
   :type:`std::string`                    :func:`handle::node_topology`                      ``(``\ |CONST_CHAR_P| ``uri,`` :c:type:`qdb_error_t` ``&`` ``error);``
