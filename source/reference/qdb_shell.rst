@@ -48,6 +48,7 @@ Commands
  :ref:`blob_update alias content <qdbsh_blob_update>`                                 update an existing Blob or creates a new Blob
  :ref:`cluster_purge <qdbsh_cluster_purge>`                                           remove ALL entries on the WHOLE cluster (dangerous!)
  :ref:`cluster_trim <qdbsh_cluster_trim>`                                             remove unused versions of entries from the cluster
+ :ref:`cluster_status <qdbsh_cluster_status>`                                         print status information about a cluster
  :ref:`expires_at alias expiry <qdbsh_expires_at>`                                    set the absolute expiry time of the entry
  :ref:`expires_from_now alias delta <qdbsh_expires_from_now>`                         set the expiry time of the entry to seconds relative to now
  :ref:`get_expiry alias <qdbsh_get_expiry>`                                           return the absolute expiry time of the entry
@@ -358,6 +359,13 @@ A command generally requires one or several arguments. Each argument is separate
     Remove unused versions of entries from the cluster, freeing up disk space.
 
     :return: nothing if successful, an error message otherwise
+
+.. _qdbsh_cluster_status:
+.. option:: cluster_status
+
+    Print status information about a cluster
+
+    :return: information about the cluster status
 
 .. _qdbsh_expires_at:
 .. option:: expires_at <alias> <expiry>
