@@ -6,6 +6,53 @@ The REST API is a part of the *web-bridge*: https://github.com/bureau14/qdb-web-
 
 To install, please follow the instruction  on the GitHub project page.
 
+Query 
+~~~~~
+
+Since 2.5.0 we have introduced support for two query methods, *query_exp* and *query_find* in the qdb_httpd. Now, we can perform query over the REST api and get JSON results.
+This was intended to help web apps which relies on the REST API. To see full query functionalities see the query reference page.
+Below, we show some example(s) for each query method. 
+
+query_exp
+=========
+
+The below query will fetch the minimum value in "open" column from timeseries "ts". We currently support two types of date format, namely js (javascript) and native (qdb format). 
+js date format returns a date time object with millisecond precision whereas the native date format returns with nanonsecond precision.
+By default, we return the native date_time format.
+
+.. tabs::
+    .. tab:: Input (date_format=js)
+
+        http://127.0.0.1:8080/query_exp?query=select min(open) from ts in range (1900, 2000)&date_format=js
+
+    .. tab:: Output
+
+        {"query":"select min(open) from ts in range (1900, 2000)","scanned_rows_count":9097,"tables_count":1,"tables":[{"table_name":"ts","rows_count":1,"columns_count":2,"columns_names":["timestamp","min(open)"],"results":[["1999-11-19T15:41:00.000Z",25.49]]}]}
+
+
+..tabs:: 
+    ..tab:: Input (date_format=native)
+
+        http://127.0.0.1:8080/query_exp?query=select min(open) from ts in range (1900, 2000)&date_format=native
+
+    ..tab:: Output
+
+        {"query":"select min(open) from ts in range (1900, 2000)","scanned_rows_count":9097,"tables_count":1,"tables":[{"table_name":"ts","rows_count":1,"columns_count":2,"columns_names":["timestamp","min(open)"],"results":[[{"tv_sec":943026060,"tv_nsec":0},25.49]]}]}
+
+query_find
+==========
+
+The below example fetched the aliases of all entries with tag 'tag'.
+
+..tabs:: 
+    ..tab:: Input
+
+        http://127.0.0.1:8080/query_find?query=find(tag='tag')
+
+    ..tab:: Output
+
+        {"query":"find(tag='tag')","results":["b"]}
+
 
 Features available on all types of entries
 ==========================================
@@ -14,6 +61,7 @@ Get the list of tags attached to an entry
 -----------------------------------------
 
 This is the equivalent of :c:func:`qdb_get_tags` in the C API.
+
 
 Query
 """""
