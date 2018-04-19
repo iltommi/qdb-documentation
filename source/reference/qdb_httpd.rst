@@ -7,7 +7,7 @@ quasardb web server
 Introduction
 ============
 
-The quasardb web server, `qdb_httpd`, provides three services:
+The quasardb web server, `qdb_httpd`, provides the following services:
  * An HTML5 GUI that shows an overview of cluster and node activity
  * A RESTful API that can translate entries from the cluster into JSON or JSONP.
  * A RESTful API that can understand select and find queries and translates them into JSON.

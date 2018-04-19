@@ -9,9 +9,8 @@ To install, please follow the instruction  on the GitHub project page.
 Query 
 =====
 
-Since 2.5.0 we have introduced support for two query methods, *query_exp* and *query_find* in the qdb_httpd. Now, we can perform query over the REST api and get JSON results.
-This was intended to help web apps which relies on the REST API. To see full query functionalities see the query reference page.
-Below, we show some example(s) for each query method. 
+Since 2.5.0 we have introduced support for two query methods, *query_exp* and *query_find* in the qdb_httpd. Now, we can perform query over the RESTful api and get JSON results.
+This will provide the medium for web apps to query timeseries and entries with quasardb. To see full query functionalities see the queries reference page.
 
 query_exp
 ~~~~~~~~~
@@ -42,7 +41,7 @@ By default, we return the native date_time format.
 query_find
 ~~~~~~~~~~
 
-The below example fetched the aliases of all entries with tag 'tag'.
+The below example fetches the aliases of all entries with tag 'tag'.
 
 .. tabs:: 
     .. tab:: Input
