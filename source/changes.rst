@@ -17,6 +17,7 @@ Changes in this version
     * [persistence] Optimized data storage and compression algorithms resulting in significant savings for timeseries with more than three (3) columns.
     * [daemon] Greatly reduced the probability of conflicts during time series insertions.
     * [api] When a cluster is unstable, the API will now wait a configurable amount of time for stabilization.
+    * [api] hset are no longer exposed in the API.
     * [shell] Added a new command to display the current status of a cluster.
     * [web bridge] The query API is now available through REST.
     * [packaging] New Core2 build. The Core2 build enables you to run quasarDB on older generation of Intel-compatible processors. The default build requires a Westmere or better micro-architecture.
