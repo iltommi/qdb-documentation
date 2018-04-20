@@ -16,7 +16,7 @@ query_exp
 ~~~~~~~~~
 
 The below query will fetch the minimum value in "open" column from timeseries "ts". We currently support two types of date format, namely js (javascript) and native (qdb format). 
-js date format returns a date time object with millisecond precision whereas the native date format returns with nanonsecond precision.
+js date format returns a date time object with millisecond precision whereas the native date format returns with nanosecond precision.
 By default, we return the native date_time format.
 
 .. tabs::
