@@ -155,21 +155,6 @@ You get an ``Integer`` instance by calling :func:`Cluster.integer`. Then you can
 
 <:Integer:>
 
-The `Set` class
-^^^^^^^^^^^^^^^
-
-Represents an unordered set of blob in the quasardb database.
-
-You get a ``Set`` instance by calling func:`Cluster.set`. Then you can perform atomic operations on the set::
-
-    var s = c.set('bam');
-    s.insert(new Buffer("boom"), function(err, data) { /* */  });
-    s.contains(new Buffer("boom"), function(err, data) { /* */  });
-
-Passing in the blob value wrapped in the `node::Buffer class <https://nodejs.org/api/buffer.html>`_ is important, as JavaScript does not play nice with binary data.
-
-<:Set:>
-
 The `Tag` class
 ^^^^^^^^^^^^^^^
 
