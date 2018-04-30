@@ -42,7 +42,7 @@ Find all entries that have the tag "stocks"::
 
 Find all timeseries that have the tag "stocks"::
 
-    find(tag='stocks' type=ts)
+    find(tag='stocks' and type=ts)
 
 Find all entries that have the tags "stocks", "euro", "industry"::
 
