@@ -6,6 +6,8 @@ Introduction
 
 Official QuasarDB Grafana plugin. It extends QuasarDB's support to allow integration with the `Grafana <https://grafana.com>`_ analytics and monitoring platform. You may read and download the connector's code from GitHub at  `<https://github.com/bureau14/qdb-grafana-plugin>`_
 
+.. image:: qdb_grafana_dashboard.png
+
 
 Prerequisites
 =============
@@ -60,3 +62,13 @@ Navigate your web browser to Grafana's datasource configuration, and click 'Add 
 The HTTP URL might differ in your configuration: it should point to the endpoint where ``qdb_httpd`` is running. This service is running on port ``8080`` by default.
 
 After you are done, click *Save & Test* and you are ready to starting creating visualizations using QuasarDB.\
+
+Usage
+=====
+
+You can add a visualization using QuasarDB by selecting the ``QuasarDB`` Data Source when creating a new visualization.
+
+.. note:: Grafana templates are not yet supported, but you can use the ``${to}``, ``${from}`` and ``${interval}`` variables.
+
+
+.. image:: qdb_grafana_visualization_configuration.png
