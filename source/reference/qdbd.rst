@@ -137,7 +137,7 @@ Helium uses a URL scheme for specifying the path to a volume. In Unix-like envir
 A URL starts with ``he://``. Here are some examples:
 
  * To use the whole volume ``/dev/sda1``, write the following URL: ``he://./dev/sda1``
- * To use the file ``/home/user/my_file``, write the following URL: ``he://./home/user/my_file``
+ * To use the file ``/home/user/my_file``, write the following URL: ``he://.//home/user/my_file``
  * To use the file ``d:\temp\test.data``, write the following URL: ``he://./d:/temp/test.dat``
 
 Helium can also span multiple volumes, for example ``he://./dev/sda,/dev/sdb`` will span the two volumes ``sda`` and ``sdb``.
