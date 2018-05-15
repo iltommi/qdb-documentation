@@ -55,7 +55,7 @@ Configuration
 
 Navigate your web browser to Grafana's datasource configuration, and click 'Add data source'. You will see *QuasarDB* as one of the available data sources. Configure the data source as follows:
 
-.. image:: qdb_grafana_datasource_configuration.gif
+.. image:: qdb_grafana_datasource_configuration.png
 
 The HTTP URL might differ in your configuration: it should point to the endpoint where ``qdb_httpd`` is running. This service is running on port ``8080`` by default.
 
