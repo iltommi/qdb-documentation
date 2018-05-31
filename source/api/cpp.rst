@@ -1,5 +1,5 @@
 C++
-====
+===
 
 .. default-domain:: cpp
 .. cpp:namespace:: qdb

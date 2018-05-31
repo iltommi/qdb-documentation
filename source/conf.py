@@ -31,6 +31,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.autodoc',
+    'sphinx_tabs.tabs',
     'javasphinx',
     'sphinxcontrib.phpdomain',
     'breathe'
@@ -38,6 +39,8 @@ extensions = [
 
 breathe_projects = {
     "qdb_capi": "../qdb/c/xml",
+    "qdb_cpp_api": "../qdb/cpp/xml",
+    "qdb_dotnetapi": "../qdb/dotnet/xml",
     "qdb_java_api": "../qdb/java/xml",
     "qdb_java_legacy_api": "../qdb/java-legacy/xml"
 }
