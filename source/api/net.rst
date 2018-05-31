@@ -205,21 +205,21 @@ Deque
 	:members:
 
 Integer
-^^^^^
+^^^^^^^
 
 .. doxygenclass:: Quasardb::QdbInteger
 	:project: qdb_dotnetapi
 	:members:
 
 Stream
-^^^^^
+^^^^^^
 
 .. doxygenclass:: Quasardb::QdbStream
 	:project: qdb_dotnetapi
 	:members:
 
 Tag
-^^^^^
+^^^
 
 .. doxygenclass:: Quasardb::QdbTag
 	:project: qdb_dotnetapi

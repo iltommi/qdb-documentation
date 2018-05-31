@@ -1,8 +1,8 @@
 Java (Legacy API)
 =================
 
-.. default-domain:: java-legacy
-.. highlight:: java-legacy
+.. default-domain:: java
+.. highlight:: java
 
 Introduction
 ------------

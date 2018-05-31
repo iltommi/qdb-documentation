@@ -1,4 +1,3 @@
-********
 REST API
 ********
 
@@ -6,7 +5,7 @@ The REST API is a part of the *web-bridge*: https://github.com/bureau14/qdb-web-
 
 To install, please follow the instruction  on the GitHub project page.
 
-Query 
+Query
 =====
 
 Since 2.5.0 we have introduced support for two query methods, *query_exp* and *query_find* in the qdb_httpd. Now, we can perform query over the RESTful api and get JSON results.
@@ -15,7 +14,7 @@ This will provide the medium for web apps to query timeseries and entries with q
 query_exp
 ~~~~~~~~~
 
-The below query will fetch the minimum value in "open" column from timeseries "ts". We currently support two types of date format, namely js (javascript) and native (qdb format). 
+The below query will fetch the minimum value in "open" column from timeseries "ts". We currently support two types of date format, namely js (javascript) and native (qdb format).
 js date format returns a date time object with millisecond precision whereas the native date format returns with nanosecond precision.
 By default, we return the native date_time format.
 
@@ -29,7 +28,7 @@ By default, we return the native date_time format.
         {"query":"select min(open) from ts in range (1900, 2000)","scanned_rows_count":9097,"tables_count":1,"tables":[{"table_name":"ts","rows_count":1,"columns_count":2,"columns_names":["timestamp","min(open)"],"results":[["1999-11-19T15:41:00.000Z",25.49]]}]}
 
 
-.. tabs:: 
+.. tabs::
     .. tab:: Input (date_format=native)
 
         http://127.0.0.1:8080/query_exp?query=select min(open) from ts in range (1900, 2000)&date_format=native
@@ -43,7 +42,7 @@ query_find
 
 The below example fetches the aliases of all entries with tag 'tag'.
 
-.. tabs:: 
+.. tabs::
     .. tab:: Input
 
         http://127.0.0.1:8080/query_find?query=find(tag='tag')
@@ -57,10 +56,9 @@ Features available on all types of entries
 ==========================================
 
 Get the list of tags attached to an entry
------------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This is the equivalent of :c:func:`qdb_get_tags` in the C API.
-
 
 Query
 """""
@@ -331,7 +329,7 @@ Features available on blobs
 ===========================
 
 Getting information on a blob
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This has not equivalent in the C API
 
@@ -535,7 +533,7 @@ Features available on tags
 ===========================
 
 Getting information on a tag
------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 This has not equivalent in the C API
 
