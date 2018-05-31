@@ -1,5 +1,5 @@
 quasardb for Grafana
-******************
+********************
 
 Introduction
 ============
