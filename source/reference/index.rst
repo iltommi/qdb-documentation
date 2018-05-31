@@ -18,3 +18,4 @@ Application Reference
    qdb-benchmark
    qdb_generate_config
    qdb_excel
+   qdb_grafana
