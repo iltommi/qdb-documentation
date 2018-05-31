@@ -26,6 +26,8 @@ The querying language currently enables you to:
  * Look up entries via a combination of tags and type
  * Extract content of time series based on time ranges
  * Perform server-side aggregations on time series
+ * Perform regular expressions on blobs (extended POSIX grammar)
+ * Built-in support for gregorian calendar
  * Group aggregations by time bucket
  * Align time series to each other
 
@@ -108,9 +110,10 @@ Get the sum of volume and the number of lines for the last hour by 10 seconds gr
 
     select sum(volume), count(volume) from stocks.apple in range(now, -1h) group by 10s
 
-Get the sum of volumes for "stocks.apple" the year 2008 and 2010::
+Get the sum of volumes for "stocks.apple" the year 2008 and 2010, grouped by month (gregorian calendar)::
 
-    select sum(volume) from stocks.apple in [range(2008, +1y), range(2010, +1y)]
+    select sum(volume) from stocks.apple in [range(2008, +1y), range(2010, +1y)] group by month
+
 
 EBNF Grammar
 -------------
@@ -126,13 +129,13 @@ Duration
 ^^^^^^^^
 
 .. note::
-    quasarDB has no awareness of your calendar
+    quasarDB has a built-in gregorian calendar and will use it for day, week, months, and years aggregations.
 
 The smallest duration value is one nanosecond::
 
     <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     <predefined_duration_abbr> ::= ns | us | ms | s | min | h | d | y
-    <predefined_duration_full> ::= nanosecond | microsecond | millisecond | second | minute | hour | day | year
+    <predefined_duration_full> ::= nanosecond | microsecond | millisecond | second | minute | hour | day | week | month | year
     <predefined_duration> ::= <predefined_duration_abbr> | <predefined_duration_full>
     <composed_duration> ::=  <predefined_duration> | <composed_duration> <predefined_duration>
     <duration> ::= <digit>* <composed_duration>
@@ -211,9 +214,10 @@ Expression
 An expression is a composition of arithmetic operations, and supports operator precedence::
 
     <quoted_string> ::= "\"" <identifier> "\"" | "'" <identifier> "'"
+    <bitwise_and> ::= <expression> {"&" <expression>}
     <expression> ::= <term> {("+" <term>) | ("-" <term>)}
     <term> ::= <factor> {("*" <factor>) | ("/" <factor>)}
-    <factor> ::= "(" <expression> ")" | "-" <factor> | "+" <factor> | <number> | <quoted_string> | <function> | <identifier>
+    <factor> ::= "(" <bitwise_and> ")" | "-" <factor> | "+" <factor> | <number> | <quoted_string> | <function> | <identifier>
     <function> ::= <aggregation> "(" <identifier> ")"
     <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     <number> ::= <digit>+ ["." <digit>]
@@ -251,14 +255,15 @@ A conditional expression is a composition of logical and arithmetic operations e
     <or> ::= <and> {"or" <and>}
     <and> ::= <not> {"and" <not>}
     <not> ::= "not" <relation> | <relation>
-    <relation> ::= <expression> {<comparison_operator> <expression>}
-    <comparison_operator> ::= ">=" | "<=" | "!=" | "<" | "=" | ">"
+    <relation> ::= <bitwise_and> {<comparison_operator> <bitwise_and>}
+    <comparison_operator> ::= ">=" | "<=" | "!=" | "<" | "=" | ">" | "~" | "!~" | "~*" | "!~*"
 
 Examples:
 
     * ``open=1``: Return true if and only if the value of open is 1
     * ``(close > 1) or (open < 2)``: Returns true if and only if the value of close is greater than 1 or the value is open is less than 2
     * ``instrument="A"``: Returns true if and only if the value of instrument is equal to the string "A"
+    * ``instrument ~* bli.``: Returns true if and only if instrument matches the regular expression bli., case insensitive.
 
 Select
 ^^^^^^
