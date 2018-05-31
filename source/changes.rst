@@ -1,6 +1,33 @@
 Change log
 **********
 
+2.6.0 - "Cleomedes" - 06/01/2018
+================================
+
+From `Wikipedia <https://en.wikipedia.org/wiki/Main_Page>`_, the free encyclopedia:
+
+    `Cleomedes <https://en.wikipedia.org/wiki/Cleomedes>`_ was a Greek astronomer who is known chiefly for his book On the Circular Motions of the Celestial Bodies.
+
+Changes in this version
+-----------------------
+
+    * Protocol version 20
+    * [api] Official R API
+    * [api] Official Grafana support
+    * [api] High performance multi table bulk insert
+    * [query] Gregorian calendar support
+    * [query] A WHERE clause can now be applied on aggregations
+    * [query] Support for regular expressions in blob comparisons
+    * [query] Support for bitwise "and" operator in integer comparisons
+    * [daemon] Greatly improved bulk insertion speed
+    * [api] Removed obsolete filter in the API
+    * [query] Fixed count related issues on blobs and timestamps columns
+    * [query] SELECT count(*) now returns a valid result in all cases
+    * [query] geometric mean is now properly accepted by SELECT
+    * [query] Allows optional ";" at the end of queries
+    * [daemon] Added more systemtap probes for finer tuning
+
+
 2.5.0 - "Theodosius" - 04/20/2018
 =================================
 
