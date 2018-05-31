@@ -31,6 +31,7 @@ extensions = [
     'sphinx.ext.todo',
     'sphinx.ext.mathjax',
     'sphinx.ext.autodoc',
+    'sphinx_tabs.tabs',
     'javasphinx',
     'sphinxcontrib.phpdomain',
     'breathe'
