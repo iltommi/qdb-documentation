@@ -57,7 +57,6 @@ Connect to a QuasarDB cluster:
 .. code-block:: r
 
    handle <- qdb_connect("qdb://127.0.0.1:2836")
-   # Get all entries (precisely: their keys) tagged with 'my-tag' being timeseries.
 
 Creating a timeseries
 ^^^^^^^^^^^^^^^^^^^^^
