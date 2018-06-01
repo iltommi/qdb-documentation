@@ -17,7 +17,7 @@ QuasarDB backend.
 Requirements
 ------------
 
- * [quasardb daemon](https://download.quasardb.net/quasardb/)
+ * `QuasarDB Daemon <https://download.quasardb.net/quasardb/>`_
  * JDK 8 or higher
 
 Adding QuasarDB to your build
@@ -31,6 +31,7 @@ Maven
 To add a dependency on the QuasarDB Java API using Maven, use the following:
 
 .. code-block:: xml
+
    <dependency>
      <groupId>net.quasardb</groupId>
      <artifactId>qdb</artifactId>
@@ -43,6 +44,7 @@ Gradle
 To add a dependency using Gradle:
 
 .. code-block:: bash
+
    dependencies {
      compile "net.quasardb.qdb:2.6.0"
    }
@@ -67,7 +69,7 @@ We continuously release snapshot releases on Sonatype's OSS repository. To gain 
      </repositories>
    </profile>
 
-Please adjust your artifact version accordingly by appending the appropriate `-SNAPSHOT` qualifier as documented at [the official Maven documentation](https://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm#MAVEN401).
+Please adjust your artifact version accordingly by appending the appropriate `-SNAPSHOT` qualifier as documented at `the official Maven documentation <https://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm#MAVEN401>`_.
 
 .. _Javadoc: https://doc.quasardb.net/java/
 
