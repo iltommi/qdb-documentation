@@ -19,5 +19,6 @@ API Reference
    nodejs
    php
    python
+   r
    rest
    spark
