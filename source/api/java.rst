@@ -14,53 +14,60 @@ QuasarDB backend.
 .. note:: If you are looking for a more comprehensive reference, please refer directly to our
           Javadoc_.
 
-Installation
+Requirements
 ------------
 
-The quasardb Java API is available in our Maven repositiory.
+ * [quasardb daemon](https://download.quasardb.net/quasardb/)
+ * JDK 8 or higher
 
-To use it in your project, you need to add the repository ``maven.quasardb.net``
+Adding QuasarDB to your build
+-----------------------------
 
-Then, you must add a dependency to ``net.quasardb:qdb``
+QuasarDB's Maven group ID is `net.quasardb` and the artifact ID is `qdb`.
 
-For example, if you're using Maven, your ``pom.xml`` should look like:
+Maven
+^^^^^
+
+To add a dependency on the QuasarDB Java API using Maven, use the following:
+
+.. code-block:: xml
+   <dependency>
+     <groupId>net.quasardb</groupId>
+     <artifactId>qdb</artifactId>
+     <version>2.6.0</version>
+   </dependency>
+
+Gradle
+^^^^^^
+
+To add a dependency using Gradle:
+
+.. code-block:: bash
+   dependencies {
+     compile "net.quasardb.qdb:2.6.0"
+   }
+
+Snapshot releases
+^^^^^^^^^^^^^^^^^
+
+We continuously release snapshot releases on Sonatype's OSS repository. To gain access to it, please add Sonatype's snapshot repository to your build profile. For Maven, this can be achieved by adding the following profile to your `settings.xml`:
 
 .. code-block:: xml
 
-    <project>
-      [...]
-      <repositories>
-        <repository>
-          <id>quasardb</id>
-          <name>Quasardb Official Repository</name>
-          <url>http://maven.quasardb.net</url>
-        </repository>
-      </repositories>
-      <dependencies>
-        <dependency>
-          <groupId>net.quasardb</groupId>
-          <artifactId>qdb</artifactId>
-          <version>2.3.0</version>
-        </dependency>
-      </dependencies>
-    </project>
+   <profile>
+     <id>allow-snapshots</id>
+       <activation><activeByDefault>true</activeByDefault></activation>
+       <repositories>
+       <repository>
+         <id>snapshots-repo</id>
+         <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+         <releases><enabled>false</enabled></releases>
+         <snapshots><enabled>true</enabled></snapshots>
+       </repository>
+     </repositories>
+   </profile>
 
-Or, if you use Gradle, your ``build.gradle`` should look like:
-
-.. code-block:: groovy
-
-    apply plugin: 'java'
-
-    repositories {
-        maven {
-            url "http://maven.quasardb.net"
-        }
-    }
-
-    dependencies {
-        compile 'net.quasardb:qdb:2.3.0'
-    }
-
+Please adjust your artifact version accordingly by appending the appropriate `-SNAPSHOT` qualifier as documented at [the official Maven documentation](https://docs.oracle.com/middleware/1212/core/MAVEN/maven_version.htm#MAVEN401).
 
 .. _Javadoc: https://doc.quasardb.net/java/
 
