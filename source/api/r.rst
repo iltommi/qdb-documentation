@@ -62,6 +62,8 @@ Connect to a QuasarDB cluster:
 Creating a timeseries
 ^^^^^^^^^^^^^^^^^^^^^
 
+.. code-block:: r
+
    handle <- qdb_connect("qdb://127.0.0.1:2836")
    qdb_ts_create(handle, name = "timeseries1",
         columns = c("column1" = ColumnType$Blob, "column2" = ColumnType$Double))
