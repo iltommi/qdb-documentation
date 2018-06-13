@@ -24,7 +24,7 @@ Features
 The querying language currently enables you to:
 
  * Look up entries via a combination of tags and type
- * Extract content of time series based on time ranges
+ * Extract content of time series based on flexible, sliceable, time ranges
  * Perform server-side aggregations on time series
  * Perform regular expressions on blobs (extended POSIX grammar)
  * Built-in support for gregorian calendar
@@ -101,6 +101,10 @@ Get the open and close value when volume is greater than 0 for the first 5 days 
 Get the hourly arithmetic mean of volume exchanged for all nasdaq stocks for yesterday::
 
     select arithmetic_mean(volume) from find(tag='nasdaq') in range(yesterday, +1d) group by hour
+
+Get the sum of volumes for every Friday of January 2008 between 16:00 and 17:00 for "stocks.apple"::
+
+    select sum(volume) from stocks.apple in range(2008, +month) with days in (fri, fri) with time in (16:00, 17:00)
 
 Get the daily open, high, low, close, volume for "stocks.apple" for the last 30 days::
 
@@ -180,16 +184,25 @@ Time range
 
 Time range are between two absolute time points, or one absolute time point and a duration::
 
+    <day> ::= monday | mon | tuesday | tue | wednesday | wed | thursday | thu | friday | fri | saturday | sat | sunday | sun
+    <month> ::= january | jan | february | feb | march | mar | april | apr | may | june | jun | july | jul | august | aug | september | sep | october | oct | november | nov | december | dec
+    <time_sub_range> ::= "with" "time" "in" "range"+ (" <time>, <time> ")"
+    <day_sub_range> ::= "with" "days" "in" "range"+ (" <day>, <day> ")"
+    <month_sub_range> ::= "with" "months" "in" "range"+ "(" <month>, <month> ")"
     <absolute> ::= <time_point>
     <relative> ::= "+" <duration> | "-" <duration>
-    <time_range> ::= "range" "(" <absolute> "," (<absolute> | <relative>) ")"
-    <time_ranges> ::= "[" <time_range> ("," <time_range>)+ "]"" | <time_range>
+    <time_range> ::= "range"+ "(" <absolute> "," (<absolute> | <relative>) ")"
+    <time_ranges> ::= ("[" <time_range> ("," <time_range>)+ "]"" | <time_range>) <month_sub_range>+ <day_sub_range>+ <time_sub_range>+
 
-Time ranges are left inclusive, right exclusive. Collections of ranges are supported.
+Time ranges are left inclusive, right exclusive. Collections of ranges are supported. Time ranges can be sliced into smaller ranges. For example, to exclude Saturdays and Sundays.
+
+.. note::
+    Day ranges and month ranges are left and right inclusive. Time ranges are left inclusive, right exclusive.
 
 Examples:
 
     * ``range(2008, +1d)``: The first day of 2008
+    * ``range(2008, +1month) with days in (mon, mon)``: All the mondays of January 2008
     * ``range(2006, 2008)``: Between January 1st 2006 midnight and January 1st 2008 midnight
     * ``range(2008-05-03T23:20:35.9791, +1000ns)``: Between May 5th, 2008 23 hours 20 minutes 35 seconds 9791 nanoseconds and May 5th, 2008 23 hours 20 minutes 35 seconds 10791 nanoseconds
     * ``[range(2008, +1d), range(2009, +1d)]``: The first day of 2008 and the first day of 2009
