@@ -1,5 +1,5 @@
 Queries
-======================
+=======
 
 .. cpp:namespace:: qdb
 .. highlight:: sql
@@ -8,7 +8,7 @@ Queries
     Queries are available starting with quasardb 2.1.0.
 
 Goal
-------
+----
 
 Although the API gives you all the building blocks to find and exploit your data, the flexibility of such approach is limited as opposed to a domain specific language (DSL).
 
@@ -19,7 +19,7 @@ The goal of the quasardb querying language is to provide a syntax close to the S
 Queries are meant to extract small subsets of data (thousands of entries) out of very large data sets (billions of entries), fast enough to be used interactively (in a couple of seconds).
 
 Features
------------
+--------
 
 The querying language currently enables you to:
 
@@ -221,6 +221,21 @@ By default, all types are selected, if one or more types is selected, only those
     <statement> ::= <positive> | <negative>
     <find> ::= <statement> | <statement> "and" <query>
 
+IP address
+^^^^^^^^^^
+
+In expressions, you can specify an IP address to be converted to an integer:
+
+    <ipv4_address> ::= <number> "." <number> "." <number> "." <number>
+    <ip> ::= "ip" "(" <ipv4_address> ")"
+
+Storing IP addresses as integers is more space efficient than storing them as strings. Currently, only IPv4 addresses are supported.
+
+Examples:
+
+    * ``ip(127.0.0.1)``
+    * ``ip(192.168.1.1)``
+
 Expression
 ^^^^^^^^^^
 
@@ -230,7 +245,7 @@ An expression is a composition of arithmetic operations, and supports operator p
     <bitwise_and> ::= <expression> {"&" <expression>}
     <expression> ::= <term> {("+" <term>) | ("-" <term>)}
     <term> ::= <factor> {("*" <factor>) | ("/" <factor>)}
-    <factor> ::= "(" <bitwise_and> ")" | "-" <factor> | "+" <factor> | <number> | <quoted_string> | <function> | <identifier>
+    <factor> ::= "(" <bitwise_and> ")" | "-" <factor> | "+" <factor> | <number> | <ip> | <quoted_string> | <function> | <identifier>
     <function> ::= <aggregation> "(" <identifier> ")"
     <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
     <number> ::= <digit>+ ["." <digit>]
