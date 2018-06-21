@@ -268,4 +268,4 @@ And then run the tests like this:
 
 .. code-block:: shell
 
-    LD_LIBRARY_PATH=qdb/clang+llvm-5.0.0-x86_64-apple-darwin/lib/ sbt test
+    DYLD_LIBRARY_PATH=qdb/clang+llvm-5.0.0-x86_64-apple-darwin/lib/ sbt test
